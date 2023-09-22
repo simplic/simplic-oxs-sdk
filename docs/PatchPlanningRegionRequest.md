@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchPlanningRegionRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchPlanningRegionRequest
 Request to patch a planning region.
 
 ## Properties

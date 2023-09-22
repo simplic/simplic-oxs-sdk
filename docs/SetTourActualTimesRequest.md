@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.SetTourActualTimesRequest
+# Simplic.OxS.SDK.Logistics.Model.SetTourActualTimesRequest
 Request to set the actual times of a tour and a possible new status.
 
 ## Properties

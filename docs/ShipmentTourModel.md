@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentTourModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentTourModel
 Represents a connection between a shipment and a tour.
 
 ## Properties

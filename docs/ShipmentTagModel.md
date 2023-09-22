@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentTagModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentTagModel
 Shared model of shipment tag.
 
 ## Properties

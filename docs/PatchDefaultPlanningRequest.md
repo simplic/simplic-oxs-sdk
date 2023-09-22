@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchDefaultPlanningRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchDefaultPlanningRequest
 Request model for patching default planning.
 
 ## Properties

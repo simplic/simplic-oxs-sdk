@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.TourEntityModel
+# Simplic.OxS.SDK.Logistics.Model.TourEntityModel
 Shared model for tour entities.
 
 ## Properties

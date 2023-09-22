@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchLoadingSlotRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchLoadingSlotRequest
 Shared model for loading slots.
 
 ## Properties

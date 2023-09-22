@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchDepartmentRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchDepartmentRequest
 Request model for patching Simplic.OxS.Logistics.Departments.
 
 ## Properties

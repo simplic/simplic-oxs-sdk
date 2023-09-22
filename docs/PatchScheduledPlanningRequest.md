@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchScheduledPlanningRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchScheduledPlanningRequest
 Request model for patching shifted planning.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CalculateTourActionModel
+# Simplic.OxS.SDK.Logistics.Model.CalculateTourActionModel
 Represents the action of a tour that will be used to calculate transits.
 
 ## Properties

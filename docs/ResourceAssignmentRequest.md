@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ResourceAssignmentRequest
+# Simplic.OxS.SDK.Logistics.Model.ResourceAssignmentRequest
 Request model for resource assignments.
 
 ## Properties

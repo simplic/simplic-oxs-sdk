@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CalculateRouteRequest
+# Simplic.OxS.SDK.Logistics.Model.CalculateRouteRequest
 
 ## Properties
 

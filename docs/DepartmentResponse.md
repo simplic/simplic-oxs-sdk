@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.DepartmentResponse
+# Simplic.OxS.SDK.Logistics.Model.DepartmentResponse
 Response model for Simplic.OxS.Logistics.Department.
 
 ## Properties

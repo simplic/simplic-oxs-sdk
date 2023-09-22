@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchDocumentVersionRequest
+# Simplic.OxS.SDK.Document.Model.PatchDocumentVersionRequest
 
 ## Properties
 

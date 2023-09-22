@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.QuantityModel
+# Simplic.OxS.SDK.Logistics.Model.QuantityModel
 Shared model of a quantity.
 
 ## Properties

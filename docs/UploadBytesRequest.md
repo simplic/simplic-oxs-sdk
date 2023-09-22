@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.UploadBytesRequest
+# Simplic.OxS.SDK.CDN.Model.UploadBytesRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Api.LoadingAidTypeSDK
+# Simplic.OxS.SDK.Logistics.Api.LoadingAidTypeSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -19,9 +19,9 @@ Retrieves all loading aid types.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -109,9 +109,9 @@ Retrives the loading aid type with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -204,9 +204,9 @@ Patches the loading aid type.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -302,9 +302,9 @@ Creates a new loading aid type.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {

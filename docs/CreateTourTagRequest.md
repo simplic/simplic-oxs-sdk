@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreateTourTagRequest
+# Simplic.OxS.SDK.Logistics.Model.CreateTourTagRequest
 Request to create a tour tag.
 
 ## Properties

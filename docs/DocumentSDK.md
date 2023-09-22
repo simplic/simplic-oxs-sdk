@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Api.DocumentSDK
+# Simplic.OxS.SDK.Document.Api.DocumentSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
@@ -21,9 +21,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {
@@ -115,9 +115,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {
@@ -209,9 +209,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {
@@ -303,9 +303,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {
@@ -399,9 +399,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {
@@ -496,9 +496,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document.Client;
+using Simplic.OxS.SDK.Document.Model;
 
 namespace Example
 {

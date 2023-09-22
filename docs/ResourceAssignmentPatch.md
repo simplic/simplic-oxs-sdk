@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ResourceAssignmentPatch
+# Simplic.OxS.SDK.Logistics.Model.ResourceAssignmentPatch
 Patch model for resource assignments.
 
 ## Properties

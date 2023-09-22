@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentLoadingAidTypeModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentLoadingAidTypeModel
 Shared model of laoding aid type.
 
 ## Properties

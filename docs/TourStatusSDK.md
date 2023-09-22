@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Api.TourStatusSDK
+# Simplic.OxS.SDK.Logistics.Api.TourStatusSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -19,9 +19,9 @@ Retrieves all tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -109,9 +109,9 @@ Retrives the tour status with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -204,9 +204,9 @@ Updates/saves the given tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {
@@ -302,9 +302,9 @@ Creates a new tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Api;
-using Simplic.OxS.SDK.Client;
-using Simplic.OxS.SDK.Model;
+using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics.Client;
+using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Example
 {

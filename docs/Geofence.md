@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.Geofence
+# Simplic.OxS.SDK.Logistics.Model.Geofence
 
 ## Properties
 

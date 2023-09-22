@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.TourStatusModel
+# Simplic.OxS.SDK.Logistics.Model.TourStatusModel
 Represents the status of a tour.  <br>  The tour status will define what actions the user can and can not do with the tour and in which state the tour  currently is.  
 
 ## Properties

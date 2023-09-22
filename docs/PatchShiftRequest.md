@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchShiftRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchShiftRequest
 Request model for patching Simplic.OxS.Logistics.Shifts.
 
 ## Properties

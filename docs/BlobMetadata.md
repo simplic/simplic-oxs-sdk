@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.BlobMetadata
+# Simplic.OxS.SDK.CDN.Model.BlobMetadata
 
 ## Properties
 

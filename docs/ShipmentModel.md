@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentModel
 Shared model of shipment.
 
 ## Properties

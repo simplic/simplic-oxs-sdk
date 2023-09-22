@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchTourStatusRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchTourStatusRequest
 Represents a request to create a tour status.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.TransitModel
+# Simplic.OxS.SDK.Logistics.Model.TransitModel
 Class to represent a transit.  <br>  A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.GroupedResourcesModel
+# Simplic.OxS.SDK.Logistics.Model.GroupedResourcesModel
 Represents the model of grouped resources.
 
 ## Properties

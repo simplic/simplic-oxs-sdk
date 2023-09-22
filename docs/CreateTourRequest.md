@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreateTourRequest
+# Simplic.OxS.SDK.Logistics.Model.CreateTourRequest
 
 ## Properties
 

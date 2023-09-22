@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.AttachedEntityModel
+# Simplic.OxS.SDK.Logistics.Model.AttachedEntityModel
 Shared model for attached entities.
 
 ## Properties

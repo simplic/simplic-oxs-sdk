@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.UpdateResourceGroupRequest
+# Simplic.OxS.SDK.Logistics.Model.UpdateResourceGroupRequest
 
 ## Properties
 

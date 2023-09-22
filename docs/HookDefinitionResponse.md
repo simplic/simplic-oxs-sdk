@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.HookDefinitionResponse
+# Simplic.OxS.SDK.Logistics.Model.HookDefinitionResponse
 
 ## Properties
 

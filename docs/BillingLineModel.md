@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.BillingLineModel
+# Simplic.OxS.SDK.Logistics.Model.BillingLineModel
 Shared model of billing line.
 
 ## Properties

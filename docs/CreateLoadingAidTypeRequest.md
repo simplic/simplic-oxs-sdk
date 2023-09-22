@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreateLoadingAidTypeRequest
+# Simplic.OxS.SDK.Logistics.Model.CreateLoadingAidTypeRequest
 
 ## Properties
 

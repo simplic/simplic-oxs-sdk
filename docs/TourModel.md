@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.TourModel
+# Simplic.OxS.SDK.Logistics.Model.TourModel
 Shared model of tour.
 
 ## Properties

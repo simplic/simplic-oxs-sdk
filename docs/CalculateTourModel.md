@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CalculateTourModel
+# Simplic.OxS.SDK.Logistics.Model.CalculateTourModel
 Object to calculate a tour.
 
 ## Properties

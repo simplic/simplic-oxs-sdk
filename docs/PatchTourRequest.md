@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchTourRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchTourRequest
 Request model to patch a tour.
 
 ## Properties

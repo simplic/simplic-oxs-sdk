@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.BillingLineTransationItemModel
+# Simplic.OxS.SDK.Logistics.Model.BillingLineTransationItemModel
 Shared model of billing line transaction.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreateShipmentStatusRequest
+# Simplic.OxS.SDK.Logistics.Model.CreateShipmentStatusRequest
 Represents a request to create a shipment status.
 
 ## Properties

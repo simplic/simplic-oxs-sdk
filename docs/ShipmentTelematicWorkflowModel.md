@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentTelematicWorkflowModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentTelematicWorkflowModel
 Shared model of shipment telematic workflow.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.GeoLocation
+# Simplic.OxS.SDK.Logistics.Model.GeoLocation
 
 ## Properties
 

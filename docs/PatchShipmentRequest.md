@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PatchShipmentRequest
+# Simplic.OxS.SDK.Logistics.Model.PatchShipmentRequest
 
 ## Properties
 

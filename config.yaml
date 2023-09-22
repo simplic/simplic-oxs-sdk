@@ -1,122 +1,127 @@
-allowUnicodeIdentifiers: false
-# boolean, toggles whether unicode identifiers are allowed in names or not, default is false (Default: false)
+apiNameSuffix: "SDK"
+apiPackage: "Api"
+modelPackage: "Model"
 
-apiName: "SDK"
-# Must be a valid C# class name. Only used in Generic Host library (Default: Api)
+additionalProperties:
+  allowUnicodeIdentifiers: false
+  # boolean, toggles whether unicode identifiers are allowed in names or not, default is false (Default: false)
 
-caseInsensitiveResponseHeaders: false
-# Make API response's headers case-insensitive (Default: false)
+  apiName: "SDK"
+  # Must be a valid C# class name. Only used in Generic Host library (Default: Api)
 
-conditionalSerialization: false
-# Serialize only those properties which are initialized by user, accepted values are true or false, default value is false. (Default: false)
+  caseInsensitiveResponseHeaders: false
+  # Make API response's headers case-insensitive (Default: false)
 
-dateFormat: "yyy'-'MM'-'dd"
-# The default Date format (only `generichost` library supports this option). (Default: yyyy'-'MM'-'dd)
+  conditionalSerialization: false
+  # Serialize only those properties which are initialized by user, accepted values are true or false, default value is false. (Default: false)
 
-dateTimeFormat: "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK"
-# The default DateTime format (only `generichost` library supports this option). (Default: yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK)
+  dateFormat: "yyy'-'MM'-'dd"
+  # The default Date format (only `generichost` library supports this option). (Default: yyyy'-'MM'-'dd)
 
-disallowAdditionalPropertiesIfNotPresent: true
-# If false, the 'additionalProperties' implementation (set to true by default) is compliant with the OAS and JSON schema specifications.
-# If true (default), keep the old (incorrect) behaviour that 'additionalProperties' is set to false by default. (Default: true)
-#   false - The 'additionalProperties' implementation is compliant with the OAS and JSON schema specifications.
-#   true - Keep the old (incorrect) behaviour that 'additionalProperties' is set to false by default.
+  dateTimeFormat: "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK"
+  # The default DateTime format (only `generichost` library supports this option). (Default: yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK)
 
-equatable: true
-# Overrides Equals and GetHashCode methods. (Default: true)
+  disallowAdditionalPropertiesIfNotPresent: true
+  # If false, the 'additionalProperties' implementation (set to true by default) is compliant with the OAS and JSON schema specifications.
+  # If true (default), keep the old (incorrect) behaviour that 'additionalProperties' is set to false by default. (Default: true)
+  #   false - The 'additionalProperties' implementation is compliant with the OAS and JSON schema specifications.
+  #   true - Keep the old (incorrect) behaviour that 'additionalProperties' is set to false by default.
 
-hideGenerationTimestamp: true
-# Hides the generation timestamp when files are generated. (Default: true)
+  equatable: true
+  # Overrides Equals and GetHashCode methods. (Default: true)
 
-interfacePrefix: "I"
-# Prefix interfaces with a community standard or widely accepted prefix. (Default: I)
+  hideGenerationTimestamp: true
+  # Hides the generation timestamp when files are generated. (Default: true)
 
-library: "restsharp"
-# HTTP library template (sub-template) to use (Default: restsharp)
-#   generichost - HttpClient with Generic Host dependency injection (https://docs.microsoft.com/en-us/dotnet/core/extensions/generic-host) (Experimental. Subject to breaking changes without notice.)
-#   httpclient - HttpClient (https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient) (Experimental. Subject to breaking changes without notice.)
-#   unityWebRequest - UnityWebRequest (...) (Experimental. Subject to breaking changes without notice.)
-#   restsharp - RestSharp (https://github.com/restsharp/RestSharp)
+  interfacePrefix: "I"
+  # Prefix interfaces with a community standard or widely accepted prefix. (Default: I)
 
-#licenseId
-# The identifier of the license
+  library: "restsharp"
+  # HTTP library template (sub-template) to use (Default: restsharp)
+  #   generichost - HttpClient with Generic Host dependency injection (https://docs.microsoft.com/en-us/dotnet/core/extensions/generic-host) (Experimental. Subject to breaking changes without notice.)
+  #   httpclient - HttpClient (https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient) (Experimental. Subject to breaking changes without notice.)
+  #   unityWebRequest - UnityWebRequest (...) (Experimental. Subject to breaking changes without notice.)
+  #   restsharp - RestSharp (https://github.com/restsharp/RestSharp)
 
-modelPropertyNaming: PascalCase
-# Naming convention for the property: 'camelCase', 'PascalCase', 'snake_case' and 'original', which keeps the original name (Default: PascalCase)
+  #licenseId
+  # The identifier of the license
 
-netCoreProjectFile: false
-# Use the new format (.NET Core) for .NET project files (.csproj). (Default: false)
+  modelPropertyNaming: PascalCase
+  # Naming convention for the property: 'camelCase', 'PascalCase', 'snake_case' and 'original', which keeps the original name (Default: PascalCase)
 
-nonPublicApi: false
-# Generates code with reduced access modifiers; allows embedding elsewhere without exposing non-public API calls to consumers. (Default: false)
+  netCoreProjectFile: false
+  # Use the new format (.NET Core) for .NET project files (.csproj). (Default: false)
 
-nullableReferenceTypes: true
-# Use nullable annotations in the project.
-# Only supported on C# 8 / ASP.NET Core 3.1 or newer. Starting in .NET 6.0 the default is true. (Default: false)
+  nonPublicApi: false
+  # Generates code with reduced access modifiers; allows embedding elsewhere without exposing non-public API calls to consumers. (Default: false)
 
-optionalAssemblyInfo: true
-# Generate AssemblyInfo.cs. (Default: true)
+  nullableReferenceTypes: true
+  # Use nullable annotations in the project.
+  # Only supported on C# 8 / ASP.NET Core 3.1 or newer. Starting in .NET 6.0 the default is true. (Default: false)
 
-optionalEmitDefaultValues: false
-# Set DataMember's EmitDefaultValue. (Default: false)
+  optionalAssemblyInfo: true
+  # Generate AssemblyInfo.cs. (Default: true)
 
-optionalMethodArgument: true
-# C# Optional method argument, e.g. void square(int x=10) (.net 4.0+ only). (Default: true)
+  optionalEmitDefaultValues: false
+  # Set DataMember's EmitDefaultValue. (Default: false)
 
-optionalProjectFile: true
-# Generate {PackageName}.csproj. (Default: true)
+  optionalMethodArgument: true
+  # C# Optional method argument, e.g. void square(int x=10) (.net 4.0+ only). (Default: true)
 
-#packageGuid
-# The GUID that will be associated with the C# project
+  optionalProjectFile: true
+  # Generate {PackageName}.csproj. (Default: true)
 
-packageName: "Simplic.OxS.SDK"
-# C# package name (convention: Title.Case). (Default: Org.OpenAPITools)
+  #packageGuid
+  # The GUID that will be associated with the C# project
 
-packageTags: "Simplic,SDK"
-# Tags to identify the package
+  # packageName: "Simplic.OxS.SDK"
+  # C# package name (convention: Title.Case). (Default: Org.OpenAPITools)
 
-packageVersion: "1.0.0"
-# C# package version. (Default: 1.0.0)
+  packageTags: "Simplic,SDK"
+  # Tags to identify the package
 
-releaseNote: "Minor update"
-# Release note, default to 'Minor update'. (Default: Minor update)
+  packageVersion: "1.0.0"
+  # C# package version. (Default: 1.0.0)
 
-returnICollection: false
-# Return ICollection<T> instead of the concrete type. (Default: false)
+  releaseNote: "Minor update"
+  # Release note, default to 'Minor update'. (Default: Minor update)
 
-sourceFolder: "src"
-# source folder for generated code (Default: src)
+  returnICollection: false
+  # Return ICollection<T> instead of the concrete type. (Default: false)
 
-targetFramework: "net7.0"
-# The target .NET framework version.
-# To target multiple frameworks, use `;` as the separator, e.g. `netstandard2.1;netcoreapp3.1` (Default: net7.0)
-#   netstandard1.3 - .NET Standard 1.3
-#   netstandard1.4 - .NET Standard 1.4
-#   netstandard1.5 - .NET Standard 1.5
-#   netstandard1.6 - .NET Standard 1.6
-#   netstandard2.0 - .NET Standard 2.0
-#   netstandard2.1 - .NET Standard 2.1
-#   net47 - .NET Framework 4.7
-#   net48 - .NET Framework 4.8
-#   net6.0 - .NET 6.0 (End of Support 12 November 2024)
-#   net7.0 - .NET 7.0
+  sourceFolder: "src"
+  # source folder for generated code (Default: src)
 
-useCollection: false
-# Deserialize array types to Collection<T> instead of List<T>. (Default: false)
+  targetFramework: "net7.0"
+  # The target .NET framework version.
+  # To target multiple frameworks, use `;` as the separator, e.g. `netstandard2.1;netcoreapp3.1` (Default: net7.0)
+  #   netstandard1.3 - .NET Standard 1.3
+  #   netstandard1.4 - .NET Standard 1.4
+  #   netstandard1.5 - .NET Standard 1.5
+  #   netstandard1.6 - .NET Standard 1.6
+  #   netstandard2.0 - .NET Standard 2.0
+  #   netstandard2.1 - .NET Standard 2.1
+  #   net47 - .NET Framework 4.7
+  #   net48 - .NET Framework 4.8
+  #   net6.0 - .NET 6.0 (End of Support 12 November 2024)
+  #   net7.0 - .NET 7.0
 
-useDateTimeOffset: false
-# Use DateTimeOffset to model date-time properties (Default: false)
+  useCollection: false
+  # Deserialize array types to Collection<T> instead of List<T>. (Default: false)
 
-#useOneOfDiscriminatorLookup
-# Use the discriminator's mapping in oneOf to speed up the model lookup.
-# IMPORTANT: Validation (e.g. one and only one match in oneOf's schemas) will be skipped. (Default: false)
+  useDateTimeOffset: false
+  # Use DateTimeOffset to model date-time properties (Default: false)
 
-useSourceGeneration: false
-# Use source generation where available (only `generichost` library supports this option). (Default: false)
+  useOneOfDiscriminatorLookup: false
+  # Use the discriminator's mapping in oneOf to speed up the model lookup.
+  # IMPORTANT: Validation (e.g. one and only one match in oneOf's schemas) will be skipped. (Default: false)
 
-validatable: true
-# Generates self-validatable models. (Default: true)
+  useSourceGeneration: false
+  # Use source generation where available (only `generichost` library supports this option). (Default: false)
 
-zeroBasedEnums: true
-# Enumerations with string values will start from 0 when true, 1 when false.
-# If not set, enumerations with string values will start from 0 if the first value is 'unknown', case insensitive.
+  validatable: true
+  # Generates self-validatable models. (Default: true)
+
+  zeroBasedEnums: true
+  # Enumerations with string values will start from 0 when true, 1 when false.
+  # If not set, enumerations with string values will start from 0 if the first value is 'unknown', case insensitive.

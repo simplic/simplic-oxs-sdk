@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.ShipmentItemStatusModel
+# Simplic.OxS.SDK.Logistics.Model.ShipmentItemStatusModel
 Shared model of shipment item status.
 
 ## Properties

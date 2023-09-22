@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.PlanningResourceResponse
+# Simplic.OxS.SDK.Logistics.Model.PlanningResourceResponse
 Response model for Simplic.OxS.Logistics.PlanningResource
 
 ## Properties

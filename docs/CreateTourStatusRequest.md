@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreateTourStatusRequest
+# Simplic.OxS.SDK.Logistics.Model.CreateTourStatusRequest
 Represents a request to create a shipment status.
 
 ## Properties

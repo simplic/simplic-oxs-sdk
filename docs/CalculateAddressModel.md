@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CalculateAddressModel
+# Simplic.OxS.SDK.Logistics.Model.CalculateAddressModel
 Represents an address to calculate tours.
 
 ## Properties

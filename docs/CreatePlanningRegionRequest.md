@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Model.CreatePlanningRegionRequest
+# Simplic.OxS.SDK.Logistics.Model.CreatePlanningRegionRequest
 Request to create a planning region.
 
 ## Properties
