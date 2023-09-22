@@ -1,0 +1,6 @@
+# specify the name of the service/api you want to generate an sdk for here
+# name as in `dev-oxs.simplic.io/<name>-api/...`
+
+cdn
+document
+logistics
