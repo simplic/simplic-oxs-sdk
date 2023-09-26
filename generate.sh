@@ -18,14 +18,14 @@ POST_URL="-api/v1/swagger/v1/swagger.json"
 
 generate ()
 {
-    specification="$1"
+    local specification="$1"
 
     # get the project name
-    proj_name=$(curl -s $specification | jq -r '.info.title')
+    local proj_name=$(curl -s $specification | jq -r '.info.title')
     
     # only need the last part for sdk proj name
-    last_part=$(echo "$proj_name" | sed 's/.*\.//')
-    sdk_proj_name="$PKG_BASE.$last_part"
+    local last_part=$(echo "$proj_name" | sed 's/.*\.//')
+    local sdk_proj_name="$PKG_BASE.$last_part"
 
     openapi-generator-cli version-manager set 7.0.1
     openapi-generator-cli generate \
@@ -38,7 +38,7 @@ generate ()
 }
 
 is_cs_file () {
-    file="$1"
+    local file="$1"
     
     # Check if the file ends with ".cs"
     if [ "${file##*.}" = "cs" ]; then
@@ -51,10 +51,10 @@ is_cs_file () {
 # Recursively replace a term
 rec_replace ()
 {
-    path="$1"
-    old_term="$2"
-    new_term="$3"
-    file_extension="$4"
+    local path="$1"
+    local old_term="$2"
+    local new_term="$3"
+    local file_extension="$4"
 
     if [ ! -d "$path" ]; then
         # not a pathectory -> just replace for this file
@@ -72,7 +72,6 @@ rec_replace ()
                 continue
             fi
 
-            echo -e $YELLOW "<rec_replace> '$entry'$NC"
             sed -i "s/$old_term/$new_term/g" "$entry"
         done
     fi
@@ -80,9 +79,8 @@ rec_replace ()
 
 move_boiler_plate ()
 {
-    path="$1"
-
-    proj_name=$(basename "$path")
+    local path="$1"
+    local proj_name=$(basename "$path")
 
     if [ "$proj_name" != "$PKG_BASE" ]; then
         if [ -d "$path/Client" ]; then
@@ -96,32 +94,25 @@ move_boiler_plate ()
     fi
 }
 
-fix_namespaces ()
+fix_namespaces()
 {
-    path="$1"
-    old_ns="$2"
-    new_ns="$3"
-
-    echo ">><fix_namespaces>: path '$path'<<"
-    echo ">><fix_namespaces>: old '$old_ns'<<"
-    echo ">><fix_namespaces>: new '$new_ns'<<"
-    
+    local path="$1"
+    local old_ns="$2"
+    local new_ns="$3"
 
     for entry in "$path"/*; do
         if [ -d "$entry" ]; then
             # recurse into path
-            echo ">><fix_namespaces>: is a dir! '$entry'<<"
             fix_namespaces "$entry" "$old_ns" "$new_ns"
             continue
         fi
 
         file_name=$(basename "$entry")
         if ! is_cs_file "$file_name"; then
-            echo -e "$LGREEN*NOT A CS FILE '$file_name'*$NC"
             continue
         fi
 
-        echo ">><fix_namespaces>: sed -i \"s/$old_ns/$new_ns/g\" \"$entry\"<<"
+        # echo ">><fix_namespaces>: sed -i \"s/$old_ns/$new_ns/g\" \"$entry\"<<"
         sed -i "s/$old_ns/$new_ns/g" "$entry"
     done
 }
@@ -164,7 +155,7 @@ echo -e "<<$YELLOW MOVING CONTENTS..DONE $NC>>"
 echo -e "<<$YELLOW APPLYING POST MODIFICATIONS.. $NC>>"
 for entry in "$SRC_DIR"/*; do
     echo -e ">>>$YELLOW$entry$NC"
-    proj_name=$(basename "$entry")
+    local proj_name=$(basename "$entry")
     
     if [ ! -f "$entry/$proj_name.csproj" ]; then
         # ignore non-projects
