@@ -16,13 +16,12 @@ SVC_FILE="services"
 BASE_URL="https://dev-oxs.simplic.io/"
 POST_URL="-api/v1/swagger/v1/swagger.json"
 
-generate ()
-{
+generate() {
     local specification="$1"
 
     # get the project name
     local proj_name=$(curl -s $specification | jq -r '.info.title')
-    
+
     # only need the last part for sdk proj name
     local last_part=$(echo "$proj_name" | sed 's/.*\.//')
     local sdk_proj_name="$PKG_BASE.$last_part"
@@ -37,20 +36,19 @@ generate ()
         -i "$specification"
 }
 
-is_cs_file () {
+is_cs_file() {
     local file="$1"
-    
+
     # Check if the file ends with ".cs"
     if [ "${file##*.}" = "cs" ]; then
-        return 0  # true (yes 0 is true here due to error code 0 = success)
+        return 0 # true (yes 0 is true here due to error code 0 = success)
     else
-        return 1  # false
+        return 1 # false
     fi
 }
 
 # Recursively replace a term
-rec_replace ()
-{
+rec_replace() {
     local path="$1"
     local old_term="$2"
     local new_term="$3"
@@ -77,8 +75,7 @@ rec_replace ()
     fi
 }
 
-move_boiler_plate ()
-{
+move_boiler_plate() {
     local path="$1"
     local proj_name=$(basename "$path")
 
@@ -94,8 +91,7 @@ move_boiler_plate ()
     fi
 }
 
-fix_namespaces()
-{
+fix_namespaces() {
     local path="$1"
     local old_ns="$2"
     local new_ns="$3"
@@ -117,8 +113,7 @@ fix_namespaces()
     done
 }
 
-main()
-{
+main() {
     # maybe switch to an approach where we check whats generated first and specificly remove that
     rm -rf "$SRC_DIR"
     rm -rf "$DOC_DIR"
@@ -143,9 +138,9 @@ main()
         fi
 
         echo -e ">>$ORANGE GENERATING SDK FOR $line.. $NC<<"
-        generate "$BASE_URL$line$POST_URL"     
+        generate "$BASE_URL$line$POST_URL"
         echo -e ">>$LGREEN GENERATING SDK FOR $line..DONE $NC<<"
-    done < "$SVC_FILE"
+    done <"$SVC_FILE"
     echo -e "<<$GREEN GENERATING SDKS..DONE $NC>>"
 
     echo -e "<<$YELLOW MOVING CONTENTS.. $NC>>"
@@ -158,7 +153,7 @@ main()
     for entry in "$SRC_DIR"/*; do
         echo -e ">>>$YELLOW$entry$NC"
         local proj_name=$(basename "$entry")
-        
+
         if [ ! -f "$entry/$proj_name.csproj" ]; then
             # ignore non-projects
             continue
@@ -172,7 +167,7 @@ main()
 
         # add generated project to solution
         dotnet sln "$SRC_DIR/$PKG_BASE.sln" add "$entry/$proj_name.csproj"
-        
+
         # move shared boiler plate to base project
         move_boiler_plate "$entry"
 
@@ -184,4 +179,3 @@ main()
 }
 
 main
-
