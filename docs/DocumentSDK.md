@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Document.Api.DocumentSDK
+# Simplic.OxS.SDK.Document...DocumentSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
@@ -21,7 +21,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 
@@ -115,7 +115,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 
@@ -209,7 +209,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 
@@ -303,7 +303,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 
@@ -399,7 +399,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 
@@ -496,7 +496,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Document.Api;
+using Simplic.OxS.SDK.Document..;
 using Simplic.OxS.SDK.Document.Client;
 using Simplic.OxS.SDK.Document.Model;
 

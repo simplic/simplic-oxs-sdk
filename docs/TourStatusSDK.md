@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Api.TourStatusSDK
+# Simplic.OxS.SDK.Logistics...TourStatusSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -19,7 +19,7 @@ Retrieves all tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -109,7 +109,7 @@ Retrives the tour status with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -204,7 +204,7 @@ Updates/saves the given tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -302,7 +302,7 @@ Creates a new tour status.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 

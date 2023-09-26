@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Api.TourSDK
+# Simplic.OxS.SDK.Logistics...TourSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -29,7 +29,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -119,7 +119,7 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -213,7 +213,7 @@ Get all used loading slots for a specific resource
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -312,7 +312,7 @@ Retrieves all tours between two dates.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -410,7 +410,7 @@ Retrieves all tours with the given global tour id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -505,7 +505,7 @@ Retrieves all tours that contains actions with the given shipment id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -600,7 +600,7 @@ Deletes the given tour.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -696,7 +696,7 @@ Retrieves the tour with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -792,7 +792,7 @@ Patches a tour object.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -890,7 +890,7 @@ Updates/saves the given tour.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -987,7 +987,7 @@ Creates a new tour object.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -1083,7 +1083,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -1173,7 +1173,7 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -1267,7 +1267,7 @@ Sets the actual times of a tour. Also gives the option to change the tour status
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 

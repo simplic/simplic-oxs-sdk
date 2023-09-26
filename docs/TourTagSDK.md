@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Api.TourTagSDK
+# Simplic.OxS.SDK.Logistics...TourTagSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -20,7 +20,7 @@ Retrives all tour tags.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -110,7 +110,7 @@ This endpoint does not need any parameter.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -204,7 +204,7 @@ Retrives the tour tag with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -299,7 +299,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -395,7 +395,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 

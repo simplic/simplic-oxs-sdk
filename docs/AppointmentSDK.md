@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Api.AppointmentSDK
+# Simplic.OxS.SDK.Logistics...AppointmentSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -19,7 +19,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -109,7 +109,7 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -203,7 +203,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 
@@ -299,7 +299,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics.Api;
+using Simplic.OxS.SDK.Logistics..;
 using Simplic.OxS.SDK.Logistics.Client;
 using Simplic.OxS.SDK.Logistics.Model;
 

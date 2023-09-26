@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.CDN.Api.CDNSDK
+# Simplic.OxS.SDK.CDN...CDNSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/cdn-api/v1*
 
@@ -20,7 +20,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/cdn-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.CDN.Api;
+using Simplic.OxS.SDK.CDN..;
 using Simplic.OxS.SDK.CDN.Client;
 using Simplic.OxS.SDK.CDN.Model;
 
@@ -114,7 +114,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.CDN.Api;
+using Simplic.OxS.SDK.CDN..;
 using Simplic.OxS.SDK.CDN.Client;
 using Simplic.OxS.SDK.CDN.Model;
 
@@ -208,7 +208,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.CDN.Api;
+using Simplic.OxS.SDK.CDN..;
 using Simplic.OxS.SDK.CDN.Client;
 using Simplic.OxS.SDK.CDN.Model;
 
@@ -302,7 +302,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.CDN.Api;
+using Simplic.OxS.SDK.CDN..;
 using Simplic.OxS.SDK.CDN.Client;
 using Simplic.OxS.SDK.CDN.Model;
 
@@ -397,7 +397,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.CDN.Api;
+using Simplic.OxS.SDK.CDN..;
 using Simplic.OxS.SDK.CDN.Client;
 using Simplic.OxS.SDK.CDN.Model;
 

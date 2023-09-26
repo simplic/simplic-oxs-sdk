@@ -1,5 +1,4 @@
 apiNameSuffix: "SDK"
-apiPackage: "Api"
 modelPackage: "Model"
 
 additionalProperties:
