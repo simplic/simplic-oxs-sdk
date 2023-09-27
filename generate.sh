@@ -58,7 +58,8 @@ rec_replace() {
         # not a pathectory -> just replace for this file
         sed -i "s/$old_term/$new_term/g" "$path"
     else
-        for entry in "$path"/*; do
+        for __i in "$path"/*; do\
+            local entry=$__i
             if [ -d "$entry" ]; then
                 # recurse
                 rec_replace "$entry" "$old_term" "$new_term" "$file_extension"
@@ -96,7 +97,8 @@ fix_namespaces() {
     local old_ns="$2"
     local new_ns="$3"
 
-    for entry in "$path"/*; do
+    for __i in "$path"/*; do
+        local entry=$__i
         if [ -d "$entry" ]; then
             # recurse into path
             fix_namespaces "$entry" "$old_ns" "$new_ns"
@@ -145,22 +147,27 @@ main() {
 
     echo -e "<<$YELLOW MOVING CONTENTS.. $NC>>"
     mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
-    mv -f "$GEN_OUT/src"/* "$SRC_DIR"
+    # mv -f "$GEN_OUT/src"/* "$SRC_DIR"
+    find "$GEN_OUT/src"/* -type d ! -name "*.Test" -exec mv -t "$SRC_DIR" {} +
+
     rm -rf "$GEN_OUT"
     echo -e "<<$YELLOW MOVING CONTENTS..DONE $NC>>"
 
     echo -e "<<$YELLOW APPLYING POST MODIFICATIONS.. $NC>>"
-    for entry in "$SRC_DIR"/*; do
+    for __i in "$SRC_DIR"/*; do
+        local entry=$__i
         echo -e ">>>$YELLOW$entry$NC"
         local proj_name=$(basename "$entry")
 
         if [ ! -f "$entry/$proj_name.csproj" ]; then
             # ignore non-projects
+            echo -e ">>>IGNORING $YELLOW$entry$NC >> NO PROJECT"
             continue
         fi
 
         if [ "$proj_name" = "$PKG_BASE" ]; then
             # fix namespaces in base project
+            echo -e ">>>BASE PROJ DETECTED $YELLOW$entry$NC"
             rec_replace "$entry/Client" "^namespace $PKG_BASE.*" "namespace $PKG_BASE" "cs"
             continue
         fi
@@ -174,6 +181,7 @@ main() {
         # fix namespaces due to api-package trick
         echo "___fixing namespaces using args___: '$entry' '$proj_name\.\.' '$proj_name' 'cs'"
         rec_replace "$entry" "$proj_name\.\." "$proj_name" "cs"
+        echo -e ">>>$YELLOW$entry$NC CHECK OUT"
     done
     echo -e "<<$YELLOW APPLYING POST MODIFICATIONS..DONE $NC>>"
 }
