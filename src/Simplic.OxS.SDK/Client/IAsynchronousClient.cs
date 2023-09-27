@@ -11,7 +11,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Contract for Asynchronous RESTful API interactions.

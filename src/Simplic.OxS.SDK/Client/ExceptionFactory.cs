@@ -10,7 +10,7 @@
 
 using System;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

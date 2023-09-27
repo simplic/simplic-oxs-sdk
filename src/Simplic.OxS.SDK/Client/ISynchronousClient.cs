@@ -11,7 +11,7 @@
 using System;
 using System.IO;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Contract for Synchronous RESTful API interactions.

@@ -14,7 +14,7 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Represents a readable-only configuration contract.

@@ -9,7 +9,7 @@ PKG_BASE="Simplic.OxS.SDK"
 SRC_DIR="./src"
 DOC_DIR="./docs"
 
-GEN_OUT="openapi-out"
+GEN_OUT="./openapi-out"
 GEN_CFG="./config.yaml"
 
 SVC_FILE="services"
@@ -20,31 +20,19 @@ generate() {
     local specification="$1"
 
     # get the project name
-    local proj_name=$(curl -s $specification | jq -r '.info.title')
+    local proj_name=$(curl -s ${specification} | jq -r '.info.title')
 
     # only need the last part for sdk proj name
-    local last_part=$(echo "$proj_name" | sed 's/.*\.//')
-    local sdk_proj_name="$PKG_BASE.$last_part"
+    local last_part=$(echo "${proj_name}" | sed 's/.*\.//')
+    local sdk_proj_name="${PKG_BASE}.${last_part}"
 
-    openapi-generator-cli version-manager set 7.0.1
     openapi-generator-cli generate \
         -g csharp \
-        -c "$GEN_CFG" \
-        -o "$GEN_OUT" \
-        --package-name "$sdk_proj_name" \
+        -c "${GEN_CFG}" \
+        -o "${GEN_OUT}" \
+        --package-name "${sdk_proj_name}" \
         --api-package "." \
-        -i "$specification"
-}
-
-is_cs_file() {
-    local file="$1"
-
-    # Check if the file ends with ".cs"
-    if [ "${file##*.}" = "cs" ]; then
-        return 0 # true (yes 0 is true here due to error code 0 = success)
-    else
-        return 1 # false
-    fi
+        -i "${specification}"
 }
 
 # Recursively replace a term
@@ -54,136 +42,118 @@ rec_replace() {
     local new_term="$3"
     local file_extension="$4"
 
-    if [ ! -d "$path" ]; then
+    if [[ ! -d "${path}" ]]; then
         # not a pathectory -> just replace for this file
-        sed -i "s/$old_term/$new_term/g" "$path"
+        sed -i "s#${old_term}#${new_term}#g" "${path}"
     else
-        for __i in "$path"/*; do\
+        for __i in "$path"/*; do
             local entry=$__i
-            if [ -d "$entry" ]; then
+            if [[ -d "${entry}" ]]; then
                 # recurse
-                rec_replace "$entry" "$old_term" "$new_term" "$file_extension"
+                rec_replace "${entry}" "${old_term}" "${new_term}" "${file_extension}"
                 continue
             fi
 
-            if [ ! -z "$file_extension" ] && [ "${entry##*.}" != "$file_extension" ]; then
+            if [[ ! -z "${file_extension}" ]] && [[ "${entry##*.}" != "${file_extension}" ]]; then
                 # only replace for file having given extension
                 continue
             fi
 
-            sed -i "s/$old_term/$new_term/g" "$entry"
+            sed -i "s#${old_term}#${new_term}#g" "${entry}"
         done
     fi
 }
 
+# Move all common boiler plate to base project
 move_boiler_plate() {
     local path="$1"
-    local proj_name=$(basename "$path")
+    local proj_name=$(basename "${path}")
 
-    if [ "$proj_name" != "$PKG_BASE" ]; then
-        if [ -d "$path/Client" ]; then
-            mkdir -p "$SRC_DIR/$PKG_BASE/Client"
-            mv -f "$path/Client"/* "$SRC_DIR/$PKG_BASE/Client/"
-            rm -rf "$path/Client"
+    if [[ "${proj_name}" != "${PKG_BASE}" ]]; then
+        if [ -d "${path}/Client" ]; then
+            mkdir -p "${SRC_DIR}/${PKG_BASE}/Client"
+            mv -f "${path}/Client"/* "${SRC_DIR}/${PKG_BASE}/Client/"
+            rm -rf "${path}/Client"
         fi
 
         # update namespace refs
-        rec_replace "$path" "$proj_name.Client" "$PKG_BASE.Client" "cs"
+        rec_replace "${path}" "${proj_name}.Client" "${PKG_BASE}.Client" "cs"
     fi
 }
 
-fix_namespaces() {
-    local path="$1"
-    local old_ns="$2"
-    local new_ns="$3"
-
-    for __i in "$path"/*; do
-        local entry=$__i
-        if [ -d "$entry" ]; then
-            # recurse into path
-            fix_namespaces "$entry" "$old_ns" "$new_ns"
-            continue
-        fi
-
-        file_name=$(basename "$entry")
-        if ! is_cs_file "$file_name"; then
-            continue
-        fi
-
-        # echo ">><fix_namespaces>: sed -i \"s/$old_ns/$new_ns/g\" \"$entry\"<<"
-        sed -i "s/$old_ns/$new_ns/g" "$entry"
-    done
-}
-
 main() {
+    openapi-generator-cli version-manager set 7.0.1
+
     # maybe switch to an approach where we check whats generated first and specificly remove that
-    rm -rf "$SRC_DIR"
-    rm -rf "$DOC_DIR"
+    rm -rf "${SRC_DIR}"
+    rm -rf "${DOC_DIR}"
 
-    mkdir -p "$SRC_DIR"
-    mkdir -p "$DOC_DIR"
+    mkdir -p "${SRC_DIR}"
+    mkdir -p "${DOC_DIR}"
 
-    echo -e "<<$YELLOW GENERATING SDKS.. $NC>>"
+    
+    echo -e "<<${YELLOW}GENERATING SDKS..${NC}>>"
+    
     # generate the solution along with base project
-    pushd "$SRC_DIR"
-    dotnet new sln -n "$PKG_BASE"
-    dotnet new classlib -n "$PKG_BASE"
-    dotnet sln "$PKG_BASE.sln" add "$PKG_BASE/$PKG_BASE.csproj"
-    rm -rf "$PKG_BASE/Class1.cs"
+    pushd "${SRC_DIR}"
+    dotnet new sln -n "${PKG_BASE}"
+    dotnet new classlib -n "${PKG_BASE}"
+    dotnet sln "${PKG_BASE}.sln" add "${PKG_BASE}/${PKG_BASE}.csproj"
+    rm -rf "${PKG_BASE}/Class1.cs"
     popd
 
     # iterate through services
     while IFS= read -r line; do
         # ignore empty lines and comments
-        if [[ -z "$line" || "$line" == "#"* ]]; then
+        if [[ -z "${line}" || "${line}" == "#"* ]]; then
             continue
         fi
 
-        echo -e ">>$ORANGE GENERATING SDK FOR $line.. $NC<<"
-        generate "$BASE_URL$line$POST_URL"
-        echo -e ">>$LGREEN GENERATING SDK FOR $line..DONE $NC<<"
-    done <"$SVC_FILE"
-    echo -e "<<$GREEN GENERATING SDKS..DONE $NC>>"
+        echo -e ">>${ORANGE}GENERATING SDK FOR ${line}..${NC}<<"
+        generate "${BASE_URL}${line}${POST_URL}"
+        echo -e ">>${LGREEN}GENERATING SDK FOR ${line}..DONE${NC}<<"
+    done < "${SVC_FILE}"
 
-    echo -e "<<$YELLOW MOVING CONTENTS.. $NC>>"
-    mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
-    # mv -f "$GEN_OUT/src"/* "$SRC_DIR"
-    find "$GEN_OUT/src"/* -type d ! -name "*.Test" -exec mv -t "$SRC_DIR" {} +
+    echo -e "<<${GREEN}GENERATING SDKS..DONE${NC}>>"
 
-    rm -rf "$GEN_OUT"
-    echo -e "<<$YELLOW MOVING CONTENTS..DONE $NC>>"
 
-    echo -e "<<$YELLOW APPLYING POST MODIFICATIONS.. $NC>>"
-    for __i in "$SRC_DIR"/*; do
+    echo -e "<<${YELLOW}MOVING CONTENTS..${NC}>>"
+    rm -rf "${GEN_OUT}/src"/*.Test
+    mv -f "${GEN_OUT}/docs"/* "${DOC_DIR}"
+    mv -f "${GEN_OUT}/src"/* "${SRC_DIR}"
+    rm -rf "${GEN_OUT}"
+    echo -e "<<${YELLOW}MOVING CONTENTS..DONE${NC}>>"
+
+    echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..${NC}>>"
+    for __i in "${SRC_DIR}"/*; do
         local entry=$__i
-        echo -e ">>>$YELLOW$entry$NC"
-        local proj_name=$(basename "$entry")
+        echo -e ">>>${YELLOW}${entry}${NC}"
+        local proj_name=$(basename "${entry}")
 
-        if [ ! -f "$entry/$proj_name.csproj" ]; then
+        if [[ ! -f "${entry}/${proj_name}.csproj" ]]; then
             # ignore non-projects
-            echo -e ">>>IGNORING $YELLOW$entry$NC >> NO PROJECT"
             continue
         fi
 
-        if [ "$proj_name" = "$PKG_BASE" ]; then
-            # fix namespaces in base project
-            echo -e ">>>BASE PROJ DETECTED $YELLOW$entry$NC"
-            rec_replace "$entry/Client" "^namespace $PKG_BASE.*" "namespace $PKG_BASE" "cs"
+        if [[ "${proj_name}" == "${PKG_BASE}" ]]; then
+            # base proj is to be handled afterwards
             continue
         fi
 
         # add generated project to solution
-        dotnet sln "$SRC_DIR/$PKG_BASE.sln" add "$entry/$proj_name.csproj"
+        dotnet sln "${SRC_DIR}/${PKG_BASE}.sln" add "${entry}/${proj_name}.csproj"
 
         # move shared boiler plate to base project
-        move_boiler_plate "$entry"
+        move_boiler_plate "${entry}"
 
         # fix namespaces due to api-package trick
-        echo "___fixing namespaces using args___: '$entry' '$proj_name\.\.' '$proj_name' 'cs'"
-        rec_replace "$entry" "$proj_name\.\." "$proj_name" "cs"
-        echo -e ">>>$YELLOW$entry$NC CHECK OUT"
+        rec_replace "${entry}" "${proj_name}\.\." "${proj_name}" "cs"
     done
-    echo -e "<<$YELLOW APPLYING POST MODIFICATIONS..DONE $NC>>"
+
+    # fix namespaces in base project
+    rec_replace "${SRC_DIR}/${PKG_BASE}/Client" "namespace .*" "namespace ${PKG_BASE}" "cs"
+
+    echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..DONE${NC}>>"
 }
 
 main

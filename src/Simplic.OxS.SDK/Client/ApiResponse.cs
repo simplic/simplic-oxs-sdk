@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Provides a non-generic contract for the ApiResponse wrapper.

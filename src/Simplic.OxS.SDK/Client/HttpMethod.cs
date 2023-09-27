@@ -8,7 +8,7 @@
  */
 
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Http methods supported by swagger

@@ -30,7 +30,7 @@ using RestSharp.Serializers;
 using RestSharpMethod = RestSharp.Method;
 using Polly;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.

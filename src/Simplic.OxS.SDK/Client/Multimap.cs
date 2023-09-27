@@ -12,7 +12,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// A dictionary in which one key has many associated values.

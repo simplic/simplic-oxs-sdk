@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// A container for generalized request inputs. This type allows consumers to extend the request functionality

@@ -20,7 +20,7 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Security;
 
-namespace Simplic.OxS.SDK.Logistics.Client
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Represents a set of configuration settings
