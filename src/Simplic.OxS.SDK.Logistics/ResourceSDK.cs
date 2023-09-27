@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Simplic.OxS.SDK.Client;
+using Simplic.OxS.SDK;
 using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Simplic.OxS.SDK.Logistics
@@ -29,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -51,7 +51,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
@@ -71,7 +71,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -86,7 +86,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -97,7 +97,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the resource with the given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
@@ -109,7 +109,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
@@ -117,7 +117,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -130,7 +130,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -139,7 +139,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
@@ -151,7 +151,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
@@ -171,7 +171,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -185,7 +185,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -198,7 +198,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -211,7 +211,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -223,7 +223,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -239,7 +239,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -254,7 +254,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -267,7 +267,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -279,7 +279,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -293,7 +293,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -306,7 +306,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -319,7 +319,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -341,7 +341,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class ResourceSDK : IResourceSDK
     {
-        private Simplic.OxS.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceSDK"/> class.
@@ -357,13 +357,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public ResourceSDK(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Client.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -372,17 +372,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ResourceSDK(Simplic.OxS.SDK.Client.Configuration configuration)
+        public ResourceSDK(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ResourceSDK(Simplic.OxS.SDK.Client.ISynchronousClient client, Simplic.OxS.SDK.Client.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Client.IReadableConfiguration configuration)
+        public ResourceSDK(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -401,18 +401,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -427,12 +427,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Client.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -448,28 +448,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
         public List<ResourceModel> ResourceGetAllByGroupGet(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllByGroupGetWithHttpInfo(group, useableUntil);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllByGroupGetWithHttpInfo(group, useableUntil);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> ResourceGetAllByGroupGetWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetAllByGroupGetWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -481,13 +481,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -495,11 +495,11 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (group != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "group", group));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "group", group));
             }
             if (useableUntil != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllByGroupGet";
@@ -528,7 +528,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -536,23 +536,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllByGroupGetAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllByGroupGetWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllByGroupGetWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="group"> (optional)</param>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>>> ResourceGetAllByGroupGetWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetAllByGroupGetWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -564,13 +564,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -578,11 +578,11 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (group != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "group", group));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "group", group));
             }
             if (useableUntil != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllByGroupGet";
@@ -612,26 +612,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
         public List<ResourceModel> ResourceGetAllGet(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllGetWithHttpInfo(useableUntil);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllGetWithHttpInfo(useableUntil);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> ResourceGetAllGetWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetAllGetWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -643,13 +643,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -657,7 +657,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (useableUntil != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllGet";
@@ -686,29 +686,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllGetAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllGetWithHttpInfoAsync(useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllGetWithHttpInfoAsync(useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>>> ResourceGetAllGetWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetAllGetWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -720,13 +720,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -734,7 +734,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (useableUntil != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllGet";
@@ -764,7 +764,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -773,23 +773,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>List&lt;ResourceModel&gt;</returns>
         public List<ResourceModel> ResourceGetPageDataGet(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetPageDataGetWithHttpInfo(skip, page, pageSize, filterString);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetPageDataGetWithHttpInfo(skip, page, pageSize, filterString);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
         /// <param name="filterString"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> ResourceGetPageDataGetWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetPageDataGetWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -801,13 +801,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -815,19 +815,19 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (filterString != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetPageDataGet";
@@ -856,7 +856,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -866,14 +866,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetPageDataGetAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetPageDataGetWithHttpInfoAsync(skip, page, pageSize, filterString, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetPageDataGetWithHttpInfoAsync(skip, page, pageSize, filterString, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip"> (optional)</param>
         /// <param name="page"> (optional)</param>
         /// <param name="pageSize"> (optional)</param>
@@ -881,10 +881,10 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<ResourceModel>>> ResourceGetPageDataGetWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetPageDataGetWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -896,13 +896,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -910,19 +910,19 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (filterString != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceGetPageDataGet";
@@ -952,26 +952,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the resource with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
         public ResourceModel ResourceIdGet(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = ResourceIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourceIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the resource with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> ResourceIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourceIdGetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -983,19 +983,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1023,29 +1023,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the resource with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
         public async System.Threading.Tasks.Task<ResourceModel> ResourceIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = await ResourceIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourceIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the resource with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ResourceModel>> ResourceIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourceIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1057,19 +1057,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1098,28 +1098,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
         public ResourceModel ResourceIdPut(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = ResourceIdPutWithHttpInfo(id, updateResourceRequest);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourceIdPutWithHttpInfo(id, updateResourceRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> ResourceIdPutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourceIdPutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1134,19 +1134,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceIdPut";
@@ -1175,7 +1175,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1183,23 +1183,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of ResourceModel</returns>
         public async System.Threading.Tasks.Task<ResourceModel> ResourceIdPutAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = await ResourceIdPutWithHttpInfoAsync(id, updateResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourceIdPutWithHttpInfoAsync(id, updateResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ResourceModel>> ResourceIdPutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourceIdPutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1214,19 +1214,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
             localVarRequestOptions.Operation = "ResourceSDK.ResourceIdPut";
@@ -1256,26 +1256,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
         public ResourceModel ResourcePost(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = ResourcePostWithHttpInfo(createResourceRequest);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourcePostWithHttpInfo(createResourceRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> ResourcePostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourcePostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1290,13 +1290,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1330,29 +1330,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
         public async System.Threading.Tasks.Task<ResourceModel> ResourcePostAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ResourceModel> localVarResponse = await ResourcePostWithHttpInfoAsync(createResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourcePostWithHttpInfoAsync(createResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ResourceModel>> ResourcePostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourcePostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1367,13 +1367,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

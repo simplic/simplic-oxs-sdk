@@ -69,10 +69,10 @@ namespace Simplic.OxS.SDK
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is Simplic.OxS.SDK.Logistics.Model.AbstractOpenAPISchema)
+            if (obj != null && obj is Simplic.OxS.SDK.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((Simplic.OxS.SDK.Logistics.Model.AbstractOpenAPISchema)obj).ToJson();
+                return ((Simplic.OxS.SDK.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -203,7 +203,7 @@ namespace Simplic.OxS.SDK
         /// </summary>
         public ApiClient()
         {
-            _baseUrl = Simplic.OxS.SDK.Logistics.Client.GlobalConfiguration.Instance.BasePath;
+            _baseUrl = Simplic.OxS.SDK.GlobalConfiguration.Instance.BasePath;
         }
 
         /// <summary>
@@ -475,7 +475,7 @@ namespace Simplic.OxS.SDK
                 }
 
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-                if (typeof(Simplic.OxS.SDK.Logistics.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+                if (typeof(Simplic.OxS.SDK.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
                 {
                     try
                     {
@@ -571,7 +571,7 @@ namespace Simplic.OxS.SDK
                 }
 
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-                if (typeof(Simplic.OxS.SDK.Logistics.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+                if (typeof(Simplic.OxS.SDK.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
                 {
                     response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
                 }

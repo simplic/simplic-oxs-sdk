@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Simplic.OxS.SDK.Client;
+using Simplic.OxS.SDK;
 using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Simplic.OxS.SDK.Logistics
@@ -29,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -49,7 +49,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
@@ -61,7 +61,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
@@ -69,7 +69,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -82,7 +82,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -91,7 +91,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
@@ -103,7 +103,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
@@ -123,7 +123,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -136,7 +136,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -148,7 +148,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -161,7 +161,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -173,7 +173,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -187,7 +187,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -200,7 +200,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -213,7 +213,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -235,7 +235,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class AppointmentSDK : IAppointmentSDK
     {
-        private Simplic.OxS.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AppointmentSDK"/> class.
@@ -251,13 +251,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public AppointmentSDK(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Client.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -266,17 +266,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AppointmentSDK(Simplic.OxS.SDK.Client.Configuration configuration)
+        public AppointmentSDK(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public AppointmentSDK(Simplic.OxS.SDK.Client.ISynchronousClient client, Simplic.OxS.SDK.Client.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Client.IReadableConfiguration configuration)
+        public AppointmentSDK(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -295,18 +295,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -321,12 +321,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Client.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -342,7 +342,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -354,13 +354,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<Object> AppointmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> AppointmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -372,19 +372,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -412,7 +412,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -425,15 +425,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<Object>> AppointmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> AppointmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -445,19 +445,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -486,26 +486,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
         public AppointmentModel AppointmentIdGet(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> AppointmentIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentIdGetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -517,19 +517,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -557,29 +557,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
         public async System.Threading.Tasks.Task<AppointmentModel> AppointmentIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel>> AppointmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -591,19 +591,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -632,28 +632,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
         public AppointmentModel AppointmentIdPatch(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdPatchWithHttpInfo(id, patchAppointmentRequest);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdPatchWithHttpInfo(id, patchAppointmentRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> AppointmentIdPatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentIdPatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -668,19 +668,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdPatch";
@@ -709,7 +709,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -717,23 +717,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of AppointmentModel</returns>
         public async System.Threading.Tasks.Task<AppointmentModel> AppointmentIdPatchAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdPatchWithHttpInfoAsync(id, patchAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdPatchWithHttpInfoAsync(id, patchAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel>> AppointmentIdPatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentIdPatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -748,19 +748,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
             localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdPatch";
@@ -790,26 +790,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
         public AppointmentModel AppointmentPost(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = AppointmentPostWithHttpInfo(createAppointmentRequest);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentPostWithHttpInfo(createAppointmentRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> AppointmentPostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentPostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -824,13 +824,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -864,29 +864,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
         public async System.Threading.Tasks.Task<AppointmentModel> AppointmentPostAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel> localVarResponse = await AppointmentPostWithHttpInfoAsync(createAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentPostWithHttpInfoAsync(createAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<AppointmentModel>> AppointmentPostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentPostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -901,13 +901,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

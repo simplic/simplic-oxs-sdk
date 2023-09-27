@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Simplic.OxS.SDK.Client;
+using Simplic.OxS.SDK;
 using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Simplic.OxS.SDK.Logistics
@@ -29,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all loading aid types.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;LoadingAidTypeResponse&gt;</returns>
         List<LoadingAidTypeResponse> LoadingAidTypeGetAllGet(int operationIndex = 0);
@@ -40,14 +40,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;LoadingAidTypeResponse&gt;</returns>
         ApiResponse<List<LoadingAidTypeResponse>> LoadingAidTypeGetAllGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives the loading aid type with the given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
@@ -59,7 +59,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
@@ -67,7 +67,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches the loading aid type.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -80,7 +80,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -89,7 +89,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new loading aid type.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
@@ -101,7 +101,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
@@ -121,7 +121,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;LoadingAidTypeResponse&gt;</returns>
@@ -133,7 +133,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;LoadingAidTypeResponse&gt;)</returns>
@@ -144,7 +144,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -157,7 +157,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -169,7 +169,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -183,7 +183,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -196,7 +196,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -209,7 +209,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -231,7 +231,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class LoadingAidTypeSDK : ILoadingAidTypeSDK
     {
-        private Simplic.OxS.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadingAidTypeSDK"/> class.
@@ -247,13 +247,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public LoadingAidTypeSDK(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Client.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -262,17 +262,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public LoadingAidTypeSDK(Simplic.OxS.SDK.Client.Configuration configuration)
+        public LoadingAidTypeSDK(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public LoadingAidTypeSDK(Simplic.OxS.SDK.Client.ISynchronousClient client, Simplic.OxS.SDK.Client.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Client.IReadableConfiguration configuration)
+        public LoadingAidTypeSDK(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -291,18 +291,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -317,12 +317,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Client.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -338,24 +338,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all loading aid types. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;LoadingAidTypeResponse&gt;</returns>
         public List<LoadingAidTypeResponse> LoadingAidTypeGetAllGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<LoadingAidTypeResponse>> localVarResponse = LoadingAidTypeGetAllGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<LoadingAidTypeResponse>> localVarResponse = LoadingAidTypeGetAllGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all loading aid types. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;LoadingAidTypeResponse&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<LoadingAidTypeResponse>> LoadingAidTypeGetAllGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<LoadingAidTypeResponse>> LoadingAidTypeGetAllGetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -367,13 +367,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -406,27 +406,27 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all loading aid types. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;LoadingAidTypeResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<LoadingAidTypeResponse>> LoadingAidTypeGetAllGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<LoadingAidTypeResponse>> localVarResponse = await LoadingAidTypeGetAllGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<LoadingAidTypeResponse>> localVarResponse = await LoadingAidTypeGetAllGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all loading aid types. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;LoadingAidTypeResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<LoadingAidTypeResponse>>> LoadingAidTypeGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LoadingAidTypeResponse>>> LoadingAidTypeGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -438,13 +438,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -478,26 +478,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the loading aid type with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
         public LoadingAidTypeResponse LoadingAidTypeIdGet(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypeIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypeIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the loading aid type with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> LoadingAidTypeIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> LoadingAidTypeIdGetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -509,19 +509,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "LoadingAidTypeSDK.LoadingAidTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -549,29 +549,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the loading aid type with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadingAidTypeResponse</returns>
         public async System.Threading.Tasks.Task<LoadingAidTypeResponse> LoadingAidTypeIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypeIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypeIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the loading aid type with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the loading aid type.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadingAidTypeResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypeIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypeIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -583,19 +583,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "LoadingAidTypeSDK.LoadingAidTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -624,28 +624,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches the loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
         public LoadingAidTypeResponse LoadingAidTypeIdPatch(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypeIdPatchWithHttpInfo(id, patchLoadingAidTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypeIdPatchWithHttpInfo(id, patchLoadingAidTypeRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches the loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> LoadingAidTypeIdPatchWithHttpInfo(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> LoadingAidTypeIdPatchWithHttpInfo(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -660,19 +660,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchLoadingAidTypeRequest;
 
             localVarRequestOptions.Operation = "LoadingAidTypeSDK.LoadingAidTypeIdPatch";
@@ -701,7 +701,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches the loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -709,23 +709,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of LoadingAidTypeResponse</returns>
         public async System.Threading.Tasks.Task<LoadingAidTypeResponse> LoadingAidTypeIdPatchAsync(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypeIdPatchWithHttpInfoAsync(id, patchLoadingAidTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypeIdPatchWithHttpInfoAsync(id, patchLoadingAidTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches the loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">It of the loading aid to update.</param>
         /// <param name="patchLoadingAidTypeRequest">A patch loading aid request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadingAidTypeResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypeIdPatchWithHttpInfoAsync(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypeIdPatchWithHttpInfoAsync(Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = default(PatchLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -740,19 +740,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchLoadingAidTypeRequest;
 
             localVarRequestOptions.Operation = "LoadingAidTypeSDK.LoadingAidTypeIdPatch";
@@ -782,26 +782,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
         public LoadingAidTypeResponse LoadingAidTypePost(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypePostWithHttpInfo(createLoadingAidTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = LoadingAidTypePostWithHttpInfo(createLoadingAidTypeRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> LoadingAidTypePostWithHttpInfo(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> LoadingAidTypePostWithHttpInfo(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -816,13 +816,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -856,29 +856,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadingAidTypeResponse</returns>
         public async System.Threading.Tasks.Task<LoadingAidTypeResponse> LoadingAidTypePostAsync(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypePostWithHttpInfoAsync(createLoadingAidTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> localVarResponse = await LoadingAidTypePostWithHttpInfoAsync(createLoadingAidTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new loading aid type. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createLoadingAidTypeRequest">A create loading aid type request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadingAidTypeResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypePostWithHttpInfoAsync(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse>> LoadingAidTypePostWithHttpInfoAsync(CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = default(CreateLoadingAidTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -893,13 +893,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

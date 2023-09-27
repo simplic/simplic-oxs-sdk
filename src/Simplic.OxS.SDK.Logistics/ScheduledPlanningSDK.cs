@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Simplic.OxS.SDK.Client;
+using Simplic.OxS.SDK;
 using Simplic.OxS.SDK.Logistics.Model;
 
 namespace Simplic.OxS.SDK.Logistics
@@ -29,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets all plans for given day.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
@@ -49,7 +49,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets shifts for resource on given day.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -73,7 +73,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plans matching given shift id for given day.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -86,7 +86,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -95,7 +95,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -107,7 +107,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -115,7 +115,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
@@ -127,7 +127,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
@@ -135,7 +135,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -148,7 +148,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -157,7 +157,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
@@ -169,7 +169,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
@@ -177,7 +177,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateResponse</returns>
         ValidateResponse ScheduledPlanningValidateGet(int operationIndex = 0);
@@ -188,7 +188,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateResponse</returns>
         ApiResponse<ValidateResponse> ScheduledPlanningValidateGetWithHttpInfo(int operationIndex = 0);
@@ -207,7 +207,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -232,7 +232,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -247,7 +247,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -261,7 +261,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -275,7 +275,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -288,7 +288,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -301,7 +301,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -313,7 +313,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -326,7 +326,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -338,7 +338,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -352,7 +352,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -365,7 +365,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -378,7 +378,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -390,7 +390,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateResponse</returns>
@@ -402,7 +402,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateResponse)</returns>
@@ -423,7 +423,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class ScheduledPlanningSDK : IScheduledPlanningSDK
     {
-        private Simplic.OxS.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledPlanningSDK"/> class.
@@ -439,13 +439,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public ScheduledPlanningSDK(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Client.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -454,17 +454,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ScheduledPlanningSDK(Simplic.OxS.SDK.Client.Configuration configuration)
+        public ScheduledPlanningSDK(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Client.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Client.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ScheduledPlanningSDK(Simplic.OxS.SDK.Client.ISynchronousClient client, Simplic.OxS.SDK.Client.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Client.IReadableConfiguration configuration)
+        public ScheduledPlanningSDK(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -483,18 +483,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -509,12 +509,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Client.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Client.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -530,26 +530,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets all plans for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
         public List<ScheduledPlanningAssignmentResponse> ScheduledPlanningGetByDateGet(DateTime? dateTime = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = ScheduledPlanningGetByDateGetWithHttpInfo(dateTime);
+            Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = ScheduledPlanningGetByDateGetWithHttpInfo(dateTime);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets all plans for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByDateGetWithHttpInfo(DateTime? dateTime = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByDateGetWithHttpInfo(DateTime? dateTime = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -561,13 +561,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -575,7 +575,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByDateGet";
@@ -604,29 +604,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets all plans for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByDateGetAsync(DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = await ScheduledPlanningGetByDateGetWithHttpInfoAsync(dateTime, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = await ScheduledPlanningGetByDateGetWithHttpInfoAsync(dateTime, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets all plans for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScheduledPlanningAssignmentResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>>> ScheduledPlanningGetByDateGetWithHttpInfoAsync(DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>>> ScheduledPlanningGetByDateGetWithHttpInfoAsync(DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -638,13 +638,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -652,7 +652,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByDateGet";
@@ -682,7 +682,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets shifts for resource on given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -690,22 +690,22 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
         public ScheduledPlanningAssignmentResponse ScheduledPlanningGetByResourceResourceIdGet(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo(resourceId, dateTime, shiftId);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo(resourceId, dateTime, shiftId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets shifts for resource on given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -717,26 +717,26 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(resourceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(resourceId)); // path parameter
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
             if (shiftId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByResourceResourceIdGet";
@@ -765,7 +765,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets shifts for resource on given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
@@ -774,24 +774,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of ScheduledPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<ScheduledPlanningAssignmentResponse> ScheduledPlanningGetByResourceResourceIdGetAsync(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningGetByResourceResourceIdGetWithHttpInfoAsync(resourceId, dateTime, shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningGetByResourceResourceIdGetWithHttpInfoAsync(resourceId, dateTime, shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets shifts for resource on given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduledPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByResourceResourceIdGetWithHttpInfoAsync(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByResourceResourceIdGetWithHttpInfoAsync(Guid resourceId, DateTime? dateTime = default(DateTime?), Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -803,26 +803,26 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(resourceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(resourceId)); // path parameter
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
             if (shiftId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByResourceResourceIdGet";
@@ -852,28 +852,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plans matching given shift id for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
         public List<ScheduledPlanningAssignmentResponse> ScheduledPlanningGetByShiftShiftIdGet(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo(shiftId, dateTime);
+            Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo(shiftId, dateTime);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plans matching given shift id for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -885,22 +885,22 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByShiftShiftIdGet";
@@ -929,7 +929,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plans matching given shift id for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -937,23 +937,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of List&lt;ScheduledPlanningAssignmentResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<ScheduledPlanningAssignmentResponse>> ScheduledPlanningGetByShiftShiftIdGetAsync(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = await ScheduledPlanningGetByShiftShiftIdGetWithHttpInfoAsync(shiftId, dateTime, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>> localVarResponse = await ScheduledPlanningGetByShiftShiftIdGetWithHttpInfoAsync(shiftId, dateTime, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plans matching given shift id for given day. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="dateTime"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScheduledPlanningAssignmentResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<List<ScheduledPlanningAssignmentResponse>>> ScheduledPlanningGetByShiftShiftIdGetWithHttpInfoAsync(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ScheduledPlanningAssignmentResponse>>> ScheduledPlanningGetByShiftShiftIdGetWithHttpInfoAsync(Guid shiftId, DateTime? dateTime = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -965,22 +965,22 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
             if (dateTime != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningGetByShiftShiftIdGet";
@@ -1010,7 +1010,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1022,13 +1022,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<Object> ScheduledPlanningIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> ScheduledPlanningIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1040,19 +1040,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1080,7 +1080,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1093,15 +1093,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<Object>> ScheduledPlanningIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ScheduledPlanningIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1113,19 +1113,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1154,26 +1154,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
         public ScheduledPlanningAssignmentResponse ScheduledPlanningIdGet(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdGetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1185,19 +1185,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1225,29 +1225,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScheduledPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduledPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1259,19 +1259,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1300,28 +1300,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
         public ScheduledPlanningAssignmentResponse ScheduledPlanningIdPatch(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningIdPatchWithHttpInfo(id, patchScheduledPlanningRequest);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningIdPatchWithHttpInfo(id, patchScheduledPlanningRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdPatchWithHttpInfo(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdPatchWithHttpInfo(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1336,19 +1336,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchScheduledPlanningRequest;
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdPatch";
@@ -1377,7 +1377,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1385,23 +1385,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of ScheduledPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<ScheduledPlanningAssignmentResponse> ScheduledPlanningIdPatchAsync(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningIdPatchWithHttpInfoAsync(id, patchScheduledPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningIdPatchWithHttpInfoAsync(id, patchScheduledPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduledPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningIdPatchWithHttpInfoAsync(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningIdPatchWithHttpInfoAsync(Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = default(PatchScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1416,19 +1416,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchScheduledPlanningRequest;
 
             localVarRequestOptions.Operation = "ScheduledPlanningSDK.ScheduledPlanningIdPatch";
@@ -1458,26 +1458,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScheduledPlanningAssignmentResponse</returns>
         public ScheduledPlanningAssignmentResponse ScheduledPlanningPost(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningPostWithHttpInfo(postScheduledPlanningRequest);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = ScheduledPlanningPostWithHttpInfo(postScheduledPlanningRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScheduledPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningPostWithHttpInfo(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> ScheduledPlanningPostWithHttpInfo(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1492,13 +1492,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1532,29 +1532,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScheduledPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<ScheduledPlanningAssignmentResponse> ScheduledPlanningPostAsync(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningPostWithHttpInfoAsync(postScheduledPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse> localVarResponse = await ScheduledPlanningPostWithHttpInfoAsync(postScheduledPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postScheduledPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScheduledPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningPostWithHttpInfoAsync(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ScheduledPlanningAssignmentResponse>> ScheduledPlanningPostWithHttpInfoAsync(PostScheduledPlanningRequest? postScheduledPlanningRequest = default(PostScheduledPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1569,13 +1569,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1610,24 +1610,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateResponse</returns>
         public ValidateResponse ScheduledPlanningValidateGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ValidateResponse> localVarResponse = ScheduledPlanningValidateGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<ValidateResponse> localVarResponse = ScheduledPlanningValidateGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateResponse</returns>
-        public Simplic.OxS.SDK.Client.ApiResponse<ValidateResponse> ScheduledPlanningValidateGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ValidateResponse> ScheduledPlanningValidateGetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1639,13 +1639,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1678,27 +1678,27 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateResponse</returns>
         public async System.Threading.Tasks.Task<ValidateResponse> ScheduledPlanningValidateGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Client.ApiResponse<ValidateResponse> localVarResponse = await ScheduledPlanningValidateGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ValidateResponse> localVarResponse = await ScheduledPlanningValidateGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Client.ApiResponse<ValidateResponse>> ScheduledPlanningValidateGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ValidateResponse>> ScheduledPlanningValidateGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Client.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Client.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1710,13 +1710,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

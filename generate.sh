@@ -5,16 +5,19 @@ LGREEN="\033[1;32m"
 DGRAY="\033[1;30m"
 NC="\033[0m"
 
-PKG_BASE="Simplic.OxS.SDK"
 SRC_DIR="./src"
 DOC_DIR="./docs"
-
 GEN_OUT="./openapi-out"
 GEN_CFG="./config.yaml"
 
 SVC_FILE="services"
 BASE_URL="https://dev-oxs.simplic.io/"
 POST_URL="-api/v1/swagger/v1/swagger.json"
+
+BASE_PROJ_NAME="Simplic.OxS.SDK"
+BASE_PROJ_FOLDER="${SRC_DIR}/${BASE_PROJ_NAME}"
+BASE_PROJ_FILE="${BASE_PROJ_FOLDER}/${BASE_PROJ_NAME}.csproj"
+SLN_FILE="${SRC_DIR}/${BASE_PROJ_NAME}.sln"
 
 generate() {
     local specification="$1"
@@ -24,7 +27,7 @@ generate() {
 
     # only need the last part for sdk proj name
     local last_part=$(echo "${proj_name}" | sed 's/.*\.//')
-    local sdk_proj_name="${PKG_BASE}.${last_part}"
+    local sdk_proj_name="${BASE_PROJ_NAME}.${last_part}"
 
     openapi-generator-cli generate \
         -g csharp \
@@ -69,15 +72,27 @@ move_boiler_plate() {
     local path="$1"
     local proj_name=$(basename "${path}")
 
-    if [[ "${proj_name}" != "${PKG_BASE}" ]]; then
+    if [[ "${proj_name}" != "${BASE_PROJ_NAME}" ]]; then
         if [ -d "${path}/Client" ]; then
-            mkdir -p "${SRC_DIR}/${PKG_BASE}/Client"
-            mv -f "${path}/Client"/* "${SRC_DIR}/${PKG_BASE}/Client/"
+            mkdir -p "${BASE_PROJ_FOLDER}/Client"
+            mkdir -p "${BASE_PROJ_FOLDER}/Model"
+            mv -f "${path}/Client"/* "${BASE_PROJ_FOLDER}/Client/"
+            mv -f "${path}/Model/ProblemDetails.cs" "${BASE_PROJ_FOLDER}/Model/"
+            mv -f "${path}/Model/AbstractOpenAPISchema.cs" "${BASE_PROJ_FOLDER}/Model/"
             rm -rf "${path}/Client"
         fi
 
         # update namespace refs
-        rec_replace "${path}" "${proj_name}.Client" "${PKG_BASE}.Client" "cs"
+        rec_replace "${path}" "${proj_name}.Client" "${BASE_PROJ_NAME}" "cs"
+
+        local proj_file="${SRC_DIR}/${proj_name}/${proj_name}.csproj"
+
+        # and ofc add assembly ref
+        dotnet add "${proj_file}" reference "${BASE_PROJ_FILE}"
+
+        # remove no longer necessary packages
+        dotnet remove "${proj_file}" package RestSharp
+        dotnet remove "${proj_file}" package Polly
     fi
 }
 
@@ -95,12 +110,10 @@ main() {
     echo -e "<<${YELLOW}GENERATING SDKS..${NC}>>"
     
     # generate the solution along with base project
-    pushd "${SRC_DIR}"
-    dotnet new sln -n "${PKG_BASE}"
-    dotnet new classlib -n "${PKG_BASE}"
-    dotnet sln "${PKG_BASE}.sln" add "${PKG_BASE}/${PKG_BASE}.csproj"
-    rm -rf "${PKG_BASE}/Class1.cs"
-    popd
+    dotnet new sln -n "${BASE_PROJ_NAME}" -o "${SRC_DIR}"
+    dotnet new classlib -o "${SRC_DIR}/${BASE_PROJ_NAME}"
+    dotnet sln "${SLN_FILE}" add "${BASE_PROJ_FILE}"
+    rm -rf "${BASE_PROJ_FOLDER}/Class1.cs"
 
     # iterate through services
     while IFS= read -r line; do
@@ -122,26 +135,27 @@ main() {
     mv -f "${GEN_OUT}/docs"/* "${DOC_DIR}"
     mv -f "${GEN_OUT}/src"/* "${SRC_DIR}"
     rm -rf "${GEN_OUT}"
-    echo -e "<<${YELLOW}MOVING CONTENTS..DONE${NC}>>"
+    echo -e "<<${YELLOW}MOVING1 CONTENTS..DONE${NC}>>"
 
     echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..${NC}>>"
     for __i in "${SRC_DIR}"/*; do
         local entry=$__i
         echo -e ">>>${YELLOW}${entry}${NC}"
         local proj_name=$(basename "${entry}")
+        local proj_file="${entry}/${proj_name}.csproj"
 
-        if [[ ! -f "${entry}/${proj_name}.csproj" ]]; then
+        if [[ ! -f "${proj_file}" ]]; then
             # ignore non-projects
             continue
         fi
 
-        if [[ "${proj_name}" == "${PKG_BASE}" ]]; then
+        if [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]]; then
             # base proj is to be handled afterwards
             continue
         fi
 
         # add generated project to solution
-        dotnet sln "${SRC_DIR}/${PKG_BASE}.sln" add "${entry}/${proj_name}.csproj"
+        dotnet sln "${SLN_FILE}" add "${proj_file}"
 
         # move shared boiler plate to base project
         move_boiler_plate "${entry}"
@@ -151,7 +165,15 @@ main() {
     done
 
     # fix namespaces in base project
-    rec_replace "${SRC_DIR}/${PKG_BASE}/Client" "namespace .*" "namespace ${PKG_BASE}" "cs"
+    rec_replace "${BASE_PROJ_FOLDER}/Client" "${BASE_PROJ_NAME}..*.Client" "${BASE_PROJ_NAME}" "cs"
+    rec_replace "${BASE_PROJ_FOLDER}/Client" "${BASE_PROJ_NAME}..*.Model" "${BASE_PROJ_NAME}" "cs"
+    rec_replace "${BASE_PROJ_FOLDER}/Model" "${BASE_PROJ_NAME}..*.Client" "${BASE_PROJ_NAME}" "cs"
+    rec_replace "${BASE_PROJ_FOLDER}/Model" "${BASE_PROJ_NAME}..*.Model" "${BASE_PROJ_NAME}" "cs"
+
+    # add required packages
+    dotnet add "${BASE_PROJ_FILE}" package Newtonsoft.Json
+    dotnet add "${BASE_PROJ_FILE}" package RestSharp
+    dotnet add "${BASE_PROJ_FILE}" package Polly
 
     echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..DONE${NC}>>"
 }
