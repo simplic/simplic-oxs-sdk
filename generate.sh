@@ -1,8 +1,11 @@
-ORANGE="\033[0;33m"
-YELLOW="\033[1;33m"
-GREEN="\033[0;32m"
-LGREEN="\033[1;32m"
-DGRAY="\033[1;30m"
+#!/bin/bash
+
+# Colors
+GREEN="\033[32m"
+YELLOW="\033[33m"
+LGREEN="\033[92m"
+LYELLOW="\033[93m"
+LMAGENTA="\033[95m"
 NC="\033[0m"
 
 SRC_DIR="./src"
@@ -19,6 +22,47 @@ BASE_PROJ_FOLDER="${SRC_DIR}/${BASE_PROJ_NAME}"
 BASE_PROJ_FILE="${BASE_PROJ_FOLDER}/${BASE_PROJ_NAME}.csproj"
 SLN_FILE="${SRC_DIR}/${BASE_PROJ_NAME}.sln"
 
+# Packages that are required for the base project 
+BASE_PROJ_DEPS=("Newtonsoft.Json" "RestSharp" "Polly")
+
+# Packages that are not required for the other projects and therefore can be removed
+RM_PROJ_DEPS=("RestSharp" "Polly")
+
+# Logging
+log() {
+    msg="$1"
+    variation=$2
+
+    case $variation in
+        0)
+            echo -e "${LMAGENTA}[[${LYELLOW} ${msg} ${LMAGENTA}]]${NC}"
+            ;;
+        1)
+            echo -e "${LMAGENTA}>>${YELLOW} ${msg}${NC}"
+            ;;
+        2)
+            echo -e "${LMAGENTA}[[${LGREEN} ${msg} ${LMAGENTA}]]${NC}"
+            ;;
+        *)
+            echo -e "${LMAGENTA}[[${YELLOW} ${msg} ${LMAGENTA}]]${NC}"
+            ;;
+    esac
+}
+
+# Necessary pre-conditions
+prepare() {
+    openapi-generator-cli version-manager set 7.0.1
+
+    # maybe switch to an approach where we check whats generated first and specificly remove that
+    rm -rf "${SRC_DIR}"
+    rm -rf "${DOC_DIR}"
+
+    mkdir -p "${SRC_DIR}"
+    mkdir -p "${DOC_DIR}"
+
+}
+
+# Generate the openapi sdk
 generate() {
     local specification="$1"
 
@@ -46,7 +90,7 @@ rec_replace() {
     local file_extension="$4"
 
     if [[ ! -d "${path}" ]]; then
-        # not a pathectory -> just replace for this file
+        # not a directory -> just replace for this file
         sed -i "s#${old_term}#${new_term}#g" "${path}"
     else
         for __i in "$path"/*; do
@@ -71,43 +115,38 @@ rec_replace() {
 move_boiler_plate() {
     local path="$1"
     local proj_name=$(basename "${path}")
+    local proj_file="${SRC_DIR}/${proj_name}/${proj_name}.csproj"
 
-    if [[ "${proj_name}" != "${BASE_PROJ_NAME}" ]]; then
-        if [ -d "${path}/Client" ]; then
-            mkdir -p "${BASE_PROJ_FOLDER}/Client"
-            mkdir -p "${BASE_PROJ_FOLDER}/Model"
-            mv -f "${path}/Client"/* "${BASE_PROJ_FOLDER}/Client/"
-            mv -f "${path}/Model/ProblemDetails.cs" "${BASE_PROJ_FOLDER}/Model/"
-            mv -f "${path}/Model/AbstractOpenAPISchema.cs" "${BASE_PROJ_FOLDER}/Model/"
-            rm -rf "${path}/Client"
-        fi
+    [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]] && return 1 
 
-        # update namespace refs
-        rec_replace "${path}" "${proj_name}.Client" "${BASE_PROJ_NAME}" "cs"
-
-        local proj_file="${SRC_DIR}/${proj_name}/${proj_name}.csproj"
-
-        # and ofc add assembly ref
-        dotnet add "${proj_file}" reference "${BASE_PROJ_FILE}"
-
-        # remove no longer necessary packages
-        dotnet remove "${proj_file}" package RestSharp
-        dotnet remove "${proj_file}" package Polly
+    if [[ -d "${path}/Client" ]]; then
+        mkdir -p "${BASE_PROJ_FOLDER}/Client"
+        mv -f "${path}/Client"/* "${BASE_PROJ_FOLDER}/Client/"
+        rm -rf "${path}/Client"
     fi
+
+    if [[ -d "${path}/Model" ]]; then
+        mkdir -p "${BASE_PROJ_FOLDER}/Model"
+        mv -f "${path}/Model/ProblemDetails.cs" "${BASE_PROJ_FOLDER}/Model/"
+        mv -f "${path}/Model/AbstractOpenAPISchema.cs" "${BASE_PROJ_FOLDER}/Model/"
+    fi
+
+    # update namespace refs
+    rec_replace "${path}" "${proj_name}.Client" "${BASE_PROJ_NAME}" "cs"
+
+    # and ofc add assembly ref
+    dotnet add "${proj_file}" reference "${BASE_PROJ_FILE}"
+
+    # remove no longer necessary packages
+    for __i in "${RM_PROJ_DEPS[@]}"; do
+        dotnet remove "${proj_file}" package "${__i}"
+    done
 }
 
 main() {
-    openapi-generator-cli version-manager set 7.0.1
-
-    # maybe switch to an approach where we check whats generated first and specificly remove that
-    rm -rf "${SRC_DIR}"
-    rm -rf "${DOC_DIR}"
-
-    mkdir -p "${SRC_DIR}"
-    mkdir -p "${DOC_DIR}"
-
+    prepare
     
-    echo -e "<<${YELLOW}GENERATING SDKS..${NC}>>"
+    log "Generating SDKs.." 0
     
     # generate the solution along with base project
     dotnet new sln -n "${BASE_PROJ_NAME}" -o "${SRC_DIR}"
@@ -122,37 +161,35 @@ main() {
             continue
         fi
 
-        echo -e ">>${ORANGE}GENERATING SDK FOR ${line}..${NC}<<"
+        log "${line}.." 1
         generate "${BASE_URL}${line}${POST_URL}"
-        echo -e ">>${LGREEN}GENERATING SDK FOR ${line}..DONE${NC}<<"
     done < "${SVC_FILE}"
 
-    echo -e "<<${GREEN}GENERATING SDKS..DONE${NC}>>"
+    log "..done" 2
 
+    log "Moving Contents.." 0
 
-    echo -e "<<${YELLOW}MOVING CONTENTS..${NC}>>"
     rm -rf "${GEN_OUT}/src"/*.Test
     mv -f "${GEN_OUT}/docs"/* "${DOC_DIR}"
     mv -f "${GEN_OUT}/src"/* "${SRC_DIR}"
     rm -rf "${GEN_OUT}"
-    echo -e "<<${YELLOW}MOVING1 CONTENTS..DONE${NC}>>"
+    
+    log "..done" 2
 
-    echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..${NC}>>"
+    log "Applying post modifications.." 0
+
     for __i in "${SRC_DIR}"/*; do
         local entry=$__i
-        echo -e ">>>${YELLOW}${entry}${NC}"
         local proj_name=$(basename "${entry}")
         local proj_file="${entry}/${proj_name}.csproj"
 
-        if [[ ! -f "${proj_file}" ]]; then
-            # ignore non-projects
-            continue
-        fi
+        log "${entry}" 1
 
-        if [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]]; then
-            # base proj is to be handled afterwards
-            continue
-        fi
+        # ignore non-projects
+        [[ ! -f "${proj_file}" ]] && continue
+
+        # base proj is to be handled afterwards
+        [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]] && continue
 
         # add generated project to solution
         dotnet sln "${SLN_FILE}" add "${proj_file}"
@@ -165,17 +202,22 @@ main() {
     done
 
     # fix namespaces in base project
-    rec_replace "${BASE_PROJ_FOLDER}/Client" "${BASE_PROJ_NAME}..*.Client" "${BASE_PROJ_NAME}" "cs"
-    rec_replace "${BASE_PROJ_FOLDER}/Client" "${BASE_PROJ_NAME}..*.Model" "${BASE_PROJ_NAME}" "cs"
-    rec_replace "${BASE_PROJ_FOLDER}/Model" "${BASE_PROJ_NAME}..*.Client" "${BASE_PROJ_NAME}" "cs"
-    rec_replace "${BASE_PROJ_FOLDER}/Model" "${BASE_PROJ_NAME}..*.Model" "${BASE_PROJ_NAME}" "cs"
+    local subfolders=("Client" "Model")
+    for __i in "${subfolders[@]}"; do
+        local subfolder="${__i}"
+        rec_replace "${BASE_PROJ_FOLDER}/${subfolder}" "${BASE_PROJ_NAME}..*.Client" "${BASE_PROJ_NAME}" "cs"
+        rec_replace "${BASE_PROJ_FOLDER}/${subfolder}" "${BASE_PROJ_NAME}..*.Model" "${BASE_PROJ_NAME}" "cs"
+    done
 
     # add required packages
-    dotnet add "${BASE_PROJ_FILE}" package Newtonsoft.Json
-    dotnet add "${BASE_PROJ_FILE}" package RestSharp
-    dotnet add "${BASE_PROJ_FILE}" package Polly
+    for __i in "${BASE_PROJ_DEPS[@]}"; do
+        local pkg="${__i}"
+        dotnet add "${BASE_PROJ_FILE}" package "${pkg}"
+    done
 
-    echo -e "<<${YELLOW}APPLYING POST MODIFICATIONS..DONE${NC}>>"
+    log "..done" 2
+
+    log "All done!" 2
 }
 
 main
