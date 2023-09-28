@@ -1,0 +1,292 @@
+schedules:
+  - cron: "0 0 * * *"
+    always: true
+    displayName: Daily midnight build
+    branches:
+      include:
+        - master
+        - production
+
+trigger:
+  branches:
+    include:
+      - master
+      - production
+  paths:
+    include:
+      - src/*
+      - test/*
+      - k8s/*
+      - azure-pipelines.yml
+
+# pr:
+#   branches:
+#     include:
+#       - "*"
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  - group: simplic-deployment
+  - group: simplic-deployment-docker
+  - group: simplic-deployment-dev02
+  - name: buildConfiguration
+    value: "Release"
+  - name: dotNetVersion
+    value: "6.0.x"
+  - name: DOCKER_BUILDKIT
+    value: 1
+  - name: CurrentVersion
+    value: "0.0.0.0"
+  - name: ImageTag
+    value: unset
+
+    # Pipeline individual variable
+  - name: imageRepository
+    value: "simplic-oxs-cdn"
+  - name: MainCSProjPath
+    value: "./src/Simplic.OxS.CDN.Server"
+
+resources:
+  repositories:
+    - repository: infrastructure
+      type: github
+      name: simplic/build-infrastructure
+      endpoint: simplic-bot
+
+stages:
+  - stage: Build
+    displayName: Build image
+    condition: ne(variables['Build.RequestedFor'], 'simplic-bot')
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+            persistCredentials: true
+            fetchDepth: 1000
+
+          - task: Bash@3
+            displayName: "Write username"
+            inputs:
+              targetType: "inline"
+              script: |
+                sudo echo "$(Build.RequestedFor)"
+          - task: UseDotNet@2
+            inputs:
+              version: $(dotNetVersion)
+              includePreviewVersions: true
+
+          - task: DotNetCoreCLI@2
+            displayName: "Restore solution"
+            inputs:
+              command: "restore"
+              projects: "**/*.sln"
+              feedsToUse: "select"
+              vstsFeed: "f7087ef5-bf6f-48b2-8b8b-5e513f4a7a9e"
+
+          # Increase version number by changes and pr tags
+          - ${{ if not(eq(variables['Build.Reason'], 'PullRequest')) }}:
+              - template: version-number-update-token-template.yml@infrastructure
+                parameters:
+                  connection_string: $(connection_string)
+                  git_user: $(git_user)
+                  git_token: $(git_token)
+                  branch_name: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
+
+          - task: DotNetCoreCLI@2
+            displayName: "Build solution"
+            inputs:
+              command: "build"
+              projects: "**/*.sln"
+              arguments: "--configuration $(buildConfiguration)"
+
+          - task: DotNetCoreCLI@2
+            displayName: "Execute and publish tests"
+            inputs:
+              command: "test"
+              projects: "**/*.sln"
+
+          - task: DotNetCoreCLI@2
+            displayName: "Create nuget packages"
+            inputs:
+              command: "pack"
+              packagesToPack: "**/*.sln"
+              configuration: "$(buildConfiguration)"
+              nobuild: true
+              versioningScheme: "off"
+              packDirectory: "$(Build.ArtifactStagingDirectory)"
+
+          - task: NuGetCommand@2
+            displayName: "Publish nuget packages"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+            inputs:
+              command: "push"
+              packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
+              nuGetFeedType: "internal"
+              publishVstsFeed: "f7087ef5-bf6f-48b2-8b8b-5e513f4a7a9e"
+              allowPackageConflicts: true
+
+          # Write security file for restoring nuget packages. This file will be mounted as
+          # secure file when building the docker container
+          - task: Bash@3
+            displayName: "Write security (pat) file"
+            inputs:
+              targetType: "inline"
+              script: |
+                sudo echo "$(nuget_pwd)" > pat
+
+          # Extract version number form the actual service and write it to the file
+          # with the name `current_version`
+          - task: PythonScript@0
+            displayName: "Write file version"
+            condition: ne(variables['Build.Reason'], 'PullRequest')
+            inputs:
+              scriptSource: "filePath"
+              scriptPath: "./build-infrastructure/get-csproj-version.py"
+              arguments: '--proj "$(MainCSProjPath)"'
+
+          # Read current_version file and write its content to the pipeline variable `CurrentVersion`
+          - task: PowerShell@2
+            displayName: Write current version number
+            condition: ne(variables['Build.Reason'], 'PullRequest')
+            inputs:
+              targetType: "inline"
+              script: |
+                Write-Host "##vso[task.setvariable variable=CurrentVersion]$(Get-Content -Path ./current_version)"
+
+          - task: AWSCLI@1
+            displayName: "Create repository in ECR"
+            continueOnError: true
+            inputs:
+              awsCredentials: "simplic-aws-ecr"
+              regionName: "eu-central-1"
+              awsCommand: "ecr"
+              awsSubCommand: "create-repository"
+              awsArguments: "--repository-name $(imageRepository)"
+
+          # Build container and pass security pat (personal access token)
+          # For restoring nuget packages when building the docker container
+          - task: Docker@2
+            displayName: Build docker image
+            inputs:
+              repository: "$(imageRepository)"
+              command: "build"
+              Dockerfile: "./src/Dockerfile"
+              tags: |
+                latest
+                $(CurrentVersion)-$(Build.BuildId)
+              arguments: "--build-arg nuget_user=$(nuget_user) --secret id=pat,src=./pat"
+
+          # Push image to aws ecr with the tag latest
+          - task: ECRPushImage@1
+            condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/production')))
+            displayName: Push docker image to aws (latest)
+            inputs:
+              awsCredentials: "simplic-aws-ecr"
+              regionName: "eu-central-1"
+              imageSource: "imagename"
+              sourceImageName: "$(imageRepository)"
+              sourceImageTag: "latest"
+              repositoryName: "$(imageRepository)"
+              pushTag: "$(CurrentVersion)-$(Build.BuildId)"
+
+          # Push image to aws ecr with the current version tag
+          - task: ECRPushImage@1
+            condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/production')))
+            displayName: Push docker image to aws ($(CurrentVersion)-$(Build.BuildId))
+            inputs:
+              awsCredentials: "simplic-aws-ecr"
+              regionName: "eu-central-1"
+              imageSource: "imagename"
+              sourceImageName: "$(imageRepository)"
+              sourceImageTag: "latest"
+              repositoryName: "$(imageRepository)"
+              pushTag: "latest"
+
+          - task: PowerShell@2
+            displayName: Write image tag to output
+            name: DetermineResult
+            inputs:
+              targetType: "inline"
+              script: |
+                Write-Host "##vso[task.setvariable variable=ImageTag;isOutput=true]$(CurrentVersion)-$(Build.BuildId)"
+
+  - stage: DeployToStaging
+    displayName: Deploy to staging
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - job: Deploy
+        displayName: Apply Manifests
+        pool:
+          vmImage: "ubuntu-latest"
+        variables:
+          - name: ImageTag
+            value: $[ stageDependencies.Build.Build.outputs['DetermineResult.ImageTag'] ]
+          - group: simplic-oxs-k8s-staging
+        steps:
+          - task: replacetokens@5
+            inputs:
+              targetFiles: |
+                **/deployment-dev.yml
+                **/deployment-prod.yml
+              encoding: "auto"
+              tokenPattern: "azpipelines"
+              writeBOM: true
+              actionOnMissing: "warn"
+              keepToken: true
+              actionOnNoFiles: "fail"
+              enableTransforms: false
+              enableRecursion: false
+              useLegacyPattern: false
+              enableTelemetry: true
+
+          - task: KubernetesManifest@0
+            inputs:
+              action: "deploy"
+              kubernetesServiceConnection: "simplic-aws-k8s-staging"
+              manifests: "k8s/deployment-dev.yml"
+              containers: |
+                217954882364.dkr.ecr.eu-central-1.amazonaws.com/$(imageRepository):$(ImageTag)
+
+  - stage: DeployToProduction
+    displayName: Deploy to production
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/production'))
+    jobs:
+      - job: Deploy
+        displayName: Apply Manifests
+        pool:
+          vmImage: "ubuntu-latest"
+        variables:
+          - name: ImageTag
+            value: $[ stageDependencies.Build.Build.outputs['DetermineResult.ImageTag'] ]
+          - group: simplic-oxs-k8s-production
+        steps:
+          - task: replacetokens@5
+            inputs:
+              targetFiles: |
+                **/deployment-dev.yml
+                **/deployment-prod.yml
+              encoding: "auto"
+              tokenPattern: "azpipelines"
+              writeBOM: true
+              actionOnMissing: "warn"
+              keepToken: true
+              actionOnNoFiles: "fail"
+              enableTransforms: false
+              enableRecursion: false
+              useLegacyPattern: false
+              enableTelemetry: true
+
+          - task: KubernetesManifest@0
+            inputs:
+              action: "deploy"
+              kubernetesServiceConnection: "simplic-aws-k8s-production"
+              manifests: "k8s/deployment-prod.yml"
+              containers: |
+                217954882364.dkr.ecr.eu-central-1.amazonaws.com/$(imageRepository):$(ImageTag)
