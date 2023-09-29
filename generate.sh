@@ -143,6 +143,16 @@ move_boiler_plate() {
     done
 }
 
+# Declutters sdk function names
+make_calls_pretty() {
+    local proj_path="$1"
+    local proj_name="$(basename "${proj_path}")"
+    local controller_name=$(echo "${proj_name}" | sed 's/.*\.//')
+    rec_replace "${proj_path}" "${}"
+    # replace function name pattern through regex mathcing  
+    # TODO!
+}
+
 main() {
     prepare
     
@@ -185,11 +195,10 @@ main() {
 
         log "${entry}" 1
 
-        # ignore non-projects
-        [[ ! -f "${proj_file}" ]] && continue
-
-        # base proj is to be handled afterwards
-        [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]] && continue
+        # ignore non-projects & base proj
+        if [[ ! -f "${proj_file}" ]] || [[ "${proj_name}" == "${BASE_PROJ_NAME}" ]]; then
+            continue
+        fi
 
         # add generated project to solution
         dotnet sln "${SLN_FILE}" add "${proj_file}"

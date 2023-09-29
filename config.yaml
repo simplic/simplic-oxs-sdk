@@ -1,5 +1,177 @@
 apiNameSuffix: "SDK"
-modelPackage: "Model"
+# Suffix that will be appended to all API names ('tags'). Default: Api.
+# e.g. Pet => PetApi.
+
+#apiPackage <api package>
+# [do not change - script dependency]
+# package for generated api classes
+
+#modelPackage: "Model"
+# [do not change - script dependency]
+# package for generated models
+
+modelNamePrefix: ""
+# Prefix that will be prepended to all model names.
+
+modelNameSuffix: ""
+# Suffix that will be appended to all model names.
+
+#artifactId <artifact id>
+# artifactId in generated pom.xml.
+# This also becomes part of the generated library's filename
+
+#artifactVersion <artifact version>
+# artifact version in generated pom.xml.
+# This also becomes part of the generated library's filename
+
+#auth <authorization>
+# adds authorization headers when fetching the OpenAPI definitions remotely.
+# Pass in a URL-encoded string of name:header with a comma separating multiple values
+
+#dryRun
+# Try things out and report on potential changes (without actually making changes).
+
+engine: "handlebars"
+# templating engine: "mustache" (default) or "handlebars" (beta)
+
+enablePostProcessFile: false
+# Enable post-processing file using environment variables.
+# Set to true if you want to use uncrustify for code formatting.
+
+#generateAliasAsModel
+# Generate model implementation for aliases to map and array schemas.
+# An 'alias' is an array, map, or list which is defined inline in a OpenAPI document
+# and becomes a model in the generated code.
+# A 'map' schema is an object that can have undeclared properties,
+# i.e. the 'additionalproperties' attribute is set on that object.
+# An 'array' schema is a list of sub schemas in a OAS document
+
+#globalProperty <global properties>
+# sets specified global properties (previously called 'system properties')
+# in the format of name=value,name=value (or multiple options, each with name=value)
+
+#groupId <group id>
+# groupId in generated pom.xml
+
+#httpUserAgent <http user agent>
+# HTTP user agent, e.g. codegen_csharp_api_client, default to 'OpenAPI-Generator/{packageVersion}/{language}'
+
+#importMappings <import mappings>
+# specifies mappings between a given class
+# and the import that should be used for that class in the format of type=import,type=import.
+# You can also have multiple occurrences of this option.
+
+#inlineSchemaNameMappings <inline schema name mappings>
+# specifies mappings between the inline schema name and the new name in the format of
+# inline_object_2=Cat,inline_object_5=Bird.
+# You can also have multiple occurrences of this option.
+
+#inlineSchemaOptions <inline schema options>
+# specifies the options for handling inline schemas in the inline model resolver.
+# Please refer to https://github.com/OpenAPITools/openapi-generator/blob/master/docs/customization.md for a list of options.
+
+#inputSpecRootDirectory <Folder with spec(s)>
+# Local root folder with spec file(s)
+
+#instantiationTypes <instantiation types>
+# sets instantiation type mappings in the format of type=instantiatedType,type=instantiatedType.
+# For example (in Java):
+# array=ArrayList,map=HashMap.
+# In other words array types will get instantiated as ArrayList in generated code.
+# You can also have multiple occurrences of this option.
+
+#invokerPackage <invoker package>
+# root package for generated code
+
+#languageSpecificPrimitives <language specific primitives>
+# specifies additional language specific primitive types in the format of type1,type2,type3,type3.
+# For example:
+# String,boolean,Boolean,Double.
+# You can also have multiple occurrences of this option.
+
+#legacyDiscriminatorBehavior
+# Set to false for generators with better support for discriminators.
+# (Python, Java, Go, PowerShell, C# have this enabled by default).
+
+#library <library>
+# library template (sub-template)
+
+#logToStderr
+# write all log messages (not just errors) to STDOUT.
+# Useful for piping the JSON output of debug options (e.g. `--global-property debugOperations`)
+# to an external parser directly while testing a generator.
+
+#mergedSpecFilename <Name of resulted merged specs file (used along with --input-spec-root-directory option)>
+
+#minimalUpdate
+# Only write output files that have changed.
+
+#modelNameMappings <model name mappings>
+# specifies mappings between the model name and the new name in the
+# format of model_name=AnotherName,model_name2=OtherName2.
+# You can also have multiple occurrences of this option.
+
+#nameMappings <property name mappings>
+# specifies mappings between the property name and the new name in the
+# format of prop_name=PropName,prop_name2=PropName2.
+# You can also have multiple occurrences of this option.
+
+#openapiNormalizer <OpenAPI normalizer rules>
+# specifies the rules to be enabled in OpenAPI normalizer in the form
+# of RULE_1=true,RULE_2=original.
+# You can also have multiple occurrences of this option.
+
+#parameterNameMappings <parameter name mappings>
+# specifies mappings between the parameter name and the new name in
+# the format of param_name=paramName,param_name2=paramName2. You can
+# also have multiple occurrences of this option.
+
+releaseNote: "Minor update"
+# Release note, default to 'Minor update'. (Default: Minor update)
+
+removeOperationIdPrefix: true
+# Remove prefix of operationId, e.g. config_getId => getId
+
+#reservedWordsMappings <reserved word mappings>
+# specifies how a reserved name should be escaped to. Otherwise, the
+# default _<name> is used. For example id=identifier. You can also
+# have multiple occurrences of this option.
+
+#skipOverwrite
+# specifies if the existing files should be overwritten during the generation.
+
+#schemaMappings <schema mappings>
+# specifies mappings between the schema and the new name in the format
+# of schema_a=Cat,schema_b=Bird.
+# You can also have multiple occurrences of this option.
+
+#serverVariables <server variables>
+# sets server variables overrides for spec documents which support variable templating of servers.
+
+#skipOperationExample
+# Skip examples defined in operations to avoid out of memory errors.
+
+#skipValidateSpec
+# Skips the default behavior of validating an input specification.
+
+#strictSpec <true/false strict behavior>
+# 'MUST' and 'SHALL' wording in OpenAPI spec is strictly adhered to.
+# e.g. when false, no fixes will be applied to documents which pass validation but don't follow the spec.
+
+#templateDir <template directory>
+# folder containing the template files
+
+#typeMappings <type mappings>
+# sets mappings between OpenAPI spec types and generated code types
+#  in the format of OpenAPIType=generatedType,OpenAPIType=generatedType.
+# For example:
+# array=List,map=Map,string=String.
+# You can also have multiple occurrences of this option.
+# To map a specified format, use type+format,
+# e.g. string+password=EncryptedString will map `type: string, format: password` to `EncryptedString`.
+
+verbose: false
+# verbose mode
 
 additionalProperties:
   allowUnicodeIdentifiers: false
@@ -73,7 +245,8 @@ additionalProperties:
   #packageGuid
   # The GUID that will be associated with the C# project
 
-  # packageName: "Simplic.OxS.SDK"
+  #packageName: "Simplic.OxS.SDK"
+  # [do not change - script dependency]
   # C# package name (convention: Title.Case). (Default: Org.OpenAPITools)
 
   packageTags: "Simplic,SDK"
@@ -82,13 +255,11 @@ additionalProperties:
   packageVersion: "1.0.0"
   # C# package version. (Default: 1.0.0)
 
-  releaseNote: "Minor update"
-  # Release note, default to 'Minor update'. (Default: Minor update)
-
   returnICollection: false
   # Return ICollection<T> instead of the concrete type. (Default: false)
 
-  sourceFolder: "src"
+  #sourceFolder: "src"
+  # [do not change - script dependency]
   # source folder for generated code (Default: src)
 
   targetFramework: "net7.0"
