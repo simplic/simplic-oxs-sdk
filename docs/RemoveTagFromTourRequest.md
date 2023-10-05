@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.RemoveTagFromTourRequest
+# Simplic.OxS.SDK.Logistics.RemoveTagFromTourRequest
 Request to remove a tag from a tour.
 
 ## Properties

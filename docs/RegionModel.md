@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.RegionModel
+# Simplic.OxS.SDK.Logistics.RegionModel
 Model to represent the tuple of a counry iso and a zip code.
 
 ## Properties

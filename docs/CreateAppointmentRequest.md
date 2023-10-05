@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.CreateAppointmentRequest
+# Simplic.OxS.SDK.Logistics.CreateAppointmentRequest
 Request to create an appointment.
 
 ## Properties

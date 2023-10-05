@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ConstructionSiteModel
+# Simplic.OxS.SDK.Logistics.ConstructionSiteModel
 Server model to represent a construction site from the constructin site api.
 
 ## Properties

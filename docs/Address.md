@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.Address
+# Simplic.OxS.SDK.Logistics.Address
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.CalculateRouteResponse
+# Simplic.OxS.SDK.Logistics.CalculateRouteResponse
 Response of a calculate route response.
 
 ## Properties

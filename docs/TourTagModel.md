@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.TourTagModel
+# Simplic.OxS.SDK.Logistics.TourTagModel
 Represents the server model of a tag for tours.  <br>  Tags are short texts to add information to a tour without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions.
 
 ## Properties

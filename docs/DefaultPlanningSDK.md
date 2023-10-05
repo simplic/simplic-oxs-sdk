@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics...DefaultPlanningSDK
+# Simplic.OxS.SDK.Logistics.DefaultPlanningSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -21,9 +21,9 @@ Gets plan for resource matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -119,9 +119,9 @@ Gets the plan with given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -215,9 +215,9 @@ Posts a new plan.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -311,9 +311,9 @@ Deletes plan matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -404,9 +404,9 @@ Patches plan matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -503,9 +503,9 @@ Checks whether any resource has been assigned in multiple plans.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {

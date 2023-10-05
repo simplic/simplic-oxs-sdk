@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ReportingShipmentItem
+# Simplic.OxS.SDK.Logistics.ReportingShipmentItem
 
 ## Properties
 

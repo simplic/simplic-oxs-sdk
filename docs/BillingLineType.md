@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.BillingLineType
+# Simplic.OxS.SDK.Logistics.BillingLineType
 Determines of which type a billing line can be.  Is used to determine which type of person is billed.
 
 ## Properties

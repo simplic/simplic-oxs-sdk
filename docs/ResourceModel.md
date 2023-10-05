@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ResourceModel
+# Simplic.OxS.SDK.Logistics.ResourceModel
 Shared model of resource.
 
 ## Properties

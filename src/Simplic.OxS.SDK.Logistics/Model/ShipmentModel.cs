@@ -23,7 +23,9 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
 
-namespace Simplic.OxS.SDK.Logistics.Model
+using Simplic.OxS.SDK;
+
+namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
     /// Shared model of shipment.

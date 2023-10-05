@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.LoadingDateTimeType
+# Simplic.OxS.SDK.Logistics.LoadingDateTimeType
 Represents a type of which the loading / unloading time is set.
 
 ## Properties

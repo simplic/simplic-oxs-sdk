@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PostScheduledPlanningRequest
+# Simplic.OxS.SDK.Logistics.PostScheduledPlanningRequest
 Request model for posting new shifted planning assignments.
 
 ## Properties

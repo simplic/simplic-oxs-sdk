@@ -536,7 +536,7 @@ namespace Simplic.OxS.SDK
         /// </summary>
         public static string ToDebugReport()
         {
-            string report = "C# SDK (Simplic.OxS.SDK.Logistics) Debug Report:\n";
+            string report = "C# SDK (Simplic.OxS.SDK) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: v1\n";

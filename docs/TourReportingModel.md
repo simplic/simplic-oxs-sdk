@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.TourReportingModel
+# Simplic.OxS.SDK.Logistics.TourReportingModel
 
 ## Properties
 

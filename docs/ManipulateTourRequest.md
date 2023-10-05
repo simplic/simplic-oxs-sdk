@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ManipulateTourRequest
+# Simplic.OxS.SDK.Logistics.ManipulateTourRequest
 
 ## Properties
 

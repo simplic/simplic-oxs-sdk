@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PostShiftRequest
+# Simplic.OxS.SDK.Logistics.PostShiftRequest
 Request model for posting shifts.
 
 ## Properties

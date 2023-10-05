@@ -23,7 +23,9 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
 
-namespace Simplic.OxS.SDK.Logistics.Model
+using Simplic.OxS.SDK;
+
+namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
     /// Represents the server model of a tag for tours.  &lt;br&gt;  Tags are short texts to add information to a tour without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions.

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ShiftResponse
+# Simplic.OxS.SDK.Logistics.ShiftResponse
 Response model for Simplic.OxS.Logistics.Shifts.
 
 ## Properties

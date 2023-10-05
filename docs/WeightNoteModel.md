@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.WeightNoteModel
+# Simplic.OxS.SDK.Logistics.WeightNoteModel
 Shared model of weight note.
 
 ## Properties

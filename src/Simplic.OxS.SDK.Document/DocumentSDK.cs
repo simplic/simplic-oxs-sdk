@@ -14,8 +14,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
+
 using Simplic.OxS.SDK;
-using Simplic.OxS.SDK.Document.Model;
 
 namespace Simplic.OxS.SDK.Document
 {

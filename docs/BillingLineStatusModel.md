@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.BillingLineStatusModel
+# Simplic.OxS.SDK.Logistics.BillingLineStatusModel
 Shared model of billing line status.
 
 ## Properties

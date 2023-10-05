@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.CDN.Model.UploadFilesResponse
+# Simplic.OxS.SDK.CDN.UploadFilesResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ProblemDetails
+# Simplic.OxS.SDK.Logistics.ProblemDetails
 
 ## Properties
 

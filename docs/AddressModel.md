@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.AddressModel
+# Simplic.OxS.SDK.Logistics.AddressModel
 Shared model of address.
 
 ## Properties

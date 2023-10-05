@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.TimeSpan
+# Simplic.OxS.SDK.Logistics.TimeSpan
 
 ## Properties
 

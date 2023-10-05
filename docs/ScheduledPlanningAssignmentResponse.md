@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ScheduledPlanningAssignmentResponse
+# Simplic.OxS.SDK.Logistics.ScheduledPlanningAssignmentResponse
 Response model for Simplic.OxS.Logistics.DefaultPlanningAssignment.
 
 ## Properties

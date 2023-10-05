@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Document.Model.DocumentResponse
+# Simplic.OxS.SDK.Document.DocumentResponse
 
 ## Properties
 
