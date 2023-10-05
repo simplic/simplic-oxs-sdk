@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Document.Model.PostDocumentVersionRequest
+# Simplic.OxS.SDK.Document.PostDocumentVersionRequest
 
 ## Properties
 

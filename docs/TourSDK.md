@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics...TourSDK
+# Simplic.OxS.SDK.Logistics.TourSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -29,9 +29,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -119,9 +119,9 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -213,9 +213,9 @@ Get all used loading slots for a specific resource
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -312,9 +312,9 @@ Retrieves all tours between two dates.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -410,9 +410,9 @@ Retrieves all tours with the given global tour id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -505,9 +505,9 @@ Retrieves all tours that contains actions with the given shipment id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -600,9 +600,9 @@ Deletes the given tour.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -696,9 +696,9 @@ Retrieves the tour with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -792,9 +792,9 @@ Patches a tour object.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -890,9 +890,9 @@ Updates/saves the given tour.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -987,9 +987,9 @@ Creates a new tour object.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -1083,9 +1083,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -1173,9 +1173,9 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -1267,9 +1267,9 @@ Sets the actual times of a tour. Also gives the option to change the tour status
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {

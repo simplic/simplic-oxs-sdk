@@ -23,7 +23,9 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
 
-namespace Simplic.OxS.SDK.Logistics.Model
+using Simplic.OxS.SDK;
+
+namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
     /// Represents the status of a tour.  &lt;br&gt;  The tour status will define what actions the user can and can not do with the tour and in which state the tour  currently is.  

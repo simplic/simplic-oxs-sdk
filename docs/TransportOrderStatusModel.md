@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.TransportOrderStatusModel
+# Simplic.OxS.SDK.Logistics.TransportOrderStatusModel
 Shared model of transport order status.
 
 ## Properties

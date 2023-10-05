@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.DefaultPlanningAssignmentResponse
+# Simplic.OxS.SDK.Logistics.DefaultPlanningAssignmentResponse
 Response model for Simplic.OxS.Logistics.DefaultPlanningAssignment.
 
 ## Properties

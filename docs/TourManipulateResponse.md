@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.TourManipulateResponse
+# Simplic.OxS.SDK.Logistics.TourManipulateResponse
 Response to a tour manipulate requests.
 
 ## Properties

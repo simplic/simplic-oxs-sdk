@@ -2,14 +2,6 @@ apiNameSuffix: "SDK"
 # Suffix that will be appended to all API names ('tags'). Default: Api.
 # e.g. Pet => PetApi.
 
-#apiPackage <api package>
-# [do not change - script dependency]
-# package for generated api classes
-
-#modelPackage: "Model"
-# [do not change - script dependency]
-# package for generated models
-
 modelNamePrefix: ""
 # Prefix that will be prepended to all model names.
 
@@ -31,7 +23,7 @@ modelNameSuffix: ""
 #dryRun
 # Try things out and report on potential changes (without actually making changes).
 
-engine: "handlebars"
+engine: "mustache"
 # templating engine: "mustache" (default) or "handlebars" (beta)
 
 enablePostProcessFile: false
@@ -92,9 +84,6 @@ enablePostProcessFile: false
 #legacyDiscriminatorBehavior
 # Set to false for generators with better support for discriminators.
 # (Python, Java, Go, PowerShell, C# have this enabled by default).
-
-#library <library>
-# library template (sub-template)
 
 #logToStderr
 # write all log messages (not just errors) to STDOUT.
@@ -245,10 +234,6 @@ additionalProperties:
   #packageGuid
   # The GUID that will be associated with the C# project
 
-  #packageName: "Simplic.OxS.SDK"
-  # [do not change - script dependency]
-  # C# package name (convention: Title.Case). (Default: Org.OpenAPITools)
-
   packageTags: "Simplic,SDK"
   # Tags to identify the package
 
@@ -257,10 +242,6 @@ additionalProperties:
 
   returnICollection: false
   # Return ICollection<T> instead of the concrete type. (Default: false)
-
-  #sourceFolder: "src"
-  # [do not change - script dependency]
-  # source folder for generated code (Default: src)
 
   targetFramework: "net7.0"
   # The target .NET framework version.

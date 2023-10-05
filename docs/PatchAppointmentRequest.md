@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PatchAppointmentRequest
+# Simplic.OxS.SDK.Logistics.PatchAppointmentRequest
 Request to patch an appointment.
 
 ## Properties

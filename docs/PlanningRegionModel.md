@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PlanningRegionModel
+# Simplic.OxS.SDK.Logistics.PlanningRegionModel
 Represents the server model of a planning region.
 
 ## Properties

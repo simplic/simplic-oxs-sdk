@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.AppointmentModel
+# Simplic.OxS.SDK.Logistics.AppointmentModel
 Represents the model of a Appointment.
 
 ## Properties

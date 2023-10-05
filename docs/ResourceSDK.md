@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics...ResourceSDK
+# Simplic.OxS.SDK.Logistics.ResourceSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -21,9 +21,9 @@ Retrieves all resources.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -118,9 +118,9 @@ Retrieves all resources.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -213,9 +213,9 @@ Retrieves a data page of resources.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -314,9 +314,9 @@ Retrives the resource with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -409,9 +409,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -505,9 +505,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.CreateShipmentRequest
+# Simplic.OxS.SDK.Logistics.CreateShipmentRequest
 Request to create a shipment.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Document.Model.DocumentVersionResponse
+# Simplic.OxS.SDK.Document.DocumentVersionResponse
 
 ## Properties
 

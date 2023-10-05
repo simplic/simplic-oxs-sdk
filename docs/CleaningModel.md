@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.CleaningModel
+# Simplic.OxS.SDK.Logistics.CleaningModel
 Represents a cleaning.
 
 ## Properties

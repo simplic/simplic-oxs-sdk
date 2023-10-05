@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics...ShipmentSDK
+# Simplic.OxS.SDK.Logistics.ShipmentSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -21,9 +21,9 @@ Retrives all shipments for the given conditions.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -119,9 +119,9 @@ Retrives the shipment with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -215,9 +215,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -309,9 +309,9 @@ Retrives the shipment with the given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -405,9 +405,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -501,9 +501,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {

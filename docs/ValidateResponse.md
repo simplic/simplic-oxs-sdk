@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ValidateResponse
+# Simplic.OxS.SDK.Logistics.ValidateResponse
 Response model for validate requests.
 
 ## Properties

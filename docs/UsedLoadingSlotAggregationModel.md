@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.UsedLoadingSlotAggregationModel
+# Simplic.OxS.SDK.Logistics.UsedLoadingSlotAggregationModel
 Represents an aggregated search result for loading slots and shipments
 
 ## Properties

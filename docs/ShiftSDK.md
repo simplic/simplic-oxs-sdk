@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics...ShiftSDK
+# Simplic.OxS.SDK.Logistics.ShiftSDK
 
 All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
@@ -21,9 +21,9 @@ Gets shifts matching given name.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -117,9 +117,9 @@ Gets shifts in given range.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -215,9 +215,9 @@ Deletes shift matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -307,9 +307,9 @@ Gets shift matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -403,9 +403,9 @@ Patches shift matching given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
@@ -502,9 +502,9 @@ Creates a new shift.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics..;
-using Simplic.OxS.SDK.Logistics.Client;
-using Simplic.OxS.SDK.Logistics.Model;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {

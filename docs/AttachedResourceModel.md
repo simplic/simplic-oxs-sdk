@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.AttachedResourceModel
+# Simplic.OxS.SDK.Logistics.AttachedResourceModel
 Shared model for attached resources.
 
 ## Properties

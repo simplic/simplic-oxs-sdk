@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PostDepartmentRequest
+# Simplic.OxS.SDK.Logistics.PostDepartmentRequest
 Request model for posting departments.
 
 ## Properties

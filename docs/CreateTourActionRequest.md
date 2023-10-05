@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.CreateTourActionRequest
+# Simplic.OxS.SDK.Logistics.CreateTourActionRequest
 Shared model of a tour action.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.PostDefaultPlanningRequest
+# Simplic.OxS.SDK.Logistics.PostDefaultPlanningRequest
 Request model for posting new default planning assignments.
 
 ## Properties

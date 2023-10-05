@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.BillableContactModel
+# Simplic.OxS.SDK.Logistics.BillableContactModel
 Shared model of billable contact.
 
 ## Properties

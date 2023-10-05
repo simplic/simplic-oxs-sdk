@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.WeightNoteType
+# Simplic.OxS.SDK.Logistics.WeightNoteType
 Represents the type of a weight note.
 
 ## Properties

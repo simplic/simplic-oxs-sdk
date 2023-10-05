@@ -23,7 +23,9 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
 
-namespace Simplic.OxS.SDK.Logistics.Model
+using Simplic.OxS.SDK;
+
+namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
     /// Class to represent a transit.  &lt;br&gt;  A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.

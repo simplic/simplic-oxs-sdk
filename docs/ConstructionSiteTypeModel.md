@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.Model.ConstructionSiteTypeModel
+# Simplic.OxS.SDK.Logistics.ConstructionSiteTypeModel
 Represents a construction site type from the construction site api.
 
 ## Properties
