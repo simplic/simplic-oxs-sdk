@@ -1,6 +1,6 @@
 ## Requirements (for running it yourself):
 
--   openapi-generator-cli [7.0.1]
+-   npm
 
 ### Optional
 
