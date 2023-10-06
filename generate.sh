@@ -76,14 +76,26 @@ rec_replace() {
     fi
 }
 
-# Declutters sdk function names
-make_calls_pretty() {
-    local proj_path="$1"
-    local proj_name="$(basename "$proj_path")"
-    local controller_name=$(echo "$proj_name" | sed 's/.*\.//')
-    # rec_replace "$proj_path" "${}"
-    # replace function name pattern through regex mathcing  
-    # TODO!
+# Fixes function names
+fix_function_names() {
+    local path="$1"
+    local controller="$2"
+
+    for __i in "$path"/*; do
+        local entry=$__i
+        if [[ -d "$entry" ]]; then
+            # recurse
+            fix_function_names "$entry" "$controller"
+            continue
+        fi
+
+        if [[ "${entry##*.}" != "cs" ]]; then
+            # ignore non .cs files
+            continue
+        fi
+
+        python beautifier.py -f "$entry" -c "$controller"
+    done
 }
 
 # Generate code for services
@@ -140,6 +152,12 @@ generate() {
         mv -f "$GEN_OUT/src/$sdk_proj_name/Api"/*   "$sdk_proj_folder"
         mkdir -p "$sdk_proj_folder/Model"
         mv -f "$GEN_OUT/src/$sdk_proj_name/Model"/* "$sdk_proj_folder/Model"
+
+        # fix function names
+        log "Fixing bad function names.." 0
+        fix_function_names "$sdk_proj_folder" "$last_part"
+        log "..done" 2
+
 
         # move docs to doc dir
         mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
