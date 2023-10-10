@@ -1,14 +1,20 @@
 import re
+import shutil
 from dataclasses import dataclass
 from argparse import ArgumentParser, Namespace
 
 DEBUG = True
+
+# preserve old file
+PRESERVE = False
 
 
 @dataclass
 class ParamMeta:
     _type: str
     name: str
+    is_optional: bool
+    default_value: str | None
 
 
 @dataclass
@@ -23,6 +29,30 @@ def log(*values: object):
         print(*values)
 
 
+def parse_params(param_string: str) -> list[ParamMeta]:
+    # remove surrounding parens
+    param_string = param_string[1:-1]
+
+    param_declarations = param_string.split(', ')
+    param_list = []
+    for param_declaration in param_declarations:
+        parts = param_declaration.split(' ')
+        param_type = parts[0]
+        param_name = parts[1]
+        is_optional = False
+        default_value = None
+        # Bla bla = default(bla)
+        # 0: Bla ; 1: bla ; 2: = ; 3: default(bla)
+        if len(parts) > 2:
+            is_optional = True
+            default_value = parts[3]
+
+        param_list.append(ParamMeta(_type=param_type, name=param_name,
+                          is_optional=is_optional, default_value=default_value))
+
+    return param_list
+
+
 def collect_functions(code: str) -> list[FunctionMeta]:
     """
     Gets all functions from a file.
@@ -32,7 +62,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     fn_name = valid_name
     visibility = r"public"
     accessibility = r"static"
-    params = r"\([^)]*\)"
+    params = r"\(.*\)$"
 
     pattern = rf"^\s*({visibility})?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
     metas = []
@@ -41,14 +71,9 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     matches = re.findall(pattern, code, re.MULTILINE)
 
     for match in matches:
-        # parse meta
-        # remove parens and split args
-        params = []
-        for ps in match[6][1:-1].split(','):
-            parts = ps.split(' ')
-            params.append(ParamMeta(parts[0], parts[1]))
-
-        metas.append(FunctionMeta(match[2], match[5], params))
+        param_metas = parse_params(match[6])
+        metas.append(FunctionMeta(
+            return_type=match[2], name=match[5], params=param_metas))
 
     return metas
 
@@ -66,7 +91,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
         first_param = fn.params[0].name
         # make pascal case
         first_param = f"{first_param[0].upper()}{first_param[1:]}"
-        # remove first param from name
+        # [experimental] remove first param from name if no preposition is attached
         fn_name = fn.name.replace(first_param, "")
 
     pattern = rf"({controller_name})([A-Za-z]+)?(Get|Post|Put|Delete|Head|Options|Patch)([A-Za-z]*)?"
@@ -97,6 +122,9 @@ def main(args: Namespace):
     file_content = None
     with open(file, 'r') as f:
         file_content = f.read()
+
+    if PRESERVE:
+        shutil.copy(file, f"{file}.ugly")
 
     fns = collect_functions(file_content)
     for fn in fns:

@@ -196,8 +196,6 @@ for proj_folder in "$SRC_DIR"/*; do
 
     for file in "$proj_folder"/*; do
         file_name=$(basename "$file")
-        # NOTE: SDK SUFFIX DEPENDECY HERE!!!!
-        # EITHER REMOVE FROM config.yaml OR FIGURE SMTH OUT!!!!!!!!!!!!!
         if [[ "$file_name" != *"$API_NAME_SUFFIX.cs" ]]; then
             continue
         fi
