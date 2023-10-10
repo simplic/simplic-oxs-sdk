@@ -17,6 +17,8 @@ SVC_FILE="services"
 BASE_URL="https://dev-oxs.simplic.io/"
 POST_URL="-api/v1/swagger/v1/swagger.json"
 
+API_NAME_SUFFIX="SDK"
+
 BASE_PROJ_NAME="Simplic.OxS.SDK"
 BASE_PROJ_FOLDER="$SRC_DIR/$BASE_PROJ_NAME"
 BASE_PROJ_FILE="$BASE_PROJ_FOLDER/$BASE_PROJ_NAME.csproj"
@@ -32,18 +34,18 @@ log() {
     variation=$2
 
     case $variation in
-        0)
-            echo -e "$LMAGENTA[[$LYELLOW $msg $LMAGENTA]]$NC"
-            ;;
-        1)
-            echo -e "$LMAGENTA>>$YELLOW $msg$NC"
-            ;;
-        2)
-            echo -e "$LMAGENTA[[$LGREEN $msg $LMAGENTA]]$NC"
-            ;;
-        *)
-            echo -e "$LMAGENTA[[$YELLOW $msg $LMAGENTA]]$NC"
-            ;;
+    0)
+        echo -e "$LMAGENTA[[$LYELLOW $msg $LMAGENTA]]$NC"
+        ;;
+    1)
+        echo -e "$LMAGENTA>>$YELLOW $msg$NC"
+        ;;
+    2)
+        echo -e "$LMAGENTA[[$LGREEN $msg $LMAGENTA]]$NC"
+        ;;
+    *)
+        echo -e "$LMAGENTA[[$YELLOW $msg $LMAGENTA]]$NC"
+        ;;
     esac
 }
 
@@ -99,7 +101,7 @@ fix_function_names() {
 }
 
 # Generate code for services
-generate() {   
+generate() {
     while IFS= read -r line; do
         # ignore empty lines and comments
         if [[ -z "$line" || "$line" == "#"* ]]; then
@@ -124,6 +126,7 @@ generate() {
             -c "$GEN_CFG" \
             -o "$GEN_OUT" \
             -t "$TMPL_DIR" \
+            --api-name-suffix "$API_NAME_SUFFIX" \
             --package-name "$sdk_proj_name" \
             -i "$specification"
 
@@ -133,7 +136,7 @@ generate() {
         rm -rf "$sdk_proj_folder"
         dotnet new classlib -o "$sdk_proj_folder"
         rm -rf "$sdk_proj_folder/Class1.cs"
-        
+
         # add project to solution
         dotnet sln "$SLN_FILE" add "$sdk_proj_file"
         # add assembly ref -> base proj
@@ -141,25 +144,24 @@ generate() {
 
         # move generated files to proper project(s)
         # Boiler Plate
-        rec_replace "$GEN_OUT/src/$sdk_proj_name"                           "$sdk_proj_name"    "$BASE_PROJ_NAME"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/ProblemDetails.cs"         "$BASE_PROJ_FOLDER"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/AbstractOpenAPISchema.cs"  "$BASE_PROJ_FOLDER"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Client"/*                        "$BASE_PROJ_FOLDER"
+        rec_replace "$GEN_OUT/src/$sdk_proj_name" "$sdk_proj_name" "$BASE_PROJ_NAME"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/ProblemDetails.cs" "$BASE_PROJ_FOLDER"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/AbstractOpenAPISchema.cs" "$BASE_PROJ_FOLDER"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Client"/* "$BASE_PROJ_FOLDER"
 
         # SDK specific
         # insert using for base project
-        rec_replace "$GEN_OUT/src/$sdk_proj_name" "namespace $BASE_PROJ_NAME"   "using $BASE_PROJ_NAME;\n\nnamespace $sdk_proj_name" "cs"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Api"/*   "$sdk_proj_folder"
+        rec_replace "$GEN_OUT/src/$sdk_proj_name" "namespace $BASE_PROJ_NAME" "using $BASE_PROJ_NAME;\n\nnamespace $sdk_proj_name" "cs"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Api"/* "$sdk_proj_folder"
         mkdir -p "$sdk_proj_folder/Model"
         mv -f "$GEN_OUT/src/$sdk_proj_name/Model"/* "$sdk_proj_folder/Model"
 
         # move docs to doc dir
         mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
-    done < "$SVC_FILE"
+    done <"$SVC_FILE"
 
     rm -rf "$GEN_OUT"
 }
-
 
 #############################################
 #               SCRIPT START                #
@@ -196,11 +198,12 @@ for proj_folder in "$SRC_DIR"/*; do
         file_name=$(basename "$file")
         # NOTE: SDK SUFFIX DEPENDECY HERE!!!!
         # EITHER REMOVE FROM config.yaml OR FIGURE SMTH OUT!!!!!!!!!!!!!
-        if [[ "$file_name" != *"SDK.cs" ]]; then
+        if [[ "$file_name" != *"$API_NAME_SUFFIX.cs" ]]; then
             continue
         fi
 
-        controller_name="${file_name%%SDK*}"
+        controller_name="${file_name%%$API_NAME_SUFFIX*}"
+        log "$controller_name" 1
         python beautifier.py -f "$file" -c "$controller_name"
     done
 done

@@ -166,9 +166,6 @@ additionalProperties:
   allowUnicodeIdentifiers: false
   # boolean, toggles whether unicode identifiers are allowed in names or not, default is false (Default: false)
 
-  apiName: "SDK"
-  # Must be a valid C# class name. Only used in Generic Host library (Default: Api)
-
   caseInsensitiveResponseHeaders: false
   # Make API response's headers case-insensitive (Default: false)
 
