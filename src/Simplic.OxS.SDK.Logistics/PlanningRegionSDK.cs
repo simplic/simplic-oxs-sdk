@@ -32,7 +32,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PlanningRegionModel&gt;</returns>
-        List<PlanningRegionModel> PlanningRegionGetAllGet(int operationIndex = 0);
+        List<PlanningRegionModel> GetAll(int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all planning region.
@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PlanningRegionModel&gt;</returns>
-        ApiResponse<List<PlanningRegionModel>> PlanningRegionGetAllGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<PlanningRegionModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives the planning region with the given id.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        PlanningRegionModel PlanningRegionIdGet(Guid id, int operationIndex = 0);
+        PlanningRegionModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Retrives the planning region with the given id.
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        ApiResponse<PlanningRegionModel> PlanningRegionIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<PlanningRegionModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Updates/saves the given planning region.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        PlanningRegionModel PlanningRegionIdPatch(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0);
+        PlanningRegionModel Patch(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Updates/saves the given planning region.
@@ -85,7 +85,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        ApiResponse<PlanningRegionModel> PlanningRegionIdPatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0);
+        ApiResponse<PlanningRegionModel> PatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new planning region.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        PlanningRegionModel PlanningRegionPost(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0);
+        PlanningRegionModel Post(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new planning region.
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        ApiResponse<PlanningRegionModel> PlanningRegionPostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0);
+        ApiResponse<PlanningRegionModel> PostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -125,7 +125,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PlanningRegionModel&gt;</returns>
-        System.Threading.Tasks.Task<List<PlanningRegionModel>> PlanningRegionGetAllGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<PlanningRegionModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all planning region.
@@ -137,7 +137,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PlanningRegionModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PlanningRegionModel>>> PlanningRegionGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<PlanningRegionModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrives the planning region with the given id.
         /// </summary>
@@ -149,7 +149,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanningRegionModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives the planning region with the given id.
@@ -162,7 +162,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> PlanningRegionIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Updates/saves the given planning region.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionIdPatchAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanningRegionModel> PatchAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates/saves the given planning region.
@@ -189,7 +189,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> PlanningRegionIdPatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> PatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new planning region.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionPostAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlanningRegionModel> PostAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new planning region.
@@ -214,7 +214,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> PlanningRegionPostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlanningRegionModel>> PostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -341,9 +341,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PlanningRegionModel&gt;</returns>
-        public List<PlanningRegionModel> PlanningRegionGetAllGet(int operationIndex = 0)
+        public List<PlanningRegionModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = PlanningRegionGetAllGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -353,7 +353,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PlanningRegionModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> PlanningRegionGetAllGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -380,7 +380,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionGetAllGet";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -393,7 +393,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<PlanningRegionModel>>("/PlanningRegion/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -410,9 +410,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PlanningRegionModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PlanningRegionModel>> PlanningRegionGetAllGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<PlanningRegionModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = await PlanningRegionGetAllGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -423,7 +423,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PlanningRegionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>>> PlanningRegionGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -451,7 +451,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionGetAllGet";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -465,7 +465,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -482,9 +482,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        public PlanningRegionModel PlanningRegionIdGet(Guid id, int operationIndex = 0)
+        public PlanningRegionModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PlanningRegionIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -495,7 +495,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PlanningRegionIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -523,7 +523,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionIdGet";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -536,7 +536,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<PlanningRegionModel>("/PlanningRegion/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -554,9 +554,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        public async System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanningRegionModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PlanningRegionIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -568,7 +568,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PlanningRegionIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -597,7 +597,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionIdGet";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -611,7 +611,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -629,9 +629,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        public PlanningRegionModel PlanningRegionIdPatch(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
+        public PlanningRegionModel Patch(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PlanningRegionIdPatchWithHttpInfo(id, patchPlanningRegionRequest);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PatchWithHttpInfo(id, patchPlanningRegionRequest);
             return localVarResponse.Data;
         }
 
@@ -643,7 +643,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PlanningRegionIdPatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -675,7 +675,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchPlanningRegionRequest;
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionIdPatch";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -688,7 +688,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<PlanningRegionModel>("/PlanningRegion/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -707,9 +707,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        public async System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionIdPatchAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanningRegionModel> PatchAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PlanningRegionIdPatchWithHttpInfoAsync(id, patchPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -722,7 +722,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PlanningRegionIdPatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -755,7 +755,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchPlanningRegionRequest;
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionIdPatch";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -769,7 +769,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -786,9 +786,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
-        public PlanningRegionModel PlanningRegionPost(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
+        public PlanningRegionModel Post(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PlanningRegionPostWithHttpInfo(createPlanningRegionRequest);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PostWithHttpInfo(createPlanningRegionRequest);
             return localVarResponse.Data;
         }
 
@@ -799,7 +799,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PlanningRegionPostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -830,7 +830,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createPlanningRegionRequest;
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionPost";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -843,7 +843,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<PlanningRegionModel>("/PlanningRegion", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -861,9 +861,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
-        public async System.Threading.Tasks.Task<PlanningRegionModel> PlanningRegionPostAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlanningRegionModel> PostAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PlanningRegionPostWithHttpInfoAsync(createPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PostWithHttpInfoAsync(createPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -875,7 +875,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PlanningRegionPostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -907,7 +907,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createPlanningRegionRequest;
 
-            localVarRequestOptions.Operation = "PlanningRegionSDK.PlanningRegionPost";
+            localVarRequestOptions.Operation = "PlanningRegionSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -921,7 +921,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PlanningRegionPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -32,7 +32,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourTagModel&gt;</returns>
-        List<TourTagModel> TourTagGet(int operationIndex = 0);
+        List<TourTagModel> Get(int operationIndex = 0);
 
         /// <summary>
         /// Retrives all tour tags.
@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourTagModel&gt;</returns>
-        ApiResponse<List<TourTagModel>> TourTagGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<TourTagModel>> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -51,7 +51,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object TourTagIdDelete(Guid id, int operationIndex = 0);
+        Object Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> TourTagIdDeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Retrives the tour tag with the given id.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the TourTag</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        TourTagModel TourTagIdGet(Guid id, int operationIndex = 0);
+        TourTagModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Retrives the tour tag with the given id.
@@ -83,7 +83,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the TourTag</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        ApiResponse<TourTagModel> TourTagIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<TourTagModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -92,7 +92,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        TourTagModel TourTagIdPatch(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0);
+        TourTagModel Patch(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        ApiResponse<TourTagModel> TourTagIdPatchWithHttpInfo(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0);
+        ApiResponse<TourTagModel> PatchWithHttpInfo(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -113,7 +113,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        TourTagModel TourTagPost(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0);
+        TourTagModel Post(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        ApiResponse<TourTagModel> TourTagPostWithHttpInfo(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0);
+        ApiResponse<TourTagModel> PostWithHttpInfo(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -145,7 +145,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourTagModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TourTagModel>> TourTagGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TourTagModel>> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives all tour tags.
@@ -157,7 +157,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourTagModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TourTagModel>>> TourTagGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TourTagModel>>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -169,7 +169,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> TourTagIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -182,7 +182,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TourTagIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrives the tour tag with the given id.
         /// </summary>
@@ -194,7 +194,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        System.Threading.Tasks.Task<TourTagModel> TourTagIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TourTagModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives the tour tag with the given id.
@@ -207,7 +207,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> TourTagIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        System.Threading.Tasks.Task<TourTagModel> TourTagIdPatchAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TourTagModel> PatchAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -234,7 +234,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> TourTagIdPatchWithHttpInfoAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> PatchWithHttpInfoAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -246,7 +246,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        System.Threading.Tasks.Task<TourTagModel> TourTagPostAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TourTagModel> PostAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -259,7 +259,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> TourTagPostWithHttpInfoAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TourTagModel>> PostWithHttpInfoAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -386,9 +386,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourTagModel&gt;</returns>
-        public List<TourTagModel> TourTagGet(int operationIndex = 0)
+        public List<TourTagModel> Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> localVarResponse = TourTagGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -398,7 +398,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourTagModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> TourTagGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -425,7 +425,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagGet";
+            localVarRequestOptions.Operation = "TourTagSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -438,7 +438,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourTagModel>>("/TourTag", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -455,9 +455,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourTagModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TourTagModel>> TourTagGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TourTagModel>> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> localVarResponse = await TourTagGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TourTagModel>> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -468,7 +468,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourTagModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourTagModel>>> TourTagGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourTagModel>>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -496,7 +496,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagGet";
+            localVarRequestOptions.Operation = "TourTagSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -510,7 +510,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -527,9 +527,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object TourTagIdDelete(Guid id, int operationIndex = 0)
+        public Object Delete(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = TourTagIdDeleteWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = DeleteWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -540,7 +540,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> TourTagIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -568,7 +568,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdDelete";
+            localVarRequestOptions.Operation = "TourTagSDK.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -581,7 +581,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -599,9 +599,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> TourTagIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = await TourTagIdDeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -613,7 +613,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> TourTagIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -642,7 +642,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdDelete";
+            localVarRequestOptions.Operation = "TourTagSDK.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -656,7 +656,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -673,9 +673,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the TourTag</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        public TourTagModel TourTagIdGet(Guid id, int operationIndex = 0)
+        public TourTagModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = TourTagIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -686,7 +686,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the TourTag</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TourTagModel> TourTagIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TourTagModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -714,7 +714,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdGet";
+            localVarRequestOptions.Operation = "TourTagSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -727,7 +727,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<TourTagModel>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -745,9 +745,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        public async System.Threading.Tasks.Task<TourTagModel> TourTagIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TourTagModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await TourTagIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -759,7 +759,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> TourTagIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -788,7 +788,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdGet";
+            localVarRequestOptions.Operation = "TourTagSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -802,7 +802,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -820,9 +820,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        public TourTagModel TourTagIdPatch(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0)
+        public TourTagModel Patch(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = TourTagIdPatchWithHttpInfo(id, patchTourTagRequest);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = PatchWithHttpInfo(id, patchTourTagRequest);
             return localVarResponse.Data;
         }
 
@@ -834,7 +834,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TourTagModel> TourTagIdPatchWithHttpInfo(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TourTagModel> PatchWithHttpInfo(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -866,7 +866,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdPatch";
+            localVarRequestOptions.Operation = "TourTagSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -879,7 +879,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<TourTagModel>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -898,9 +898,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        public async System.Threading.Tasks.Task<TourTagModel> TourTagIdPatchAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TourTagModel> PatchAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await TourTagIdPatchWithHttpInfoAsync(id, patchTourTagRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchTourTagRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -913,7 +913,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> TourTagIdPatchWithHttpInfoAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> PatchWithHttpInfoAsync(Guid id, PatchTourTagRequest? patchTourTagRequest = default(PatchTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -946,7 +946,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagIdPatch";
+            localVarRequestOptions.Operation = "TourTagSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -960,7 +960,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -977,9 +977,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourTagModel</returns>
-        public TourTagModel TourTagPost(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0)
+        public TourTagModel Post(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = TourTagPostWithHttpInfo(createTourTagRequest);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = PostWithHttpInfo(createTourTagRequest);
             return localVarResponse.Data;
         }
 
@@ -990,7 +990,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createTourTagRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourTagModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TourTagModel> TourTagPostWithHttpInfo(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TourTagModel> PostWithHttpInfo(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1021,7 +1021,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagPost";
+            localVarRequestOptions.Operation = "TourTagSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1034,7 +1034,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourTagModel>("/TourTag", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1052,9 +1052,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourTagModel</returns>
-        public async System.Threading.Tasks.Task<TourTagModel> TourTagPostAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TourTagModel> PostAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await TourTagPostWithHttpInfoAsync(createTourTagRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TourTagModel> localVarResponse = await PostWithHttpInfoAsync(createTourTagRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1066,7 +1066,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourTagModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> TourTagPostWithHttpInfoAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourTagModel>> PostWithHttpInfoAsync(CreateTourTagRequest? createTourTagRequest = default(CreateTourTagRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1098,7 +1098,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagSDK.TourTagPost";
+            localVarRequestOptions.Operation = "TourTagSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1112,7 +1112,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourTagPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

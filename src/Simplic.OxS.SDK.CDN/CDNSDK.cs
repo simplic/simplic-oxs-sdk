@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
-        BlobMetadata CDNBlobIdDelete(Guid blobId, int operationIndex = 0);
+        BlobMetadata Delete(Guid blobId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        ApiResponse<BlobMetadata> CDNBlobIdDeleteWithHttpInfo(Guid blobId, int operationIndex = 0);
+        ApiResponse<BlobMetadata> DeleteWithHttpInfo(Guid blobId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream CDNGetFileBlobIdGet(Guid blobId, int operationIndex = 0);
+        System.IO.Stream GetFile(Guid blobId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> CDNGetFileBlobIdGetWithHttpInfo(Guid blobId, int operationIndex = 0);
+        ApiResponse<System.IO.Stream> GetFileWithHttpInfo(Guid blobId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -73,7 +73,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
-        BlobMetadata CDNGetMetadataBlobIdGet(Guid blobId, int operationIndex = 0);
+        BlobMetadata GetMetadata(Guid blobId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        ApiResponse<BlobMetadata> CDNGetMetadataBlobIdGetWithHttpInfo(Guid blobId, int operationIndex = 0);
+        ApiResponse<BlobMetadata> GetMetadataWithHttpInfo(Guid blobId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -93,7 +93,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadFilesResponse</returns>
-        UploadFilesResponse CDNUploadFilePost(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0);
+        UploadFilesResponse UploadFile(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadFilesResponse</returns>
-        ApiResponse<UploadFilesResponse> CDNUploadFilePostWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0);
+        ApiResponse<UploadFilesResponse> UploadFileWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -113,7 +113,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadResponse</returns>
-        UploadResponse CDNUploadPost(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0);
+        UploadResponse Upload(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadResponse</returns>
-        ApiResponse<UploadResponse> CDNUploadPostWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0);
+        ApiResponse<UploadResponse> UploadWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -146,7 +146,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
-        System.Threading.Tasks.Task<BlobMetadata> CDNBlobIdDeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BlobMetadata> DeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BlobMetadata>> CDNBlobIdDeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BlobMetadata>> DeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -171,7 +171,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> CDNGetFileBlobIdGetAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> GetFileAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -184,7 +184,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> CDNGetFileBlobIdGetWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetFileWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -196,7 +196,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
-        System.Threading.Tasks.Task<BlobMetadata> CDNGetMetadataBlobIdGetAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BlobMetadata> GetMetadataAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BlobMetadata>> CDNGetMetadataBlobIdGetWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BlobMetadata>> GetMetadataWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -221,7 +221,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadFilesResponse</returns>
-        System.Threading.Tasks.Task<UploadFilesResponse> CDNUploadFilePostAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UploadFilesResponse> UploadFileAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -234,7 +234,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadFilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UploadFilesResponse>> CDNUploadFilePostWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UploadFilesResponse>> UploadFileWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -246,7 +246,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadResponse</returns>
-        System.Threading.Tasks.Task<UploadResponse> CDNUploadPostAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UploadResponse> UploadAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -259,7 +259,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UploadResponse>> CDNUploadPostWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UploadResponse>> UploadWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -387,9 +387,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
-        public BlobMetadata CDNBlobIdDelete(Guid blobId, int operationIndex = 0)
+        public BlobMetadata Delete(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = CDNBlobIdDeleteWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = DeleteWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
@@ -400,7 +400,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> CDNBlobIdDeleteWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> DeleteWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -428,7 +428,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNBlobIdDelete";
+            localVarRequestOptions.Operation = "CDNSDK.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -441,7 +441,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Delete<BlobMetadata>("/CDN/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNBlobIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -459,9 +459,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
-        public async System.Threading.Tasks.Task<BlobMetadata> CDNBlobIdDeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BlobMetadata> DeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await CDNBlobIdDeleteWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await DeleteWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -473,7 +473,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> CDNBlobIdDeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> DeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -502,7 +502,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNBlobIdDelete";
+            localVarRequestOptions.Operation = "CDNSDK.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -516,7 +516,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNBlobIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -533,9 +533,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream CDNGetFileBlobIdGet(Guid blobId, int operationIndex = 0)
+        public System.IO.Stream GetFile(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = CDNGetFileBlobIdGetWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = GetFileWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
@@ -546,7 +546,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> CDNGetFileBlobIdGetWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> GetFileWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -574,7 +574,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNGetFileBlobIdGet";
+            localVarRequestOptions.Operation = "CDNSDK.GetFile";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -587,7 +587,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Get<System.IO.Stream>("/CDN/get-file/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNGetFileBlobIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetFile", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -605,9 +605,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> CDNGetFileBlobIdGetAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetFileAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = await CDNGetFileBlobIdGetWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = await GetFileWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -619,7 +619,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> CDNGetFileBlobIdGetWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> GetFileWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -648,7 +648,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNGetFileBlobIdGet";
+            localVarRequestOptions.Operation = "CDNSDK.GetFile";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -662,7 +662,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNGetFileBlobIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetFile", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -679,9 +679,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
-        public BlobMetadata CDNGetMetadataBlobIdGet(Guid blobId, int operationIndex = 0)
+        public BlobMetadata GetMetadata(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = CDNGetMetadataBlobIdGetWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = GetMetadataWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
@@ -692,7 +692,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> CDNGetMetadataBlobIdGetWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> GetMetadataWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -720,7 +720,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNGetMetadataBlobIdGet";
+            localVarRequestOptions.Operation = "CDNSDK.GetMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -733,7 +733,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Get<BlobMetadata>("/CDN/get-metadata/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNGetMetadataBlobIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetMetadata", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -751,9 +751,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
-        public async System.Threading.Tasks.Task<BlobMetadata> CDNGetMetadataBlobIdGetAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BlobMetadata> GetMetadataAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await CDNGetMetadataBlobIdGetWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await GetMetadataWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -765,7 +765,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> CDNGetMetadataBlobIdGetWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> GetMetadataWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -794,7 +794,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNGetMetadataBlobIdGet";
+            localVarRequestOptions.Operation = "CDNSDK.GetMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -808,7 +808,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNGetMetadataBlobIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetMetadata", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -825,9 +825,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadFilesResponse</returns>
-        public UploadFilesResponse CDNUploadFilePost(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
+        public UploadFilesResponse UploadFile(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = CDNUploadFilePostWithHttpInfo(files);
+            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = UploadFileWithHttpInfo(files);
             return localVarResponse.Data;
         }
 
@@ -838,7 +838,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadFilesResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> CDNUploadFilePostWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> UploadFileWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -873,7 +873,7 @@ namespace Simplic.OxS.SDK.CDN
                 }
             }
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNUploadFilePost";
+            localVarRequestOptions.Operation = "CDNSDK.UploadFile";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -886,7 +886,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Post<UploadFilesResponse>("/CDN/upload-file", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNUploadFilePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UploadFile", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -904,9 +904,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadFilesResponse</returns>
-        public async System.Threading.Tasks.Task<UploadFilesResponse> CDNUploadFilePostAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UploadFilesResponse> UploadFileAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = await CDNUploadFilePostWithHttpInfoAsync(files, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = await UploadFileWithHttpInfoAsync(files, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadFilesResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadFilesResponse>> CDNUploadFilePostWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadFilesResponse>> UploadFileWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -954,7 +954,7 @@ namespace Simplic.OxS.SDK.CDN
                 }
             }
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNUploadFilePost";
+            localVarRequestOptions.Operation = "CDNSDK.UploadFile";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -968,7 +968,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNUploadFilePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UploadFile", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -985,9 +985,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadResponse</returns>
-        public UploadResponse CDNUploadPost(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
+        public UploadResponse Upload(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = CDNUploadPostWithHttpInfo(uploadBytesRequest);
+            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = UploadWithHttpInfo(uploadBytesRequest);
             return localVarResponse.Data;
         }
 
@@ -998,7 +998,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<UploadResponse> CDNUploadPostWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<UploadResponse> UploadWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1029,7 +1029,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.Data = uploadBytesRequest;
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNUploadPost";
+            localVarRequestOptions.Operation = "CDNSDK.Upload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1042,7 +1042,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Post<UploadResponse>("/CDN/upload", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNUploadPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1060,9 +1060,9 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadResponse</returns>
-        public async System.Threading.Tasks.Task<UploadResponse> CDNUploadPostAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UploadResponse> UploadAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = await CDNUploadPostWithHttpInfoAsync(uploadBytesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = await UploadWithHttpInfoAsync(uploadBytesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1074,7 +1074,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadResponse>> CDNUploadPostWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadResponse>> UploadWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1106,7 +1106,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.Data = uploadBytesRequest;
 
-            localVarRequestOptions.Operation = "CDNSDK.CDNUploadPost";
+            localVarRequestOptions.Operation = "CDNSDK.Upload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1120,7 +1120,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CDNUploadPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -23,7 +23,7 @@ def log(*values: object):
         print(*values)
 
 
-def collect_functions(path_to_file: str) -> list[FunctionMeta]:
+def collect_functions(code: str) -> list[FunctionMeta]:
     """
     Gets all functions from a file.
     """
@@ -35,28 +35,20 @@ def collect_functions(path_to_file: str) -> list[FunctionMeta]:
     params = r"\([^)]*\)"
 
     pattern = rf"^\s*({visibility})?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
-    functions = []
-
-    # get all functions
-    with open(path_to_file, "r") as file:
-        content = file.read()
-        matches = re.findall(pattern, content, re.MULTILINE)
-
-        for match in matches:
-            functions.append(match)
-
     metas = []
 
-    # parse meta
-    for signature in functions:
+    # get all functions
+    matches = re.findall(pattern, code, re.MULTILINE)
+
+    for match in matches:
+        # parse meta
         # remove parens and split args
-        params_strings = signature[6][1:-1].split(',')
         params = []
-        for ps in params_strings:
+        for ps in match[6][1:-1].split(','):
             parts = ps.split(' ')
             params.append(ParamMeta(parts[0], parts[1]))
 
-        metas.append(FunctionMeta(signature[2], signature[5], params))
+        metas.append(FunctionMeta(match[2], match[5], params))
 
     return metas
 
@@ -65,49 +57,60 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     """
     Returns the decluttered function name 
     """
+    log(f"{fn.name=}")
+    log(f"{controller_name=}")
+
+    fn_name = fn.name
     if len(fn.params) > 0:
         log(f"{fn=}")
         first_param = fn.params[0].name
         # make pascal case
         first_param = f"{first_param[0].upper()}{first_param[1:]}"
         # remove first param from name
-        fn.name = fn.name.replace(first_param, "")
+        fn_name = fn.name.replace(first_param, "")
 
     pattern = rf"({controller_name})([A-Za-z]+)?(Get|Post|Put|Delete|Head|Options|Patch)([A-Za-z]*)?"
-    matches = re.findall(pattern, fn.name)
+    match = re.search(pattern, fn_name)
 
-    # get parts for function name
-    parts = []
-    for match in matches:
-        log(f"{match=}")
-        operation = match[1]
-        http_method = match[2]
-        suffix = match[3]
-        if not suffix:
-            suffix = ""
+    if not match:
+        log(
+            f"<parse_pretty> Failed to regex match function name (already pretty?): `{fn.name}` -> returning given name.")
+        return fn.name
 
-        if operation:
-            parts.append(f"{operation}{suffix}")
-        else:
-            parts.append(f"{http_method}{suffix}")
+    groups_matched = len(match.groups())
+    log(f"{groups_matched=}")
+    log(f"{match.group(1)=}")
+    log(f"{match.group(2)=}")
+    log(f"{match.group(3)=}")
+    log(f"{match.group(4)=}")
 
-    # concat parts
-    return ''.join(parts)
+    if groups_matched != 4:
+        raise Exception(
+            f"<parse_pretty> Unexpected amount of groups: `{groups_matched}`")
+
+    return f"{match.group(2) or match.group(3)}{match.group(4)}"
 
 
 def main(args: Namespace):
-    for fn in collect_functions(args.file):
-        log("___:", fn.name)
+    file = args.file
+    log(f"Reading file contents from `{file}`..")
+    file_content = None
+    with open(file, 'r') as f:
+        file_content = f.read()
+
+    fns = collect_functions(file_content)
+    for fn in fns:
+        log(f"___: `{fn.name}`")
         pretty_name = parse_pretty(fn, args.controller)
-        with open(args.file, 'r') as file:
-            file_content = file.read()
 
         # replace old name
         file_content = file_content.replace(fn.name, pretty_name)
-        with open(args.file, 'w') as file:
-            file.write(file_content)
 
-        log("-->:", pretty_name, "\n")
+        log(f"-->: `{pretty_name}`\n")
+
+    log(f"Writing changes to `{file}`..")
+    with open(file, 'w') as f:
+        f.write(file_content)
 
 
 argparser = ArgumentParser()

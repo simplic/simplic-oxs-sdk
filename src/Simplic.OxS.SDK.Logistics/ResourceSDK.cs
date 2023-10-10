@@ -34,7 +34,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        List<ResourceModel> ResourceGetAllByGroupGet(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        List<ResourceModel> GetAllBy(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all resources.
@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        ApiResponse<List<ResourceModel>> ResourceGetAllByGroupGetWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        ApiResponse<List<ResourceModel>> GetAllByWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
@@ -55,7 +55,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        List<ResourceModel> ResourceGetAllGet(DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        List<ResourceModel> GetAll(DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all resources.
@@ -67,7 +67,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        ApiResponse<List<ResourceModel>> ResourceGetAllGetWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        ApiResponse<List<ResourceModel>> GetAllWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
         /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="filterString"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        List<ResourceModel> ResourceGetPageDataGet(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0);
+        List<ResourceModel> GetPageData(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves a data page of resources.
@@ -93,7 +93,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="filterString"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        ApiResponse<List<ResourceModel>> ResourceGetPageDataGetWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0);
+        ApiResponse<List<ResourceModel>> GetPageDataWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0);
         /// <summary>
         /// Retrives the resource with the given id.
         /// </summary>
@@ -101,7 +101,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        ResourceModel ResourceIdGet(Guid id, int operationIndex = 0);
+        ResourceModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Retrives the resource with the given id.
@@ -113,7 +113,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        ApiResponse<ResourceModel> ResourceIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<ResourceModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +122,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        ResourceModel ResourceIdPut(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0);
+        ResourceModel Put(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        ApiResponse<ResourceModel> ResourceIdPutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0);
+        ApiResponse<ResourceModel> PutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -143,7 +143,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        ResourceModel ResourcePost(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0);
+        ResourceModel Post(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        ApiResponse<ResourceModel> ResourcePostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0);
+        ApiResponse<ResourceModel> PostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -177,7 +177,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllByGroupGetAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ResourceModel>> GetAllByAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all resources.
@@ -191,7 +191,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> ResourceGetAllByGroupGetWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetAllByWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
@@ -203,7 +203,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllGetAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ResourceModel>> GetAllAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all resources.
@@ -216,7 +216,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> ResourceGetAllGetWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetAllWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetPageDataGetAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ResourceModel>> GetPageDataAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves a data page of resources.
@@ -247,7 +247,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> ResourceGetPageDataGetWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetPageDataWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrives the resource with the given id.
         /// </summary>
@@ -259,7 +259,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        System.Threading.Tasks.Task<ResourceModel> ResourceIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ResourceModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives the resource with the given id.
@@ -272,7 +272,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> ResourceIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -285,7 +285,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        System.Threading.Tasks.Task<ResourceModel> ResourceIdPutAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ResourceModel> PutAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -299,7 +299,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> ResourceIdPutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> PutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -311,7 +311,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        System.Threading.Tasks.Task<ResourceModel> ResourcePostAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ResourceModel> PostAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -324,7 +324,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> ResourcePostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ResourceModel>> PostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -453,9 +453,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        public List<ResourceModel> ResourceGetAllByGroupGet(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public List<ResourceModel> GetAllBy(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllByGroupGetWithHttpInfo(group, useableUntil);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetAllByWithHttpInfo(group, useableUntil);
             return localVarResponse.Data;
         }
 
@@ -467,7 +467,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetAllByGroupGetWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetAllByWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -502,7 +502,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllByGroupGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetAllBy";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -515,7 +515,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-all-by-group", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetAllByGroupGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAllBy", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -534,9 +534,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllByGroupGetAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetAllByAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllByGroupGetWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetAllByWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -549,7 +549,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetAllByGroupGetWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetAllByWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -585,7 +585,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllByGroupGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetAllBy";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -599,7 +599,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetAllByGroupGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAllBy", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -616,9 +616,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        public List<ResourceModel> ResourceGetAllGet(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public List<ResourceModel> GetAll(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetAllGetWithHttpInfo(useableUntil);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetAllWithHttpInfo(useableUntil);
             return localVarResponse.Data;
         }
 
@@ -629,7 +629,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetAllGetWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetAllWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -660,7 +660,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -673,7 +673,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -691,9 +691,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetAllGetAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetAllAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetAllGetWithHttpInfoAsync(useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetAllWithHttpInfoAsync(useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -705,7 +705,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetAllGetWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetAllWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -737,7 +737,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetAllGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -751,7 +751,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -771,9 +771,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="filterString"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        public List<ResourceModel> ResourceGetPageDataGet(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
+        public List<ResourceModel> GetPageData(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = ResourceGetPageDataGetWithHttpInfo(skip, page, pageSize, filterString);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetPageDataWithHttpInfo(skip, page, pageSize, filterString);
             return localVarResponse.Data;
         }
 
@@ -787,7 +787,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="filterString"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> ResourceGetPageDataGetWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetPageDataWithHttpInfo(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -830,7 +830,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetPageDataGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetPageData";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -843,7 +843,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-page-data", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetPageDataGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetPageData", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -864,9 +864,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ResourceModel>> ResourceGetPageDataGetAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetPageDataAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await ResourceGetPageDataGetWithHttpInfoAsync(skip, page, pageSize, filterString, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetPageDataWithHttpInfoAsync(skip, page, pageSize, filterString, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -881,7 +881,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> ResourceGetPageDataGetWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetPageDataWithHttpInfoAsync(int? skip = default(int?), int? page = default(int?), int? pageSize = default(int?), string? filterString = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -925,7 +925,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceGetPageDataGet";
+            localVarRequestOptions.Operation = "ResourceSDK.GetPageData";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -939,7 +939,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceGetPageDataGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetPageData", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,9 +956,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        public ResourceModel ResourceIdGet(Guid id, int operationIndex = 0)
+        public ResourceModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourceIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -969,7 +969,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the resource</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourceIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -997,7 +997,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceIdGet";
+            localVarRequestOptions.Operation = "ResourceSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1010,7 +1010,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ResourceModel>("/Resource/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1028,9 +1028,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        public async System.Threading.Tasks.Task<ResourceModel> ResourceIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ResourceModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourceIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1042,7 +1042,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourceIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1071,7 +1071,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceIdGet";
+            localVarRequestOptions.Operation = "ResourceSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1085,7 +1085,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1103,9 +1103,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        public ResourceModel ResourceIdPut(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
+        public ResourceModel Put(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourceIdPutWithHttpInfo(id, updateResourceRequest);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = PutWithHttpInfo(id, updateResourceRequest);
             return localVarResponse.Data;
         }
 
@@ -1117,7 +1117,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourceIdPutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> PutWithHttpInfo(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1149,7 +1149,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceIdPut";
+            localVarRequestOptions.Operation = "ResourceSDK.Put";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1162,7 +1162,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<ResourceModel>("/Resource/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1181,9 +1181,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        public async System.Threading.Tasks.Task<ResourceModel> ResourceIdPutAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ResourceModel> PutAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourceIdPutWithHttpInfoAsync(id, updateResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await PutWithHttpInfoAsync(id, updateResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1196,7 +1196,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourceIdPutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> PutWithHttpInfoAsync(Guid id, UpdateResourceRequest? updateResourceRequest = default(UpdateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1229,7 +1229,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourceIdPut";
+            localVarRequestOptions.Operation = "ResourceSDK.Put";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1243,7 +1243,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourceIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1260,9 +1260,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResourceModel</returns>
-        public ResourceModel ResourcePost(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
+        public ResourceModel Post(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = ResourcePostWithHttpInfo(createResourceRequest);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = PostWithHttpInfo(createResourceRequest);
             return localVarResponse.Data;
         }
 
@@ -1273,7 +1273,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createResourceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResourceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ResourceModel> ResourcePostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ResourceModel> PostWithHttpInfo(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1304,7 +1304,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourcePost";
+            localVarRequestOptions.Operation = "ResourceSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1317,7 +1317,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ResourceModel>("/Resource", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourcePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1335,9 +1335,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceModel</returns>
-        public async System.Threading.Tasks.Task<ResourceModel> ResourcePostAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ResourceModel> PostAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await ResourcePostWithHttpInfoAsync(createResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ResourceModel> localVarResponse = await PostWithHttpInfoAsync(createResourceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1349,7 +1349,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> ResourcePostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResourceModel>> PostWithHttpInfoAsync(CreateResourceRequest? createResourceRequest = default(CreateResourceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1381,7 +1381,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceSDK.ResourcePost";
+            localVarRequestOptions.Operation = "ResourceSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1395,7 +1395,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ResourcePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

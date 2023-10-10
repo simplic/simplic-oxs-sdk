@@ -153,12 +153,6 @@ generate() {
         mkdir -p "$sdk_proj_folder/Model"
         mv -f "$GEN_OUT/src/$sdk_proj_name/Model"/* "$sdk_proj_folder/Model"
 
-        # fix function names
-        log "Fixing bad function names.." 0
-        fix_function_names "$sdk_proj_folder" "$last_part"
-        log "..done" 2
-
-
         # move docs to doc dir
         mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
     done < "$SVC_FILE"
@@ -190,6 +184,26 @@ done
 log "Generating SDKs.." 0
 generate
 log "..done" 2
+# fix function names
+log "Fixing bad function names.." 0
+for proj_folder in "$SRC_DIR"/*; do
+    proj_folder_name=$(basename "$proj_folder")
+    if [[ "$proj_folder_name" == "$BASE_PROJ_NAME" ]]; then
+        continue
+    fi
 
+    for file in "$proj_folder"/*; do
+        file_name=$(basename "$file")
+        # NOTE: SDK SUFFIX DEPENDECY HERE!!!!
+        # EITHER REMOVE FROM config.yaml OR FIGURE SMTH OUT!!!!!!!!!!!!!
+        if [[ "$file_name" != *"SDK.cs" ]]; then
+            continue
+        fi
+
+        controller_name="${file_name%%SDK*}"
+        python beautifier.py -f "$file" -c "$controller_name"
+    done
+done
+log "..done" 2
 # npm remove $CLI -D
 log "All done!" 2

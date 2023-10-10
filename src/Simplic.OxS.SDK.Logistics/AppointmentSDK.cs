@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AppointmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        AppointmentModel AppointmentIdGet(Guid id, int operationIndex = 0);
+        AppointmentModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        ApiResponse<AppointmentModel> AppointmentIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<AppointmentModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -74,7 +74,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        AppointmentModel AppointmentIdPatch(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0);
+        AppointmentModel Patch(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        ApiResponse<AppointmentModel> AppointmentIdPatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0);
+        ApiResponse<AppointmentModel> PatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -95,7 +95,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        AppointmentModel AppointmentPost(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0);
+        AppointmentModel Post(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        ApiResponse<AppointmentModel> AppointmentPostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0);
+        ApiResponse<AppointmentModel> PostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -128,7 +128,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AppointmentIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AppointmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -153,7 +153,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        System.Threading.Tasks.Task<AppointmentModel> AppointmentIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AppointmentModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -166,7 +166,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> AppointmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -179,7 +179,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        System.Threading.Tasks.Task<AppointmentModel> AppointmentIdPatchAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AppointmentModel> PatchAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -193,7 +193,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> AppointmentIdPatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> PatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -205,7 +205,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        System.Threading.Tasks.Task<AppointmentModel> AppointmentPostAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AppointmentModel> PostAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -218,7 +218,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> AppointmentPostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AppointmentModel>> PostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -348,7 +348,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public void AppointmentIdDelete(Guid id, int operationIndex = 0)
         {
-            AppointmentIdDeleteWithHttpInfo(id);
+            DeleteWithHttpInfo(id);
         }
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> AppointmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -417,9 +417,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AppointmentIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await AppointmentIdDeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -430,7 +430,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> AppointmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -490,9 +490,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        public AppointmentModel AppointmentIdGet(Guid id, int operationIndex = 0)
+        public AppointmentModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -503,7 +503,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -531,7 +531,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdGet";
+            localVarRequestOptions.Operation = "AppointmentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -544,7 +544,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<AppointmentModel>("/Appointment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -562,9 +562,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        public async System.Threading.Tasks.Task<AppointmentModel> AppointmentIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AppointmentModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -576,7 +576,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -605,7 +605,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdGet";
+            localVarRequestOptions.Operation = "AppointmentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -619,7 +619,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -637,9 +637,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        public AppointmentModel AppointmentIdPatch(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
+        public AppointmentModel Patch(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentIdPatchWithHttpInfo(id, patchAppointmentRequest);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = PatchWithHttpInfo(id, patchAppointmentRequest);
             return localVarResponse.Data;
         }
 
@@ -651,7 +651,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentIdPatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> PatchWithHttpInfo(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -683,7 +683,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdPatch";
+            localVarRequestOptions.Operation = "AppointmentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -696,7 +696,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<AppointmentModel>("/Appointment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -715,9 +715,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        public async System.Threading.Tasks.Task<AppointmentModel> AppointmentIdPatchAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AppointmentModel> PatchAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentIdPatchWithHttpInfoAsync(id, patchAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -730,7 +730,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentIdPatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> PatchWithHttpInfoAsync(Guid id, PatchAppointmentRequest? patchAppointmentRequest = default(PatchAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -763,7 +763,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentIdPatch";
+            localVarRequestOptions.Operation = "AppointmentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -777,7 +777,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -794,9 +794,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AppointmentModel</returns>
-        public AppointmentModel AppointmentPost(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
+        public AppointmentModel Post(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = AppointmentPostWithHttpInfo(createAppointmentRequest);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = PostWithHttpInfo(createAppointmentRequest);
             return localVarResponse.Data;
         }
 
@@ -807,7 +807,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createAppointmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AppointmentModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> AppointmentPostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AppointmentModel> PostWithHttpInfo(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -838,7 +838,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentPost";
+            localVarRequestOptions.Operation = "AppointmentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -851,7 +851,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<AppointmentModel>("/Appointment", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -869,9 +869,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AppointmentModel</returns>
-        public async System.Threading.Tasks.Task<AppointmentModel> AppointmentPostAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AppointmentModel> PostAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await AppointmentPostWithHttpInfoAsync(createAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AppointmentModel> localVarResponse = await PostWithHttpInfoAsync(createAppointmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -883,7 +883,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AppointmentModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> AppointmentPostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AppointmentModel>> PostWithHttpInfoAsync(CreateAppointmentRequest? createAppointmentRequest = default(CreateAppointmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -915,7 +915,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentSDK.AppointmentPost";
+            localVarRequestOptions.Operation = "AppointmentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -929,7 +929,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AppointmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

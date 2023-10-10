@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the tour.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourReportingModel</returns>
-        TourReportingModel ReportingGetByTourIdGet(Guid id, int operationIndex = 0);
+        TourReportingModel GetByTour(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Retrieves the tour with the given id.
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the tour.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourReportingModel</returns>
-        ApiResponse<TourReportingModel> ReportingGetByTourIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<TourReportingModel> GetByTourWithHttpInfo(Guid id, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -66,7 +66,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourReportingModel</returns>
-        System.Threading.Tasks.Task<TourReportingModel> ReportingGetByTourIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TourReportingModel> GetByTourAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves the tour with the given id.
@@ -79,7 +79,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourReportingModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TourReportingModel>> ReportingGetByTourIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TourReportingModel>> GetByTourWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -207,9 +207,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the tour.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourReportingModel</returns>
-        public TourReportingModel ReportingGetByTourIdGet(Guid id, int operationIndex = 0)
+        public TourReportingModel GetByTour(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TourReportingModel> localVarResponse = ReportingGetByTourIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TourReportingModel> localVarResponse = GetByTourWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the tour.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TourReportingModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TourReportingModel> ReportingGetByTourIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TourReportingModel> GetByTourWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -248,7 +248,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingSDK.ReportingGetByTourIdGet";
+            localVarRequestOptions.Operation = "ReportingSDK.GetByTour";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -261,7 +261,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<TourReportingModel>("/Reporting/get-by-tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetByTourIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -279,9 +279,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TourReportingModel</returns>
-        public async System.Threading.Tasks.Task<TourReportingModel> ReportingGetByTourIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TourReportingModel> GetByTourAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TourReportingModel> localVarResponse = await ReportingGetByTourIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TourReportingModel> localVarResponse = await GetByTourWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -293,7 +293,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TourReportingModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourReportingModel>> ReportingGetByTourIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourReportingModel>> GetByTourWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -322,7 +322,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingSDK.ReportingGetByTourIdGet";
+            localVarRequestOptions.Operation = "ReportingSDK.GetByTour";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -336,7 +336,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetByTourIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

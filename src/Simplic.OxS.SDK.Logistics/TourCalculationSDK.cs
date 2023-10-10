@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="calculateRouteRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CalculateRouteResponse</returns>
-        CalculateRouteResponse TourCalculationCalculateRoutesPost(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0);
+        CalculateRouteResponse CalculateRoutes(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="calculateRouteRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CalculateRouteResponse</returns>
-        ApiResponse<CalculateRouteResponse> TourCalculationCalculateRoutesPostWithHttpInfo(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0);
+        ApiResponse<CalculateRouteResponse> CalculateRoutesWithHttpInfo(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -66,7 +66,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CalculateRouteResponse</returns>
-        System.Threading.Tasks.Task<CalculateRouteResponse> TourCalculationCalculateRoutesPostAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CalculateRouteResponse> CalculateRoutesAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CalculateRouteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CalculateRouteResponse>> TourCalculationCalculateRoutesPostWithHttpInfoAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CalculateRouteResponse>> CalculateRoutesWithHttpInfoAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -207,9 +207,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="calculateRouteRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CalculateRouteResponse</returns>
-        public CalculateRouteResponse TourCalculationCalculateRoutesPost(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0)
+        public CalculateRouteResponse CalculateRoutes(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> localVarResponse = TourCalculationCalculateRoutesPostWithHttpInfo(calculateRouteRequest);
+            Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> localVarResponse = CalculateRoutesWithHttpInfo(calculateRouteRequest);
             return localVarResponse.Data;
         }
 
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="calculateRouteRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CalculateRouteResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> TourCalculationCalculateRoutesPostWithHttpInfo(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> CalculateRoutesWithHttpInfo(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -251,7 +251,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = calculateRouteRequest;
 
-            localVarRequestOptions.Operation = "TourCalculationSDK.TourCalculationCalculateRoutesPost";
+            localVarRequestOptions.Operation = "TourCalculationSDK.CalculateRoutes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -264,7 +264,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<CalculateRouteResponse>("/TourCalculation/calculate-routes", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourCalculationCalculateRoutesPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CalculateRoutes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -282,9 +282,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CalculateRouteResponse</returns>
-        public async System.Threading.Tasks.Task<CalculateRouteResponse> TourCalculationCalculateRoutesPostAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CalculateRouteResponse> CalculateRoutesAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> localVarResponse = await TourCalculationCalculateRoutesPostWithHttpInfoAsync(calculateRouteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse> localVarResponse = await CalculateRoutesWithHttpInfoAsync(calculateRouteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -296,7 +296,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CalculateRouteResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse>> TourCalculationCalculateRoutesPostWithHttpInfoAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CalculateRouteResponse>> CalculateRoutesWithHttpInfoAsync(CalculateRouteRequest? calculateRouteRequest = default(CalculateRouteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -328,7 +328,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = calculateRouteRequest;
 
-            localVarRequestOptions.Operation = "TourCalculationSDK.TourCalculationCalculateRoutesPost";
+            localVarRequestOptions.Operation = "TourCalculationSDK.CalculateRoutes";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -342,7 +342,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TourCalculationCalculateRoutesPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CalculateRoutes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
