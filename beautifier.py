@@ -62,7 +62,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     fn_name = valid_name
     visibility = r"public"
     accessibility = r"static"
-    params = r"\(.*\)$"
+    params = r"\(.*\)"
 
     pattern = rf"^\s*({visibility})?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
     metas = []
@@ -86,13 +86,17 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     log(f"{controller_name=}")
 
     fn_name = fn.name
-    if len(fn.params) > 0:
+
+    # [experimental] remove first param
+    # Note: it appears that the first param is always inserted when..
+    # .. A) it has no default value (non-optional)
+    # .. B) it is != operationIndex
+    if len(fn.params) > 0 and fn.params[0].name != "operationIndex":
         log(f"{fn=}")
         first_param = fn.params[0].name
         # make pascal case
         first_param = f"{first_param[0].upper()}{first_param[1:]}"
-        # [experimental] remove first param from name if no preposition is attached
-        fn_name = fn.name.replace(first_param, "")
+        fn_name = fn.name.replace(first_param, "", 1)
 
     pattern = rf"({controller_name})([A-Za-z]+)?(Get|Post|Put|Delete|Head|Options|Patch)([A-Za-z]*)?"
     match = re.search(pattern, fn_name)
