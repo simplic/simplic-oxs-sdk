@@ -17,6 +17,8 @@ SVC_FILE="services"
 BASE_URL="https://dev-oxs.simplic.io/"
 POST_URL="-api/v1/swagger/v1/swagger.json"
 
+API_NAME_SUFFIX="SDK"
+
 BASE_PROJ_NAME="Simplic.OxS.SDK"
 BASE_PROJ_FOLDER="$SRC_DIR/$BASE_PROJ_NAME"
 BASE_PROJ_FILE="$BASE_PROJ_FOLDER/$BASE_PROJ_NAME.csproj"
@@ -32,18 +34,18 @@ log() {
     variation=$2
 
     case $variation in
-        0)
-            echo -e "$LMAGENTA[[$LYELLOW $msg $LMAGENTA]]$NC"
-            ;;
-        1)
-            echo -e "$LMAGENTA>>$YELLOW $msg$NC"
-            ;;
-        2)
-            echo -e "$LMAGENTA[[$LGREEN $msg $LMAGENTA]]$NC"
-            ;;
-        *)
-            echo -e "$LMAGENTA[[$YELLOW $msg $LMAGENTA]]$NC"
-            ;;
+    0)
+        echo -e "$LMAGENTA[[$LYELLOW $msg $LMAGENTA]]$NC"
+        ;;
+    1)
+        echo -e "$LMAGENTA>>$YELLOW $msg$NC"
+        ;;
+    2)
+        echo -e "$LMAGENTA[[$LGREEN $msg $LMAGENTA]]$NC"
+        ;;
+    *)
+        echo -e "$LMAGENTA[[$YELLOW $msg $LMAGENTA]]$NC"
+        ;;
     esac
 }
 
@@ -76,18 +78,30 @@ rec_replace() {
     fi
 }
 
-# Declutters sdk function names
-make_calls_pretty() {
-    local proj_path="$1"
-    local proj_name="$(basename "$proj_path")"
-    local controller_name=$(echo "$proj_name" | sed 's/.*\.//')
-    # rec_replace "$proj_path" "${}"
-    # replace function name pattern through regex mathcing  
-    # TODO!
+# Fixes function names
+fix_function_names() {
+    local path="$1"
+    local controller="$2"
+
+    for __i in "$path"/*; do
+        local entry=$__i
+        if [[ -d "$entry" ]]; then
+            # recurse
+            fix_function_names "$entry" "$controller"
+            continue
+        fi
+
+        if [[ "${entry##*.}" != "cs" ]]; then
+            # ignore non .cs files
+            continue
+        fi
+
+        python beautifier.py -f "$entry" -c "$controller"
+    done
 }
 
 # Generate code for services
-generate() {   
+generate() {
     while IFS= read -r line; do
         # ignore empty lines and comments
         if [[ -z "$line" || "$line" == "#"* ]]; then
@@ -112,6 +126,7 @@ generate() {
             -c "$GEN_CFG" \
             -o "$GEN_OUT" \
             -t "$TMPL_DIR" \
+            --api-name-suffix "$API_NAME_SUFFIX" \
             --package-name "$sdk_proj_name" \
             -i "$specification"
 
@@ -121,7 +136,7 @@ generate() {
         rm -rf "$sdk_proj_folder"
         dotnet new classlib -o "$sdk_proj_folder"
         rm -rf "$sdk_proj_folder/Class1.cs"
-        
+
         # add project to solution
         dotnet sln "$SLN_FILE" add "$sdk_proj_file"
         # add assembly ref -> base proj
@@ -129,25 +144,24 @@ generate() {
 
         # move generated files to proper project(s)
         # Boiler Plate
-        rec_replace "$GEN_OUT/src/$sdk_proj_name"                           "$sdk_proj_name"    "$BASE_PROJ_NAME"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/ProblemDetails.cs"         "$BASE_PROJ_FOLDER"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/AbstractOpenAPISchema.cs"  "$BASE_PROJ_FOLDER"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Client"/*                        "$BASE_PROJ_FOLDER"
+        rec_replace "$GEN_OUT/src/$sdk_proj_name" "$sdk_proj_name" "$BASE_PROJ_NAME"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/ProblemDetails.cs" "$BASE_PROJ_FOLDER"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Model/AbstractOpenAPISchema.cs" "$BASE_PROJ_FOLDER"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Client"/* "$BASE_PROJ_FOLDER"
 
         # SDK specific
         # insert using for base project
-        rec_replace "$GEN_OUT/src/$sdk_proj_name" "namespace $BASE_PROJ_NAME"   "using $BASE_PROJ_NAME;\n\nnamespace $sdk_proj_name" "cs"
-        mv -f "$GEN_OUT/src/$sdk_proj_name/Api"/*   "$sdk_proj_folder"
+        rec_replace "$GEN_OUT/src/$sdk_proj_name" "namespace $BASE_PROJ_NAME" "using $BASE_PROJ_NAME;\n\nnamespace $sdk_proj_name" "cs"
+        mv -f "$GEN_OUT/src/$sdk_proj_name/Api"/* "$sdk_proj_folder"
         mkdir -p "$sdk_proj_folder/Model"
         mv -f "$GEN_OUT/src/$sdk_proj_name/Model"/* "$sdk_proj_folder/Model"
 
         # move docs to doc dir
         mv -f "$GEN_OUT/docs"/* "$DOC_DIR"
-    done < "$SVC_FILE"
+    done <"$SVC_FILE"
 
     rm -rf "$GEN_OUT"
 }
-
 
 #############################################
 #               SCRIPT START                #
@@ -172,6 +186,25 @@ done
 log "Generating SDKs.." 0
 generate
 log "..done" 2
+# fix function names
+log "Fixing bad function names.." 0
+for proj_folder in "$SRC_DIR"/*; do
+    proj_folder_name=$(basename "$proj_folder")
+    if [[ "$proj_folder_name" == "$BASE_PROJ_NAME" ]]; then
+        continue
+    fi
 
+    for file in "$proj_folder"/*; do
+        file_name=$(basename "$file")
+        if [[ "$file_name" != *"$API_NAME_SUFFIX.cs" ]]; then
+            continue
+        fi
+
+        controller_name="${file_name%%$API_NAME_SUFFIX*}"
+        log "$controller_name" 1
+        python beautifier.py -f "$file" -c "$controller_name"
+    done
+done
+log "..done" 2
 # npm remove $CLI -D
 log "All done!" 2

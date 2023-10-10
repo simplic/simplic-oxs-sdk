@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        DocumentResponse DocumentDocumentIdGet(Guid documentId, int operationIndex = 0);
+        DocumentResponse Get(Guid documentId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        ApiResponse<DocumentResponse> DocumentDocumentIdGetWithHttpInfo(Guid documentId, int operationIndex = 0);
+        ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        DocumentVersionResponse DocumentGetCurrentDocumentIdGet(Guid documentId, int operationIndex = 0);
+        DocumentVersionResponse GetCurrent(Guid documentId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        ApiResponse<DocumentVersionResponse> DocumentGetCurrentDocumentIdGetWithHttpInfo(Guid documentId, int operationIndex = 0);
+        ApiResponse<DocumentVersionResponse> GetCurrentWithHttpInfo(Guid documentId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -73,7 +73,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        DocumentVersionResponse DocumentGetVersionByIdVersionIdGet(Guid versionId, int operationIndex = 0);
+        DocumentVersionResponse GetVersionById(Guid versionId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        ApiResponse<DocumentVersionResponse> DocumentGetVersionByIdVersionIdGetWithHttpInfo(Guid versionId, int operationIndex = 0);
+        ApiResponse<DocumentVersionResponse> GetVersionByIdWithHttpInfo(Guid versionId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -94,7 +94,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        DocumentVersionResponse DocumentGetVersionDocumentIdGet(Guid documentId, int? varVersion = default(int?), int operationIndex = 0);
+        DocumentVersionResponse GetVersion(Guid documentId, int? varVersion = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        ApiResponse<DocumentVersionResponse> DocumentGetVersionDocumentIdGetWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0);
+        ApiResponse<DocumentVersionResponse> GetVersionWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -116,7 +116,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        DocumentResponse DocumentIdPatch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0);
+        DocumentResponse Patch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -129,7 +129,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        ApiResponse<DocumentResponse> DocumentIdPatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0);
+        ApiResponse<DocumentResponse> PatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        DocumentResponse DocumentPost(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0);
+        DocumentResponse Post(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -149,7 +149,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        ApiResponse<DocumentResponse> DocumentPostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0);
+        ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -170,7 +170,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        System.Threading.Tasks.Task<DocumentResponse> DocumentDocumentIdGetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentResponse> GetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -183,7 +183,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> DocumentDocumentIdGetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -195,7 +195,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetCurrentDocumentIdGetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentVersionResponse> GetCurrentAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -208,7 +208,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> DocumentGetCurrentDocumentIdGetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> GetCurrentWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetVersionByIdVersionIdGetAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionByIdAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -233,7 +233,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> DocumentGetVersionByIdVersionIdGetWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> GetVersionByIdWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -246,7 +246,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetVersionDocumentIdGetAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -260,7 +260,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> DocumentGetVersionDocumentIdGetWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentVersionResponse>> GetVersionWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -273,7 +273,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        System.Threading.Tasks.Task<DocumentResponse> DocumentIdPatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentResponse> PatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -287,7 +287,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> DocumentIdPatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -299,7 +299,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        System.Threading.Tasks.Task<DocumentResponse> DocumentPostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentResponse> PostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -312,7 +312,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> DocumentPostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -440,9 +440,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        public DocumentResponse DocumentDocumentIdGet(Guid documentId, int operationIndex = 0)
+        public DocumentResponse Get(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = DocumentDocumentIdGetWithHttpInfo(documentId);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = GetWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
@@ -453,7 +453,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> DocumentDocumentIdGetWithHttpInfo(Guid documentId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -481,7 +481,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentResponse>("/Document/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -512,9 +512,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentResponse> DocumentDocumentIdGetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentResponse> GetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await DocumentDocumentIdGetWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await GetWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -526,7 +526,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> DocumentDocumentIdGetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -555,7 +555,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -569,7 +569,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -586,9 +586,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        public DocumentVersionResponse DocumentGetCurrentDocumentIdGet(Guid documentId, int operationIndex = 0)
+        public DocumentVersionResponse GetCurrent(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = DocumentGetCurrentDocumentIdGetWithHttpInfo(documentId);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetCurrentWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
@@ -599,7 +599,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> DocumentGetCurrentDocumentIdGetWithHttpInfo(Guid documentId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetCurrentWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -627,7 +627,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetCurrentDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetCurrent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -640,7 +640,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-current/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetCurrentDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCurrent", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -658,9 +658,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetCurrentDocumentIdGetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentVersionResponse> GetCurrentAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await DocumentGetCurrentDocumentIdGetWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetCurrentWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -672,7 +672,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> DocumentGetCurrentDocumentIdGetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetCurrentWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -701,7 +701,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetCurrentDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetCurrent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -715,7 +715,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetCurrentDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCurrent", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -732,9 +732,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        public DocumentVersionResponse DocumentGetVersionByIdVersionIdGet(Guid versionId, int operationIndex = 0)
+        public DocumentVersionResponse GetVersionById(Guid versionId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = DocumentGetVersionByIdVersionIdGetWithHttpInfo(versionId);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionByIdWithHttpInfo(versionId);
             return localVarResponse.Data;
         }
 
@@ -745,7 +745,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> DocumentGetVersionByIdVersionIdGetWithHttpInfo(Guid versionId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionByIdWithHttpInfo(Guid versionId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetVersionByIdVersionIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetVersionById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-version-by-id/{versionId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetVersionByIdVersionIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetVersionById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -804,9 +804,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetVersionByIdVersionIdGetAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionByIdAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await DocumentGetVersionByIdVersionIdGetWithHttpInfoAsync(versionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionByIdWithHttpInfoAsync(versionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -818,7 +818,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> DocumentGetVersionByIdVersionIdGetWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionByIdWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -847,7 +847,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetVersionByIdVersionIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetVersionById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -861,7 +861,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetVersionByIdVersionIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetVersionById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -879,9 +879,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
-        public DocumentVersionResponse DocumentGetVersionDocumentIdGet(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
+        public DocumentVersionResponse GetVersion(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = DocumentGetVersionDocumentIdGetWithHttpInfo(documentId, varVersion);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionWithHttpInfo(documentId, varVersion);
             return localVarResponse.Data;
         }
 
@@ -893,7 +893,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> DocumentGetVersionDocumentIdGetWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -925,7 +925,7 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetVersionDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -938,7 +938,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-version/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetVersionDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetVersion", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -957,9 +957,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentVersionResponse> DocumentGetVersionDocumentIdGetAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await DocumentGetVersionDocumentIdGetWithHttpInfoAsync(documentId, varVersion, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionWithHttpInfoAsync(documentId, varVersion, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -972,7 +972,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> DocumentGetVersionDocumentIdGetWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1005,7 +1005,7 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentGetVersionDocumentIdGet";
+            localVarRequestOptions.Operation = "DocumentSDK.GetVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1019,7 +1019,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentGetVersionDocumentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetVersion", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1037,9 +1037,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        public DocumentResponse DocumentIdPatch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
+        public DocumentResponse Patch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = DocumentIdPatchWithHttpInfo(id, patchDocumentRequest);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = PatchWithHttpInfo(id, patchDocumentRequest);
             return localVarResponse.Data;
         }
 
@@ -1051,7 +1051,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> DocumentIdPatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> PatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1083,7 +1083,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentIdPatch";
+            localVarRequestOptions.Operation = "DocumentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1096,7 +1096,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Patch<DocumentResponse>("/Document/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1115,9 +1115,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentResponse> DocumentIdPatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentResponse> PatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await DocumentIdPatchWithHttpInfoAsync(id, patchDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1130,7 +1130,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> DocumentIdPatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1163,7 +1163,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentIdPatch";
+            localVarRequestOptions.Operation = "DocumentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1177,7 +1177,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1194,9 +1194,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        public DocumentResponse DocumentPost(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
+        public DocumentResponse Post(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = DocumentPostWithHttpInfo(postDocumentRequest);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = PostWithHttpInfo(postDocumentRequest);
             return localVarResponse.Data;
         }
 
@@ -1207,7 +1207,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> DocumentPostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1238,7 +1238,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = postDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentPost";
+            localVarRequestOptions.Operation = "DocumentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1251,7 +1251,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Post<DocumentResponse>("/Document", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1269,9 +1269,9 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentResponse> DocumentPostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentResponse> PostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await DocumentPostWithHttpInfoAsync(postDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await PostWithHttpInfoAsync(postDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1283,7 +1283,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> DocumentPostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1315,7 +1315,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = postDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentSDK.DocumentPost";
+            localVarRequestOptions.Operation = "DocumentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1329,7 +1329,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

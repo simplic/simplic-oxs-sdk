@@ -32,7 +32,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>HookDefinitionResponse</returns>
-        HookDefinitionResponse HookDefinitionGet(int operationIndex = 0);
+        HookDefinitionResponse Get(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of HookDefinitionResponse</returns>
-        ApiResponse<HookDefinitionResponse> HookDefinitionGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<HookDefinitionResponse> GetWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of HookDefinitionResponse</returns>
-        System.Threading.Tasks.Task<HookDefinitionResponse> HookDefinitionGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<HookDefinitionResponse> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (HookDefinitionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<HookDefinitionResponse>> HookDefinitionGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<HookDefinitionResponse>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -202,9 +202,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>HookDefinitionResponse</returns>
-        public HookDefinitionResponse HookDefinitionGet(int operationIndex = 0)
+        public HookDefinitionResponse Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> localVarResponse = HookDefinitionGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -214,7 +214,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of HookDefinitionResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> HookDefinitionGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -241,7 +241,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "HookDefinitionSDK.HookDefinitionGet";
+            localVarRequestOptions.Operation = "HookDefinitionSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -254,7 +254,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<HookDefinitionResponse>("/HookDefinition", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HookDefinitionGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -271,9 +271,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of HookDefinitionResponse</returns>
-        public async System.Threading.Tasks.Task<HookDefinitionResponse> HookDefinitionGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<HookDefinitionResponse> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> localVarResponse = await HookDefinitionGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -284,7 +284,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (HookDefinitionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse>> HookDefinitionGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<HookDefinitionResponse>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -312,7 +312,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "HookDefinitionSDK.HookDefinitionGet";
+            localVarRequestOptions.Operation = "HookDefinitionSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -326,7 +326,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HookDefinitionGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

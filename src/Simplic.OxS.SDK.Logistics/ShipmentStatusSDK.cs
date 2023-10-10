@@ -32,7 +32,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShipmentStatusModel&gt;</returns>
-        List<ShipmentStatusModel> ShipmentStatusGetAllGet(int operationIndex = 0);
+        List<ShipmentStatusModel> GetAll(int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all shipment status.
@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShipmentStatusModel&gt;</returns>
-        ApiResponse<List<ShipmentStatusModel>> ShipmentStatusGetAllGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<ShipmentStatusModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives the shipment status with the given id.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the shipment status.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        ShipmentStatusModel ShipmentStatusIdGet(Guid id, int operationIndex = 0);
+        ShipmentStatusModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Retrives the shipment status with the given id.
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the shipment status.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        ApiResponse<ShipmentStatusModel> ShipmentStatusIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<ShipmentStatusModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Updates/saves the given shipment status.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateShipmentStatusRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        ShipmentStatusModel ShipmentStatusIdPut(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0);
+        ShipmentStatusModel Put(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Updates/saves the given shipment status.
@@ -85,7 +85,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateShipmentStatusRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        ApiResponse<ShipmentStatusModel> ShipmentStatusIdPutWithHttpInfo(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0);
+        ApiResponse<ShipmentStatusModel> PutWithHttpInfo(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new shipment status.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createShipmentStatusRequest">A create shipment status request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        ShipmentStatusModel ShipmentStatusPost(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0);
+        ShipmentStatusModel Post(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new shipment status.
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createShipmentStatusRequest">A create shipment status request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        ApiResponse<ShipmentStatusModel> ShipmentStatusPostWithHttpInfo(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0);
+        ApiResponse<ShipmentStatusModel> PostWithHttpInfo(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -125,7 +125,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShipmentStatusModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ShipmentStatusModel>> ShipmentStatusGetAllGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ShipmentStatusModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all shipment status.
@@ -137,7 +137,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShipmentStatusModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ShipmentStatusModel>>> ShipmentStatusGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ShipmentStatusModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrives the shipment status with the given id.
         /// </summary>
@@ -149,7 +149,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShipmentStatusModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives the shipment status with the given id.
@@ -162,7 +162,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> ShipmentStatusIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Updates/saves the given shipment status.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusIdPutAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShipmentStatusModel> PutAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates/saves the given shipment status.
@@ -189,7 +189,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> ShipmentStatusIdPutWithHttpInfoAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> PutWithHttpInfoAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new shipment status.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusPostAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShipmentStatusModel> PostAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new shipment status.
@@ -214,7 +214,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> ShipmentStatusPostWithHttpInfoAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShipmentStatusModel>> PostWithHttpInfoAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -341,9 +341,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShipmentStatusModel&gt;</returns>
-        public List<ShipmentStatusModel> ShipmentStatusGetAllGet(int operationIndex = 0)
+        public List<ShipmentStatusModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> localVarResponse = ShipmentStatusGetAllGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -353,7 +353,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShipmentStatusModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> ShipmentStatusGetAllGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -380,7 +380,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusGetAllGet";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -393,7 +393,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShipmentStatusModel>>("/ShipmentStatus/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -410,9 +410,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShipmentStatusModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ShipmentStatusModel>> ShipmentStatusGetAllGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ShipmentStatusModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> localVarResponse = await ShipmentStatusGetAllGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -423,7 +423,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShipmentStatusModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>>> ShipmentStatusGetAllGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentStatusModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -451,7 +451,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusGetAllGet";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.GetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -465,7 +465,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -482,9 +482,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the shipment status.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        public ShipmentStatusModel ShipmentStatusIdGet(Guid id, int operationIndex = 0)
+        public ShipmentStatusModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = ShipmentStatusIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -495,7 +495,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id">Id of the shipment status.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> ShipmentStatusIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -523,7 +523,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusIdGet";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -536,7 +536,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ShipmentStatusModel>("/ShipmentStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -554,9 +554,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        public async System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShipmentStatusModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await ShipmentStatusIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -568,7 +568,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> ShipmentStatusIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -597,7 +597,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusIdGet";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -611,7 +611,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -629,9 +629,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateShipmentStatusRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        public ShipmentStatusModel ShipmentStatusIdPut(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0)
+        public ShipmentStatusModel Put(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = ShipmentStatusIdPutWithHttpInfo(id, updateShipmentStatusRequest);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = PutWithHttpInfo(id, updateShipmentStatusRequest);
             return localVarResponse.Data;
         }
 
@@ -643,7 +643,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateShipmentStatusRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> ShipmentStatusIdPutWithHttpInfo(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> PutWithHttpInfo(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -675,7 +675,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusIdPut";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Put";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -688,7 +688,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<ShipmentStatusModel>("/ShipmentStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -707,9 +707,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        public async System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusIdPutAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShipmentStatusModel> PutAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await ShipmentStatusIdPutWithHttpInfoAsync(id, updateShipmentStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await PutWithHttpInfoAsync(id, updateShipmentStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -722,7 +722,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> ShipmentStatusIdPutWithHttpInfoAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> PutWithHttpInfoAsync(Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = default(UpdateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -755,7 +755,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusIdPut";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Put";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -769,7 +769,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -786,9 +786,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createShipmentStatusRequest">A create shipment status request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShipmentStatusModel</returns>
-        public ShipmentStatusModel ShipmentStatusPost(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0)
+        public ShipmentStatusModel Post(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = ShipmentStatusPostWithHttpInfo(createShipmentStatusRequest);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = PostWithHttpInfo(createShipmentStatusRequest);
             return localVarResponse.Data;
         }
 
@@ -799,7 +799,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="createShipmentStatusRequest">A create shipment status request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShipmentStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> ShipmentStatusPostWithHttpInfo(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> PostWithHttpInfo(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -830,7 +830,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusPost";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -843,7 +843,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ShipmentStatusModel>("/ShipmentStatus", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -861,9 +861,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShipmentStatusModel</returns>
-        public async System.Threading.Tasks.Task<ShipmentStatusModel> ShipmentStatusPostAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShipmentStatusModel> PostAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await ShipmentStatusPostWithHttpInfoAsync(createShipmentStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel> localVarResponse = await PostWithHttpInfoAsync(createShipmentStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -875,7 +875,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShipmentStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> ShipmentStatusPostWithHttpInfoAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShipmentStatusModel>> PostWithHttpInfoAsync(CreateShipmentStatusRequest? createShipmentStatusRequest = default(CreateShipmentStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -907,7 +907,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusSDK.ShipmentStatusPost";
+            localVarRequestOptions.Operation = "ShipmentStatusSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -921,7 +921,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShipmentStatusPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

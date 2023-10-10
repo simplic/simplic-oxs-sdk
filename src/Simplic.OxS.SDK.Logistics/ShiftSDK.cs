@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShiftResponse&gt;</returns>
-        List<ShiftResponse> ShiftGetByNameNameGet(string name, int operationIndex = 0);
+        List<ShiftResponse> GetByName(string name, int operationIndex = 0);
 
         /// <summary>
         /// Gets shifts matching given name.
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShiftResponse&gt;</returns>
-        ApiResponse<List<ShiftResponse>> ShiftGetByNameNameGetWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<List<ShiftResponse>> GetByNameWithHttpInfo(string name, int operationIndex = 0);
         /// <summary>
         /// Gets shifts in given range.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="end"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShiftResponse&gt;</returns>
-        List<ShiftResponse> ShiftGetByRangeGet(string? start = default(string?), string? end = default(string?), int operationIndex = 0);
+        List<ShiftResponse> GetByRange(string? start = default(string?), string? end = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Gets shifts in given range.
@@ -67,7 +67,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="end"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShiftResponse&gt;</returns>
-        ApiResponse<List<ShiftResponse>> ShiftGetByRangeGetWithHttpInfo(string? start = default(string?), string? end = default(string?), int operationIndex = 0);
+        ApiResponse<List<ShiftResponse>> GetByRangeWithHttpInfo(string? start = default(string?), string? end = default(string?), int operationIndex = 0);
         /// <summary>
         /// Deletes shift matching given id.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ShiftIdDeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Gets shift matching given id.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        ShiftResponse ShiftIdGet(Guid id, int operationIndex = 0);
+        ShiftResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Gets shift matching given id.
@@ -107,7 +107,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        ApiResponse<ShiftResponse> ShiftIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<ShiftResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Patches shift matching given id.
         /// </summary>
@@ -116,7 +116,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        ShiftResponse ShiftIdPatch(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0);
+        ShiftResponse Patch(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Patches shift matching given id.
@@ -129,7 +129,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        ApiResponse<ShiftResponse> ShiftIdPatchWithHttpInfo(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0);
+        ApiResponse<ShiftResponse> PatchWithHttpInfo(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new shift.
         /// </summary>
@@ -137,7 +137,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        ShiftResponse ShiftPost(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0);
+        ShiftResponse Post(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new shift.
@@ -149,7 +149,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        ApiResponse<ShiftResponse> ShiftPostWithHttpInfo(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0);
+        ApiResponse<ShiftResponse> PostWithHttpInfo(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -170,7 +170,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShiftResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<ShiftResponse>> ShiftGetByNameNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ShiftResponse>> GetByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets shifts matching given name.
@@ -183,7 +183,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShiftResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ShiftResponse>>> ShiftGetByNameNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ShiftResponse>>> GetByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets shifts in given range.
         /// </summary>
@@ -196,7 +196,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShiftResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<ShiftResponse>> ShiftGetByRangeGetAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ShiftResponse>> GetByRangeAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets shifts in given range.
@@ -210,7 +210,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShiftResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ShiftResponse>>> ShiftGetByRangeGetWithHttpInfoAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ShiftResponse>>> GetByRangeWithHttpInfoAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes shift matching given id.
         /// </summary>
@@ -222,7 +222,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ShiftIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes shift matching given id.
@@ -235,7 +235,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ShiftIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets shift matching given id.
         /// </summary>
@@ -247,7 +247,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        System.Threading.Tasks.Task<ShiftResponse> ShiftIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShiftResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets shift matching given id.
@@ -260,7 +260,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> ShiftIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patches shift matching given id.
         /// </summary>
@@ -273,7 +273,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        System.Threading.Tasks.Task<ShiftResponse> ShiftIdPatchAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShiftResponse> PatchAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Patches shift matching given id.
@@ -287,7 +287,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> ShiftIdPatchWithHttpInfoAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> PatchWithHttpInfoAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new shift.
         /// </summary>
@@ -299,7 +299,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        System.Threading.Tasks.Task<ShiftResponse> ShiftPostAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ShiftResponse> PostAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new shift.
@@ -312,7 +312,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> ShiftPostWithHttpInfoAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ShiftResponse>> PostWithHttpInfoAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -440,9 +440,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShiftResponse&gt;</returns>
-        public List<ShiftResponse> ShiftGetByNameNameGet(string name, int operationIndex = 0)
+        public List<ShiftResponse> GetByName(string name, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = ShiftGetByNameNameGetWithHttpInfo(name);
+            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = GetByNameWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
@@ -453,12 +453,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShiftResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> ShiftGetByNameNameGetWithHttpInfo(string name, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> GetByNameWithHttpInfo(string name, int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftSDK->ShiftGetByNameNameGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftSDK->GetByName");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -487,7 +487,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftGetByNameNameGet";
+            localVarRequestOptions.Operation = "ShiftSDK.GetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -500,7 +500,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShiftResponse>>("/Shift/get-by-name/{name}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftGetByNameNameGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -518,9 +518,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShiftResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ShiftResponse>> ShiftGetByNameNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ShiftResponse>> GetByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = await ShiftGetByNameNameGetWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = await GetByNameWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -532,12 +532,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShiftResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>>> ShiftGetByNameNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>>> GetByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftSDK->ShiftGetByNameNameGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftSDK->GetByName");
             }
 
 
@@ -567,7 +567,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftGetByNameNameGet";
+            localVarRequestOptions.Operation = "ShiftSDK.GetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -581,7 +581,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftGetByNameNameGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -599,9 +599,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="end"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShiftResponse&gt;</returns>
-        public List<ShiftResponse> ShiftGetByRangeGet(string? start = default(string?), string? end = default(string?), int operationIndex = 0)
+        public List<ShiftResponse> GetByRange(string? start = default(string?), string? end = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = ShiftGetByRangeGetWithHttpInfo(start, end);
+            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = GetByRangeWithHttpInfo(start, end);
             return localVarResponse.Data;
         }
 
@@ -613,7 +613,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="end"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShiftResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> ShiftGetByRangeGetWithHttpInfo(string? start = default(string?), string? end = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> GetByRangeWithHttpInfo(string? start = default(string?), string? end = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -648,7 +648,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftGetByRangeGet";
+            localVarRequestOptions.Operation = "ShiftSDK.GetByRange";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -661,7 +661,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShiftResponse>>("/Shift/get-by-range", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftGetByRangeGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByRange", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -680,9 +680,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShiftResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ShiftResponse>> ShiftGetByRangeGetAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ShiftResponse>> GetByRangeAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = await ShiftGetByRangeGetWithHttpInfoAsync(start, end, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>> localVarResponse = await GetByRangeWithHttpInfoAsync(start, end, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -695,7 +695,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShiftResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>>> ShiftGetByRangeGetWithHttpInfoAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShiftResponse>>> GetByRangeWithHttpInfoAsync(string? start = default(string?), string? end = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -731,7 +731,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftGetByRangeGet";
+            localVarRequestOptions.Operation = "ShiftSDK.GetByRange";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -745,7 +745,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftGetByRangeGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByRange", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -764,7 +764,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public void ShiftIdDelete(Guid id, int operationIndex = 0)
         {
-            ShiftIdDeleteWithHttpInfo(id);
+            DeleteWithHttpInfo(id);
         }
 
         /// <summary>
@@ -774,7 +774,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> ShiftIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -833,9 +833,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ShiftIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ShiftIdDeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ShiftIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -906,9 +906,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        public ShiftResponse ShiftIdGet(Guid id, int operationIndex = 0)
+        public ShiftResponse Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = ShiftIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -919,7 +919,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> ShiftIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -947,7 +947,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftIdGet";
+            localVarRequestOptions.Operation = "ShiftSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -960,7 +960,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ShiftResponse>("/Shift/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -978,9 +978,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        public async System.Threading.Tasks.Task<ShiftResponse> ShiftIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShiftResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await ShiftIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> ShiftIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1021,7 +1021,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftIdGet";
+            localVarRequestOptions.Operation = "ShiftSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1035,7 +1035,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1053,9 +1053,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        public ShiftResponse ShiftIdPatch(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0)
+        public ShiftResponse Patch(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = ShiftIdPatchWithHttpInfo(id, patchShiftRequest);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = PatchWithHttpInfo(id, patchShiftRequest);
             return localVarResponse.Data;
         }
 
@@ -1067,7 +1067,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> ShiftIdPatchWithHttpInfo(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> PatchWithHttpInfo(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1099,7 +1099,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftIdPatch";
+            localVarRequestOptions.Operation = "ShiftSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1112,7 +1112,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<ShiftResponse>("/Shift/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1131,9 +1131,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        public async System.Threading.Tasks.Task<ShiftResponse> ShiftIdPatchAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShiftResponse> PatchAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await ShiftIdPatchWithHttpInfoAsync(id, patchShiftRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchShiftRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1146,7 +1146,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> ShiftIdPatchWithHttpInfoAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> PatchWithHttpInfoAsync(Guid id, PatchShiftRequest? patchShiftRequest = default(PatchShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1179,7 +1179,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftIdPatch";
+            localVarRequestOptions.Operation = "ShiftSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1193,7 +1193,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1210,9 +1210,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ShiftResponse</returns>
-        public ShiftResponse ShiftPost(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0)
+        public ShiftResponse Post(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = ShiftPostWithHttpInfo(postShiftRequest);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = PostWithHttpInfo(postShiftRequest);
             return localVarResponse.Data;
         }
 
@@ -1223,7 +1223,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postShiftRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ShiftResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> ShiftPostWithHttpInfo(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ShiftResponse> PostWithHttpInfo(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1254,7 +1254,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftPost";
+            localVarRequestOptions.Operation = "ShiftSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1267,7 +1267,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ShiftResponse>("/Shift", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1285,9 +1285,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ShiftResponse</returns>
-        public async System.Threading.Tasks.Task<ShiftResponse> ShiftPostAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ShiftResponse> PostAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await ShiftPostWithHttpInfoAsync(postShiftRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ShiftResponse> localVarResponse = await PostWithHttpInfoAsync(postShiftRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1299,7 +1299,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ShiftResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> ShiftPostWithHttpInfoAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ShiftResponse>> PostWithHttpInfoAsync(PostShiftRequest? postShiftRequest = default(PostShiftRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1331,7 +1331,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftSDK.ShiftPost";
+            localVarRequestOptions.Operation = "ShiftSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1345,7 +1345,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ShiftPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

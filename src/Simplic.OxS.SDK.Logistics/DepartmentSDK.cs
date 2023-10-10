@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DepartmentResponse&gt;</returns>
-        List<DepartmentResponse> DepartmentGetByNameNameGet(string name, int operationIndex = 0);
+        List<DepartmentResponse> GetByName(string name, int operationIndex = 0);
 
         /// <summary>
         /// Gets departments with given name.
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DepartmentResponse&gt;</returns>
-        ApiResponse<List<DepartmentResponse>> DepartmentGetByNameNameGetWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<List<DepartmentResponse>> GetByNameWithHttpInfo(string name, int operationIndex = 0);
         /// <summary>
         /// Gets departments with given order id.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="orderId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DepartmentResponse&gt;</returns>
-        List<DepartmentResponse> DepartmentGetByOrderOrderIdGet(int orderId, int operationIndex = 0);
+        List<DepartmentResponse> GetByOrder(int orderId, int operationIndex = 0);
 
         /// <summary>
         /// Gets departments with given order id.
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="orderId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DepartmentResponse&gt;</returns>
-        ApiResponse<List<DepartmentResponse>> DepartmentGetByOrderOrderIdGetWithHttpInfo(int orderId, int operationIndex = 0);
+        ApiResponse<List<DepartmentResponse>> GetByOrderWithHttpInfo(int orderId, int operationIndex = 0);
         /// <summary>
         /// Deletes department matching given id.
         /// </summary>
@@ -85,7 +85,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DepartmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Gets department matching given id.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        DepartmentResponse DepartmentIdGet(Guid id, int operationIndex = 0);
+        DepartmentResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Gets department matching given id.
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        ApiResponse<DepartmentResponse> DepartmentIdGetWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<DepartmentResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Patches department matching given id.
         /// </summary>
@@ -114,7 +114,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        DepartmentResponse DepartmentIdPatch(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0);
+        DepartmentResponse Patch(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Patches department matching given id.
@@ -127,7 +127,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        ApiResponse<DepartmentResponse> DepartmentIdPatchWithHttpInfo(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0);
+        ApiResponse<DepartmentResponse> PatchWithHttpInfo(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new department.
         /// </summary>
@@ -135,7 +135,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        DepartmentResponse DepartmentPost(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0);
+        DepartmentResponse Post(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new department.
@@ -147,7 +147,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        ApiResponse<DepartmentResponse> DepartmentPostWithHttpInfo(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0);
+        ApiResponse<DepartmentResponse> PostWithHttpInfo(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -168,7 +168,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DepartmentResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<DepartmentResponse>> DepartmentGetByNameNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DepartmentResponse>> GetByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets departments with given name.
@@ -181,7 +181,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DepartmentResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DepartmentResponse>>> DepartmentGetByNameNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DepartmentResponse>>> GetByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets departments with given order id.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DepartmentResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<DepartmentResponse>> DepartmentGetByOrderOrderIdGetAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DepartmentResponse>> GetByOrderAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets departments with given order id.
@@ -206,7 +206,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DepartmentResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DepartmentResponse>>> DepartmentGetByOrderOrderIdGetWithHttpInfoAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DepartmentResponse>>> GetByOrderWithHttpInfoAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes department matching given id.
         /// </summary>
@@ -218,7 +218,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DepartmentIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes department matching given id.
@@ -231,7 +231,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DepartmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets department matching given id.
         /// </summary>
@@ -243,7 +243,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        System.Threading.Tasks.Task<DepartmentResponse> DepartmentIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DepartmentResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets department matching given id.
@@ -256,7 +256,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> DepartmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patches department matching given id.
         /// </summary>
@@ -269,7 +269,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        System.Threading.Tasks.Task<DepartmentResponse> DepartmentIdPatchAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DepartmentResponse> PatchAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Patches department matching given id.
@@ -283,7 +283,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> DepartmentIdPatchWithHttpInfoAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new department.
         /// </summary>
@@ -295,7 +295,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        System.Threading.Tasks.Task<DepartmentResponse> DepartmentPostAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DepartmentResponse> PostAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new department.
@@ -308,7 +308,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> DepartmentPostWithHttpInfoAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DepartmentResponse>> PostWithHttpInfoAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -436,9 +436,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DepartmentResponse&gt;</returns>
-        public List<DepartmentResponse> DepartmentGetByNameNameGet(string name, int operationIndex = 0)
+        public List<DepartmentResponse> GetByName(string name, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = DepartmentGetByNameNameGetWithHttpInfo(name);
+            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = GetByNameWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
@@ -449,12 +449,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DepartmentResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> DepartmentGetByNameNameGetWithHttpInfo(string name, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> GetByNameWithHttpInfo(string name, int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentSDK->DepartmentGetByNameNameGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentSDK->GetByName");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -483,7 +483,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentGetByNameNameGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.GetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -496,7 +496,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<DepartmentResponse>>("/Department/get-by-name/{name}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentGetByNameNameGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -514,9 +514,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DepartmentResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DepartmentResponse>> DepartmentGetByNameNameGetAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DepartmentResponse>> GetByNameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = await DepartmentGetByNameNameGetWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = await GetByNameWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -528,12 +528,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DepartmentResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>>> DepartmentGetByNameNameGetWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>>> GetByNameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentSDK->DepartmentGetByNameNameGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentSDK->GetByName");
             }
 
 
@@ -563,7 +563,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentGetByNameNameGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.GetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -577,7 +577,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentGetByNameNameGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -594,9 +594,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="orderId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DepartmentResponse&gt;</returns>
-        public List<DepartmentResponse> DepartmentGetByOrderOrderIdGet(int orderId, int operationIndex = 0)
+        public List<DepartmentResponse> GetByOrder(int orderId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = DepartmentGetByOrderOrderIdGetWithHttpInfo(orderId);
+            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = GetByOrderWithHttpInfo(orderId);
             return localVarResponse.Data;
         }
 
@@ -607,7 +607,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="orderId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DepartmentResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> DepartmentGetByOrderOrderIdGetWithHttpInfo(int orderId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> GetByOrderWithHttpInfo(int orderId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -635,7 +635,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentGetByOrderOrderIdGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.GetByOrder";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -648,7 +648,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<DepartmentResponse>>("/Department/get-by-order/{orderId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentGetByOrderOrderIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByOrder", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -666,9 +666,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DepartmentResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DepartmentResponse>> DepartmentGetByOrderOrderIdGetAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DepartmentResponse>> GetByOrderAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = await DepartmentGetByOrderOrderIdGetWithHttpInfoAsync(orderId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>> localVarResponse = await GetByOrderWithHttpInfoAsync(orderId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -680,7 +680,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DepartmentResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>>> DepartmentGetByOrderOrderIdGetWithHttpInfoAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DepartmentResponse>>> GetByOrderWithHttpInfoAsync(int orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -709,7 +709,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentGetByOrderOrderIdGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.GetByOrder";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -723,7 +723,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentGetByOrderOrderIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByOrder", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -742,7 +742,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public void DepartmentIdDelete(Guid id, int operationIndex = 0)
         {
-            DepartmentIdDeleteWithHttpInfo(id);
+            DeleteWithHttpInfo(id);
         }
 
         /// <summary>
@@ -752,7 +752,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DepartmentIdDeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -811,9 +811,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DepartmentIdDeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DepartmentIdDeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -824,7 +824,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DepartmentIdDeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -884,9 +884,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        public DepartmentResponse DepartmentIdGet(Guid id, int operationIndex = 0)
+        public DepartmentResponse Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = DepartmentIdGetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -897,7 +897,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> DepartmentIdGetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -925,7 +925,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentIdGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -938,7 +938,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<DepartmentResponse>("/Department/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,9 +956,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        public async System.Threading.Tasks.Task<DepartmentResponse> DepartmentIdGetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DepartmentResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await DepartmentIdGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> DepartmentIdGetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -999,7 +999,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentIdGet";
+            localVarRequestOptions.Operation = "DepartmentSDK.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1013,7 +1013,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1031,9 +1031,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        public DepartmentResponse DepartmentIdPatch(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0)
+        public DepartmentResponse Patch(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = DepartmentIdPatchWithHttpInfo(id, patchDepartmentRequest);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = PatchWithHttpInfo(id, patchDepartmentRequest);
             return localVarResponse.Data;
         }
 
@@ -1045,7 +1045,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="patchDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> DepartmentIdPatchWithHttpInfo(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> PatchWithHttpInfo(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1077,7 +1077,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentIdPatch";
+            localVarRequestOptions.Operation = "DepartmentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1090,7 +1090,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<DepartmentResponse>("/Department/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1109,9 +1109,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        public async System.Threading.Tasks.Task<DepartmentResponse> DepartmentIdPatchAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DepartmentResponse> PatchAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await DepartmentIdPatchWithHttpInfoAsync(id, patchDepartmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchDepartmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1124,7 +1124,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> DepartmentIdPatchWithHttpInfoAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDepartmentRequest? patchDepartmentRequest = default(PatchDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1157,7 +1157,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentIdPatch";
+            localVarRequestOptions.Operation = "DepartmentSDK.Patch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1171,7 +1171,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1188,9 +1188,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DepartmentResponse</returns>
-        public DepartmentResponse DepartmentPost(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0)
+        public DepartmentResponse Post(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = DepartmentPostWithHttpInfo(postDepartmentRequest);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = PostWithHttpInfo(postDepartmentRequest);
             return localVarResponse.Data;
         }
 
@@ -1201,7 +1201,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="postDepartmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DepartmentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> DepartmentPostWithHttpInfo(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DepartmentResponse> PostWithHttpInfo(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1232,7 +1232,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentPost";
+            localVarRequestOptions.Operation = "DepartmentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1245,7 +1245,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<DepartmentResponse>("/Department", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1263,9 +1263,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DepartmentResponse</returns>
-        public async System.Threading.Tasks.Task<DepartmentResponse> DepartmentPostAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DepartmentResponse> PostAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await DepartmentPostWithHttpInfoAsync(postDepartmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DepartmentResponse> localVarResponse = await PostWithHttpInfoAsync(postDepartmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1277,7 +1277,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DepartmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> DepartmentPostWithHttpInfoAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DepartmentResponse>> PostWithHttpInfoAsync(PostDepartmentRequest? postDepartmentRequest = default(PostDepartmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1309,7 +1309,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentSDK.DepartmentPost";
+            localVarRequestOptions.Operation = "DepartmentSDK.Post";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1323,7 +1323,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DepartmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
