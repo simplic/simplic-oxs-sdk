@@ -1,3 +1,4 @@
 ## Requirements (for running it yourself):
 
--   npm
+- npm
+- .net 7
