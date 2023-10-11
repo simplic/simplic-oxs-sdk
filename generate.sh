@@ -117,7 +117,27 @@ generate() {
 
         # only need the last part for sdk proj name
         local last_part=$(echo "$api_proj_name" | sed 's/.*\.//')
-
+        
+        # turn any hypen-case into Capitalized.Dotted.Case 
+        # IFS='.' read -ra segments <<< "$1"
+        # local __result=""
+        # for __segment in "${segments[@]}"; do
+        #     # Split the segment by hyphens
+        #     IFS='-' read -ra hyphen_segments <<< "$__segment"
+        #     local __formatted_segment=""
+        #
+        #     # Process each hyphen-separated part of the segment
+        #     for __part in "${hyphen_segments[@]}"; do
+        #         # Capitalize each part and add it to the formatted segment
+        #         local __formatted_part="$(tr '[:lower:]' '[:upper:]' <<<"${__part:0:1}")${__part:1}"
+        #         __formatted_segment="${__formatted_segment}${__formatted_part}."
+        #     done
+        #
+        #     # Add the formatted segment to the result
+        #     __result="${__result}${__formatted_segment}"
+        # done
+        # # remove trailing `.`
+        # local package_name="${__result%?}"
         local sdk_proj_name="$BASE_PROJ_NAME.$last_part"
 
         # generate code
@@ -202,9 +222,14 @@ for proj_folder in "$SRC_DIR"/*; do
 
         controller_name="${file_name%%$API_NAME_SUFFIX*}"
         log "$controller_name" 1
-        python beautifier.py -f "$file" -c "$controller_name"
+        python scripts/beautifier.py -f "$file" -c "$controller_name"
     done
 done
+log "..done" 2
+
+# fix hyphen case namespaces such as `vehicle-temperature`
+log "Fixing bad namespaces.." 0
+
 log "..done" 2
 # npm remove $CLI -D
 log "All done!" 2
