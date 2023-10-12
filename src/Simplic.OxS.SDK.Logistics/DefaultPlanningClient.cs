@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Logistics
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan for resource matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -40,7 +42,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -49,7 +51,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets the plan with given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
@@ -61,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
@@ -69,7 +71,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
@@ -81,7 +83,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
@@ -89,7 +91,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -101,7 +103,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -109,7 +111,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -122,7 +124,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -131,7 +133,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateResponse</returns>
         ValidateResponse Validate(int operationIndex = 0);
@@ -142,7 +144,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateResponse</returns>
         ApiResponse<ValidateResponse> ValidateWithHttpInfo(int operationIndex = 0);
@@ -161,7 +163,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -175,7 +177,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -188,7 +190,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -201,7 +203,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -213,7 +215,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -226,7 +228,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -238,7 +240,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -251,7 +253,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -263,7 +265,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -277,7 +279,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -290,7 +292,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateResponse</returns>
@@ -302,7 +304,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateResponse)</returns>
@@ -323,7 +325,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class DefaultPlanningClient : IDefaultPlanningClient
     {
-        private Simplic.OxS.SDK.Logistics.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultPlanningClient"/> class.
@@ -339,13 +341,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public DefaultPlanningClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Logistics.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Logistics.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Logistics.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -354,17 +356,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DefaultPlanningClient(Simplic.OxS.SDK.Logistics.Configuration configuration)
+        public DefaultPlanningClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Logistics.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Logistics.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -374,7 +376,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public DefaultPlanningClient(Simplic.OxS.SDK.Logistics.ISynchronousClient client, Simplic.OxS.SDK.Logistics.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Logistics.IReadableConfiguration configuration)
+        public DefaultPlanningClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -383,18 +385,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -409,12 +411,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Logistics.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -430,28 +432,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan for resource matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
         public DefaultPlanningAssignmentResponse GetByResource(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = GetByResourceWithHttpInfo(resourceId, shiftId);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = GetByResourceWithHttpInfo(resourceId, shiftId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plan for resource matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> GetByResourceWithHttpInfo(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> GetByResourceWithHttpInfo(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -463,22 +465,22 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(resourceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(resourceId)); // path parameter
             if (shiftId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.GetByResource";
@@ -507,7 +509,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets plan for resource matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -515,23 +517,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of DefaultPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<DefaultPlanningAssignmentResponse> GetByResourceAsync(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await GetByResourceWithHttpInfoAsync(resourceId, shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await GetByResourceWithHttpInfoAsync(resourceId, shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets plan for resource matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="resourceId"></param>
         /// <param name="shiftId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DefaultPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse>> GetByResourceWithHttpInfoAsync(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse>> GetByResourceWithHttpInfoAsync(Guid resourceId, Guid? shiftId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -543,22 +545,22 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(resourceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("resourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(resourceId)); // path parameter
             if (shiftId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.GetByResource";
@@ -588,26 +590,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets the plan with given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
         public DefaultPlanningAssignmentResponse GetByShift(Guid shiftId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = GetByShiftWithHttpInfo(shiftId);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = GetByShiftWithHttpInfo(shiftId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets the plan with given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> GetByShiftWithHttpInfo(Guid shiftId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> GetByShiftWithHttpInfo(Guid shiftId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -619,19 +621,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.GetByShift";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -659,29 +661,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Gets the plan with given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DefaultPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<DefaultPlanningAssignmentResponse> GetByShiftAsync(Guid shiftId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await GetByShiftWithHttpInfoAsync(shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await GetByShiftWithHttpInfoAsync(shiftId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets the plan with given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DefaultPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse>> GetByShiftWithHttpInfoAsync(Guid shiftId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse>> GetByShiftWithHttpInfoAsync(Guid shiftId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -693,19 +695,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.GetByShift";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -734,26 +736,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
         public DefaultPlanningAssignmentResponse Post(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = PostWithHttpInfo(postDefaultPlanningRequest);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = PostWithHttpInfo(postDefaultPlanningRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> PostWithHttpInfo(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> PostWithHttpInfo(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -768,13 +770,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -808,29 +810,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DefaultPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<DefaultPlanningAssignmentResponse> PostAsync(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await PostWithHttpInfoAsync(postDefaultPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await PostWithHttpInfoAsync(postDefaultPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Posts a new plan. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DefaultPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse>> PostWithHttpInfoAsync(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse>> PostWithHttpInfoAsync(PostDefaultPlanningRequest? postDefaultPlanningRequest = default(PostDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -845,13 +847,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -886,7 +888,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -898,13 +900,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<Object> DeleteWithHttpInfo(Guid shiftId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid shiftId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -916,19 +918,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.DefaultPlanningShiftIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -956,7 +958,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -969,15 +971,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Deletes plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid shiftId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid shiftId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -989,19 +991,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.DefaultPlanningShiftIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1030,28 +1032,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DefaultPlanningAssignmentResponse</returns>
         public DefaultPlanningAssignmentResponse Patch(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = PatchWithHttpInfo(shiftId, patchDefaultPlanningRequest);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = PatchWithHttpInfo(shiftId, patchDefaultPlanningRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DefaultPlanningAssignmentResponse</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> PatchWithHttpInfo(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> PatchWithHttpInfo(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1066,19 +1068,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
             localVarRequestOptions.Data = patchDefaultPlanningRequest;
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.Patch";
@@ -1107,7 +1109,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1115,23 +1117,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of DefaultPlanningAssignmentResponse</returns>
         public async System.Threading.Tasks.Task<DefaultPlanningAssignmentResponse> PatchAsync(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await PatchWithHttpInfoAsync(shiftId, patchDefaultPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse> localVarResponse = await PatchWithHttpInfoAsync(shiftId, patchDefaultPlanningRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Patches plan matching given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shiftId"></param>
         /// <param name="patchDefaultPlanningRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DefaultPlanningAssignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<DefaultPlanningAssignmentResponse>> PatchWithHttpInfoAsync(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DefaultPlanningAssignmentResponse>> PatchWithHttpInfoAsync(Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = default(PatchDefaultPlanningRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1146,19 +1148,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(shiftId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("shiftId", Simplic.OxS.SDK.ClientUtils.ParameterToString(shiftId)); // path parameter
             localVarRequestOptions.Data = patchDefaultPlanningRequest;
 
             localVarRequestOptions.Operation = "DefaultPlanningClient.Patch";
@@ -1188,24 +1190,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ValidateResponse</returns>
         public ValidateResponse Validate(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<ValidateResponse> localVarResponse = ValidateWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<ValidateResponse> localVarResponse = ValidateWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ValidateResponse</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<ValidateResponse> ValidateWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ValidateResponse> ValidateWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1217,13 +1219,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1256,27 +1258,27 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ValidateResponse</returns>
         public async System.Threading.Tasks.Task<ValidateResponse> ValidateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<ValidateResponse> localVarResponse = await ValidateWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ValidateResponse> localVarResponse = await ValidateWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Checks whether any resource has been assigned in multiple plans. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ValidateResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<ValidateResponse>> ValidateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ValidateResponse>> ValidateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1288,13 +1290,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

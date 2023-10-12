@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Auth
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its e-mail address
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its id
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
@@ -79,7 +81,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -92,7 +94,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -104,7 +106,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -117,7 +119,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -139,7 +141,7 @@ namespace Simplic.OxS.SDK.Auth
     /// </summary>
     public partial class InternalUserClient : IInternalUserClient
     {
-        private Simplic.OxS.SDK.Auth.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InternalUserClient"/> class.
@@ -155,13 +157,13 @@ namespace Simplic.OxS.SDK.Auth
         /// <returns></returns>
         public InternalUserClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Auth.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Auth.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Auth.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Auth.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Auth.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Auth.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -170,17 +172,17 @@ namespace Simplic.OxS.SDK.Auth
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public InternalUserClient(Simplic.OxS.SDK.Auth.Configuration configuration)
+        public InternalUserClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Auth.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Auth.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Auth.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Auth.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Auth.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -190,7 +192,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public InternalUserClient(Simplic.OxS.SDK.Auth.ISynchronousClient client, Simplic.OxS.SDK.Auth.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Auth.IReadableConfiguration configuration)
+        public InternalUserClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -199,18 +201,18 @@ namespace Simplic.OxS.SDK.Auth
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Auth.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Auth.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Auth.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -225,12 +227,12 @@ namespace Simplic.OxS.SDK.Auth
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Auth.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Auth.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -246,26 +248,26 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its e-mail address 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
         public RequestUserResponse GetBy(string? email = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(email);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(email);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a user by its e-mail address 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> GetByWithHttpInfo(string? email = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByWithHttpInfo(string? email = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Auth.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Auth.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -277,13 +279,13 @@ namespace Simplic.OxS.SDK.Auth
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -291,7 +293,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (email != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Auth.ClientUtils.ParameterToMultiMap("", "email", email));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
             localVarRequestOptions.Operation = "InternalUserClient.GetBy";
@@ -320,29 +322,29 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its e-mail address 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
         public async System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a user by its e-mail address 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Auth.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Auth.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -354,13 +356,13 @@ namespace Simplic.OxS.SDK.Auth
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -368,7 +370,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (email != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Auth.ClientUtils.ParameterToMultiMap("", "email", email));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
             localVarRequestOptions.Operation = "InternalUserClient.GetBy";
@@ -398,26 +400,26 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
         public RequestUserResponse GetBy(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a user by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Auth.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Auth.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -429,13 +431,13 @@ namespace Simplic.OxS.SDK.Auth
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -443,7 +445,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Auth.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
             localVarRequestOptions.Operation = "InternalUserClient.GetBy";
@@ -472,29 +474,29 @@ namespace Simplic.OxS.SDK.Auth
         /// <summary>
         /// Get a user by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
         public async System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a user by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Auth.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Auth.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Auth.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Auth.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -506,13 +508,13 @@ namespace Simplic.OxS.SDK.Auth
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Auth.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -520,7 +522,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Auth.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
             localVarRequestOptions.Operation = "InternalUserClient.GetBy";

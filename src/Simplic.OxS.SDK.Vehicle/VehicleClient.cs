@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Vehicle
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>int</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of int</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -61,7 +63,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -71,7 +73,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>double</returns>
         double VehicleGetFleetAgeGet(int operationIndex = 0);
@@ -82,14 +84,14 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of double</returns>
         ApiResponse<double> GetFleetAgeWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -101,7 +103,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -109,7 +111,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleModel</returns>
@@ -121,7 +123,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleModel</returns>
@@ -129,7 +131,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -142,7 +144,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -151,7 +153,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleModel</returns>
@@ -163,7 +165,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleModel</returns>
@@ -183,7 +185,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -196,7 +198,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -208,7 +210,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -223,7 +225,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -237,7 +239,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of double</returns>
@@ -249,7 +251,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (double)</returns>
@@ -260,7 +262,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -273,7 +275,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -285,7 +287,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -298,7 +300,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -310,7 +312,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -324,7 +326,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -337,7 +339,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -350,7 +352,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -372,7 +374,7 @@ namespace Simplic.OxS.SDK.Vehicle
     /// </summary>
     public partial class VehicleClient : IVehicleClient
     {
-        private Simplic.OxS.SDK.Vehicle.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VehicleClient"/> class.
@@ -388,13 +390,13 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <returns></returns>
         public VehicleClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Vehicle.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -403,17 +405,17 @@ namespace Simplic.OxS.SDK.Vehicle
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public VehicleClient(Simplic.OxS.SDK.Vehicle.Configuration configuration)
+        public VehicleClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Vehicle.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -423,7 +425,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public VehicleClient(Simplic.OxS.SDK.Vehicle.ISynchronousClient client, Simplic.OxS.SDK.Vehicle.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Vehicle.IReadableConfiguration configuration)
+        public VehicleClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -432,18 +434,18 @@ namespace Simplic.OxS.SDK.Vehicle
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -458,12 +460,12 @@ namespace Simplic.OxS.SDK.Vehicle
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Vehicle.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -479,26 +481,26 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>int</returns>
         public int VehicleGetCountOfVehiclesGet(string? searchText = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<int> localVarResponse = GetCountOfVehiclesWithHttpInfo(searchText);
+            Simplic.OxS.SDK.ApiResponse<int> localVarResponse = GetCountOfVehiclesWithHttpInfo(searchText);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of int</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<int> GetCountOfVehiclesWithHttpInfo(string? searchText = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<int> GetCountOfVehiclesWithHttpInfo(string? searchText = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -510,13 +512,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -524,7 +526,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (searchText != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
 
             localVarRequestOptions.Operation = "VehicleClient.VehicleGetCountOfVehiclesGet";
@@ -553,29 +555,29 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
         public async System.Threading.Tasks.Task<int> GetCountOfVehiclesAsync(string? searchText = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<int> localVarResponse = await GetCountOfVehiclesWithHttpInfoAsync(searchText, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<int> localVarResponse = await GetCountOfVehiclesWithHttpInfoAsync(searchText, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<int>> GetCountOfVehiclesWithHttpInfoAsync(string? searchText = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<int>> GetCountOfVehiclesWithHttpInfoAsync(string? searchText = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -587,13 +589,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -601,7 +603,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (searchText != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
 
             localVarRequestOptions.Operation = "VehicleClient.VehicleGetCountOfVehiclesGet";
@@ -631,7 +633,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -639,22 +641,22 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <returns>List&lt;VehicleModel&gt;</returns>
         public List<VehicleModel> GetFilteredWithPaging(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<List<VehicleModel>> localVarResponse = GetFilteredWithPagingWithHttpInfo(searchText, skip, limit);
+            Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> localVarResponse = GetFilteredWithPagingWithHttpInfo(searchText, skip, limit);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;VehicleModel&gt;</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<List<VehicleModel>> GetFilteredWithPagingWithHttpInfo(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> GetFilteredWithPagingWithHttpInfo(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -666,13 +668,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -680,15 +682,15 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (searchText != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "VehicleClient.GetFilteredWithPaging";
@@ -717,7 +719,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -726,24 +728,24 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <returns>Task of List&lt;VehicleModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<VehicleModel>> GetFilteredWithPagingAsync(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<List<VehicleModel>> localVarResponse = await GetFilteredWithPagingWithHttpInfoAsync(searchText, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> localVarResponse = await GetFilteredWithPagingWithHttpInfoAsync(searchText, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;VehicleModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<List<VehicleModel>>> GetFilteredWithPagingWithHttpInfoAsync(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<VehicleModel>>> GetFilteredWithPagingWithHttpInfoAsync(string? searchText = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -755,13 +757,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -769,15 +771,15 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (searchText != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "VehicleClient.GetFilteredWithPaging";
@@ -807,24 +809,24 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>double</returns>
         public double VehicleGetFleetAgeGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<double> localVarResponse = GetFleetAgeWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<double> localVarResponse = GetFleetAgeWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of double</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<double> GetFleetAgeWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<double> GetFleetAgeWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -836,13 +838,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -875,27 +877,27 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of double</returns>
         public async System.Threading.Tasks.Task<double> GetFleetAgeAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<double> localVarResponse = await GetFleetAgeWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<double> localVarResponse = await GetFleetAgeWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (double)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<double>> GetFleetAgeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<double>> GetFleetAgeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -907,13 +909,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -947,7 +949,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -959,13 +961,13 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -977,19 +979,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "VehicleClient.VehicleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1017,7 +1019,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1030,15 +1032,15 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1050,19 +1052,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "VehicleClient.VehicleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1091,26 +1093,26 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleModel</returns>
         public VehicleModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleModel</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<VehicleModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1122,19 +1124,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "VehicleClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1162,29 +1164,29 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VehicleModel</returns>
         public async System.Threading.Tasks.Task<VehicleModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VehicleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<VehicleModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1196,19 +1198,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "VehicleClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1237,28 +1239,28 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleModel</returns>
         public VehicleModel Put(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = PutWithHttpInfo(id, updateVehicleRequest);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = PutWithHttpInfo(id, updateVehicleRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleModel</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> PutWithHttpInfo(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<VehicleModel> PutWithHttpInfo(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1273,19 +1275,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateVehicleRequest;
 
             localVarRequestOptions.Operation = "VehicleClient.Put";
@@ -1314,7 +1316,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1322,23 +1324,23 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <returns>Task of VehicleModel</returns>
         public async System.Threading.Tasks.Task<VehicleModel> PutAsync(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = await PutWithHttpInfoAsync(id, updateVehicleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = await PutWithHttpInfoAsync(id, updateVehicleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VehicleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel>> PutWithHttpInfoAsync(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<VehicleModel>> PutWithHttpInfoAsync(Guid id, UpdateVehicleRequest? updateVehicleRequest = default(UpdateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1353,19 +1355,19 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Vehicle.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateVehicleRequest;
 
             localVarRequestOptions.Operation = "VehicleClient.Put";
@@ -1395,26 +1397,26 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleModel</returns>
         public VehicleModel Post(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = PostWithHttpInfo(createVehicleRequest);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = PostWithHttpInfo(createVehicleRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleModel</returns>
-        public Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> PostWithHttpInfo(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<VehicleModel> PostWithHttpInfo(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1429,13 +1431,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1469,29 +1471,29 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VehicleModel</returns>
         public async System.Threading.Tasks.Task<VehicleModel> PostAsync(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel> localVarResponse = await PostWithHttpInfoAsync(createVehicleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<VehicleModel> localVarResponse = await PostWithHttpInfoAsync(createVehicleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createVehicleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VehicleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.ApiResponse<VehicleModel>> PostWithHttpInfoAsync(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<VehicleModel>> PostWithHttpInfoAsync(CreateVehicleRequest? createVehicleRequest = default(CreateVehicleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1506,13 +1508,13 @@ namespace Simplic.OxS.SDK.Vehicle
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

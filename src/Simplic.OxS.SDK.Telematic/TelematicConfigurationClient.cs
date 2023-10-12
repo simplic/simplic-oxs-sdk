@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Telematic
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
@@ -67,7 +69,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
@@ -79,7 +81,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
@@ -87,7 +89,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -100,7 +102,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -109,7 +111,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
@@ -121,7 +123,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
@@ -141,7 +143,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -154,7 +156,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -166,7 +168,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -179,7 +181,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -191,7 +193,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -204,7 +206,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -216,7 +218,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -230,7 +232,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -243,7 +245,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -256,7 +258,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -278,7 +280,7 @@ namespace Simplic.OxS.SDK.Telematic
     /// </summary>
     public partial class TelematicConfigurationClient : ITelematicConfigurationClient
     {
-        private Simplic.OxS.SDK.Telematic.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicConfigurationClient"/> class.
@@ -294,13 +296,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns></returns>
         public TelematicConfigurationClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Telematic.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Telematic.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Telematic.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Telematic.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Telematic.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Telematic.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -309,17 +311,17 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TelematicConfigurationClient(Simplic.OxS.SDK.Telematic.Configuration configuration)
+        public TelematicConfigurationClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Telematic.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Telematic.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Telematic.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Telematic.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Telematic.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -329,7 +331,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TelematicConfigurationClient(Simplic.OxS.SDK.Telematic.ISynchronousClient client, Simplic.OxS.SDK.Telematic.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Telematic.IReadableConfiguration configuration)
+        public TelematicConfigurationClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -338,18 +340,18 @@ namespace Simplic.OxS.SDK.Telematic
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Telematic.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Telematic.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Telematic.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -364,12 +366,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Telematic.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Telematic.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -385,32 +387,32 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
         public TelematicConfigurationResponse GetForProvider(string name, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = GetForProviderWithHttpInfo(name);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = GetForProviderWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
-        public Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> GetForProviderWithHttpInfo(string name, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> GetForProviderWithHttpInfo(string name, int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.Telematic.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
             }
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -422,19 +424,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.GetForProvider";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -462,35 +464,35 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicConfigurationResponse</returns>
         public async System.Threading.Tasks.Task<TelematicConfigurationResponse> GetForProviderAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = await GetForProviderWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = await GetForProviderWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicConfigurationResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse>> GetForProviderWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse>> GetForProviderWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.Telematic.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
             }
 
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -502,19 +504,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.GetForProvider";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -543,26 +545,26 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<Object> localVarResponse = DeleteWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = DeleteWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public Simplic.OxS.SDK.Telematic.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -574,19 +576,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -614,29 +616,29 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<Object> localVarResponse = await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Telematic.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -648,19 +650,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -689,26 +691,26 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
         public TelematicConfigurationResponse Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
-        public Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -720,19 +722,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -760,29 +762,29 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicConfigurationResponse</returns>
         public async System.Threading.Tasks.Task<TelematicConfigurationResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicConfigurationResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -794,19 +796,19 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TelematicConfigurationClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -835,28 +837,28 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
         public TelematicConfigurationResponse Patch(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = PatchWithHttpInfo(id, patchTelematicConfigurationRequest);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = PatchWithHttpInfo(id, patchTelematicConfigurationRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
-        public Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> PatchWithHttpInfo(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> PatchWithHttpInfo(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -871,13 +873,13 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -885,7 +887,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
             localVarRequestOptions.Data = patchTelematicConfigurationRequest;
 
@@ -915,7 +917,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -923,23 +925,23 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Task of TelematicConfigurationResponse</returns>
         public async System.Threading.Tasks.Task<TelematicConfigurationResponse> PatchAsync(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchTelematicConfigurationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchTelematicConfigurationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="patchTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicConfigurationResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse>> PatchWithHttpInfoAsync(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse>> PatchWithHttpInfoAsync(Guid? id = default(Guid?), PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = default(PatchTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -954,13 +956,13 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -968,7 +970,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (id != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Telematic.ClientUtils.ParameterToMultiMap("", "id", id));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
             localVarRequestOptions.Data = patchTelematicConfigurationRequest;
 
@@ -999,26 +1001,26 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicConfigurationResponse</returns>
         public TelematicConfigurationResponse Post(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = PostWithHttpInfo(createTelematicConfigurationRequest);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = PostWithHttpInfo(createTelematicConfigurationRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicConfigurationResponse</returns>
-        public Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> PostWithHttpInfo(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> PostWithHttpInfo(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1033,13 +1035,13 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1073,29 +1075,29 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicConfigurationResponse</returns>
         public async System.Threading.Tasks.Task<TelematicConfigurationResponse> PostAsync(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse> localVarResponse = await PostWithHttpInfoAsync(createTelematicConfigurationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse> localVarResponse = await PostWithHttpInfoAsync(createTelematicConfigurationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Telematic.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTelematicConfigurationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicConfigurationResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Telematic.ApiResponse<TelematicConfigurationResponse>> PostWithHttpInfoAsync(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicConfigurationResponse>> PostWithHttpInfoAsync(CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = default(CreateTelematicConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Telematic.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Telematic.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1110,13 +1112,13 @@ namespace Simplic.OxS.SDK.Telematic
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Telematic.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Logistics
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all planning region.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PlanningRegionModel&gt;</returns>
         List<PlanningRegionModel> GetAll(int operationIndex = 0);
@@ -38,14 +40,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PlanningRegionModel&gt;</returns>
         ApiResponse<List<PlanningRegionModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives the planning region with the given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
@@ -57,7 +59,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
@@ -65,7 +67,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Updates/saves the given planning region.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -78,7 +80,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -87,7 +89,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new planning region.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
@@ -99,7 +101,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
@@ -119,7 +121,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PlanningRegionModel&gt;</returns>
@@ -131,7 +133,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PlanningRegionModel&gt;)</returns>
@@ -142,7 +144,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -155,7 +157,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -167,7 +169,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -181,7 +183,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -194,7 +196,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -207,7 +209,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -229,7 +231,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// </summary>
     public partial class PlanningRegionClient : IPlanningRegionClient
     {
-        private Simplic.OxS.SDK.Logistics.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanningRegionClient"/> class.
@@ -245,13 +247,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns></returns>
         public PlanningRegionClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Logistics.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Logistics.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Logistics.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -260,17 +262,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PlanningRegionClient(Simplic.OxS.SDK.Logistics.Configuration configuration)
+        public PlanningRegionClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Logistics.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Logistics.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Logistics.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -280,7 +282,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PlanningRegionClient(Simplic.OxS.SDK.Logistics.ISynchronousClient client, Simplic.OxS.SDK.Logistics.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Logistics.IReadableConfiguration configuration)
+        public PlanningRegionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -289,18 +291,18 @@ namespace Simplic.OxS.SDK.Logistics
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Logistics.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -315,12 +317,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Logistics.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Logistics.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -336,24 +338,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PlanningRegionModel&gt;</returns>
         public List<PlanningRegionModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<List<PlanningRegionModel>> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PlanningRegionModel&gt;</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<List<PlanningRegionModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -365,13 +367,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -404,27 +406,27 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrieves all planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PlanningRegionModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<PlanningRegionModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<List<PlanningRegionModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieves all planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PlanningRegionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<List<PlanningRegionModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PlanningRegionModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -436,13 +438,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -476,26 +478,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the planning region with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
         public PlanningRegionModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the planning region with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -507,19 +509,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "PlanningRegionClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -547,29 +549,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Retrives the planning region with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
         public async System.Threading.Tasks.Task<PlanningRegionModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives the planning region with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -581,19 +583,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "PlanningRegionClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -622,28 +624,28 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Updates/saves the given planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
         public PlanningRegionModel Patch(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = PatchWithHttpInfo(id, patchPlanningRegionRequest);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PatchWithHttpInfo(id, patchPlanningRegionRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates/saves the given planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> PatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PatchWithHttpInfo(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -658,19 +660,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchPlanningRegionRequest;
 
             localVarRequestOptions.Operation = "PlanningRegionClient.Patch";
@@ -699,7 +701,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Updates/saves the given planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -707,23 +709,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Task of PlanningRegionModel</returns>
         public async System.Threading.Tasks.Task<PlanningRegionModel> PatchAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates/saves the given planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the planning region to update.</param>
         /// <param name="patchPlanningRegionRequest">Shipment status to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel>> PatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PatchWithHttpInfoAsync(Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = default(PatchPlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -738,19 +740,19 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Logistics.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchPlanningRegionRequest;
 
             localVarRequestOptions.Operation = "PlanningRegionClient.Patch";
@@ -780,26 +782,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlanningRegionModel</returns>
         public PlanningRegionModel Post(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = PostWithHttpInfo(createPlanningRegionRequest);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = PostWithHttpInfo(createPlanningRegionRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlanningRegionModel</returns>
-        public Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> PostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> PostWithHttpInfo(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -814,13 +816,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -854,29 +856,29 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Creates a new planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlanningRegionModel</returns>
         public async System.Threading.Tasks.Task<PlanningRegionModel> PostAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel> localVarResponse = await PostWithHttpInfoAsync(createPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PlanningRegionModel> localVarResponse = await PostWithHttpInfoAsync(createPlanningRegionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new planning region. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Logistics.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPlanningRegionRequest">A create planning region request object. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlanningRegionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Logistics.ApiResponse<PlanningRegionModel>> PostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PlanningRegionModel>> PostWithHttpInfoAsync(CreatePlanningRegionRequest? createPlanningRegionRequest = default(CreatePlanningRegionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Logistics.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Logistics.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -891,13 +893,13 @@ namespace Simplic.OxS.SDK.Logistics
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Logistics.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

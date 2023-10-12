@@ -61,7 +61,10 @@ def replace_in_file(file_path: str, search_term: str, replace_term: str):
 
 
 def has_extension(file_path: str, extension: str):
-    return os.path.splitext(file_path)[1].lower() == extension.lower()
+    if extension.startswith('.'):
+        return file_path.endswith(extension)
+
+    return file_path.endswith(f".{extension}")
 
 
 def rec_replace(path: str, old_term: str, new_term: str, file_extension: str | None = None):

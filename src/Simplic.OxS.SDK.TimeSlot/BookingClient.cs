@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.TimeSlot
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Removes a time slot booking the a time slot
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Book a time slot
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -60,7 +62,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -69,7 +71,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Gets a time slot for the current foreign organization by its id
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TimeSlotModel</returns>
@@ -81,7 +83,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TimeSlotModel</returns>
@@ -89,7 +91,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Updates an existing booking
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -102,7 +104,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -123,7 +125,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -136,7 +138,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -148,7 +150,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -162,7 +164,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -175,7 +177,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -188,7 +190,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -200,7 +202,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -214,7 +216,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -237,7 +239,7 @@ namespace Simplic.OxS.SDK.TimeSlot
     /// </summary>
     public partial class BookingClient : IBookingClient
     {
-        private Simplic.OxS.SDK.TimeSlot.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BookingClient"/> class.
@@ -253,13 +255,13 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <returns></returns>
         public BookingClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.TimeSlot.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.TimeSlot.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.TimeSlot.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.TimeSlot.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.TimeSlot.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.TimeSlot.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -268,17 +270,17 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public BookingClient(Simplic.OxS.SDK.TimeSlot.Configuration configuration)
+        public BookingClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.TimeSlot.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.TimeSlot.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.TimeSlot.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.TimeSlot.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.TimeSlot.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -288,7 +290,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public BookingClient(Simplic.OxS.SDK.TimeSlot.ISynchronousClient client, Simplic.OxS.SDK.TimeSlot.IAsynchronousClient asyncClient, Simplic.OxS.SDK.TimeSlot.IReadableConfiguration configuration)
+        public BookingClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -297,18 +299,18 @@ namespace Simplic.OxS.SDK.TimeSlot
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.TimeSlot.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.TimeSlot.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.TimeSlot.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -323,12 +325,12 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.TimeSlot.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.TimeSlot.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -344,7 +346,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Removes a time slot booking the a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -356,13 +358,13 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Removes a time slot booking the a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.TimeSlot.ApiResponse<Object> CancelBookingWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> CancelBookingWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -374,19 +376,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "BookingClient.BookingCancelBookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -414,7 +416,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Removes a time slot booking the a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -427,15 +429,15 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Removes a time slot booking the a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time-slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.TimeSlot.ApiResponse<Object>> CancelBookingWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CancelBookingWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -447,19 +449,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "BookingClient.BookingCancelBookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -488,28 +490,28 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Book a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TimeSlotModel</returns>
         public TimeSlotModel CreateBooking(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = CreateBookingWithHttpInfo(id, createTimeSlotBookingRequest);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = CreateBookingWithHttpInfo(id, createTimeSlotBookingRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Book a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TimeSlotModel</returns>
-        public Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> CreateBookingWithHttpInfo(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TimeSlotModel> CreateBookingWithHttpInfo(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -524,19 +526,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = createTimeSlotBookingRequest;
 
             localVarRequestOptions.Operation = "BookingClient.CreateBooking";
@@ -565,7 +567,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Book a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -573,23 +575,23 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <returns>Task of TimeSlotModel</returns>
         public async System.Threading.Tasks.Task<TimeSlotModel> CreateBookingAsync(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = await CreateBookingWithHttpInfoAsync(id, createTimeSlotBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = await CreateBookingWithHttpInfoAsync(id, createTimeSlotBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Book a time slot 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="createTimeSlotBookingRequest">Booking request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel>> CreateBookingWithHttpInfoAsync(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> CreateBookingWithHttpInfoAsync(Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = default(CreateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -604,19 +606,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = createTimeSlotBookingRequest;
 
             localVarRequestOptions.Operation = "BookingClient.CreateBooking";
@@ -646,26 +648,26 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Gets a time slot for the current foreign organization by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TimeSlotModel</returns>
         public TimeSlotModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets a time slot for the current foreign organization by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TimeSlotModel</returns>
-        public Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TimeSlotModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -677,19 +679,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "BookingClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -717,29 +719,29 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Gets a time slot for the current foreign organization by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TimeSlotModel</returns>
         public async System.Threading.Tasks.Task<TimeSlotModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets a time slot for the current foreign organization by its id 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Uniqiue time slot id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -751,19 +753,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "BookingClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -792,28 +794,28 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Updates an existing booking 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TimeSlotModel</returns>
         public TimeSlotModel UpdateBooking(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = UpdateBookingWithHttpInfo(id, updateTimeSlotBookingRequest);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = UpdateBookingWithHttpInfo(id, updateTimeSlotBookingRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates an existing booking 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TimeSlotModel</returns>
-        public Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> UpdateBookingWithHttpInfo(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TimeSlotModel> UpdateBookingWithHttpInfo(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -828,19 +830,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotBookingRequest;
 
             localVarRequestOptions.Operation = "BookingClient.UpdateBooking";
@@ -869,7 +871,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <summary>
         /// Updates an existing booking 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -877,23 +879,23 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <returns>Task of TimeSlotModel</returns>
         public async System.Threading.Tasks.Task<TimeSlotModel> UpdateBookingAsync(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel> localVarResponse = await UpdateBookingWithHttpInfoAsync(id, updateTimeSlotBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TimeSlotModel> localVarResponse = await UpdateBookingWithHttpInfoAsync(id, updateTimeSlotBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates an existing booking 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.TimeSlot.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique time slot id</param>
         /// <param name="updateTimeSlotBookingRequest">Update request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.TimeSlot.ApiResponse<TimeSlotModel>> UpdateBookingWithHttpInfoAsync(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> UpdateBookingWithHttpInfoAsync(Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = default(UpdateTimeSlotBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.TimeSlot.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.TimeSlot.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -908,19 +910,19 @@ namespace Simplic.OxS.SDK.TimeSlot
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.TimeSlot.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.TimeSlot.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotBookingRequest;
 
             localVarRequestOptions.Operation = "BookingClient.UpdateBooking";

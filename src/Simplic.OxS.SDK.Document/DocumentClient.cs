@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Document
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
@@ -67,7 +69,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
@@ -79,7 +81,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
@@ -87,7 +89,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -100,7 +102,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -109,7 +111,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -122,7 +124,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -131,7 +133,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
@@ -143,7 +145,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
@@ -163,7 +165,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -176,7 +178,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -188,7 +190,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -201,7 +203,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -213,7 +215,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -226,7 +228,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -238,7 +240,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -252,7 +254,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -265,7 +267,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -279,7 +281,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -292,7 +294,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -305,7 +307,7 @@ namespace Simplic.OxS.SDK.Document
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -327,7 +329,7 @@ namespace Simplic.OxS.SDK.Document
     /// </summary>
     public partial class DocumentClient : IDocumentClient
     {
-        private Simplic.OxS.SDK.Document.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentClient"/> class.
@@ -343,13 +345,13 @@ namespace Simplic.OxS.SDK.Document
         /// <returns></returns>
         public DocumentClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Document.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Document.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Document.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Document.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Document.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Document.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -358,17 +360,17 @@ namespace Simplic.OxS.SDK.Document
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DocumentClient(Simplic.OxS.SDK.Document.Configuration configuration)
+        public DocumentClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Document.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Document.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Document.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Document.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Document.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -378,7 +380,7 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public DocumentClient(Simplic.OxS.SDK.Document.ISynchronousClient client, Simplic.OxS.SDK.Document.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Document.IReadableConfiguration configuration)
+        public DocumentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -387,18 +389,18 @@ namespace Simplic.OxS.SDK.Document
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Document.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Document.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Document.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -413,12 +415,12 @@ namespace Simplic.OxS.SDK.Document
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Document.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Document.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -434,26 +436,26 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
         public DocumentResponse Get(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = GetWithHttpInfo(documentId);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = GetWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -465,19 +467,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -505,29 +507,29 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
         public async System.Threading.Tasks.Task<DocumentResponse> GetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = await GetWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await GetWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -539,19 +541,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -580,26 +582,26 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
         public DocumentVersionResponse GetCurrent(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = GetCurrentWithHttpInfo(documentId);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetCurrentWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> GetCurrentWithHttpInfo(Guid documentId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetCurrentWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -611,19 +613,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.GetCurrent";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -651,29 +653,29 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
         public async System.Threading.Tasks.Task<DocumentVersionResponse> GetCurrentAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = await GetCurrentWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetCurrentWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse>> GetCurrentWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetCurrentWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -685,19 +687,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.GetCurrent";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -726,26 +728,26 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
         public DocumentVersionResponse GetVersionById(Guid versionId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionByIdWithHttpInfo(versionId);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionByIdWithHttpInfo(versionId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> GetVersionByIdWithHttpInfo(Guid versionId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionByIdWithHttpInfo(Guid versionId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -757,19 +759,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(versionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.GetVersionById";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -797,29 +799,29 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentVersionResponse</returns>
         public async System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionByIdAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionByIdWithHttpInfoAsync(versionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionByIdWithHttpInfoAsync(versionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse>> GetVersionByIdWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionByIdWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -831,19 +833,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(versionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
             localVarRequestOptions.Operation = "DocumentClient.GetVersionById";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -872,28 +874,28 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentVersionResponse</returns>
         public DocumentVersionResponse GetVersion(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionWithHttpInfo(documentId, varVersion);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = GetVersionWithHttpInfo(documentId, varVersion);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentVersionResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> GetVersionWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -905,22 +907,22 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
             if (varVersion != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Document.ClientUtils.ParameterToMultiMap("", "version", varVersion));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
             localVarRequestOptions.Operation = "DocumentClient.GetVersion";
@@ -949,7 +951,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -957,23 +959,23 @@ namespace Simplic.OxS.SDK.Document
         /// <returns>Task of DocumentVersionResponse</returns>
         public async System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionWithHttpInfoAsync(documentId, varVersion, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> localVarResponse = await GetVersionWithHttpInfoAsync(documentId, varVersion, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
         /// <param name="varVersion"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentVersionResponse>> GetVersionWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -985,22 +987,22 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
             if (varVersion != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Document.ClientUtils.ParameterToMultiMap("", "version", varVersion));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
             localVarRequestOptions.Operation = "DocumentClient.GetVersion";
@@ -1030,28 +1032,28 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
         public DocumentResponse Patch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = PatchWithHttpInfo(id, patchDocumentRequest);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = PatchWithHttpInfo(id, patchDocumentRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> PatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> PatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1066,19 +1068,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
             localVarRequestOptions.Operation = "DocumentClient.Patch";
@@ -1107,7 +1109,7 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1115,23 +1117,23 @@ namespace Simplic.OxS.SDK.Document
         /// <returns>Task of DocumentResponse</returns>
         public async System.Threading.Tasks.Task<DocumentResponse> PatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1146,19 +1148,19 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Document.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
             localVarRequestOptions.Operation = "DocumentClient.Patch";
@@ -1188,26 +1190,26 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
         public DocumentResponse Post(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = PostWithHttpInfo(postDocumentRequest);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = PostWithHttpInfo(postDocumentRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1222,13 +1224,13 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1262,29 +1264,29 @@ namespace Simplic.OxS.SDK.Document
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
         public async System.Threading.Tasks.Task<DocumentResponse> PostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse> localVarResponse = await PostWithHttpInfoAsync(postDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await PostWithHttpInfoAsync(postDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Document.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postDocumentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Document.ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Document.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Document.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1299,13 +1301,13 @@ namespace Simplic.OxS.SDK.Document
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Document.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

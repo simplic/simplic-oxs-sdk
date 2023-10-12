@@ -10,7 +10,7 @@
 
 using System.Collections.Generic;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

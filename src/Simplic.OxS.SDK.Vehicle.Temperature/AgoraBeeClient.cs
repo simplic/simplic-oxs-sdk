@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Vehicle.Temperature
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostAgoraBeeResponse</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostAgoraBeeResponse</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -72,7 +74,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -94,7 +96,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
     /// </summary>
     public partial class AgoraBeeClient : IAgoraBeeClient
     {
-        private Simplic.OxS.SDK.Vehicle.Temperature.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AgoraBeeClient"/> class.
@@ -110,13 +112,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <returns></returns>
         public AgoraBeeClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.Temperature.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Vehicle.Temperature.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -125,17 +127,17 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AgoraBeeClient(Simplic.OxS.SDK.Vehicle.Temperature.Configuration configuration)
+        public AgoraBeeClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.Temperature.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -145,7 +147,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public AgoraBeeClient(Simplic.OxS.SDK.Vehicle.Temperature.ISynchronousClient client, Simplic.OxS.SDK.Vehicle.Temperature.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Vehicle.Temperature.IReadableConfiguration configuration)
+        public AgoraBeeClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -154,18 +156,18 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -180,12 +182,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Vehicle.Temperature.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -201,26 +203,26 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostAgoraBeeResponse</returns>
         public PostAgoraBeeResponse Post(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<PostAgoraBeeResponse> localVarResponse = PostWithHttpInfo(postAgoraBeeRequest);
+            Simplic.OxS.SDK.ApiResponse<PostAgoraBeeResponse> localVarResponse = PostWithHttpInfo(postAgoraBeeRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostAgoraBeeResponse</returns>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<PostAgoraBeeResponse> PostWithHttpInfo(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PostAgoraBeeResponse> PostWithHttpInfo(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -235,13 +237,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -275,29 +277,29 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostAgoraBeeResponse</returns>
         public async System.Threading.Tasks.Task<PostAgoraBeeResponse> PostAsync(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<PostAgoraBeeResponse> localVarResponse = await PostWithHttpInfoAsync(postAgoraBeeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PostAgoraBeeResponse> localVarResponse = await PostWithHttpInfoAsync(postAgoraBeeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postAgoraBeeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostAgoraBeeResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<PostAgoraBeeResponse>> PostWithHttpInfoAsync(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PostAgoraBeeResponse>> PostWithHttpInfoAsync(PostAgoraBeeRequest? postAgoraBeeRequest = default(PostAgoraBeeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -312,13 +314,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Utility functions providing some benefit to API client consumers.

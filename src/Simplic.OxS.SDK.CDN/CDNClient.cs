@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.CDN
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
@@ -67,7 +69,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
@@ -79,7 +81,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
@@ -87,7 +89,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadFilesResponse</returns>
@@ -99,7 +101,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadFilesResponse</returns>
@@ -107,7 +109,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadResponse</returns>
@@ -119,7 +121,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadResponse</returns>
@@ -139,7 +141,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -152,7 +154,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -164,7 +166,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -177,7 +179,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -189,7 +191,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -202,7 +204,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -214,7 +216,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -227,7 +229,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -239,7 +241,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -252,7 +254,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -274,7 +276,7 @@ namespace Simplic.OxS.SDK.CDN
     /// </summary>
     public partial class CDNClient : ICDNClient
     {
-        private Simplic.OxS.SDK.CDN.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CDNClient"/> class.
@@ -290,13 +292,13 @@ namespace Simplic.OxS.SDK.CDN
         /// <returns></returns>
         public CDNClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.CDN.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.CDN.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.CDN.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.CDN.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.CDN.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.CDN.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -305,17 +307,17 @@ namespace Simplic.OxS.SDK.CDN
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CDNClient(Simplic.OxS.SDK.CDN.Configuration configuration)
+        public CDNClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.CDN.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.CDN.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.CDN.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.CDN.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.CDN.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -325,7 +327,7 @@ namespace Simplic.OxS.SDK.CDN
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public CDNClient(Simplic.OxS.SDK.CDN.ISynchronousClient client, Simplic.OxS.SDK.CDN.IAsynchronousClient asyncClient, Simplic.OxS.SDK.CDN.IReadableConfiguration configuration)
+        public CDNClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -334,18 +336,18 @@ namespace Simplic.OxS.SDK.CDN
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.CDN.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.CDN.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.CDN.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -360,12 +362,12 @@ namespace Simplic.OxS.SDK.CDN
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.CDN.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.CDN.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -381,26 +383,26 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
         public BlobMetadata Delete(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> localVarResponse = DeleteWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = DeleteWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        public Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> DeleteWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> DeleteWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -412,19 +414,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -452,29 +454,29 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
         public async System.Threading.Tasks.Task<BlobMetadata> DeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> localVarResponse = await DeleteWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await DeleteWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata>> DeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> DeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -486,19 +488,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -527,26 +529,26 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
         public System.IO.Stream GetFile(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<System.IO.Stream> localVarResponse = GetFileWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = GetFileWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Simplic.OxS.SDK.CDN.ApiResponse<System.IO.Stream> GetFileWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> GetFileWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -558,19 +560,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.GetFile";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -598,29 +600,29 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> GetFileAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<System.IO.Stream> localVarResponse = await GetFileWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = await GetFileWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.CDN.ApiResponse<System.IO.Stream>> GetFileWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> GetFileWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -632,19 +634,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.GetFile";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -673,26 +675,26 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BlobMetadata</returns>
         public BlobMetadata GetMetadata(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> localVarResponse = GetMetadataWithHttpInfo(blobId);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = GetMetadataWithHttpInfo(blobId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BlobMetadata</returns>
-        public Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> GetMetadataWithHttpInfo(Guid blobId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BlobMetadata> GetMetadataWithHttpInfo(Guid blobId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -704,19 +706,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.GetMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -744,29 +746,29 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BlobMetadata</returns>
         public async System.Threading.Tasks.Task<BlobMetadata> GetMetadataAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata> localVarResponse = await GetMetadataWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BlobMetadata> localVarResponse = await GetMetadataWithHttpInfoAsync(blobId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="blobId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BlobMetadata)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.CDN.ApiResponse<BlobMetadata>> GetMetadataWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> GetMetadataWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -778,19 +780,19 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.CDN.ClientUtils.ParameterToString(blobId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
             localVarRequestOptions.Operation = "CDNClient.GetMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -819,26 +821,26 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadFilesResponse</returns>
         public UploadFilesResponse UploadFile(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<UploadFilesResponse> localVarResponse = UploadFileWithHttpInfo(files);
+            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = UploadFileWithHttpInfo(files);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadFilesResponse</returns>
-        public Simplic.OxS.SDK.CDN.ApiResponse<UploadFilesResponse> UploadFileWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> UploadFileWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -851,13 +853,13 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -897,29 +899,29 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadFilesResponse</returns>
         public async System.Threading.Tasks.Task<UploadFilesResponse> UploadFileAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<UploadFilesResponse> localVarResponse = await UploadFileWithHttpInfoAsync(files, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> localVarResponse = await UploadFileWithHttpInfoAsync(files, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="files"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadFilesResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.CDN.ApiResponse<UploadFilesResponse>> UploadFileWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadFilesResponse>> UploadFileWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -932,13 +934,13 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -979,26 +981,26 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadResponse</returns>
         public UploadResponse Upload(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<UploadResponse> localVarResponse = UploadWithHttpInfo(uploadBytesRequest);
+            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = UploadWithHttpInfo(uploadBytesRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadResponse</returns>
-        public Simplic.OxS.SDK.CDN.ApiResponse<UploadResponse> UploadWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<UploadResponse> UploadWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1013,13 +1015,13 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1053,29 +1055,29 @@ namespace Simplic.OxS.SDK.CDN
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadResponse</returns>
         public async System.Threading.Tasks.Task<UploadResponse> UploadAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.CDN.ApiResponse<UploadResponse> localVarResponse = await UploadWithHttpInfoAsync(uploadBytesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<UploadResponse> localVarResponse = await UploadWithHttpInfoAsync(uploadBytesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.CDN.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadBytesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.CDN.ApiResponse<UploadResponse>> UploadWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadResponse>> UploadWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.CDN.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.CDN.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1090,13 +1092,13 @@ namespace Simplic.OxS.SDK.CDN
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.CDN.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

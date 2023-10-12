@@ -10,7 +10,7 @@
 
 using System;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// API Exception

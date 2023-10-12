@@ -11,7 +11,7 @@
 using Polly;
 using RestSharp;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.

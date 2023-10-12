@@ -8,7 +8,7 @@
  */
 
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Http methods supported by swagger

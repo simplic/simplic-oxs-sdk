@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Organization
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns the actual organization, from \&quot;OId\&quot;-claim in the jwt token
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
         OrganizationModel Get(int operationIndex = 0);
@@ -38,14 +40,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
         ApiResponse<OrganizationModel> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Returns a list of organizations that belongs to the current user
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
         List<OrganizationMemberModel> GetForUserGet(int operationIndex = 0);
@@ -56,14 +58,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
         ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
         List<OrganizationMemberInvitationModel> GetMemberInvitationsGet(int operationIndex = 0);
@@ -74,14 +76,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
         ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Returns all member that belongs to the current organization
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
         List<OrganizationMemberModel> GetMemberListGet(int operationIndex = 0);
@@ -92,14 +94,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
         ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
@@ -111,7 +113,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
@@ -119,7 +121,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Change the actual organization information
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
@@ -131,7 +133,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
@@ -151,7 +153,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationModel</returns>
@@ -163,7 +165,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationModel)</returns>
@@ -174,7 +176,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
@@ -186,7 +188,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
@@ -197,7 +199,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
@@ -209,7 +211,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
@@ -220,7 +222,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
@@ -232,7 +234,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
@@ -243,7 +245,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -256,7 +258,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -268,7 +270,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -281,7 +283,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -303,7 +305,7 @@ namespace Simplic.OxS.SDK.Organization
     /// </summary>
     public partial class OrganizationClient : IOrganizationClient
     {
-        private Simplic.OxS.SDK.Organization.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationClient"/> class.
@@ -319,13 +321,13 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns></returns>
         public OrganizationClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Organization.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Organization.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Organization.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -334,17 +336,17 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrganizationClient(Simplic.OxS.SDK.Organization.Configuration configuration)
+        public OrganizationClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Organization.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Organization.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -354,7 +356,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public OrganizationClient(Simplic.OxS.SDK.Organization.ISynchronousClient client, Simplic.OxS.SDK.Organization.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Organization.IReadableConfiguration configuration)
+        public OrganizationClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -363,18 +365,18 @@ namespace Simplic.OxS.SDK.Organization
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -389,12 +391,12 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Organization.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -410,24 +412,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns the actual organization, from \&quot;OId\&quot;-claim in the jwt token 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
         public OrganizationModel Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = GetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the actual organization, from \&quot;OId\&quot;-claim in the jwt token 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> GetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<OrganizationModel> GetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -439,13 +441,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -478,27 +480,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns the actual organization, from \&quot;OId\&quot;-claim in the jwt token 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationModel</returns>
         public async System.Threading.Tasks.Task<OrganizationModel> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the actual organization, from \&quot;OId\&quot;-claim in the jwt token 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationModel>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -510,13 +512,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -550,24 +552,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns a list of organizations that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
         public List<OrganizationMemberModel> GetForUserGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetForUserGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetForUserGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a list of organizations that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -579,13 +581,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -618,27 +620,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns a list of organizations that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetForUserGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetForUserGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a list of organizations that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>>> GetForUserGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetForUserGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -650,13 +652,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -690,24 +692,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
         public List<OrganizationMemberInvitationModel> GetMemberInvitationsGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = GetMemberInvitationsGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = GetMemberInvitationsGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -719,13 +721,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -758,27 +760,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = await GetMemberInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = await GetMemberInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -790,13 +792,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -830,24 +832,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns all member that belongs to the current organization 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
         public List<OrganizationMemberModel> GetMemberListGet(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetMemberListGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetMemberListGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns all member that belongs to the current organization 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -859,13 +861,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -898,27 +900,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Returns all member that belongs to the current organization 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetMemberListGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetMemberListGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns all member that belongs to the current organization 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<OrganizationMemberModel>>> GetMemberListGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetMemberListGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -930,13 +932,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -970,26 +972,26 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
         public OrganizationModel Post(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = PostWithHttpInfo(createOrganizationRequest);
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = PostWithHttpInfo(createOrganizationRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> PostWithHttpInfo(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<OrganizationModel> PostWithHttpInfo(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1004,13 +1006,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1044,29 +1046,29 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationModel</returns>
         public async System.Threading.Tasks.Task<OrganizationModel> PostAsync(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = await PostWithHttpInfoAsync(createOrganizationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = await PostWithHttpInfoAsync(createOrganizationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel>> PostWithHttpInfoAsync(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationModel>> PostWithHttpInfoAsync(CreateOrganizationRequest? createOrganizationRequest = default(CreateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1081,13 +1083,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1122,26 +1124,26 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Change the actual organization information 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationModel</returns>
         public OrganizationModel Put(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = PutWithHttpInfo(updateOrganizationRequest);
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = PutWithHttpInfo(updateOrganizationRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Change the actual organization information 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> PutWithHttpInfo(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<OrganizationModel> PutWithHttpInfo(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1156,13 +1158,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1196,29 +1198,29 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Change the actual organization information 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationModel</returns>
         public async System.Threading.Tasks.Task<OrganizationModel> PutAsync(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel> localVarResponse = await PutWithHttpInfoAsync(updateOrganizationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OrganizationModel> localVarResponse = await PutWithHttpInfoAsync(updateOrganizationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Change the actual organization information 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateOrganizationRequest">Update request model (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<OrganizationModel>> PutWithHttpInfoAsync(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationModel>> PutWithHttpInfoAsync(UpdateOrganizationRequest? updateOrganizationRequest = default(UpdateOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1233,13 +1235,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

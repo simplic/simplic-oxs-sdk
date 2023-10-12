@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Organization
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Adds a user to a team.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -40,7 +42,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -49,7 +51,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams from the current user.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         List<TeamModel> GetAllByCurrentuser(int operationIndex = 0);
@@ -60,14 +62,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
         ApiResponse<List<TeamModel>> GetAllByCurrentuserWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives all teams from the current organization.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         List<TeamModel> GetAllByOrganization(int operationIndex = 0);
@@ -78,14 +80,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
         ApiResponse<List<TeamModel>> GetAllByOrganizationWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Retrives all teams.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         List<TeamModel> GetAll(int operationIndex = 0);
@@ -96,14 +98,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
         ApiResponse<List<TeamModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Deletes a team with the given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -115,7 +117,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -123,7 +125,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Gets a team with the given id.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
@@ -135,7 +137,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
@@ -143,7 +145,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Updates the given team.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -156,7 +158,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -165,7 +167,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Creates a new team.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
@@ -177,7 +179,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
@@ -185,7 +187,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Removes a user from a team.
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -198,7 +200,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -219,7 +221,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -233,7 +235,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -246,7 +248,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
@@ -258,7 +260,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
@@ -269,7 +271,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
@@ -281,7 +283,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
@@ -292,7 +294,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
@@ -304,7 +306,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
@@ -315,7 +317,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -328,7 +330,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -340,7 +342,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -353,7 +355,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -365,7 +367,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -379,7 +381,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -392,7 +394,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -405,7 +407,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -417,7 +419,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -431,7 +433,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -454,7 +456,7 @@ namespace Simplic.OxS.SDK.Organization
     /// </summary>
     public partial class TeamClient : ITeamClient
     {
-        private Simplic.OxS.SDK.Organization.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TeamClient"/> class.
@@ -470,13 +472,13 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns></returns>
         public TeamClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Organization.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Organization.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Organization.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -485,17 +487,17 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TeamClient(Simplic.OxS.SDK.Organization.Configuration configuration)
+        public TeamClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Organization.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Organization.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Organization.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -505,7 +507,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TeamClient(Simplic.OxS.SDK.Organization.ISynchronousClient client, Simplic.OxS.SDK.Organization.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Organization.IReadableConfiguration configuration)
+        public TeamClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -514,18 +516,18 @@ namespace Simplic.OxS.SDK.Organization
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Organization.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -540,12 +542,12 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Organization.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Organization.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -561,28 +563,28 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Adds a user to a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
         public TeamModel AddMember(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = AddMemberWithHttpInfo(id, addTeamMemberRequest);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = AddMemberWithHttpInfo(id, addTeamMemberRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Adds a user to a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> AddMemberWithHttpInfo(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TeamModel> AddMemberWithHttpInfo(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -597,19 +599,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addTeamMemberRequest;
 
             localVarRequestOptions.Operation = "TeamClient.AddMember";
@@ -638,7 +640,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Adds a user to a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -646,23 +648,23 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns>Task of TeamModel</returns>
         public async System.Threading.Tasks.Task<TeamModel> AddMemberAsync(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = await AddMemberWithHttpInfoAsync(id, addTeamMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = await AddMemberWithHttpInfoAsync(id, addTeamMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Adds a user to a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="addTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TeamModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<TeamModel>> AddMemberWithHttpInfoAsync(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TeamModel>> AddMemberWithHttpInfoAsync(Guid id, AddTeamMemberRequest? addTeamMemberRequest = default(AddTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -677,19 +679,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addTeamMemberRequest;
 
             localVarRequestOptions.Operation = "TeamClient.AddMember";
@@ -719,24 +721,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams from the current user. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         public List<TeamModel> GetAllByCurrentuser(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = GetAllByCurrentuserWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = GetAllByCurrentuserWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams from the current user. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> GetAllByCurrentuserWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TeamModel>> GetAllByCurrentuserWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -748,13 +750,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -787,27 +789,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams from the current user. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TeamModel>> GetAllByCurrentuserAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = await GetAllByCurrentuserWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = await GetAllByCurrentuserWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams from the current user. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>>> GetAllByCurrentuserWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TeamModel>>> GetAllByCurrentuserWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -819,13 +821,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -859,24 +861,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams from the current organization. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         public List<TeamModel> GetAllByOrganization(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = GetAllByOrganizationWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = GetAllByOrganizationWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams from the current organization. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> GetAllByOrganizationWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TeamModel>> GetAllByOrganizationWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -888,13 +890,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -927,27 +929,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams from the current organization. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TeamModel>> GetAllByOrganizationAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = await GetAllByOrganizationWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = await GetAllByOrganizationWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams from the current organization. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>>> GetAllByOrganizationWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TeamModel>>> GetAllByOrganizationWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -959,13 +961,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -999,24 +1001,24 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TeamModel&gt;</returns>
         public List<TeamModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TeamModel&gt;</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TeamModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1028,13 +1030,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1067,27 +1069,27 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Retrives all teams. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TeamModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<TeamModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TeamModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrives all teams. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TeamModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<List<TeamModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TeamModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1099,13 +1101,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1139,7 +1141,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Deletes a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1151,13 +1153,13 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Deletes a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1169,19 +1171,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TeamClient.TeamIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1209,7 +1211,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Deletes a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1222,15 +1224,15 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Deletes a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1242,19 +1244,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TeamClient.TeamIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1283,26 +1285,26 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Gets a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
         public TeamModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TeamModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1314,19 +1316,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TeamClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1354,29 +1356,29 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Gets a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TeamModel</returns>
         public async System.Threading.Tasks.Task<TeamModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Gets a team with the given id. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Id of the team.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TeamModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<TeamModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TeamModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1388,19 +1390,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "TeamClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1429,28 +1431,28 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Updates the given team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
         public TeamModel Put(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = PutWithHttpInfo(id, updateTeamRequest);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = PutWithHttpInfo(id, updateTeamRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates the given team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> PutWithHttpInfo(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TeamModel> PutWithHttpInfo(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1465,19 +1467,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTeamRequest;
 
             localVarRequestOptions.Operation = "TeamClient.Put";
@@ -1506,7 +1508,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Updates the given team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1514,23 +1516,23 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns>Task of TeamModel</returns>
         public async System.Threading.Tasks.Task<TeamModel> PutAsync(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = await PutWithHttpInfoAsync(id, updateTeamRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = await PutWithHttpInfoAsync(id, updateTeamRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Updates the given team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Old team.</param>
         /// <param name="updateTeamRequest">New team to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TeamModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<TeamModel>> PutWithHttpInfoAsync(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TeamModel>> PutWithHttpInfoAsync(Guid id, UpdateTeamRequest? updateTeamRequest = default(UpdateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1545,19 +1547,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTeamRequest;
 
             localVarRequestOptions.Operation = "TeamClient.Put";
@@ -1587,26 +1589,26 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Creates a new team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
         public TeamModel Post(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = PostWithHttpInfo(createTeamRequest);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = PostWithHttpInfo(createTeamRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> PostWithHttpInfo(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TeamModel> PostWithHttpInfo(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1621,13 +1623,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1661,29 +1663,29 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Creates a new team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TeamModel</returns>
         public async System.Threading.Tasks.Task<TeamModel> PostAsync(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = await PostWithHttpInfoAsync(createTeamRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = await PostWithHttpInfoAsync(createTeamRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates a new team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTeamRequest">Team to create. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TeamModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<TeamModel>> PostWithHttpInfoAsync(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TeamModel>> PostWithHttpInfoAsync(CreateTeamRequest? createTeamRequest = default(CreateTeamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1698,13 +1700,13 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1739,28 +1741,28 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Removes a user from a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TeamModel</returns>
         public TeamModel RemoveMember(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = RemoveMemberWithHttpInfo(id, removeTeamMemberRequest);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = RemoveMemberWithHttpInfo(id, removeTeamMemberRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Removes a user from a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TeamModel</returns>
-        public Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> RemoveMemberWithHttpInfo(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TeamModel> RemoveMemberWithHttpInfo(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1775,19 +1777,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = removeTeamMemberRequest;
 
             localVarRequestOptions.Operation = "TeamClient.RemoveMember";
@@ -1816,7 +1818,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Removes a user from a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1824,23 +1826,23 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns>Task of TeamModel</returns>
         public async System.Threading.Tasks.Task<TeamModel> RemoveMemberAsync(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Organization.ApiResponse<TeamModel> localVarResponse = await RemoveMemberWithHttpInfoAsync(id, removeTeamMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TeamModel> localVarResponse = await RemoveMemberWithHttpInfoAsync(id, removeTeamMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Removes a user from a team. 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Organization.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The given team.</param>
         /// <param name="removeTeamMemberRequest">The given user. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TeamModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Organization.ApiResponse<TeamModel>> RemoveMemberWithHttpInfoAsync(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TeamModel>> RemoveMemberWithHttpInfoAsync(Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = default(RemoveTeamMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Organization.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Organization.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1855,19 +1857,19 @@ namespace Simplic.OxS.SDK.Organization
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Organization.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Organization.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = removeTeamMemberRequest;
 
             localVarRequestOptions.Operation = "TeamClient.RemoveMember";

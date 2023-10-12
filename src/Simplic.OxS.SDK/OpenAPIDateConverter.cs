@@ -9,7 +9,7 @@
 
 using Newtonsoft.Json.Converters;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// Formatter for 'date' openapi formats ss defined by full-date - RFC3339

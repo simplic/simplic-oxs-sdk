@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Article
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
@@ -39,7 +41,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
@@ -47,7 +49,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
@@ -59,7 +61,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
@@ -67,7 +69,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -81,7 +83,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -91,7 +93,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -105,7 +107,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -115,7 +117,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -127,7 +129,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -135,7 +137,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
@@ -147,7 +149,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
@@ -155,7 +157,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -168,7 +170,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -177,7 +179,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
@@ -189,7 +191,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
@@ -209,7 +211,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -222,7 +224,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -234,7 +236,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -247,7 +249,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -259,7 +261,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -274,7 +276,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -288,7 +290,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -303,7 +305,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -317,7 +319,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -330,7 +332,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -342,7 +344,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -355,7 +357,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -367,7 +369,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -381,7 +383,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -394,7 +396,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -407,7 +409,7 @@ namespace Simplic.OxS.SDK.Article
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -429,7 +431,7 @@ namespace Simplic.OxS.SDK.Article
     /// </summary>
     public partial class ArticleClient : IArticleClient
     {
-        private Simplic.OxS.SDK.Article.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ArticleClient"/> class.
@@ -445,13 +447,13 @@ namespace Simplic.OxS.SDK.Article
         /// <returns></returns>
         public ArticleClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Article.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Article.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Article.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Article.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Article.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Article.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -460,17 +462,17 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ArticleClient(Simplic.OxS.SDK.Article.Configuration configuration)
+        public ArticleClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Article.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Article.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Article.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Article.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Article.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -480,7 +482,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ArticleClient(Simplic.OxS.SDK.Article.ISynchronousClient client, Simplic.OxS.SDK.Article.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Article.IReadableConfiguration configuration)
+        public ArticleClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -489,18 +491,18 @@ namespace Simplic.OxS.SDK.Article
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Article.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Article.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Article.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -515,12 +517,12 @@ namespace Simplic.OxS.SDK.Article
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Article.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Article.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -536,26 +538,26 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
         public ArticleModel GetArticleBy(string? barcode = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = GetArticleByWithHttpInfo(barcode);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetArticleByWithHttpInfo(barcode);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> GetArticleByWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetArticleByWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -567,13 +569,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -581,7 +583,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (barcode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticleBy";
@@ -610,29 +612,29 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
         public async System.Threading.Tasks.Task<ArticleModel> GetArticleByAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = await GetArticleByWithHttpInfoAsync(barcode, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetArticleByWithHttpInfoAsync(barcode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<ArticleModel>> GetArticleByWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetArticleByWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -644,13 +646,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -658,7 +660,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (barcode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticleBy";
@@ -688,26 +690,26 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
         public ArticleModel GetArticleByNumber(string? articleNumber = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = GetArticleByNumberWithHttpInfo(articleNumber);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetArticleByNumberWithHttpInfo(articleNumber);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> GetArticleByNumberWithHttpInfo(string? articleNumber = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetArticleByNumberWithHttpInfo(string? articleNumber = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -719,13 +721,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -733,7 +735,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (articleNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "articleNumber", articleNumber));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "articleNumber", articleNumber));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticleByNumber";
@@ -762,29 +764,29 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
         public async System.Threading.Tasks.Task<ArticleModel> GetArticleByNumberAsync(string? articleNumber = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = await GetArticleByNumberWithHttpInfoAsync(articleNumber, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetArticleByNumberWithHttpInfoAsync(articleNumber, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="articleNumber"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<ArticleModel>> GetArticleByNumberWithHttpInfoAsync(string? articleNumber = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetArticleByNumberWithHttpInfoAsync(string? articleNumber = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -796,13 +798,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -810,7 +812,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (articleNumber != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "articleNumber", articleNumber));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "articleNumber", articleNumber));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticleByNumber";
@@ -840,7 +842,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -848,22 +850,22 @@ namespace Simplic.OxS.SDK.Article
         /// <returns>List&lt;ArticleModel&gt;</returns>
         public List<ArticleModel> GetArticlesByGroupid(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> localVarResponse = GetArticlesByGroupidWithHttpInfo(groupId, skip, limit);
+            Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> localVarResponse = GetArticlesByGroupidWithHttpInfo(groupId, skip, limit);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ArticleModel&gt;</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> GetArticlesByGroupidWithHttpInfo(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> GetArticlesByGroupidWithHttpInfo(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -875,13 +877,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -889,15 +891,15 @@ namespace Simplic.OxS.SDK.Article
 
             if (groupId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "groupId", groupId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "groupId", groupId));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticlesByGroupid";
@@ -926,7 +928,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -935,24 +937,24 @@ namespace Simplic.OxS.SDK.Article
         /// <returns>Task of List&lt;ArticleModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ArticleModel>> GetArticlesByGroupidAsync(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> localVarResponse = await GetArticlesByGroupidWithHttpInfoAsync(groupId, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> localVarResponse = await GetArticlesByGroupidWithHttpInfoAsync(groupId, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ArticleModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>>> GetArticlesByGroupidWithHttpInfoAsync(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ArticleModel>>> GetArticlesByGroupidWithHttpInfoAsync(Guid? groupId = default(Guid?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -964,13 +966,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -978,15 +980,15 @@ namespace Simplic.OxS.SDK.Article
 
             if (groupId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "groupId", groupId));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "groupId", groupId));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticlesByGroupid";
@@ -1016,7 +1018,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -1024,22 +1026,22 @@ namespace Simplic.OxS.SDK.Article
         /// <returns>List&lt;ArticleModel&gt;</returns>
         public List<ArticleModel> GetArticlesByName(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> localVarResponse = GetArticlesByNameWithHttpInfo(searchName, skip, limit);
+            Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> localVarResponse = GetArticlesByNameWithHttpInfo(searchName, skip, limit);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ArticleModel&gt;</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> GetArticlesByNameWithHttpInfo(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> GetArticlesByNameWithHttpInfo(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1051,13 +1053,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1065,15 +1067,15 @@ namespace Simplic.OxS.SDK.Article
 
             if (searchName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "searchName", searchName));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchName", searchName));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticlesByName";
@@ -1102,7 +1104,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
@@ -1111,24 +1113,24 @@ namespace Simplic.OxS.SDK.Article
         /// <returns>Task of List&lt;ArticleModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<ArticleModel>> GetArticlesByNameAsync(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>> localVarResponse = await GetArticlesByNameWithHttpInfoAsync(searchName, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ArticleModel>> localVarResponse = await GetArticlesByNameWithHttpInfoAsync(searchName, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchName"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ArticleModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<List<ArticleModel>>> GetArticlesByNameWithHttpInfoAsync(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ArticleModel>>> GetArticlesByNameWithHttpInfoAsync(string? searchName = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1140,13 +1142,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1154,15 +1156,15 @@ namespace Simplic.OxS.SDK.Article
 
             if (searchName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "searchName", searchName));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchName", searchName));
             }
             if (skip != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "skip", skip));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Article.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             localVarRequestOptions.Operation = "ArticleClient.GetArticlesByName";
@@ -1192,7 +1194,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1204,13 +1206,13 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1222,19 +1224,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ArticleClient.ArticleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1262,7 +1264,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1275,15 +1277,15 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1295,19 +1297,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ArticleClient.ArticleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1336,26 +1338,26 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
         public ArticleModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1367,19 +1369,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ArticleClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1407,29 +1409,29 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
         public async System.Threading.Tasks.Task<ArticleModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<ArticleModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1441,19 +1443,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
             localVarRequestOptions.Operation = "ArticleClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1482,28 +1484,28 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
         public ArticleModel Put(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = PutWithHttpInfo(id, updateArticleRequest);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = PutWithHttpInfo(id, updateArticleRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> PutWithHttpInfo(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> PutWithHttpInfo(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1518,19 +1520,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateArticleRequest;
 
             localVarRequestOptions.Operation = "ArticleClient.Put";
@@ -1559,7 +1561,7 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1567,23 +1569,23 @@ namespace Simplic.OxS.SDK.Article
         /// <returns>Task of ArticleModel</returns>
         public async System.Threading.Tasks.Task<ArticleModel> PutAsync(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = await PutWithHttpInfoAsync(id, updateArticleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await PutWithHttpInfoAsync(id, updateArticleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<ArticleModel>> PutWithHttpInfoAsync(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> PutWithHttpInfoAsync(Guid id, UpdateArticleRequest? updateArticleRequest = default(UpdateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1598,19 +1600,19 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.Article.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateArticleRequest;
 
             localVarRequestOptions.Operation = "ArticleClient.Put";
@@ -1640,26 +1642,26 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
         public ArticleModel Post(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = PostWithHttpInfo(createArticleRequest);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = PostWithHttpInfo(createArticleRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> PostWithHttpInfo(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> PostWithHttpInfo(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1674,13 +1676,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1714,29 +1716,29 @@ namespace Simplic.OxS.SDK.Article
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
         public async System.Threading.Tasks.Task<ArticleModel> PostAsync(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Article.ApiResponse<ArticleModel> localVarResponse = await PostWithHttpInfoAsync(createArticleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await PostWithHttpInfoAsync(createArticleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Article.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createArticleRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Article.ApiResponse<ArticleModel>> PostWithHttpInfoAsync(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> PostWithHttpInfoAsync(CreateArticleRequest? createArticleRequest = default(CreateArticleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Article.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Article.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1751,13 +1753,13 @@ namespace Simplic.OxS.SDK.Article
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Article.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

@@ -15,6 +15,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+using Simplic.OxS.SDK;
+
 namespace Simplic.OxS.SDK.Vehicle.Temperature
 {
 
@@ -27,7 +29,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -41,7 +43,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -51,7 +53,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;GetTemperatureResponse&gt;</returns>
@@ -63,7 +65,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;GetTemperatureResponse&gt;</returns>
@@ -71,7 +73,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleDetailsResponse</returns>
@@ -83,7 +85,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleDetailsResponse</returns>
@@ -103,7 +105,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -118,7 +120,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -132,7 +134,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -145,7 +147,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -157,7 +159,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -170,7 +172,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -192,7 +194,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
     /// </summary>
     public partial class TemperatureClient : ITemperatureClient
     {
-        private Simplic.OxS.SDK.Vehicle.Temperature.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TemperatureClient"/> class.
@@ -208,13 +210,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <returns></returns>
         public TemperatureClient(string basePath)
         {
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.Temperature.GlobalConfiguration.Instance,
-                new Simplic.OxS.SDK.Vehicle.Temperature.Configuration { BasePath = basePath }
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
+                new Simplic.OxS.SDK.Configuration { BasePath = basePath }
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -223,17 +225,17 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TemperatureClient(Simplic.OxS.SDK.Vehicle.Temperature.Configuration configuration)
+        public TemperatureClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.MergeConfigurations(
-                Simplic.OxS.SDK.Vehicle.Temperature.GlobalConfiguration.Instance,
+            this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
+                Simplic.OxS.SDK.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Simplic.OxS.SDK.Vehicle.Temperature.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.Client = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -243,7 +245,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TemperatureClient(Simplic.OxS.SDK.Vehicle.Temperature.ISynchronousClient client, Simplic.OxS.SDK.Vehicle.Temperature.IAsynchronousClient asyncClient, Simplic.OxS.SDK.Vehicle.Temperature.IReadableConfiguration configuration)
+        public TemperatureClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -252,18 +254,18 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Simplic.OxS.SDK.Vehicle.Temperature.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.IAsynchronousClient AsynchronousClient { get; set; }
+        public Simplic.OxS.SDK.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ISynchronousClient Client { get; set; }
+        public Simplic.OxS.SDK.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -278,12 +280,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Simplic.OxS.SDK.Vehicle.Temperature.IReadableConfiguration Configuration { get; set; }
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ExceptionFactory ExceptionFactory
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -299,7 +301,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -307,22 +309,22 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <returns>List&lt;GetTemperatureResponse&gt;</returns>
         public List<GetTemperatureResponse> ByDate(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> localVarResponse = ByDateWithHttpInfo(vehicleId, from, to);
+            Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> localVarResponse = ByDateWithHttpInfo(vehicleId, from, to);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;GetTemperatureResponse&gt;</returns>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> ByDateWithHttpInfo(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> ByDateWithHttpInfo(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -334,26 +336,26 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToString(vehicleId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.ClientUtils.ParameterToString(vehicleId)); // path parameter
             if (from != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToMultiMap("", "from", from));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
             }
             if (to != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToMultiMap("", "to", to));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "to", to));
             }
 
             localVarRequestOptions.Operation = "TemperatureClient.ByDate";
@@ -382,7 +384,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
@@ -391,24 +393,24 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <returns>Task of List&lt;GetTemperatureResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<GetTemperatureResponse>> ByDateAsync(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> localVarResponse = await ByDateWithHttpInfoAsync(vehicleId, from, to, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> localVarResponse = await ByDateWithHttpInfoAsync(vehicleId, from, to, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GetTemperatureResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>>> ByDateWithHttpInfoAsync(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>>> ByDateWithHttpInfoAsync(Guid vehicleId, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -420,26 +422,26 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToString(vehicleId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.ClientUtils.ParameterToString(vehicleId)); // path parameter
             if (from != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToMultiMap("", "from", from));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
             }
             if (to != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToMultiMap("", "to", to));
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "to", to));
             }
 
             localVarRequestOptions.Operation = "TemperatureClient.ByDate";
@@ -469,26 +471,26 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;GetTemperatureResponse&gt;</returns>
         public List<GetTemperatureResponse> Post(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> localVarResponse = PostWithHttpInfo(postTemperatureRequest);
+            Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> localVarResponse = PostWithHttpInfo(postTemperatureRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;GetTemperatureResponse&gt;</returns>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> PostWithHttpInfo(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> PostWithHttpInfo(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -503,13 +505,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -543,29 +545,29 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GetTemperatureResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<GetTemperatureResponse>> PostAsync(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>> localVarResponse = await PostWithHttpInfoAsync(postTemperatureRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>> localVarResponse = await PostWithHttpInfoAsync(postTemperatureRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postTemperatureRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GetTemperatureResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<List<GetTemperatureResponse>>> PostWithHttpInfoAsync(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetTemperatureResponse>>> PostWithHttpInfoAsync(PostTemperatureRequest? postTemperatureRequest = default(PostTemperatureRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -580,13 +582,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -621,26 +623,26 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VehicleDetailsResponse</returns>
         public VehicleDetailsResponse Get(Guid vehicleId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<VehicleDetailsResponse> localVarResponse = GetWithHttpInfo(vehicleId);
+            Simplic.OxS.SDK.ApiResponse<VehicleDetailsResponse> localVarResponse = GetWithHttpInfo(vehicleId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VehicleDetailsResponse</returns>
-        public Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<VehicleDetailsResponse> GetWithHttpInfo(Guid vehicleId, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<VehicleDetailsResponse> GetWithHttpInfo(Guid vehicleId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -652,19 +654,19 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToString(vehicleId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.ClientUtils.ParameterToString(vehicleId)); // path parameter
 
             localVarRequestOptions.Operation = "TemperatureClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -692,29 +694,29 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VehicleDetailsResponse</returns>
         public async System.Threading.Tasks.Task<VehicleDetailsResponse> GetAsync(Guid vehicleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<VehicleDetailsResponse> localVarResponse = await GetWithHttpInfoAsync(vehicleId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<VehicleDetailsResponse> localVarResponse = await GetWithHttpInfoAsync(vehicleId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.Vehicle.Temperature.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vehicleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VehicleDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.Vehicle.Temperature.ApiResponse<VehicleDetailsResponse>> GetWithHttpInfoAsync(Guid vehicleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<VehicleDetailsResponse>> GetWithHttpInfoAsync(Guid vehicleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.Vehicle.Temperature.RequestOptions();
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -726,19 +728,19 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 "text/json"
             };
 
-            var localVarContentType = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.Vehicle.Temperature.ClientUtils.ParameterToString(vehicleId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("vehicleId", Simplic.OxS.SDK.ClientUtils.ParameterToString(vehicleId)); // path parameter
 
             localVarRequestOptions.Operation = "TemperatureClient.Get";
             localVarRequestOptions.OperationIndex = operationIndex;

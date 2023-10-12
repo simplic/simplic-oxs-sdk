@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = Simplic.OxS.SDK.Vehicle.Temperature.OpenAPIDateConverter;
+using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
 
-namespace Simplic.OxS.SDK.Vehicle.Temperature
+namespace Simplic.OxS.SDK
 {
     /// <summary>
     /// ProblemDetails

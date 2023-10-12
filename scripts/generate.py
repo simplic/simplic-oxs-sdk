@@ -114,17 +114,7 @@ def main(args: Namespace):
             # move generated files to proper project(s)
             # Boiler Plate
             fsutil.rec_replace(
-                f"{GEN_OUT}/src/{sdk_proj_name}/Model/ProblemDetails.cs",
-                sdk_proj_name,
-                base_proj_name
-            )
-            fsutil.rec_replace(
-                f"{GEN_OUT}/src/{sdk_proj_name}/Model/AbstractOpenAPISchema.cs",
-                sdk_proj_name,
-                base_proj_name
-            )
-            fsutil.rec_replace(
-                f"{GEN_OUT}/src/{sdk_proj_name}/Client/*",
+                f"{GEN_OUT}/src/{sdk_proj_name}",
                 sdk_proj_name,
                 base_proj_name
             )
@@ -142,7 +132,7 @@ def main(args: Namespace):
             )
 
             # SDK specific
-            # insert using for base project
+            # insert using for base project and fix namespace
             fsutil.rec_replace(
                 f"{GEN_OUT}/src/{sdk_proj_name}",
                 f"namespace {base_proj_name}",
