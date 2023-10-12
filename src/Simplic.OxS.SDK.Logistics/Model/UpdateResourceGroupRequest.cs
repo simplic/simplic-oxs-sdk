@@ -21,9 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = Simplic.OxS.SDK.OpenAPIDateConverter;
-
-using Simplic.OxS.SDK;
+using OpenAPIDateConverter = Simplic.OxS.SDK.Logistics.OpenAPIDateConverter;
 
 namespace Simplic.OxS.SDK.Logistics
 {
