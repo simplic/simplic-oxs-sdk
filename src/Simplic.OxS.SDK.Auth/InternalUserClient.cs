@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
-        RequestUserResponse GetBy(string? email = default(string?), int operationIndex = 0);
+        RequestUserResponse GetByEmail(string? email = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Get a user by its e-mail address
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        ApiResponse<RequestUserResponse> GetByWithHttpInfo(string? email = default(string?), int operationIndex = 0);
+        ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?), int operationIndex = 0);
         /// <summary>
         /// Get a user by its id
         /// </summary>
@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
-        RequestUserResponse GetBy(Guid? id = default(Guid?), int operationIndex = 0);
+        RequestUserResponse GetById(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// Get a user by its id
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        ApiResponse<RequestUserResponse> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -86,7 +86,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
-        System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a user by its e-mail address
@@ -99,7 +99,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a user by its id
         /// </summary>
@@ -111,7 +111,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
-        System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a user by its id
@@ -124,7 +124,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -252,9 +252,9 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetBy(string? email = default(string?), int operationIndex = 0)
+        public RequestUserResponse GetByEmail(string? email = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(email);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByEmailWithHttpInfo(email);
             return localVarResponse.Data;
         }
 
@@ -265,7 +265,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByWithHttpInfo(string? email = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -296,7 +296,7 @@ namespace Simplic.OxS.SDK.Auth
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "InternalUserClient.GetBy";
+            localVarRequestOptions.Operation = "InternalUserClient.GetByEmail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -309,7 +309,7 @@ namespace Simplic.OxS.SDK.Auth
             var localVarResponse = this.Client.Get<RequestUserResponse>("/internal/InternalUser/get-by-email", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByEmail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -327,9 +327,9 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
-        public async System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByEmailWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -341,7 +341,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -373,7 +373,7 @@ namespace Simplic.OxS.SDK.Auth
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "InternalUserClient.GetBy";
+            localVarRequestOptions.Operation = "InternalUserClient.GetByEmail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -387,7 +387,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByEmail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -404,9 +404,9 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetBy(Guid? id = default(Guid?), int operationIndex = 0)
+        public RequestUserResponse GetById(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -417,7 +417,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -448,7 +448,7 @@ namespace Simplic.OxS.SDK.Auth
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalUserClient.GetBy";
+            localVarRequestOptions.Operation = "InternalUserClient.GetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -461,7 +461,7 @@ namespace Simplic.OxS.SDK.Auth
             var localVarResponse = this.Client.Get<RequestUserResponse>("/internal/InternalUser/get-by-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -479,9 +479,9 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RequestUserResponse</returns>
-        public async System.Threading.Tasks.Task<RequestUserResponse> GetByAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -493,7 +493,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -525,7 +525,7 @@ namespace Simplic.OxS.SDK.Auth
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalUserClient.GetBy";
+            localVarRequestOptions.Operation = "InternalUserClient.GetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -539,7 +539,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

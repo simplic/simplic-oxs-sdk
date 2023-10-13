@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
-        ArticleModel GetArticleBy(string? barcode = default(string?), int operationIndex = 0);
+        ArticleModel GetArticleByBarcode(string? barcode = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        ApiResponse<ArticleModel> GetArticleByWithHttpInfo(string? barcode = default(string?), int operationIndex = 0);
+        ApiResponse<ArticleModel> GetArticleByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -216,7 +216,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
-        System.Threading.Tasks.Task<ArticleModel> GetArticleByAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ArticleModel> GetArticleByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -229,7 +229,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ArticleModel>> GetArticleByWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ArticleModel>> GetArticleByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -542,9 +542,9 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
-        public ArticleModel GetArticleBy(string? barcode = default(string?), int operationIndex = 0)
+        public ArticleModel GetArticleByBarcode(string? barcode = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetArticleByWithHttpInfo(barcode);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetArticleByBarcodeWithHttpInfo(barcode);
             return localVarResponse.Data;
         }
 
@@ -555,7 +555,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="barcode"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetArticleByWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetArticleByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -586,7 +586,7 @@ namespace Simplic.OxS.SDK.Article
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
             }
 
-            localVarRequestOptions.Operation = "ArticleClient.GetArticleBy";
+            localVarRequestOptions.Operation = "ArticleClient.GetArticleByBarcode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -599,7 +599,7 @@ namespace Simplic.OxS.SDK.Article
             var localVarResponse = this.Client.Get<ArticleModel>("/Article/get-article-by-barcode", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetArticleBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetArticleByBarcode", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -617,9 +617,9 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
-        public async System.Threading.Tasks.Task<ArticleModel> GetArticleByAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ArticleModel> GetArticleByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetArticleByWithHttpInfoAsync(barcode, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetArticleByBarcodeWithHttpInfoAsync(barcode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -631,7 +631,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetArticleByWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetArticleByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -663,7 +663,7 @@ namespace Simplic.OxS.SDK.Article
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
             }
 
-            localVarRequestOptions.Operation = "ArticleClient.GetArticleBy";
+            localVarRequestOptions.Operation = "ArticleClient.GetArticleByBarcode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -677,7 +677,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetArticleBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetArticleByBarcode", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

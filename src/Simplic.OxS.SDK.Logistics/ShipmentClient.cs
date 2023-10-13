@@ -57,7 +57,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="since"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShipmentModel&gt;</returns>
-        List<ShipmentModel> GetUpdated(DateTime? since = default(DateTime?), int operationIndex = 0);
+        List<ShipmentModel> GetUpdatedSince(DateTime? since = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// Retrives the shipment with the given id.
@@ -69,7 +69,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="since"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShipmentModel&gt;</returns>
-        ApiResponse<List<ShipmentModel>> GetUpdatedWithHttpInfo(DateTime? since = default(DateTime?), int operationIndex = 0);
+        ApiResponse<List<ShipmentModel>> GetUpdatedSinceWithHttpInfo(DateTime? since = default(DateTime?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -201,7 +201,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShipmentModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ShipmentModel>> GetUpdatedAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ShipmentModel>> GetUpdatedSinceAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrives the shipment with the given id.
@@ -214,7 +214,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShipmentModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ShipmentModel>>> GetUpdatedWithHttpInfoAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ShipmentModel>>> GetUpdatedSinceWithHttpInfoAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -620,9 +620,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="since"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ShipmentModel&gt;</returns>
-        public List<ShipmentModel> GetUpdated(DateTime? since = default(DateTime?), int operationIndex = 0)
+        public List<ShipmentModel> GetUpdatedSince(DateTime? since = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> localVarResponse = GetUpdatedWithHttpInfo(since);
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> localVarResponse = GetUpdatedSinceWithHttpInfo(since);
             return localVarResponse.Data;
         }
 
@@ -633,7 +633,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="since"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ShipmentModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> GetUpdatedWithHttpInfo(DateTime? since = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> GetUpdatedSinceWithHttpInfo(DateTime? since = default(DateTime?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -664,7 +664,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "since", since));
             }
 
-            localVarRequestOptions.Operation = "ShipmentClient.GetUpdated";
+            localVarRequestOptions.Operation = "ShipmentClient.GetUpdatedSince";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -677,7 +677,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShipmentModel>>("/Shipment/get-updated-since", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetUpdated", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetUpdatedSince", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -695,9 +695,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ShipmentModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ShipmentModel>> GetUpdatedAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ShipmentModel>> GetUpdatedSinceAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> localVarResponse = await GetUpdatedWithHttpInfoAsync(since, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>> localVarResponse = await GetUpdatedSinceWithHttpInfoAsync(since, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -709,7 +709,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ShipmentModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>>> GetUpdatedWithHttpInfoAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentModel>>> GetUpdatedSinceWithHttpInfoAsync(DateTime? since = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -741,7 +741,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "since", since));
             }
 
-            localVarRequestOptions.Operation = "ShipmentClient.GetUpdated";
+            localVarRequestOptions.Operation = "ShipmentClient.GetUpdatedSince";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -755,7 +755,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetUpdated", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetUpdatedSince", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -87,11 +87,11 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
 
     fn_name = fn.name
 
-    # [experimental] remove first param
-    # Note: it appears that the first param is always inserted when..
+    # [experimental] remove first param name from function name
+    # Note: it appears that the first param name is always inserted when..
     # .. A) it has no default value (non-optional)
     # .. B) it is != operationIndex
-    if len(fn.params) > 0 and fn.params[0].name != "operationIndex":
+    if len(fn.params) > 0 and fn.params[0].name != "operationIndex" and not fn.params[0].is_optional:
         log(f"{fn=}")
         first_param = fn.params[0].name
         # make pascal case

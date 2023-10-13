@@ -33,7 +33,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
-        ArticleModel GetBy(Guid? id = default(Guid?), int operationIndex = 0);
+        ArticleModel GetById(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        ApiResponse<ArticleModel> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        ApiResponse<ArticleModel> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -66,7 +66,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
-        System.Threading.Tasks.Task<ArticleModel> GetByAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ArticleModel> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ArticleModel>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ArticleModel>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -207,9 +207,9 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ArticleModel</returns>
-        public ArticleModel GetBy(Guid? id = default(Guid?), int operationIndex = 0)
+        public ArticleModel GetById(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetByWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = GetByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -220,7 +220,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ArticleModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetByWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ArticleModel> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -251,7 +251,7 @@ namespace Simplic.OxS.SDK.Article
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalArticleClient.GetBy";
+            localVarRequestOptions.Operation = "InternalArticleClient.GetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -264,7 +264,7 @@ namespace Simplic.OxS.SDK.Article
             var localVarResponse = this.Client.Get<ArticleModel>("/internal/InternalArticle/get-by-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -282,9 +282,9 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ArticleModel</returns>
-        public async System.Threading.Tasks.Task<ArticleModel> GetByAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ArticleModel> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetByWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ArticleModel> localVarResponse = await GetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -296,7 +296,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ArticleModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetByWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ArticleModel>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -328,7 +328,7 @@ namespace Simplic.OxS.SDK.Article
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalArticleClient.GetBy";
+            localVarRequestOptions.Operation = "InternalArticleClient.GetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -342,7 +342,7 @@ namespace Simplic.OxS.SDK.Article
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -34,7 +34,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        List<ResourceModel> GetAllBy(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        List<ResourceModel> GetAllByGroup(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all resources.
@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        ApiResponse<List<ResourceModel>> GetAllByWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
+        ApiResponse<List<ResourceModel>> GetAllByGroupWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ResourceModel>> GetAllByAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ResourceModel>> GetAllByGroupAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all resources.
@@ -191,7 +191,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetAllByWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetAllByGroupWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves all resources.
         /// </summary>
@@ -453,9 +453,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceModel&gt;</returns>
-        public List<ResourceModel> GetAllBy(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public List<ResourceModel> GetAllByGroup(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetAllByWithHttpInfo(group, useableUntil);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetAllByGroupWithHttpInfo(group, useableUntil);
             return localVarResponse.Data;
         }
 
@@ -467,7 +467,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="useableUntil"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetAllByWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetAllByGroupWithHttpInfo(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -502,7 +502,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAllBy";
+            localVarRequestOptions.Operation = "ResourceClient.GetAllByGroup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -515,7 +515,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-all-by-group", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAllByGroup", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -534,9 +534,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ResourceModel>> GetAllByAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetAllByGroupAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetAllByWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetAllByGroupWithHttpInfoAsync(group, useableUntil, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -549,7 +549,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetAllByWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetAllByGroupWithHttpInfoAsync(string? group = default(string?), DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -585,7 +585,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAllBy";
+            localVarRequestOptions.Operation = "ResourceClient.GetAllByGroup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -599,7 +599,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllBy", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAllByGroup", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

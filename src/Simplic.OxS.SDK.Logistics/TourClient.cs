@@ -119,7 +119,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourModel&gt;</returns>
-        List<TourModel> GetByGlobalTour(Guid? id = default(Guid?), int operationIndex = 0);
+        List<TourModel> GetByGlobalTourId(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all tours with the given global tour id.
@@ -131,7 +131,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourModel&gt;</returns>
-        ApiResponse<List<TourModel>> GetByGlobalTourWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        ApiResponse<List<TourModel>> GetByGlobalTourIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         /// <summary>
         /// Retrieves all tours that contains actions with the given shipment id.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourModel&gt;</returns>
-        List<TourModel> GetByShipment(Guid? id = default(Guid?), int operationIndex = 0);
+        List<TourModel> GetByShipmentId(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// Retrieves all tours that contains actions with the given shipment id.
@@ -151,7 +151,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourModel&gt;</returns>
-        ApiResponse<List<TourModel>> GetByShipmentWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        ApiResponse<List<TourModel>> GetByShipmentIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         /// <summary>
         /// Deletes the given tour.
         /// </summary>
@@ -440,7 +440,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TourModel>> GetByGlobalTourAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TourModel>> GetByGlobalTourIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all tours with the given global tour id.
@@ -453,7 +453,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TourModel>>> GetByGlobalTourWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TourModel>>> GetByGlobalTourIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves all tours that contains actions with the given shipment id.
         /// </summary>
@@ -465,7 +465,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TourModel>> GetByShipmentAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TourModel>> GetByShipmentIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves all tours that contains actions with the given shipment id.
@@ -478,7 +478,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TourModel>>> GetByShipmentWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TourModel>>> GetByShipmentIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes the given tour.
         /// </summary>
@@ -1450,9 +1450,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourModel&gt;</returns>
-        public List<TourModel> GetByGlobalTour(Guid? id = default(Guid?), int operationIndex = 0)
+        public List<TourModel> GetByGlobalTourId(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = GetByGlobalTourWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = GetByGlobalTourIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1463,7 +1463,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<TourModel>> GetByGlobalTourWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TourModel>> GetByGlobalTourIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1494,7 +1494,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByGlobalTour";
+            localVarRequestOptions.Operation = "TourClient.GetByGlobalTourId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1507,7 +1507,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourModel>>("/Tour/get-by-global-tour-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByGlobalTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByGlobalTourId", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1525,9 +1525,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TourModel>> GetByGlobalTourAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TourModel>> GetByGlobalTourIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = await GetByGlobalTourWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = await GetByGlobalTourIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1539,7 +1539,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourModel>>> GetByGlobalTourWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourModel>>> GetByGlobalTourIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1571,7 +1571,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByGlobalTour";
+            localVarRequestOptions.Operation = "TourClient.GetByGlobalTourId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1585,7 +1585,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByGlobalTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByGlobalTourId", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1602,9 +1602,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TourModel&gt;</returns>
-        public List<TourModel> GetByShipment(Guid? id = default(Guid?), int operationIndex = 0)
+        public List<TourModel> GetByShipmentId(Guid? id = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = GetByShipmentWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = GetByShipmentIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1615,7 +1615,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TourModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<TourModel>> GetByShipmentWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TourModel>> GetByShipmentIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1646,7 +1646,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByShipment";
+            localVarRequestOptions.Operation = "TourClient.GetByShipmentId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1659,7 +1659,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourModel>>("/Tour/get-by-shipment-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShipment", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByShipmentId", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1677,9 +1677,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TourModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TourModel>> GetByShipmentAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TourModel>> GetByShipmentIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = await GetByShipmentWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<TourModel>> localVarResponse = await GetByShipmentIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1691,7 +1691,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TourModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourModel>>> GetByShipmentWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TourModel>>> GetByShipmentIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1723,7 +1723,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByShipment";
+            localVarRequestOptions.Operation = "TourClient.GetByShipmentId";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1737,7 +1737,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShipment", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetByShipmentId", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
