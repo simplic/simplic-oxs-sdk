@@ -73,20 +73,20 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     accessibility = r"static"
     params = r"\(.*\)"
 
-    pattern = rf"^\s*({visibility})?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
+    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
     metas = []
 
     # get all functions
     matches = re.findall(pattern, code, re.MULTILINE)
 
     for match in matches:
-        return_type = match[2]
-        name = match[5]
+        return_type = match[3]
+        name = match[6]
         # ignore constructors
         if not return_type or return_type == "" or return_type == visibility:
             continue
         try:
-            param_metas = parse_params(match[6])
+            param_metas = parse_params(match[7])
             metas.append(FunctionMeta(
                 return_type=return_type,
                 name=name,
