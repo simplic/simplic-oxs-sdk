@@ -71,7 +71,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     fn_name = r"[A-Z][A-Za-z0-9_]*"
     visibility = r"public"
     accessibility = r"static"
-    params = r"\(.*\)"
+    params = r"\((?:(?!=>)[^;{}])*\)"
 
     pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
     metas = []
@@ -94,6 +94,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
             ))
         except Exception as e:
             raise Exception(f"Probably malformed match: {match=}\n" +
+                            f"Used regex: '{pattern}'\n"
                             f"Inner exception: {e}")
 
     return metas
