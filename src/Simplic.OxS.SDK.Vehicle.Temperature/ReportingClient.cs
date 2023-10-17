@@ -19,6 +19,400 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Vehicle.Temperature
 {
+    //--Custom wrapper start
+    public class ReportingClient : IReportingClient
+    {
+        private __ReportingClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public ReportingClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __ReportingClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __ReportingClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public ReportingClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="vehicleId"></param>
+        /// <param name="startDate"> (optional)</param>
+        /// <param name="endDate"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LocationReportModel</returns>
+        public new LocationReportModel GenerateReport(Guid vehicleId, DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GenerateReport(vehicleId, startDate, endDate, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="vehicleId"></param>
+        /// <param name="startDate"> (optional)</param>
+        /// <param name="endDate"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LocationReportModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<LocationReportModel> GenerateReportWithHttpInfo(Guid vehicleId, DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GenerateReportWithHttpInfo(vehicleId, startDate, endDate, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="vehicleId"></param>
+        /// <param name="startDate"> (optional)</param>
+        /// <param name="endDate"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LocationReportModel</returns>
+        public new System.Threading.Tasks.Task<LocationReportModel> GenerateReportAsync(Guid vehicleId, DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GenerateReportAsync(vehicleId, startDate, endDate, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="vehicleId"></param>
+        /// <param name="startDate"> (optional)</param>
+        /// <param name="endDate"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LocationReportModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LocationReportModel>> GenerateReportWithHttpInfoAsync(Guid vehicleId, DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GenerateReportWithHttpInfoAsync(vehicleId, startDate, endDate, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reportInstanceId"></param>
+        /// <param name="width"> (optional, default to 400)</param>
+        /// <param name="height"> (optional, default to 400)</param>
+        /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void GetMap(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.GetMap(reportInstanceId, width, height, color, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reportInstanceId"></param>
+        /// <param name="width"> (optional, default to 400)</param>
+        /// <param name="height"> (optional, default to 400)</param>
+        /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> GetMapWithHttpInfo(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetMapWithHttpInfo(reportInstanceId, width, height, color, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reportInstanceId"></param>
+        /// <param name="width"> (optional, default to 400)</param>
+        /// <param name="height"> (optional, default to 400)</param>
+        /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task GetMapAsync(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMapAsync(reportInstanceId, width, height, color, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="reportInstanceId"></param>
+        /// <param name="width"> (optional, default to 400)</param>
+        /// <param name="height"> (optional, default to 400)</param>
+        /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> GetMapWithHttpInfoAsync(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMapWithHttpInfoAsync(reportInstanceId, width, height, color, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void GetRecipients(int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.GetRecipients(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> GetRecipientsWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetRecipientsWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task GetRecipientsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetRecipientsAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> GetRecipientsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetRecipientsWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendReportRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void SendReport(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.SendReport(sendReportRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendReportRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> SendReportWithHttpInfo(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SendReportWithHttpInfo(sendReportRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendReportRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task SendReportAsync(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SendReportAsync(sendReportRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendReportRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SendReportWithHttpInfoAsync(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SendReportWithHttpInfoAsync(sendReportRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -60,7 +454,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReportingGetMapReportInstanceIdGet(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0);
+        void GetMap(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -82,7 +476,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReportingGetRecipientsGet(int operationIndex = 0);
+        void GetRecipients(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -101,7 +495,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="sendReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ReportingSendReportPost(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0);
+        void SendReport(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -245,23 +639,23 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ReportingClient : IReportingClient
+    internal partial class __ReportingClient : IReportingClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportingClient"/> class.
+        /// Initializes a new instance of the <see cref="__ReportingClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public ReportingClient() : this((string)null)
+        public __ReportingClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportingClient"/> class.
+        /// Initializes a new instance of the <see cref="__ReportingClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public ReportingClient(string basePath)
+        public __ReportingClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -273,12 +667,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportingClient"/> class
+        /// Initializes a new instance of the <see cref="__ReportingClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ReportingClient(Simplic.OxS.SDK.Configuration configuration)
+        public __ReportingClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -292,13 +686,13 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportingClient"/> class
+        /// Initializes a new instance of the <see cref="__ReportingClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ReportingClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __ReportingClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -531,7 +925,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="color"> (optional, default to &quot;ff0000&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReportingGetMapReportInstanceIdGet(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0)
+        public void GetMap(Guid reportInstanceId, int? width = default(int?), int? height = default(int?), string? color = default(string?), int operationIndex = 0)
         {
             GetMapWithHttpInfo(reportInstanceId, width, height, color);
         }
@@ -586,7 +980,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "color", color));
             }
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingGetMapReportInstanceIdGet";
+            localVarRequestOptions.Operation = "ReportingClient.GetMap";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -599,7 +993,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             var localVarResponse = this.Client.Get<Object>("/Reporting/get-map/{reportInstanceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetMapReportInstanceIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetMap", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -677,7 +1071,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "color", color));
             }
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingGetMapReportInstanceIdGet";
+            localVarRequestOptions.Operation = "ReportingClient.GetMap";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -691,7 +1085,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetMapReportInstanceIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetMap", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -707,7 +1101,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReportingGetRecipientsGet(int operationIndex = 0)
+        public void GetRecipients(int operationIndex = 0)
         {
             GetRecipientsWithHttpInfo();
         }
@@ -745,7 +1139,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             }
 
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingGetRecipientsGet";
+            localVarRequestOptions.Operation = "ReportingClient.GetRecipients";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -758,7 +1152,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             var localVarResponse = this.Client.Get<Object>("/Reporting/get-recipients", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetRecipientsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecipients", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -815,7 +1209,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             }
 
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingGetRecipientsGet";
+            localVarRequestOptions.Operation = "ReportingClient.GetRecipients";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -829,7 +1223,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingGetRecipientsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecipients", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +1240,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="sendReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ReportingSendReportPost(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0)
+        public void SendReport(SendReportRequest? sendReportRequest = default(SendReportRequest?), int operationIndex = 0)
         {
             SendReportWithHttpInfo(sendReportRequest);
         }
@@ -889,7 +1283,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
 
             localVarRequestOptions.Data = sendReportRequest;
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingSendReportPost";
+            localVarRequestOptions.Operation = "ReportingClient.SendReport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -902,7 +1296,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             var localVarResponse = this.Client.Post<Object>("/Reporting/send-report", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingSendReportPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SendReport", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -965,7 +1359,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
 
             localVarRequestOptions.Data = sendReportRequest;
 
-            localVarRequestOptions.Operation = "ReportingClient.ReportingSendReportPost";
+            localVarRequestOptions.Operation = "ReportingClient.SendReport";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -979,7 +1373,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ReportingSendReportPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SendReport", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

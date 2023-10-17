@@ -19,6 +19,546 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Document
 {
+    //--Custom wrapper start
+    public class DocumentClient : IDocumentClient
+    {
+        private __DocumentClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public DocumentClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __DocumentClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __DocumentClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public DocumentClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public new DocumentResponse Get(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Get(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfo(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentResponse> GetAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfoAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentVersionResponse</returns>
+        public new DocumentVersionResponse GetCurrent(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetCurrent(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentVersionResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetCurrentWithHttpInfo(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetCurrentWithHttpInfo(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentVersionResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentVersionResponse> GetCurrentAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetCurrentAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetCurrentWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetCurrentWithHttpInfoAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="versionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentVersionResponse</returns>
+        public new DocumentVersionResponse GetVersionById(Guid versionId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetVersionById(versionId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="versionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentVersionResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionByIdWithHttpInfo(Guid versionId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetVersionByIdWithHttpInfo(versionId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="versionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentVersionResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionByIdAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetVersionByIdAsync(versionId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="versionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionByIdWithHttpInfoAsync(Guid versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetVersionByIdWithHttpInfoAsync(versionId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="varVersion"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentVersionResponse</returns>
+        public new DocumentVersionResponse GetVersion(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetVersion(documentId, varVersion, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="varVersion"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentVersionResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse> GetVersionWithHttpInfo(Guid documentId, int? varVersion = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetVersionWithHttpInfo(documentId, varVersion, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="varVersion"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentVersionResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentVersionResponse> GetVersionAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetVersionAsync(documentId, varVersion, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="varVersion"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentVersionResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentVersionResponse>> GetVersionWithHttpInfoAsync(Guid documentId, int? varVersion = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetVersionWithHttpInfoAsync(documentId, varVersion, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public new DocumentResponse Patch(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Patch(id, patchDocumentRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentResponse> PatchWithHttpInfo(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfo(id, patchDocumentRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentResponse> PatchAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchAsync(id, patchDocumentRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PatchWithHttpInfoAsync(Guid id, PatchDocumentRequest? patchDocumentRequest = default(PatchDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfoAsync(id, patchDocumentRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public new DocumentResponse Post(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Post(postDocumentRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfo(postDocumentRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public new System.Threading.Tasks.Task<DocumentResponse> PostAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostAsync(postDocumentRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postDocumentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfoAsync(postDocumentRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -327,23 +867,23 @@ namespace Simplic.OxS.SDK.Document
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class DocumentClient : IDocumentClient
+    internal partial class __DocumentClient : IDocumentClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentClient"/> class.
+        /// Initializes a new instance of the <see cref="__DocumentClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public DocumentClient() : this((string)null)
+        public __DocumentClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentClient"/> class.
+        /// Initializes a new instance of the <see cref="__DocumentClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public DocumentClient(string basePath)
+        public __DocumentClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -355,12 +895,12 @@ namespace Simplic.OxS.SDK.Document
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentClient"/> class
+        /// Initializes a new instance of the <see cref="__DocumentClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DocumentClient(Simplic.OxS.SDK.Configuration configuration)
+        public __DocumentClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -374,13 +914,13 @@ namespace Simplic.OxS.SDK.Document
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentClient"/> class
+        /// Initializes a new instance of the <see cref="__DocumentClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public DocumentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __DocumentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");

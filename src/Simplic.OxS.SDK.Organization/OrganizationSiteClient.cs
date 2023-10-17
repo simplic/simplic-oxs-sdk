@@ -19,6 +19,461 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Organization
 {
+    //--Custom wrapper start
+    public class OrganizationSiteClient : IOrganizationSiteClient
+    {
+        private __OrganizationSiteClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public OrganizationSiteClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __OrganizationSiteClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __OrganizationSiteClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public OrganizationSiteClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationSiteModel</returns>
+        public new OrganizationSiteModel GetAll(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAll(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationSiteModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel> GetAllWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAllWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationSiteModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationSiteModel> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAllAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAllWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Delete(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Delete(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationSiteModel</returns>
+        public new OrganizationSiteModel Get(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Get(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationSiteModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationSiteModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationSiteModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationSiteModel</returns>
+        public new OrganizationSiteModel Put(Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = default(UpdateOrganizationSiteRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Put(id, updateOrganizationSiteRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationSiteModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel> PutWithHttpInfo(Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = default(UpdateOrganizationSiteRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfo(id, updateOrganizationSiteRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationSiteModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationSiteModel> PutAsync(Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = default(UpdateOrganizationSiteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutAsync(id, updateOrganizationSiteRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel>> PutWithHttpInfoAsync(Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = default(UpdateOrganizationSiteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfoAsync(id, updateOrganizationSiteRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationSiteModel</returns>
+        public new OrganizationSiteModel Post(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Post(createOrganizationSiteRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationSiteModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel> PostWithHttpInfo(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfo(createOrganizationSiteRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationSiteModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationSiteModel> PostAsync(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostAsync(createOrganizationSiteRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createOrganizationSiteRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSiteModel>> PostWithHttpInfoAsync(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfoAsync(createOrganizationSiteRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -51,7 +506,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void OrganizationSiteIdDelete(Guid id, int operationIndex = 0);
+        void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -274,23 +729,23 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class OrganizationSiteClient : IOrganizationSiteClient
+    internal partial class __OrganizationSiteClient : IOrganizationSiteClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationSiteClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationSiteClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrganizationSiteClient() : this((string)null)
+        public __OrganizationSiteClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationSiteClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationSiteClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrganizationSiteClient(string basePath)
+        public __OrganizationSiteClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -302,12 +757,12 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationSiteClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationSiteClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrganizationSiteClient(Simplic.OxS.SDK.Configuration configuration)
+        public __OrganizationSiteClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -321,13 +776,13 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationSiteClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationSiteClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public OrganizationSiteClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __OrganizationSiteClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -527,7 +982,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void OrganizationSiteIdDelete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id, int operationIndex = 0)
         {
             DeleteWithHttpInfo(id);
         }
@@ -567,7 +1022,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdDelete";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -580,7 +1035,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Delete<Object>("/OrganizationSite/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationSiteIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -640,7 +1095,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdDelete";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -654,7 +1109,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationSiteIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

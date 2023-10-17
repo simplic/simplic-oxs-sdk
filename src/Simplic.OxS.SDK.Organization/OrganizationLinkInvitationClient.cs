@@ -19,6 +19,761 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Organization
 {
+    //--Custom wrapper start
+    public class OrganizationLinkInvitationClient : IOrganizationLinkInvitationClient
+    {
+        private __OrganizationLinkInvitationClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public OrganizationLinkInvitationClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __OrganizationLinkInvitationClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __OrganizationLinkInvitationClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public OrganizationLinkInvitationClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Accept a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationLinkInvitationAcceptedResponse</returns>
+        public new OrganizationLinkInvitationAcceptedResponse AcceptOneTime(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.AcceptOneTime(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Accept a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationLinkInvitationAcceptedResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationAcceptedResponse> AcceptOneTimeWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.AcceptOneTimeWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Accept a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationLinkInvitationAcceptedResponse</returns>
+        public new System.Threading.Tasks.Task<OrganizationLinkInvitationAcceptedResponse> AcceptOneTimeAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AcceptOneTimeAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Accept a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationLinkInvitationAcceptedResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationAcceptedResponse>> AcceptOneTimeWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AcceptOneTimeWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationLinkInvitationModel</returns>
+        public new OrganizationLinkInvitationModel CreateOneTime(OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = default(OrganizationLinkInvitationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.CreateOneTime(organizationLinkInvitationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> CreateOneTimeWithHttpInfo(OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = default(OrganizationLinkInvitationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.CreateOneTimeWithHttpInfo(organizationLinkInvitationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationLinkInvitationModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationLinkInvitationModel> CreateOneTimeAsync(OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = default(OrganizationLinkInvitationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateOneTimeAsync(organizationLinkInvitationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> CreateOneTimeWithHttpInfoAsync(OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = default(OrganizationLinkInvitationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateOneTimeWithHttpInfoAsync(organizationLinkInvitationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkStaticInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationLinkInvitationModel</returns>
+        public new OrganizationLinkInvitationModel CreateStatic(OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = default(OrganizationLinkStaticInvitationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.CreateStatic(organizationLinkStaticInvitationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkStaticInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> CreateStaticWithHttpInfo(OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = default(OrganizationLinkStaticInvitationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.CreateStaticWithHttpInfo(organizationLinkStaticInvitationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkStaticInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationLinkInvitationModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationLinkInvitationModel> CreateStaticAsync(OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = default(OrganizationLinkStaticInvitationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateStaticAsync(organizationLinkStaticInvitationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new invitation for linking with another organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationLinkStaticInvitationRequest">Invitation request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> CreateStaticWithHttpInfoAsync(OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = default(OrganizationLinkStaticInvitationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateStaticWithHttpInfoAsync(organizationLinkStaticInvitationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Decline a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void DeclineOneTime(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.DeclineOneTime(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Decline a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeclineOneTimeWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeclineOneTimeWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Decline a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeclineOneTimeAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeclineOneTimeAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Decline a pending invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeclineOneTimeWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeclineOneTimeWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Get static invitation links 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new List<OrganizationLinkInvitationModel> Get(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Get(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get static invitation links 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Get static invitation links 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get static invitation links 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationLinkInvitationModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Get invitation by token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationLinkInvitationModel</returns>
+        public new OrganizationLinkInvitationModel GetByTokenTokenGet(string token, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByTokenTokenGet(token, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get invitation by token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> GetByTokenTokenGetWithHttpInfo(string token, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByTokenTokenGetWithHttpInfo(token, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Get invitation by token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationLinkInvitationModel</returns>
+        public new System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenTokenGetAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByTokenTokenGetAsync(token, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get invitation by token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> GetByTokenTokenGetWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByTokenTokenGetWithHttpInfoAsync(token, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Gets a list of all pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new List<OrganizationLinkInvitationModel> GetMyInvitationsGet(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetMyInvitationsGet(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of all pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetMyInvitationsGetWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a list of all pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationLinkInvitationModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMyInvitationsGetAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of all pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationLinkInvitationModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMyInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Delete an invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Delete(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Delete(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Delete an invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Delete an invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Delete an invitation 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Invitation id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Create an orgainzation link by using a static token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OrganizationLinkInvitationAcceptedResponse</returns>
+        public new OrganizationLinkInvitationAcceptedResponse JoinStatic(string token, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.JoinStatic(token, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Create an orgainzation link by using a static token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OrganizationLinkInvitationAcceptedResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationAcceptedResponse> JoinStaticWithHttpInfo(string token, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.JoinStaticWithHttpInfo(token, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Create an orgainzation link by using a static token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationLinkInvitationAcceptedResponse</returns>
+        public new System.Threading.Tasks.Task<OrganizationLinkInvitationAcceptedResponse> JoinStaticAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.JoinStaticAsync(token, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Create an orgainzation link by using a static token 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token">Invitation token</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationLinkInvitationAcceptedResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationAcceptedResponse>> JoinStaticWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.JoinStaticWithHttpInfoAsync(token, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -93,7 +848,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id">Invitation id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void OrganizationLinkInvitationDeclineOneTimeIdPut(Guid id, int operationIndex = 0);
+        void DeclineOneTime(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Decline a pending invitation
@@ -169,7 +924,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id">Invitation id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void OrganizationLinkInvitationIdDelete(Guid id, int operationIndex = 0);
+        void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Delete an invitation
@@ -446,23 +1201,23 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class OrganizationLinkInvitationClient : IOrganizationLinkInvitationClient
+    internal partial class __OrganizationLinkInvitationClient : IOrganizationLinkInvitationClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationLinkInvitationClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationLinkInvitationClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrganizationLinkInvitationClient() : this((string)null)
+        public __OrganizationLinkInvitationClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationLinkInvitationClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationLinkInvitationClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrganizationLinkInvitationClient(string basePath)
+        public __OrganizationLinkInvitationClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -474,12 +1229,12 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationLinkInvitationClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationLinkInvitationClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public OrganizationLinkInvitationClient(Simplic.OxS.SDK.Configuration configuration)
+        public __OrganizationLinkInvitationClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -493,13 +1248,13 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationLinkInvitationClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationLinkInvitationClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public OrganizationLinkInvitationClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __OrganizationLinkInvitationClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -1009,7 +1764,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id">Invitation id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void OrganizationLinkInvitationDeclineOneTimeIdPut(Guid id, int operationIndex = 0)
+        public void DeclineOneTime(Guid id, int operationIndex = 0)
         {
             DeclineOneTimeWithHttpInfo(id);
         }
@@ -1049,7 +1804,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPut";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.DeclineOneTime";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1062,7 +1817,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<Object>("/OrganizationLinkInvitation/decline-one-time/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationDeclineOneTimeIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeclineOneTime", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1122,7 +1877,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPut";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.DeclineOneTime";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1136,7 +1891,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationDeclineOneTimeIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeclineOneTime", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1591,7 +2346,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id">Invitation id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void OrganizationLinkInvitationIdDelete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id, int operationIndex = 0)
         {
             DeleteWithHttpInfo(id);
         }
@@ -1631,7 +2386,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDelete";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1644,7 +2399,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Delete<Object>("/OrganizationLinkInvitation/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1704,7 +2459,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDelete";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1718,7 +2473,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

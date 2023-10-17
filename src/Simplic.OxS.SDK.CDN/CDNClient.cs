@@ -19,6 +19,461 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.CDN
 {
+    //--Custom wrapper start
+    public class CDNClient : ICDNClient
+    {
+        private __CDNClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public CDNClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __CDNClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __CDNClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public CDNClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>BlobMetadata</returns>
+        public new BlobMetadata Delete(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Delete(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of BlobMetadata</returns>
+        public new Simplic.OxS.SDK.ApiResponse<BlobMetadata> DeleteWithHttpInfo(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BlobMetadata</returns>
+        public new System.Threading.Tasks.Task<BlobMetadata> DeleteAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BlobMetadata)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> DeleteWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        public new System.IO.Stream GetFile(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetFile(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public new Simplic.OxS.SDK.ApiResponse<System.IO.Stream> GetFileWithHttpInfo(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetFileWithHttpInfo(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public new System.Threading.Tasks.Task<System.IO.Stream> GetFileAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetFileAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> GetFileWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetFileWithHttpInfoAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>BlobMetadata</returns>
+        public new BlobMetadata GetMetadata(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetMetadata(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of BlobMetadata</returns>
+        public new Simplic.OxS.SDK.ApiResponse<BlobMetadata> GetMetadataWithHttpInfo(Guid blobId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetMetadataWithHttpInfo(blobId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BlobMetadata</returns>
+        public new System.Threading.Tasks.Task<BlobMetadata> GetMetadataAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMetadataAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BlobMetadata)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BlobMetadata>> GetMetadataWithHttpInfoAsync(Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetMetadataWithHttpInfoAsync(blobId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="files"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UploadFilesResponse</returns>
+        public new UploadFilesResponse UploadFile(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.UploadFile(files, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="files"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UploadFilesResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<UploadFilesResponse> UploadFileWithHttpInfo(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.UploadFileWithHttpInfo(files, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="files"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UploadFilesResponse</returns>
+        public new System.Threading.Tasks.Task<UploadFilesResponse> UploadFileAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UploadFileAsync(files, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="files"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UploadFilesResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadFilesResponse>> UploadFileWithHttpInfoAsync(List<System.IO.Stream>? files = default(List<System.IO.Stream>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UploadFileWithHttpInfoAsync(files, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uploadBytesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UploadResponse</returns>
+        public new UploadResponse Upload(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Upload(uploadBytesRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uploadBytesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UploadResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<UploadResponse> UploadWithHttpInfo(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.UploadWithHttpInfo(uploadBytesRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uploadBytesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UploadResponse</returns>
+        public new System.Threading.Tasks.Task<UploadResponse> UploadAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UploadAsync(uploadBytesRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uploadBytesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UploadResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadResponse>> UploadWithHttpInfoAsync(UploadBytesRequest? uploadBytesRequest = default(UploadBytesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UploadWithHttpInfoAsync(uploadBytesRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -274,23 +729,23 @@ namespace Simplic.OxS.SDK.CDN
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class CDNClient : ICDNClient
+    internal partial class __CDNClient : ICDNClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CDNClient"/> class.
+        /// Initializes a new instance of the <see cref="__CDNClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public CDNClient() : this((string)null)
+        public __CDNClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CDNClient"/> class.
+        /// Initializes a new instance of the <see cref="__CDNClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public CDNClient(string basePath)
+        public __CDNClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -302,12 +757,12 @@ namespace Simplic.OxS.SDK.CDN
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CDNClient"/> class
+        /// Initializes a new instance of the <see cref="__CDNClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public CDNClient(Simplic.OxS.SDK.Configuration configuration)
+        public __CDNClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -321,13 +776,13 @@ namespace Simplic.OxS.SDK.CDN
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CDNClient"/> class
+        /// Initializes a new instance of the <see cref="__CDNClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public CDNClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __CDNClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");

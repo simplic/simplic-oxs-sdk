@@ -19,6 +19,700 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.ERP
 {
+    //--Custom wrapper start
+    public class TransactionClient : ITransactionClient
+    {
+        private __TransactionClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public TransactionClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __TransactionClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __TransactionClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public TransactionClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ConvertResult</returns>
+        public new ConvertResult ConvertTransactions(ConvertTransactionRequest? convertTransactionRequest = default(ConvertTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.ConvertTransactions(convertTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ConvertResult</returns>
+        public new Simplic.OxS.SDK.ApiResponse<ConvertResult> ConvertTransactionsWithHttpInfo(ConvertTransactionRequest? convertTransactionRequest = default(ConvertTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.ConvertTransactionsWithHttpInfo(convertTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConvertResult</returns>
+        public new System.Threading.Tasks.Task<ConvertResult> ConvertTransactionsAsync(ConvertTransactionRequest? convertTransactionRequest = default(ConvertTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ConvertTransactionsAsync(convertTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConvertResult)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ConvertResult>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionRequest? convertTransactionRequest = default(ConvertTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ConvertTransactionsWithHttpInfoAsync(convertTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        public new TransactionModel GetByBarcode(string? barcode = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByBarcode(barcode, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TransactionModel> GetByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByBarcodeWithHttpInfo(barcode, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public new System.Threading.Tasks.Task<TransactionModel> GetByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByBarcodeAsync(barcode, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> GetByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByBarcodeWithHttpInfoAsync(barcode, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;TransactionModel&gt;</returns>
+        public new List<TransactionModel> GetByDate(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByDate(from, to, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> GetByDateWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByDateWithHttpInfo(from, to, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TransactionModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<TransactionModel>> GetByDateAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByDateAsync(from, to, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> GetByDateWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByDateWithHttpInfoAsync(from, to, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="number"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;TransactionModel&gt;</returns>
+        public new List<TransactionModel> GetByNumber(string? number = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByNumber(number, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="number"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> GetByNumberWithHttpInfo(string? number = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByNumberWithHttpInfo(number, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="number"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TransactionModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<TransactionModel>> GetByNumberAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByNumberAsync(number, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="number"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> GetByNumberWithHttpInfoAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByNumberWithHttpInfoAsync(number, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Delete(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Delete(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        public new TransactionModel Get(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Get(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TransactionModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public new System.Threading.Tasks.Task<TransactionModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        public new TransactionModel Put(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Put(id, updateTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TransactionModel> PutWithHttpInfo(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfo(id, updateTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public new System.Threading.Tasks.Task<TransactionModel> PutAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutAsync(id, updateTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> PutWithHttpInfoAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfoAsync(id, updateTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        public new TransactionModel Post(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Post(createTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TransactionModel> PostWithHttpInfo(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfo(createTransactionRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public new System.Threading.Tasks.Task<TransactionModel> PostAsync(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostAsync(createTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> PostWithHttpInfoAsync(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfoAsync(createTransactionRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -115,7 +809,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TransactionIdDelete(Guid id, int operationIndex = 0);
+        void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -417,23 +1111,23 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TransactionClient : ITransactionClient
+    internal partial class __TransactionClient : ITransactionClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionClient"/> class.
+        /// Initializes a new instance of the <see cref="__TransactionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransactionClient() : this((string)null)
+        public __TransactionClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionClient"/> class.
+        /// Initializes a new instance of the <see cref="__TransactionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransactionClient(string basePath)
+        public __TransactionClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -445,12 +1139,12 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionClient"/> class
+        /// Initializes a new instance of the <see cref="__TransactionClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TransactionClient(Simplic.OxS.SDK.Configuration configuration)
+        public __TransactionClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -464,13 +1158,13 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionClient"/> class
+        /// Initializes a new instance of the <see cref="__TransactionClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TransactionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __TransactionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -1150,7 +1844,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TransactionIdDelete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id, int operationIndex = 0)
         {
             DeleteWithHttpInfo(id);
         }
@@ -1190,7 +1884,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionIdDelete";
+            localVarRequestOptions.Operation = "TransactionClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1203,7 +1897,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/Transaction/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1263,7 +1957,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionIdDelete";
+            localVarRequestOptions.Operation = "TransactionClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1277,7 +1971,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -19,6 +19,554 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.TimeSlot
 {
+    //--Custom wrapper start
+    public class TimeSlotClient : ITimeSlotClient
+    {
+        private __TimeSlotClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public TimeSlotClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __TimeSlotClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __TimeSlotClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public TimeSlotClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Gets a list of time slots by a specific date range 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="siteId"> (optional)</param>
+        /// <param name="start">Start date time (optional)</param>
+        /// <param name="end">End date time (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;TimeSlotModel&gt;</returns>
+        public new List<TimeSlotModel> GetByDate(Guid? siteId = default(Guid?), DateTime? start = default(DateTime?), DateTime? end = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByDate(siteId, start, end, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of time slots by a specific date range 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="siteId"> (optional)</param>
+        /// <param name="start">Start date time (optional)</param>
+        /// <param name="end">End date time (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;TimeSlotModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<TimeSlotModel>> GetByDateWithHttpInfo(Guid? siteId = default(Guid?), DateTime? start = default(DateTime?), DateTime? end = default(DateTime?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByDateWithHttpInfo(siteId, start, end, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a list of time slots by a specific date range 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="siteId"> (optional)</param>
+        /// <param name="start">Start date time (optional)</param>
+        /// <param name="end">End date time (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TimeSlotModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<TimeSlotModel>> GetByDateAsync(Guid? siteId = default(Guid?), DateTime? start = default(DateTime?), DateTime? end = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByDateAsync(siteId, start, end, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of time slots by a specific date range 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="siteId"> (optional)</param>
+        /// <param name="start">Start date time (optional)</param>
+        /// <param name="end">End date time (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TimeSlotModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TimeSlotModel>>> GetByDateWithHttpInfoAsync(Guid? siteId = default(Guid?), DateTime? start = default(DateTime?), DateTime? end = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByDateWithHttpInfoAsync(siteId, start, end, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Deletes a time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Delete(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Delete(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Deletes a time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Deletes a time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Deletes a time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Gets a time slot by its unique id 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique time slot id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TimeSlotModel</returns>
+        public new TimeSlotModel Get(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Get(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a time slot by its unique id 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique time slot id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TimeSlotModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TimeSlotModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfo(id, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a time slot by its unique id 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique time slot id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TimeSlotModel</returns>
+        public new System.Threading.Tasks.Task<TimeSlotModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a time slot by its unique id 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique time slot id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Updates an existing time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique timeslot id</param>
+        /// <param name="updateTimeSlotRequest">Time slot model to update (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TimeSlotModel</returns>
+        public new TimeSlotModel Put(Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = default(UpdateTimeSlotRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Put(id, updateTimeSlotRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Updates an existing time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique timeslot id</param>
+        /// <param name="updateTimeSlotRequest">Time slot model to update (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TimeSlotModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TimeSlotModel> PutWithHttpInfo(Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = default(UpdateTimeSlotRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfo(id, updateTimeSlotRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Updates an existing time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique timeslot id</param>
+        /// <param name="updateTimeSlotRequest">Time slot model to update (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TimeSlotModel</returns>
+        public new System.Threading.Tasks.Task<TimeSlotModel> PutAsync(Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = default(UpdateTimeSlotRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutAsync(id, updateTimeSlotRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Updates an existing time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique timeslot id</param>
+        /// <param name="updateTimeSlotRequest">Time slot model to update (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> PutWithHttpInfoAsync(Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = default(UpdateTimeSlotRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfoAsync(id, updateTimeSlotRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Creates a new time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTimeSlotRequest">Model containing all time slot details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TimeSlotModel</returns>
+        public new TimeSlotModel Post(CreateTimeSlotRequest? createTimeSlotRequest = default(CreateTimeSlotRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Post(createTimeSlotRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTimeSlotRequest">Model containing all time slot details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TimeSlotModel</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TimeSlotModel> PostWithHttpInfo(CreateTimeSlotRequest? createTimeSlotRequest = default(CreateTimeSlotRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfo(createTimeSlotRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Creates a new time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTimeSlotRequest">Model containing all time slot details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TimeSlotModel</returns>
+        public new System.Threading.Tasks.Task<TimeSlotModel> PostAsync(CreateTimeSlotRequest? createTimeSlotRequest = default(CreateTimeSlotRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostAsync(createTimeSlotRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new time slot 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTimeSlotRequest">Model containing all time slot details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TimeSlotModel)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TimeSlotModel>> PostWithHttpInfoAsync(CreateTimeSlotRequest? createTimeSlotRequest = default(CreateTimeSlotRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfoAsync(createTimeSlotRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Sets a given bookingstate 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot (optional)</param>
+        /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void SetState(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.SetState(id, bookingState, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Sets a given bookingstate 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot (optional)</param>
+        /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> SetStateWithHttpInfo(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SetStateWithHttpInfo(id, bookingState, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Sets a given bookingstate 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot (optional)</param>
+        /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task SetStateAsync(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SetStateAsync(id, bookingState, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Sets a given bookingstate 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Id of the time slot (optional)</param>
+        /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SetStateWithHttpInfoAsync(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SetStateWithHttpInfoAsync(id, bookingState, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -57,7 +605,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <param name="id">Id of the time slot</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TimeSlotIdDelete(Guid id, int operationIndex = 0);
+        void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Deletes a time slot
@@ -140,7 +688,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TimeSlotSetStatePut(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0);
+        void SetState(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Sets a given bookingstate
@@ -335,23 +883,23 @@ namespace Simplic.OxS.SDK.TimeSlot
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TimeSlotClient : ITimeSlotClient
+    internal partial class __TimeSlotClient : ITimeSlotClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeSlotClient"/> class.
+        /// Initializes a new instance of the <see cref="__TimeSlotClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TimeSlotClient() : this((string)null)
+        public __TimeSlotClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeSlotClient"/> class.
+        /// Initializes a new instance of the <see cref="__TimeSlotClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TimeSlotClient(string basePath)
+        public __TimeSlotClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -363,12 +911,12 @@ namespace Simplic.OxS.SDK.TimeSlot
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeSlotClient"/> class
+        /// Initializes a new instance of the <see cref="__TimeSlotClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TimeSlotClient(Simplic.OxS.SDK.Configuration configuration)
+        public __TimeSlotClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -382,13 +930,13 @@ namespace Simplic.OxS.SDK.TimeSlot
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeSlotClient"/> class
+        /// Initializes a new instance of the <see cref="__TimeSlotClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TimeSlotClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __TimeSlotClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -624,7 +1172,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <param name="id">Id of the time slot</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TimeSlotIdDelete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id, int operationIndex = 0)
         {
             DeleteWithHttpInfo(id);
         }
@@ -664,7 +1212,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdDelete";
+            localVarRequestOptions.Operation = "TimeSlotClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -677,7 +1225,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Delete<Object>("/TimeSlot/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TimeSlotIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -737,7 +1285,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdDelete";
+            localVarRequestOptions.Operation = "TimeSlotClient.Delete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -751,7 +1299,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TimeSlotIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1225,7 +1773,7 @@ namespace Simplic.OxS.SDK.TimeSlot
         /// <param name="bookingState">Int of the Bookingstate              [0 &#x3D; Open]              [1 &#x3D; Booked]              [2 &#x3D; Canceled]              [3 &#x3D; Done]              [4 &#x3D; Locked] (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TimeSlotSetStatePut(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0)
+        public void SetState(Guid? id = default(Guid?), int? bookingState = default(int?), int operationIndex = 0)
         {
             SetStateWithHttpInfo(id, bookingState);
         }
@@ -1273,7 +1821,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "bookingState", bookingState));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotSetStatePut";
+            localVarRequestOptions.Operation = "TimeSlotClient.SetState";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1286,7 +1834,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<Object>("/TimeSlot/set-state", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TimeSlotSetStatePut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetState", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1355,7 +1903,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "bookingState", bookingState));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotSetStatePut";
+            localVarRequestOptions.Operation = "TimeSlotClient.SetState";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1369,7 +1917,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TimeSlotSetStatePut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetState", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -19,6 +19,842 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Organization
 {
+    //--Custom wrapper start
+    public class MemberClient : IMemberClient
+    {
+        private __MemberClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public MemberClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __MemberClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __MemberClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public MemberClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Accept an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Accept(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Accept(acceptJoinMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Accept an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> AcceptWithHttpInfo(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.AcceptWithHttpInfo(acceptJoinMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Accept an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task AcceptAsync(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AcceptAsync(acceptJoinMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Accept an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> AcceptWithHttpInfoAsync(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AcceptWithHttpInfoAsync(acceptJoinMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Decline an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Decline(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Decline(declineJoinMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Decline an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeclineWithHttpInfo(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeclineWithHttpInfo(declineJoinMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Decline an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeclineAsync(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeclineAsync(declineJoinMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Decline an invitation from an organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeclineWithHttpInfoAsync(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeclineWithHttpInfoAsync(declineJoinMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Deletes a member invite by id. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void DeleteInvite(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.DeleteInvite(deleteInviteMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Deletes a member invite by id. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteInviteWithHttpInfo(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteInviteWithHttpInfo(deleteInviteMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Deletes a member invite by id. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteInviteAsync(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteInviteAsync(deleteInviteMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Deletes a member invite by id. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteInviteWithHttpInfoAsync(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteInviteWithHttpInfoAsync(deleteInviteMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Returns all memberships 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
+        public new List<OrganizationMemberModel> GetAll(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAll(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns all memberships 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAllWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Returns all memberships 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAllAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns all memberships 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAllWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Returns all memberships pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
+        public new List<OrganizationMemberInvitationModel> GetPendingInvitations(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetPendingInvitations(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns all memberships pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
+        public new Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetPendingInvitationsWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetPendingInvitationsWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Returns all memberships pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
+        public new System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetPendingInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetPendingInvitationsAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns all memberships pending invitations 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetPendingInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetPendingInvitationsWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Invites a list of users by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.InviteMultiple(inviteMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Invites a list of users by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> InviteMultipleWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.InviteMultipleWithHttpInfo(inviteMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Invites a list of users by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task InviteMultipleAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.InviteMultipleAsync(inviteMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Invites a list of users by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteMultipleWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.InviteMultipleWithHttpInfoAsync(inviteMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Invites a user by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Invite(string? email = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Invite(email, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Invites a user by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> InviteWithHttpInfo(string? email = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.InviteWithHttpInfo(email, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Invites a user by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task InviteAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.InviteAsync(email, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Invites a user by their mail address. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.InviteWithHttpInfoAsync(email, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Leave(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Leave(leaveOrganizationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> LeaveWithHttpInfo(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.LeaveWithHttpInfo(leaveOrganizationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task LeaveAsync(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.LeaveAsync(leaveOrganizationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> LeaveWithHttpInfoAsync(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.LeaveWithHttpInfoAsync(leaveOrganizationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Remove(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Remove(removeMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> RemoveWithHttpInfo(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.RemoveWithHttpInfo(removeMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task RemoveAsync(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemoveAsync(removeMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a member from an organization by the id of the membership. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RemoveWithHttpInfoAsync(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemoveWithHttpInfoAsync(removeMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Update user membership in organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void Update(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.Update(id, updateMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Update user membership in organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> UpdateWithHttpInfo(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.UpdateWithHttpInfo(id, updateMemberRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Update user membership in organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task UpdateAsync(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UpdateAsync(id, updateMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Update user membership in organization 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> UpdateWithHttpInfoAsync(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.UpdateWithHttpInfoAsync(id, updateMemberRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -33,7 +869,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberAcceptPost(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0);
+        void Accept(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Accept an invitation from an organization
@@ -53,7 +889,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberDeclinePost(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0);
+        void Decline(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Decline an invitation from an organization
@@ -73,7 +909,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberDeleteInvitePost(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0);
+        void DeleteInvite(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Deletes a member invite by id.
@@ -129,7 +965,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberInviteMultiplePost(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
+        void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Invites a list of users by their mail address.
@@ -149,7 +985,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="email">Email to invite. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberInvitePost(string? email = default(string?), int operationIndex = 0);
+        void Invite(string? email = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Invites a user by their mail address.
@@ -169,7 +1005,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberLeavePost(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0);
+        void Leave(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Removes a member from an organization by the id of the membership.
@@ -189,7 +1025,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberRemovePost(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0);
+        void Remove(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Removes a member from an organization by the id of the membership.
@@ -210,7 +1046,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void MemberUpdateIdPut(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0);
+        void Update(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Update user membership in organization
@@ -495,23 +1331,23 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class MemberClient : IMemberClient
+    internal partial class __MemberClient : IMemberClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemberClient"/> class.
+        /// Initializes a new instance of the <see cref="__MemberClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public MemberClient() : this((string)null)
+        public __MemberClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemberClient"/> class.
+        /// Initializes a new instance of the <see cref="__MemberClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public MemberClient(string basePath)
+        public __MemberClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -523,12 +1359,12 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemberClient"/> class
+        /// Initializes a new instance of the <see cref="__MemberClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public MemberClient(Simplic.OxS.SDK.Configuration configuration)
+        public __MemberClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -542,13 +1378,13 @@ namespace Simplic.OxS.SDK.Organization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemberClient"/> class
+        /// Initializes a new instance of the <see cref="__MemberClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public MemberClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __MemberClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -608,7 +1444,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="acceptJoinMemberRequest">Model for accepting an invitation (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberAcceptPost(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0)
+        public void Accept(AcceptJoinMemberRequest? acceptJoinMemberRequest = default(AcceptJoinMemberRequest?), int operationIndex = 0)
         {
             AcceptWithHttpInfo(acceptJoinMemberRequest);
         }
@@ -651,7 +1487,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = acceptJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberAcceptPost";
+            localVarRequestOptions.Operation = "MemberClient.Accept";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -664,7 +1500,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/accept", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberAcceptPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Accept", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -727,7 +1563,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = acceptJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberAcceptPost";
+            localVarRequestOptions.Operation = "MemberClient.Accept";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -741,7 +1577,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberAcceptPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Accept", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -758,7 +1594,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="declineJoinMemberRequest">Model for declining an invitation (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberDeclinePost(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0)
+        public void Decline(DeclineJoinMemberRequest? declineJoinMemberRequest = default(DeclineJoinMemberRequest?), int operationIndex = 0)
         {
             DeclineWithHttpInfo(declineJoinMemberRequest);
         }
@@ -801,7 +1637,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = declineJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberDeclinePost";
+            localVarRequestOptions.Operation = "MemberClient.Decline";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -814,7 +1650,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/decline", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberDeclinePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Decline", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -877,7 +1713,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = declineJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberDeclinePost";
+            localVarRequestOptions.Operation = "MemberClient.Decline";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -891,7 +1727,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberDeclinePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Decline", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -908,7 +1744,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="deleteInviteMemberRequest">Delete invitation model, containing an id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberDeleteInvitePost(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0)
+        public void DeleteInvite(DeleteInviteMemberRequest? deleteInviteMemberRequest = default(DeleteInviteMemberRequest?), int operationIndex = 0)
         {
             DeleteInviteWithHttpInfo(deleteInviteMemberRequest);
         }
@@ -951,7 +1787,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = deleteInviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberDeleteInvitePost";
+            localVarRequestOptions.Operation = "MemberClient.DeleteInvite";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -964,7 +1800,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/delete-invite", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberDeleteInvitePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteInvite", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1027,7 +1863,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = deleteInviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberDeleteInvitePost";
+            localVarRequestOptions.Operation = "MemberClient.DeleteInvite";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1041,7 +1877,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberDeleteInvitePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteInvite", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1338,7 +2174,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberInviteMultiplePost(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
+        public void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
         {
             InviteMultipleWithHttpInfo(inviteMemberRequest);
         }
@@ -1381,7 +2217,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = inviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
+            localVarRequestOptions.Operation = "MemberClient.InviteMultiple";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1394,7 +2230,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/invite-multiple", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InviteMultiple", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1457,7 +2293,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = inviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
+            localVarRequestOptions.Operation = "MemberClient.InviteMultiple";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1471,7 +2307,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InviteMultiple", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1488,7 +2324,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="email">Email to invite. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberInvitePost(string? email = default(string?), int operationIndex = 0)
+        public void Invite(string? email = default(string?), int operationIndex = 0)
         {
             InviteWithHttpInfo(email);
         }
@@ -1531,7 +2367,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
+            localVarRequestOptions.Operation = "MemberClient.Invite";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1544,7 +2380,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/invite", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberInvitePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Invite", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1607,7 +2443,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
+            localVarRequestOptions.Operation = "MemberClient.Invite";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1621,7 +2457,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberInvitePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Invite", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1638,7 +2474,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="leaveOrganizationRequest">Model containing the member-id to remove. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberLeavePost(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0)
+        public void Leave(LeaveOrganizationRequest? leaveOrganizationRequest = default(LeaveOrganizationRequest?), int operationIndex = 0)
         {
             LeaveWithHttpInfo(leaveOrganizationRequest);
         }
@@ -1681,7 +2517,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = leaveOrganizationRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberLeavePost";
+            localVarRequestOptions.Operation = "MemberClient.Leave";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1694,7 +2530,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/leave", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberLeavePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Leave", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1757,7 +2593,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = leaveOrganizationRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberLeavePost";
+            localVarRequestOptions.Operation = "MemberClient.Leave";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1771,7 +2607,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberLeavePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Leave", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1788,7 +2624,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="removeMemberRequest">Model containing the member-id to remove. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberRemovePost(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0)
+        public void Remove(RemoveMemberRequest? removeMemberRequest = default(RemoveMemberRequest?), int operationIndex = 0)
         {
             RemoveWithHttpInfo(removeMemberRequest);
         }
@@ -1831,7 +2667,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = removeMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberRemovePost";
+            localVarRequestOptions.Operation = "MemberClient.Remove";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1844,7 +2680,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/remove", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberRemovePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Remove", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1907,7 +2743,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = removeMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberRemovePost";
+            localVarRequestOptions.Operation = "MemberClient.Remove";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1921,7 +2757,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberRemovePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Remove", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1939,7 +2775,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="updateMemberRequest">Model containing the information to update. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void MemberUpdateIdPut(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0)
+        public void Update(Guid id, UpdateMemberRequest? updateMemberRequest = default(UpdateMemberRequest?), int operationIndex = 0)
         {
             UpdateWithHttpInfo(id, updateMemberRequest);
         }
@@ -1984,7 +2820,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberUpdateIdPut";
+            localVarRequestOptions.Operation = "MemberClient.Update";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1997,7 +2833,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<Object>("/Member/update/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberUpdateIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Update", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2063,7 +2899,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.MemberUpdateIdPut";
+            localVarRequestOptions.Operation = "MemberClient.Update";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2077,7 +2913,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MemberUpdateIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("Update", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

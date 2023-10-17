@@ -33,6 +33,15 @@ using Polly;
 namespace Simplic.OxS.SDK
 {
     /// <summary>
+    /// Remote environment.
+    /// </summary>
+    public enum Environment
+    {
+        Development,
+        Production,
+    }
+
+    /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
     /// </summary>
     internal class CustomJsonCodec : IRestSerializer, ISerializer, IDeserializer

@@ -19,6 +19,692 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Auth
 {
+    //--Custom wrapper start
+    public class AuthClient : IAuthClient
+    {
+        private __AuthClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public AuthClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __AuthClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __AuthClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public AuthClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changePasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ChangePasswordResponse</returns>
+        public new ChangePasswordResponse ChangePassword(ChangePasswordRequest? changePasswordRequest = default(ChangePasswordRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.ChangePassword(changePasswordRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changePasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ChangePasswordResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<ChangePasswordResponse> ChangePasswordWithHttpInfo(ChangePasswordRequest? changePasswordRequest = default(ChangePasswordRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.ChangePasswordWithHttpInfo(changePasswordRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changePasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ChangePasswordResponse</returns>
+        public new System.Threading.Tasks.Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest? changePasswordRequest = default(ChangePasswordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ChangePasswordAsync(changePasswordRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changePasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ChangePasswordResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ChangePasswordResponse>> ChangePasswordWithHttpInfoAsync(ChangePasswordRequest? changePasswordRequest = default(ChangePasswordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ChangePasswordWithHttpInfoAsync(changePasswordRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Login using username and password. Will return a JWT when logging in was successful. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loginRequest">Login model containing credentials. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoginResponse</returns>
+        public new LoginResponse Login(LoginRequest? loginRequest = default(LoginRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Login(loginRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Login using username and password. Will return a JWT when logging in was successful. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loginRequest">Login model containing credentials. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoginResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<LoginResponse> LoginWithHttpInfo(LoginRequest? loginRequest = default(LoginRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.LoginWithHttpInfo(loginRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Login using username and password. Will return a JWT when logging in was successful. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loginRequest">Login model containing credentials. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoginResponse</returns>
+        public new System.Threading.Tasks.Task<LoginResponse> LoginAsync(LoginRequest? loginRequest = default(LoginRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.LoginAsync(loginRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Login using username and password. Will return a JWT when logging in was successful. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loginRequest">Login model containing credentials. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoginResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoginResponse>> LoginWithHttpInfoAsync(LoginRequest? loginRequest = default(LoginRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.LoginWithHttpInfoAsync(loginRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="registerRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RegisterResponse</returns>
+        public new RegisterResponse Register(RegisterRequest? registerRequest = default(RegisterRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Register(registerRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="registerRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RegisterResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<RegisterResponse> RegisterWithHttpInfo(RegisterRequest? registerRequest = default(RegisterRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.RegisterWithHttpInfo(registerRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="registerRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RegisterResponse</returns>
+        public new System.Threading.Tasks.Task<RegisterResponse> RegisterAsync(RegisterRequest? registerRequest = default(RegisterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterAsync(registerRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="registerRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RegisterResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RegisterResponse>> RegisterWithHttpInfoAsync(RegisterRequest? registerRequest = default(RegisterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterWithHttpInfoAsync(registerRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resetPasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResetPasswordResponse</returns>
+        public new ResetPasswordResponse RestorePassword(ResetPasswordRequest? resetPasswordRequest = default(ResetPasswordRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.RestorePassword(resetPasswordRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resetPasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResetPasswordResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<ResetPasswordResponse> RestorePasswordWithHttpInfo(ResetPasswordRequest? resetPasswordRequest = default(ResetPasswordRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.RestorePasswordWithHttpInfo(resetPasswordRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resetPasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResetPasswordResponse</returns>
+        public new System.Threading.Tasks.Task<ResetPasswordResponse> RestorePasswordAsync(ResetPasswordRequest? resetPasswordRequest = default(ResetPasswordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RestorePasswordAsync(resetPasswordRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resetPasswordRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResetPasswordResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ResetPasswordResponse>> RestorePasswordWithHttpInfoAsync(ResetPasswordRequest? resetPasswordRequest = default(ResetPasswordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RestorePasswordWithHttpInfoAsync(resetPasswordRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectOrganizationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoginResponse</returns>
+        public new LoginResponse SelectOrganization(SelectOrganizationRequest? selectOrganizationRequest = default(SelectOrganizationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SelectOrganization(selectOrganizationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectOrganizationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoginResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<LoginResponse> SelectOrganizationWithHttpInfo(SelectOrganizationRequest? selectOrganizationRequest = default(SelectOrganizationRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SelectOrganizationWithHttpInfo(selectOrganizationRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectOrganizationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoginResponse</returns>
+        public new System.Threading.Tasks.Task<LoginResponse> SelectOrganizationAsync(SelectOrganizationRequest? selectOrganizationRequest = default(SelectOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SelectOrganizationAsync(selectOrganizationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectOrganizationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoginResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoginResponse>> SelectOrganizationWithHttpInfoAsync(SelectOrganizationRequest? selectOrganizationRequest = default(SelectOrganizationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SelectOrganizationWithHttpInfoAsync(selectOrganizationRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendVerificationCodeRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void SendVerificationCode(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.SendVerificationCode(sendVerificationCodeRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendVerificationCodeRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> SendVerificationCodeWithHttpInfo(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SendVerificationCodeWithHttpInfo(sendVerificationCodeRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendVerificationCodeRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task SendVerificationCodeAsync(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SendVerificationCodeAsync(sendVerificationCodeRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sendVerificationCodeRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SendVerificationCodeWithHttpInfoAsync(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SendVerificationCodeWithHttpInfoAsync(sendVerificationCodeRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="verifyMailRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void VerifyMail(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.VerifyMail(verifyMailRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="verifyMailRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> VerifyMailWithHttpInfo(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.VerifyMailWithHttpInfo(verifyMailRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="verifyMailRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task VerifyMailAsync(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.VerifyMailAsync(verifyMailRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="verifyMailRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> VerifyMailWithHttpInfoAsync(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.VerifyMailWithHttpInfoAsync(verifyMailRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="twoFactorRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TwoFactorResponse</returns>
+        public new TwoFactorResponse VerifyTwoFactor(TwoFactorRequest? twoFactorRequest = default(TwoFactorRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.VerifyTwoFactor(twoFactorRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="twoFactorRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TwoFactorResponse</returns>
+        public new Simplic.OxS.SDK.ApiResponse<TwoFactorResponse> VerifyTwoFactorWithHttpInfo(TwoFactorRequest? twoFactorRequest = default(TwoFactorRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.VerifyTwoFactorWithHttpInfo(twoFactorRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="twoFactorRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TwoFactorResponse</returns>
+        public new System.Threading.Tasks.Task<TwoFactorResponse> VerifyTwoFactorAsync(TwoFactorRequest? twoFactorRequest = default(TwoFactorRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.VerifyTwoFactorAsync(twoFactorRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="twoFactorRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TwoFactorResponse)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TwoFactorResponse>> VerifyTwoFactorWithHttpInfoAsync(TwoFactorRequest? twoFactorRequest = default(TwoFactorRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.VerifyTwoFactorWithHttpInfoAsync(twoFactorRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -133,7 +819,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="sendVerificationCodeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void AuthSendVerificationCodePost(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0);
+        void SendVerificationCode(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -153,7 +839,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="verifyMailRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void AuthVerifyMailPost(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0);
+        void VerifyMail(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -409,23 +1095,23 @@ namespace Simplic.OxS.SDK.Auth
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class AuthClient : IAuthClient
+    internal partial class __AuthClient : IAuthClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthClient"/> class.
+        /// Initializes a new instance of the <see cref="__AuthClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public AuthClient() : this((string)null)
+        public __AuthClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthClient"/> class.
+        /// Initializes a new instance of the <see cref="__AuthClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public AuthClient(string basePath)
+        public __AuthClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -437,12 +1123,12 @@ namespace Simplic.OxS.SDK.Auth
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthClient"/> class
+        /// Initializes a new instance of the <see cref="__AuthClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AuthClient(Simplic.OxS.SDK.Configuration configuration)
+        public __AuthClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -456,13 +1142,13 @@ namespace Simplic.OxS.SDK.Auth
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthClient"/> class
+        /// Initializes a new instance of the <see cref="__AuthClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public AuthClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __AuthClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -1282,7 +1968,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="sendVerificationCodeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void AuthSendVerificationCodePost(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0)
+        public void SendVerificationCode(SendVerificationCodeRequest? sendVerificationCodeRequest = default(SendVerificationCodeRequest?), int operationIndex = 0)
         {
             SendVerificationCodeWithHttpInfo(sendVerificationCodeRequest);
         }
@@ -1322,7 +2008,7 @@ namespace Simplic.OxS.SDK.Auth
 
             localVarRequestOptions.Data = sendVerificationCodeRequest;
 
-            localVarRequestOptions.Operation = "AuthClient.AuthSendVerificationCodePost";
+            localVarRequestOptions.Operation = "AuthClient.SendVerificationCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1335,7 +2021,7 @@ namespace Simplic.OxS.SDK.Auth
             var localVarResponse = this.Client.Post<Object>("/Auth/send-verification-code", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AuthSendVerificationCodePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SendVerificationCode", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1395,7 +2081,7 @@ namespace Simplic.OxS.SDK.Auth
 
             localVarRequestOptions.Data = sendVerificationCodeRequest;
 
-            localVarRequestOptions.Operation = "AuthClient.AuthSendVerificationCodePost";
+            localVarRequestOptions.Operation = "AuthClient.SendVerificationCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1409,7 +2095,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AuthSendVerificationCodePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SendVerificationCode", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1426,7 +2112,7 @@ namespace Simplic.OxS.SDK.Auth
         /// <param name="verifyMailRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void AuthVerifyMailPost(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0)
+        public void VerifyMail(VerifyMailRequest? verifyMailRequest = default(VerifyMailRequest?), int operationIndex = 0)
         {
             VerifyMailWithHttpInfo(verifyMailRequest);
         }
@@ -1469,7 +2155,7 @@ namespace Simplic.OxS.SDK.Auth
 
             localVarRequestOptions.Data = verifyMailRequest;
 
-            localVarRequestOptions.Operation = "AuthClient.AuthVerifyMailPost";
+            localVarRequestOptions.Operation = "AuthClient.VerifyMail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1482,7 +2168,7 @@ namespace Simplic.OxS.SDK.Auth
             var localVarResponse = this.Client.Post<Object>("/Auth/verify-mail", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AuthVerifyMailPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VerifyMail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1545,7 +2231,7 @@ namespace Simplic.OxS.SDK.Auth
 
             localVarRequestOptions.Data = verifyMailRequest;
 
-            localVarRequestOptions.Operation = "AuthClient.AuthVerifyMailPost";
+            localVarRequestOptions.Operation = "AuthClient.VerifyMail";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1559,7 +2245,7 @@ namespace Simplic.OxS.SDK.Auth
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AuthVerifyMailPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VerifyMail", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

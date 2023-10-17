@@ -19,6 +19,303 @@ using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Telematic
 {
+    //--Custom wrapper start
+    public class TelematicClient : ITelematicClient
+    {
+        private __TelematicClient _internalClient;
+        private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+        public TelematicClient(string host, string? authorization = null)
+        {
+            if (authorization != null)
+            {
+                _internalClient = new __TelematicClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                    DefaultHeaders = { { "Authorization", authorization } }
+                });
+            }
+            else
+            {
+                _internalClient = new __TelematicClient(new Configuration
+                {
+                    BasePath = $"{host}/document-api/v1",
+                });
+            }
+        }
+
+        public TelematicClient(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "https://dev-oxs.simplic.io"
+                    : "https://oxs.simplic.io",
+                authorization
+            ) { }
+
+        /// <summary>
+        /// Gets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        public string GetBasePath() => _internalClient.GetBasePath();
+
+        /// <summary>
+        /// Gets or sets the configuration object
+        /// </summary>
+        /// <value>An instance of the Configuration</value>
+        public Simplic.OxS.SDK.IReadableConfiguration Configuration
+        {
+            get => _internalClient.Configuration;
+            set
+            {
+                _internalClient.Configuration = value;
+            }
+        }
+
+        /// <summary>
+        /// Provides a factory method hook for the creation of exceptions.
+        /// </summary>
+        public Simplic.OxS.SDK.ExceptionFactory ExceptionFactory
+        {
+            get
+            {
+                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                }
+                return _exceptionFactory;
+            }
+            set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void CreateReadJob(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.CreateReadJob(createReadJobRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> CreateReadJobWithHttpInfo(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.CreateReadJobWithHttpInfo(createReadJobRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task CreateReadJobAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateReadJobAsync(createReadJobRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CreateReadJobWithHttpInfoAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateReadJobWithHttpInfoAsync(createReadJobRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public new void DeleteReadJob(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                _internalClient.DeleteReadJob(deleteReadJobRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public new Simplic.OxS.SDK.ApiResponse<Object> DeleteReadJobWithHttpInfo(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.DeleteReadJobWithHttpInfo(deleteReadJobRequest, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public new System.Threading.Tasks.Task DeleteReadJobAsync(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteReadJobAsync(deleteReadJobRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteReadJobWithHttpInfoAsync(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteReadJobWithHttpInfoAsync(deleteReadJobRequest, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AvailableServices</returns>
+        public new AvailableServices GetAvailableServices(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAvailableServices(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AvailableServices</returns>
+        public new Simplic.OxS.SDK.ApiResponse<AvailableServices> GetAvailableServicesWithHttpInfo(int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetAvailableServicesWithHttpInfo(operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AvailableServices</returns>
+        public new System.Threading.Tasks.Task<AvailableServices> GetAvailableServicesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAvailableServicesAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AvailableServices)</returns>
+        public new System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AvailableServices>> GetAvailableServicesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetAvailableServicesWithHttpInfoAsync(operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, $"<{(HttpStatusCode)e.ErrorCode}> {e.Message}", e.ErrorContent, e.Headers);
+            }
+        }    
+    }
+    //--Custom wrapper end
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -33,7 +330,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TelematicCreateReadJobPut(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0);
+        void CreateReadJob(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -53,7 +350,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="deleteReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void TelematicDeleteReadJobDelete(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0);
+        void DeleteReadJob(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -180,23 +477,23 @@ namespace Simplic.OxS.SDK.Telematic
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TelematicClient : ITelematicClient
+    internal partial class __TelematicClient : ITelematicClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TelematicClient"/> class.
+        /// Initializes a new instance of the <see cref="__TelematicClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TelematicClient() : this((string)null)
+        public __TelematicClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TelematicClient"/> class.
+        /// Initializes a new instance of the <see cref="__TelematicClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public TelematicClient(string basePath)
+        public __TelematicClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -208,12 +505,12 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TelematicClient"/> class
+        /// Initializes a new instance of the <see cref="__TelematicClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TelematicClient(Simplic.OxS.SDK.Configuration configuration)
+        public __TelematicClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -227,13 +524,13 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TelematicClient"/> class
+        /// Initializes a new instance of the <see cref="__TelematicClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TelematicClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __TelematicClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -293,7 +590,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TelematicCreateReadJobPut(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0)
+        public void CreateReadJob(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0)
         {
             CreateReadJobWithHttpInfo(createReadJobRequest);
         }
@@ -336,7 +633,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createReadJobRequest;
 
-            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateReadJobPut";
+            localVarRequestOptions.Operation = "TelematicClient.CreateReadJob";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -349,7 +646,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Put<Object>("/Telematic/create-read-job", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TelematicCreateReadJobPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateReadJob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -412,7 +709,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createReadJobRequest;
 
-            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateReadJobPut";
+            localVarRequestOptions.Operation = "TelematicClient.CreateReadJob";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -426,7 +723,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TelematicCreateReadJobPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateReadJob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -443,7 +740,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="deleteReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void TelematicDeleteReadJobDelete(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0)
+        public void DeleteReadJob(DeleteReadJobRequest? deleteReadJobRequest = default(DeleteReadJobRequest?), int operationIndex = 0)
         {
             DeleteReadJobWithHttpInfo(deleteReadJobRequest);
         }
@@ -486,7 +783,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = deleteReadJobRequest;
 
-            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteReadJobDelete";
+            localVarRequestOptions.Operation = "TelematicClient.DeleteReadJob";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -499,7 +796,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Delete<Object>("/Telematic/delete-read-job", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TelematicDeleteReadJobDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteReadJob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -562,7 +859,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = deleteReadJobRequest;
 
-            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteReadJobDelete";
+            localVarRequestOptions.Operation = "TelematicClient.DeleteReadJob";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -576,7 +873,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TelematicDeleteReadJobDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteReadJob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
