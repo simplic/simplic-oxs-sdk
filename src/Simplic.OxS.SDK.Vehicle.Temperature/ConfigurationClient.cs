@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Vehicle.Temperature
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the vehicle-temperature service.
+    /// </summary>
     public class ConfigurationClient : IConfigurationClient
     {
         private __ConfigurationClient _internalClient;

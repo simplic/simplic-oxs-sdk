@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Auth
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the auth service.
+    /// </summary>
     public class HookDefinitionClient : IHookDefinitionClient
     {
         private __HookDefinitionClient _internalClient;

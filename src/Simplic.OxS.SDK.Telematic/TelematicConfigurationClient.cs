@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the telematic service.
+    /// </summary>
     public class TelematicConfigurationClient : ITelematicConfigurationClient
     {
         private __TelematicConfigurationClient _internalClient;

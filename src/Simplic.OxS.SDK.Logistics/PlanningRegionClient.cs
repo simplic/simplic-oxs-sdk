@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the logistics service.
+    /// </summary>
     public class PlanningRegionClient : IPlanningRegionClient
     {
         private __PlanningRegionClient _internalClient;

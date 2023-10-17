@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.CDN
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the cdn service.
+    /// </summary>
     public class CDNClient : ICDNClient
     {
         private __CDNClient _internalClient;

@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Document
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the document service.
+    /// </summary>
     public class DocumentClient : IDocumentClient
     {
         private __DocumentClient _internalClient;

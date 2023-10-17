@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Organization
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the organization service.
+    /// </summary>
     public class OrganizationLinkClient : IOrganizationLinkClient
     {
         private __OrganizationLinkClient _internalClient;

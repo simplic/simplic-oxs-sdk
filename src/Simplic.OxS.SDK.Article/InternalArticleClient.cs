@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Article
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the article service.
+    /// </summary>
     public class InternalArticleClient : IInternalArticleClient
     {
         private __InternalArticleClient _internalClient;

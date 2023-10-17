@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the logistics service.
+    /// </summary>
     public class ResourceGroupClient : IResourceGroupClient
     {
         private __ResourceGroupClient _internalClient;

@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the erp service.
+    /// </summary>
     public class TransactionClient : ITransactionClient
     {
         private __TransactionClient _internalClient;

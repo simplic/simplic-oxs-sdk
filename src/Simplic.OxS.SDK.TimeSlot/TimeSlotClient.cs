@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.TimeSlot
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the timeslot service.
+    /// </summary>
     public class TimeSlotClient : ITimeSlotClient
     {
         private __TimeSlotClient _internalClient;

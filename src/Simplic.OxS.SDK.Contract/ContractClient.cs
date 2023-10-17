@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the contract service.
+    /// </summary>
     public class ContractClient : IContractClient
     {
         private __ContractClient _internalClient;

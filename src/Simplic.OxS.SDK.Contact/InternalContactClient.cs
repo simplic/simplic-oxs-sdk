@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contact
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the contact service.
+    /// </summary>
     public class InternalContactClient : IInternalContactClient
     {
         private __InternalContactClient _internalClient;

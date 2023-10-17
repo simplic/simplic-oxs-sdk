@@ -11,6 +11,9 @@ namespace {{packageName}}
 {
     {{#operations}}
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the {{service}} service.
+    /// </summary>
     {{>visibility}} class {{classname}} : {{interfacePrefix}}{{classname}}
     {
         private __{{classname}} _internalClient;
@@ -22,7 +25,7 @@ namespace {{packageName}}
             {
                 _internalClient = new __{{classname}}(new Configuration
                 {
-                    BasePath = $"{host}/{{service}}-api/v1",
+                    BasePath = $"{host}/{{service}}-api/{{apiVersion}}",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -30,7 +33,7 @@ namespace {{packageName}}
             {
                 _internalClient = new __{{classname}}(new Configuration
                 {
-                    BasePath = $"{host}/{{service}}-api/v1",
+                    BasePath = $"{host}/{{service}}-api/{{apiVersion}}",
                 });
             }
         }
@@ -38,8 +41,8 @@ namespace {{packageName}}
         public {{classname}}(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
-                    ? "https://dev-oxs.simplic.io"
-                    : "https://oxs.simplic.io",
+                    ? "{{environmentDevelopmentUrl}}"
+                    : "{{environmentProductionUrl}}",
                 authorization
             ) { }
 

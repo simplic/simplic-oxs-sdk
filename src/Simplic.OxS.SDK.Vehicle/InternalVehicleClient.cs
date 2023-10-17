@@ -20,6 +20,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Vehicle
 {
     //--Custom wrapper start
+    /// <summary>
+    /// Client to interact with the API endpoints of the vehicle service.
+    /// </summary>
     public class InternalVehicleClient : IInternalVehicleClient
     {
         private __InternalVehicleClient _internalClient;
