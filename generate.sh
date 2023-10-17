@@ -25,6 +25,7 @@ SLN_FILE="$SRC_DIR/$BASE_PROJ_NAME.sln"
 #############################################
 #               SCRIPT START                #
 #############################################
+set -e
 mkdir -p "$SRC_DIR"
 mkdir -p "$DOC_DIR"
 
