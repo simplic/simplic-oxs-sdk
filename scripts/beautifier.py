@@ -32,20 +32,29 @@ def log(*values: object):
 def parse_params(param_string: str) -> list[ParamMeta]:
     # remove surrounding parens
     param_string = param_string[1:-1]
+    if param_string == "":
+        return []
 
     param_declarations = param_string.split(', ')
     param_list = []
     for param_declaration in param_declarations:
-        parts = param_declaration.split(' ')
-        param_type = parts[0]
-        param_name = parts[1]
-        is_optional = False
-        default_value = None
-        # Bla bla = default(bla)
-        # 0: Bla ; 1: bla ; 2: = ; 3: default(bla)
-        if len(parts) > 2:
-            is_optional = True
-            default_value = parts[3]
+        try:
+            parts = param_declaration.split(' ')
+            param_type = parts[0]
+            param_name = parts[1]
+            is_optional = False
+            default_value = None
+            # Bla bla = default(bla)
+            # 0: Bla ; 1: bla ; 2: = ; 3: default(bla)
+            if len(parts) > 2:
+                is_optional = True
+                default_value = parts[3]
+        except IndexError as e:
+            raise Exception(f"Unexpected params:\n" +
+                            f"\t{param_declarations=}\n" +
+                            f"\t{param_declaration=}\n" +
+                            f"\t{parts=}\n" +
+                            f"Param string was: '{param_string}'")
 
         param_list.append(ParamMeta(_type=param_type, name=param_name,
                           is_optional=is_optional, default_value=default_value))
@@ -57,9 +66,9 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     """
     Gets all functions from a file.
     """
-    valid_name = r"[A-Z][a-zA-Z0-9_]*"
+    valid_name = r"[A-Za-z_][A-Za-z0-9_]*"
     return_type = rf"({valid_name}\.)*{valid_name}(<[^>]*>)?"
-    fn_name = valid_name
+    fn_name = r"[A-Z][A-Za-z0-9_]*"
     visibility = r"public"
     accessibility = r"static"
     params = r"\(.*\)"
@@ -71,9 +80,21 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     matches = re.findall(pattern, code, re.MULTILINE)
 
     for match in matches:
-        param_metas = parse_params(match[6])
-        metas.append(FunctionMeta(
-            return_type=match[2], name=match[5], params=param_metas))
+        return_type = match[2]
+        name = match[5]
+        # ignore constructors
+        if not return_type or return_type == "" or return_type == visibility:
+            continue
+        try:
+            param_metas = parse_params(match[6])
+            metas.append(FunctionMeta(
+                return_type=return_type,
+                name=name,
+                params=param_metas
+            ))
+        except Exception as e:
+            raise Exception(f"Probably malformed match: {match=}\n" +
+                            f"Inner exception: {e}")
 
     return metas
 
