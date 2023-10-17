@@ -97,6 +97,7 @@ def main(args: Namespace):
                 f" -t {args.template_dir}" +
                 f" --api-name-suffix {args.api_name_suffix}" +
                 f" --package-name {sdk_proj_name}" +
+                f" --additional-properties=service={line}" +
                 f" -i {spec_url}")
 
             # generate target project in src dir
@@ -111,7 +112,7 @@ def main(args: Namespace):
             # add assembly ref
             cmd(f"dotnet add {sdk_proj_file} reference {base_proj_file}")
 
-            # move generated files to proper project(s)
+            # move generated files to proper project(s) and update references
             # Boiler Plate
             fsutil.rec_replace(
                 f"{GEN_OUT}/src/{sdk_proj_name}",

@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Logistics
             {
                 _internalClient = new __ResourceClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/logistics-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Logistics
             {
                 _internalClient = new __ResourceClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/logistics-api/v1",
                 });
             }
         }

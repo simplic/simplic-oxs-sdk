@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Organization
             {
                 _internalClient = new __OrganizationSiteClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/organization-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Organization
             {
                 _internalClient = new __OrganizationSiteClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/organization-api/v1",
                 });
             }
         }

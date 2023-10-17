@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             {
                 _internalClient = new __TimeSlotClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/timeslot-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             {
                 _internalClient = new __TimeSlotClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/timeslot-api/v1",
                 });
             }
         }

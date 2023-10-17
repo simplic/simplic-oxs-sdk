@@ -22,7 +22,7 @@ namespace {{packageName}}
             {
                 _internalClient = new __{{classname}}(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/{{service}}-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -30,7 +30,7 @@ namespace {{packageName}}
             {
                 _internalClient = new __{{classname}}(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/{{service}}-api/v1",
                 });
             }
         }

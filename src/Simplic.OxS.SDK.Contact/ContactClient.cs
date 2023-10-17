@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Contact
             {
                 _internalClient = new __ContactClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/contact-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Contact
             {
                 _internalClient = new __ContactClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/contact-api/v1",
                 });
             }
         }

@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Auth
             {
                 _internalClient = new __AuthClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/auth-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Auth
             {
                 _internalClient = new __AuthClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/auth-api/v1",
                 });
             }
         }

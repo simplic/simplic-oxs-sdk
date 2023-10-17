@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Article
             {
                 _internalClient = new __InternalArticleClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/article-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Article
             {
                 _internalClient = new __InternalArticleClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/article-api/v1",
                 });
             }
         }

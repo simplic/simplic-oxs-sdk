@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Contract
             {
                 _internalClient = new __ReportingClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/contract-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Contract
             {
                 _internalClient = new __ReportingClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/contract-api/v1",
                 });
             }
         }

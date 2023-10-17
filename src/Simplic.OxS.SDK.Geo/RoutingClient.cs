@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Geo
             {
                 _internalClient = new __RoutingClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/geo-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Geo
             {
                 _internalClient = new __RoutingClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/geo-api/v1",
                 });
             }
         }

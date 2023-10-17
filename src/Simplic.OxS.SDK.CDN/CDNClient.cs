@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.CDN
             {
                 _internalClient = new __CDNClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/cdn-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.CDN
             {
                 _internalClient = new __CDNClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/cdn-api/v1",
                 });
             }
         }

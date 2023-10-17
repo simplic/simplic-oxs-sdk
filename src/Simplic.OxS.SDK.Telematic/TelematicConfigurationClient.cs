@@ -31,7 +31,7 @@ namespace Simplic.OxS.SDK.Telematic
             {
                 _internalClient = new __TelematicConfigurationClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/telematic-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
                 });
             }
@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Telematic
             {
                 _internalClient = new __TelematicConfigurationClient(new Configuration
                 {
-                    BasePath = $"{host}/document-api/v1",
+                    BasePath = $"{host}/telematic-api/v1",
                 });
             }
         }
