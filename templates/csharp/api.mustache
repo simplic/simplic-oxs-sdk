@@ -179,7 +179,7 @@ namespace {{packageName}}
         {{/supportsAsync}}
         {{/operation}}
 
-        private string FormatErrorMessage(string message, int errorCode) => $"<{(HttpStatusCode)errorCode}> {message}";
+        private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
     //--Custom wrapper end
 
