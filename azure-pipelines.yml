@@ -34,7 +34,7 @@ variables:
   - name: buildConfiguration
     value: "Release"
   - name: dotNetVersion
-    value: "6.0.x"
+    value: "7.0.x"
   - name: DOCKER_BUILDKIT
     value: 1
   - name: CurrentVersion
