@@ -75,6 +75,7 @@ stages:
               targetType: "inline"
               script: |
                 sudo echo "$(Build.RequestedFor)"
+
           - task: UseDotNet@2
             inputs:
               version: $(dotNetVersion)
@@ -96,6 +97,11 @@ stages:
                   git_user: $(git_user)
                   git_token: $(git_token)
                   branch_name: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
+
+          - task: Bash@3
+            displayName: "Generate projects"
+            inputs:
+              filePath: ./generate.sh
 
           - task: DotNetCoreCLI@2
             displayName: "Build solution"
