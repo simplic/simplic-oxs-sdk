@@ -73,7 +73,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     accessibility = r"static"
     params = r"\((?:(?!=>)[^;{}])*\)"
 
-    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})\s*"
+    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})"
     metas = []
 
     # get all functions
@@ -124,8 +124,8 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     match = re.search(pattern, fn_name)
 
     if not match:
-        log(
-            f"<parse_pretty> Failed to regex match function name (already pretty?): `{fn.name}` -> returning given name.")
+        log("<parse_pretty> Failed to regex match function name (already pretty?):" +
+            f" `{fn.name}` -> returning given name.")
         return fn.name
 
     groups_matched = len(match.groups())

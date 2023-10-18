@@ -1,7 +1,3 @@
-apiNameSuffix: "SDK"
-# Suffix that will be appended to all API names ('tags'). Default: Api.
-# e.g. Pet => PetApi.
-
 modelNamePrefix: ""
 # Prefix that will be prepended to all model names.
 
@@ -172,6 +168,9 @@ additionalProperties:
 
   apiVersion: v1
   # API version as used in https://oxs.simplic.io/example-api/<apiVersion>
+
+  withHttpInfoSuffix: WithHttpInfo
+  # Suffix for calls that shall return a wrapped result (ApiResponse) containing http info (Default: WithHttpInfo).
   # # # -- # # #
 
   allowUnicodeIdentifiers: false
