@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Logistics.ProblemDetails
+# Simplic.OxS.SDK.Vehicle.Temperature.ProblemDetails
 
 ## Properties
 

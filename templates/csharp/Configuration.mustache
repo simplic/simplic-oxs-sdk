@@ -123,7 +123,7 @@ namespace {{packageName}}
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("{{httpUserAgent}}{{^httpUserAgent}}OpenAPI-Generator/{{packageVersion}}/csharp{{/httpUserAgent}}");
-            BasePath = "{{{basePath}}}";
+            //BasePath = "{{{basePath}}}";
             DefaultHeaders = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
             ApiKey = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
             ApiKeyPrefix = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
@@ -134,7 +134,7 @@ namespace {{packageName}}
             {{/-first}}
                 {
                     new Dictionary<string, object> {
-                        {"url", "{{{url}}}"},
+                        //{"url", "{{{url}}}"},
                         {"description", "{{{description}}}{{^description}}No description provided{{/description}}"},
                         {{#variables}}
                         {{#-first}}
@@ -183,7 +183,7 @@ namespace {{packageName}}
                         {
                             new Dictionary<string, object>
                             {
-                                {"url", "{{{url}}}"},
+                                //{"url", "{{{url}}}"},
                                 {"description", "{{{description}}}{{^description}}No description provided{{/description}}"}
                             }
                         },
@@ -209,7 +209,7 @@ namespace {{packageName}}
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "{{{basePath}}}") : this()
+            string basePath) : this()
         {
             if (string.{{^net35}}IsNullOrWhiteSpace{{/net35}}{{#net35}}IsNullOrEmpty{{/net35}}(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
