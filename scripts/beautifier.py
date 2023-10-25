@@ -3,7 +3,7 @@ import shutil
 from dataclasses import dataclass
 from argparse import ArgumentParser, Namespace
 
-DEBUG = True
+DEBUG = False
 
 # preserve old file
 PRESERVE = False
@@ -200,6 +200,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
 
 def main(args: Namespace):
     file = args.file
+    controller = args.controller
     log(f"Reading file contents from `{file}`..")
     file_content = None
     with open(file, 'r') as f:
@@ -208,10 +209,9 @@ def main(args: Namespace):
     if PRESERVE:
         shutil.copy(file, f"{file}.ugly")
 
-    fns = collect_functions(file_content)
-    for fn in fns:
+    for fn in collect_functions(file_content):
         log(f"___: `{fn.name}`")
-        pretty_name = parse_pretty(fn, args.controller)
+        pretty_name = parse_pretty(fn, controller)
 
         # replace old name
         file_content = file_content.replace(fn.name, pretty_name)

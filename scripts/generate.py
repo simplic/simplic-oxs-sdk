@@ -1,6 +1,7 @@
 from argparse import ArgumentParser, Namespace
 import fsutil
 import json
+import yaml
 import requests
 import subprocess
 import sys
@@ -9,10 +10,14 @@ DEBUG = True
 
 GEN_CLI = "@openapitools/openapi-generator-cli"
 GEN_OUT = "openapi-out"
-DOC_DIR = "docs"
 URL_PREFIX = "https://dev-oxs.simplic.io/"
 URL_SUFFIX = "-api/v1/swagger/v1/swagger.json"
-BASE_PROJ_DEPS = ["RestSharp", "Newtonsoft.Json", "Polly"]
+LIB_DEPS = {
+    "generichost": [""],
+    "httpclient": [""],
+    "unityWebRequest": [""],
+    "restsharp": ["RestSharp", "Newtonsoft.Json", "Polly"],
+}
 
 
 def hyphen_to_dotted_capitalized(s: str):
@@ -44,9 +49,23 @@ def cmd(cmd: str):
 def main(args: Namespace):
     workspace = args.workspace
     src_dir = f"{workspace}/src"
+    doc_dir = args.doc_dir or f"{workspace}/docs"
+    template_dir = args.template_dir
+    config_file = args.config_file
+    services_file = args.input_file
     base_proj_name = args.name
     base_proj_file = f"{src_dir}/{base_proj_name}/{base_proj_name}.csproj"
     sln_file = f"{src_dir}/{base_proj_name}.sln"
+    api_name_suffix = args.api_name_suffix
+    library = "restsharp"
+
+    # read config.yaml for specified library (if specified)
+    try:
+        with open(config_file, 'r') as f:
+            config_data = yaml.safe_load(f)
+            library = config_data["library"]
+    except Exception:
+        pass
 
     # generate solution and base project
     fsutil.remove(f"{sln_file}")
@@ -57,14 +76,14 @@ def main(args: Namespace):
     cmd(f"dotnet sln {sln_file} add {base_proj_file}")
 
     # add required packages for base project
-    for pkg in BASE_PROJ_DEPS:
+    for pkg in LIB_DEPS[library]:
         cmd(f"dotnet add {base_proj_file} package {pkg}")
 
     cmd(f"npm install {GEN_CLI} -D")
     cmd(f"npx {GEN_CLI} version-manager set 7.0.1")
 
     # read services file
-    with open(args.input_file, 'r') as f:
+    with open(services_file, 'r') as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
@@ -92,10 +111,10 @@ def main(args: Namespace):
             # generate
             cmd(f"npx {GEN_CLI} generate" +
                 f" -g csharp" +
-                f" -c {args.config_file}" +
+                f" -c {config_file}" +
                 f" -o {GEN_OUT}" +
-                f" -t {args.template_dir}" +
-                f" --api-name-suffix {args.api_name_suffix}" +
+                f" -t {template_dir}" +
+                f" --api-name-suffix {api_name_suffix}" +
                 f" --package-name {sdk_proj_name}" +
                 f" --additional-properties=service={line}" +
                 f" -i {spec_url}")
@@ -152,7 +171,7 @@ def main(args: Namespace):
             )
 
             # move docs to doc dir
-            fsutil.move(f"{GEN_OUT}/docs/*", DOC_DIR)
+            fsutil.move(f"{GEN_OUT}/docs/*", doc_dir)
 
     # cleanup
     fsutil.remove(GEN_OUT)
@@ -195,6 +214,13 @@ argparser.add_argument(
     "--template-dir",
     required=True,
     help="Path to the templates"
+)
+
+argparser.add_argument(
+    "-d",
+    "--doc-dir",
+    required=False,
+    help="Where the documentation files shall go (Default: docs/)"
 )
 
 argparser.add_argument(
