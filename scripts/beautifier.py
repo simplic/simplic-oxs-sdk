@@ -3,7 +3,7 @@ import shutil
 from dataclasses import dataclass
 from argparse import ArgumentParser, Namespace
 
-DEBUG = True
+DEBUG = False
 
 # preserve old file
 PRESERVE = False
@@ -15,6 +15,7 @@ class ParamMeta:
     name: str
     is_optional: bool
     default_value: str | None
+    keywords: list[str]
 
 
 @dataclass
@@ -29,37 +30,92 @@ def log(*values: object):
         print(*values)
 
 
-def parse_params(param_string: str) -> list[ParamMeta]:
-    # remove surrounding parens
-    param_string = param_string[1:-1]
-    if param_string == "":
+def get_keywords(param: str) -> list[str]:
+    """
+    Gets keywords from param.
+    Expects param to be of format `[<keywords..> ]<type> <name>[ = <default>]`.
+    """
+    keywords = ["in", "out", "ref", "readonly", "params"]
+    result = []
+    for part in param.split(' '):
+        if part not in keywords:
+            # end of keyword section
+            return result
+        result.append(part)
+
+    return result
+
+
+def parse_params(s: str) -> list[ParamMeta]:
+    # remove surrounding parens and whitespaces
+    s = s[1:-1].strip()
+    if s == "":
         return []
 
-    param_declarations = param_string.split(', ')
-    param_list = []
-    for param_declaration in param_declarations:
+    # -- How params can look like --
+    # Pattern 1: basic
+    #   Type name[[ = default(Type)]]
+    #   0: Type ; 1: name [[; 2: = ; 3: default(Type)]]
+    #
+    # Pattern 2: additional keywords
+    #   kw Type name
+    #   0: kw ; 1: Type ; 2: name
+    #
+    # Pattern 3: additional keywords combined
+    #   kw kw Type name
+    #   0: kw ; 1: kw ; 2: Type ; 3: name
+    #
+    # Pattern 4: decorators
+    #   [Decorator]Type name[[ = default(Type)]]
+    #   0: [Decorator]Type ; 1: name [[; 2: = ; 3: default(Type)]]
+    #
+    # Pattern 5: decorators with spaces
+    #   [Decorator] Type name[[ = default(Type)]]
+    #   0: [Decorator] ; 1: Type ; 2: name [[; 3: = ; 4: default(Type)]]
+    #
+    # Pattern 6: decorators + keywords
+    #   [Decorator]out|ref Type name
+    #   0: [Decorator]out ; 1: Type ; 2: name
+    #
+    # Pattern 7: decorators with spaces + keywords
+    #   [Decorator] out|ref Type name
+    #   0: [Decorator] ; 1: out ; 2: Type ; 3: name
+
+    # remove decorators to get rid off decorator patterns
+    s = re.sub(r"\[(.*?)\]\s*", "", s)
+    segments = s.split(", ")
+    metas = []
+    for segment in segments:
+        keywords = get_keywords(segment)
+        # remove keywords to get rid off keyword patterns
+        for kw in keywords:
+            segment = re.sub(rf"^({kw})\s*", "", segment)
+
+        parts = segment.split(' ')
         try:
-            parts = param_declaration.split(' ')
-            param_type = parts[0]
-            param_name = parts[1]
+            _type = parts[0]
+            name = parts[1]
             is_optional = False
             default_value = None
-            # Bla bla = default(bla)
-            # 0: Bla ; 1: bla ; 2: = ; 3: default(bla)
             if len(parts) > 2:
                 is_optional = True
                 default_value = parts[3]
-        except IndexError as e:
+        except IndexError:
             raise Exception(f"Unexpected params:\n" +
-                            f"\t{param_declarations=}\n" +
-                            f"\t{param_declaration=}\n" +
+                            f"\t{segments=}\n" +
+                            f"\t{segment=}\n" +
                             f"\t{parts=}\n" +
-                            f"Param string was: '{param_string}'")
+                            f"Param string was: '{s}'")
 
-        param_list.append(ParamMeta(_type=param_type, name=param_name,
-                          is_optional=is_optional, default_value=default_value))
+        metas.append(ParamMeta(
+            _type=_type,
+            name=name,
+            is_optional=is_optional,
+            default_value=default_value,
+            keywords=keywords
+        ))
 
-    return param_list
+    return metas
 
 
 def collect_functions(code: str) -> list[FunctionMeta]:
@@ -144,6 +200,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
 
 def main(args: Namespace):
     file = args.file
+    controller = args.controller
     log(f"Reading file contents from `{file}`..")
     file_content = None
     with open(file, 'r') as f:
@@ -152,10 +209,9 @@ def main(args: Namespace):
     if PRESERVE:
         shutil.copy(file, f"{file}.ugly")
 
-    fns = collect_functions(file_content)
-    for fn in fns:
+    for fn in collect_functions(file_content):
         log(f"___: `{fn.name}`")
-        pretty_name = parse_pretty(fn, args.controller)
+        pretty_name = parse_pretty(fn, controller)
 
         # replace old name
         file_content = file_content.replace(fn.name, pretty_name)

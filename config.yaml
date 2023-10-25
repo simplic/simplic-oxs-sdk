@@ -1,3 +1,7 @@
+#
+# OpenAPI generator configuration
+#
+
 modelNamePrefix: ""
 # Prefix that will be prepended to all model names.
 

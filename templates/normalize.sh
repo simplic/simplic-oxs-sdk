@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Normalizes all templates to simplic standard
-
+# Just run initially for new template files
 
 rec_replace() {
     local path="$1"
