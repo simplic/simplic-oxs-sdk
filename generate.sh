@@ -20,7 +20,7 @@ SRC_DIR="$WORKSPACE/src"
 DOC_DIR="$WORKSPACE/docs"
 TMPL_DIR="$WORKSPACE/templates/csharp"
 CFG_FILE="$WORKSPACE/config.yaml"
-SVC_FILE="$WORKSPACE/services"
+SVC_FILE="$WORKSPACE/services.yaml"
 SCRIPT_DIR="$WORKSPACE/scripts"
 
 API_NAME_SUFFIX="Client"
@@ -52,6 +52,7 @@ python "$SCRIPT_GENERATE" \
     --name "$BASE_PROJ_NAME" \
     -c "$CFG_FILE" \
     -t "$TMPL_DIR" \
+    --doc-dir "$DOC_DIR" \
     --api-name-suffix "$API_NAME_SUFFIX" \
     -i "$SVC_FILE" \
     || (echo -e "$RED! Error in $SCRIPT_GENERATE !$NC" && exit 1)

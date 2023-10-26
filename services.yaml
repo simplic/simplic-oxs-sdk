@@ -1,0 +1,29 @@
+#
+# Configuration for services that shall have an api client be generated for
+#
+
+url:
+  use_prefix_and_suffix: true
+  # If true will handle each entry in services as middle part of the url
+  # Set to false if entries in services are already complete urls
+
+  prefix: https://dev-oxs.simplic.io/
+  suffix: -api/v1/swagger/v1/swagger.json
+
+services:
+  - article
+  - auth
+  - cdn
+  - construction-site
+  - contact
+  - contract
+  - document
+  - erp
+  - geo
+  - logistics
+  - organization
+  - storage-management
+  - timeslot
+  - telematic
+  - vehicle
+  - vehicle-temperature
