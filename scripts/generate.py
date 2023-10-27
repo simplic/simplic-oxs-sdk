@@ -12,10 +12,24 @@ DEBUG = True
 GEN_CLI = "@openapitools/openapi-generator-cli"
 GEN_OUT = "openapi-out"
 LIB_DEPS = {
-    "generichost": [""],
-    "httpclient": [""],
+    "generichost": [
+        "Microsoft.Extensions.Http",
+        "Microsoft.Extensions.Hosting",
+        "Microsoft.Extensions.Http.Polly",
+        "System.ComponentModel.Annotations"
+    ],
+    "httpclient": [
+        "Newtonsoft.Json",
+        "Polly",
+        "JsonSubTypes",
+        "System.ComponentModel.Annotations"
+    ],
     "unityWebRequest": [""],
-    "restsharp": ["RestSharp", "Newtonsoft.Json", "Polly"],
+    "restsharp": [
+        "RestSharp",
+        "Newtonsoft.Json",
+        "Polly"
+    ],
 }
 
 
@@ -70,7 +84,7 @@ def read_yaml(file: str) -> Any:
         return yaml.safe_load(f)
 
 
-def prepare_solution(src_dir: str, name: str, dependencies: list[str]):
+def generate_solution(src_dir: str, name: str, dependencies: list[str]):
     """
     Generates solution along with base project and its dependencies.
     """
@@ -93,9 +107,9 @@ def prepare_solution(src_dir: str, name: str, dependencies: list[str]):
         cmd(f"dotnet add {base_proj_file} package {pkg}")
 
 
-def add_project(src_dir: str, name: str, sln_name):
+def generate_project(src_dir: str, name: str, sln_name):
     """
-    Adds project to solution and adds reference to base project.
+    Generates and adds project to solution and adds reference to base project.
     """
     sln_file = f"{src_dir}/{sln_name}.sln"
     base_proj_folder = f"{src_dir}/{sln_name}"
@@ -163,21 +177,20 @@ def main(args: Namespace):
     workspace = args.workspace
     src_dir = f"{workspace}/src"
     doc_dir = args.doc_dir or f"{workspace}/docs"
-    config_file = args.config_file
-    services_file = args.input_file
     base_proj_name = args.name
 
     # read config.yaml for specified library
-    config_yaml = read_yaml(config_file)
+    config_yaml = read_yaml(args.config_file)
     library = config_yaml["additionalProperties"]["library"]
 
-    prepare_solution(src_dir, base_proj_name, LIB_DEPS[library])
+    if library != "unityWebRequest":
+        generate_solution(src_dir, base_proj_name, LIB_DEPS[library])
 
     cmd(f"npm install {GEN_CLI} -D")
     cmd(f"npx {GEN_CLI} version-manager set 7.0.1")
 
     # read services file
-    services_yaml = read_yaml(services_file)
+    services_yaml = read_yaml(args.input_file)
     use_prefix_and_suffix: bool = services_yaml["url"]["use_prefix_and_suffix"]
     url_prefix: str = services_yaml["url"]["prefix"]
     url_suffix: str = services_yaml["url"]["suffix"]
@@ -199,11 +212,13 @@ def main(args: Namespace):
         # turn any hyphen-case to Dotted.Capitalized
         sdk_proj_suffix = hyphen_to_dotted_capitalized(last_part)
         sdk_proj_name = f"{base_proj_name}.{sdk_proj_suffix}"
+        sdk_proj_folder = f"{src_dir}/{sdk_proj_name}"
+        gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
 
         # generate
         cmd(f"npx {GEN_CLI} generate" +
             f" -g csharp" +
-            f" -c {config_file}" +
+            f" -c {args.config_file}" +
             f" -o {GEN_OUT}" +
             f" -t {args.template_dir}" +
             f" --api-name-suffix {args.api_name_suffix}" +
@@ -212,7 +227,15 @@ def main(args: Namespace):
             f" -i {spec_url}")
 
         # generate target project in src dir
-        add_project(src_dir, sdk_proj_name, base_proj_name)
+        if library == "unityWebRequest":
+            fsutil.remove(sdk_proj_folder)
+            fsutil.create_directory(sdk_proj_folder)
+            fsutil.move(
+                f"{gen_proj_folder}/{sdk_proj_name}.asmdef",
+                sdk_proj_folder
+            )
+        else:
+            generate_project(src_dir, sdk_proj_name, base_proj_name)
 
         # post process
         process_project(src_dir, sdk_proj_name, base_proj_name, library)
