@@ -1,12 +1,28 @@
-import re
-import shutil
+#
+# Script for 'beautifying' the functions of openapi generated clients.
+# Currently only works for C#.
+#
+
 from dataclasses import dataclass
 from argparse import ArgumentParser, Namespace
+import os
+import re
+import shutil
 
 DEBUG = False
 
 # preserve old file
 PRESERVE = False
+PRESERVED_FILE_EXT = "ugly.cs"
+
+# Regex patterns
+RX_DECORATOR = r"\[(?:.*?)\]\s*"
+RX_DEFAULT_ARG = r"[A-Za-z0-9_\(\)\?]*"
+RX_FN_NAME = r"[A-Z][A-Za-z0-9_]*"
+RX_FN_ARGS = r"\((?:(?!=>)[^;{}])*\)"
+RX_KEYWORD = r"\b(?:in|out|ref|readonly|params)\b"
+RX_NAME = r"[A-Za-z_][A-Za-z0-9_]*"
+RX_TYPE = fr"(?:{RX_NAME}\.)*{RX_NAME}(?:<[^>]*>)?\??"
 
 
 @dataclass
@@ -49,13 +65,7 @@ def parse_params(s: str) -> list[ParamMeta]:
         return []
 
     params = s.split(',')
-    decorator = r"\[(?:.*?)\]\s*"
-    keyword = r"\b(?:in|out|ref|readonly|params)\b"
-    valid_name = r"[A-Za-z_][A-Za-z0-9_]*"
-    type = fr"(?:{valid_name}\.)*{valid_name}(?:<[^>]*>)?\??"
-    name = r"[A-Za-z_][A-Za-z0-9_]*"
-    default = r"[A-Za-z0-9_\(\)\?]*"
-    pattern = fr"({decorator})?\s*({keyword}\s+)?({keyword}\s+)?({type}\s+)({name})\s*(=)?\s*({default})?"
+    pattern = fr"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
 
     metas = []
     for param in params:
@@ -65,7 +75,6 @@ def parse_params(s: str) -> list[ParamMeta]:
             print(f"\nno match for `{param}`\npattern: `{pattern}`\n")
             continue
 
-        dec = match[1]
         kw1 = match[2]
         kw2 = match[3]
         type = match[4].strip()
@@ -88,14 +97,10 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     """
     Gets all functions from a file.
     """
-    valid_name = r"[A-Za-z_][A-Za-z0-9_]*"
-    return_type = rf"({valid_name}\.)*{valid_name}(<[^>]*>)?"
-    fn_name = r"[A-Z][A-Za-z0-9_]*"
     visibility = r"public"
     accessibility = r"static"
-    params = r"\((?:(?!=>)[^;{}])*\)"
 
-    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})"
+    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({RX_TYPE})\s+({RX_FN_NAME})\s*({RX_FN_ARGS})"
     metas = []
 
     # get all functions
@@ -103,15 +108,14 @@ def collect_functions(code: str) -> list[FunctionMeta]:
 
     for match in matches:
         return_type = match[3]
-        name = match[6]
         # ignore constructors
         if not return_type or return_type == "" or return_type == visibility:
             continue
         try:
-            param_metas = parse_params(match[7])
+            param_metas = parse_params(match[5])
             metas.append(FunctionMeta(
                 return_type=return_type,
-                name=name,
+                name=match[4],
                 params=param_metas
             ))
         except Exception as e:
@@ -173,7 +177,12 @@ def main(args: Namespace):
         file_content = f.read()
 
     if PRESERVE:
-        shutil.copy(file, f"{file}.ugly")
+        path, full_file_name = os.path.split(file)
+        file_name, file_extension = os.path.splitext(full_file_name)
+        shutil.copy(
+            file,
+            f"{os.path.join(path, file_name)}.{PRESERVED_FILE_EXT}"
+        )
 
     for fn in collect_functions(file_content):
         log(f"___: `{fn.name}`")
