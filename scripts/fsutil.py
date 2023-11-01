@@ -1,11 +1,13 @@
 from fileinput import FileInput
-from os.path import isfile
 from typing import Any as MoveInfo
 import os
 import shutil
 
 
 def move(path: str, destination: str) -> list[MoveInfo] | MoveInfo:
+    """
+    Moves given file(s) or directory to destination.
+    """
     # Check if destination file already exists
     if os.path.isfile(destination):
         os.remove(destination)
@@ -38,6 +40,9 @@ def move(path: str, destination: str) -> list[MoveInfo] | MoveInfo:
 
 
 def remove(path: str):
+    """
+    Removes file or directory.
+    """
     if not os.path.exists(path):
         return
 
@@ -48,6 +53,9 @@ def remove(path: str):
 
 
 def create_directory(path: str, respect_existing: bool = True):
+    """
+    Creates directory.
+    """
     if respect_existing and os.path.exists(path):
         return
 
@@ -55,12 +63,18 @@ def create_directory(path: str, respect_existing: bool = True):
 
 
 def replace_in_file(file_path: str, search_term: str, replace_term: str):
+    """
+    Replaces a term in a file with given term.
+    """
     with FileInput(file_path, inplace=True) as file:
         for line in file:
             print(line.replace(search_term, replace_term), end='')
 
 
 def has_extension(file_path: str, extension: str):
+    """
+    Whether given (file)path has an extension.
+    """
     if extension.startswith('.'):
         return file_path.endswith(extension)
 
@@ -68,6 +82,9 @@ def has_extension(file_path: str, extension: str):
 
 
 def rec_replace(path: str, old_term: str, new_term: str, file_extension: str | None = None):
+    """
+    Replaces a term in all files of a directory and it's subdirectories.
+    """
     for root, _, files in os.walk(path):
         for file in files:
             file_path = os.path.join(root, file)

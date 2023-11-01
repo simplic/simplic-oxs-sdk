@@ -72,8 +72,7 @@ def parse_params(s: str) -> list[ParamMeta]:
         param = param.strip()
         match = re.match(pattern, param)
         if not match:
-            print(f"\nno match for `{param}`\npattern: `{pattern}`\n")
-            continue
+            raise Exception(f"no match for `{param}`\npattern: `{pattern}`")
 
         kw1 = match[2]
         kw2 = match[3]
@@ -162,8 +161,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     log(f"{match.group(4)=}")
 
     if groups_matched != 4:
-        raise Exception(
-            f"<parse_pretty> Unexpected amount of groups: `{groups_matched}`")
+        raise Exception(f"Unexpected amount of groups: `{groups_matched}`")
 
     return f"{match.group(2) or match.group(3)}{match.group(4)}"
 
@@ -198,9 +196,20 @@ def main(args: Namespace):
         f.write(file_content)
 
 
+#
+# SCRIPT START
+#
 argparser = ArgumentParser()
-argparser.add_argument("-f", "--file", required=True,
-                       help="File in which the function names shall be beautified")
-argparser.add_argument("-c", "--controller", required=True,
-                       help="Name of the controller")
+argparser.add_argument(
+    "-f",
+    "--file",
+    required=True,
+    help="File in which the function names shall be beautified"
+)
+argparser.add_argument(
+    "-c",
+    "--controller",
+    required=True,
+    help="Name of the controller"
+)
 main(argparser.parse_args())
