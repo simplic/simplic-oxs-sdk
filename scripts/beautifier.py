@@ -11,7 +11,7 @@ PRESERVE = False
 
 @dataclass
 class ParamMeta:
-    _type: str
+    type: str
     name: str
     is_optional: bool
     default_value: str | None
@@ -47,73 +47,55 @@ def get_keywords(param: str) -> list[str]:
 
 
 def parse_params(s: str) -> list[ParamMeta]:
-    # remove surrounding parens and whitespaces
+    """
+    Takes a string which represents the parameter segment of a function
+    such as `(string s)` and parses it into a list of `ParamMeta`.
+
+    Args:
+        s (str): parameter segment
+
+    Raises:
+        Exception: raised when given parameter string is malformed
+
+    Returns:
+        list[ParamMeta]: list of parameters
+    """
     s = s[1:-1].strip()
     if s == "":
         return []
 
-    # -- How params can look like --
-    # Pattern 1: basic
-    #   Type name[[ = default(Type)]]
-    #   0: Type ; 1: name [[; 2: = ; 3: default(Type)]]
-    #
-    # Pattern 2: additional keywords
-    #   kw Type name
-    #   0: kw ; 1: Type ; 2: name
-    #
-    # Pattern 3: additional keywords combined
-    #   kw kw Type name
-    #   0: kw ; 1: kw ; 2: Type ; 3: name
-    #
-    # Pattern 4: decorators
-    #   [Decorator]Type name[[ = default(Type)]]
-    #   0: [Decorator]Type ; 1: name [[; 2: = ; 3: default(Type)]]
-    #
-    # Pattern 5: decorators with spaces
-    #   [Decorator] Type name[[ = default(Type)]]
-    #   0: [Decorator] ; 1: Type ; 2: name [[; 3: = ; 4: default(Type)]]
-    #
-    # Pattern 6: decorators + keywords
-    #   [Decorator]out|ref Type name
-    #   0: [Decorator]out ; 1: Type ; 2: name
-    #
-    # Pattern 7: decorators with spaces + keywords
-    #   [Decorator] out|ref Type name
-    #   0: [Decorator] ; 1: out ; 2: Type ; 3: name
+    params = s.split(',')
+    decorator = r"\[(?:.*?)\]\s*"
+    keyword = r"\b(?:in|out|ref|readonly|params)\b"
+    valid_name = r"[A-Za-z_][A-Za-z0-9_]*"
+    type = fr"(?:{valid_name}\.)*{valid_name}(?:<[^>]*>)?\??"
+    name = r"[A-Za-z_][A-Za-z0-9_]*"
+    default = r"[A-Za-z0-9_\(\)\?]*"
+    pattern = fr"({decorator})?\s*({keyword}\s+)?({keyword}\s+)?({type}\s+)({name})\s*(=)?\s*({default})?"
 
-    # remove decorators to get rid off decorator patterns
-    s = re.sub(r"\[(.*?)\]\s*", "", s)
-    segments = s.split(", ")
     metas = []
-    for segment in segments:
-        keywords = get_keywords(segment)
-        # remove keywords to get rid off keyword patterns
-        for kw in keywords:
-            segment = re.sub(rf"^({kw})\s*", "", segment)
+    for param in params:
+        param = param.strip()
+        match = re.match(pattern, param)
+        if not match:
+            print(f"\nno match for `{param}`\npattern: `{pattern}`\n")
+            continue
 
-        parts = segment.split(' ')
-        try:
-            _type = parts[0]
-            name = parts[1]
-            is_optional = False
-            default_value = None
-            if len(parts) > 2:
-                is_optional = True
-                default_value = parts[3]
-        except IndexError:
-            raise Exception(f"Unexpected params:\n" +
-                            f"\t{segments=}\n" +
-                            f"\t{segment=}\n" +
-                            f"\t{parts=}\n" +
-                            f"Param string was: '{s}'")
-
-        metas.append(ParamMeta(
-            _type=_type,
+        dec = match[1]
+        kw1 = match[2]
+        kw2 = match[3]
+        type = match[4].strip()
+        name = match[5].strip()
+        has_default = match[6] is not None
+        defv = match[7].strip() if has_default else None
+        meta = ParamMeta(
+            type=type,
             name=name,
-            is_optional=is_optional,
-            default_value=default_value,
-            keywords=keywords
-        ))
+            is_optional=has_default,
+            default_value=defv,
+            keywords=[kw.strip() for kw in [kw1, kw2] if kw is not None]
+        )
+        metas.append(meta)
 
     return metas
 
