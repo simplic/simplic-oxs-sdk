@@ -1,10 +1,11 @@
 from fileinput import FileInput
-from typing import Any as MoveInfo
+from typing import Any
 import os
 import shutil
+import yaml
 
 
-def move(path: str, destination: str) -> list[MoveInfo] | MoveInfo:
+def move(path: str, destination: str) -> list[Any] | Any:
     """
     Moves given file(s) or directory to destination.
     """
@@ -91,3 +92,11 @@ def rec_replace(path: str, old_term: str, new_term: str, file_extension: str | N
             if file_extension and not has_extension(file_path, file_extension):
                 continue
             replace_in_file(file_path, old_term, new_term)
+
+
+def read_yaml(file: str) -> Any:
+    """
+    Reads a yaml file and parses the contents to an appropriate object.
+    """
+    with open(file, 'r') as f:
+        return yaml.safe_load(f)

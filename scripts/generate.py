@@ -2,7 +2,6 @@ from argparse import ArgumentParser, Namespace
 from typing import Any
 import fsutil
 import json
-import yaml
 import requests
 import subprocess
 import sys
@@ -33,6 +32,18 @@ LIB_DEPS = {
 }
 
 
+def cmd(cmd: str):
+    """
+    Runs a command.
+    """
+    if DEBUG:
+        print(f"> {cmd}")
+    if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
+        subprocess.run(cmd, shell=True)
+    else:
+        subprocess.run(cmd)
+
+
 def hyphen_to_dotted_capitalized(s: str) -> str:
     """
     Turns any hyphen-case into Dotted.Capitalized.
@@ -54,18 +65,6 @@ def hyphen_to_dotted_capitalized(s: str) -> str:
     return '.'.join(sections)
 
 
-def cmd(cmd: str):
-    """
-    Runs a command.
-    """
-    if DEBUG:
-        print(f"> {cmd}")
-    if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
-        subprocess.run(cmd, shell=True)
-    else:
-        subprocess.run(cmd)
-
-
 def get_specification(url: str) -> Any:
     """
     Gets the api specification and returns it as a json.
@@ -74,14 +73,6 @@ def get_specification(url: str) -> Any:
     response.raise_for_status()
 
     return json.loads(response.text)
-
-
-def read_yaml(file: str) -> Any:
-    """
-    Reads a yaml file and parses the contents to an appropriate object.
-    """
-    with open(file, 'r') as f:
-        return yaml.safe_load(f)
 
 
 def generate_solution(src_dir: str, name: str, dependencies: list[str]):
@@ -131,17 +122,50 @@ def generate_project(src_dir: str, name: str, sln_name):
     cmd(f"dotnet add {proj_file} reference {base_proj_file}")
 
 
-def process_project(src_dir: str, name: str, base_proj_name: str, library: str):
-    """
-    Processes generated project.
-    """
-    gen_proj_folder = f"{GEN_OUT}/src/{name}"
-    base_proj_folder = f"{src_dir}/{base_proj_name}"
-    proj_folder = f"{src_dir}/{name}"
+def generate_service(service: str, base_name: str, src_dir: str, url: str, library: str, config_file: str, template_dir: str, api_name_suffix: str):
+    spec_json = get_specification(url)
+
+    # need title for project name
+    title = spec_json["info"]["title"]
+
+    # but only last part
+    last_part = title.split('.')[-1]
+
+    # turn any hyphen-case to Dotted.Capitalized
+    sdk_proj_suffix = hyphen_to_dotted_capitalized(last_part)
+    sdk_proj_name = f"{base_name}.{sdk_proj_suffix}"
+    sdk_proj_folder = f"{src_dir}/{sdk_proj_name}"
+    gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
+
+    # generate
+    cmd(f"npx {GEN_CLI} generate" +
+        f" -g csharp" +
+        f" -c {config_file}" +
+        f" -o {GEN_OUT}" +
+        f" -t {template_dir}" +
+        f" --api-name-suffix {api_name_suffix}" +
+        f" --package-name {sdk_proj_name}" +
+        f" --additional-properties=service={service}" +
+        f" -i {url}")
+
+    # generate target project in src dir
+    if library == "unityWebRequest":
+        fsutil.remove(sdk_proj_folder)
+        fsutil.create_directory(sdk_proj_folder)
+        fsutil.move(
+            f"{gen_proj_folder}/{sdk_proj_name}.asmdef",
+            sdk_proj_folder
+        )
+    else:
+        generate_project(src_dir, sdk_proj_name, base_name)
+
+    gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
+    base_proj_folder = f"{src_dir}/{base_name}"
+    proj_folder = f"{src_dir}/{sdk_proj_name}"
 
     # move generated files to proper project(s) and update references
     # Boiler Plate
-    fsutil.rec_replace(gen_proj_folder, name, base_proj_name)
+    fsutil.rec_replace(gen_proj_folder, sdk_proj_name, base_name)
     if library != "generichost":
         fsutil.move(
             f"{gen_proj_folder}/Model/ProblemDetails.cs",
@@ -157,13 +181,13 @@ def process_project(src_dir: str, name: str, base_proj_name: str, library: str):
     # insert using for base project and fix namespace
     fsutil.rec_replace(
         gen_proj_folder,
-        f"namespace {base_proj_name}",
-        f"using {base_proj_name};\n\nnamespace {name}",
+        f"namespace {base_name}",
+        f"using {base_name};\n\nnamespace {sdk_proj_name}",
         "cs"
     )
     fsutil.move(
         f"{gen_proj_folder}/Api/*",
-        f"{src_dir}/{name}"
+        f"{src_dir}/{sdk_proj_name}"
     )
 
     fsutil.create_directory(f"{proj_folder}/Model")
@@ -177,20 +201,19 @@ def main(args: Namespace):
     workspace = args.workspace
     src_dir = f"{workspace}/src"
     doc_dir = args.doc_dir or f"{workspace}/docs"
-    base_proj_name = args.name
 
     # read config.yaml for specified library
-    config_yaml = read_yaml(args.config_file)
+    config_yaml = fsutil.read_yaml(args.config_file)
     library = config_yaml["additionalProperties"]["library"]
 
     if library != "unityWebRequest":
-        generate_solution(src_dir, base_proj_name, LIB_DEPS[library])
+        generate_solution(src_dir, args.name, LIB_DEPS[library])
 
     cmd(f"npm install {GEN_CLI} -D")
     cmd(f"npx {GEN_CLI} version-manager set 7.0.1")
 
     # read services file
-    services_yaml = read_yaml(args.input_file)
+    services_yaml = fsutil.read_yaml(args.input_file)
     use_prefix_and_suffix: bool = services_yaml["url"]["use_prefix_and_suffix"]
     url_prefix: str = services_yaml["url"]["prefix"]
     url_suffix: str = services_yaml["url"]["suffix"]
@@ -198,47 +221,18 @@ def main(args: Namespace):
 
     for service in services:
         service = service.strip()
+        url = f"{url_prefix}{service}{url_suffix}" if use_prefix_and_suffix else service
         print(f">> {service}..")
-
-        spec_url = f"{url_prefix}{service}{url_suffix}" if use_prefix_and_suffix else service
-        spec_json = get_specification(spec_url)
-
-        # need title for project name
-        title = spec_json["info"]["title"]
-
-        # but only last part
-        last_part = title.split('.')[-1]
-
-        # turn any hyphen-case to Dotted.Capitalized
-        sdk_proj_suffix = hyphen_to_dotted_capitalized(last_part)
-        sdk_proj_name = f"{base_proj_name}.{sdk_proj_suffix}"
-        sdk_proj_folder = f"{src_dir}/{sdk_proj_name}"
-        gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
-
-        # generate
-        cmd(f"npx {GEN_CLI} generate" +
-            f" -g csharp" +
-            f" -c {args.config_file}" +
-            f" -o {GEN_OUT}" +
-            f" -t {args.template_dir}" +
-            f" --api-name-suffix {args.api_name_suffix}" +
-            f" --package-name {sdk_proj_name}" +
-            f" --additional-properties=service={service}" +
-            f" -i {spec_url}")
-
-        # generate target project in src dir
-        if library == "unityWebRequest":
-            fsutil.remove(sdk_proj_folder)
-            fsutil.create_directory(sdk_proj_folder)
-            fsutil.move(
-                f"{gen_proj_folder}/{sdk_proj_name}.asmdef",
-                sdk_proj_folder
-            )
-        else:
-            generate_project(src_dir, sdk_proj_name, base_proj_name)
-
-        # post process
-        process_project(src_dir, sdk_proj_name, base_proj_name, library)
+        generate_service(
+            service,
+            args.name,
+            src_dir,
+            url,
+            library,
+            args.config_file,
+            args.template_dir,
+            args.api_name_suffix
+        )
 
         # move docs to doc dir
         fsutil.move(f"{GEN_OUT}/docs/*", doc_dir)
