@@ -1,17 +1,33 @@
-import re
-import shutil
+#
+# Script for 'beautifying' the functions of openapi generated clients.
+# Currently only works for C#.
+#
+
 from dataclasses import dataclass
 from argparse import ArgumentParser, Namespace
+import os
+import re
+import shutil
 
 DEBUG = False
 
 # preserve old file
 PRESERVE = False
+PRESERVED_FILE_EXT = "ugly.cs"
+
+# Regex patterns
+RX_DECORATOR = r"\[(?:.*?)\]\s*"
+RX_DEFAULT_ARG = r"[A-Za-z0-9_\(\)\?]*"
+RX_FN_NAME = r"[A-Z][A-Za-z0-9_]*"
+RX_FN_ARGS = r"\((?:(?!=>)[^;{}])*\)"
+RX_KEYWORD = r"\b(?:in|out|ref|readonly|params)\b"
+RX_NAME = r"[A-Za-z_][A-Za-z0-9_]*"
+RX_TYPE = fr"(?:{RX_NAME}\.)*{RX_NAME}(?:<[^>]*>)?\??"
 
 
 @dataclass
 class ParamMeta:
-    _type: str
+    type: str
     name: str
     is_optional: bool
     default_value: str | None
@@ -30,90 +46,48 @@ def log(*values: object):
         print(*values)
 
 
-def get_keywords(param: str) -> list[str]:
-    """
-    Gets keywords from param.
-    Expects param to be of format `[<keywords..> ]<type> <name>[ = <default>]`.
-    """
-    keywords = ["in", "out", "ref", "readonly", "params"]
-    result = []
-    for part in param.split(' '):
-        if part not in keywords:
-            # end of keyword section
-            return result
-        result.append(part)
-
-    return result
-
-
 def parse_params(s: str) -> list[ParamMeta]:
-    # remove surrounding parens and whitespaces
+    """
+    Takes a string which represents the parameter segment of a function
+    such as `(string s)` and parses it into a list of `ParamMeta`.
+
+    Args:
+        s (str): parameter segment
+
+    Raises:
+        Exception: raised when given parameter string is malformed
+
+    Returns:
+        list[ParamMeta]: list of parameters
+    """
     s = s[1:-1].strip()
     if s == "":
         return []
 
-    # -- How params can look like --
-    # Pattern 1: basic
-    #   Type name[[ = default(Type)]]
-    #   0: Type ; 1: name [[; 2: = ; 3: default(Type)]]
-    #
-    # Pattern 2: additional keywords
-    #   kw Type name
-    #   0: kw ; 1: Type ; 2: name
-    #
-    # Pattern 3: additional keywords combined
-    #   kw kw Type name
-    #   0: kw ; 1: kw ; 2: Type ; 3: name
-    #
-    # Pattern 4: decorators
-    #   [Decorator]Type name[[ = default(Type)]]
-    #   0: [Decorator]Type ; 1: name [[; 2: = ; 3: default(Type)]]
-    #
-    # Pattern 5: decorators with spaces
-    #   [Decorator] Type name[[ = default(Type)]]
-    #   0: [Decorator] ; 1: Type ; 2: name [[; 3: = ; 4: default(Type)]]
-    #
-    # Pattern 6: decorators + keywords
-    #   [Decorator]out|ref Type name
-    #   0: [Decorator]out ; 1: Type ; 2: name
-    #
-    # Pattern 7: decorators with spaces + keywords
-    #   [Decorator] out|ref Type name
-    #   0: [Decorator] ; 1: out ; 2: Type ; 3: name
+    params = s.split(',')
+    pattern = fr"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
 
-    # remove decorators to get rid off decorator patterns
-    s = re.sub(r"\[(.*?)\]\s*", "", s)
-    segments = s.split(", ")
     metas = []
-    for segment in segments:
-        keywords = get_keywords(segment)
-        # remove keywords to get rid off keyword patterns
-        for kw in keywords:
-            segment = re.sub(rf"^({kw})\s*", "", segment)
+    for param in params:
+        param = param.strip()
+        match = re.match(pattern, param)
+        if not match:
+            raise Exception(f"no match for `{param}`\npattern: `{pattern}`")
 
-        parts = segment.split(' ')
-        try:
-            _type = parts[0]
-            name = parts[1]
-            is_optional = False
-            default_value = None
-            if len(parts) > 2:
-                is_optional = True
-                default_value = parts[3]
-        except IndexError:
-            raise Exception(f"Unexpected params:\n" +
-                            f"\t{segments=}\n" +
-                            f"\t{segment=}\n" +
-                            f"\t{parts=}\n" +
-                            f"Param string was: '{s}'")
-
-        metas.append(ParamMeta(
-            _type=_type,
+        kw1 = match[2]
+        kw2 = match[3]
+        type = match[4].strip()
+        name = match[5].strip()
+        has_default = match[6] is not None
+        defv = match[7].strip() if has_default else None
+        meta = ParamMeta(
+            type=type,
             name=name,
-            is_optional=is_optional,
-            default_value=default_value,
-            keywords=keywords
-        ))
+            is_optional=has_default,
+            default_value=defv,
+            keywords=[kw.strip() for kw in [kw1, kw2] if kw is not None]
+        )
+        metas.append(meta)
 
     return metas
 
@@ -122,14 +96,10 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     """
     Gets all functions from a file.
     """
-    valid_name = r"[A-Za-z_][A-Za-z0-9_]*"
-    return_type = rf"({valid_name}\.)*{valid_name}(<[^>]*>)?"
-    fn_name = r"[A-Z][A-Za-z0-9_]*"
     visibility = r"public"
     accessibility = r"static"
-    params = r"\((?:(?!=>)[^;{}])*\)"
 
-    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({return_type})\s+({fn_name})\s*({params})"
+    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({RX_TYPE})\s+({RX_FN_NAME})\s*({RX_FN_ARGS})"
     metas = []
 
     # get all functions
@@ -137,15 +107,14 @@ def collect_functions(code: str) -> list[FunctionMeta]:
 
     for match in matches:
         return_type = match[3]
-        name = match[6]
         # ignore constructors
         if not return_type or return_type == "" or return_type == visibility:
             continue
         try:
-            param_metas = parse_params(match[7])
+            param_metas = parse_params(match[5])
             metas.append(FunctionMeta(
                 return_type=return_type,
-                name=name,
+                name=match[4],
                 params=param_metas
             ))
         except Exception as e:
@@ -192,8 +161,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     log(f"{match.group(4)=}")
 
     if groups_matched != 4:
-        raise Exception(
-            f"<parse_pretty> Unexpected amount of groups: `{groups_matched}`")
+        raise Exception(f"Unexpected amount of groups: `{groups_matched}`")
 
     return f"{match.group(2) or match.group(3)}{match.group(4)}"
 
@@ -207,7 +175,12 @@ def main(args: Namespace):
         file_content = f.read()
 
     if PRESERVE:
-        shutil.copy(file, f"{file}.ugly")
+        path, full_file_name = os.path.split(file)
+        file_name, file_extension = os.path.splitext(full_file_name)
+        shutil.copy(
+            file,
+            f"{os.path.join(path, file_name)}.{PRESERVED_FILE_EXT}"
+        )
 
     for fn in collect_functions(file_content):
         log(f"___: `{fn.name}`")
@@ -223,9 +196,20 @@ def main(args: Namespace):
         f.write(file_content)
 
 
+#
+# SCRIPT START
+#
 argparser = ArgumentParser()
-argparser.add_argument("-f", "--file", required=True,
-                       help="File in which the function names shall be beautified")
-argparser.add_argument("-c", "--controller", required=True,
-                       help="Name of the controller")
+argparser.add_argument(
+    "-f",
+    "--file",
+    required=True,
+    help="File in which the function names shall be beautified"
+)
+argparser.add_argument(
+    "-c",
+    "--controller",
+    required=True,
+    help="Name of the controller"
+)
 main(argparser.parse_args())
