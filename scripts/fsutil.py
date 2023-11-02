@@ -7,7 +7,7 @@ import yaml
 
 def move(path: str, destination: str) -> list[Any] | Any:
     """
-    Moves given file(s) or directory to destination.
+    Moves given file(s) or directory to destination (will overwrite existing destination).
     """
     # Check if destination file already exists
     if os.path.isfile(destination):
