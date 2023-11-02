@@ -1,7 +1,7 @@
 # Simplic.OxS.SDK
 
 Contains tools to generate an SDK as well as the already generated projects.\
-Edit services.yaml to include each of your services that you want to create an api client for.\
+Edit `services.yaml` to include each of your services that you want to create api clients for.\
 Run `generate.sh` to generate the SDK.
 
 > Warning: any folder in the source directory that conflicts with the name of an SDK project that is to be generated will be entirely overridden.
