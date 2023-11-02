@@ -46,6 +46,13 @@ def log(*values: object):
         print(*values)
 
 
+def to_pascal_case(s: str):
+    if len(s) < 2:
+        return s.capitalize()
+
+    return f"{s[0].upper()}{s[1:]}"
+
+
 def parse_params(s: str) -> list[ParamMeta]:
     """
     Takes a string which represents the parameter segment of a function
@@ -141,9 +148,7 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     if len(fn.params) > 0 and fn.params[0].name != "operationIndex" and not fn.params[0].is_optional:
         log(f"{fn=}")
         first_param = fn.params[0].name
-        # make pascal case
-        first_param = f"{first_param[0].upper()}{first_param[1:]}"
-        fn_name = fn.name.replace(first_param, "", 1)
+        fn_name = fn.name.replace(to_pascal_case(first_param), "", 1)
 
     pattern = rf"({controller_name})([A-Za-z]+)?(Get|Post|Put|Delete|Head|Options|Patch)([A-Za-z]*)?"
     match = re.search(pattern, fn_name)
