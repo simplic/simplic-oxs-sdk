@@ -78,7 +78,7 @@ def main(args: Namespace):
     base_proj_file = f"{base_proj_folder}/{args.name}.csproj"
 
     if library != "unityWebRequest":
-        dotnet.create_solution(src_dir, args.name, framework)
+        dotnet.create_solution(src_dir, args.name)
         dotnet.create_project(
             "classlib",
             base_proj_folder,
