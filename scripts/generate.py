@@ -76,7 +76,7 @@ def get_specification(url: str) -> Any:
     return json.loads(response.text)
 
 
-def generate_solution(src_dir: str, name: str, dependencies: list[str]):
+def generate_solution(src_dir: str, name: str, dependencies: list[str], framework: str):
     """
     Generates solution along with base project and its dependencies.
     """
@@ -90,7 +90,7 @@ def generate_solution(src_dir: str, name: str, dependencies: list[str]):
 
     # generate solution & project
     cmd(f"dotnet new sln -n {name} -o {src_dir}")
-    cmd(f"dotnet new classlib -o {base_proj_folder}")
+    cmd(f"dotnet new classlib -o {base_proj_folder} --framework {framework} --langVersion latestMajor")
     fsutil.remove(f"{base_proj_folder}/Class1.cs")
     cmd(f"dotnet sln {sln_file} add {base_proj_file}")
 
@@ -99,7 +99,7 @@ def generate_solution(src_dir: str, name: str, dependencies: list[str]):
         cmd(f"dotnet add {base_proj_file} package {pkg}")
 
 
-def generate_project(src_dir: str, name: str, sln_name):
+def generate_project(src_dir: str, name: str, sln_name: str, framework: str):
     """
     Generates and adds project to solution and adds reference to base project.
     """
@@ -113,7 +113,7 @@ def generate_project(src_dir: str, name: str, sln_name):
     fsutil.remove(proj_folder)
 
     # generate project
-    cmd(f"dotnet new classlib -o {proj_folder}")
+    cmd(f"dotnet new classlib -o {proj_folder} --framework {framework} --langVersion latestMajor")
     fsutil.remove(f"{proj_folder}/Class1.cs")
 
     # add to solution
@@ -123,7 +123,7 @@ def generate_project(src_dir: str, name: str, sln_name):
     cmd(f"dotnet add {proj_file} reference {base_proj_file}")
 
 
-def generate_service(service: str, base_name: str, src_dir: str, url: str, library: str, config_file: str, template_dir: str, api_name_suffix: str):
+def generate_service(service: str, base_name: str, src_dir: str, url: str, library: str, config_file: str, template_dir: str, api_name_suffix: str, framework: str):
     spec_json = get_specification(url)
 
     # need title for project name
@@ -158,7 +158,7 @@ def generate_service(service: str, base_name: str, src_dir: str, url: str, libra
             sdk_proj_folder
         )
     else:
-        generate_project(src_dir, sdk_proj_name, base_name)
+        generate_project(src_dir, sdk_proj_name, base_name, framework)
 
     gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
     base_proj_folder = f"{src_dir}/{base_name}"
@@ -206,9 +206,10 @@ def main(args: Namespace):
     # read config.yaml for specified library
     config_yaml = fsutil.read_yaml(args.config_file)
     library = config_yaml["additionalProperties"]["library"]
+    framework = config_yaml["additionalProperties"]["targetFramework"]
 
     if library != "unityWebRequest":
-        generate_solution(src_dir, args.name, LIB_DEPS[library])
+        generate_solution(src_dir, args.name, LIB_DEPS[library], framework)
 
     cmd(f"npm install {GEN_CLI} -D")
     cmd(f"npx {GEN_CLI} version-manager set 7.0.1")
@@ -232,7 +233,8 @@ def main(args: Namespace):
             library,
             args.config_file,
             args.template_dir,
-            args.api_name_suffix
+            args.api_name_suffix,
+            framework
         )
 
         # move docs to doc dir
