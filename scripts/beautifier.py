@@ -71,7 +71,15 @@ def parse_params(s: str) -> list[ParamMeta]:
     if s == "":
         return []
 
+    # replace , that appear in <..> with % (since % will never appear in args)
+    s = re.sub(r'(<[^>]*),([^>]*>)', r'\1%\2', s)
+
+    # split params
     params = s.split(',')
+    
+    # replace % with ,
+    params = [p.replace('%', ',') for p in params]
+    
     pattern = fr"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
 
     metas = []
