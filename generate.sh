@@ -52,10 +52,11 @@ python "$SCRIPT_GENERATE" \
     --name "$BASE_PROJ_NAME" \
     -c "$CFG_FILE" \
     -t "$TMPL_DIR" \
+    --src-dir "$SRC_DIR" \
     --doc-dir "$DOC_DIR" \
     --api-name-suffix "$API_NAME_SUFFIX" \
-    -i "$SVC_FILE" \
-    || (echo -e "$RED! Error in $SCRIPT_GENERATE !$NC" && exit 1)
+    -i "$SVC_FILE" ||
+    (echo -e "$RED! Error in $SCRIPT_GENERATE !$NC" && exit 1)
 
 echo -e "\n\n$LMAGENTA..$YELLOW done $LMAGENTA$NC\n\n"
 ########################
@@ -82,8 +83,8 @@ for proj_folder in "$SRC_DIR"/*; do
         echo -e "\n$LMAGENTA>>$controller_name..$NC"
         python "$SCRIPT_BEAUTIFIER" \
             -f "$file" \
-            -c "$controller_name" \
-            || (echo -e "$RED! Error in $SCRIPT_BEAUTIFIER !$NC" && exit 1)
+            -c "$controller_name" ||
+            (echo -e "$RED! Error in $SCRIPT_BEAUTIFIER !$NC" && exit 1)
         echo -e "\n$LMAGENTA..done$NC"
     done
 done
@@ -91,4 +92,3 @@ echo -e "\n\n$LMAGENTA..$YELLOW done $LMAGENTA$NC\n\n"
 ########################
 
 echo -e "\n\n$LMAGENTA**$YELLOW All done! $LMAGENTA**$NC\n\n"
-
