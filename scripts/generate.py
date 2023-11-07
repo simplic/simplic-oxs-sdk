@@ -65,7 +65,7 @@ def get_specification(url: str) -> Any:
 
 def main(args: Namespace):
     workspace = args.workspace
-    src_dir = f"{workspace}/src"
+    src_dir = args.src_dir or f"{workspace}/src"
     doc_dir = args.doc_dir or f"{workspace}/docs"
 
     # read config.yaml for specified library
@@ -217,6 +217,13 @@ argparser.add_argument(
     "--template-dir",
     required=True,
     help="Path to the templates"
+)
+
+argparser.add_argument(
+    "-s",
+    "--src-dir",
+    required=False,
+    help="Where the generated projects shall go (Default: src/)"
 )
 
 argparser.add_argument(
