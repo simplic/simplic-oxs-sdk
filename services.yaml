@@ -17,6 +17,7 @@ services:
   - construction-site
   - contact
   - contract
+  - devops
   - document
   - erp
   - geo
