@@ -89,8 +89,9 @@ stages:
               filePath: ./generate.sh
 
           - script: |
-              mkdir __git
-              cd __git
+              set -e
+              mkdir ../__git
+              pushd ../__git
               git clone https://github.com/simplic/simplic-oxs-sdk.git
               git config --global user.name "%git_user%"
               git checkout master
@@ -101,10 +102,10 @@ stages:
 
               git add .
               git commit -m "Generate Projects [skip-ci]"
-              git push https://%git_token%@github.com/simplic/simplic-oxs-sdk.git
+              git push https://%git_token%@github.com/simplic/simplic-oxs-sdk.git HEAD:master
 
-              cd ..
-              rm -rf __git
+              popd
+              rm -rf ../__git
             displayName: "Push generated projects to GitHub repository"
 
           - task: DotNetCoreCLI@2
