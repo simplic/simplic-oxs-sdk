@@ -42,11 +42,8 @@ variables:
   - name: ImageTag
     value: unset
 
-    # Pipeline individual variable
-  - name: imageRepository
-    value: "simplic-oxs-cdn"
   - name: MainCSProjPath
-    value: "./src/Simplic.OxS.CDN.Server"
+    value: "./src/Simplic.OxS.SDK"
 
 resources:
   repositories:
