@@ -95,7 +95,7 @@ stages:
               
               #git clone https://github.com/simplic/simplic-oxs-sdk.git
               #pushd simplic-oxs-sdk
-              #git config --global user.name "%git_user%"
+              git config --global user.name "%git_user%"
               #git checkout master
 
               # copy generated projects for push
