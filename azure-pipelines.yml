@@ -104,7 +104,7 @@ stages:
 
               git add .
               git commit -m "Generate Projects [skip-ci]"
-              git push https://github.com/simplic/simplic-oxs-sdk.git
+              git push https://github.com/simplic/simplic-oxs-sdk.git HEAD:master
               #git push https://%git_token%@github.com/simplic/simplic-oxs-sdk.git HEAD:master
               #popd
               
