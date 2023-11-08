@@ -174,7 +174,8 @@ def main(args: Namespace):
         )
 
         # move docs to doc dir
-        fsutil.move(f"{GEN_OUT}/docs/*", doc_dir)
+        fsutil.create_directory(f"{doc_dir}/{sdk_proj_suffix}")
+        fsutil.move(f"{GEN_OUT}/docs/*", f"{doc_dir}/{sdk_proj_suffix}")
 
     # cleanup
     fsutil.remove(GEN_OUT)
