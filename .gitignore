@@ -362,7 +362,17 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+# nodejs
+package-lock.json
+package.json
+
+# linux packages
+*.deb
+
+# vim
+.vim
+
 pat
 current_version
-.vim
 __ignore.*
+openapitools.json
