@@ -119,11 +119,13 @@ stages:
               projects: "**/*.sln"
 
           - script: |
+              ls
+              git diff
               set -e
               git config --global user.name "$(git_user)"
               git add docs
               git add src
-              git commit -m "Generate Projects [skip-ci]"
+              git commit -m "Generate Projects [skip ci]"
               git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
             displayName: "Push generated projects to GitHub repository"
 
