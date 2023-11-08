@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **PrintToReporting** | **bool** |  | [optional] 
 **UseInDisposition** | **bool** |  | [optional] 
 **Type** | **string** |  | [optional] 
+**IsDiscount** | **bool?** |  | [optional] 
+**ContractNumber** | **string** |  | [optional] 
 **Supplier** | [**Address**](Address.md) |  | [optional] 
 **Article** | [**ArticleModel**](ArticleModel.md) |  | [optional] 
 **LoadingAddress** | [**Address**](Address.md) |  | [optional] 
