@@ -370,7 +370,20 @@ namespace Simplic.OxS.SDK
                         request.RequestFormat = DataFormat.Json;
                     }
 
-                    request.AddJsonBody(options.Data);
+                    //--custom edit: ignore default values
+                    if (request.Method == RestSharp.Method.Patch)
+                    {
+                        var defaultValueHandling = SerializerSettings.DefaultValueHandling;
+                        SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
+                        var json = Newtonsoft.Json.JsonConvert.SerializeObject(options.Data, Formatting.Indented, SerializerSettings);
+                        request.AddJsonBody(json, ContentType.Json);
+                        SerializerSettings.DefaultValueHandling = defaultValueHandling;
+                    }
+                    else
+                    {
+                        request.AddJsonBody(options.Data);
+                    }
+                    //^^custom edit
                 }
             }
 

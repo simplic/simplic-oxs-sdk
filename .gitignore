@@ -376,4 +376,3 @@ pat
 current_version
 __ignore.*
 openapitools.json
-build-infrastructure/
