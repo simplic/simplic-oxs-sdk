@@ -72,7 +72,14 @@ def parse_params(s: str) -> list[ParamMeta]:
         return []
 
     # replace , that appear in <..> with % (since % will never appear in args)
-    s = re.sub(r'(<[^>]*),([^>]*>)', r'\1%\2', s)
+    rx_generic_comma = r"(<[^>]*),([^>]*>)"
+    while re.search(rx_generic_comma, s):
+        s = re.sub(rx_generic_comma, r'\1%\2', s)
+        
+    # replace , that appear in >..> with % (cover multi argument nested generics)
+    rx_generic_comma_multi = r"([>,]\s*),([^>]*>)"
+    while re.search(rx_generic_comma_multi, s):
+        s = re.sub(rx_generic_comma_multi, r'\1%\2', s)
 
     # split params
     params = s.split(',')
