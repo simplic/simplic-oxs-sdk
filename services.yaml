@@ -10,21 +10,25 @@ url:
   prefix: https://dev-oxs.simplic.io/
   suffix: -api/v1/swagger/v1/swagger.json
 
+# List all services/urls here
+# if you want to override the title that is used for the last segment of the project name specify it like this:
+# - x: your-service
+#   title: YourCustomTitle
 services:
-  - article
-  - auth
-  - cdn
-  - construction-site
-  - contact
-  - contract
-  - devops
-  - document
-  - erp
-  - geo
-  - logistics
-  - organization
-  - storage-management
-  - timeslot
-  - telematic
-  - vehicle
-  - vehicle-temperature
+  - x: article
+  - x: auth
+  - x: cdn
+  - x: construction-site
+  - x: contact
+  - x: contract
+  - x: devops
+  - x: document
+  - x: erp
+  - x: geo
+  - x: logistics
+  - x: organization
+  - x: storage-management
+  - x: timeslot
+  - x: telematic
+  - x: vehicle
+  - x: vehicle-temperature

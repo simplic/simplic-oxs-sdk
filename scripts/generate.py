@@ -32,7 +32,7 @@ LIB_DEPS = {
 }
 
 
-def hyphen_to_dotted_capitalized(s: str) -> str:
+def hyphen_to_dcap(s: str) -> str:
     """
     Turns any hyphen-case into Dotted.Capitalized.
     Example: this-is-an-example -> This.Is.An.Example
@@ -95,12 +95,15 @@ def main(args: Namespace):
     use_prefix_and_suffix: bool = services_yaml["url"]["use_prefix_and_suffix"]
     url_prefix: str = services_yaml["url"]["prefix"]
     url_suffix: str = services_yaml["url"]["suffix"]
-    services: list[str] = services_yaml["services"]
+    services: dict = services_yaml["services"]
 
-    for service in services:
-        service = service.strip()
+    for entry in services:
+        service = entry.get('x').strip()
+        custom_title = entry.get('title', None)
         url = f"{url_prefix}{service}{url_suffix}" if use_prefix_and_suffix else service
         print(f">> {service}..")
+        if custom_title is not None:
+            print(f"--> {custom_title}")
         spec_json = get_specification(url)
 
         # need title for project name
@@ -110,7 +113,7 @@ def main(args: Namespace):
         last_part = title.split('.')[-1]
 
         # turn any hyphen-case to Dotted.Capitalized
-        sdk_proj_suffix = hyphen_to_dotted_capitalized(last_part)
+        sdk_proj_suffix = custom_title or hyphen_to_dcap(last_part)
         sdk_proj_name = f"{args.name}.{sdk_proj_suffix}"
         sdk_proj_folder = f"{src_dir}/{sdk_proj_name}"
         sdk_proj_file = f"{src_dir}/{sdk_proj_name}/{sdk_proj_name}.csproj"
