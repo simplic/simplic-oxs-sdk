@@ -124,6 +124,9 @@ stages:
               git add docs/
               git add src/
               git reset build-infrastructure/
+              # merge if necessary
+              git config pull.rebase false || true
+              git pull
               git commit -m "Generate Projects [skip ci]"
               git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
             displayName: "Push generated projects to GitHub repository"
