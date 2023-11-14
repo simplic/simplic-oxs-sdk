@@ -92,9 +92,6 @@ def set_version(proj_file: str, version: str):
 
     # Update the version
     version_element.text = version
-
-    # Save the changes back to the .csproj file
-    # tree.write(proj_file)
     
     # Save the changes back to the .csproj file with proper formatting
     xml_str = ET.tostring(root, encoding='utf-8').decode()
@@ -102,7 +99,9 @@ def set_version(proj_file: str, version: str):
     
     # Remove unnecessary whitespace
     xml_str_formatted = "\n".join(line for line in xml_str_formatted.split("\n") if line.strip())
-
+    
+    # Remove the XML declaration
+    xml_str_formatted = xml_str_formatted.split("\n", 1)[1]
 
     with open(proj_file, "w", encoding="utf-8") as file:
         file.write(xml_str_formatted)
