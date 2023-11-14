@@ -91,6 +91,34 @@ namespace Simplic.OxS.SDK.Logistics
             return false;
         }
         /// <summary>
+        /// Gets or Sets Microseconds
+        /// </summary>
+        [DataMember(Name = "microseconds", EmitDefaultValue = false)]
+        public int Microseconds { get; private set; }
+
+        /// <summary>
+        /// Returns false as Microseconds should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeMicroseconds()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets Nanoseconds
+        /// </summary>
+        [DataMember(Name = "nanoseconds", EmitDefaultValue = false)]
+        public int Nanoseconds { get; private set; }
+
+        /// <summary>
+        /// Returns false as Nanoseconds should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeNanoseconds()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets Minutes
         /// </summary>
         [DataMember(Name = "minutes", EmitDefaultValue = false)]
@@ -161,6 +189,34 @@ namespace Simplic.OxS.SDK.Logistics
             return false;
         }
         /// <summary>
+        /// Gets or Sets TotalMicroseconds
+        /// </summary>
+        [DataMember(Name = "totalMicroseconds", EmitDefaultValue = false)]
+        public double TotalMicroseconds { get; private set; }
+
+        /// <summary>
+        /// Returns false as TotalMicroseconds should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeTotalMicroseconds()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets TotalNanoseconds
+        /// </summary>
+        [DataMember(Name = "totalNanoseconds", EmitDefaultValue = false)]
+        public double TotalNanoseconds { get; private set; }
+
+        /// <summary>
+        /// Returns false as TotalNanoseconds should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeTotalNanoseconds()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets TotalMinutes
         /// </summary>
         [DataMember(Name = "totalMinutes", EmitDefaultValue = false)]
@@ -200,11 +256,15 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Days: ").Append(Days).Append("\n");
             sb.Append("  Hours: ").Append(Hours).Append("\n");
             sb.Append("  Milliseconds: ").Append(Milliseconds).Append("\n");
+            sb.Append("  Microseconds: ").Append(Microseconds).Append("\n");
+            sb.Append("  Nanoseconds: ").Append(Nanoseconds).Append("\n");
             sb.Append("  Minutes: ").Append(Minutes).Append("\n");
             sb.Append("  Seconds: ").Append(Seconds).Append("\n");
             sb.Append("  TotalDays: ").Append(TotalDays).Append("\n");
             sb.Append("  TotalHours: ").Append(TotalHours).Append("\n");
             sb.Append("  TotalMilliseconds: ").Append(TotalMilliseconds).Append("\n");
+            sb.Append("  TotalMicroseconds: ").Append(TotalMicroseconds).Append("\n");
+            sb.Append("  TotalNanoseconds: ").Append(TotalNanoseconds).Append("\n");
             sb.Append("  TotalMinutes: ").Append(TotalMinutes).Append("\n");
             sb.Append("  TotalSeconds: ").Append(TotalSeconds).Append("\n");
             sb.Append("}\n");
@@ -259,6 +319,14 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Milliseconds.Equals(input.Milliseconds)
                 ) && 
                 (
+                    this.Microseconds == input.Microseconds ||
+                    this.Microseconds.Equals(input.Microseconds)
+                ) && 
+                (
+                    this.Nanoseconds == input.Nanoseconds ||
+                    this.Nanoseconds.Equals(input.Nanoseconds)
+                ) && 
+                (
                     this.Minutes == input.Minutes ||
                     this.Minutes.Equals(input.Minutes)
                 ) && 
@@ -277,6 +345,14 @@ namespace Simplic.OxS.SDK.Logistics
                 (
                     this.TotalMilliseconds == input.TotalMilliseconds ||
                     this.TotalMilliseconds.Equals(input.TotalMilliseconds)
+                ) && 
+                (
+                    this.TotalMicroseconds == input.TotalMicroseconds ||
+                    this.TotalMicroseconds.Equals(input.TotalMicroseconds)
+                ) && 
+                (
+                    this.TotalNanoseconds == input.TotalNanoseconds ||
+                    this.TotalNanoseconds.Equals(input.TotalNanoseconds)
                 ) && 
                 (
                     this.TotalMinutes == input.TotalMinutes ||
@@ -301,11 +377,15 @@ namespace Simplic.OxS.SDK.Logistics
                 hashCode = (hashCode * 59) + this.Days.GetHashCode();
                 hashCode = (hashCode * 59) + this.Hours.GetHashCode();
                 hashCode = (hashCode * 59) + this.Milliseconds.GetHashCode();
+                hashCode = (hashCode * 59) + this.Microseconds.GetHashCode();
+                hashCode = (hashCode * 59) + this.Nanoseconds.GetHashCode();
                 hashCode = (hashCode * 59) + this.Minutes.GetHashCode();
                 hashCode = (hashCode * 59) + this.Seconds.GetHashCode();
                 hashCode = (hashCode * 59) + this.TotalDays.GetHashCode();
                 hashCode = (hashCode * 59) + this.TotalHours.GetHashCode();
                 hashCode = (hashCode * 59) + this.TotalMilliseconds.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalMicroseconds.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalNanoseconds.GetHashCode();
                 hashCode = (hashCode * 59) + this.TotalMinutes.GetHashCode();
                 hashCode = (hashCode * 59) + this.TotalSeconds.GetHashCode();
                 return hashCode;
