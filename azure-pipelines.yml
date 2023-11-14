@@ -83,10 +83,15 @@ stages:
           #    sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
           #  displayName: "Install necessary packages"
 
-          - task: Bash@3
+          - script: |
+              COMMIT_MSG=$(git log -1 --pretty=%s)
+              if [[ $COMMIT_MSG == *"[skip gen]"* ]]; then
+                  echo "* Last commit is marked with [skip gen] *"
+                  echo "--> Skipping generation"
+              else
+                  ./generate.sh
+              fi
             displayName: "Generate projects"
-            inputs:
-              filePath: ./generate.sh
 
           - task: DotNetCoreCLI@2
             displayName: "Restore solution"
@@ -106,6 +111,7 @@ stages:
                   branch_name: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
 
           - script: |
+              ls
               #set -e
               git config --global user.name "$(git_user)"
               #git checkout master
