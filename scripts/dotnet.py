@@ -92,14 +92,15 @@ def set_version(proj_file: str, version: str):
 
     # Update the version
     version_element.text = version
-    
+
     # Save the changes back to the .csproj file with proper formatting
     xml_str = ET.tostring(root, encoding='utf-8').decode()
     xml_str_formatted = minidom.parseString(xml_str).toprettyxml(indent="  ")
-    
+
     # Remove unnecessary whitespace
-    xml_str_formatted = "\n".join(line for line in xml_str_formatted.split("\n") if line.strip())
-    
+    xml_str_formatted = "\n".join(
+        line for line in xml_str_formatted.split("\n") if line.strip())
+
     # Remove the XML declaration
     xml_str_formatted = xml_str_formatted.split("\n", 1)[1]
 
@@ -137,8 +138,7 @@ def create_project(type: str, path: str, framework: str, dependencies: list[str]
 
     # add dependencies
     if dependencies is not None:
-        for dep in dependencies:
-            core.cmd(f"dotnet add {proj_file} package {dep}")
+        add_project_deps(proj_file, dependencies)
 
 
 def add_project_to_solution(sln_file: str, proj_file: str):
@@ -149,3 +149,8 @@ def add_project_to_solution(sln_file: str, proj_file: str):
 def add_project_reference(proj_file: str, ref_proj_file: str):
     """Adds assembly reference to project"""
     core.cmd(f"dotnet add {proj_file} reference {ref_proj_file}")
+
+
+def add_project_deps(proj_file, dependencies: list[str]):
+    for dep in dependencies:
+        core.cmd(f"dotnet add {proj_file} package {dep}")
