@@ -53,6 +53,26 @@ def remove(path: str):
         os.remove(path)
 
 
+def wipe_dir(path: str, keep: list[str] | None = None):
+    """
+    Wipes a directory, keeping the directory itself but removing the contents.
+
+    Args:
+        keep (list[str] | None): names of files that shall not be deleted
+    """
+    for file_name in os.listdir(path):
+        file_path = os.path.join(path, file_name)
+
+        # ignore files that shall be kept
+        if keep is not None and file_name in keep:
+            continue
+
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+
+
 def create_directory(path: str, respect_existing: bool = True):
     """
     Creates directory.

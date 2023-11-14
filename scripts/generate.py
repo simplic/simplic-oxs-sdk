@@ -4,6 +4,7 @@ import core
 import dotnet
 import fsutil
 import json
+import os
 import requests
 
 DEBUG = True
@@ -77,15 +78,24 @@ def main(args: Namespace):
     base_proj_folder = f"{src_dir}/{args.name}"
     base_proj_file = f"{base_proj_folder}/{args.name}.csproj"
 
+    # create foundation if not exists yet
     if library != "unityWebRequest":
-        dotnet.create_solution(src_dir, args.name)
-        dotnet.create_project(
-            "classlib",
-            base_proj_folder,
-            framework,
-            LIB_DEPS[library]
-        )
-        dotnet.add_project_to_solution(sln_file, base_proj_file)
+        if not os.path.exists(sln_file):
+            dotnet.create_solution(src_dir, args.name)
+        else:
+            print("* keeping pre existing solution *")
+            
+        if not os.path.exists(base_proj_file):
+            dotnet.create_project(
+                "classlib",
+                base_proj_folder,
+                framework,
+                LIB_DEPS[library]
+            )
+            dotnet.add_project_to_solution(sln_file, base_proj_file)
+        else:
+            print("* keeping pre existing base project *")
+            dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
 
     core.cmd(f"npm install {GEN_CLI} -D", DEBUG)
     core.cmd(f"npx {GEN_CLI} version-manager set 7.0.1", DEBUG)
@@ -120,20 +130,20 @@ def main(args: Namespace):
         sdk_proj_suffix = custom_title or hyphen_to_dcap(last_part)
         sdk_proj_name = f"{args.name}.{sdk_proj_suffix}"
         sdk_proj_folder = f"{src_dir}/{sdk_proj_name}"
-        sdk_proj_file = f"{src_dir}/{sdk_proj_name}/{sdk_proj_name}.csproj"
+        sdk_proj_file = f"{sdk_proj_folder}/{sdk_proj_name}.csproj"
         gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
 
         # generate
         try:
             core.cmd(f"npx {GEN_CLI} generate" +
-                    f" -g csharp" +
-                    f" -c {args.config_file}" +
-                    f" -o {GEN_OUT}" +
-                    f" -t {args.template_dir}" +
-                    f" --api-name-suffix {args.api_name_suffix}" +
-                    f" --package-name {sdk_proj_name}" +
-                    f" --additional-properties=service={service}" +
-                    f" -i {url}", DEBUG)
+                     f" -g csharp" +
+                     f" -c {args.config_file}" +
+                     f" -o {GEN_OUT}" +
+                     f" -t {args.template_dir}" +
+                     f" --api-name-suffix {args.api_name_suffix}" +
+                     f" --package-name {sdk_proj_name}" +
+                     f" --additional-properties=service={service}" +
+                     f" -i {url}", DEBUG)
         except Exception as e:
             print(f"!!! Failed generation for {service}: {e}")
             continue
@@ -147,9 +157,15 @@ def main(args: Namespace):
                 sdk_proj_folder
             )
         else:
-            dotnet.create_project("classlib", sdk_proj_folder, framework)
-            dotnet.add_project_to_solution(sln_file, sdk_proj_file)
-            dotnet.add_project_reference(sdk_proj_file, base_proj_file)
+            if not os.path.exists(sdk_proj_file):
+                dotnet.create_project("classlib", sdk_proj_folder, framework)
+                dotnet.add_project_to_solution(sln_file, sdk_proj_file)
+                dotnet.add_project_reference(sdk_proj_file, base_proj_file)
+            else:
+                print(f"* keeping pre existing project ({sdk_proj_name}) *")
+            
+            # remove code files
+            fsutil.wipe_dir(sdk_proj_folder, keep=[f"{sdk_proj_name}.csproj"])
 
         # move generated files to proper project(s) and update references
         # Boiler Plate
