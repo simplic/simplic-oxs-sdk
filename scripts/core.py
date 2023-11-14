@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 
-def cmd(cmd: str, echo: bool = False):
+def cmd(cmd: str, echo: bool = False, raise_on_error=False):
     """Runs a command.
 
     Args:
@@ -12,7 +12,6 @@ def cmd(cmd: str, echo: bool = False):
     if echo:
         print(f"> {cmd}")
     if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
-        subprocess.run(cmd, shell=True)
+        subprocess.run(cmd, shell=True, check=raise_on_error)
     else:
-        subprocess.run(cmd)
-
+        subprocess.run(cmd, check=raise_on_error)
