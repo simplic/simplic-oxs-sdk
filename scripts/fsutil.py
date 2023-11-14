@@ -20,10 +20,10 @@ def move(path: str, destination: str) -> list[Any] | Any:
 
     if not path.endswith("/*"):
         try:
-            shutil.move(path, destination)
+            return shutil.move(path, destination)
         except shutil.Error:
             # Replace the destination file if it already exists
-            os.replace(path, destination)
+            return os.replace(path, destination)
 
     path = path[:-2]
 
