@@ -38,13 +38,15 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// </summary>
         /// <param name="eMailAddresses">eMailAddresses.</param>
         /// <param name="note">note.</param>
+        /// <param name="attachments">attachments.</param>
         /// <param name="vehicleId">vehicleId.</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
-        public SendReportRequest(List<string> eMailAddresses = default(List<string>), string note = default(string), Guid vehicleId = default(Guid), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime))
+        public SendReportRequest(List<string> eMailAddresses = default(List<string>), string note = default(string), List<ReportAttachment> attachments = default(List<ReportAttachment>), Guid vehicleId = default(Guid), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime))
         {
             this.EMailAddresses = eMailAddresses;
             this.Note = note;
+            this.Attachments = attachments;
             this.VehicleId = vehicleId;
             this.StartDate = startDate;
             this.EndDate = endDate;
@@ -61,6 +63,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// </summary>
         [DataMember(Name = "note", EmitDefaultValue = true)]
         public string Note { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<ReportAttachment> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets VehicleId
@@ -90,6 +98,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             sb.Append("class SendReportRequest {\n");
             sb.Append("  EMailAddresses: ").Append(EMailAddresses).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  VehicleId: ").Append(VehicleId).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
@@ -140,6 +149,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                     this.Note.Equals(input.Note))
                 ) && 
                 (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
                     this.VehicleId == input.VehicleId ||
                     (this.VehicleId != null &&
                     this.VehicleId.Equals(input.VehicleId))
@@ -172,6 +187,10 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 if (this.Note != null)
                 {
                     hashCode = (hashCode * 59) + this.Note.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
                 }
                 if (this.VehicleId != null)
                 {

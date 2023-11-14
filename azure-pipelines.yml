@@ -83,10 +83,15 @@ stages:
           #    sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
           #  displayName: "Install necessary packages"
 
-          - task: Bash@3
+          - script: |
+              COMMIT_MSG=$(git log -1 --pretty=%s)
+              if [[ $COMMIT_MSG == *"[skip gen]"* ]]; then
+                  echo "* Last commit is marked with [skip gen] *"
+                  echo "--> Skipping generation"
+              else
+                  ./generate.sh
+              fi
             displayName: "Generate projects"
-            inputs:
-              filePath: ./generate.sh
 
           - task: DotNetCoreCLI@2
             displayName: "Restore solution"
@@ -105,6 +110,21 @@ stages:
                   git_token: $(git_token)
                   branch_name: ${{ replace(variables['Build.SourceBranch'], 'refs/heads/', '') }}
 
+          - script: |
+              ls
+              #set -e
+              git config --global user.name "$(git_user)"
+              #git checkout master
+              git add docs/
+              git add src/
+              #git reset build-infrastructure/
+              # merge if necessary
+              #git config pull.rebase false || true
+              #git pull origin master
+              git commit -m "Generate Projects [skip ci]"
+              git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
+            displayName: "Push generated projects"
+
           - task: DotNetCoreCLI@2
             displayName: "Build solution"
             inputs:
@@ -117,16 +137,6 @@ stages:
             inputs:
               command: "test"
               projects: "**/*.sln"
-
-          - script: |
-              #set -e
-              git config --global user.name "$(git_user)"
-              git add docs/
-              git add src/
-              git reset build-infrastructure/
-              git commit -m "Generate Projects [skip ci]"
-              git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
-            displayName: "Push generated projects to GitHub repository"
 
           - task: DotNetCoreCLI@2
             displayName: "Create nuget packages"
