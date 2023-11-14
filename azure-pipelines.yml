@@ -121,6 +121,7 @@ stages:
           - script: |
               #set -e
               git config --global user.name "$(git_user)"
+              git checkout master
               git add docs/
               git add src/
               git reset build-infrastructure/
