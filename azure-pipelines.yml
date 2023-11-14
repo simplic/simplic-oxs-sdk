@@ -99,8 +99,7 @@ stages:
               #git config pull.rebase false || true
               #git pull origin master
               git commit -m "Generate Projects [skip ci]"
-              git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
-            displayName: "Push generated projects"
+            displayName: "Commit generated projects"
 
           - task: DotNetCoreCLI@2
             displayName: "Restore solution"
@@ -160,6 +159,10 @@ stages:
               targetType: "inline"
               script: |
                 sudo echo "$(nuget_pwd)" > pat
+
+          - script: |
+              git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
+            displayName: "Push generated projects"
 
           # Extract version number form the actual service and write it to the file
           # with the name `current_version`
