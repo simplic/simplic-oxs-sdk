@@ -170,15 +170,14 @@ def main(args: Namespace):
         # move generated files to proper project(s) and update references
         # Boiler Plate
         fsutil.rec_replace(gen_proj_folder, sdk_proj_name, args.name)
-        if library != "generichost":
-            fsutil.move(
-                f"{gen_proj_folder}/Model/ProblemDetails.cs",
-                base_proj_folder
-            )
-        fsutil.move(
-            f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs",
-            base_proj_folder
-        )
+        problem_details = f"{gen_proj_folder}/Model/ProblemDetails.cs"
+        if library != "generichost" and os.path.exists(problem_details):
+            fsutil.move(problem_details, base_proj_folder)
+            
+        abstract_schema = f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs"
+        if os.path.exists(abstract_schema):
+            fsutil.move(abstract_schema, base_proj_folder)
+            
         fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
 
         # SDK specific
