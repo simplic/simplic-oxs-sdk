@@ -99,8 +99,8 @@ stages:
               #git config pull.rebase false || true
               #git pull origin master
               git commit -m "Generate Projects [skip ci]"
-              #git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
-            displayName: "Commit generated projects"
+              git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
+            displayName: "Push generated projects"
 
           - task: DotNetCoreCLI@2
             displayName: "Restore solution"
