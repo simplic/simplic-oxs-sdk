@@ -104,7 +104,11 @@ def main(args: Namespace):
         print(f">> {service}..")
         if custom_title is not None:
             print(f"--> {custom_title}")
-        spec_json = get_specification(url)
+        try:
+            spec_json = get_specification(url)
+        except Exception:
+            print(f"!!! Failed to get specification for {service} ({url})")
+            continue
 
         # need title for project name
         title = spec_json["info"]["title"]
@@ -120,15 +124,19 @@ def main(args: Namespace):
         gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
 
         # generate
-        core.cmd(f"npx {GEN_CLI} generate" +
-                 f" -g csharp" +
-                 f" -c {args.config_file}" +
-                 f" -o {GEN_OUT}" +
-                 f" -t {args.template_dir}" +
-                 f" --api-name-suffix {args.api_name_suffix}" +
-                 f" --package-name {sdk_proj_name}" +
-                 f" --additional-properties=service={service}" +
-                 f" -i {url}", DEBUG)
+        try:
+            core.cmd(f"npx {GEN_CLI} generate" +
+                    f" -g csharp" +
+                    f" -c {args.config_file}" +
+                    f" -o {GEN_OUT}" +
+                    f" -t {args.template_dir}" +
+                    f" --api-name-suffix {args.api_name_suffix}" +
+                    f" --package-name {sdk_proj_name}" +
+                    f" --additional-properties=service={service}" +
+                    f" -i {url}", DEBUG)
+        except Exception as e:
+            print(f"!!! Failed generation for {service}: {e}")
+            continue
 
         # generate target project in src dir
         if library == "unityWebRequest":
