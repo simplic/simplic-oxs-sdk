@@ -84,7 +84,7 @@ def main(args: Namespace):
             dotnet.create_solution(src_dir, args.name)
         else:
             print("* keeping pre existing solution *")
-            
+
         if not os.path.exists(base_proj_file):
             dotnet.create_project(
                 "classlib",
@@ -143,7 +143,7 @@ def main(args: Namespace):
                      f" --api-name-suffix {args.api_name_suffix}" +
                      f" --package-name {sdk_proj_name}" +
                      f" --additional-properties=service={service}" +
-                     f" -i {url}", DEBUG)
+                     f" -i {url}", DEBUG, raise_on_error=True)
         except Exception as e:
             print(f"!!! Failed generation for {service}: {e}")
             continue
@@ -163,7 +163,7 @@ def main(args: Namespace):
                 dotnet.add_project_reference(sdk_proj_file, base_proj_file)
             else:
                 print(f"* keeping pre existing project ({sdk_proj_name}) *")
-            
+
             # remove code files
             fsutil.wipe_dir(sdk_proj_folder, keep=[f"{sdk_proj_name}.csproj"])
 
@@ -173,11 +173,11 @@ def main(args: Namespace):
         problem_details = f"{gen_proj_folder}/Model/ProblemDetails.cs"
         if library != "generichost" and os.path.exists(problem_details):
             fsutil.move(problem_details, base_proj_folder)
-            
+
         abstract_schema = f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs"
         if os.path.exists(abstract_schema):
             fsutil.move(abstract_schema, base_proj_folder)
-            
+
         fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
 
         # SDK specific
