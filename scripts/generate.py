@@ -1,4 +1,6 @@
 from argparse import ArgumentParser, Namespace
+from os.path import isfile
+from re import T
 from typing import Any
 import core
 import dotnet
@@ -9,6 +11,9 @@ import requests
 from urllib.parse import urlparse
 
 DEBUG = True
+
+# Used to check whether new specification matches old and skips if that's the case
+SAVE_SPECIFICATIONS = True
 
 GEN_CLI = "@openapitools/openapi-generator-cli"
 GEN_OUT = "openapi-out"
@@ -153,6 +158,24 @@ def main(args: Namespace):
         sdk_proj_file = f"{sdk_proj_folder}/{sdk_proj_name}.csproj"
         gen_proj_folder = f"{GEN_OUT}/src/{sdk_proj_name}"
 
+        sdk_proj_specification = f"{sdk_proj_folder}/{sdk_proj_name}.json"
+        if SAVE_SPECIFICATIONS:
+            # check if new specification matches old -> skip if true
+            if os.path.isfile(sdk_proj_specification):
+                with open(sdk_proj_specification, 'r') as f:
+                    if os.path.getsize(sdk_proj_specification) > 0:
+                        print(f"* using old specification for comparison *")
+                        old_spec_json = json.load(f)
+                        if json.dumps(spec_json, sort_keys=True) == json.dumps(old_spec_json, sort_keys=True):
+                            print(f"* specification did not change *")
+                            print(f"-> skipping generation ({sdk_proj_name})")
+                            continue
+
+            # save new specification
+            with open(sdk_proj_specification, 'w') as f:
+                print(f"* saving new specification.. *")
+                json.dump(spec_json, f)
+
         # generate
         try:
             core.cmd(f"npx {GEN_CLI} generate" +
@@ -185,7 +208,13 @@ def main(args: Namespace):
                 print(f"* keeping pre existing project ({sdk_proj_name}) *")
 
             # remove code files
-            fsutil.wipe_dir(sdk_proj_folder, keep=[f"{sdk_proj_name}.csproj"])
+            fsutil.wipe_dir(
+                sdk_proj_folder,
+                keep=[
+                    f"{sdk_proj_name}.csproj",
+                    f"{sdk_proj_name}.json"
+                ]
+            )
 
         # move generated files to proper project(s) and update references
         # Boiler Plate
