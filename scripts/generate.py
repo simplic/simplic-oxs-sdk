@@ -174,7 +174,7 @@ def main(args: Namespace):
             # save new specification
             with open(sdk_proj_specification, 'w') as f:
                 print(f"* saving new specification.. *")
-                json.dump(spec_json, f)
+                json.dump(spec_json, f, indent=4)
 
         # generate
         try:
