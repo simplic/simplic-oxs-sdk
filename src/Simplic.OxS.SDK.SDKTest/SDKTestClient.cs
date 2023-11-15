@@ -94,14 +94,14 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetExampleResponse</returns>
-        public GetExampleResponse GetExample(Guid id, int operationIndex = 0)
+        public GetExampleResponse SDKTestGetExampleSGet(string s, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetExample(id, operationIndex);
+                return _internalClient.SDKTestGetExampleSGet(s, operationIndex);
             }
             catch (ApiException e)
             {
@@ -113,14 +113,14 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetExampleResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> GetExampleWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> SDKTestGetExampleSGetWithHttpInfo(string s, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetExampleWithHttpInfo(id, operationIndex);
+                return _internalClient.SDKTestGetExampleSGetWithHttpInfo(s, operationIndex);
             }
             catch (ApiException e)
             {
@@ -132,15 +132,15 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetExampleResponse</returns>
-        public System.Threading.Tasks.Task<GetExampleResponse> GetExampleAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<GetExampleResponse> SDKTestGetExampleSGetAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetExampleAsync(id, operationIndex, cancellationToken);
+                return _internalClient.SDKTestGetExampleSGetAsync(s, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -152,15 +152,92 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> GetExampleWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> SDKTestGetExampleSGetWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetExampleWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.SDKTestGetExampleSGetWithHttpInfoAsync(s, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetExampleResponse</returns>
+        public GetExampleResponse SDKTestPostExampleSPost(string s, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SDKTestPostExampleSPost(s, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetExampleResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> SDKTestPostExampleSPostWithHttpInfo(string s, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.SDKTestPostExampleSPostWithHttpInfo(s, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetExampleResponse</returns>
+        public System.Threading.Tasks.Task<GetExampleResponse> SDKTestPostExampleSPostAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SDKTestPostExampleSPostAsync(s, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> SDKTestPostExampleSPostWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SDKTestPostExampleSPostWithHttpInfoAsync(s, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -182,10 +259,10 @@ namespace Simplic.OxS.SDK.SDKTest
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetExampleResponse</returns>
-        GetExampleResponse GetExample(Guid id, int operationIndex = 0);
+        GetExampleResponse SDKTestGetExampleSGet(string s, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -194,10 +271,30 @@ namespace Simplic.OxS.SDK.SDKTest
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetExampleResponse</returns>
-        ApiResponse<GetExampleResponse> GetExampleWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<GetExampleResponse> SDKTestGetExampleSGetWithHttpInfo(string s, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetExampleResponse</returns>
+        GetExampleResponse SDKTestPostExampleSPost(string s, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetExampleResponse</returns>
+        ApiResponse<GetExampleResponse> SDKTestPostExampleSPostWithHttpInfo(string s, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -214,11 +311,11 @@ namespace Simplic.OxS.SDK.SDKTest
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetExampleResponse</returns>
-        System.Threading.Tasks.Task<GetExampleResponse> GetExampleAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetExampleResponse> SDKTestGetExampleSGetAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -227,11 +324,36 @@ namespace Simplic.OxS.SDK.SDKTest
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetExampleResponse>> GetExampleWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetExampleResponse>> SDKTestGetExampleSGetWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetExampleResponse</returns>
+        System.Threading.Tasks.Task<GetExampleResponse> SDKTestPostExampleSPostAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetExampleResponse>> SDKTestPostExampleSPostWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -356,12 +478,12 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetExampleResponse</returns>
-        public GetExampleResponse GetExample(Guid id, int operationIndex = 0)
+        public GetExampleResponse SDKTestGetExampleSGet(string s, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = GetExampleWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = SDKTestGetExampleSGetWithHttpInfo(s);
             return localVarResponse.Data;
         }
 
@@ -369,11 +491,17 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetExampleResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> GetExampleWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> SDKTestGetExampleSGetWithHttpInfo(string s, int operationIndex = 0)
         {
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 's' when calling SDKTestClient->SDKTestGetExampleSGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -398,9 +526,9 @@ namespace Simplic.OxS.SDK.SDKTest
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("s", Simplic.OxS.SDK.ClientUtils.ParameterToString(s)); // path parameter
 
-            localVarRequestOptions.Operation = "SDKTestClient.GetExample";
+            localVarRequestOptions.Operation = "SDKTestClient.SDKTestGetExampleSGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (i-api-key) required
@@ -415,10 +543,10 @@ namespace Simplic.OxS.SDK.SDKTest
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetExampleResponse>("/SDKTest/get-example/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetExampleResponse>("/SDKTest/get-example/{s}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetExample", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SDKTestGetExampleSGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -432,13 +560,13 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetExampleResponse</returns>
-        public async System.Threading.Tasks.Task<GetExampleResponse> GetExampleAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetExampleResponse> SDKTestGetExampleSGetAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = await GetExampleWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = await SDKTestGetExampleSGetWithHttpInfoAsync(s, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -446,12 +574,18 @@ namespace Simplic.OxS.SDK.SDKTest
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="s"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> GetExampleWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> SDKTestGetExampleSGetWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 's' when calling SDKTestClient->SDKTestGetExampleSGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -477,9 +611,9 @@ namespace Simplic.OxS.SDK.SDKTest
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("s", Simplic.OxS.SDK.ClientUtils.ParameterToString(s)); // path parameter
 
-            localVarRequestOptions.Operation = "SDKTestClient.GetExample";
+            localVarRequestOptions.Operation = "SDKTestClient.SDKTestGetExampleSGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (i-api-key) required
@@ -494,11 +628,179 @@ namespace Simplic.OxS.SDK.SDKTest
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetExampleResponse>("/SDKTest/get-example/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetExampleResponse>("/SDKTest/get-example/{s}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetExample", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SDKTestGetExampleSGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetExampleResponse</returns>
+        public GetExampleResponse SDKTestPostExampleSPost(string s, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = SDKTestPostExampleSPostWithHttpInfo(s);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetExampleResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetExampleResponse> SDKTestPostExampleSPostWithHttpInfo(string s, int operationIndex = 0)
+        {
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 's' when calling SDKTestClient->SDKTestPostExampleSPost");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s", Simplic.OxS.SDK.ClientUtils.ParameterToString(s)); // path parameter
+
+            localVarRequestOptions.Operation = "SDKTestClient.SDKTestPostExampleSPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (i-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<GetExampleResponse>("/SDKTest/post-example/{s}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SDKTestPostExampleSPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetExampleResponse</returns>
+        public async System.Threading.Tasks.Task<GetExampleResponse> SDKTestPostExampleSPostAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<GetExampleResponse> localVarResponse = await SDKTestPostExampleSPostWithHttpInfoAsync(s, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetExampleResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetExampleResponse>> SDKTestPostExampleSPostWithHttpInfoAsync(string s, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 's' when calling SDKTestClient->SDKTestPostExampleSPost");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s", Simplic.OxS.SDK.ClientUtils.ParameterToString(s)); // path parameter
+
+            localVarRequestOptions.Operation = "SDKTestClient.SDKTestPostExampleSPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (i-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<GetExampleResponse>("/SDKTest/post-example/{s}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SDKTestPostExampleSPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

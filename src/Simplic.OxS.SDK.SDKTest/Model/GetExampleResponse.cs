@@ -36,19 +36,19 @@ namespace Simplic.OxS.SDK.SDKTest
         /// <summary>
         /// Initializes a new instance of the <see cref="GetExampleResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="s">s.</param>
         /// <param name="dateTime">dateTime.</param>
-        public GetExampleResponse(Guid id = default(Guid), DateTime dateTime = default(DateTime))
+        public GetExampleResponse(string s = default(string), DateTime dateTime = default(DateTime))
         {
-            this.Id = id;
+            this.S = s;
             this.DateTime = dateTime;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets S
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "s", EmitDefaultValue = true)]
+        public string S { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTime
@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.SDKTest
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetExampleResponse {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  S: ").Append(S).Append("\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,9 +102,9 @@ namespace Simplic.OxS.SDK.SDKTest
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.S == input.S ||
+                    (this.S != null &&
+                    this.S.Equals(input.S))
                 ) && 
                 (
                     this.DateTime == input.DateTime ||
@@ -122,9 +122,9 @@ namespace Simplic.OxS.SDK.SDKTest
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.S != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.S.GetHashCode();
                 }
                 if (this.DateTime != null)
                 {
