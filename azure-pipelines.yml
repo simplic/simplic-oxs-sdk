@@ -92,6 +92,7 @@ stages:
                   ./generate.sh
               fi
             displayName: "Generate projects"
+            condition: ne(variables['Build.Reason'], 'PullRequest')
 
           - task: DotNetCoreCLI@2
             displayName: "Restore solution"
@@ -124,6 +125,7 @@ stages:
               git commit -m "Generate Projects [skip ci]"
               git push https://$(git_token)@github.com/simplic/simplic-oxs-sdk.git HEAD:master
             displayName: "Push generated projects"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 
           - task: DotNetCoreCLI@2
             displayName: "Build solution"
