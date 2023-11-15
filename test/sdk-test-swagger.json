@@ -10,17 +10,57 @@
     }
   ],
   "paths": {
-    "/SDKTest/get-example/{id}": {
+    "/SDKTest/get-example/{s}": {
       "get": {
-        "tags": ["SDKTest"],
+        "tags": [
+          "SDKTest"
+        ],
         "parameters": [
           {
-            "name": "id",
+            "name": "s",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetExampleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetExampleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetExampleResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SDKTest/post-example/{s}": {
+      "post": {
+        "tags": [
+          "SDKTest"
+        ],
+        "parameters": [
+          {
+            "name": "s",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -54,9 +94,9 @@
       "GetExampleResponse": {
         "type": "object",
         "properties": {
-          "id": {
+          "s": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "dateTime": {
             "type": "string",
@@ -83,8 +123,8 @@
   },
   "security": [
     {
-      "Bearer": [],
-      "i-api-key": []
+      "Bearer": [ ],
+      "i-api-key": [ ]
     }
   ]
 }
