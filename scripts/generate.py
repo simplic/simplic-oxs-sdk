@@ -172,6 +172,7 @@ def main(args: Namespace):
                             continue
 
             # save new specification
+            os.makedirs(sdk_proj_folder, exist_ok=True)
             with open(sdk_proj_specification, 'w') as f:
                 print(f"* saving new specification.. *")
                 json.dump(spec_json, f, indent=4)
@@ -228,6 +229,10 @@ def main(args: Namespace):
             fsutil.move(abstract_schema, base_proj_folder)
 
         fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
+
+        # remove service name from boiler plate comments
+        print("* cleaning boiler plate.. *")
+        fsutil.rec_replace(base_proj_folder, title, "", ".cs")
 
         # SDK specific
         # insert using for base project and fix namespace

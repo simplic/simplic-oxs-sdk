@@ -123,7 +123,6 @@ namespace {{packageName}}
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("{{httpUserAgent}}{{^httpUserAgent}}OpenAPI-Generator/{{packageVersion}}/csharp{{/httpUserAgent}}");
-            //BasePath = "{{{basePath}}}";
             DefaultHeaders = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
             ApiKey = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
             ApiKeyPrefix = new {{^net35}}Concurrent{{/net35}}Dictionary<string, string>();
@@ -134,7 +133,6 @@ namespace {{packageName}}
             {{/-first}}
                 {
                     new Dictionary<string, object> {
-                        //{"url", "{{{url}}}"},
                         {"description", "{{{description}}}{{^description}}No description provided{{/description}}"},
                         {{#variables}}
                         {{#-first}}
