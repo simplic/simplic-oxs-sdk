@@ -11,9 +11,6 @@ url:
   suffix: -api/v1/swagger/v1/swagger.json
 
 # List all services/urls here
-# if you want to override the title that is used for the last segment of the project name specify it like this:
-# - x: your-service
-#   title: YourCustomTitle
 services:
   - x: article
   - x: auth
@@ -32,3 +29,13 @@ services:
   - x: telematic
   - x: vehicle
   - x: vehicle-temperature
+  - x: ./test/sdk-test-swagger.json
+    is_url: true
+# if you want to override the title that is used for the last segment of the project name specify it like this:
+# - x: your-service
+#   title: YourCustomTitle
+#
+# when using prefix and suffix pattern, you can also have specific entries be interpreted as whole url's by specifying it like this:
+# - x: your-host.com/your-service/your-specification.json
+#   is_url: true
+# (supports paths as well)

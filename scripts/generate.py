@@ -6,6 +6,7 @@ import fsutil
 import json
 import os
 import requests
+from urllib.parse import urlparse
 
 DEBUG = True
 
@@ -54,14 +55,28 @@ def hyphen_to_dcap(s: str) -> str:
     return '.'.join(sections)
 
 
-def get_specification(url: str) -> Any:
+def get_specification(url_or_path: str) -> Any:
     """
     Gets the api specification and returns it as a json.
     """
-    response = requests.get(url)
+    if not is_url(url_or_path):
+        # interpret as path
+        with open(url_or_path, 'r') as f:
+            return json.load(f)
+
+    # interpret as url
+    response = requests.get(url_or_path)
     response.raise_for_status()
 
     return json.loads(response.text)
+
+
+def is_url(s: str) -> bool:
+    try:
+        result = urlparse(s)
+        return all([result.scheme, result.netloc])
+    except ValueError:
+        return False
 
 
 def main(args: Namespace):
@@ -108,9 +123,14 @@ def main(args: Namespace):
     services: dict = services_yaml["services"]
 
     for entry in services:
-        service = entry.get('x').strip()
-        custom_title = entry.get('title', None)
-        url = f"{url_prefix}{service}{url_suffix}" if use_prefix_and_suffix else service
+        service = entry.get("x").strip()
+        custom_title = entry.get("title", None)
+        is_url = entry.get("is_url", False)
+        if not use_prefix_and_suffix or is_url:
+            url = service
+        else:
+            url = f"{url_prefix}{service}{url_suffix}"
+
         print(f">> {service}..")
         if custom_title is not None:
             print(f"--> {custom_title}")
