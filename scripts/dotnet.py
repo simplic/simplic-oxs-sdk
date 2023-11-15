@@ -121,7 +121,7 @@ def create_solution(src_dir: str, name: str):
     core.cmd(f"dotnet new sln -n {name} -o {src_dir}")
 
 
-def create_project(type: str, path: str, framework: str, dependencies: list[str] | None = None, version: str = "1.0.0"):
+def create_project(type: str, path: str, framework: str, dependencies: list[str] | None = None, version: str = "1.0.0.0"):
     proj_name = os.path.basename(path)
     proj_file = os.path.join(path, f"{proj_name}.csproj")
 
