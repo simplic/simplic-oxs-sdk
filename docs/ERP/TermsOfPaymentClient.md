@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TermsOfPaymentIdDelete**](TermsOfPaymentClient.md#termsofpaymentiddelete) | **DELETE** /TermsOfPayment/{id} |  |
-| [**TermsOfPaymentIdGet**](TermsOfPaymentClient.md#termsofpaymentidget) | **GET** /TermsOfPayment/{id} |  |
-| [**TermsOfPaymentIdPatch**](TermsOfPaymentClient.md#termsofpaymentidpatch) | **PATCH** /TermsOfPayment/{id} |  |
-| [**TermsOfPaymentPost**](TermsOfPaymentClient.md#termsofpaymentpost) | **POST** /TermsOfPayment |  |
+| [**Delete**](TermsOfPaymentClient.md#termsofpaymentiddelete) | **DELETE** /TermsOfPayment/{id} |  |
+| [**Get**](TermsOfPaymentClient.md#termsofpaymentidget) | **GET** /TermsOfPayment/{id} |  |
+| [**Patch**](TermsOfPaymentClient.md#termsofpaymentidpatch) | **PATCH** /TermsOfPayment/{id} |  |
+| [**Post**](TermsOfPaymentClient.md#termsofpaymentpost) | **POST** /TermsOfPayment |  |
 
 <a id="termsofpaymentiddelete"></a>
-# **TermsOfPaymentIdDelete**
-> void TermsOfPaymentIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TermsOfPaymentIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.TermsOfPaymentIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TermsOfPaymentClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the TermsOfPaymentIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TermsOfPaymentIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TermsOfPaymentClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="termsofpaymentidget"></a>
-# **TermsOfPaymentIdGet**
-> TermsOfPaymentModel TermsOfPaymentIdGet (Guid id)
+# **Get**
+> TermsOfPaymentModel Get (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TermsOfPaymentIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                TermsOfPaymentModel result = apiInstance.TermsOfPaymentIdGet(id);
+                TermsOfPaymentModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdGet: " + e.Message);
+                Debug.Print("Exception when calling TermsOfPaymentClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the TermsOfPaymentIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TermsOfPaymentModel> response = apiInstance.TermsOfPaymentIdGetWithHttpInfo(id);
+    ApiResponse<TermsOfPaymentModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TermsOfPaymentClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="termsofpaymentidpatch"></a>
-# **TermsOfPaymentIdPatch**
-> TermsOfPaymentModel TermsOfPaymentIdPatch (Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = null)
+# **Patch**
+> TermsOfPaymentModel Patch (Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TermsOfPaymentIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -224,12 +224,12 @@ namespace Example
 
             try
             {
-                TermsOfPaymentModel result = apiInstance.TermsOfPaymentIdPatch(id, updateTermsOfPaymentRequest);
+                TermsOfPaymentModel result = apiInstance.Patch(id, updateTermsOfPaymentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdPatch: " + e.Message);
+                Debug.Print("Exception when calling TermsOfPaymentClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +238,20 @@ namespace Example
 }
 ```
 
-#### Using the TermsOfPaymentIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TermsOfPaymentModel> response = apiInstance.TermsOfPaymentIdPatchWithHttpInfo(id, updateTermsOfPaymentRequest);
+    ApiResponse<TermsOfPaymentModel> response = apiInstance.PatchWithHttpInfo(id, updateTermsOfPaymentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TermsOfPaymentClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -288,8 +288,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="termsofpaymentpost"></a>
-# **TermsOfPaymentPost**
-> TermsOfPaymentModel TermsOfPaymentPost (TermsOfPaymentRequest? termsOfPaymentRequest = null)
+# **Post**
+> TermsOfPaymentModel Post (TermsOfPaymentRequest? termsOfPaymentRequest = null)
 
 
 
@@ -303,7 +303,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TermsOfPaymentPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -319,12 +319,12 @@ namespace Example
 
             try
             {
-                TermsOfPaymentModel result = apiInstance.TermsOfPaymentPost(termsOfPaymentRequest);
+                TermsOfPaymentModel result = apiInstance.Post(termsOfPaymentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentPost: " + e.Message);
+                Debug.Print("Exception when calling TermsOfPaymentClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -333,20 +333,20 @@ namespace Example
 }
 ```
 
-#### Using the TermsOfPaymentPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TermsOfPaymentModel> response = apiInstance.TermsOfPaymentPostWithHttpInfo(termsOfPaymentRequest);
+    ApiResponse<TermsOfPaymentModel> response = apiInstance.PostWithHttpInfo(termsOfPaymentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TermsOfPaymentClient.TermsOfPaymentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TermsOfPaymentClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

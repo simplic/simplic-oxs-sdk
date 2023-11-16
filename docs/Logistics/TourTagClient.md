@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TourTagGet**](TourTagClient.md#tourtagget) | **GET** /TourTag | Retrives all tour tags. |
-| [**TourTagIdDelete**](TourTagClient.md#tourtagiddelete) | **DELETE** /TourTag/{id} |  |
-| [**TourTagIdGet**](TourTagClient.md#tourtagidget) | **GET** /TourTag/{id} | Retrives the tour tag with the given id. |
-| [**TourTagIdPatch**](TourTagClient.md#tourtagidpatch) | **PATCH** /TourTag/{id} |  |
-| [**TourTagPost**](TourTagClient.md#tourtagpost) | **POST** /TourTag |  |
+| [**Get**](TourTagClient.md#tourtagget) | **GET** /TourTag | Retrives all tour tags. |
+| [**Delete**](TourTagClient.md#tourtagiddelete) | **DELETE** /TourTag/{id} |  |
+| [**Get**](TourTagClient.md#tourtagidget) | **GET** /TourTag/{id} | Retrives the tour tag with the given id. |
+| [**Patch**](TourTagClient.md#tourtagidpatch) | **PATCH** /TourTag/{id} |  |
+| [**Post**](TourTagClient.md#tourtagpost) | **POST** /TourTag |  |
 
 <a id="tourtagget"></a>
-# **TourTagGet**
-> List&lt;TourTagModel&gt; TourTagGet ()
+# **Get**
+> List&lt;TourTagModel&gt; Get ()
 
 Retrives all tour tags.
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourTagGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
             try
             {
                 // Retrives all tour tags.
-                List<TourTagModel> result = apiInstance.TourTagGet();
+                List<TourTagModel> result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourTagClient.TourTagGet: " + e.Message);
+                Debug.Print("Exception when calling TourTagClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,21 +56,21 @@ namespace Example
 }
 ```
 
-#### Using the TourTagGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all tour tags.
-    ApiResponse<List<TourTagModel>> response = apiInstance.TourTagGetWithHttpInfo();
+    ApiResponse<List<TourTagModel>> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourTagClient.TourTagGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourTagClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,8 +101,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourtagiddelete"></a>
-# **TourTagIdDelete**
-> Object TourTagIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 
 
@@ -116,7 +116,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourTagIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
 
             try
             {
-                Object result = apiInstance.TourTagIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourTagClient.TourTagIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TourTagClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,20 +146,20 @@ namespace Example
 }
 ```
 
-#### Using the TourTagIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.TourTagIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourTagClient.TourTagIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourTagClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourtagidget"></a>
-# **TourTagIdGet**
-> TourTagModel TourTagIdGet (Guid id)
+# **Get**
+> TourTagModel Get (Guid id)
 
 Retrives the tour tag with the given id.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourTagIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -227,12 +227,12 @@ namespace Example
             try
             {
                 // Retrives the tour tag with the given id.
-                TourTagModel result = apiInstance.TourTagIdGet(id);
+                TourTagModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourTagClient.TourTagIdGet: " + e.Message);
+                Debug.Print("Exception when calling TourTagClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -241,21 +241,21 @@ namespace Example
 }
 ```
 
-#### Using the TourTagIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the tour tag with the given id.
-    ApiResponse<TourTagModel> response = apiInstance.TourTagIdGetWithHttpInfo(id);
+    ApiResponse<TourTagModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourTagClient.TourTagIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourTagClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -290,8 +290,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourtagidpatch"></a>
-# **TourTagIdPatch**
-> TourTagModel TourTagIdPatch (Guid id, PatchTourTagRequest? patchTourTagRequest = null)
+# **Patch**
+> TourTagModel Patch (Guid id, PatchTourTagRequest? patchTourTagRequest = null)
 
 
 
@@ -305,7 +305,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourTagIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -322,12 +322,12 @@ namespace Example
 
             try
             {
-                TourTagModel result = apiInstance.TourTagIdPatch(id, patchTourTagRequest);
+                TourTagModel result = apiInstance.Patch(id, patchTourTagRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourTagClient.TourTagIdPatch: " + e.Message);
+                Debug.Print("Exception when calling TourTagClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -336,20 +336,20 @@ namespace Example
 }
 ```
 
-#### Using the TourTagIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TourTagModel> response = apiInstance.TourTagIdPatchWithHttpInfo(id, patchTourTagRequest);
+    ApiResponse<TourTagModel> response = apiInstance.PatchWithHttpInfo(id, patchTourTagRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourTagClient.TourTagIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourTagClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -386,8 +386,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourtagpost"></a>
-# **TourTagPost**
-> TourTagModel TourTagPost (CreateTourTagRequest? createTourTagRequest = null)
+# **Post**
+> TourTagModel Post (CreateTourTagRequest? createTourTagRequest = null)
 
 
 
@@ -401,7 +401,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourTagPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -417,12 +417,12 @@ namespace Example
 
             try
             {
-                TourTagModel result = apiInstance.TourTagPost(createTourTagRequest);
+                TourTagModel result = apiInstance.Post(createTourTagRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourTagClient.TourTagPost: " + e.Message);
+                Debug.Print("Exception when calling TourTagClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -431,20 +431,20 @@ namespace Example
 }
 ```
 
-#### Using the TourTagPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TourTagModel> response = apiInstance.TourTagPostWithHttpInfo(createTourTagRequest);
+    ApiResponse<TourTagModel> response = apiInstance.PostWithHttpInfo(createTourTagRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourTagClient.TourTagPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourTagClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

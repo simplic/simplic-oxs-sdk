@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TransactionConvertTransactionsPut**](TransactionClient.md#transactionconverttransactionsput) | **PUT** /Transaction/convert-transactions |  |
-| [**TransactionGetByBarcodeGet**](TransactionClient.md#transactiongetbybarcodeget) | **GET** /Transaction/get-by-barcode |  |
-| [**TransactionGetByDateGet**](TransactionClient.md#transactiongetbydateget) | **GET** /Transaction/get-by-date |  |
-| [**TransactionGetByNumberGet**](TransactionClient.md#transactiongetbynumberget) | **GET** /Transaction/get-by-number |  |
-| [**TransactionIdDelete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} |  |
-| [**TransactionIdGet**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} |  |
-| [**TransactionIdPut**](TransactionClient.md#transactionidput) | **PUT** /Transaction/{id} |  |
-| [**TransactionPost**](TransactionClient.md#transactionpost) | **POST** /Transaction |  |
+| [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionsput) | **PUT** /Transaction/convert-transactions |  |
+| [**GetByBarcode**](TransactionClient.md#transactiongetbybarcodeget) | **GET** /Transaction/get-by-barcode |  |
+| [**GetByDate**](TransactionClient.md#transactiongetbydateget) | **GET** /Transaction/get-by-date |  |
+| [**GetByNumber**](TransactionClient.md#transactiongetbynumberget) | **GET** /Transaction/get-by-number |  |
+| [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} |  |
+| [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} |  |
+| [**Put**](TransactionClient.md#transactionidput) | **PUT** /Transaction/{id} |  |
+| [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction |  |
 
 <a id="transactionconverttransactionsput"></a>
-# **TransactionConvertTransactionsPut**
-> ConvertResult TransactionConvertTransactionsPut (ConvertTransactionRequest? convertTransactionRequest = null)
+# **ConvertTransactions**
+> ConvertResult ConvertTransactions (ConvertTransactionRequest? convertTransactionRequest = null)
 
 
 
@@ -29,7 +29,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionConvertTransactionsPutExample
+    public class ConvertTransactionsExample
     {
         public static void Main()
         {
@@ -45,12 +45,12 @@ namespace Example
 
             try
             {
-                ConvertResult result = apiInstance.TransactionConvertTransactionsPut(convertTransactionRequest);
+                ConvertResult result = apiInstance.ConvertTransactions(convertTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionConvertTransactionsPut: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.ConvertTransactions: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +59,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionConvertTransactionsPutWithHttpInfo variant
+#### Using the ConvertTransactionsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConvertResult> response = apiInstance.TransactionConvertTransactionsPutWithHttpInfo(convertTransactionRequest);
+    ApiResponse<ConvertResult> response = apiInstance.ConvertTransactionsWithHttpInfo(convertTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionConvertTransactionsPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.ConvertTransactionsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -108,8 +108,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiongetbybarcodeget"></a>
-# **TransactionGetByBarcodeGet**
-> TransactionModel TransactionGetByBarcodeGet (string? barcode = null)
+# **GetByBarcode**
+> TransactionModel GetByBarcode (string? barcode = null)
 
 
 
@@ -123,7 +123,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionGetByBarcodeGetExample
+    public class GetByBarcodeExample
     {
         public static void Main()
         {
@@ -139,12 +139,12 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.TransactionGetByBarcodeGet(barcode);
+                TransactionModel result = apiInstance.GetByBarcode(barcode);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionGetByBarcodeGet: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.GetByBarcode: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -153,20 +153,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionGetByBarcodeGetWithHttpInfo variant
+#### Using the GetByBarcodeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.TransactionGetByBarcodeGetWithHttpInfo(barcode);
+    ApiResponse<TransactionModel> response = apiInstance.GetByBarcodeWithHttpInfo(barcode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionGetByBarcodeGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.GetByBarcodeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -201,8 +201,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiongetbydateget"></a>
-# **TransactionGetByDateGet**
-> List&lt;TransactionModel&gt; TransactionGetByDateGet (DateTime? from = null, DateTime? to = null)
+# **GetByDate**
+> List&lt;TransactionModel&gt; GetByDate (DateTime? from = null, DateTime? to = null)
 
 
 
@@ -216,7 +216,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionGetByDateGetExample
+    public class GetByDateExample
     {
         public static void Main()
         {
@@ -233,12 +233,12 @@ namespace Example
 
             try
             {
-                List<TransactionModel> result = apiInstance.TransactionGetByDateGet(from, to);
+                List<TransactionModel> result = apiInstance.GetByDate(from, to);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionGetByDateGet: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.GetByDate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -247,20 +247,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionGetByDateGetWithHttpInfo variant
+#### Using the GetByDateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<TransactionModel>> response = apiInstance.TransactionGetByDateGetWithHttpInfo(from, to);
+    ApiResponse<List<TransactionModel>> response = apiInstance.GetByDateWithHttpInfo(from, to);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionGetByDateGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.GetByDateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -296,8 +296,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiongetbynumberget"></a>
-# **TransactionGetByNumberGet**
-> List&lt;TransactionModel&gt; TransactionGetByNumberGet (string? number = null)
+# **GetByNumber**
+> List&lt;TransactionModel&gt; GetByNumber (string? number = null)
 
 
 
@@ -311,7 +311,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionGetByNumberGetExample
+    public class GetByNumberExample
     {
         public static void Main()
         {
@@ -327,12 +327,12 @@ namespace Example
 
             try
             {
-                List<TransactionModel> result = apiInstance.TransactionGetByNumberGet(number);
+                List<TransactionModel> result = apiInstance.GetByNumber(number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionGetByNumberGet: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.GetByNumber: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -341,20 +341,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionGetByNumberGetWithHttpInfo variant
+#### Using the GetByNumberWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<TransactionModel>> response = apiInstance.TransactionGetByNumberGetWithHttpInfo(number);
+    ApiResponse<List<TransactionModel>> response = apiInstance.GetByNumberWithHttpInfo(number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionGetByNumberGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.GetByNumberWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -389,8 +389,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactioniddelete"></a>
-# **TransactionIdDelete**
-> void TransactionIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -404,7 +404,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -420,11 +420,11 @@ namespace Example
 
             try
             {
-                apiInstance.TransactionIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -433,17 +433,17 @@ namespace Example
 }
 ```
 
-#### Using the TransactionIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TransactionIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -478,8 +478,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactionidget"></a>
-# **TransactionIdGet**
-> TransactionModel TransactionIdGet (Guid id)
+# **Get**
+> TransactionModel Get (Guid id)
 
 
 
@@ -493,7 +493,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -509,12 +509,12 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.TransactionIdGet(id);
+                TransactionModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionIdGet: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -523,20 +523,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.TransactionIdGetWithHttpInfo(id);
+    ApiResponse<TransactionModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -571,8 +571,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactionidput"></a>
-# **TransactionIdPut**
-> TransactionModel TransactionIdPut (Guid id, UpdateTransactionRequest? updateTransactionRequest = null)
+# **Put**
+> TransactionModel Put (Guid id, UpdateTransactionRequest? updateTransactionRequest = null)
 
 
 
@@ -586,7 +586,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -603,12 +603,12 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.TransactionIdPut(id, updateTransactionRequest);
+                TransactionModel result = apiInstance.Put(id, updateTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionIdPut: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -617,20 +617,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.TransactionIdPutWithHttpInfo(id, updateTransactionRequest);
+    ApiResponse<TransactionModel> response = apiInstance.PutWithHttpInfo(id, updateTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -667,8 +667,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactionpost"></a>
-# **TransactionPost**
-> TransactionModel TransactionPost (CreateTransactionRequest? createTransactionRequest = null)
+# **Post**
+> TransactionModel Post (CreateTransactionRequest? createTransactionRequest = null)
 
 
 
@@ -682,7 +682,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -698,12 +698,12 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.TransactionPost(createTransactionRequest);
+                TransactionModel result = apiInstance.Post(createTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.TransactionPost: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -712,20 +712,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.TransactionPostWithHttpInfo(createTransactionRequest);
+    ApiResponse<TransactionModel> response = apiInstance.PostWithHttpInfo(createTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.TransactionPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

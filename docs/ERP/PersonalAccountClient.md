@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**PersonalAccountAddAddressIdContactIdPut**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} |  |
-| [**PersonalAccountIdDelete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} |  |
-| [**PersonalAccountIdGet**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} |  |
-| [**PersonalAccountIdPut**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} |  |
-| [**PersonalAccountPost**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount |  |
-| [**PersonalAccountRemoveAddressIdContactIdPut**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} |  |
+| [**AddAddressContactId**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} |  |
+| [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} |  |
+| [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} |  |
+| [**Put**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} |  |
+| [**Post**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount |  |
+| [**RemoveAddressContactId**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} |  |
 
 <a id="personalaccountaddaddressidcontactidput"></a>
-# **PersonalAccountAddAddressIdContactIdPut**
-> PersonalAccountModel PersonalAccountAddAddressIdContactIdPut (Guid id, Guid contactId)
+# **AddAddressContactId**
+> PersonalAccountModel AddAddressContactId (Guid id, Guid contactId)
 
 
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountAddAddressIdContactIdPutExample
+    public class AddAddressContactIdExample
     {
         public static void Main()
         {
@@ -44,12 +44,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.PersonalAccountAddAddressIdContactIdPut(id, contactId);
+                PersonalAccountModel result = apiInstance.AddAddressContactId(id, contactId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountAddAddressIdContactIdPut: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.AddAddressContactId: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,20 +58,20 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountAddAddressIdContactIdPutWithHttpInfo variant
+#### Using the AddAddressContactIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PersonalAccountAddAddressIdContactIdPutWithHttpInfo(id, contactId);
+    ApiResponse<PersonalAccountModel> response = apiInstance.AddAddressContactIdWithHttpInfo(id, contactId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountAddAddressIdContactIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.AddAddressContactIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -108,8 +108,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="personalaccountiddelete"></a>
-# **PersonalAccountIdDelete**
-> void PersonalAccountIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -123,7 +123,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -139,11 +139,11 @@ namespace Example
 
             try
             {
-                apiInstance.PersonalAccountIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdDelete: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -152,17 +152,17 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.PersonalAccountIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -197,8 +197,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="personalaccountidget"></a>
-# **PersonalAccountIdGet**
-> PersonalAccountModel PersonalAccountIdGet (Guid id)
+# **Get**
+> PersonalAccountModel Get (Guid id)
 
 
 
@@ -212,7 +212,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.PersonalAccountIdGet(id);
+                PersonalAccountModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdGet: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,20 +242,20 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PersonalAccountIdGetWithHttpInfo(id);
+    ApiResponse<PersonalAccountModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -291,8 +291,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="personalaccountidput"></a>
-# **PersonalAccountIdPut**
-> PersonalAccountModel PersonalAccountIdPut (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
+# **Put**
+> PersonalAccountModel Put (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
 
 
 
@@ -306,7 +306,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -323,12 +323,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.PersonalAccountIdPut(id, updatePersonalAccountRequest);
+                PersonalAccountModel result = apiInstance.Put(id, updatePersonalAccountRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdPut: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -337,20 +337,20 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PersonalAccountIdPutWithHttpInfo(id, updatePersonalAccountRequest);
+    ApiResponse<PersonalAccountModel> response = apiInstance.PutWithHttpInfo(id, updatePersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -387,8 +387,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="personalaccountpost"></a>
-# **PersonalAccountPost**
-> PersonalAccountModel PersonalAccountPost (CreatePersonalAccountRequest? createPersonalAccountRequest = null)
+# **Post**
+> PersonalAccountModel Post (CreatePersonalAccountRequest? createPersonalAccountRequest = null)
 
 
 
@@ -402,7 +402,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -418,12 +418,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.PersonalAccountPost(createPersonalAccountRequest);
+                PersonalAccountModel result = apiInstance.Post(createPersonalAccountRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountPost: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -432,20 +432,20 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PersonalAccountPostWithHttpInfo(createPersonalAccountRequest);
+    ApiResponse<PersonalAccountModel> response = apiInstance.PostWithHttpInfo(createPersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -481,8 +481,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="personalaccountremoveaddressidcontactidput"></a>
-# **PersonalAccountRemoveAddressIdContactIdPut**
-> PersonalAccountModel PersonalAccountRemoveAddressIdContactIdPut (Guid id, Guid contactId)
+# **RemoveAddressContactId**
+> PersonalAccountModel RemoveAddressContactId (Guid id, Guid contactId)
 
 
 
@@ -496,7 +496,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PersonalAccountRemoveAddressIdContactIdPutExample
+    public class RemoveAddressContactIdExample
     {
         public static void Main()
         {
@@ -513,12 +513,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.PersonalAccountRemoveAddressIdContactIdPut(id, contactId);
+                PersonalAccountModel result = apiInstance.RemoveAddressContactId(id, contactId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountRemoveAddressIdContactIdPut: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.RemoveAddressContactId: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -527,20 +527,20 @@ namespace Example
 }
 ```
 
-#### Using the PersonalAccountRemoveAddressIdContactIdPutWithHttpInfo variant
+#### Using the RemoveAddressContactIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PersonalAccountRemoveAddressIdContactIdPutWithHttpInfo(id, contactId);
+    ApiResponse<PersonalAccountModel> response = apiInstance.RemoveAddressContactIdWithHttpInfo(id, contactId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PersonalAccountRemoveAddressIdContactIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.RemoveAddressContactIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

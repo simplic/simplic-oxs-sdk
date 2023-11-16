@@ -4,12 +4,12 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiKeyCreatePost**](ApiKeyClient.md#apikeycreatepost) | **POST** /ApiKey/create |  |
-| [**ApiKeyDeleteIdDelete**](ApiKeyClient.md#apikeydeleteiddelete) | **DELETE** /ApiKey/delete/{id} |  |
+| [**Create**](ApiKeyClient.md#apikeycreatepost) | **POST** /ApiKey/create |  |
+| [**Delete**](ApiKeyClient.md#apikeydeleteiddelete) | **DELETE** /ApiKey/delete/{id} |  |
 
 <a id="apikeycreatepost"></a>
-# **ApiKeyCreatePost**
-> VehicleApiKeyModel ApiKeyCreatePost (CreateVehicleApiKeyRequest? createVehicleApiKeyRequest = null)
+# **Create**
+> VehicleApiKeyModel Create (CreateVehicleApiKeyRequest? createVehicleApiKeyRequest = null)
 
 
 
@@ -23,7 +23,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class ApiKeyCreatePostExample
+    public class CreateExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                VehicleApiKeyModel result = apiInstance.ApiKeyCreatePost(createVehicleApiKeyRequest);
+                VehicleApiKeyModel result = apiInstance.Create(createVehicleApiKeyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ApiKeyClient.ApiKeyCreatePost: " + e.Message);
+                Debug.Print("Exception when calling ApiKeyClient.Create: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the ApiKeyCreatePostWithHttpInfo variant
+#### Using the CreateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleApiKeyModel> response = apiInstance.ApiKeyCreatePostWithHttpInfo(createVehicleApiKeyRequest);
+    ApiResponse<VehicleApiKeyModel> response = apiInstance.CreateWithHttpInfo(createVehicleApiKeyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ApiKeyClient.ApiKeyCreatePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ApiKeyClient.CreateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -102,8 +102,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apikeydeleteiddelete"></a>
-# **ApiKeyDeleteIdDelete**
-> void ApiKeyDeleteIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -117,7 +117,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class ApiKeyDeleteIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -133,11 +133,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiKeyDeleteIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ApiKeyClient.ApiKeyDeleteIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ApiKeyClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,17 +146,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiKeyDeleteIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiKeyDeleteIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ApiKeyClient.ApiKeyDeleteIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ApiKeyClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

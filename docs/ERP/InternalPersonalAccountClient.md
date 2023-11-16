@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalPersonalAccountGetByIdGet**](InternalPersonalAccountClient.md#internalinternalpersonalaccountgetbyidget) | **GET** /internal/InternalPersonalAccount/get-by-id |  |
+| [**GetById**](InternalPersonalAccountClient.md#internalinternalpersonalaccountgetbyidget) | **GET** /internal/InternalPersonalAccount/get-by-id |  |
 
 <a id="internalinternalpersonalaccountgetbyidget"></a>
-# **InternalInternalPersonalAccountGetByIdGet**
-> PersonalAccountModel InternalInternalPersonalAccountGetByIdGet (Guid? id = null)
+# **GetById**
+> PersonalAccountModel GetById (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class InternalInternalPersonalAccountGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.InternalInternalPersonalAccountGetByIdGet(id);
+                PersonalAccountModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalPersonalAccountClient.InternalInternalPersonalAccountGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalPersonalAccountClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalPersonalAccountGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.InternalInternalPersonalAccountGetByIdGetWithHttpInfo(id);
+    ApiResponse<PersonalAccountModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalPersonalAccountClient.InternalInternalPersonalAccountGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalPersonalAccountClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

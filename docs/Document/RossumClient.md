@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiRossumHookPost**](RossumClient.md#apirossumhookpost) | **POST** /api/Rossum/hook |  |
+| [**Hook**](RossumClient.md#apirossumhookpost) | **POST** /api/Rossum/hook |  |
 
 <a id="apirossumhookpost"></a>
-# **ApiRossumHookPost**
-> void ApiRossumHookPost ()
+# **Hook**
+> void Hook ()
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class ApiRossumHookPostExample
+    public class HookExample
     {
         public static void Main()
         {
@@ -37,11 +37,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiRossumHookPost();
+                apiInstance.Hook();
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RossumClient.ApiRossumHookPost: " + e.Message);
+                Debug.Print("Exception when calling RossumClient.Hook: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -50,17 +50,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiRossumHookPostWithHttpInfo variant
+#### Using the HookWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiRossumHookPostWithHttpInfo();
+    apiInstance.HookWithHttpInfo();
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling RossumClient.ApiRossumHookPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling RossumClient.HookWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

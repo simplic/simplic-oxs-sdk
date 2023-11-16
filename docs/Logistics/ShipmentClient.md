@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ShipmentGetAllWithConditionsGet**](ShipmentClient.md#shipmentgetallwithconditionsget) | **GET** /Shipment/get-all-with-conditions | Retrives all shipments for the given conditions. |
-| [**ShipmentGetUpdatedSinceGet**](ShipmentClient.md#shipmentgetupdatedsinceget) | **GET** /Shipment/get-updated-since | Retrives the shipment with the given id. |
-| [**ShipmentIdDelete**](ShipmentClient.md#shipmentiddelete) | **DELETE** /Shipment/{id} |  |
-| [**ShipmentIdGet**](ShipmentClient.md#shipmentidget) | **GET** /Shipment/{id} | Retrives the shipment with the given id. |
-| [**ShipmentIdPatch**](ShipmentClient.md#shipmentidpatch) | **PATCH** /Shipment/{id} |  |
-| [**ShipmentPost**](ShipmentClient.md#shipmentpost) | **POST** /Shipment |  |
+| [**GetAllWithConditions**](ShipmentClient.md#shipmentgetallwithconditionsget) | **GET** /Shipment/get-all-with-conditions | Retrives all shipments for the given conditions. |
+| [**GetUpdatedSince**](ShipmentClient.md#shipmentgetupdatedsinceget) | **GET** /Shipment/get-updated-since | Retrives the shipment with the given id. |
+| [**Delete**](ShipmentClient.md#shipmentiddelete) | **DELETE** /Shipment/{id} |  |
+| [**Get**](ShipmentClient.md#shipmentidget) | **GET** /Shipment/{id} | Retrives the shipment with the given id. |
+| [**Patch**](ShipmentClient.md#shipmentidpatch) | **PATCH** /Shipment/{id} |  |
+| [**Post**](ShipmentClient.md#shipmentpost) | **POST** /Shipment |  |
 
 <a id="shipmentgetallwithconditionsget"></a>
-# **ShipmentGetAllWithConditionsGet**
-> List&lt;ShipmentModel&gt; ShipmentGetAllWithConditionsGet (string? status = null, DateTime? from = null, DateTime? to = null)
+# **GetAllWithConditions**
+> List&lt;ShipmentModel&gt; GetAllWithConditions (string? status = null, DateTime? from = null, DateTime? to = null)
 
 Retrives all shipments for the given conditions.
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentGetAllWithConditionsGetExample
+    public class GetAllWithConditionsExample
     {
         public static void Main()
         {
@@ -46,12 +46,12 @@ namespace Example
             try
             {
                 // Retrives all shipments for the given conditions.
-                List<ShipmentModel> result = apiInstance.ShipmentGetAllWithConditionsGet(status, from, to);
+                List<ShipmentModel> result = apiInstance.GetAllWithConditions(status, from, to);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentGetAllWithConditionsGet: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.GetAllWithConditions: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,21 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentGetAllWithConditionsGetWithHttpInfo variant
+#### Using the GetAllWithConditionsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all shipments for the given conditions.
-    ApiResponse<List<ShipmentModel>> response = apiInstance.ShipmentGetAllWithConditionsGetWithHttpInfo(status, from, to);
+    ApiResponse<List<ShipmentModel>> response = apiInstance.GetAllWithConditionsWithHttpInfo(status, from, to);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentGetAllWithConditionsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.GetAllWithConditionsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -110,8 +110,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentgetupdatedsinceget"></a>
-# **ShipmentGetUpdatedSinceGet**
-> List&lt;ShipmentModel&gt; ShipmentGetUpdatedSinceGet (DateTime? since = null)
+# **GetUpdatedSince**
+> List&lt;ShipmentModel&gt; GetUpdatedSince (DateTime? since = null)
 
 Retrives the shipment with the given id.
 
@@ -125,7 +125,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentGetUpdatedSinceGetExample
+    public class GetUpdatedSinceExample
     {
         public static void Main()
         {
@@ -142,12 +142,12 @@ namespace Example
             try
             {
                 // Retrives the shipment with the given id.
-                List<ShipmentModel> result = apiInstance.ShipmentGetUpdatedSinceGet(since);
+                List<ShipmentModel> result = apiInstance.GetUpdatedSince(since);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentGetUpdatedSinceGet: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.GetUpdatedSince: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -156,21 +156,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentGetUpdatedSinceGetWithHttpInfo variant
+#### Using the GetUpdatedSinceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the shipment with the given id.
-    ApiResponse<List<ShipmentModel>> response = apiInstance.ShipmentGetUpdatedSinceGetWithHttpInfo(since);
+    ApiResponse<List<ShipmentModel>> response = apiInstance.GetUpdatedSinceWithHttpInfo(since);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentGetUpdatedSinceGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.GetUpdatedSinceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -206,8 +206,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentiddelete"></a>
-# **ShipmentIdDelete**
-> Object ShipmentIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 
 
@@ -221,7 +221,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -237,12 +237,12 @@ namespace Example
 
             try
             {
-                Object result = apiInstance.ShipmentIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -251,20 +251,20 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.ShipmentIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -300,8 +300,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentidget"></a>
-# **ShipmentIdGet**
-> ShipmentModel ShipmentIdGet (Guid id)
+# **Get**
+> ShipmentModel Get (Guid id)
 
 Retrives the shipment with the given id.
 
@@ -315,7 +315,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -332,12 +332,12 @@ namespace Example
             try
             {
                 // Retrives the shipment with the given id.
-                ShipmentModel result = apiInstance.ShipmentIdGet(id);
+                ShipmentModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentIdGet: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -346,21 +346,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the shipment with the given id.
-    ApiResponse<ShipmentModel> response = apiInstance.ShipmentIdGetWithHttpInfo(id);
+    ApiResponse<ShipmentModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -396,8 +396,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentidpatch"></a>
-# **ShipmentIdPatch**
-> ShipmentModel ShipmentIdPatch (Guid id, PatchShipmentRequest? patchShipmentRequest = null)
+# **Patch**
+> ShipmentModel Patch (Guid id, PatchShipmentRequest? patchShipmentRequest = null)
 
 
 
@@ -411,7 +411,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -428,12 +428,12 @@ namespace Example
 
             try
             {
-                ShipmentModel result = apiInstance.ShipmentIdPatch(id, patchShipmentRequest);
+                ShipmentModel result = apiInstance.Patch(id, patchShipmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentIdPatch: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -442,20 +442,20 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ShipmentModel> response = apiInstance.ShipmentIdPatchWithHttpInfo(id, patchShipmentRequest);
+    ApiResponse<ShipmentModel> response = apiInstance.PatchWithHttpInfo(id, patchShipmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -492,8 +492,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentpost"></a>
-# **ShipmentPost**
-> ShipmentModel ShipmentPost (CreateShipmentRequest? createShipmentRequest = null)
+# **Post**
+> ShipmentModel Post (CreateShipmentRequest? createShipmentRequest = null)
 
 
 
@@ -507,7 +507,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -523,12 +523,12 @@ namespace Example
 
             try
             {
-                ShipmentModel result = apiInstance.ShipmentPost(createShipmentRequest);
+                ShipmentModel result = apiInstance.Post(createShipmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentClient.ShipmentPost: " + e.Message);
+                Debug.Print("Exception when calling ShipmentClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -537,20 +537,20 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ShipmentModel> response = apiInstance.ShipmentPostWithHttpInfo(createShipmentRequest);
+    ApiResponse<ShipmentModel> response = apiInstance.PostWithHttpInfo(createShipmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentClient.ShipmentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

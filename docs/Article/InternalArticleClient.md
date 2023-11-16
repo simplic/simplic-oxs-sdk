@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalArticleGetByIdGet**](InternalArticleClient.md#internalinternalarticlegetbyidget) | **GET** /internal/InternalArticle/get-by-id |  |
+| [**GetById**](InternalArticleClient.md#internalinternalarticlegetbyidget) | **GET** /internal/InternalArticle/get-by-id |  |
 
 <a id="internalinternalarticlegetbyidget"></a>
-# **InternalInternalArticleGetByIdGet**
-> ArticleModel InternalInternalArticleGetByIdGet (Guid? id = null)
+# **GetById**
+> ArticleModel GetById (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class InternalInternalArticleGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.InternalInternalArticleGetByIdGet(id);
+                ArticleModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalArticleClient.InternalInternalArticleGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalArticleClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalArticleGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.InternalInternalArticleGetByIdGetWithHttpInfo(id);
+    ApiResponse<ArticleModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalArticleClient.InternalInternalArticleGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalArticleClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

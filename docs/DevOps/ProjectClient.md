@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ProjectGetAllGet**](ProjectClient.md#projectgetallget) | **GET** /Project/get-all |  |
-| [**ProjectIdGet**](ProjectClient.md#projectidget) | **GET** /Project/{id} |  |
-| [**ProjectPost**](ProjectClient.md#projectpost) | **POST** /Project |  |
+| [**GetAll**](ProjectClient.md#projectgetallget) | **GET** /Project/get-all |  |
+| [**Get**](ProjectClient.md#projectidget) | **GET** /Project/{id} |  |
+| [**Post**](ProjectClient.md#projectpost) | **POST** /Project |  |
 
 <a id="projectgetallget"></a>
-# **ProjectGetAllGet**
-> List&lt;ProjectModel&gt; ProjectGetAllGet ()
+# **GetAll**
+> List&lt;ProjectModel&gt; GetAll ()
 
 
 
@@ -24,7 +24,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ProjectGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                List<ProjectModel> result = apiInstance.ProjectGetAllGet();
+                List<ProjectModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectClient.ProjectGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling ProjectClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the ProjectGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ProjectModel>> response = apiInstance.ProjectGetAllGetWithHttpInfo();
+    ApiResponse<List<ProjectModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProjectClient.ProjectGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProjectClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -98,8 +98,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="projectidget"></a>
-# **ProjectIdGet**
-> ProjectModel ProjectIdGet (Guid id)
+# **Get**
+> ProjectModel Get (Guid id)
 
 
 
@@ -113,7 +113,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ProjectIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -129,12 +129,12 @@ namespace Example
 
             try
             {
-                ProjectModel result = apiInstance.ProjectIdGet(id);
+                ProjectModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectClient.ProjectIdGet: " + e.Message);
+                Debug.Print("Exception when calling ProjectClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,20 +143,20 @@ namespace Example
 }
 ```
 
-#### Using the ProjectIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ProjectModel> response = apiInstance.ProjectIdGetWithHttpInfo(id);
+    ApiResponse<ProjectModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProjectClient.ProjectIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProjectClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="projectpost"></a>
-# **ProjectPost**
-> ProjectModel ProjectPost (CreateProjectModel? createProjectModel = null)
+# **Post**
+> ProjectModel Post (CreateProjectModel? createProjectModel = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ProjectPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -223,12 +223,12 @@ namespace Example
 
             try
             {
-                ProjectModel result = apiInstance.ProjectPost(createProjectModel);
+                ProjectModel result = apiInstance.Post(createProjectModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectClient.ProjectPost: " + e.Message);
+                Debug.Print("Exception when calling ProjectClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -237,20 +237,20 @@ namespace Example
 }
 ```
 
-#### Using the ProjectPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ProjectModel> response = apiInstance.ProjectPostWithHttpInfo(createProjectModel);
+    ApiResponse<ProjectModel> response = apiInstance.PostWithHttpInfo(createProjectModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProjectClient.ProjectPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProjectClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

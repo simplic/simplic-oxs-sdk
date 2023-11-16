@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TourCalculationCalculateRoutesPost**](TourCalculationClient.md#tourcalculationcalculateroutespost) | **POST** /TourCalculation/calculate-routes |  |
+| [**CalculateRoutes**](TourCalculationClient.md#tourcalculationcalculateroutespost) | **POST** /TourCalculation/calculate-routes |  |
 
 <a id="tourcalculationcalculateroutespost"></a>
-# **TourCalculationCalculateRoutesPost**
-> CalculateRouteResponse TourCalculationCalculateRoutesPost (CalculateRouteRequest? calculateRouteRequest = null)
+# **CalculateRoutes**
+> CalculateRouteResponse CalculateRoutes (CalculateRouteRequest? calculateRouteRequest = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourCalculationCalculateRoutesPostExample
+    public class CalculateRoutesExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                CalculateRouteResponse result = apiInstance.TourCalculationCalculateRoutesPost(calculateRouteRequest);
+                CalculateRouteResponse result = apiInstance.CalculateRoutes(calculateRouteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourCalculationClient.TourCalculationCalculateRoutesPost: " + e.Message);
+                Debug.Print("Exception when calling TourCalculationClient.CalculateRoutes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the TourCalculationCalculateRoutesPostWithHttpInfo variant
+#### Using the CalculateRoutesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<CalculateRouteResponse> response = apiInstance.TourCalculationCalculateRoutesPostWithHttpInfo(calculateRouteRequest);
+    ApiResponse<CalculateRouteResponse> response = apiInstance.CalculateRoutesWithHttpInfo(calculateRouteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourCalculationClient.TourCalculationCalculateRoutesPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourCalculationClient.CalculateRoutesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

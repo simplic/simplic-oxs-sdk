@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiAIEnqueueIdGet**](AIClient.md#apiaienqueueidget) | **GET** /api/AI/enqueue/{id} |  |
+| [**Enqueue**](AIClient.md#apiaienqueueidget) | **GET** /api/AI/enqueue/{id} |  |
 
 <a id="apiaienqueueidget"></a>
-# **ApiAIEnqueueIdGet**
-> DocumentResponse ApiAIEnqueueIdGet (string id, Guid? documentId = null)
+# **Enqueue**
+> DocumentResponse Enqueue (string id, Guid? documentId = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class ApiAIEnqueueIdGetExample
+    public class EnqueueExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                DocumentResponse result = apiInstance.ApiAIEnqueueIdGet(id, documentId);
+                DocumentResponse result = apiInstance.Enqueue(id, documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AIClient.ApiAIEnqueueIdGet: " + e.Message);
+                Debug.Print("Exception when calling AIClient.Enqueue: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the ApiAIEnqueueIdGetWithHttpInfo variant
+#### Using the EnqueueWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentResponse> response = apiInstance.ApiAIEnqueueIdGetWithHttpInfo(id, documentId);
+    ApiResponse<DocumentResponse> response = apiInstance.EnqueueWithHttpInfo(id, documentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AIClient.ApiAIEnqueueIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AIClient.EnqueueWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

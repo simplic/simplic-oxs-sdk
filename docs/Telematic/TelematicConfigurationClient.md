@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TelematicConfigurationGetForProviderNameGet**](TelematicConfigurationClient.md#telematicconfigurationgetforprovidernameget) | **GET** /TelematicConfiguration/get-for-provider/{name} |  |
-| [**TelematicConfigurationIdDelete**](TelematicConfigurationClient.md#telematicconfigurationiddelete) | **DELETE** /TelematicConfiguration/{id} |  |
-| [**TelematicConfigurationIdGet**](TelematicConfigurationClient.md#telematicconfigurationidget) | **GET** /TelematicConfiguration/{id} |  |
-| [**TelematicConfigurationPatch**](TelematicConfigurationClient.md#telematicconfigurationpatch) | **PATCH** /TelematicConfiguration |  |
-| [**TelematicConfigurationPost**](TelematicConfigurationClient.md#telematicconfigurationpost) | **POST** /TelematicConfiguration |  |
+| [**GetForProvider**](TelematicConfigurationClient.md#telematicconfigurationgetforprovidernameget) | **GET** /TelematicConfiguration/get-for-provider/{name} |  |
+| [**Delete**](TelematicConfigurationClient.md#telematicconfigurationiddelete) | **DELETE** /TelematicConfiguration/{id} |  |
+| [**Get**](TelematicConfigurationClient.md#telematicconfigurationidget) | **GET** /TelematicConfiguration/{id} |  |
+| [**Patch**](TelematicConfigurationClient.md#telematicconfigurationpatch) | **PATCH** /TelematicConfiguration |  |
+| [**Post**](TelematicConfigurationClient.md#telematicconfigurationpost) | **POST** /TelematicConfiguration |  |
 
 <a id="telematicconfigurationgetforprovidernameget"></a>
-# **TelematicConfigurationGetForProviderNameGet**
-> TelematicConfigurationResponse TelematicConfigurationGetForProviderNameGet (string name)
+# **GetForProvider**
+> TelematicConfigurationResponse GetForProvider (string name)
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicConfigurationGetForProviderNameGetExample
+    public class GetForProviderExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
 
             try
             {
-                TelematicConfigurationResponse result = apiInstance.TelematicConfigurationGetForProviderNameGet(name);
+                TelematicConfigurationResponse result = apiInstance.GetForProvider(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationGetForProviderNameGet: " + e.Message);
+                Debug.Print("Exception when calling TelematicConfigurationClient.GetForProvider: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +56,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicConfigurationGetForProviderNameGetWithHttpInfo variant
+#### Using the GetForProviderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TelematicConfigurationResponse> response = apiInstance.TelematicConfigurationGetForProviderNameGetWithHttpInfo(name);
+    ApiResponse<TelematicConfigurationResponse> response = apiInstance.GetForProviderWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationGetForProviderNameGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicConfigurationClient.GetForProviderWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -105,8 +105,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicconfigurationiddelete"></a>
-# **TelematicConfigurationIdDelete**
-> Object TelematicConfigurationIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 
 
@@ -120,7 +120,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicConfigurationIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -136,12 +136,12 @@ namespace Example
 
             try
             {
-                Object result = apiInstance.TelematicConfigurationIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TelematicConfigurationClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -150,20 +150,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicConfigurationIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.TelematicConfigurationIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicConfigurationClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -199,8 +199,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicconfigurationidget"></a>
-# **TelematicConfigurationIdGet**
-> TelematicConfigurationResponse TelematicConfigurationIdGet (Guid id)
+# **Get**
+> TelematicConfigurationResponse Get (Guid id)
 
 
 
@@ -214,7 +214,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicConfigurationIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -230,12 +230,12 @@ namespace Example
 
             try
             {
-                TelematicConfigurationResponse result = apiInstance.TelematicConfigurationIdGet(id);
+                TelematicConfigurationResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationIdGet: " + e.Message);
+                Debug.Print("Exception when calling TelematicConfigurationClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -244,20 +244,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicConfigurationIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TelematicConfigurationResponse> response = apiInstance.TelematicConfigurationIdGetWithHttpInfo(id);
+    ApiResponse<TelematicConfigurationResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicConfigurationClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicconfigurationpatch"></a>
-# **TelematicConfigurationPatch**
-> TelematicConfigurationResponse TelematicConfigurationPatch (Guid? id = null, PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = null)
+# **Patch**
+> TelematicConfigurationResponse Patch (Guid? id = null, PatchTelematicConfigurationRequest? patchTelematicConfigurationRequest = null)
 
 
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicConfigurationPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
 
             try
             {
-                TelematicConfigurationResponse result = apiInstance.TelematicConfigurationPatch(id, patchTelematicConfigurationRequest);
+                TelematicConfigurationResponse result = apiInstance.Patch(id, patchTelematicConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationPatch: " + e.Message);
+                Debug.Print("Exception when calling TelematicConfigurationClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,20 +339,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicConfigurationPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TelematicConfigurationResponse> response = apiInstance.TelematicConfigurationPatchWithHttpInfo(id, patchTelematicConfigurationRequest);
+    ApiResponse<TelematicConfigurationResponse> response = apiInstance.PatchWithHttpInfo(id, patchTelematicConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicConfigurationClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -389,8 +389,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicconfigurationpost"></a>
-# **TelematicConfigurationPost**
-> TelematicConfigurationResponse TelematicConfigurationPost (CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = null)
+# **Post**
+> TelematicConfigurationResponse Post (CreateTelematicConfigurationRequest? createTelematicConfigurationRequest = null)
 
 
 
@@ -404,7 +404,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicConfigurationPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -420,12 +420,12 @@ namespace Example
 
             try
             {
-                TelematicConfigurationResponse result = apiInstance.TelematicConfigurationPost(createTelematicConfigurationRequest);
+                TelematicConfigurationResponse result = apiInstance.Post(createTelematicConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationPost: " + e.Message);
+                Debug.Print("Exception when calling TelematicConfigurationClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -434,20 +434,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicConfigurationPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TelematicConfigurationResponse> response = apiInstance.TelematicConfigurationPostWithHttpInfo(createTelematicConfigurationRequest);
+    ApiResponse<TelematicConfigurationResponse> response = apiInstance.PostWithHttpInfo(createTelematicConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicConfigurationClient.TelematicConfigurationPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicConfigurationClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

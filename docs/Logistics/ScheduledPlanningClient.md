@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ScheduledPlanningGetByDateGet**](ScheduledPlanningClient.md#scheduledplanninggetbydateget) | **GET** /ScheduledPlanning/get-by-date | Gets all plans for given day. |
-| [**ScheduledPlanningGetByResourceResourceIdGet**](ScheduledPlanningClient.md#scheduledplanninggetbyresourceresourceidget) | **GET** /ScheduledPlanning/get-by-resource/{resourceId} | Gets shifts for resource on given day. |
-| [**ScheduledPlanningGetByShiftShiftIdGet**](ScheduledPlanningClient.md#scheduledplanninggetbyshiftshiftidget) | **GET** /ScheduledPlanning/get-by-shift/{shiftId} | Gets plans matching given shift id for given day. |
-| [**ScheduledPlanningIdDelete**](ScheduledPlanningClient.md#scheduledplanningiddelete) | **DELETE** /ScheduledPlanning/{id} | Deletes plan matching given id. |
-| [**ScheduledPlanningIdGet**](ScheduledPlanningClient.md#scheduledplanningidget) | **GET** /ScheduledPlanning/{id} | Gets plan matching given id. |
-| [**ScheduledPlanningIdPatch**](ScheduledPlanningClient.md#scheduledplanningidpatch) | **PATCH** /ScheduledPlanning/{id} | Patches plan matching given id. |
-| [**ScheduledPlanningPost**](ScheduledPlanningClient.md#scheduledplanningpost) | **POST** /ScheduledPlanning | Posts a new plan. |
-| [**ScheduledPlanningValidateGet**](ScheduledPlanningClient.md#scheduledplanningvalidateget) | **GET** /ScheduledPlanning/validate | Checks whether any resource has been assigned in multiple plans. |
+| [**GetByDate**](ScheduledPlanningClient.md#scheduledplanninggetbydateget) | **GET** /ScheduledPlanning/get-by-date | Gets all plans for given day. |
+| [**GetByResource**](ScheduledPlanningClient.md#scheduledplanninggetbyresourceresourceidget) | **GET** /ScheduledPlanning/get-by-resource/{resourceId} | Gets shifts for resource on given day. |
+| [**GetByShift**](ScheduledPlanningClient.md#scheduledplanninggetbyshiftshiftidget) | **GET** /ScheduledPlanning/get-by-shift/{shiftId} | Gets plans matching given shift id for given day. |
+| [**Delete**](ScheduledPlanningClient.md#scheduledplanningiddelete) | **DELETE** /ScheduledPlanning/{id} | Deletes plan matching given id. |
+| [**Get**](ScheduledPlanningClient.md#scheduledplanningidget) | **GET** /ScheduledPlanning/{id} | Gets plan matching given id. |
+| [**Patch**](ScheduledPlanningClient.md#scheduledplanningidpatch) | **PATCH** /ScheduledPlanning/{id} | Patches plan matching given id. |
+| [**Post**](ScheduledPlanningClient.md#scheduledplanningpost) | **POST** /ScheduledPlanning | Posts a new plan. |
+| [**Validate**](ScheduledPlanningClient.md#scheduledplanningvalidateget) | **GET** /ScheduledPlanning/validate | Checks whether any resource has been assigned in multiple plans. |
 
 <a id="scheduledplanninggetbydateget"></a>
-# **ScheduledPlanningGetByDateGet**
-> List&lt;ScheduledPlanningAssignmentResponse&gt; ScheduledPlanningGetByDateGet (DateTime? dateTime = null)
+# **GetByDate**
+> List&lt;ScheduledPlanningAssignmentResponse&gt; GetByDate (DateTime? dateTime = null)
 
 Gets all plans for given day.
 
@@ -29,7 +29,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningGetByDateGetExample
+    public class GetByDateExample
     {
         public static void Main()
         {
@@ -46,12 +46,12 @@ namespace Example
             try
             {
                 // Gets all plans for given day.
-                List<ScheduledPlanningAssignmentResponse> result = apiInstance.ScheduledPlanningGetByDateGet(dateTime);
+                List<ScheduledPlanningAssignmentResponse> result = apiInstance.GetByDate(dateTime);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByDateGet: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.GetByDate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,21 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningGetByDateGetWithHttpInfo variant
+#### Using the GetByDateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets all plans for given day.
-    ApiResponse<List<ScheduledPlanningAssignmentResponse>> response = apiInstance.ScheduledPlanningGetByDateGetWithHttpInfo(dateTime);
+    ApiResponse<List<ScheduledPlanningAssignmentResponse>> response = apiInstance.GetByDateWithHttpInfo(dateTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByDateGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.GetByDateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -110,8 +110,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanninggetbyresourceresourceidget"></a>
-# **ScheduledPlanningGetByResourceResourceIdGet**
-> ScheduledPlanningAssignmentResponse ScheduledPlanningGetByResourceResourceIdGet (Guid resourceId, DateTime? dateTime = null, Guid? shiftId = null)
+# **GetByResource**
+> ScheduledPlanningAssignmentResponse GetByResource (Guid resourceId, DateTime? dateTime = null, Guid? shiftId = null)
 
 Gets shifts for resource on given day.
 
@@ -125,7 +125,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningGetByResourceResourceIdGetExample
+    public class GetByResourceExample
     {
         public static void Main()
         {
@@ -144,12 +144,12 @@ namespace Example
             try
             {
                 // Gets shifts for resource on given day.
-                ScheduledPlanningAssignmentResponse result = apiInstance.ScheduledPlanningGetByResourceResourceIdGet(resourceId, dateTime, shiftId);
+                ScheduledPlanningAssignmentResponse result = apiInstance.GetByResource(resourceId, dateTime, shiftId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByResourceResourceIdGet: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.GetByResource: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -158,21 +158,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo variant
+#### Using the GetByResourceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets shifts for resource on given day.
-    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo(resourceId, dateTime, shiftId);
+    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.GetByResourceWithHttpInfo(resourceId, dateTime, shiftId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByResourceResourceIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.GetByResourceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -210,8 +210,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanninggetbyshiftshiftidget"></a>
-# **ScheduledPlanningGetByShiftShiftIdGet**
-> List&lt;ScheduledPlanningAssignmentResponse&gt; ScheduledPlanningGetByShiftShiftIdGet (Guid shiftId, DateTime? dateTime = null)
+# **GetByShift**
+> List&lt;ScheduledPlanningAssignmentResponse&gt; GetByShift (Guid shiftId, DateTime? dateTime = null)
 
 Gets plans matching given shift id for given day.
 
@@ -225,7 +225,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningGetByShiftShiftIdGetExample
+    public class GetByShiftExample
     {
         public static void Main()
         {
@@ -243,12 +243,12 @@ namespace Example
             try
             {
                 // Gets plans matching given shift id for given day.
-                List<ScheduledPlanningAssignmentResponse> result = apiInstance.ScheduledPlanningGetByShiftShiftIdGet(shiftId, dateTime);
+                List<ScheduledPlanningAssignmentResponse> result = apiInstance.GetByShift(shiftId, dateTime);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByShiftShiftIdGet: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.GetByShift: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -257,21 +257,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo variant
+#### Using the GetByShiftWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets plans matching given shift id for given day.
-    ApiResponse<List<ScheduledPlanningAssignmentResponse>> response = apiInstance.ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo(shiftId, dateTime);
+    ApiResponse<List<ScheduledPlanningAssignmentResponse>> response = apiInstance.GetByShiftWithHttpInfo(shiftId, dateTime);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningGetByShiftShiftIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.GetByShiftWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -308,8 +308,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanningiddelete"></a>
-# **ScheduledPlanningIdDelete**
-> void ScheduledPlanningIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Deletes plan matching given id.
 
@@ -323,7 +323,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -340,11 +340,11 @@ namespace Example
             try
             {
                 // Deletes plan matching given id.
-                apiInstance.ScheduledPlanningIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -353,18 +353,18 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes plan matching given id.
-    apiInstance.ScheduledPlanningIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -400,8 +400,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanningidget"></a>
-# **ScheduledPlanningIdGet**
-> ScheduledPlanningAssignmentResponse ScheduledPlanningIdGet (Guid id)
+# **Get**
+> ScheduledPlanningAssignmentResponse Get (Guid id)
 
 Gets plan matching given id.
 
@@ -415,7 +415,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -432,12 +432,12 @@ namespace Example
             try
             {
                 // Gets plan matching given id.
-                ScheduledPlanningAssignmentResponse result = apiInstance.ScheduledPlanningIdGet(id);
+                ScheduledPlanningAssignmentResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdGet: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -446,21 +446,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets plan matching given id.
-    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.ScheduledPlanningIdGetWithHttpInfo(id);
+    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -496,8 +496,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanningidpatch"></a>
-# **ScheduledPlanningIdPatch**
-> ScheduledPlanningAssignmentResponse ScheduledPlanningIdPatch (Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = null)
+# **Patch**
+> ScheduledPlanningAssignmentResponse Patch (Guid id, PatchScheduledPlanningRequest? patchScheduledPlanningRequest = null)
 
 Patches plan matching given id.
 
@@ -511,7 +511,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -529,12 +529,12 @@ namespace Example
             try
             {
                 // Patches plan matching given id.
-                ScheduledPlanningAssignmentResponse result = apiInstance.ScheduledPlanningIdPatch(id, patchScheduledPlanningRequest);
+                ScheduledPlanningAssignmentResponse result = apiInstance.Patch(id, patchScheduledPlanningRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdPatch: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -543,21 +543,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches plan matching given id.
-    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.ScheduledPlanningIdPatchWithHttpInfo(id, patchScheduledPlanningRequest);
+    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.PatchWithHttpInfo(id, patchScheduledPlanningRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -595,8 +595,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanningpost"></a>
-# **ScheduledPlanningPost**
-> ScheduledPlanningAssignmentResponse ScheduledPlanningPost (PostScheduledPlanningRequest? postScheduledPlanningRequest = null)
+# **Post**
+> ScheduledPlanningAssignmentResponse Post (PostScheduledPlanningRequest? postScheduledPlanningRequest = null)
 
 Posts a new plan.
 
@@ -610,7 +610,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -627,12 +627,12 @@ namespace Example
             try
             {
                 // Posts a new plan.
-                ScheduledPlanningAssignmentResponse result = apiInstance.ScheduledPlanningPost(postScheduledPlanningRequest);
+                ScheduledPlanningAssignmentResponse result = apiInstance.Post(postScheduledPlanningRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningPost: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -641,21 +641,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Posts a new plan.
-    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.ScheduledPlanningPostWithHttpInfo(postScheduledPlanningRequest);
+    ApiResponse<ScheduledPlanningAssignmentResponse> response = apiInstance.PostWithHttpInfo(postScheduledPlanningRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -692,8 +692,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="scheduledplanningvalidateget"></a>
-# **ScheduledPlanningValidateGet**
-> ValidateResponse ScheduledPlanningValidateGet ()
+# **Validate**
+> ValidateResponse Validate ()
 
 Checks whether any resource has been assigned in multiple plans.
 
@@ -707,7 +707,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ScheduledPlanningValidateGetExample
+    public class ValidateExample
     {
         public static void Main()
         {
@@ -723,12 +723,12 @@ namespace Example
             try
             {
                 // Checks whether any resource has been assigned in multiple plans.
-                ValidateResponse result = apiInstance.ScheduledPlanningValidateGet();
+                ValidateResponse result = apiInstance.Validate();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningValidateGet: " + e.Message);
+                Debug.Print("Exception when calling ScheduledPlanningClient.Validate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -737,21 +737,21 @@ namespace Example
 }
 ```
 
-#### Using the ScheduledPlanningValidateGetWithHttpInfo variant
+#### Using the ValidateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Checks whether any resource has been assigned in multiple plans.
-    ApiResponse<ValidateResponse> response = apiInstance.ScheduledPlanningValidateGetWithHttpInfo();
+    ApiResponse<ValidateResponse> response = apiInstance.ValidateWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScheduledPlanningClient.ScheduledPlanningValidateGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScheduledPlanningClient.ValidateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

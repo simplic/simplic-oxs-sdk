@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ResourceGroupGet**](ResourceGroupClient.md#resourcegroupget) | **GET** /ResourceGroup | Retrives all resource groups |
-| [**ResourceGroupIdDelete**](ResourceGroupClient.md#resourcegroupiddelete) | **DELETE** /ResourceGroup/{id} |  |
-| [**ResourceGroupIdGet**](ResourceGroupClient.md#resourcegroupidget) | **GET** /ResourceGroup/{id} | Retrives the resource group with the given id. |
-| [**ResourceGroupIdPatch**](ResourceGroupClient.md#resourcegroupidpatch) | **PATCH** /ResourceGroup/{id} |  |
-| [**ResourceGroupPost**](ResourceGroupClient.md#resourcegrouppost) | **POST** /ResourceGroup |  |
+| [**Get**](ResourceGroupClient.md#resourcegroupget) | **GET** /ResourceGroup | Retrives all resource groups |
+| [**Delete**](ResourceGroupClient.md#resourcegroupiddelete) | **DELETE** /ResourceGroup/{id} |  |
+| [**Get**](ResourceGroupClient.md#resourcegroupidget) | **GET** /ResourceGroup/{id} | Retrives the resource group with the given id. |
+| [**Patch**](ResourceGroupClient.md#resourcegroupidpatch) | **PATCH** /ResourceGroup/{id} |  |
+| [**Post**](ResourceGroupClient.md#resourcegrouppost) | **POST** /ResourceGroup |  |
 
 <a id="resourcegroupget"></a>
-# **ResourceGroupGet**
-> List&lt;GroupedResourcesModel&gt; ResourceGroupGet ()
+# **Get**
+> List&lt;GroupedResourcesModel&gt; Get ()
 
 Retrives all resource groups
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGroupGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
             try
             {
                 // Retrives all resource groups
-                List<GroupedResourcesModel> result = apiInstance.ResourceGroupGet();
+                List<GroupedResourcesModel> result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceGroupClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,21 +56,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGroupGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all resource groups
-    ApiResponse<List<GroupedResourcesModel>> response = apiInstance.ResourceGroupGetWithHttpInfo();
+    ApiResponse<List<GroupedResourcesModel>> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceGroupClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,8 +101,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegroupiddelete"></a>
-# **ResourceGroupIdDelete**
-> Object ResourceGroupIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 
 
@@ -116,7 +116,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGroupIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
 
             try
             {
-                Object result = apiInstance.ResourceGroupIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ResourceGroupClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,20 +146,20 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGroupIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.ResourceGroupIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceGroupClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegroupidget"></a>
-# **ResourceGroupIdGet**
-> GroupedResourcesModel ResourceGroupIdGet (Guid id)
+# **Get**
+> GroupedResourcesModel Get (Guid id)
 
 Retrives the resource group with the given id.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGroupIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -227,12 +227,12 @@ namespace Example
             try
             {
                 // Retrives the resource group with the given id.
-                GroupedResourcesModel result = apiInstance.ResourceGroupIdGet(id);
+                GroupedResourcesModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceGroupClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -241,21 +241,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGroupIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the resource group with the given id.
-    ApiResponse<GroupedResourcesModel> response = apiInstance.ResourceGroupIdGetWithHttpInfo(id);
+    ApiResponse<GroupedResourcesModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceGroupClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -290,8 +290,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegroupidpatch"></a>
-# **ResourceGroupIdPatch**
-> GroupedResourcesModel ResourceGroupIdPatch (Guid id, UpdateResourceGroupRequest? updateResourceGroupRequest = null)
+# **Patch**
+> GroupedResourcesModel Patch (Guid id, UpdateResourceGroupRequest? updateResourceGroupRequest = null)
 
 
 
@@ -305,7 +305,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGroupIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -322,12 +322,12 @@ namespace Example
 
             try
             {
-                GroupedResourcesModel result = apiInstance.ResourceGroupIdPatch(id, updateResourceGroupRequest);
+                GroupedResourcesModel result = apiInstance.Patch(id, updateResourceGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdPatch: " + e.Message);
+                Debug.Print("Exception when calling ResourceGroupClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -336,20 +336,20 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGroupIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<GroupedResourcesModel> response = apiInstance.ResourceGroupIdPatchWithHttpInfo(id, updateResourceGroupRequest);
+    ApiResponse<GroupedResourcesModel> response = apiInstance.PatchWithHttpInfo(id, updateResourceGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceGroupClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -386,8 +386,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegrouppost"></a>
-# **ResourceGroupPost**
-> GroupedResourcesModel ResourceGroupPost (CreateResourceGroupRequest? createResourceGroupRequest = null)
+# **Post**
+> GroupedResourcesModel Post (CreateResourceGroupRequest? createResourceGroupRequest = null)
 
 
 
@@ -401,7 +401,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGroupPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -417,12 +417,12 @@ namespace Example
 
             try
             {
-                GroupedResourcesModel result = apiInstance.ResourceGroupPost(createResourceGroupRequest);
+                GroupedResourcesModel result = apiInstance.Post(createResourceGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupPost: " + e.Message);
+                Debug.Print("Exception when calling ResourceGroupClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -431,20 +431,20 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGroupPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<GroupedResourcesModel> response = apiInstance.ResourceGroupPostWithHttpInfo(createResourceGroupRequest);
+    ApiResponse<GroupedResourcesModel> response = apiInstance.PostWithHttpInfo(createResourceGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceGroupClient.ResourceGroupPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceGroupClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -4,19 +4,19 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiQandACheckSessionGet**](QandAClient.md#apiqandachecksessionget) | **GET** /api/QandA/checkSession |  |
-| [**ApiQandACompanyDataGet**](QandAClient.md#apiqandacompanydataget) | **GET** /api/QandA/companyData |  |
-| [**ApiQandAEndSurveyGet**](QandAClient.md#apiqandaendsurveyget) | **GET** /api/QandA/endSurvey |  |
-| [**ApiQandAGetModulesGet**](QandAClient.md#apiqandagetmodulesget) | **GET** /api/QandA/getModules |  |
-| [**ApiQandAGetProcessesGet**](QandAClient.md#apiqandagetprocessesget) | **GET** /api/QandA/getProcesses |  |
-| [**ApiQandAGetQuestionGet**](QandAClient.md#apiqandagetquestionget) | **GET** /api/QandA/get-question |  |
-| [**ApiQandAMoveBackwardGet**](QandAClient.md#apiqandamovebackwardget) | **GET** /api/QandA/moveBackward |  |
-| [**ApiQandAMoveForwardGet**](QandAClient.md#apiqandamoveforwardget) | **GET** /api/QandA/moveForward |  |
-| [**ApiQandANewSessionPost**](QandAClient.md#apiqandanewsessionpost) | **POST** /api/QandA/new-session |  |
+| [**CheckSession**](QandAClient.md#apiqandachecksessionget) | **GET** /api/QandA/checkSession |  |
+| [**CompanyData**](QandAClient.md#apiqandacompanydataget) | **GET** /api/QandA/companyData |  |
+| [**EndSurvey**](QandAClient.md#apiqandaendsurveyget) | **GET** /api/QandA/endSurvey |  |
+| [**GetModules**](QandAClient.md#apiqandagetmodulesget) | **GET** /api/QandA/getModules |  |
+| [**GetProcesses**](QandAClient.md#apiqandagetprocessesget) | **GET** /api/QandA/getProcesses |  |
+| [**GetQuestion**](QandAClient.md#apiqandagetquestionget) | **GET** /api/QandA/get-question |  |
+| [**MoveBackward**](QandAClient.md#apiqandamovebackwardget) | **GET** /api/QandA/moveBackward |  |
+| [**MoveForward**](QandAClient.md#apiqandamoveforwardget) | **GET** /api/QandA/moveForward |  |
+| [**NewSession**](QandAClient.md#apiqandanewsessionpost) | **POST** /api/QandA/new-session |  |
 
 <a id="apiqandachecksessionget"></a>
-# **ApiQandACheckSessionGet**
-> void ApiQandACheckSessionGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **CheckSession**
+> void CheckSession (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -30,7 +30,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandACheckSessionGetExample
+    public class CheckSessionExample
     {
         public static void Main()
         {
@@ -52,11 +52,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandACheckSessionGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.CheckSession(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandACheckSessionGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.CheckSession: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -65,17 +65,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandACheckSessionGetWithHttpInfo variant
+#### Using the CheckSessionWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandACheckSessionGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.CheckSessionWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandACheckSessionGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.CheckSessionWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -115,8 +115,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandacompanydataget"></a>
-# **ApiQandACompanyDataGet**
-> void ApiQandACompanyDataGet (string? sessionId = null, string? companyName = null, string? street = null, string? email = null, string? country = null)
+# **CompanyData**
+> void CompanyData (string? sessionId = null, string? companyName = null, string? street = null, string? email = null, string? country = null)
 
 
 
@@ -130,7 +130,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandACompanyDataGetExample
+    public class CompanyDataExample
     {
         public static void Main()
         {
@@ -150,11 +150,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandACompanyDataGet(sessionId, companyName, street, email, country);
+                apiInstance.CompanyData(sessionId, companyName, street, email, country);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandACompanyDataGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.CompanyData: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -163,17 +163,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandACompanyDataGetWithHttpInfo variant
+#### Using the CompanyDataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandACompanyDataGetWithHttpInfo(sessionId, companyName, street, email, country);
+    apiInstance.CompanyDataWithHttpInfo(sessionId, companyName, street, email, country);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandACompanyDataGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.CompanyDataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -211,8 +211,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandaendsurveyget"></a>
-# **ApiQandAEndSurveyGet**
-> void ApiQandAEndSurveyGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **EndSurvey**
+> void EndSurvey (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -226,7 +226,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAEndSurveyGetExample
+    public class EndSurveyExample
     {
         public static void Main()
         {
@@ -248,11 +248,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAEndSurveyGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.EndSurvey(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAEndSurveyGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.EndSurvey: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -261,17 +261,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAEndSurveyGetWithHttpInfo variant
+#### Using the EndSurveyWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAEndSurveyGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.EndSurveyWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAEndSurveyGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.EndSurveyWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -311,8 +311,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandagetmodulesget"></a>
-# **ApiQandAGetModulesGet**
-> void ApiQandAGetModulesGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **GetModules**
+> void GetModules (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -326,7 +326,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAGetModulesGetExample
+    public class GetModulesExample
     {
         public static void Main()
         {
@@ -348,11 +348,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAGetModulesGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.GetModules(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAGetModulesGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.GetModules: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -361,17 +361,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAGetModulesGetWithHttpInfo variant
+#### Using the GetModulesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAGetModulesGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.GetModulesWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAGetModulesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.GetModulesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -411,8 +411,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandagetprocessesget"></a>
-# **ApiQandAGetProcessesGet**
-> void ApiQandAGetProcessesGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **GetProcesses**
+> void GetProcesses (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -426,7 +426,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAGetProcessesGetExample
+    public class GetProcessesExample
     {
         public static void Main()
         {
@@ -448,11 +448,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAGetProcessesGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.GetProcesses(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAGetProcessesGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.GetProcesses: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -461,17 +461,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAGetProcessesGetWithHttpInfo variant
+#### Using the GetProcessesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAGetProcessesGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.GetProcessesWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAGetProcessesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.GetProcessesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -511,8 +511,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandagetquestionget"></a>
-# **ApiQandAGetQuestionGet**
-> void ApiQandAGetQuestionGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **GetQuestion**
+> void GetQuestion (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -526,7 +526,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAGetQuestionGetExample
+    public class GetQuestionExample
     {
         public static void Main()
         {
@@ -548,11 +548,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAGetQuestionGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.GetQuestion(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAGetQuestionGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.GetQuestion: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -561,17 +561,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAGetQuestionGetWithHttpInfo variant
+#### Using the GetQuestionWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAGetQuestionGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.GetQuestionWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAGetQuestionGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.GetQuestionWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -611,8 +611,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandamovebackwardget"></a>
-# **ApiQandAMoveBackwardGet**
-> void ApiQandAMoveBackwardGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **MoveBackward**
+> void MoveBackward (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -626,7 +626,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAMoveBackwardGetExample
+    public class MoveBackwardExample
     {
         public static void Main()
         {
@@ -648,11 +648,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAMoveBackwardGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.MoveBackward(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAMoveBackwardGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.MoveBackward: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -661,17 +661,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAMoveBackwardGetWithHttpInfo variant
+#### Using the MoveBackwardWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAMoveBackwardGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.MoveBackwardWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAMoveBackwardGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.MoveBackwardWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -711,8 +711,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandamoveforwardget"></a>
-# **ApiQandAMoveForwardGet**
-> void ApiQandAMoveForwardGet (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
+# **MoveForward**
+> void MoveForward (string? sessionId = null, string? moduleId = null, string? processId = null, List<string>? userInput = null, string? commentBox = null, string? questionId = null, Dictionary<string, Question>? answeredQuestions = null)
 
 
 
@@ -726,7 +726,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandAMoveForwardGetExample
+    public class MoveForwardExample
     {
         public static void Main()
         {
@@ -748,11 +748,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandAMoveForwardGet(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+                apiInstance.MoveForward(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandAMoveForwardGet: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.MoveForward: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -761,17 +761,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandAMoveForwardGetWithHttpInfo variant
+#### Using the MoveForwardWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandAMoveForwardGetWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
+    apiInstance.MoveForwardWithHttpInfo(sessionId, moduleId, processId, userInput, commentBox, questionId, answeredQuestions);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandAMoveForwardGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.MoveForwardWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -811,8 +811,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiqandanewsessionpost"></a>
-# **ApiQandANewSessionPost**
-> void ApiQandANewSessionPost (System.IO.Stream? file = null)
+# **NewSession**
+> void NewSession (System.IO.Stream? file = null)
 
 
 
@@ -826,7 +826,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiQandANewSessionPostExample
+    public class NewSessionExample
     {
         public static void Main()
         {
@@ -842,11 +842,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiQandANewSessionPost(file);
+                apiInstance.NewSession(file);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QandAClient.ApiQandANewSessionPost: " + e.Message);
+                Debug.Print("Exception when calling QandAClient.NewSession: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -855,17 +855,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiQandANewSessionPostWithHttpInfo variant
+#### Using the NewSessionWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiQandANewSessionPostWithHttpInfo(file);
+    apiInstance.NewSessionWithHttpInfo(file);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QandAClient.ApiQandANewSessionPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QandAClient.NewSessionWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

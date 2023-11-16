@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CurrencyIdDelete**](CurrencyClient.md#currencyiddelete) | **DELETE** /Currency/{id} |  |
-| [**CurrencyIdGet**](CurrencyClient.md#currencyidget) | **GET** /Currency/{id} |  |
-| [**CurrencyIdPut**](CurrencyClient.md#currencyidput) | **PUT** /Currency/{id} |  |
-| [**CurrencyPost**](CurrencyClient.md#currencypost) | **POST** /Currency |  |
+| [**Delete**](CurrencyClient.md#currencyiddelete) | **DELETE** /Currency/{id} |  |
+| [**Get**](CurrencyClient.md#currencyidget) | **GET** /Currency/{id} |  |
+| [**Put**](CurrencyClient.md#currencyidput) | **PUT** /Currency/{id} |  |
+| [**Post**](CurrencyClient.md#currencypost) | **POST** /Currency |  |
 
 <a id="currencyiddelete"></a>
-# **CurrencyIdDelete**
-> void CurrencyIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class CurrencyIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.CurrencyIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CurrencyClient.CurrencyIdDelete: " + e.Message);
+                Debug.Print("Exception when calling CurrencyClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the CurrencyIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.CurrencyIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CurrencyClient.CurrencyIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CurrencyClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="currencyidget"></a>
-# **CurrencyIdGet**
-> TransactionCurrencyModel CurrencyIdGet (Guid id)
+# **Get**
+> TransactionCurrencyModel Get (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class CurrencyIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.CurrencyIdGet(id);
+                TransactionCurrencyModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CurrencyClient.CurrencyIdGet: " + e.Message);
+                Debug.Print("Exception when calling CurrencyClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the CurrencyIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.CurrencyIdGetWithHttpInfo(id);
+    ApiResponse<TransactionCurrencyModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CurrencyClient.CurrencyIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CurrencyClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="currencyidput"></a>
-# **CurrencyIdPut**
-> TransactionCurrencyModel CurrencyIdPut (Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
+# **Put**
+> TransactionCurrencyModel Put (Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class CurrencyIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -224,12 +224,12 @@ namespace Example
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.CurrencyIdPut(id, createTransactionCurrencyRequest);
+                TransactionCurrencyModel result = apiInstance.Put(id, createTransactionCurrencyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CurrencyClient.CurrencyIdPut: " + e.Message);
+                Debug.Print("Exception when calling CurrencyClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +238,20 @@ namespace Example
 }
 ```
 
-#### Using the CurrencyIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.CurrencyIdPutWithHttpInfo(id, createTransactionCurrencyRequest);
+    ApiResponse<TransactionCurrencyModel> response = apiInstance.PutWithHttpInfo(id, createTransactionCurrencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CurrencyClient.CurrencyIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CurrencyClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -288,8 +288,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="currencypost"></a>
-# **CurrencyPost**
-> TransactionCurrencyModel CurrencyPost (CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
+# **Post**
+> TransactionCurrencyModel Post (CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
 
 
 
@@ -303,7 +303,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class CurrencyPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -319,12 +319,12 @@ namespace Example
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.CurrencyPost(createTransactionCurrencyRequest);
+                TransactionCurrencyModel result = apiInstance.Post(createTransactionCurrencyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CurrencyClient.CurrencyPost: " + e.Message);
+                Debug.Print("Exception when calling CurrencyClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -333,20 +333,20 @@ namespace Example
 }
 ```
 
-#### Using the CurrencyPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.CurrencyPostWithHttpInfo(createTransactionCurrencyRequest);
+    ApiResponse<TransactionCurrencyModel> response = apiInstance.PostWithHttpInfo(createTransactionCurrencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CurrencyClient.CurrencyPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CurrencyClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ShipmentStatusGetAllGet**](ShipmentStatusClient.md#shipmentstatusgetallget) | **GET** /ShipmentStatus/get-all | Retrieves all shipment status. |
-| [**ShipmentStatusIdGet**](ShipmentStatusClient.md#shipmentstatusidget) | **GET** /ShipmentStatus/{id} | Retrives the shipment status with the given id. |
-| [**ShipmentStatusIdPut**](ShipmentStatusClient.md#shipmentstatusidput) | **PUT** /ShipmentStatus/{id} | Updates/saves the given shipment status. |
-| [**ShipmentStatusPost**](ShipmentStatusClient.md#shipmentstatuspost) | **POST** /ShipmentStatus | Creates a new shipment status. |
+| [**GetAll**](ShipmentStatusClient.md#shipmentstatusgetallget) | **GET** /ShipmentStatus/get-all | Retrieves all shipment status. |
+| [**Get**](ShipmentStatusClient.md#shipmentstatusidget) | **GET** /ShipmentStatus/{id} | Retrives the shipment status with the given id. |
+| [**Put**](ShipmentStatusClient.md#shipmentstatusidput) | **PUT** /ShipmentStatus/{id} | Updates/saves the given shipment status. |
+| [**Post**](ShipmentStatusClient.md#shipmentstatuspost) | **POST** /ShipmentStatus | Creates a new shipment status. |
 
 <a id="shipmentstatusgetallget"></a>
-# **ShipmentStatusGetAllGet**
-> List&lt;ShipmentStatusModel&gt; ShipmentStatusGetAllGet ()
+# **GetAll**
+> List&lt;ShipmentStatusModel&gt; GetAll ()
 
 Retrieves all shipment status.
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentStatusGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
             try
             {
                 // Retrieves all shipment status.
-                List<ShipmentStatusModel> result = apiInstance.ShipmentStatusGetAllGet();
+                List<ShipmentStatusModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling ShipmentStatusClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,21 +55,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentStatusGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all shipment status.
-    ApiResponse<List<ShipmentStatusModel>> response = apiInstance.ShipmentStatusGetAllGetWithHttpInfo();
+    ApiResponse<List<ShipmentStatusModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentStatusClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentstatusidget"></a>
-# **ShipmentStatusIdGet**
-> ShipmentStatusModel ShipmentStatusIdGet (Guid id)
+# **Get**
+> ShipmentStatusModel Get (Guid id)
 
 Retrives the shipment status with the given id.
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentStatusIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Retrives the shipment status with the given id.
-                ShipmentStatusModel result = apiInstance.ShipmentStatusIdGet(id);
+                ShipmentStatusModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusIdGet: " + e.Message);
+                Debug.Print("Exception when calling ShipmentStatusClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentStatusIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the shipment status with the given id.
-    ApiResponse<ShipmentStatusModel> response = apiInstance.ShipmentStatusIdGetWithHttpInfo(id);
+    ApiResponse<ShipmentStatusModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentStatusClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentstatusidput"></a>
-# **ShipmentStatusIdPut**
-> ShipmentStatusModel ShipmentStatusIdPut (Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = null)
+# **Put**
+> ShipmentStatusModel Put (Guid id, UpdateShipmentStatusRequest? updateShipmentStatusRequest = null)
 
 Updates/saves the given shipment status.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentStatusIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
             try
             {
                 // Updates/saves the given shipment status.
-                ShipmentStatusModel result = apiInstance.ShipmentStatusIdPut(id, updateShipmentStatusRequest);
+                ShipmentStatusModel result = apiInstance.Put(id, updateShipmentStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusIdPut: " + e.Message);
+                Debug.Print("Exception when calling ShipmentStatusClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,21 +242,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentStatusIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates/saves the given shipment status.
-    ApiResponse<ShipmentStatusModel> response = apiInstance.ShipmentStatusIdPutWithHttpInfo(id, updateShipmentStatusRequest);
+    ApiResponse<ShipmentStatusModel> response = apiInstance.PutWithHttpInfo(id, updateShipmentStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentStatusClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shipmentstatuspost"></a>
-# **ShipmentStatusPost**
-> ShipmentStatusModel ShipmentStatusPost (CreateShipmentStatusRequest? createShipmentStatusRequest = null)
+# **Post**
+> ShipmentStatusModel Post (CreateShipmentStatusRequest? createShipmentStatusRequest = null)
 
 Creates a new shipment status.
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShipmentStatusPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
             try
             {
                 // Creates a new shipment status.
-                ShipmentStatusModel result = apiInstance.ShipmentStatusPost(createShipmentStatusRequest);
+                ShipmentStatusModel result = apiInstance.Post(createShipmentStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusPost: " + e.Message);
+                Debug.Print("Exception when calling ShipmentStatusClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,21 +339,21 @@ namespace Example
 }
 ```
 
-#### Using the ShipmentStatusPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new shipment status.
-    ApiResponse<ShipmentStatusModel> response = apiInstance.ShipmentStatusPostWithHttpInfo(createShipmentStatusRequest);
+    ApiResponse<ShipmentStatusModel> response = apiInstance.PostWithHttpInfo(createShipmentStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShipmentStatusClient.ShipmentStatusPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShipmentStatusClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

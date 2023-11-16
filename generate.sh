@@ -75,16 +75,30 @@ for proj_folder in "$SRC_DIR"/*; do
 
     for file in "$proj_folder"/*; do
         file_name=$(basename "$file")
+        file_name_noext="${file_name%.*}"
         if [[ "$file_name" != *"$API_NAME_SUFFIX.cs" ]]; then
             continue
         fi
 
         controller_name="${file_name%%$API_NAME_SUFFIX*}"
         echo -e "\n$LMAGENTA>>$controller_name..$NC"
-        python "$SCRIPT_BEAUTIFIER" \
-            -f "$file" \
-            -c "$controller_name" ||
-            (echo -e "$RED! Error in $SCRIPT_BEAUTIFIER !$NC" && exit 1)
+        proj_title=$(echo "$proj_folder_name" | sed "s/^$BASE_PROJ_NAME.//")
+        doc_file="$DOC_DIR/$proj_title/$file_name_noext.md"
+        # fix correlating documentation as well
+        if [ -e "$doc_file" ]; then
+            python "$SCRIPT_BEAUTIFIER" \
+                -f "$file" \
+                -d "$doc_file" \
+                -c "$controller_name" ||
+                (echo -e "$RED! Error in $SCRIPT_BEAUTIFIER !$NC" && exit 1)
+        else
+            echo "NO DOC >$doc_file<"
+            python "$SCRIPT_BEAUTIFIER" \
+                -f "$file" \
+                -c "$controller_name" ||
+                (echo -e "$RED! Error in $SCRIPT_BEAUTIFIER !$NC" && exit 1)
+        fi
+
         echo -e "\n$LMAGENTA..done$NC"
     done
 done

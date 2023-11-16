@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ReportingGetByTourIdGet**](ReportingClient.md#reportinggetbytouridget) | **GET** /Reporting/get-by-tour/{id} | Retrieves the tour with the given id. |
+| [**GetByTour**](ReportingClient.md#reportinggetbytouridget) | **GET** /Reporting/get-by-tour/{id} | Retrieves the tour with the given id. |
 
 <a id="reportinggetbytouridget"></a>
-# **ReportingGetByTourIdGet**
-> TourReportingModel ReportingGetByTourIdGet (Guid id)
+# **GetByTour**
+> TourReportingModel GetByTour (Guid id)
 
 Retrieves the tour with the given id.
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ReportingGetByTourIdGetExample
+    public class GetByTourExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
             try
             {
                 // Retrieves the tour with the given id.
-                TourReportingModel result = apiInstance.ReportingGetByTourIdGet(id);
+                TourReportingModel result = apiInstance.GetByTour(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ReportingClient.ReportingGetByTourIdGet: " + e.Message);
+                Debug.Print("Exception when calling ReportingClient.GetByTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,21 +53,21 @@ namespace Example
 }
 ```
 
-#### Using the ReportingGetByTourIdGetWithHttpInfo variant
+#### Using the GetByTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves the tour with the given id.
-    ApiResponse<TourReportingModel> response = apiInstance.ReportingGetByTourIdGetWithHttpInfo(id);
+    ApiResponse<TourReportingModel> response = apiInstance.GetByTourWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ReportingClient.ReportingGetByTourIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ReportingClient.GetByTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

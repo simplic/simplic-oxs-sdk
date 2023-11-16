@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**IssueTypeGetAllGet**](IssueTypeClient.md#issuetypegetallget) | **GET** /IssueType/get-all |  |
+| [**GetAll**](IssueTypeClient.md#issuetypegetallget) | **GET** /IssueType/get-all |  |
 
 <a id="issuetypegetallget"></a>
-# **IssueTypeGetAllGet**
-> List&lt;IssueTypeModel&gt; IssueTypeGetAllGet ()
+# **GetAll**
+> List&lt;IssueTypeModel&gt; GetAll ()
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class IssueTypeGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -37,12 +37,12 @@ namespace Example
 
             try
             {
-                List<IssueTypeModel> result = apiInstance.IssueTypeGetAllGet();
+                List<IssueTypeModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling IssueTypeClient.IssueTypeGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling IssueTypeClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -51,20 +51,20 @@ namespace Example
 }
 ```
 
-#### Using the IssueTypeGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<IssueTypeModel>> response = apiInstance.IssueTypeGetAllGetWithHttpInfo();
+    ApiResponse<List<IssueTypeModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling IssueTypeClient.IssueTypeGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling IssueTypeClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

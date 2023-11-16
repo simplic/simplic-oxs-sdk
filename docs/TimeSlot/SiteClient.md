@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/timeslot-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**SiteGetAllGet**](SiteClient.md#sitegetallget) | **GET** /Site/get-all |  |
-| [**SiteGetByOrganizationGet**](SiteClient.md#sitegetbyorganizationget) | **GET** /Site/get-by-organization |  |
-| [**SiteIdDelete**](SiteClient.md#siteiddelete) | **DELETE** /Site/{id} |  |
-| [**SiteIdGet**](SiteClient.md#siteidget) | **GET** /Site/{id} |  |
-| [**SiteIdPut**](SiteClient.md#siteidput) | **PUT** /Site/{id} |  |
-| [**SitePost**](SiteClient.md#sitepost) | **POST** /Site |  |
+| [**GetAll**](SiteClient.md#sitegetallget) | **GET** /Site/get-all |  |
+| [**GetByOrganization**](SiteClient.md#sitegetbyorganizationget) | **GET** /Site/get-by-organization |  |
+| [**Delete**](SiteClient.md#siteiddelete) | **DELETE** /Site/{id} |  |
+| [**Get**](SiteClient.md#siteidget) | **GET** /Site/{id} |  |
+| [**Put**](SiteClient.md#siteidput) | **PUT** /Site/{id} |  |
+| [**Post**](SiteClient.md#sitepost) | **POST** /Site |  |
 
 <a id="sitegetallget"></a>
-# **SiteGetAllGet**
-> List&lt;SiteModel&gt; SiteGetAllGet ()
+# **GetAll**
+> List&lt;SiteModel&gt; GetAll ()
 
 
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SiteGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
 
             try
             {
-                List<SiteModel> result = apiInstance.SiteGetAllGet();
+                List<SiteModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SiteGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +56,20 @@ namespace Example
 }
 ```
 
-#### Using the SiteGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<SiteModel>> response = apiInstance.SiteGetAllGetWithHttpInfo();
+    ApiResponse<List<SiteModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SiteGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,8 +101,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="sitegetbyorganizationget"></a>
-# **SiteGetByOrganizationGet**
-> List&lt;SiteModel&gt; SiteGetByOrganizationGet ()
+# **GetByOrganization**
+> List&lt;SiteModel&gt; GetByOrganization ()
 
 
 
@@ -116,7 +116,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SiteGetByOrganizationGetExample
+    public class GetByOrganizationExample
     {
         public static void Main()
         {
@@ -131,12 +131,12 @@ namespace Example
 
             try
             {
-                List<SiteModel> result = apiInstance.SiteGetByOrganizationGet();
+                List<SiteModel> result = apiInstance.GetByOrganization();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SiteGetByOrganizationGet: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.GetByOrganization: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -145,20 +145,20 @@ namespace Example
 }
 ```
 
-#### Using the SiteGetByOrganizationGetWithHttpInfo variant
+#### Using the GetByOrganizationWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<SiteModel>> response = apiInstance.SiteGetByOrganizationGetWithHttpInfo();
+    ApiResponse<List<SiteModel>> response = apiInstance.GetByOrganizationWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SiteGetByOrganizationGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.GetByOrganizationWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -190,8 +190,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="siteiddelete"></a>
-# **SiteIdDelete**
-> void SiteIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -205,7 +205,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SiteIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -221,11 +221,11 @@ namespace Example
 
             try
             {
-                apiInstance.SiteIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SiteIdDelete: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -234,17 +234,17 @@ namespace Example
 }
 ```
 
-#### Using the SiteIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.SiteIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SiteIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -280,8 +280,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="siteidget"></a>
-# **SiteIdGet**
-> SiteModel SiteIdGet (Guid id)
+# **Get**
+> SiteModel Get (Guid id)
 
 
 
@@ -295,7 +295,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SiteIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -311,12 +311,12 @@ namespace Example
 
             try
             {
-                SiteModel result = apiInstance.SiteIdGet(id);
+                SiteModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SiteIdGet: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -325,20 +325,20 @@ namespace Example
 }
 ```
 
-#### Using the SiteIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<SiteModel> response = apiInstance.SiteIdGetWithHttpInfo(id);
+    ApiResponse<SiteModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SiteIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -374,8 +374,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="siteidput"></a>
-# **SiteIdPut**
-> SiteModel SiteIdPut (Guid id, UpdateSiteRequest? updateSiteRequest = null)
+# **Put**
+> SiteModel Put (Guid id, UpdateSiteRequest? updateSiteRequest = null)
 
 
 
@@ -389,7 +389,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SiteIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -406,12 +406,12 @@ namespace Example
 
             try
             {
-                SiteModel result = apiInstance.SiteIdPut(id, updateSiteRequest);
+                SiteModel result = apiInstance.Put(id, updateSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SiteIdPut: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -420,20 +420,20 @@ namespace Example
 }
 ```
 
-#### Using the SiteIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<SiteModel> response = apiInstance.SiteIdPutWithHttpInfo(id, updateSiteRequest);
+    ApiResponse<SiteModel> response = apiInstance.PutWithHttpInfo(id, updateSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SiteIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -470,8 +470,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="sitepost"></a>
-# **SitePost**
-> SiteModel SitePost (CreateSiteRequest? createSiteRequest = null)
+# **Post**
+> SiteModel Post (CreateSiteRequest? createSiteRequest = null)
 
 
 
@@ -485,7 +485,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class SitePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -501,12 +501,12 @@ namespace Example
 
             try
             {
-                SiteModel result = apiInstance.SitePost(createSiteRequest);
+                SiteModel result = apiInstance.Post(createSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SiteClient.SitePost: " + e.Message);
+                Debug.Print("Exception when calling SiteClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -515,20 +515,20 @@ namespace Example
 }
 ```
 
-#### Using the SitePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<SiteModel> response = apiInstance.SitePostWithHttpInfo(createSiteRequest);
+    ApiResponse<SiteModel> response = apiInstance.PostWithHttpInfo(createSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SiteClient.SitePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SiteClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

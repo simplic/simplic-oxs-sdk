@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/cdn-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CDNBlobIdDelete**](CDNClient.md#cdnblobiddelete) | **DELETE** /CDN/{blobId} |  |
-| [**CDNGetFileBlobIdGet**](CDNClient.md#cdngetfileblobidget) | **GET** /CDN/get-file/{blobId} |  |
-| [**CDNGetMetadataBlobIdGet**](CDNClient.md#cdngetmetadatablobidget) | **GET** /CDN/get-metadata/{blobId} |  |
-| [**CDNUploadFilePost**](CDNClient.md#cdnuploadfilepost) | **POST** /CDN/upload-file |  |
-| [**CDNUploadPost**](CDNClient.md#cdnuploadpost) | **POST** /CDN/upload |  |
+| [**Delete**](CDNClient.md#cdnblobiddelete) | **DELETE** /CDN/{blobId} |  |
+| [**GetFile**](CDNClient.md#cdngetfileblobidget) | **GET** /CDN/get-file/{blobId} |  |
+| [**GetMetadata**](CDNClient.md#cdngetmetadatablobidget) | **GET** /CDN/get-metadata/{blobId} |  |
+| [**UploadFile**](CDNClient.md#cdnuploadfilepost) | **POST** /CDN/upload-file |  |
+| [**Upload**](CDNClient.md#cdnuploadpost) | **POST** /CDN/upload |  |
 
 <a id="cdnblobiddelete"></a>
-# **CDNBlobIdDelete**
-> BlobMetadata CDNBlobIdDelete (Guid blobId)
+# **Delete**
+> BlobMetadata Delete (Guid blobId)
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.CDN;
 
 namespace Example
 {
-    public class CDNBlobIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
 
             try
             {
-                BlobMetadata result = apiInstance.CDNBlobIdDelete(blobId);
+                BlobMetadata result = apiInstance.Delete(blobId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CDNClient.CDNBlobIdDelete: " + e.Message);
+                Debug.Print("Exception when calling CDNClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +56,20 @@ namespace Example
 }
 ```
 
-#### Using the CDNBlobIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<BlobMetadata> response = apiInstance.CDNBlobIdDeleteWithHttpInfo(blobId);
+    ApiResponse<BlobMetadata> response = apiInstance.DeleteWithHttpInfo(blobId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CDNClient.CDNBlobIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CDNClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -105,8 +105,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="cdngetfileblobidget"></a>
-# **CDNGetFileBlobIdGet**
-> System.IO.Stream CDNGetFileBlobIdGet (Guid blobId)
+# **GetFile**
+> System.IO.Stream GetFile (Guid blobId)
 
 
 
@@ -120,7 +120,7 @@ using Simplic.OxS.SDK.CDN;
 
 namespace Example
 {
-    public class CDNGetFileBlobIdGetExample
+    public class GetFileExample
     {
         public static void Main()
         {
@@ -136,12 +136,12 @@ namespace Example
 
             try
             {
-                System.IO.Stream result = apiInstance.CDNGetFileBlobIdGet(blobId);
+                System.IO.Stream result = apiInstance.GetFile(blobId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CDNClient.CDNGetFileBlobIdGet: " + e.Message);
+                Debug.Print("Exception when calling CDNClient.GetFile: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -150,20 +150,20 @@ namespace Example
 }
 ```
 
-#### Using the CDNGetFileBlobIdGetWithHttpInfo variant
+#### Using the GetFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<System.IO.Stream> response = apiInstance.CDNGetFileBlobIdGetWithHttpInfo(blobId);
+    ApiResponse<System.IO.Stream> response = apiInstance.GetFileWithHttpInfo(blobId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CDNClient.CDNGetFileBlobIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CDNClient.GetFileWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -199,8 +199,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="cdngetmetadatablobidget"></a>
-# **CDNGetMetadataBlobIdGet**
-> BlobMetadata CDNGetMetadataBlobIdGet (Guid blobId)
+# **GetMetadata**
+> BlobMetadata GetMetadata (Guid blobId)
 
 
 
@@ -214,7 +214,7 @@ using Simplic.OxS.SDK.CDN;
 
 namespace Example
 {
-    public class CDNGetMetadataBlobIdGetExample
+    public class GetMetadataExample
     {
         public static void Main()
         {
@@ -230,12 +230,12 @@ namespace Example
 
             try
             {
-                BlobMetadata result = apiInstance.CDNGetMetadataBlobIdGet(blobId);
+                BlobMetadata result = apiInstance.GetMetadata(blobId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CDNClient.CDNGetMetadataBlobIdGet: " + e.Message);
+                Debug.Print("Exception when calling CDNClient.GetMetadata: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -244,20 +244,20 @@ namespace Example
 }
 ```
 
-#### Using the CDNGetMetadataBlobIdGetWithHttpInfo variant
+#### Using the GetMetadataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<BlobMetadata> response = apiInstance.CDNGetMetadataBlobIdGetWithHttpInfo(blobId);
+    ApiResponse<BlobMetadata> response = apiInstance.GetMetadataWithHttpInfo(blobId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CDNClient.CDNGetMetadataBlobIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CDNClient.GetMetadataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="cdnuploadfilepost"></a>
-# **CDNUploadFilePost**
-> UploadFilesResponse CDNUploadFilePost (List<System.IO.Stream>? files = null)
+# **UploadFile**
+> UploadFilesResponse UploadFile (List<System.IO.Stream>? files = null)
 
 
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.CDN;
 
 namespace Example
 {
-    public class CDNUploadFilePostExample
+    public class UploadFileExample
     {
         public static void Main()
         {
@@ -324,12 +324,12 @@ namespace Example
 
             try
             {
-                UploadFilesResponse result = apiInstance.CDNUploadFilePost(files);
+                UploadFilesResponse result = apiInstance.UploadFile(files);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CDNClient.CDNUploadFilePost: " + e.Message);
+                Debug.Print("Exception when calling CDNClient.UploadFile: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -338,20 +338,20 @@ namespace Example
 }
 ```
 
-#### Using the CDNUploadFilePostWithHttpInfo variant
+#### Using the UploadFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<UploadFilesResponse> response = apiInstance.CDNUploadFilePostWithHttpInfo(files);
+    ApiResponse<UploadFilesResponse> response = apiInstance.UploadFileWithHttpInfo(files);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CDNClient.CDNUploadFilePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CDNClient.UploadFileWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -388,8 +388,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="cdnuploadpost"></a>
-# **CDNUploadPost**
-> UploadResponse CDNUploadPost (UploadBytesRequest? uploadBytesRequest = null)
+# **Upload**
+> UploadResponse Upload (UploadBytesRequest? uploadBytesRequest = null)
 
 
 
@@ -403,7 +403,7 @@ using Simplic.OxS.SDK.CDN;
 
 namespace Example
 {
-    public class CDNUploadPostExample
+    public class UploadExample
     {
         public static void Main()
         {
@@ -419,12 +419,12 @@ namespace Example
 
             try
             {
-                UploadResponse result = apiInstance.CDNUploadPost(uploadBytesRequest);
+                UploadResponse result = apiInstance.Upload(uploadBytesRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CDNClient.CDNUploadPost: " + e.Message);
+                Debug.Print("Exception when calling CDNClient.Upload: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -433,20 +433,20 @@ namespace Example
 }
 ```
 
-#### Using the CDNUploadPostWithHttpInfo variant
+#### Using the UploadWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<UploadResponse> response = apiInstance.CDNUploadPostWithHttpInfo(uploadBytesRequest);
+    ApiResponse<UploadResponse> response = apiInstance.UploadWithHttpInfo(uploadBytesRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CDNClient.CDNUploadPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CDNClient.UploadWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

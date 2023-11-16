@@ -4,19 +4,19 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrganizationLinkInvitationAcceptOneTimeIdPut**](OrganizationLinkInvitationClient.md#organizationlinkinvitationacceptonetimeidput) | **PUT** /OrganizationLinkInvitation/accept-one-time/{id} | Accept a pending invitation |
-| [**OrganizationLinkInvitationCreateOneTimePost**](OrganizationLinkInvitationClient.md#organizationlinkinvitationcreateonetimepost) | **POST** /OrganizationLinkInvitation/create-one-time | Creates a new invitation for linking with another organization |
-| [**OrganizationLinkInvitationCreateStaticPost**](OrganizationLinkInvitationClient.md#organizationlinkinvitationcreatestaticpost) | **POST** /OrganizationLinkInvitation/create-static | Creates a new invitation for linking with another organization |
-| [**OrganizationLinkInvitationDeclineOneTimeIdPut**](OrganizationLinkInvitationClient.md#organizationlinkinvitationdeclineonetimeidput) | **PUT** /OrganizationLinkInvitation/decline-one-time/{id} | Decline a pending invitation |
-| [**OrganizationLinkInvitationGet**](OrganizationLinkInvitationClient.md#organizationlinkinvitationget) | **GET** /OrganizationLinkInvitation | Get static invitation links |
-| [**OrganizationLinkInvitationGetByTokenTokenGet**](OrganizationLinkInvitationClient.md#organizationlinkinvitationgetbytokentokenget) | **GET** /OrganizationLinkInvitation/get-by-token/{token} | Get invitation by token |
-| [**OrganizationLinkInvitationGetMyInvitationsGet**](OrganizationLinkInvitationClient.md#organizationlinkinvitationgetmyinvitationsget) | **GET** /OrganizationLinkInvitation/get-my-invitations | Gets a list of all pending invitations |
-| [**OrganizationLinkInvitationIdDelete**](OrganizationLinkInvitationClient.md#organizationlinkinvitationiddelete) | **DELETE** /OrganizationLinkInvitation/{id} | Delete an invitation |
-| [**OrganizationLinkInvitationJoinStaticTokenPut**](OrganizationLinkInvitationClient.md#organizationlinkinvitationjoinstatictokenput) | **PUT** /OrganizationLinkInvitation/join-static/{token} | Create an orgainzation link by using a static token |
+| [**AcceptOneTime**](OrganizationLinkInvitationClient.md#organizationlinkinvitationacceptonetimeidput) | **PUT** /OrganizationLinkInvitation/accept-one-time/{id} | Accept a pending invitation |
+| [**CreateOneTime**](OrganizationLinkInvitationClient.md#organizationlinkinvitationcreateonetimepost) | **POST** /OrganizationLinkInvitation/create-one-time | Creates a new invitation for linking with another organization |
+| [**CreateStatic**](OrganizationLinkInvitationClient.md#organizationlinkinvitationcreatestaticpost) | **POST** /OrganizationLinkInvitation/create-static | Creates a new invitation for linking with another organization |
+| [**DeclineOneTime**](OrganizationLinkInvitationClient.md#organizationlinkinvitationdeclineonetimeidput) | **PUT** /OrganizationLinkInvitation/decline-one-time/{id} | Decline a pending invitation |
+| [**Get**](OrganizationLinkInvitationClient.md#organizationlinkinvitationget) | **GET** /OrganizationLinkInvitation | Get static invitation links |
+| [**GetByTokenTokenGet**](OrganizationLinkInvitationClient.md#organizationlinkinvitationgetbytokentokenget) | **GET** /OrganizationLinkInvitation/get-by-token/{token} | Get invitation by token |
+| [**GetMyInvitationsGet**](OrganizationLinkInvitationClient.md#organizationlinkinvitationgetmyinvitationsget) | **GET** /OrganizationLinkInvitation/get-my-invitations | Gets a list of all pending invitations |
+| [**Delete**](OrganizationLinkInvitationClient.md#organizationlinkinvitationiddelete) | **DELETE** /OrganizationLinkInvitation/{id} | Delete an invitation |
+| [**JoinStatic**](OrganizationLinkInvitationClient.md#organizationlinkinvitationjoinstatictokenput) | **PUT** /OrganizationLinkInvitation/join-static/{token} | Create an orgainzation link by using a static token |
 
 <a id="organizationlinkinvitationacceptonetimeidput"></a>
-# **OrganizationLinkInvitationAcceptOneTimeIdPut**
-> OrganizationLinkInvitationAcceptedResponse OrganizationLinkInvitationAcceptOneTimeIdPut (Guid id)
+# **AcceptOneTime**
+> OrganizationLinkInvitationAcceptedResponse AcceptOneTime (Guid id)
 
 Accept a pending invitation
 
@@ -30,7 +30,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationAcceptOneTimeIdPutExample
+    public class AcceptOneTimeExample
     {
         public static void Main()
         {
@@ -47,12 +47,12 @@ namespace Example
             try
             {
                 // Accept a pending invitation
-                OrganizationLinkInvitationAcceptedResponse result = apiInstance.OrganizationLinkInvitationAcceptOneTimeIdPut(id);
+                OrganizationLinkInvitationAcceptedResponse result = apiInstance.AcceptOneTime(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationAcceptOneTimeIdPut: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.AcceptOneTime: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -61,21 +61,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationAcceptOneTimeIdPutWithHttpInfo variant
+#### Using the AcceptOneTimeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Accept a pending invitation
-    ApiResponse<OrganizationLinkInvitationAcceptedResponse> response = apiInstance.OrganizationLinkInvitationAcceptOneTimeIdPutWithHttpInfo(id);
+    ApiResponse<OrganizationLinkInvitationAcceptedResponse> response = apiInstance.AcceptOneTimeWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationAcceptOneTimeIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.AcceptOneTimeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -111,8 +111,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationcreateonetimepost"></a>
-# **OrganizationLinkInvitationCreateOneTimePost**
-> OrganizationLinkInvitationModel OrganizationLinkInvitationCreateOneTimePost (OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = null)
+# **CreateOneTime**
+> OrganizationLinkInvitationModel CreateOneTime (OrganizationLinkInvitationRequest? organizationLinkInvitationRequest = null)
 
 Creates a new invitation for linking with another organization
 
@@ -126,7 +126,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationCreateOneTimePostExample
+    public class CreateOneTimeExample
     {
         public static void Main()
         {
@@ -143,12 +143,12 @@ namespace Example
             try
             {
                 // Creates a new invitation for linking with another organization
-                OrganizationLinkInvitationModel result = apiInstance.OrganizationLinkInvitationCreateOneTimePost(organizationLinkInvitationRequest);
+                OrganizationLinkInvitationModel result = apiInstance.CreateOneTime(organizationLinkInvitationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateOneTimePost: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.CreateOneTime: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -157,21 +157,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationCreateOneTimePostWithHttpInfo variant
+#### Using the CreateOneTimeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new invitation for linking with another organization
-    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.OrganizationLinkInvitationCreateOneTimePostWithHttpInfo(organizationLinkInvitationRequest);
+    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.CreateOneTimeWithHttpInfo(organizationLinkInvitationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateOneTimePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.CreateOneTimeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -207,8 +207,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationcreatestaticpost"></a>
-# **OrganizationLinkInvitationCreateStaticPost**
-> OrganizationLinkInvitationModel OrganizationLinkInvitationCreateStaticPost (OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = null)
+# **CreateStatic**
+> OrganizationLinkInvitationModel CreateStatic (OrganizationLinkStaticInvitationRequest? organizationLinkStaticInvitationRequest = null)
 
 Creates a new invitation for linking with another organization
 
@@ -222,7 +222,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationCreateStaticPostExample
+    public class CreateStaticExample
     {
         public static void Main()
         {
@@ -239,12 +239,12 @@ namespace Example
             try
             {
                 // Creates a new invitation for linking with another organization
-                OrganizationLinkInvitationModel result = apiInstance.OrganizationLinkInvitationCreateStaticPost(organizationLinkStaticInvitationRequest);
+                OrganizationLinkInvitationModel result = apiInstance.CreateStatic(organizationLinkStaticInvitationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateStaticPost: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.CreateStatic: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -253,21 +253,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationCreateStaticPostWithHttpInfo variant
+#### Using the CreateStaticWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new invitation for linking with another organization
-    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.OrganizationLinkInvitationCreateStaticPostWithHttpInfo(organizationLinkStaticInvitationRequest);
+    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.CreateStaticWithHttpInfo(organizationLinkStaticInvitationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateStaticPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.CreateStaticWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -303,8 +303,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationdeclineonetimeidput"></a>
-# **OrganizationLinkInvitationDeclineOneTimeIdPut**
-> void OrganizationLinkInvitationDeclineOneTimeIdPut (Guid id)
+# **DeclineOneTime**
+> void DeclineOneTime (Guid id)
 
 Decline a pending invitation
 
@@ -318,7 +318,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationDeclineOneTimeIdPutExample
+    public class DeclineOneTimeExample
     {
         public static void Main()
         {
@@ -335,11 +335,11 @@ namespace Example
             try
             {
                 // Decline a pending invitation
-                apiInstance.OrganizationLinkInvitationDeclineOneTimeIdPut(id);
+                apiInstance.DeclineOneTime(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPut: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.DeclineOneTime: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -348,18 +348,18 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationDeclineOneTimeIdPutWithHttpInfo variant
+#### Using the DeclineOneTimeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Decline a pending invitation
-    apiInstance.OrganizationLinkInvitationDeclineOneTimeIdPutWithHttpInfo(id);
+    apiInstance.DeclineOneTimeWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.DeclineOneTimeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -395,8 +395,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationget"></a>
-# **OrganizationLinkInvitationGet**
-> List&lt;OrganizationLinkInvitationModel&gt; OrganizationLinkInvitationGet ()
+# **Get**
+> List&lt;OrganizationLinkInvitationModel&gt; Get ()
 
 Get static invitation links
 
@@ -410,7 +410,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -426,12 +426,12 @@ namespace Example
             try
             {
                 // Get static invitation links
-                List<OrganizationLinkInvitationModel> result = apiInstance.OrganizationLinkInvitationGet();
+                List<OrganizationLinkInvitationModel> result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -440,21 +440,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get static invitation links
-    ApiResponse<List<OrganizationLinkInvitationModel>> response = apiInstance.OrganizationLinkInvitationGetWithHttpInfo();
+    ApiResponse<List<OrganizationLinkInvitationModel>> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -486,8 +486,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationgetbytokentokenget"></a>
-# **OrganizationLinkInvitationGetByTokenTokenGet**
-> OrganizationLinkInvitationModel OrganizationLinkInvitationGetByTokenTokenGet (string token)
+# **GetByTokenTokenGet**
+> OrganizationLinkInvitationModel GetByTokenTokenGet (string token)
 
 Get invitation by token
 
@@ -501,7 +501,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationGetByTokenTokenGetExample
+    public class GetByTokenTokenGetExample
     {
         public static void Main()
         {
@@ -518,12 +518,12 @@ namespace Example
             try
             {
                 // Get invitation by token
-                OrganizationLinkInvitationModel result = apiInstance.OrganizationLinkInvitationGetByTokenTokenGet(token);
+                OrganizationLinkInvitationModel result = apiInstance.GetByTokenTokenGet(token);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGetByTokenTokenGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.GetByTokenTokenGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -532,21 +532,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationGetByTokenTokenGetWithHttpInfo variant
+#### Using the GetByTokenTokenGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get invitation by token
-    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.OrganizationLinkInvitationGetByTokenTokenGetWithHttpInfo(token);
+    ApiResponse<OrganizationLinkInvitationModel> response = apiInstance.GetByTokenTokenGetWithHttpInfo(token);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGetByTokenTokenGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.GetByTokenTokenGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -582,8 +582,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationgetmyinvitationsget"></a>
-# **OrganizationLinkInvitationGetMyInvitationsGet**
-> List&lt;OrganizationLinkInvitationModel&gt; OrganizationLinkInvitationGetMyInvitationsGet ()
+# **GetMyInvitationsGet**
+> List&lt;OrganizationLinkInvitationModel&gt; GetMyInvitationsGet ()
 
 Gets a list of all pending invitations
 
@@ -597,7 +597,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationGetMyInvitationsGetExample
+    public class GetMyInvitationsGetExample
     {
         public static void Main()
         {
@@ -613,12 +613,12 @@ namespace Example
             try
             {
                 // Gets a list of all pending invitations
-                List<OrganizationLinkInvitationModel> result = apiInstance.OrganizationLinkInvitationGetMyInvitationsGet();
+                List<OrganizationLinkInvitationModel> result = apiInstance.GetMyInvitationsGet();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGetMyInvitationsGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.GetMyInvitationsGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -627,21 +627,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationGetMyInvitationsGetWithHttpInfo variant
+#### Using the GetMyInvitationsGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a list of all pending invitations
-    ApiResponse<List<OrganizationLinkInvitationModel>> response = apiInstance.OrganizationLinkInvitationGetMyInvitationsGetWithHttpInfo();
+    ApiResponse<List<OrganizationLinkInvitationModel>> response = apiInstance.GetMyInvitationsGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationGetMyInvitationsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.GetMyInvitationsGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -673,8 +673,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationiddelete"></a>
-# **OrganizationLinkInvitationIdDelete**
-> void OrganizationLinkInvitationIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Delete an invitation
 
@@ -688,7 +688,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -705,11 +705,11 @@ namespace Example
             try
             {
                 // Delete an invitation
-                apiInstance.OrganizationLinkInvitationIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDelete: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -718,18 +718,18 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Delete an invitation
-    apiInstance.OrganizationLinkInvitationIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -765,8 +765,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationlinkinvitationjoinstatictokenput"></a>
-# **OrganizationLinkInvitationJoinStaticTokenPut**
-> OrganizationLinkInvitationAcceptedResponse OrganizationLinkInvitationJoinStaticTokenPut (string token)
+# **JoinStatic**
+> OrganizationLinkInvitationAcceptedResponse JoinStatic (string token)
 
 Create an orgainzation link by using a static token
 
@@ -780,7 +780,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkInvitationJoinStaticTokenPutExample
+    public class JoinStaticExample
     {
         public static void Main()
         {
@@ -797,12 +797,12 @@ namespace Example
             try
             {
                 // Create an orgainzation link by using a static token
-                OrganizationLinkInvitationAcceptedResponse result = apiInstance.OrganizationLinkInvitationJoinStaticTokenPut(token);
+                OrganizationLinkInvitationAcceptedResponse result = apiInstance.JoinStatic(token);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationJoinStaticTokenPut: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkInvitationClient.JoinStatic: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -811,21 +811,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkInvitationJoinStaticTokenPutWithHttpInfo variant
+#### Using the JoinStaticWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Create an orgainzation link by using a static token
-    ApiResponse<OrganizationLinkInvitationAcceptedResponse> response = apiInstance.OrganizationLinkInvitationJoinStaticTokenPutWithHttpInfo(token);
+    ApiResponse<OrganizationLinkInvitationAcceptedResponse> response = apiInstance.JoinStaticWithHttpInfo(token);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkInvitationClient.OrganizationLinkInvitationJoinStaticTokenPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkInvitationClient.JoinStaticWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

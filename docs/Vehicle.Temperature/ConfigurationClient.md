@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-temperature-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ConfigurationGet**](ConfigurationClient.md#configurationget) | **GET** /Configuration |  |
-| [**ConfigurationIdPatch**](ConfigurationClient.md#configurationidpatch) | **PATCH** /Configuration/{id} |  |
-| [**ConfigurationPost**](ConfigurationClient.md#configurationpost) | **POST** /Configuration |  |
-| [**ConfigurationRecalculateLocationsPost**](ConfigurationClient.md#configurationrecalculatelocationspost) | **POST** /Configuration/recalculate-locations |  |
+| [**Get**](ConfigurationClient.md#configurationget) | **GET** /Configuration |  |
+| [**Patch**](ConfigurationClient.md#configurationidpatch) | **PATCH** /Configuration/{id} |  |
+| [**Post**](ConfigurationClient.md#configurationpost) | **POST** /Configuration |  |
+| [**RecalculateLocations**](ConfigurationClient.md#configurationrecalculatelocationspost) | **POST** /Configuration/recalculate-locations |  |
 
 <a id="configurationget"></a>
-# **ConfigurationGet**
-> ConfigurationModel ConfigurationGet ()
+# **Get**
+> ConfigurationModel Get ()
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class ConfigurationGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -40,12 +40,12 @@ namespace Example
 
             try
             {
-                ConfigurationModel result = apiInstance.ConfigurationGet();
+                ConfigurationModel result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConfigurationClient.ConfigurationGet: " + e.Message);
+                Debug.Print("Exception when calling ConfigurationClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,20 +54,20 @@ namespace Example
 }
 ```
 
-#### Using the ConfigurationGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConfigurationModel> response = apiInstance.ConfigurationGetWithHttpInfo();
+    ApiResponse<ConfigurationModel> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConfigurationClient.ConfigurationGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConfigurationClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="configurationidpatch"></a>
-# **ConfigurationIdPatch**
-> ConfigurationModel ConfigurationIdPatch (Guid id, PatchConfigurationRequest? patchConfigurationRequest = null)
+# **Patch**
+> ConfigurationModel Patch (Guid id, PatchConfigurationRequest? patchConfigurationRequest = null)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class ConfigurationIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -131,12 +131,12 @@ namespace Example
 
             try
             {
-                ConfigurationModel result = apiInstance.ConfigurationIdPatch(id, patchConfigurationRequest);
+                ConfigurationModel result = apiInstance.Patch(id, patchConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConfigurationClient.ConfigurationIdPatch: " + e.Message);
+                Debug.Print("Exception when calling ConfigurationClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -145,20 +145,20 @@ namespace Example
 }
 ```
 
-#### Using the ConfigurationIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConfigurationModel> response = apiInstance.ConfigurationIdPatchWithHttpInfo(id, patchConfigurationRequest);
+    ApiResponse<ConfigurationModel> response = apiInstance.PatchWithHttpInfo(id, patchConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConfigurationClient.ConfigurationIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConfigurationClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="configurationpost"></a>
-# **ConfigurationPost**
-> ConfigurationModel ConfigurationPost (CreateConfigurationRequest? createConfigurationRequest = null)
+# **Post**
+> ConfigurationModel Post (CreateConfigurationRequest? createConfigurationRequest = null)
 
 
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class ConfigurationPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -226,12 +226,12 @@ namespace Example
 
             try
             {
-                ConfigurationModel result = apiInstance.ConfigurationPost(createConfigurationRequest);
+                ConfigurationModel result = apiInstance.Post(createConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConfigurationClient.ConfigurationPost: " + e.Message);
+                Debug.Print("Exception when calling ConfigurationClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -240,20 +240,20 @@ namespace Example
 }
 ```
 
-#### Using the ConfigurationPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConfigurationModel> response = apiInstance.ConfigurationPostWithHttpInfo(createConfigurationRequest);
+    ApiResponse<ConfigurationModel> response = apiInstance.PostWithHttpInfo(createConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConfigurationClient.ConfigurationPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConfigurationClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -289,8 +289,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="configurationrecalculatelocationspost"></a>
-# **ConfigurationRecalculateLocationsPost**
-> ConfigurationModel ConfigurationRecalculateLocationsPost (string? key = null, DateTime? start = null, DateTime? end = null)
+# **RecalculateLocations**
+> ConfigurationModel RecalculateLocations (string? key = null, DateTime? start = null, DateTime? end = null)
 
 
 
@@ -304,7 +304,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class ConfigurationRecalculateLocationsPostExample
+    public class RecalculateLocationsExample
     {
         public static void Main()
         {
@@ -322,12 +322,12 @@ namespace Example
 
             try
             {
-                ConfigurationModel result = apiInstance.ConfigurationRecalculateLocationsPost(key, start, end);
+                ConfigurationModel result = apiInstance.RecalculateLocations(key, start, end);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConfigurationClient.ConfigurationRecalculateLocationsPost: " + e.Message);
+                Debug.Print("Exception when calling ConfigurationClient.RecalculateLocations: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -336,20 +336,20 @@ namespace Example
 }
 ```
 
-#### Using the ConfigurationRecalculateLocationsPostWithHttpInfo variant
+#### Using the RecalculateLocationsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConfigurationModel> response = apiInstance.ConfigurationRecalculateLocationsPostWithHttpInfo(key, start, end);
+    ApiResponse<ConfigurationModel> response = apiInstance.RecalculateLocationsWithHttpInfo(key, start, end);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConfigurationClient.ConfigurationRecalculateLocationsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConfigurationClient.RecalculateLocationsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

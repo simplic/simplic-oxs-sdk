@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TourStatusGetAllGet**](TourStatusClient.md#tourstatusgetallget) | **GET** /TourStatus/get-all | Retrieves all tour status. |
-| [**TourStatusIdGet**](TourStatusClient.md#tourstatusidget) | **GET** /TourStatus/{id} | Retrives the tour status with the given id. |
-| [**TourStatusIdPatch**](TourStatusClient.md#tourstatusidpatch) | **PATCH** /TourStatus/{id} | Updates/saves the given tour status. |
-| [**TourStatusPost**](TourStatusClient.md#tourstatuspost) | **POST** /TourStatus | Creates a new tour status. |
+| [**GetAll**](TourStatusClient.md#tourstatusgetallget) | **GET** /TourStatus/get-all | Retrieves all tour status. |
+| [**Get**](TourStatusClient.md#tourstatusidget) | **GET** /TourStatus/{id} | Retrives the tour status with the given id. |
+| [**Patch**](TourStatusClient.md#tourstatusidpatch) | **PATCH** /TourStatus/{id} | Updates/saves the given tour status. |
+| [**Post**](TourStatusClient.md#tourstatuspost) | **POST** /TourStatus | Creates a new tour status. |
 
 <a id="tourstatusgetallget"></a>
-# **TourStatusGetAllGet**
-> List&lt;TourStatusModel&gt; TourStatusGetAllGet ()
+# **GetAll**
+> List&lt;TourStatusModel&gt; GetAll ()
 
 Retrieves all tour status.
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourStatusGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
             try
             {
                 // Retrieves all tour status.
-                List<TourStatusModel> result = apiInstance.TourStatusGetAllGet();
+                List<TourStatusModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourStatusClient.TourStatusGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling TourStatusClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,21 +55,21 @@ namespace Example
 }
 ```
 
-#### Using the TourStatusGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all tour status.
-    ApiResponse<List<TourStatusModel>> response = apiInstance.TourStatusGetAllGetWithHttpInfo();
+    ApiResponse<List<TourStatusModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourStatusClient.TourStatusGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourStatusClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourstatusidget"></a>
-# **TourStatusIdGet**
-> TourStatusModel TourStatusIdGet (Guid id)
+# **Get**
+> TourStatusModel Get (Guid id)
 
 Retrives the tour status with the given id.
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourStatusIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Retrives the tour status with the given id.
-                TourStatusModel result = apiInstance.TourStatusIdGet(id);
+                TourStatusModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourStatusClient.TourStatusIdGet: " + e.Message);
+                Debug.Print("Exception when calling TourStatusClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the TourStatusIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the tour status with the given id.
-    ApiResponse<TourStatusModel> response = apiInstance.TourStatusIdGetWithHttpInfo(id);
+    ApiResponse<TourStatusModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourStatusClient.TourStatusIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourStatusClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourstatusidpatch"></a>
-# **TourStatusIdPatch**
-> TourStatusModel TourStatusIdPatch (Guid id, PatchTourStatusRequest? patchTourStatusRequest = null)
+# **Patch**
+> TourStatusModel Patch (Guid id, PatchTourStatusRequest? patchTourStatusRequest = null)
 
 Updates/saves the given tour status.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourStatusIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
             try
             {
                 // Updates/saves the given tour status.
-                TourStatusModel result = apiInstance.TourStatusIdPatch(id, patchTourStatusRequest);
+                TourStatusModel result = apiInstance.Patch(id, patchTourStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourStatusClient.TourStatusIdPatch: " + e.Message);
+                Debug.Print("Exception when calling TourStatusClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,21 +242,21 @@ namespace Example
 }
 ```
 
-#### Using the TourStatusIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates/saves the given tour status.
-    ApiResponse<TourStatusModel> response = apiInstance.TourStatusIdPatchWithHttpInfo(id, patchTourStatusRequest);
+    ApiResponse<TourStatusModel> response = apiInstance.PatchWithHttpInfo(id, patchTourStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourStatusClient.TourStatusIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourStatusClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourstatuspost"></a>
-# **TourStatusPost**
-> TourStatusModel TourStatusPost (CreateTourStatusRequest? createTourStatusRequest = null)
+# **Post**
+> TourStatusModel Post (CreateTourStatusRequest? createTourStatusRequest = null)
 
 Creates a new tour status.
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourStatusPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
             try
             {
                 // Creates a new tour status.
-                TourStatusModel result = apiInstance.TourStatusPost(createTourStatusRequest);
+                TourStatusModel result = apiInstance.Post(createTourStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourStatusClient.TourStatusPost: " + e.Message);
+                Debug.Print("Exception when calling TourStatusClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,21 +339,21 @@ namespace Example
 }
 ```
 
-#### Using the TourStatusPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new tour status.
-    ApiResponse<TourStatusModel> response = apiInstance.TourStatusPostWithHttpInfo(createTourStatusRequest);
+    ApiResponse<TourStatusModel> response = apiInstance.PostWithHttpInfo(createTourStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourStatusClient.TourStatusPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourStatusClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

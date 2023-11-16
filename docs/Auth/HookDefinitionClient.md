@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/auth-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**HookDefinitionGet**](HookDefinitionClient.md#hookdefinitionget) | **GET** /HookDefinition |  |
+| [**Get**](HookDefinitionClient.md#hookdefinitionget) | **GET** /HookDefinition |  |
 
 <a id="hookdefinitionget"></a>
-# **HookDefinitionGet**
-> HookDefinitionResponse HookDefinitionGet ()
+# **Get**
+> HookDefinitionResponse Get ()
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class HookDefinitionGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -37,12 +37,12 @@ namespace Example
 
             try
             {
-                HookDefinitionResponse result = apiInstance.HookDefinitionGet();
+                HookDefinitionResponse result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HookDefinitionClient.HookDefinitionGet: " + e.Message);
+                Debug.Print("Exception when calling HookDefinitionClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -51,20 +51,20 @@ namespace Example
 }
 ```
 
-#### Using the HookDefinitionGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<HookDefinitionResponse> response = apiInstance.HookDefinitionGetWithHttpInfo();
+    ApiResponse<HookDefinitionResponse> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HookDefinitionClient.HookDefinitionGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HookDefinitionClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

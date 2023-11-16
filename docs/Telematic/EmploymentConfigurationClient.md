@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**EmploymentConfigurationGetForEmploymentIdGet**](EmploymentConfigurationClient.md#employmentconfigurationgetforemploymentidget) | **GET** /EmploymentConfiguration/get-for-employment/{id} |  |
-| [**EmploymentConfigurationIdDelete**](EmploymentConfigurationClient.md#employmentconfigurationiddelete) | **DELETE** /EmploymentConfiguration/{id} |  |
-| [**EmploymentConfigurationIdGet**](EmploymentConfigurationClient.md#employmentconfigurationidget) | **GET** /EmploymentConfiguration/{id} |  |
-| [**EmploymentConfigurationIdPatch**](EmploymentConfigurationClient.md#employmentconfigurationidpatch) | **PATCH** /EmploymentConfiguration/{id} |  |
-| [**EmploymentConfigurationPost**](EmploymentConfigurationClient.md#employmentconfigurationpost) | **POST** /EmploymentConfiguration |  |
+| [**GetForEmployment**](EmploymentConfigurationClient.md#employmentconfigurationgetforemploymentidget) | **GET** /EmploymentConfiguration/get-for-employment/{id} |  |
+| [**Delete**](EmploymentConfigurationClient.md#employmentconfigurationiddelete) | **DELETE** /EmploymentConfiguration/{id} |  |
+| [**Get**](EmploymentConfigurationClient.md#employmentconfigurationidget) | **GET** /EmploymentConfiguration/{id} |  |
+| [**Patch**](EmploymentConfigurationClient.md#employmentconfigurationidpatch) | **PATCH** /EmploymentConfiguration/{id} |  |
+| [**Post**](EmploymentConfigurationClient.md#employmentconfigurationpost) | **POST** /EmploymentConfiguration |  |
 
 <a id="employmentconfigurationgetforemploymentidget"></a>
-# **EmploymentConfigurationGetForEmploymentIdGet**
-> List&lt;EmploymentConfigurationModel&gt; EmploymentConfigurationGetForEmploymentIdGet (Guid id)
+# **GetForEmployment**
+> List&lt;EmploymentConfigurationModel&gt; GetForEmployment (Guid id)
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class EmploymentConfigurationGetForEmploymentIdGetExample
+    public class GetForEmploymentExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
 
             try
             {
-                List<EmploymentConfigurationModel> result = apiInstance.EmploymentConfigurationGetForEmploymentIdGet(id);
+                List<EmploymentConfigurationModel> result = apiInstance.GetForEmployment(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationGetForEmploymentIdGet: " + e.Message);
+                Debug.Print("Exception when calling EmploymentConfigurationClient.GetForEmployment: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +56,20 @@ namespace Example
 }
 ```
 
-#### Using the EmploymentConfigurationGetForEmploymentIdGetWithHttpInfo variant
+#### Using the GetForEmploymentWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<EmploymentConfigurationModel>> response = apiInstance.EmploymentConfigurationGetForEmploymentIdGetWithHttpInfo(id);
+    ApiResponse<List<EmploymentConfigurationModel>> response = apiInstance.GetForEmploymentWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationGetForEmploymentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EmploymentConfigurationClient.GetForEmploymentWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -105,8 +105,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="employmentconfigurationiddelete"></a>
-# **EmploymentConfigurationIdDelete**
-> Object EmploymentConfigurationIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 
 
@@ -120,7 +120,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class EmploymentConfigurationIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -136,12 +136,12 @@ namespace Example
 
             try
             {
-                Object result = apiInstance.EmploymentConfigurationIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdDelete: " + e.Message);
+                Debug.Print("Exception when calling EmploymentConfigurationClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -150,20 +150,20 @@ namespace Example
 }
 ```
 
-#### Using the EmploymentConfigurationIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.EmploymentConfigurationIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EmploymentConfigurationClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -199,8 +199,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="employmentconfigurationidget"></a>
-# **EmploymentConfigurationIdGet**
-> EmploymentConfigurationModel EmploymentConfigurationIdGet (Guid id)
+# **Get**
+> EmploymentConfigurationModel Get (Guid id)
 
 
 
@@ -214,7 +214,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class EmploymentConfigurationIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -230,12 +230,12 @@ namespace Example
 
             try
             {
-                EmploymentConfigurationModel result = apiInstance.EmploymentConfigurationIdGet(id);
+                EmploymentConfigurationModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdGet: " + e.Message);
+                Debug.Print("Exception when calling EmploymentConfigurationClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -244,20 +244,20 @@ namespace Example
 }
 ```
 
-#### Using the EmploymentConfigurationIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<EmploymentConfigurationModel> response = apiInstance.EmploymentConfigurationIdGetWithHttpInfo(id);
+    ApiResponse<EmploymentConfigurationModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EmploymentConfigurationClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="employmentconfigurationidpatch"></a>
-# **EmploymentConfigurationIdPatch**
-> EmploymentConfigurationModel EmploymentConfigurationIdPatch (Guid id, PatchEmploymentConfigurationRequest? patchEmploymentConfigurationRequest = null)
+# **Patch**
+> EmploymentConfigurationModel Patch (Guid id, PatchEmploymentConfigurationRequest? patchEmploymentConfigurationRequest = null)
 
 
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class EmploymentConfigurationIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
 
             try
             {
-                EmploymentConfigurationModel result = apiInstance.EmploymentConfigurationIdPatch(id, patchEmploymentConfigurationRequest);
+                EmploymentConfigurationModel result = apiInstance.Patch(id, patchEmploymentConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdPatch: " + e.Message);
+                Debug.Print("Exception when calling EmploymentConfigurationClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,20 +339,20 @@ namespace Example
 }
 ```
 
-#### Using the EmploymentConfigurationIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<EmploymentConfigurationModel> response = apiInstance.EmploymentConfigurationIdPatchWithHttpInfo(id, patchEmploymentConfigurationRequest);
+    ApiResponse<EmploymentConfigurationModel> response = apiInstance.PatchWithHttpInfo(id, patchEmploymentConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EmploymentConfigurationClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -389,8 +389,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="employmentconfigurationpost"></a>
-# **EmploymentConfigurationPost**
-> EmploymentConfigurationModel EmploymentConfigurationPost (CreateEmploymentConfigurationRequest? createEmploymentConfigurationRequest = null)
+# **Post**
+> EmploymentConfigurationModel Post (CreateEmploymentConfigurationRequest? createEmploymentConfigurationRequest = null)
 
 
 
@@ -404,7 +404,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class EmploymentConfigurationPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -420,12 +420,12 @@ namespace Example
 
             try
             {
-                EmploymentConfigurationModel result = apiInstance.EmploymentConfigurationPost(createEmploymentConfigurationRequest);
+                EmploymentConfigurationModel result = apiInstance.Post(createEmploymentConfigurationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationPost: " + e.Message);
+                Debug.Print("Exception when calling EmploymentConfigurationClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -434,20 +434,20 @@ namespace Example
 }
 ```
 
-#### Using the EmploymentConfigurationPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<EmploymentConfigurationModel> response = apiInstance.EmploymentConfigurationPostWithHttpInfo(createEmploymentConfigurationRequest);
+    ApiResponse<EmploymentConfigurationModel> response = apiInstance.PostWithHttpInfo(createEmploymentConfigurationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EmploymentConfigurationClient.EmploymentConfigurationPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EmploymentConfigurationClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

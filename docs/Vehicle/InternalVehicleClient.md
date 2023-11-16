@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalVehicleGet**](InternalVehicleClient.md#internalinternalvehicleget) | **GET** /internal/InternalVehicle |  |
+| [**Get**](InternalVehicleClient.md#internalinternalvehicleget) | **GET** /internal/InternalVehicle |  |
 
 <a id="internalinternalvehicleget"></a>
-# **InternalInternalVehicleGet**
-> VehicleModel InternalInternalVehicleGet (Guid? id = null)
+# **Get**
+> VehicleModel Get (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class InternalInternalVehicleGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                VehicleModel result = apiInstance.InternalInternalVehicleGet(id);
+                VehicleModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalVehicleClient.InternalInternalVehicleGet: " + e.Message);
+                Debug.Print("Exception when calling InternalVehicleClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalVehicleGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleModel> response = apiInstance.InternalInternalVehicleGetWithHttpInfo(id);
+    ApiResponse<VehicleModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalVehicleClient.InternalInternalVehicleGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalVehicleClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

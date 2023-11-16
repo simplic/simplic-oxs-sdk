@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalQuantityUnitGetByIdGet**](InternalQuantityUnitClient.md#internalinternalquantityunitgetbyidget) | **GET** /internal/InternalQuantityUnit/get-by-id |  |
+| [**GetById**](InternalQuantityUnitClient.md#internalinternalquantityunitgetbyidget) | **GET** /internal/InternalQuantityUnit/get-by-id |  |
 
 <a id="internalinternalquantityunitgetbyidget"></a>
-# **InternalInternalQuantityUnitGetByIdGet**
-> QuantityUnitModel InternalInternalQuantityUnitGetByIdGet (Guid? id = null)
+# **GetById**
+> QuantityUnitModel GetById (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class InternalInternalQuantityUnitGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                QuantityUnitModel result = apiInstance.InternalInternalQuantityUnitGetByIdGet(id);
+                QuantityUnitModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalQuantityUnitClient.InternalInternalQuantityUnitGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalQuantityUnitClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalQuantityUnitGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<QuantityUnitModel> response = apiInstance.InternalInternalQuantityUnitGetByIdGetWithHttpInfo(id);
+    ApiResponse<QuantityUnitModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalQuantityUnitClient.InternalInternalQuantityUnitGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalQuantityUnitClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

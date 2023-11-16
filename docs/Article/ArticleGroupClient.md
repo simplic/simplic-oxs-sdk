@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArticleGroupIdDelete**](ArticleGroupClient.md#articlegroupiddelete) | **DELETE** /ArticleGroup/{id} |  |
-| [**ArticleGroupIdGet**](ArticleGroupClient.md#articlegroupidget) | **GET** /ArticleGroup/{id} |  |
-| [**ArticleGroupIdPut**](ArticleGroupClient.md#articlegroupidput) | **PUT** /ArticleGroup/{id} |  |
-| [**ArticleGroupPost**](ArticleGroupClient.md#articlegrouppost) | **POST** /ArticleGroup |  |
+| [**Delete**](ArticleGroupClient.md#articlegroupiddelete) | **DELETE** /ArticleGroup/{id} |  |
+| [**Get**](ArticleGroupClient.md#articlegroupidget) | **GET** /ArticleGroup/{id} |  |
+| [**Put**](ArticleGroupClient.md#articlegroupidput) | **PUT** /ArticleGroup/{id} |  |
+| [**Post**](ArticleGroupClient.md#articlegrouppost) | **POST** /ArticleGroup |  |
 
 <a id="articlegroupiddelete"></a>
-# **ArticleGroupIdDelete**
-> void ArticleGroupIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGroupIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.ArticleGroupIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ArticleGroupClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGroupIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ArticleGroupIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleGroupClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegroupidget"></a>
-# **ArticleGroupIdGet**
-> ArticleGroupModel ArticleGroupIdGet (Guid id)
+# **Get**
+> ArticleGroupModel Get (Guid id)
 
 
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGroupIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -131,12 +131,12 @@ namespace Example
 
             try
             {
-                ArticleGroupModel result = apiInstance.ArticleGroupIdGet(id);
+                ArticleGroupModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleGroupClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -145,20 +145,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGroupIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleGroupModel> response = apiInstance.ArticleGroupIdGetWithHttpInfo(id);
+    ApiResponse<ArticleGroupModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleGroupClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -194,8 +194,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegroupidput"></a>
-# **ArticleGroupIdPut**
-> ArticleGroupModel ArticleGroupIdPut (Guid id, UpdateArticleGroupRequest? updateArticleGroupRequest = null)
+# **Put**
+> ArticleGroupModel Put (Guid id, UpdateArticleGroupRequest? updateArticleGroupRequest = null)
 
 
 
@@ -209,7 +209,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGroupIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -226,12 +226,12 @@ namespace Example
 
             try
             {
-                ArticleGroupModel result = apiInstance.ArticleGroupIdPut(id, updateArticleGroupRequest);
+                ArticleGroupModel result = apiInstance.Put(id, updateArticleGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdPut: " + e.Message);
+                Debug.Print("Exception when calling ArticleGroupClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -240,20 +240,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGroupIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleGroupModel> response = apiInstance.ArticleGroupIdPutWithHttpInfo(id, updateArticleGroupRequest);
+    ApiResponse<ArticleGroupModel> response = apiInstance.PutWithHttpInfo(id, updateArticleGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleGroupClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -290,8 +290,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegrouppost"></a>
-# **ArticleGroupPost**
-> ArticleGroupModel ArticleGroupPost (CreateArticleGroupRequest? createArticleGroupRequest = null)
+# **Post**
+> ArticleGroupModel Post (CreateArticleGroupRequest? createArticleGroupRequest = null)
 
 
 
@@ -305,7 +305,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGroupPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -321,12 +321,12 @@ namespace Example
 
             try
             {
-                ArticleGroupModel result = apiInstance.ArticleGroupPost(createArticleGroupRequest);
+                ArticleGroupModel result = apiInstance.Post(createArticleGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupPost: " + e.Message);
+                Debug.Print("Exception when calling ArticleGroupClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -335,20 +335,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGroupPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleGroupModel> response = apiInstance.ArticleGroupPostWithHttpInfo(createArticleGroupRequest);
+    ApiResponse<ArticleGroupModel> response = apiInstance.PostWithHttpInfo(createArticleGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleGroupClient.ArticleGroupPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleGroupClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

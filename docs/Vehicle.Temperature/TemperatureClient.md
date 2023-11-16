@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-temperature-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TemperatureByDateVehicleIdGet**](TemperatureClient.md#temperaturebydatevehicleidget) | **GET** /Temperature/by-date/{vehicleId} |  |
-| [**TemperaturePost**](TemperatureClient.md#temperaturepost) | **POST** /Temperature |  |
-| [**TemperatureVehicleIdGet**](TemperatureClient.md#temperaturevehicleidget) | **GET** /Temperature/{vehicleId} |  |
+| [**ByDate**](TemperatureClient.md#temperaturebydatevehicleidget) | **GET** /Temperature/by-date/{vehicleId} |  |
+| [**Post**](TemperatureClient.md#temperaturepost) | **POST** /Temperature |  |
+| [**Get**](TemperatureClient.md#temperaturevehicleidget) | **GET** /Temperature/{vehicleId} |  |
 
 <a id="temperaturebydatevehicleidget"></a>
-# **TemperatureByDateVehicleIdGet**
-> List&lt;GetTemperatureResponse&gt; TemperatureByDateVehicleIdGet (Guid vehicleId, DateTime? from = null, DateTime? to = null)
+# **ByDate**
+> List&lt;GetTemperatureResponse&gt; ByDate (Guid vehicleId, DateTime? from = null, DateTime? to = null)
 
 
 
@@ -24,7 +24,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class TemperatureByDateVehicleIdGetExample
+    public class ByDateExample
     {
         public static void Main()
         {
@@ -42,12 +42,12 @@ namespace Example
 
             try
             {
-                List<GetTemperatureResponse> result = apiInstance.TemperatureByDateVehicleIdGet(vehicleId, from, to);
+                List<GetTemperatureResponse> result = apiInstance.ByDate(vehicleId, from, to);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TemperatureClient.TemperatureByDateVehicleIdGet: " + e.Message);
+                Debug.Print("Exception when calling TemperatureClient.ByDate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +56,20 @@ namespace Example
 }
 ```
 
-#### Using the TemperatureByDateVehicleIdGetWithHttpInfo variant
+#### Using the ByDateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<GetTemperatureResponse>> response = apiInstance.TemperatureByDateVehicleIdGetWithHttpInfo(vehicleId, from, to);
+    ApiResponse<List<GetTemperatureResponse>> response = apiInstance.ByDateWithHttpInfo(vehicleId, from, to);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TemperatureClient.TemperatureByDateVehicleIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TemperatureClient.ByDateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -107,8 +107,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="temperaturepost"></a>
-# **TemperaturePost**
-> List&lt;GetTemperatureResponse&gt; TemperaturePost (PostTemperatureRequest? postTemperatureRequest = null)
+# **Post**
+> List&lt;GetTemperatureResponse&gt; Post (PostTemperatureRequest? postTemperatureRequest = null)
 
 
 
@@ -122,7 +122,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class TemperaturePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -138,12 +138,12 @@ namespace Example
 
             try
             {
-                List<GetTemperatureResponse> result = apiInstance.TemperaturePost(postTemperatureRequest);
+                List<GetTemperatureResponse> result = apiInstance.Post(postTemperatureRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TemperatureClient.TemperaturePost: " + e.Message);
+                Debug.Print("Exception when calling TemperatureClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -152,20 +152,20 @@ namespace Example
 }
 ```
 
-#### Using the TemperaturePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<GetTemperatureResponse>> response = apiInstance.TemperaturePostWithHttpInfo(postTemperatureRequest);
+    ApiResponse<List<GetTemperatureResponse>> response = apiInstance.PostWithHttpInfo(postTemperatureRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TemperatureClient.TemperaturePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TemperatureClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -201,8 +201,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="temperaturevehicleidget"></a>
-# **TemperatureVehicleIdGet**
-> VehicleDetailsResponse TemperatureVehicleIdGet (Guid vehicleId)
+# **Get**
+> VehicleDetailsResponse Get (Guid vehicleId)
 
 
 
@@ -216,7 +216,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class TemperatureVehicleIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -232,12 +232,12 @@ namespace Example
 
             try
             {
-                VehicleDetailsResponse result = apiInstance.TemperatureVehicleIdGet(vehicleId);
+                VehicleDetailsResponse result = apiInstance.Get(vehicleId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TemperatureClient.TemperatureVehicleIdGet: " + e.Message);
+                Debug.Print("Exception when calling TemperatureClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -246,20 +246,20 @@ namespace Example
 }
 ```
 
-#### Using the TemperatureVehicleIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleDetailsResponse> response = apiInstance.TemperatureVehicleIdGetWithHttpInfo(vehicleId);
+    ApiResponse<VehicleDetailsResponse> response = apiInstance.GetWithHttpInfo(vehicleId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TemperatureClient.TemperatureVehicleIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TemperatureClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

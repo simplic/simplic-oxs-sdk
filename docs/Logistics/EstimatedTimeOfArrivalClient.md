@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**EstimatedTimeOfArrivalGetAllGet**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalgetallget) | **GET** /EstimatedTimeOfArrival/get-all | Retrives all etas for the current organization. |
-| [**EstimatedTimeOfArrivalGetByTourIdGet**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalgetbytouridget) | **GET** /EstimatedTimeOfArrival/get-by-tour/{id} | Retrives the eta with the given tourId. |
-| [**EstimatedTimeOfArrivalIdGet**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalidget) | **GET** /EstimatedTimeOfArrival/{id} | Retrives the eta with the given id. |
+| [**GetAll**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalgetallget) | **GET** /EstimatedTimeOfArrival/get-all | Retrives all etas for the current organization. |
+| [**GetByTour**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalgetbytouridget) | **GET** /EstimatedTimeOfArrival/get-by-tour/{id} | Retrives the eta with the given tourId. |
+| [**Get**](EstimatedTimeOfArrivalClient.md#estimatedtimeofarrivalidget) | **GET** /EstimatedTimeOfArrival/{id} | Retrives the eta with the given id. |
 
 <a id="estimatedtimeofarrivalgetallget"></a>
-# **EstimatedTimeOfArrivalGetAllGet**
-> List&lt;EstimatedTimeOfArrivalResponse&gt; EstimatedTimeOfArrivalGetAllGet ()
+# **GetAll**
+> List&lt;EstimatedTimeOfArrivalResponse&gt; GetAll ()
 
 Retrives all etas for the current organization.
 
@@ -24,7 +24,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class EstimatedTimeOfArrivalGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -40,12 +40,12 @@ namespace Example
             try
             {
                 // Retrives all etas for the current organization.
-                List<EstimatedTimeOfArrivalResponse> result = apiInstance.EstimatedTimeOfArrivalGetAllGet();
+                List<EstimatedTimeOfArrivalResponse> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,21 +54,21 @@ namespace Example
 }
 ```
 
-#### Using the EstimatedTimeOfArrivalGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all etas for the current organization.
-    ApiResponse<List<EstimatedTimeOfArrivalResponse>> response = apiInstance.EstimatedTimeOfArrivalGetAllGetWithHttpInfo();
+    ApiResponse<List<EstimatedTimeOfArrivalResponse>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="estimatedtimeofarrivalgetbytouridget"></a>
-# **EstimatedTimeOfArrivalGetByTourIdGet**
-> EstimatedTimeOfArrivalResponse EstimatedTimeOfArrivalGetByTourIdGet (string id, Guid? tourId = null)
+# **GetByTour**
+> EstimatedTimeOfArrivalResponse GetByTour (string id, Guid? tourId = null)
 
 Retrives the eta with the given tourId.
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class EstimatedTimeOfArrivalGetByTourIdGetExample
+    public class GetByTourExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Retrives the eta with the given tourId.
-                EstimatedTimeOfArrivalResponse result = apiInstance.EstimatedTimeOfArrivalGetByTourIdGet(id, tourId);
+                EstimatedTimeOfArrivalResponse result = apiInstance.GetByTour(id, tourId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetByTourIdGet: " + e.Message);
+                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.GetByTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the EstimatedTimeOfArrivalGetByTourIdGetWithHttpInfo variant
+#### Using the GetByTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the eta with the given tourId.
-    ApiResponse<EstimatedTimeOfArrivalResponse> response = apiInstance.EstimatedTimeOfArrivalGetByTourIdGetWithHttpInfo(id, tourId);
+    ApiResponse<EstimatedTimeOfArrivalResponse> response = apiInstance.GetByTourWithHttpInfo(id, tourId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetByTourIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.GetByTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -196,8 +196,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="estimatedtimeofarrivalidget"></a>
-# **EstimatedTimeOfArrivalIdGet**
-> EstimatedTimeOfArrivalResponse EstimatedTimeOfArrivalIdGet (Guid id)
+# **Get**
+> EstimatedTimeOfArrivalResponse Get (Guid id)
 
 Retrives the eta with the given id.
 
@@ -211,7 +211,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class EstimatedTimeOfArrivalIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
             try
             {
                 // Retrives the eta with the given id.
-                EstimatedTimeOfArrivalResponse result = apiInstance.EstimatedTimeOfArrivalIdGet(id);
+                EstimatedTimeOfArrivalResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalIdGet: " + e.Message);
+                Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,21 +242,21 @@ namespace Example
 }
 ```
 
-#### Using the EstimatedTimeOfArrivalIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the eta with the given id.
-    ApiResponse<EstimatedTimeOfArrivalResponse> response = apiInstance.EstimatedTimeOfArrivalIdGetWithHttpInfo(id);
+    ApiResponse<EstimatedTimeOfArrivalResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EstimatedTimeOfArrivalClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

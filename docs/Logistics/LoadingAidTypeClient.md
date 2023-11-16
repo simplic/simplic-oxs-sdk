@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**LoadingAidTypeGetAllGet**](LoadingAidTypeClient.md#loadingaidtypegetallget) | **GET** /LoadingAidType/get-all | Retrieves all loading aid types. |
-| [**LoadingAidTypeIdGet**](LoadingAidTypeClient.md#loadingaidtypeidget) | **GET** /LoadingAidType/{id} | Retrives the loading aid type with the given id. |
-| [**LoadingAidTypeIdPatch**](LoadingAidTypeClient.md#loadingaidtypeidpatch) | **PATCH** /LoadingAidType/{id} | Patches the loading aid type. |
-| [**LoadingAidTypePost**](LoadingAidTypeClient.md#loadingaidtypepost) | **POST** /LoadingAidType | Creates a new loading aid type. |
+| [**GetAll**](LoadingAidTypeClient.md#loadingaidtypegetallget) | **GET** /LoadingAidType/get-all | Retrieves all loading aid types. |
+| [**Get**](LoadingAidTypeClient.md#loadingaidtypeidget) | **GET** /LoadingAidType/{id} | Retrives the loading aid type with the given id. |
+| [**Patch**](LoadingAidTypeClient.md#loadingaidtypeidpatch) | **PATCH** /LoadingAidType/{id} | Patches the loading aid type. |
+| [**Post**](LoadingAidTypeClient.md#loadingaidtypepost) | **POST** /LoadingAidType | Creates a new loading aid type. |
 
 <a id="loadingaidtypegetallget"></a>
-# **LoadingAidTypeGetAllGet**
-> List&lt;LoadingAidTypeResponse&gt; LoadingAidTypeGetAllGet ()
+# **GetAll**
+> List&lt;LoadingAidTypeResponse&gt; GetAll ()
 
 Retrieves all loading aid types.
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class LoadingAidTypeGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
             try
             {
                 // Retrieves all loading aid types.
-                List<LoadingAidTypeResponse> result = apiInstance.LoadingAidTypeGetAllGet();
+                List<LoadingAidTypeResponse> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidTypeClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,21 +55,21 @@ namespace Example
 }
 ```
 
-#### Using the LoadingAidTypeGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all loading aid types.
-    ApiResponse<List<LoadingAidTypeResponse>> response = apiInstance.LoadingAidTypeGetAllGetWithHttpInfo();
+    ApiResponse<List<LoadingAidTypeResponse>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidTypeClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="loadingaidtypeidget"></a>
-# **LoadingAidTypeIdGet**
-> LoadingAidTypeResponse LoadingAidTypeIdGet (Guid id)
+# **Get**
+> LoadingAidTypeResponse Get (Guid id)
 
 Retrives the loading aid type with the given id.
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class LoadingAidTypeIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Retrives the loading aid type with the given id.
-                LoadingAidTypeResponse result = apiInstance.LoadingAidTypeIdGet(id);
+                LoadingAidTypeResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeIdGet: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidTypeClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the LoadingAidTypeIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the loading aid type with the given id.
-    ApiResponse<LoadingAidTypeResponse> response = apiInstance.LoadingAidTypeIdGetWithHttpInfo(id);
+    ApiResponse<LoadingAidTypeResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidTypeClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="loadingaidtypeidpatch"></a>
-# **LoadingAidTypeIdPatch**
-> LoadingAidTypeResponse LoadingAidTypeIdPatch (Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = null)
+# **Patch**
+> LoadingAidTypeResponse Patch (Guid id, PatchLoadingAidTypeRequest? patchLoadingAidTypeRequest = null)
 
 Patches the loading aid type.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class LoadingAidTypeIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
             try
             {
                 // Patches the loading aid type.
-                LoadingAidTypeResponse result = apiInstance.LoadingAidTypeIdPatch(id, patchLoadingAidTypeRequest);
+                LoadingAidTypeResponse result = apiInstance.Patch(id, patchLoadingAidTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeIdPatch: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidTypeClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,21 +242,21 @@ namespace Example
 }
 ```
 
-#### Using the LoadingAidTypeIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches the loading aid type.
-    ApiResponse<LoadingAidTypeResponse> response = apiInstance.LoadingAidTypeIdPatchWithHttpInfo(id, patchLoadingAidTypeRequest);
+    ApiResponse<LoadingAidTypeResponse> response = apiInstance.PatchWithHttpInfo(id, patchLoadingAidTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypeIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidTypeClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="loadingaidtypepost"></a>
-# **LoadingAidTypePost**
-> LoadingAidTypeResponse LoadingAidTypePost (CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = null)
+# **Post**
+> LoadingAidTypeResponse Post (CreateLoadingAidTypeRequest? createLoadingAidTypeRequest = null)
 
 Creates a new loading aid type.
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class LoadingAidTypePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
             try
             {
                 // Creates a new loading aid type.
-                LoadingAidTypeResponse result = apiInstance.LoadingAidTypePost(createLoadingAidTypeRequest);
+                LoadingAidTypeResponse result = apiInstance.Post(createLoadingAidTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypePost: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidTypeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,21 +339,21 @@ namespace Example
 }
 ```
 
-#### Using the LoadingAidTypePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new loading aid type.
-    ApiResponse<LoadingAidTypeResponse> response = apiInstance.LoadingAidTypePostWithHttpInfo(createLoadingAidTypeRequest);
+    ApiResponse<LoadingAidTypeResponse> response = apiInstance.PostWithHttpInfo(createLoadingAidTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidTypeClient.LoadingAidTypePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidTypeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

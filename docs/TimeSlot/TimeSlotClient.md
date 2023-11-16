@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/timeslot-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TimeSlotGetByDateGet**](TimeSlotClient.md#timeslotgetbydateget) | **GET** /TimeSlot/get-by-date | Gets a list of time slots by a specific date range |
-| [**TimeSlotIdDelete**](TimeSlotClient.md#timeslotiddelete) | **DELETE** /TimeSlot/{id} | Deletes a time slot |
-| [**TimeSlotIdGet**](TimeSlotClient.md#timeslotidget) | **GET** /TimeSlot/{id} | Gets a time slot by its unique id |
-| [**TimeSlotIdPut**](TimeSlotClient.md#timeslotidput) | **PUT** /TimeSlot/{id} | Updates an existing time slot |
-| [**TimeSlotPost**](TimeSlotClient.md#timeslotpost) | **POST** /TimeSlot | Creates a new time slot |
-| [**TimeSlotSetStatePut**](TimeSlotClient.md#timeslotsetstateput) | **PUT** /TimeSlot/set-state | Sets a given bookingstate |
+| [**GetByDate**](TimeSlotClient.md#timeslotgetbydateget) | **GET** /TimeSlot/get-by-date | Gets a list of time slots by a specific date range |
+| [**Delete**](TimeSlotClient.md#timeslotiddelete) | **DELETE** /TimeSlot/{id} | Deletes a time slot |
+| [**Get**](TimeSlotClient.md#timeslotidget) | **GET** /TimeSlot/{id} | Gets a time slot by its unique id |
+| [**Put**](TimeSlotClient.md#timeslotidput) | **PUT** /TimeSlot/{id} | Updates an existing time slot |
+| [**Post**](TimeSlotClient.md#timeslotpost) | **POST** /TimeSlot | Creates a new time slot |
+| [**SetState**](TimeSlotClient.md#timeslotsetstateput) | **PUT** /TimeSlot/set-state | Sets a given bookingstate |
 
 <a id="timeslotgetbydateget"></a>
-# **TimeSlotGetByDateGet**
-> List&lt;TimeSlotModel&gt; TimeSlotGetByDateGet (Guid? siteId = null, DateTime? start = null, DateTime? end = null)
+# **GetByDate**
+> List&lt;TimeSlotModel&gt; GetByDate (Guid? siteId = null, DateTime? start = null, DateTime? end = null)
 
 Gets a list of time slots by a specific date range
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotGetByDateGetExample
+    public class GetByDateExample
     {
         public static void Main()
         {
@@ -46,12 +46,12 @@ namespace Example
             try
             {
                 // Gets a list of time slots by a specific date range
-                List<TimeSlotModel> result = apiInstance.TimeSlotGetByDateGet(siteId, start, end);
+                List<TimeSlotModel> result = apiInstance.GetByDate(siteId, start, end);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotGetByDateGet: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.GetByDate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,21 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotGetByDateGetWithHttpInfo variant
+#### Using the GetByDateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a list of time slots by a specific date range
-    ApiResponse<List<TimeSlotModel>> response = apiInstance.TimeSlotGetByDateGetWithHttpInfo(siteId, start, end);
+    ApiResponse<List<TimeSlotModel>> response = apiInstance.GetByDateWithHttpInfo(siteId, start, end);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotGetByDateGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.GetByDateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -112,8 +112,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="timeslotiddelete"></a>
-# **TimeSlotIdDelete**
-> void TimeSlotIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Deletes a time slot
 
@@ -127,7 +127,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -144,11 +144,11 @@ namespace Example
             try
             {
                 // Deletes a time slot
-                apiInstance.TimeSlotIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -157,18 +157,18 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes a time slot
-    apiInstance.TimeSlotIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -204,8 +204,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="timeslotidget"></a>
-# **TimeSlotIdGet**
-> TimeSlotModel TimeSlotIdGet (Guid id)
+# **Get**
+> TimeSlotModel Get (Guid id)
 
 Gets a time slot by its unique id
 
@@ -219,7 +219,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -236,12 +236,12 @@ namespace Example
             try
             {
                 // Gets a time slot by its unique id
-                TimeSlotModel result = apiInstance.TimeSlotIdGet(id);
+                TimeSlotModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdGet: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -250,21 +250,21 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a time slot by its unique id
-    ApiResponse<TimeSlotModel> response = apiInstance.TimeSlotIdGetWithHttpInfo(id);
+    ApiResponse<TimeSlotModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -300,8 +300,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="timeslotidput"></a>
-# **TimeSlotIdPut**
-> TimeSlotModel TimeSlotIdPut (Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = null)
+# **Put**
+> TimeSlotModel Put (Guid id, UpdateTimeSlotRequest? updateTimeSlotRequest = null)
 
 Updates an existing time slot
 
@@ -315,7 +315,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -333,12 +333,12 @@ namespace Example
             try
             {
                 // Updates an existing time slot
-                TimeSlotModel result = apiInstance.TimeSlotIdPut(id, updateTimeSlotRequest);
+                TimeSlotModel result = apiInstance.Put(id, updateTimeSlotRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdPut: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -347,21 +347,21 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates an existing time slot
-    ApiResponse<TimeSlotModel> response = apiInstance.TimeSlotIdPutWithHttpInfo(id, updateTimeSlotRequest);
+    ApiResponse<TimeSlotModel> response = apiInstance.PutWithHttpInfo(id, updateTimeSlotRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -398,8 +398,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="timeslotpost"></a>
-# **TimeSlotPost**
-> TimeSlotModel TimeSlotPost (CreateTimeSlotRequest? createTimeSlotRequest = null)
+# **Post**
+> TimeSlotModel Post (CreateTimeSlotRequest? createTimeSlotRequest = null)
 
 Creates a new time slot
 
@@ -413,7 +413,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -430,12 +430,12 @@ namespace Example
             try
             {
                 // Creates a new time slot
-                TimeSlotModel result = apiInstance.TimeSlotPost(createTimeSlotRequest);
+                TimeSlotModel result = apiInstance.Post(createTimeSlotRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotPost: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -444,21 +444,21 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new time slot
-    ApiResponse<TimeSlotModel> response = apiInstance.TimeSlotPostWithHttpInfo(createTimeSlotRequest);
+    ApiResponse<TimeSlotModel> response = apiInstance.PostWithHttpInfo(createTimeSlotRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -494,8 +494,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="timeslotsetstateput"></a>
-# **TimeSlotSetStatePut**
-> void TimeSlotSetStatePut (Guid? id = null, int? bookingState = null)
+# **SetState**
+> void SetState (Guid? id = null, int? bookingState = null)
 
 Sets a given bookingstate
 
@@ -509,7 +509,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class TimeSlotSetStatePutExample
+    public class SetStateExample
     {
         public static void Main()
         {
@@ -527,11 +527,11 @@ namespace Example
             try
             {
                 // Sets a given bookingstate
-                apiInstance.TimeSlotSetStatePut(id, bookingState);
+                apiInstance.SetState(id, bookingState);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TimeSlotClient.TimeSlotSetStatePut: " + e.Message);
+                Debug.Print("Exception when calling TimeSlotClient.SetState: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -540,18 +540,18 @@ namespace Example
 }
 ```
 
-#### Using the TimeSlotSetStatePutWithHttpInfo variant
+#### Using the SetStateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Sets a given bookingstate
-    apiInstance.TimeSlotSetStatePutWithHttpInfo(id, bookingState);
+    apiInstance.SetStateWithHttpInfo(id, bookingState);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TimeSlotClient.TimeSlotSetStatePutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TimeSlotClient.SetStateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -4,19 +4,19 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TeamAddMemberIdPut**](TeamClient.md#teamaddmemberidput) | **PUT** /Team/add-member/{id} | Adds a user to a team. |
-| [**TeamGetAllByCurrentuserGet**](TeamClient.md#teamgetallbycurrentuserget) | **GET** /Team/get-all-by-currentuser | Retrives all teams from the current user. |
-| [**TeamGetAllByOrganizationGet**](TeamClient.md#teamgetallbyorganizationget) | **GET** /Team/get-all-by-organization | Retrives all teams from the current organization. |
-| [**TeamGetAllGet**](TeamClient.md#teamgetallget) | **GET** /Team/get-all | Retrives all teams. |
-| [**TeamIdDelete**](TeamClient.md#teamiddelete) | **DELETE** /Team/{id} | Deletes a team with the given id. |
-| [**TeamIdGet**](TeamClient.md#teamidget) | **GET** /Team/{id} | Gets a team with the given id. |
-| [**TeamIdPut**](TeamClient.md#teamidput) | **PUT** /Team/{id} | Updates the given team. |
-| [**TeamPost**](TeamClient.md#teampost) | **POST** /Team | Creates a new team. |
-| [**TeamRemoveMemberIdPut**](TeamClient.md#teamremovememberidput) | **PUT** /Team/remove-member/{id} | Removes a user from a team. |
+| [**AddMember**](TeamClient.md#teamaddmemberidput) | **PUT** /Team/add-member/{id} | Adds a user to a team. |
+| [**GetAllByCurrentuser**](TeamClient.md#teamgetallbycurrentuserget) | **GET** /Team/get-all-by-currentuser | Retrives all teams from the current user. |
+| [**GetAllByOrganization**](TeamClient.md#teamgetallbyorganizationget) | **GET** /Team/get-all-by-organization | Retrives all teams from the current organization. |
+| [**GetAll**](TeamClient.md#teamgetallget) | **GET** /Team/get-all | Retrives all teams. |
+| [**Delete**](TeamClient.md#teamiddelete) | **DELETE** /Team/{id} | Deletes a team with the given id. |
+| [**Get**](TeamClient.md#teamidget) | **GET** /Team/{id} | Gets a team with the given id. |
+| [**Put**](TeamClient.md#teamidput) | **PUT** /Team/{id} | Updates the given team. |
+| [**Post**](TeamClient.md#teampost) | **POST** /Team | Creates a new team. |
+| [**RemoveMember**](TeamClient.md#teamremovememberidput) | **PUT** /Team/remove-member/{id} | Removes a user from a team. |
 
 <a id="teamaddmemberidput"></a>
-# **TeamAddMemberIdPut**
-> TeamModel TeamAddMemberIdPut (Guid id, AddTeamMemberRequest? addTeamMemberRequest = null)
+# **AddMember**
+> TeamModel AddMember (Guid id, AddTeamMemberRequest? addTeamMemberRequest = null)
 
 Adds a user to a team.
 
@@ -30,7 +30,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamAddMemberIdPutExample
+    public class AddMemberExample
     {
         public static void Main()
         {
@@ -48,12 +48,12 @@ namespace Example
             try
             {
                 // Adds a user to a team.
-                TeamModel result = apiInstance.TeamAddMemberIdPut(id, addTeamMemberRequest);
+                TeamModel result = apiInstance.AddMember(id, addTeamMemberRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamAddMemberIdPut: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.AddMember: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +62,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamAddMemberIdPutWithHttpInfo variant
+#### Using the AddMemberWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Adds a user to a team.
-    ApiResponse<TeamModel> response = apiInstance.TeamAddMemberIdPutWithHttpInfo(id, addTeamMemberRequest);
+    ApiResponse<TeamModel> response = apiInstance.AddMemberWithHttpInfo(id, addTeamMemberRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamAddMemberIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.AddMemberWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -113,8 +113,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamgetallbycurrentuserget"></a>
-# **TeamGetAllByCurrentuserGet**
-> List&lt;TeamModel&gt; TeamGetAllByCurrentuserGet ()
+# **GetAllByCurrentuser**
+> List&lt;TeamModel&gt; GetAllByCurrentuser ()
 
 Retrives all teams from the current user.
 
@@ -128,7 +128,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamGetAllByCurrentuserGetExample
+    public class GetAllByCurrentuserExample
     {
         public static void Main()
         {
@@ -144,12 +144,12 @@ namespace Example
             try
             {
                 // Retrives all teams from the current user.
-                List<TeamModel> result = apiInstance.TeamGetAllByCurrentuserGet();
+                List<TeamModel> result = apiInstance.GetAllByCurrentuser();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamGetAllByCurrentuserGet: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.GetAllByCurrentuser: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -158,21 +158,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamGetAllByCurrentuserGetWithHttpInfo variant
+#### Using the GetAllByCurrentuserWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all teams from the current user.
-    ApiResponse<List<TeamModel>> response = apiInstance.TeamGetAllByCurrentuserGetWithHttpInfo();
+    ApiResponse<List<TeamModel>> response = apiInstance.GetAllByCurrentuserWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamGetAllByCurrentuserGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.GetAllByCurrentuserWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -203,8 +203,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamgetallbyorganizationget"></a>
-# **TeamGetAllByOrganizationGet**
-> List&lt;TeamModel&gt; TeamGetAllByOrganizationGet ()
+# **GetAllByOrganization**
+> List&lt;TeamModel&gt; GetAllByOrganization ()
 
 Retrives all teams from the current organization.
 
@@ -218,7 +218,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamGetAllByOrganizationGetExample
+    public class GetAllByOrganizationExample
     {
         public static void Main()
         {
@@ -234,12 +234,12 @@ namespace Example
             try
             {
                 // Retrives all teams from the current organization.
-                List<TeamModel> result = apiInstance.TeamGetAllByOrganizationGet();
+                List<TeamModel> result = apiInstance.GetAllByOrganization();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamGetAllByOrganizationGet: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.GetAllByOrganization: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -248,21 +248,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamGetAllByOrganizationGetWithHttpInfo variant
+#### Using the GetAllByOrganizationWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all teams from the current organization.
-    ApiResponse<List<TeamModel>> response = apiInstance.TeamGetAllByOrganizationGetWithHttpInfo();
+    ApiResponse<List<TeamModel>> response = apiInstance.GetAllByOrganizationWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamGetAllByOrganizationGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.GetAllByOrganizationWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamgetallget"></a>
-# **TeamGetAllGet**
-> List&lt;TeamModel&gt; TeamGetAllGet ()
+# **GetAll**
+> List&lt;TeamModel&gt; GetAll ()
 
 Retrives all teams.
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -324,12 +324,12 @@ namespace Example
             try
             {
                 // Retrives all teams.
-                List<TeamModel> result = apiInstance.TeamGetAllGet();
+                List<TeamModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -338,21 +338,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives all teams.
-    ApiResponse<List<TeamModel>> response = apiInstance.TeamGetAllGetWithHttpInfo();
+    ApiResponse<List<TeamModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -383,8 +383,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamiddelete"></a>
-# **TeamIdDelete**
-> void TeamIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Deletes a team with the given id.
 
@@ -398,7 +398,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -415,11 +415,11 @@ namespace Example
             try
             {
                 // Deletes a team with the given id.
-                apiInstance.TeamIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -428,18 +428,18 @@ namespace Example
 }
 ```
 
-#### Using the TeamIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes a team with the given id.
-    apiInstance.TeamIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -475,8 +475,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamidget"></a>
-# **TeamIdGet**
-> TeamModel TeamIdGet (Guid id)
+# **Get**
+> TeamModel Get (Guid id)
 
 Gets a team with the given id.
 
@@ -490,7 +490,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -507,12 +507,12 @@ namespace Example
             try
             {
                 // Gets a team with the given id.
-                TeamModel result = apiInstance.TeamIdGet(id);
+                TeamModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamIdGet: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -521,21 +521,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a team with the given id.
-    ApiResponse<TeamModel> response = apiInstance.TeamIdGetWithHttpInfo(id);
+    ApiResponse<TeamModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -571,8 +571,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamidput"></a>
-# **TeamIdPut**
-> TeamModel TeamIdPut (Guid id, UpdateTeamRequest? updateTeamRequest = null)
+# **Put**
+> TeamModel Put (Guid id, UpdateTeamRequest? updateTeamRequest = null)
 
 Updates the given team.
 
@@ -586,7 +586,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -604,12 +604,12 @@ namespace Example
             try
             {
                 // Updates the given team.
-                TeamModel result = apiInstance.TeamIdPut(id, updateTeamRequest);
+                TeamModel result = apiInstance.Put(id, updateTeamRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamIdPut: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -618,21 +618,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates the given team.
-    ApiResponse<TeamModel> response = apiInstance.TeamIdPutWithHttpInfo(id, updateTeamRequest);
+    ApiResponse<TeamModel> response = apiInstance.PutWithHttpInfo(id, updateTeamRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -669,8 +669,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teampost"></a>
-# **TeamPost**
-> TeamModel TeamPost (CreateTeamRequest? createTeamRequest = null)
+# **Post**
+> TeamModel Post (CreateTeamRequest? createTeamRequest = null)
 
 Creates a new team.
 
@@ -684,7 +684,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -701,12 +701,12 @@ namespace Example
             try
             {
                 // Creates a new team.
-                TeamModel result = apiInstance.TeamPost(createTeamRequest);
+                TeamModel result = apiInstance.Post(createTeamRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamPost: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -715,21 +715,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new team.
-    ApiResponse<TeamModel> response = apiInstance.TeamPostWithHttpInfo(createTeamRequest);
+    ApiResponse<TeamModel> response = apiInstance.PostWithHttpInfo(createTeamRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -765,8 +765,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="teamremovememberidput"></a>
-# **TeamRemoveMemberIdPut**
-> TeamModel TeamRemoveMemberIdPut (Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = null)
+# **RemoveMember**
+> TeamModel RemoveMember (Guid id, RemoveTeamMemberRequest? removeTeamMemberRequest = null)
 
 Removes a user from a team.
 
@@ -780,7 +780,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class TeamRemoveMemberIdPutExample
+    public class RemoveMemberExample
     {
         public static void Main()
         {
@@ -798,12 +798,12 @@ namespace Example
             try
             {
                 // Removes a user from a team.
-                TeamModel result = apiInstance.TeamRemoveMemberIdPut(id, removeTeamMemberRequest);
+                TeamModel result = apiInstance.RemoveMember(id, removeTeamMemberRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TeamClient.TeamRemoveMemberIdPut: " + e.Message);
+                Debug.Print("Exception when calling TeamClient.RemoveMember: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -812,21 +812,21 @@ namespace Example
 }
 ```
 
-#### Using the TeamRemoveMemberIdPutWithHttpInfo variant
+#### Using the RemoveMemberWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Removes a user from a team.
-    ApiResponse<TeamModel> response = apiInstance.TeamRemoveMemberIdPutWithHttpInfo(id, removeTeamMemberRequest);
+    ApiResponse<TeamModel> response = apiInstance.RemoveMemberWithHttpInfo(id, removeTeamMemberRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TeamClient.TeamRemoveMemberIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TeamClient.RemoveMemberWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

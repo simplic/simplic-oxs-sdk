@@ -4,12 +4,12 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BookingUpdateConfirmUpdatesRecievedPost**](BookingUpdateClient.md#bookingupdateconfirmupdatesrecievedpost) | **POST** /BookingUpdate/confirm-updates-recieved |  |
-| [**BookingUpdateGetRecentUpdatesGet**](BookingUpdateClient.md#bookingupdategetrecentupdatesget) | **GET** /BookingUpdate/get-recent-updates |  |
+| [**ConfirmUpdatesRecieved**](BookingUpdateClient.md#bookingupdateconfirmupdatesrecievedpost) | **POST** /BookingUpdate/confirm-updates-recieved |  |
+| [**GetRecentUpdates**](BookingUpdateClient.md#bookingupdategetrecentupdatesget) | **GET** /BookingUpdate/get-recent-updates |  |
 
 <a id="bookingupdateconfirmupdatesrecievedpost"></a>
-# **BookingUpdateConfirmUpdatesRecievedPost**
-> int BookingUpdateConfirmUpdatesRecievedPost (DateTime? body = null)
+# **ConfirmUpdatesRecieved**
+> int ConfirmUpdatesRecieved (DateTime? body = null)
 
 
 
@@ -23,7 +23,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingUpdateConfirmUpdatesRecievedPostExample
+    public class ConfirmUpdatesRecievedExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                int result = apiInstance.BookingUpdateConfirmUpdatesRecievedPost(body);
+                int result = apiInstance.ConfirmUpdatesRecieved(body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingUpdateClient.BookingUpdateConfirmUpdatesRecievedPost: " + e.Message);
+                Debug.Print("Exception when calling BookingUpdateClient.ConfirmUpdatesRecieved: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingUpdateConfirmUpdatesRecievedPostWithHttpInfo variant
+#### Using the ConfirmUpdatesRecievedWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<int> response = apiInstance.BookingUpdateConfirmUpdatesRecievedPostWithHttpInfo(body);
+    ApiResponse<int> response = apiInstance.ConfirmUpdatesRecievedWithHttpInfo(body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingUpdateClient.BookingUpdateConfirmUpdatesRecievedPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingUpdateClient.ConfirmUpdatesRecievedWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,8 +101,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingupdategetrecentupdatesget"></a>
-# **BookingUpdateGetRecentUpdatesGet**
-> List&lt;BookingUpdate&gt; BookingUpdateGetRecentUpdatesGet ()
+# **GetRecentUpdates**
+> List&lt;BookingUpdate&gt; GetRecentUpdates ()
 
 
 
@@ -116,7 +116,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingUpdateGetRecentUpdatesGetExample
+    public class GetRecentUpdatesExample
     {
         public static void Main()
         {
@@ -131,12 +131,12 @@ namespace Example
 
             try
             {
-                List<BookingUpdate> result = apiInstance.BookingUpdateGetRecentUpdatesGet();
+                List<BookingUpdate> result = apiInstance.GetRecentUpdates();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingUpdateClient.BookingUpdateGetRecentUpdatesGet: " + e.Message);
+                Debug.Print("Exception when calling BookingUpdateClient.GetRecentUpdates: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -145,20 +145,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingUpdateGetRecentUpdatesGetWithHttpInfo variant
+#### Using the GetRecentUpdatesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<BookingUpdate>> response = apiInstance.BookingUpdateGetRecentUpdatesGetWithHttpInfo();
+    ApiResponse<List<BookingUpdate>> response = apiInstance.GetRecentUpdatesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingUpdateClient.BookingUpdateGetRecentUpdatesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingUpdateClient.GetRecentUpdatesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

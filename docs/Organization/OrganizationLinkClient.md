@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrganizationLinkGetLinkedGet**](OrganizationLinkClient.md#organizationlinkgetlinkedget) | **GET** /OrganizationLink/get-linked | Returns a list of organizations that belongs to the current user |
+| [**GetLinked**](OrganizationLinkClient.md#organizationlinkgetlinkedget) | **GET** /OrganizationLink/get-linked | Returns a list of organizations that belongs to the current user |
 
 <a id="organizationlinkgetlinkedget"></a>
-# **OrganizationLinkGetLinkedGet**
-> List&lt;OrganizationLinkModel&gt; OrganizationLinkGetLinkedGet (string? module = null, string? searchContains = null)
+# **GetLinked**
+> List&lt;OrganizationLinkModel&gt; GetLinked (string? module = null, string? searchContains = null)
 
 Returns a list of organizations that belongs to the current user
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationLinkGetLinkedGetExample
+    public class GetLinkedExample
     {
         public static void Main()
         {
@@ -40,12 +40,12 @@ namespace Example
             try
             {
                 // Returns a list of organizations that belongs to the current user
-                List<OrganizationLinkModel> result = apiInstance.OrganizationLinkGetLinkedGet(module, searchContains);
+                List<OrganizationLinkModel> result = apiInstance.GetLinked(module, searchContains);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationLinkClient.OrganizationLinkGetLinkedGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationLinkClient.GetLinked: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,21 +54,21 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationLinkGetLinkedGetWithHttpInfo variant
+#### Using the GetLinkedWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Returns a list of organizations that belongs to the current user
-    ApiResponse<List<OrganizationLinkModel>> response = apiInstance.OrganizationLinkGetLinkedGetWithHttpInfo(module, searchContains);
+    ApiResponse<List<OrganizationLinkModel>> response = apiInstance.GetLinkedWithHttpInfo(module, searchContains);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationLinkClient.OrganizationLinkGetLinkedGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationLinkClient.GetLinkedWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

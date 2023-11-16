@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**PlanningRegionGetAllGet**](PlanningRegionClient.md#planningregiongetallget) | **GET** /PlanningRegion/get-all | Retrieves all planning region. |
-| [**PlanningRegionIdGet**](PlanningRegionClient.md#planningregionidget) | **GET** /PlanningRegion/{id} | Retrives the planning region with the given id. |
-| [**PlanningRegionIdPatch**](PlanningRegionClient.md#planningregionidpatch) | **PATCH** /PlanningRegion/{id} | Updates/saves the given planning region. |
-| [**PlanningRegionPost**](PlanningRegionClient.md#planningregionpost) | **POST** /PlanningRegion | Creates a new planning region. |
+| [**GetAll**](PlanningRegionClient.md#planningregiongetallget) | **GET** /PlanningRegion/get-all | Retrieves all planning region. |
+| [**Get**](PlanningRegionClient.md#planningregionidget) | **GET** /PlanningRegion/{id} | Retrives the planning region with the given id. |
+| [**Patch**](PlanningRegionClient.md#planningregionidpatch) | **PATCH** /PlanningRegion/{id} | Updates/saves the given planning region. |
+| [**Post**](PlanningRegionClient.md#planningregionpost) | **POST** /PlanningRegion | Creates a new planning region. |
 
 <a id="planningregiongetallget"></a>
-# **PlanningRegionGetAllGet**
-> List&lt;PlanningRegionModel&gt; PlanningRegionGetAllGet ()
+# **GetAll**
+> List&lt;PlanningRegionModel&gt; GetAll ()
 
 Retrieves all planning region.
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class PlanningRegionGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
             try
             {
                 // Retrieves all planning region.
-                List<PlanningRegionModel> result = apiInstance.PlanningRegionGetAllGet();
+                List<PlanningRegionModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling PlanningRegionClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,21 +55,21 @@ namespace Example
 }
 ```
 
-#### Using the PlanningRegionGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all planning region.
-    ApiResponse<List<PlanningRegionModel>> response = apiInstance.PlanningRegionGetAllGetWithHttpInfo();
+    ApiResponse<List<PlanningRegionModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PlanningRegionClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="planningregionidget"></a>
-# **PlanningRegionIdGet**
-> PlanningRegionModel PlanningRegionIdGet (Guid id)
+# **Get**
+> PlanningRegionModel Get (Guid id)
 
 Retrives the planning region with the given id.
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class PlanningRegionIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Retrives the planning region with the given id.
-                PlanningRegionModel result = apiInstance.PlanningRegionIdGet(id);
+                PlanningRegionModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionIdGet: " + e.Message);
+                Debug.Print("Exception when calling PlanningRegionClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the PlanningRegionIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the planning region with the given id.
-    ApiResponse<PlanningRegionModel> response = apiInstance.PlanningRegionIdGetWithHttpInfo(id);
+    ApiResponse<PlanningRegionModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PlanningRegionClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="planningregionidpatch"></a>
-# **PlanningRegionIdPatch**
-> PlanningRegionModel PlanningRegionIdPatch (Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = null)
+# **Patch**
+> PlanningRegionModel Patch (Guid id, PatchPlanningRegionRequest? patchPlanningRegionRequest = null)
 
 Updates/saves the given planning region.
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class PlanningRegionIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -228,12 +228,12 @@ namespace Example
             try
             {
                 // Updates/saves the given planning region.
-                PlanningRegionModel result = apiInstance.PlanningRegionIdPatch(id, patchPlanningRegionRequest);
+                PlanningRegionModel result = apiInstance.Patch(id, patchPlanningRegionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionIdPatch: " + e.Message);
+                Debug.Print("Exception when calling PlanningRegionClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -242,21 +242,21 @@ namespace Example
 }
 ```
 
-#### Using the PlanningRegionIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates/saves the given planning region.
-    ApiResponse<PlanningRegionModel> response = apiInstance.PlanningRegionIdPatchWithHttpInfo(id, patchPlanningRegionRequest);
+    ApiResponse<PlanningRegionModel> response = apiInstance.PatchWithHttpInfo(id, patchPlanningRegionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PlanningRegionClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -293,8 +293,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="planningregionpost"></a>
-# **PlanningRegionPost**
-> PlanningRegionModel PlanningRegionPost (CreatePlanningRegionRequest? createPlanningRegionRequest = null)
+# **Post**
+> PlanningRegionModel Post (CreatePlanningRegionRequest? createPlanningRegionRequest = null)
 
 Creates a new planning region.
 
@@ -308,7 +308,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class PlanningRegionPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -325,12 +325,12 @@ namespace Example
             try
             {
                 // Creates a new planning region.
-                PlanningRegionModel result = apiInstance.PlanningRegionPost(createPlanningRegionRequest);
+                PlanningRegionModel result = apiInstance.Post(createPlanningRegionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionPost: " + e.Message);
+                Debug.Print("Exception when calling PlanningRegionClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -339,21 +339,21 @@ namespace Example
 }
 ```
 
-#### Using the PlanningRegionPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new planning region.
-    ApiResponse<PlanningRegionModel> response = apiInstance.PlanningRegionPostWithHttpInfo(createPlanningRegionRequest);
+    ApiResponse<PlanningRegionModel> response = apiInstance.PostWithHttpInfo(createPlanningRegionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PlanningRegionClient.PlanningRegionPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PlanningRegionClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

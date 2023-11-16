@@ -4,12 +4,12 @@ All URIs are relative to *https://dev-oxs.simplic.io/auth-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalUserGetByEmailGet**](InternalUserClient.md#internalinternalusergetbyemailget) | **GET** /internal/InternalUser/get-by-email | Get a user by its e-mail address |
-| [**InternalInternalUserGetByIdGet**](InternalUserClient.md#internalinternalusergetbyidget) | **GET** /internal/InternalUser/get-by-id | Get a user by its id |
+| [**GetByEmail**](InternalUserClient.md#internalinternalusergetbyemailget) | **GET** /internal/InternalUser/get-by-email | Get a user by its e-mail address |
+| [**GetById**](InternalUserClient.md#internalinternalusergetbyidget) | **GET** /internal/InternalUser/get-by-id | Get a user by its id |
 
 <a id="internalinternalusergetbyemailget"></a>
-# **InternalInternalUserGetByEmailGet**
-> RequestUserResponse InternalInternalUserGetByEmailGet (string? email = null)
+# **GetByEmail**
+> RequestUserResponse GetByEmail (string? email = null)
 
 Get a user by its e-mail address
 
@@ -23,7 +23,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class InternalInternalUserGetByEmailGetExample
+    public class GetByEmailExample
     {
         public static void Main()
         {
@@ -40,12 +40,12 @@ namespace Example
             try
             {
                 // Get a user by its e-mail address
-                RequestUserResponse result = apiInstance.InternalInternalUserGetByEmailGet(email);
+                RequestUserResponse result = apiInstance.GetByEmail(email);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalUserClient.InternalInternalUserGetByEmailGet: " + e.Message);
+                Debug.Print("Exception when calling InternalUserClient.GetByEmail: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,21 +54,21 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalUserGetByEmailGetWithHttpInfo variant
+#### Using the GetByEmailWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get a user by its e-mail address
-    ApiResponse<RequestUserResponse> response = apiInstance.InternalInternalUserGetByEmailGetWithHttpInfo(email);
+    ApiResponse<RequestUserResponse> response = apiInstance.GetByEmailWithHttpInfo(email);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalUserClient.InternalInternalUserGetByEmailGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalUserClient.GetByEmailWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -104,8 +104,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="internalinternalusergetbyidget"></a>
-# **InternalInternalUserGetByIdGet**
-> RequestUserResponse InternalInternalUserGetByIdGet (Guid? id = null)
+# **GetById**
+> RequestUserResponse GetById (Guid? id = null)
 
 Get a user by its id
 
@@ -119,7 +119,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class InternalInternalUserGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -136,12 +136,12 @@ namespace Example
             try
             {
                 // Get a user by its id
-                RequestUserResponse result = apiInstance.InternalInternalUserGetByIdGet(id);
+                RequestUserResponse result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalUserClient.InternalInternalUserGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalUserClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -150,21 +150,21 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalUserGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get a user by its id
-    ApiResponse<RequestUserResponse> response = apiInstance.InternalInternalUserGetByIdGetWithHttpInfo(id);
+    ApiResponse<RequestUserResponse> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalUserClient.InternalInternalUserGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalUserClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

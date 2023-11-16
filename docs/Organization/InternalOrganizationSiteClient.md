@@ -4,12 +4,12 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalOrganizationSiteGetAllByOrganizationGet**](InternalOrganizationSiteClient.md#internalinternalorganizationsitegetallbyorganizationget) | **GET** /internal/InternalOrganizationSite/get-all-by-organization |  |
-| [**InternalInternalOrganizationSiteIdGet**](InternalOrganizationSiteClient.md#internalinternalorganizationsiteidget) | **GET** /internal/InternalOrganizationSite/{id} |  |
+| [**GetAllByOrganization**](InternalOrganizationSiteClient.md#internalinternalorganizationsitegetallbyorganizationget) | **GET** /internal/InternalOrganizationSite/get-all-by-organization |  |
+| [**Get**](InternalOrganizationSiteClient.md#internalinternalorganizationsiteidget) | **GET** /internal/InternalOrganizationSite/{id} |  |
 
 <a id="internalinternalorganizationsitegetallbyorganizationget"></a>
-# **InternalInternalOrganizationSiteGetAllByOrganizationGet**
-> List&lt;OrganizationSiteModel&gt; InternalInternalOrganizationSiteGetAllByOrganizationGet (Guid? id = null)
+# **GetAllByOrganization**
+> List&lt;OrganizationSiteModel&gt; GetAllByOrganization (Guid? id = null)
 
 
 
@@ -23,7 +23,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class InternalInternalOrganizationSiteGetAllByOrganizationGetExample
+    public class GetAllByOrganizationExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                List<OrganizationSiteModel> result = apiInstance.InternalInternalOrganizationSiteGetAllByOrganizationGet(id);
+                List<OrganizationSiteModel> result = apiInstance.GetAllByOrganization(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalOrganizationSiteClient.InternalInternalOrganizationSiteGetAllByOrganizationGet: " + e.Message);
+                Debug.Print("Exception when calling InternalOrganizationSiteClient.GetAllByOrganization: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalOrganizationSiteGetAllByOrganizationGetWithHttpInfo variant
+#### Using the GetAllByOrganizationWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<OrganizationSiteModel>> response = apiInstance.InternalInternalOrganizationSiteGetAllByOrganizationGetWithHttpInfo(id);
+    ApiResponse<List<OrganizationSiteModel>> response = apiInstance.GetAllByOrganizationWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalOrganizationSiteClient.InternalInternalOrganizationSiteGetAllByOrganizationGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalOrganizationSiteClient.GetAllByOrganizationWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -102,8 +102,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="internalinternalorganizationsiteidget"></a>
-# **InternalInternalOrganizationSiteIdGet**
-> OrganizationSiteModel InternalInternalOrganizationSiteIdGet (Guid id)
+# **Get**
+> OrganizationSiteModel Get (Guid id)
 
 
 
@@ -117,7 +117,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class InternalInternalOrganizationSiteIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -133,12 +133,12 @@ namespace Example
 
             try
             {
-                OrganizationSiteModel result = apiInstance.InternalInternalOrganizationSiteIdGet(id);
+                OrganizationSiteModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalOrganizationSiteClient.InternalInternalOrganizationSiteIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalOrganizationSiteClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -147,20 +147,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalOrganizationSiteIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<OrganizationSiteModel> response = apiInstance.InternalInternalOrganizationSiteIdGetWithHttpInfo(id);
+    ApiResponse<OrganizationSiteModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalOrganizationSiteClient.InternalInternalOrganizationSiteIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalOrganizationSiteClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

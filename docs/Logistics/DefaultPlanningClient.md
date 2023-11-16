@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DefaultPlanningGetByResourceResourceIdGet**](DefaultPlanningClient.md#defaultplanninggetbyresourceresourceidget) | **GET** /DefaultPlanning/get-by-resource/{resourceId} | Gets plan for resource matching given id. |
-| [**DefaultPlanningGetByShiftShiftIdGet**](DefaultPlanningClient.md#defaultplanninggetbyshiftshiftidget) | **GET** /DefaultPlanning/get-by-shift/{shiftId} | Gets the plan with given id. |
-| [**DefaultPlanningPost**](DefaultPlanningClient.md#defaultplanningpost) | **POST** /DefaultPlanning | Posts a new plan. |
-| [**DefaultPlanningShiftIdDelete**](DefaultPlanningClient.md#defaultplanningshiftiddelete) | **DELETE** /DefaultPlanning/{shiftId} | Deletes plan matching given id. |
-| [**DefaultPlanningShiftIdPatch**](DefaultPlanningClient.md#defaultplanningshiftidpatch) | **PATCH** /DefaultPlanning/{shiftId} | Patches plan matching given id. |
-| [**DefaultPlanningValidateGet**](DefaultPlanningClient.md#defaultplanningvalidateget) | **GET** /DefaultPlanning/validate | Checks whether any resource has been assigned in multiple plans. |
+| [**GetByResource**](DefaultPlanningClient.md#defaultplanninggetbyresourceresourceidget) | **GET** /DefaultPlanning/get-by-resource/{resourceId} | Gets plan for resource matching given id. |
+| [**GetByShift**](DefaultPlanningClient.md#defaultplanninggetbyshiftshiftidget) | **GET** /DefaultPlanning/get-by-shift/{shiftId} | Gets the plan with given id. |
+| [**Post**](DefaultPlanningClient.md#defaultplanningpost) | **POST** /DefaultPlanning | Posts a new plan. |
+| [**Delete**](DefaultPlanningClient.md#defaultplanningshiftiddelete) | **DELETE** /DefaultPlanning/{shiftId} | Deletes plan matching given id. |
+| [**Patch**](DefaultPlanningClient.md#defaultplanningshiftidpatch) | **PATCH** /DefaultPlanning/{shiftId} | Patches plan matching given id. |
+| [**Validate**](DefaultPlanningClient.md#defaultplanningvalidateget) | **GET** /DefaultPlanning/validate | Checks whether any resource has been assigned in multiple plans. |
 
 <a id="defaultplanninggetbyresourceresourceidget"></a>
-# **DefaultPlanningGetByResourceResourceIdGet**
-> DefaultPlanningAssignmentResponse DefaultPlanningGetByResourceResourceIdGet (Guid resourceId, Guid? shiftId = null)
+# **GetByResource**
+> DefaultPlanningAssignmentResponse GetByResource (Guid resourceId, Guid? shiftId = null)
 
 Gets plan for resource matching given id.
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningGetByResourceResourceIdGetExample
+    public class GetByResourceExample
     {
         public static void Main()
         {
@@ -45,12 +45,12 @@ namespace Example
             try
             {
                 // Gets plan for resource matching given id.
-                DefaultPlanningAssignmentResponse result = apiInstance.DefaultPlanningGetByResourceResourceIdGet(resourceId, shiftId);
+                DefaultPlanningAssignmentResponse result = apiInstance.GetByResource(resourceId, shiftId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningGetByResourceResourceIdGet: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.GetByResource: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,21 +59,21 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningGetByResourceResourceIdGetWithHttpInfo variant
+#### Using the GetByResourceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets plan for resource matching given id.
-    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.DefaultPlanningGetByResourceResourceIdGetWithHttpInfo(resourceId, shiftId);
+    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.GetByResourceWithHttpInfo(resourceId, shiftId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningGetByResourceResourceIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.GetByResourceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -110,8 +110,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="defaultplanninggetbyshiftshiftidget"></a>
-# **DefaultPlanningGetByShiftShiftIdGet**
-> DefaultPlanningAssignmentResponse DefaultPlanningGetByShiftShiftIdGet (Guid shiftId)
+# **GetByShift**
+> DefaultPlanningAssignmentResponse GetByShift (Guid shiftId)
 
 Gets the plan with given id.
 
@@ -125,7 +125,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningGetByShiftShiftIdGetExample
+    public class GetByShiftExample
     {
         public static void Main()
         {
@@ -142,12 +142,12 @@ namespace Example
             try
             {
                 // Gets the plan with given id.
-                DefaultPlanningAssignmentResponse result = apiInstance.DefaultPlanningGetByShiftShiftIdGet(shiftId);
+                DefaultPlanningAssignmentResponse result = apiInstance.GetByShift(shiftId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningGetByShiftShiftIdGet: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.GetByShift: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -156,21 +156,21 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningGetByShiftShiftIdGetWithHttpInfo variant
+#### Using the GetByShiftWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets the plan with given id.
-    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.DefaultPlanningGetByShiftShiftIdGetWithHttpInfo(shiftId);
+    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.GetByShiftWithHttpInfo(shiftId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningGetByShiftShiftIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.GetByShiftWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -206,8 +206,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="defaultplanningpost"></a>
-# **DefaultPlanningPost**
-> DefaultPlanningAssignmentResponse DefaultPlanningPost (PostDefaultPlanningRequest? postDefaultPlanningRequest = null)
+# **Post**
+> DefaultPlanningAssignmentResponse Post (PostDefaultPlanningRequest? postDefaultPlanningRequest = null)
 
 Posts a new plan.
 
@@ -221,7 +221,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -238,12 +238,12 @@ namespace Example
             try
             {
                 // Posts a new plan.
-                DefaultPlanningAssignmentResponse result = apiInstance.DefaultPlanningPost(postDefaultPlanningRequest);
+                DefaultPlanningAssignmentResponse result = apiInstance.Post(postDefaultPlanningRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningPost: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -252,21 +252,21 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Posts a new plan.
-    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.DefaultPlanningPostWithHttpInfo(postDefaultPlanningRequest);
+    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.PostWithHttpInfo(postDefaultPlanningRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -302,8 +302,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="defaultplanningshiftiddelete"></a>
-# **DefaultPlanningShiftIdDelete**
-> void DefaultPlanningShiftIdDelete (Guid shiftId)
+# **Delete**
+> void Delete (Guid shiftId)
 
 Deletes plan matching given id.
 
@@ -317,7 +317,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningShiftIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -334,11 +334,11 @@ namespace Example
             try
             {
                 // Deletes plan matching given id.
-                apiInstance.DefaultPlanningShiftIdDelete(shiftId);
+                apiInstance.Delete(shiftId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningShiftIdDelete: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -347,18 +347,18 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningShiftIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes plan matching given id.
-    apiInstance.DefaultPlanningShiftIdDeleteWithHttpInfo(shiftId);
+    apiInstance.DeleteWithHttpInfo(shiftId);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningShiftIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -395,8 +395,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="defaultplanningshiftidpatch"></a>
-# **DefaultPlanningShiftIdPatch**
-> DefaultPlanningAssignmentResponse DefaultPlanningShiftIdPatch (Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = null)
+# **Patch**
+> DefaultPlanningAssignmentResponse Patch (Guid shiftId, PatchDefaultPlanningRequest? patchDefaultPlanningRequest = null)
 
 Patches plan matching given id.
 
@@ -410,7 +410,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningShiftIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -428,12 +428,12 @@ namespace Example
             try
             {
                 // Patches plan matching given id.
-                DefaultPlanningAssignmentResponse result = apiInstance.DefaultPlanningShiftIdPatch(shiftId, patchDefaultPlanningRequest);
+                DefaultPlanningAssignmentResponse result = apiInstance.Patch(shiftId, patchDefaultPlanningRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningShiftIdPatch: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -442,21 +442,21 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningShiftIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches plan matching given id.
-    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.DefaultPlanningShiftIdPatchWithHttpInfo(shiftId, patchDefaultPlanningRequest);
+    ApiResponse<DefaultPlanningAssignmentResponse> response = apiInstance.PatchWithHttpInfo(shiftId, patchDefaultPlanningRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningShiftIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -494,8 +494,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="defaultplanningvalidateget"></a>
-# **DefaultPlanningValidateGet**
-> ValidateResponse DefaultPlanningValidateGet ()
+# **Validate**
+> ValidateResponse Validate ()
 
 Checks whether any resource has been assigned in multiple plans.
 
@@ -509,7 +509,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DefaultPlanningValidateGetExample
+    public class ValidateExample
     {
         public static void Main()
         {
@@ -525,12 +525,12 @@ namespace Example
             try
             {
                 // Checks whether any resource has been assigned in multiple plans.
-                ValidateResponse result = apiInstance.DefaultPlanningValidateGet();
+                ValidateResponse result = apiInstance.Validate();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningValidateGet: " + e.Message);
+                Debug.Print("Exception when calling DefaultPlanningClient.Validate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -539,21 +539,21 @@ namespace Example
 }
 ```
 
-#### Using the DefaultPlanningValidateGetWithHttpInfo variant
+#### Using the ValidateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Checks whether any resource has been assigned in multiple plans.
-    ApiResponse<ValidateResponse> response = apiInstance.DefaultPlanningValidateGetWithHttpInfo();
+    ApiResponse<ValidateResponse> response = apiInstance.ValidateWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultPlanningClient.DefaultPlanningValidateGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultPlanningClient.ValidateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
