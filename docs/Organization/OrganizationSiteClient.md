@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OrganizationSiteGetAllGet**](OrganizationSiteClient.md#organizationsitegetallget) | **GET** /OrganizationSite/get-all |  |
-| [**OrganizationSiteIdDelete**](OrganizationSiteClient.md#organizationsiteiddelete) | **DELETE** /OrganizationSite/{id} |  |
-| [**OrganizationSiteIdGet**](OrganizationSiteClient.md#organizationsiteidget) | **GET** /OrganizationSite/{id} |  |
-| [**OrganizationSiteIdPut**](OrganizationSiteClient.md#organizationsiteidput) | **PUT** /OrganizationSite/{id} |  |
-| [**OrganizationSitePost**](OrganizationSiteClient.md#organizationsitepost) | **POST** /OrganizationSite |  |
+| [**GetAll**](OrganizationSiteClient.md#organizationsitegetallget) | **GET** /OrganizationSite/get-all |  |
+| [**Delete**](OrganizationSiteClient.md#organizationsiteiddelete) | **DELETE** /OrganizationSite/{id} |  |
+| [**Get**](OrganizationSiteClient.md#organizationsiteidget) | **GET** /OrganizationSite/{id} |  |
+| [**Put**](OrganizationSiteClient.md#organizationsiteidput) | **PUT** /OrganizationSite/{id} |  |
+| [**Post**](OrganizationSiteClient.md#organizationsitepost) | **POST** /OrganizationSite |  |
 
 <a id="organizationsitegetallget"></a>
-# **OrganizationSiteGetAllGet**
-> OrganizationSiteModel OrganizationSiteGetAllGet ()
+# **GetAll**
+> OrganizationSiteModel GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationSiteGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                OrganizationSiteModel result = apiInstance.OrganizationSiteGetAllGet();
+                OrganizationSiteModel result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationSiteClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationSiteGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<OrganizationSiteModel> response = apiInstance.OrganizationSiteGetAllGetWithHttpInfo();
+    ApiResponse<OrganizationSiteModel> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationSiteClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationsiteiddelete"></a>
-# **OrganizationSiteIdDelete**
-> void OrganizationSiteIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationSiteIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -130,11 +130,11 @@ namespace Example
 
             try
             {
-                apiInstance.OrganizationSiteIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdDelete: " + e.Message);
+                Debug.Print("Exception when calling OrganizationSiteClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,17 +143,17 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationSiteIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.OrganizationSiteIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationSiteClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -189,8 +189,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationsiteidget"></a>
-# **OrganizationSiteIdGet**
-> OrganizationSiteModel OrganizationSiteIdGet (Guid id)
+# **Get**
+> OrganizationSiteModel Get (Guid id)
 
 
 
@@ -204,7 +204,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationSiteIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -220,12 +220,12 @@ namespace Example
 
             try
             {
-                OrganizationSiteModel result = apiInstance.OrganizationSiteIdGet(id);
+                OrganizationSiteModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdGet: " + e.Message);
+                Debug.Print("Exception when calling OrganizationSiteClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -234,20 +234,20 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationSiteIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<OrganizationSiteModel> response = apiInstance.OrganizationSiteIdGetWithHttpInfo(id);
+    ApiResponse<OrganizationSiteModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationSiteClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -283,8 +283,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationsiteidput"></a>
-# **OrganizationSiteIdPut**
-> OrganizationSiteModel OrganizationSiteIdPut (Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = null)
+# **Put**
+> OrganizationSiteModel Put (Guid id, UpdateOrganizationSiteRequest? updateOrganizationSiteRequest = null)
 
 
 
@@ -298,7 +298,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationSiteIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -315,12 +315,12 @@ namespace Example
 
             try
             {
-                OrganizationSiteModel result = apiInstance.OrganizationSiteIdPut(id, updateOrganizationSiteRequest);
+                OrganizationSiteModel result = apiInstance.Put(id, updateOrganizationSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdPut: " + e.Message);
+                Debug.Print("Exception when calling OrganizationSiteClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -329,20 +329,20 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationSiteIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<OrganizationSiteModel> response = apiInstance.OrganizationSiteIdPutWithHttpInfo(id, updateOrganizationSiteRequest);
+    ApiResponse<OrganizationSiteModel> response = apiInstance.PutWithHttpInfo(id, updateOrganizationSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSiteIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationSiteClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -379,8 +379,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="organizationsitepost"></a>
-# **OrganizationSitePost**
-> OrganizationSiteModel OrganizationSitePost (CreateOrganizationSiteRequest? createOrganizationSiteRequest = null)
+# **Post**
+> OrganizationSiteModel Post (CreateOrganizationSiteRequest? createOrganizationSiteRequest = null)
 
 
 
@@ -394,7 +394,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class OrganizationSitePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -410,12 +410,12 @@ namespace Example
 
             try
             {
-                OrganizationSiteModel result = apiInstance.OrganizationSitePost(createOrganizationSiteRequest);
+                OrganizationSiteModel result = apiInstance.Post(createOrganizationSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSitePost: " + e.Message);
+                Debug.Print("Exception when calling OrganizationSiteClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -424,20 +424,20 @@ namespace Example
 }
 ```
 
-#### Using the OrganizationSitePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<OrganizationSiteModel> response = apiInstance.OrganizationSitePostWithHttpInfo(createOrganizationSiteRequest);
+    ApiResponse<OrganizationSiteModel> response = apiInstance.PostWithHttpInfo(createOrganizationSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationSiteClient.OrganizationSitePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationSiteClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

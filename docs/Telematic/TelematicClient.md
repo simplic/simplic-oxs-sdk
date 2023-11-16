@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TelematicCreateReadJobPut**](TelematicClient.md#telematiccreatereadjobput) | **PUT** /Telematic/create-read-job |  |
-| [**TelematicDeleteReadJobDelete**](TelematicClient.md#telematicdeletereadjobdelete) | **DELETE** /Telematic/delete-read-job |  |
-| [**TelematicGetAvailableServicesGet**](TelematicClient.md#telematicgetavailableservicesget) | **GET** /Telematic/get-available-services |  |
+| [**CreateReadJob**](TelematicClient.md#telematiccreatereadjobput) | **PUT** /Telematic/create-read-job |  |
+| [**DeleteReadJob**](TelematicClient.md#telematicdeletereadjobdelete) | **DELETE** /Telematic/delete-read-job |  |
+| [**GetAvailableServices**](TelematicClient.md#telematicgetavailableservicesget) | **GET** /Telematic/get-available-services |  |
 
 <a id="telematiccreatereadjobput"></a>
-# **TelematicCreateReadJobPut**
-> void TelematicCreateReadJobPut (CreateReadJobRequest? createReadJobRequest = null)
+# **CreateReadJob**
+> void CreateReadJob (CreateReadJobRequest? createReadJobRequest = null)
 
 
 
@@ -24,7 +24,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicCreateReadJobPutExample
+    public class CreateReadJobExample
     {
         public static void Main()
         {
@@ -40,11 +40,11 @@ namespace Example
 
             try
             {
-                apiInstance.TelematicCreateReadJobPut(createReadJobRequest);
+                apiInstance.CreateReadJob(createReadJobRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicClient.TelematicCreateReadJobPut: " + e.Message);
+                Debug.Print("Exception when calling TelematicClient.CreateReadJob: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,17 +53,17 @@ namespace Example
 }
 ```
 
-#### Using the TelematicCreateReadJobPutWithHttpInfo variant
+#### Using the CreateReadJobWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TelematicCreateReadJobPutWithHttpInfo(createReadJobRequest);
+    apiInstance.CreateReadJobWithHttpInfo(createReadJobRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicClient.TelematicCreateReadJobPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicClient.CreateReadJobWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicdeletereadjobdelete"></a>
-# **TelematicDeleteReadJobDelete**
-> void TelematicDeleteReadJobDelete (DeleteReadJobRequest? deleteReadJobRequest = null)
+# **DeleteReadJob**
+> void DeleteReadJob (DeleteReadJobRequest? deleteReadJobRequest = null)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicDeleteReadJobDeleteExample
+    public class DeleteReadJobExample
     {
         public static void Main()
         {
@@ -130,11 +130,11 @@ namespace Example
 
             try
             {
-                apiInstance.TelematicDeleteReadJobDelete(deleteReadJobRequest);
+                apiInstance.DeleteReadJob(deleteReadJobRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicClient.TelematicDeleteReadJobDelete: " + e.Message);
+                Debug.Print("Exception when calling TelematicClient.DeleteReadJob: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,17 +143,17 @@ namespace Example
 }
 ```
 
-#### Using the TelematicDeleteReadJobDeleteWithHttpInfo variant
+#### Using the DeleteReadJobWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TelematicDeleteReadJobDeleteWithHttpInfo(deleteReadJobRequest);
+    apiInstance.DeleteReadJobWithHttpInfo(deleteReadJobRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicClient.TelematicDeleteReadJobDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicClient.DeleteReadJobWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -189,8 +189,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="telematicgetavailableservicesget"></a>
-# **TelematicGetAvailableServicesGet**
-> AvailableServices TelematicGetAvailableServicesGet ()
+# **GetAvailableServices**
+> AvailableServices GetAvailableServices ()
 
 
 
@@ -204,7 +204,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class TelematicGetAvailableServicesGetExample
+    public class GetAvailableServicesExample
     {
         public static void Main()
         {
@@ -219,12 +219,12 @@ namespace Example
 
             try
             {
-                AvailableServices result = apiInstance.TelematicGetAvailableServicesGet();
+                AvailableServices result = apiInstance.GetAvailableServices();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TelematicClient.TelematicGetAvailableServicesGet: " + e.Message);
+                Debug.Print("Exception when calling TelematicClient.GetAvailableServices: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -233,20 +233,20 @@ namespace Example
 }
 ```
 
-#### Using the TelematicGetAvailableServicesGetWithHttpInfo variant
+#### Using the GetAvailableServicesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<AvailableServices> response = apiInstance.TelematicGetAvailableServicesGetWithHttpInfo();
+    ApiResponse<AvailableServices> response = apiInstance.GetAvailableServicesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TelematicClient.TelematicGetAvailableServicesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TelematicClient.GetAvailableServicesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

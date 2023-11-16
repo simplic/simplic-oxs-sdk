@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**QuantityUnitGetAllGet**](QuantityUnitClient.md#quantityunitgetallget) | **GET** /QuantityUnit/get-all |  |
-| [**QuantityUnitIdDelete**](QuantityUnitClient.md#quantityunitiddelete) | **DELETE** /QuantityUnit/{id} |  |
-| [**QuantityUnitIdGet**](QuantityUnitClient.md#quantityunitidget) | **GET** /QuantityUnit/{id} |  |
-| [**QuantityUnitIdPut**](QuantityUnitClient.md#quantityunitidput) | **PUT** /QuantityUnit/{id} |  |
-| [**QuantityUnitPost**](QuantityUnitClient.md#quantityunitpost) | **POST** /QuantityUnit |  |
+| [**GetAll**](QuantityUnitClient.md#quantityunitgetallget) | **GET** /QuantityUnit/get-all |  |
+| [**Delete**](QuantityUnitClient.md#quantityunitiddelete) | **DELETE** /QuantityUnit/{id} |  |
+| [**Get**](QuantityUnitClient.md#quantityunitidget) | **GET** /QuantityUnit/{id} |  |
+| [**Put**](QuantityUnitClient.md#quantityunitidput) | **PUT** /QuantityUnit/{id} |  |
+| [**Post**](QuantityUnitClient.md#quantityunitpost) | **POST** /QuantityUnit |  |
 
 <a id="quantityunitgetallget"></a>
-# **QuantityUnitGetAllGet**
-> List&lt;QuantityUnitModel&gt; QuantityUnitGetAllGet ()
+# **GetAll**
+> List&lt;QuantityUnitModel&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class QuantityUnitGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<QuantityUnitModel> result = apiInstance.QuantityUnitGetAllGet();
+                List<QuantityUnitModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling QuantityUnitClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the QuantityUnitGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<QuantityUnitModel>> response = apiInstance.QuantityUnitGetAllGetWithHttpInfo();
+    ApiResponse<List<QuantityUnitModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QuantityUnitClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="quantityunitiddelete"></a>
-# **QuantityUnitIdDelete**
-> void QuantityUnitIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class QuantityUnitIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -131,11 +131,11 @@ namespace Example
 
             try
             {
-                apiInstance.QuantityUnitIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdDelete: " + e.Message);
+                Debug.Print("Exception when calling QuantityUnitClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,17 +144,17 @@ namespace Example
 }
 ```
 
-#### Using the QuantityUnitIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.QuantityUnitIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QuantityUnitClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -190,8 +190,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="quantityunitidget"></a>
-# **QuantityUnitIdGet**
-> QuantityUnitModel QuantityUnitIdGet (Guid id)
+# **Get**
+> QuantityUnitModel Get (Guid id)
 
 
 
@@ -205,7 +205,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class QuantityUnitIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -221,12 +221,12 @@ namespace Example
 
             try
             {
-                QuantityUnitModel result = apiInstance.QuantityUnitIdGet(id);
+                QuantityUnitModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdGet: " + e.Message);
+                Debug.Print("Exception when calling QuantityUnitClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -235,20 +235,20 @@ namespace Example
 }
 ```
 
-#### Using the QuantityUnitIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<QuantityUnitModel> response = apiInstance.QuantityUnitIdGetWithHttpInfo(id);
+    ApiResponse<QuantityUnitModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QuantityUnitClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -284,8 +284,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="quantityunitidput"></a>
-# **QuantityUnitIdPut**
-> QuantityUnitModel QuantityUnitIdPut (Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = null)
+# **Put**
+> QuantityUnitModel Put (Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = null)
 
 
 
@@ -299,7 +299,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class QuantityUnitIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -316,12 +316,12 @@ namespace Example
 
             try
             {
-                QuantityUnitModel result = apiInstance.QuantityUnitIdPut(id, updateQuantityUnitRequest);
+                QuantityUnitModel result = apiInstance.Put(id, updateQuantityUnitRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdPut: " + e.Message);
+                Debug.Print("Exception when calling QuantityUnitClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -330,20 +330,20 @@ namespace Example
 }
 ```
 
-#### Using the QuantityUnitIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<QuantityUnitModel> response = apiInstance.QuantityUnitIdPutWithHttpInfo(id, updateQuantityUnitRequest);
+    ApiResponse<QuantityUnitModel> response = apiInstance.PutWithHttpInfo(id, updateQuantityUnitRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QuantityUnitClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -380,8 +380,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="quantityunitpost"></a>
-# **QuantityUnitPost**
-> QuantityUnitModel QuantityUnitPost (CreateQuantityUnitRequest? createQuantityUnitRequest = null)
+# **Post**
+> QuantityUnitModel Post (CreateQuantityUnitRequest? createQuantityUnitRequest = null)
 
 
 
@@ -395,7 +395,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class QuantityUnitPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -411,12 +411,12 @@ namespace Example
 
             try
             {
-                QuantityUnitModel result = apiInstance.QuantityUnitPost(createQuantityUnitRequest);
+                QuantityUnitModel result = apiInstance.Post(createQuantityUnitRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitPost: " + e.Message);
+                Debug.Print("Exception when calling QuantityUnitClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -425,20 +425,20 @@ namespace Example
 }
 ```
 
-#### Using the QuantityUnitPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<QuantityUnitModel> response = apiInstance.QuantityUnitPostWithHttpInfo(createQuantityUnitRequest);
+    ApiResponse<QuantityUnitModel> response = apiInstance.PostWithHttpInfo(createQuantityUnitRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling QuantityUnitClient.QuantityUnitPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling QuantityUnitClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

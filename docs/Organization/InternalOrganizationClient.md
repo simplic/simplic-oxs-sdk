@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalOrganizationGetAllGet**](InternalOrganizationClient.md#internalinternalorganizationgetallget) | **GET** /internal/InternalOrganization/get-all | Gets a list of organizations that belongs to the current user |
+| [**GetAll**](InternalOrganizationClient.md#internalinternalorganizationgetallget) | **GET** /internal/InternalOrganization/get-all | Gets a list of organizations that belongs to the current user |
 
 <a id="internalinternalorganizationgetallget"></a>
-# **InternalInternalOrganizationGetAllGet**
-> List&lt;OrganizationMemberModel&gt; InternalInternalOrganizationGetAllGet ()
+# **GetAll**
+> List&lt;OrganizationMemberModel&gt; GetAll ()
 
 Gets a list of organizations that belongs to the current user
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Organization;
 
 namespace Example
 {
-    public class InternalInternalOrganizationGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
             try
             {
                 // Gets a list of organizations that belongs to the current user
-                List<OrganizationMemberModel> result = apiInstance.InternalInternalOrganizationGetAllGet();
+                List<OrganizationMemberModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalOrganizationClient.InternalInternalOrganizationGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling InternalOrganizationClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,21 +52,21 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalOrganizationGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a list of organizations that belongs to the current user
-    ApiResponse<List<OrganizationMemberModel>> response = apiInstance.InternalInternalOrganizationGetAllGetWithHttpInfo();
+    ApiResponse<List<OrganizationMemberModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalOrganizationClient.InternalInternalOrganizationGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalOrganizationClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

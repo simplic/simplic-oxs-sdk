@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/construction-site-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ConstructionSiteGetAllGet**](ConstructionSiteClient.md#constructionsitegetallget) | **GET** /ConstructionSite/get-all |  |
-| [**ConstructionSiteIdDelete**](ConstructionSiteClient.md#constructionsiteiddelete) | **DELETE** /ConstructionSite/{id} |  |
-| [**ConstructionSiteIdGet**](ConstructionSiteClient.md#constructionsiteidget) | **GET** /ConstructionSite/{id} |  |
-| [**ConstructionSiteIdPut**](ConstructionSiteClient.md#constructionsiteidput) | **PUT** /ConstructionSite/{id} |  |
-| [**ConstructionSitePost**](ConstructionSiteClient.md#constructionsitepost) | **POST** /ConstructionSite |  |
+| [**GetAll**](ConstructionSiteClient.md#constructionsitegetallget) | **GET** /ConstructionSite/get-all |  |
+| [**Delete**](ConstructionSiteClient.md#constructionsiteiddelete) | **DELETE** /ConstructionSite/{id} |  |
+| [**Get**](ConstructionSiteClient.md#constructionsiteidget) | **GET** /ConstructionSite/{id} |  |
+| [**Put**](ConstructionSiteClient.md#constructionsiteidput) | **PUT** /ConstructionSite/{id} |  |
+| [**Post**](ConstructionSiteClient.md#constructionsitepost) | **POST** /ConstructionSite |  |
 
 <a id="constructionsitegetallget"></a>
-# **ConstructionSiteGetAllGet**
-> List&lt;ConstructionSiteModel&gt; ConstructionSiteGetAllGet ()
+# **GetAll**
+> List&lt;ConstructionSiteModel&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class ConstructionSiteGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<ConstructionSiteModel> result = apiInstance.ConstructionSiteGetAllGet();
+                List<ConstructionSiteModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling ConstructionSiteClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the ConstructionSiteGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ConstructionSiteModel>> response = apiInstance.ConstructionSiteGetAllGetWithHttpInfo();
+    ApiResponse<List<ConstructionSiteModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConstructionSiteClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="constructionsiteiddelete"></a>
-# **ConstructionSiteIdDelete**
-> void ConstructionSiteIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class ConstructionSiteIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -131,11 +131,11 @@ namespace Example
 
             try
             {
-                apiInstance.ConstructionSiteIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ConstructionSiteClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,17 +144,17 @@ namespace Example
 }
 ```
 
-#### Using the ConstructionSiteIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ConstructionSiteIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConstructionSiteClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -190,8 +190,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="constructionsiteidget"></a>
-# **ConstructionSiteIdGet**
-> ConstructionSiteModel ConstructionSiteIdGet (Guid id)
+# **Get**
+> ConstructionSiteModel Get (Guid id)
 
 
 
@@ -205,7 +205,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class ConstructionSiteIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -221,12 +221,12 @@ namespace Example
 
             try
             {
-                ConstructionSiteModel result = apiInstance.ConstructionSiteIdGet(id);
+                ConstructionSiteModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdGet: " + e.Message);
+                Debug.Print("Exception when calling ConstructionSiteClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -235,20 +235,20 @@ namespace Example
 }
 ```
 
-#### Using the ConstructionSiteIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConstructionSiteModel> response = apiInstance.ConstructionSiteIdGetWithHttpInfo(id);
+    ApiResponse<ConstructionSiteModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConstructionSiteClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -284,8 +284,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="constructionsiteidput"></a>
-# **ConstructionSiteIdPut**
-> ConstructionSiteModel ConstructionSiteIdPut (Guid id, UpdateConstructionSiteRequest? updateConstructionSiteRequest = null)
+# **Put**
+> ConstructionSiteModel Put (Guid id, UpdateConstructionSiteRequest? updateConstructionSiteRequest = null)
 
 
 
@@ -299,7 +299,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class ConstructionSiteIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -316,12 +316,12 @@ namespace Example
 
             try
             {
-                ConstructionSiteModel result = apiInstance.ConstructionSiteIdPut(id, updateConstructionSiteRequest);
+                ConstructionSiteModel result = apiInstance.Put(id, updateConstructionSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdPut: " + e.Message);
+                Debug.Print("Exception when calling ConstructionSiteClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -330,20 +330,20 @@ namespace Example
 }
 ```
 
-#### Using the ConstructionSiteIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConstructionSiteModel> response = apiInstance.ConstructionSiteIdPutWithHttpInfo(id, updateConstructionSiteRequest);
+    ApiResponse<ConstructionSiteModel> response = apiInstance.PutWithHttpInfo(id, updateConstructionSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSiteIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConstructionSiteClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -380,8 +380,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="constructionsitepost"></a>
-# **ConstructionSitePost**
-> ConstructionSiteModel ConstructionSitePost (CreateConstructionSiteRequest? createConstructionSiteRequest = null)
+# **Post**
+> ConstructionSiteModel Post (CreateConstructionSiteRequest? createConstructionSiteRequest = null)
 
 
 
@@ -395,7 +395,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class ConstructionSitePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -411,12 +411,12 @@ namespace Example
 
             try
             {
-                ConstructionSiteModel result = apiInstance.ConstructionSitePost(createConstructionSiteRequest);
+                ConstructionSiteModel result = apiInstance.Post(createConstructionSiteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSitePost: " + e.Message);
+                Debug.Print("Exception when calling ConstructionSiteClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -425,20 +425,20 @@ namespace Example
 }
 ```
 
-#### Using the ConstructionSitePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConstructionSiteModel> response = apiInstance.ConstructionSitePostWithHttpInfo(createConstructionSiteRequest);
+    ApiResponse<ConstructionSiteModel> response = apiInstance.PostWithHttpInfo(createConstructionSiteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ConstructionSiteClient.ConstructionSitePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ConstructionSiteClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

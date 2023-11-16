@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**VehicleTypeGetAllGet**](VehicleTypeClient.md#vehicletypegetallget) | **GET** /VehicleType/get-all |  |
-| [**VehicleTypeIdDelete**](VehicleTypeClient.md#vehicletypeiddelete) | **DELETE** /VehicleType/{id} |  |
-| [**VehicleTypeIdGet**](VehicleTypeClient.md#vehicletypeidget) | **GET** /VehicleType/{id} |  |
-| [**VehicleTypeIdPatch**](VehicleTypeClient.md#vehicletypeidpatch) | **PATCH** /VehicleType/{id} |  |
-| [**VehicleTypePost**](VehicleTypeClient.md#vehicletypepost) | **POST** /VehicleType |  |
+| [**GetAll**](VehicleTypeClient.md#vehicletypegetallget) | **GET** /VehicleType/get-all |  |
+| [**Delete**](VehicleTypeClient.md#vehicletypeiddelete) | **DELETE** /VehicleType/{id} |  |
+| [**Get**](VehicleTypeClient.md#vehicletypeidget) | **GET** /VehicleType/{id} |  |
+| [**Patch**](VehicleTypeClient.md#vehicletypeidpatch) | **PATCH** /VehicleType/{id} |  |
+| [**Post**](VehicleTypeClient.md#vehicletypepost) | **POST** /VehicleType |  |
 
 <a id="vehicletypegetallget"></a>
-# **VehicleTypeGetAllGet**
-> List&lt;VehicleTypeModel&gt; VehicleTypeGetAllGet ()
+# **GetAll**
+> List&lt;VehicleTypeModel&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class VehicleTypeGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<VehicleTypeModel> result = apiInstance.VehicleTypeGetAllGet();
+                List<VehicleTypeModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling VehicleTypeClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the VehicleTypeGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<VehicleTypeModel>> response = apiInstance.VehicleTypeGetAllGetWithHttpInfo();
+    ApiResponse<List<VehicleTypeModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VehicleTypeClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="vehicletypeiddelete"></a>
-# **VehicleTypeIdDelete**
-> void VehicleTypeIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class VehicleTypeIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -130,11 +130,11 @@ namespace Example
 
             try
             {
-                apiInstance.VehicleTypeIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdDelete: " + e.Message);
+                Debug.Print("Exception when calling VehicleTypeClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,17 +143,17 @@ namespace Example
 }
 ```
 
-#### Using the VehicleTypeIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.VehicleTypeIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VehicleTypeClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -189,8 +189,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="vehicletypeidget"></a>
-# **VehicleTypeIdGet**
-> VehicleTypeModel VehicleTypeIdGet (Guid id)
+# **Get**
+> VehicleTypeModel Get (Guid id)
 
 
 
@@ -204,7 +204,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class VehicleTypeIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -220,12 +220,12 @@ namespace Example
 
             try
             {
-                VehicleTypeModel result = apiInstance.VehicleTypeIdGet(id);
+                VehicleTypeModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdGet: " + e.Message);
+                Debug.Print("Exception when calling VehicleTypeClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -234,20 +234,20 @@ namespace Example
 }
 ```
 
-#### Using the VehicleTypeIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleTypeModel> response = apiInstance.VehicleTypeIdGetWithHttpInfo(id);
+    ApiResponse<VehicleTypeModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VehicleTypeClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -283,8 +283,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="vehicletypeidpatch"></a>
-# **VehicleTypeIdPatch**
-> VehicleTypeModel VehicleTypeIdPatch (Guid id, PatchVehicleTypeRequest? patchVehicleTypeRequest = null)
+# **Patch**
+> VehicleTypeModel Patch (Guid id, PatchVehicleTypeRequest? patchVehicleTypeRequest = null)
 
 
 
@@ -298,7 +298,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class VehicleTypeIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -315,12 +315,12 @@ namespace Example
 
             try
             {
-                VehicleTypeModel result = apiInstance.VehicleTypeIdPatch(id, patchVehicleTypeRequest);
+                VehicleTypeModel result = apiInstance.Patch(id, patchVehicleTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdPatch: " + e.Message);
+                Debug.Print("Exception when calling VehicleTypeClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -329,20 +329,20 @@ namespace Example
 }
 ```
 
-#### Using the VehicleTypeIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleTypeModel> response = apiInstance.VehicleTypeIdPatchWithHttpInfo(id, patchVehicleTypeRequest);
+    ApiResponse<VehicleTypeModel> response = apiInstance.PatchWithHttpInfo(id, patchVehicleTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VehicleTypeClient.VehicleTypeIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VehicleTypeClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -379,8 +379,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="vehicletypepost"></a>
-# **VehicleTypePost**
-> VehicleTypeModel VehicleTypePost (CreateVehicleTypeRequest? createVehicleTypeRequest = null)
+# **Post**
+> VehicleTypeModel Post (CreateVehicleTypeRequest? createVehicleTypeRequest = null)
 
 
 
@@ -394,7 +394,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class VehicleTypePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -410,12 +410,12 @@ namespace Example
 
             try
             {
-                VehicleTypeModel result = apiInstance.VehicleTypePost(createVehicleTypeRequest);
+                VehicleTypeModel result = apiInstance.Post(createVehicleTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VehicleTypeClient.VehicleTypePost: " + e.Message);
+                Debug.Print("Exception when calling VehicleTypeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -424,20 +424,20 @@ namespace Example
 }
 ```
 
-#### Using the VehicleTypePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VehicleTypeModel> response = apiInstance.VehicleTypePostWithHttpInfo(createVehicleTypeRequest);
+    ApiResponse<VehicleTypeModel> response = apiInstance.PostWithHttpInfo(createVehicleTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VehicleTypeClient.VehicleTypePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VehicleTypeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ArticleGetArticleByBarcodeGet**](ArticleClient.md#articlegetarticlebybarcodeget) | **GET** /Article/get-article-by-barcode |  |
-| [**ArticleGetArticleByNumberGet**](ArticleClient.md#articlegetarticlebynumberget) | **GET** /Article/get-article-by-number |  |
-| [**ArticleGetArticlesByGroupidGet**](ArticleClient.md#articlegetarticlesbygroupidget) | **GET** /Article/get-articles-by-groupid |  |
-| [**ArticleGetArticlesByNameGet**](ArticleClient.md#articlegetarticlesbynameget) | **GET** /Article/get-articles-by-name |  |
-| [**ArticleIdDelete**](ArticleClient.md#articleiddelete) | **DELETE** /Article/{id} |  |
-| [**ArticleIdGet**](ArticleClient.md#articleidget) | **GET** /Article/{id} |  |
-| [**ArticleIdPut**](ArticleClient.md#articleidput) | **PUT** /Article/{id} |  |
-| [**ArticlePost**](ArticleClient.md#articlepost) | **POST** /Article |  |
+| [**GetArticleByBarcode**](ArticleClient.md#articlegetarticlebybarcodeget) | **GET** /Article/get-article-by-barcode |  |
+| [**GetArticleByNumber**](ArticleClient.md#articlegetarticlebynumberget) | **GET** /Article/get-article-by-number |  |
+| [**GetArticlesByGroupid**](ArticleClient.md#articlegetarticlesbygroupidget) | **GET** /Article/get-articles-by-groupid |  |
+| [**GetArticlesByName**](ArticleClient.md#articlegetarticlesbynameget) | **GET** /Article/get-articles-by-name |  |
+| [**Delete**](ArticleClient.md#articleiddelete) | **DELETE** /Article/{id} |  |
+| [**Get**](ArticleClient.md#articleidget) | **GET** /Article/{id} |  |
+| [**Put**](ArticleClient.md#articleidput) | **PUT** /Article/{id} |  |
+| [**Post**](ArticleClient.md#articlepost) | **POST** /Article |  |
 
 <a id="articlegetarticlebybarcodeget"></a>
-# **ArticleGetArticleByBarcodeGet**
-> ArticleModel ArticleGetArticleByBarcodeGet (string? barcode = null)
+# **GetArticleByBarcode**
+> ArticleModel GetArticleByBarcode (string? barcode = null)
 
 
 
@@ -29,7 +29,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGetArticleByBarcodeGetExample
+    public class GetArticleByBarcodeExample
     {
         public static void Main()
         {
@@ -45,12 +45,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.ArticleGetArticleByBarcodeGet(barcode);
+                ArticleModel result = apiInstance.GetArticleByBarcode(barcode);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleGetArticleByBarcodeGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.GetArticleByBarcode: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +59,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGetArticleByBarcodeGetWithHttpInfo variant
+#### Using the GetArticleByBarcodeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.ArticleGetArticleByBarcodeGetWithHttpInfo(barcode);
+    ApiResponse<ArticleModel> response = apiInstance.GetArticleByBarcodeWithHttpInfo(barcode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleGetArticleByBarcodeGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.GetArticleByBarcodeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -108,8 +108,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegetarticlebynumberget"></a>
-# **ArticleGetArticleByNumberGet**
-> ArticleModel ArticleGetArticleByNumberGet (string? articleNumber = null)
+# **GetArticleByNumber**
+> ArticleModel GetArticleByNumber (string? articleNumber = null)
 
 
 
@@ -123,7 +123,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGetArticleByNumberGetExample
+    public class GetArticleByNumberExample
     {
         public static void Main()
         {
@@ -139,12 +139,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.ArticleGetArticleByNumberGet(articleNumber);
+                ArticleModel result = apiInstance.GetArticleByNumber(articleNumber);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleGetArticleByNumberGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.GetArticleByNumber: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -153,20 +153,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGetArticleByNumberGetWithHttpInfo variant
+#### Using the GetArticleByNumberWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.ArticleGetArticleByNumberGetWithHttpInfo(articleNumber);
+    ApiResponse<ArticleModel> response = apiInstance.GetArticleByNumberWithHttpInfo(articleNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleGetArticleByNumberGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.GetArticleByNumberWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -202,8 +202,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegetarticlesbygroupidget"></a>
-# **ArticleGetArticlesByGroupidGet**
-> List&lt;ArticleModel&gt; ArticleGetArticlesByGroupidGet (Guid? groupId = null, int? skip = null, int? limit = null)
+# **GetArticlesByGroupid**
+> List&lt;ArticleModel&gt; GetArticlesByGroupid (Guid? groupId = null, int? skip = null, int? limit = null)
 
 
 
@@ -217,7 +217,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGetArticlesByGroupidGetExample
+    public class GetArticlesByGroupidExample
     {
         public static void Main()
         {
@@ -235,12 +235,12 @@ namespace Example
 
             try
             {
-                List<ArticleModel> result = apiInstance.ArticleGetArticlesByGroupidGet(groupId, skip, limit);
+                List<ArticleModel> result = apiInstance.GetArticlesByGroupid(groupId, skip, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleGetArticlesByGroupidGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.GetArticlesByGroupid: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -249,20 +249,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGetArticlesByGroupidGetWithHttpInfo variant
+#### Using the GetArticlesByGroupidWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ArticleModel>> response = apiInstance.ArticleGetArticlesByGroupidGetWithHttpInfo(groupId, skip, limit);
+    ApiResponse<List<ArticleModel>> response = apiInstance.GetArticlesByGroupidWithHttpInfo(groupId, skip, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleGetArticlesByGroupidGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.GetArticlesByGroupidWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -300,8 +300,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlegetarticlesbynameget"></a>
-# **ArticleGetArticlesByNameGet**
-> List&lt;ArticleModel&gt; ArticleGetArticlesByNameGet (string? searchName = null, int? skip = null, int? limit = null)
+# **GetArticlesByName**
+> List&lt;ArticleModel&gt; GetArticlesByName (string? searchName = null, int? skip = null, int? limit = null)
 
 
 
@@ -315,7 +315,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleGetArticlesByNameGetExample
+    public class GetArticlesByNameExample
     {
         public static void Main()
         {
@@ -333,12 +333,12 @@ namespace Example
 
             try
             {
-                List<ArticleModel> result = apiInstance.ArticleGetArticlesByNameGet(searchName, skip, limit);
+                List<ArticleModel> result = apiInstance.GetArticlesByName(searchName, skip, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleGetArticlesByNameGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.GetArticlesByName: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -347,20 +347,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleGetArticlesByNameGetWithHttpInfo variant
+#### Using the GetArticlesByNameWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ArticleModel>> response = apiInstance.ArticleGetArticlesByNameGetWithHttpInfo(searchName, skip, limit);
+    ApiResponse<List<ArticleModel>> response = apiInstance.GetArticlesByNameWithHttpInfo(searchName, skip, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleGetArticlesByNameGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.GetArticlesByNameWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -398,8 +398,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articleiddelete"></a>
-# **ArticleIdDelete**
-> void ArticleIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -413,7 +413,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -429,11 +429,11 @@ namespace Example
 
             try
             {
-                apiInstance.ArticleIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -442,17 +442,17 @@ namespace Example
 }
 ```
 
-#### Using the ArticleIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ArticleIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -488,8 +488,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articleidget"></a>
-# **ArticleIdGet**
-> ArticleModel ArticleIdGet (Guid id)
+# **Get**
+> ArticleModel Get (Guid id)
 
 
 
@@ -503,7 +503,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -519,12 +519,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.ArticleIdGet(id);
+                ArticleModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleIdGet: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -533,20 +533,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.ArticleIdGetWithHttpInfo(id);
+    ApiResponse<ArticleModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -582,8 +582,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articleidput"></a>
-# **ArticleIdPut**
-> ArticleModel ArticleIdPut (Guid id, UpdateArticleRequest? updateArticleRequest = null)
+# **Put**
+> ArticleModel Put (Guid id, UpdateArticleRequest? updateArticleRequest = null)
 
 
 
@@ -597,7 +597,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticleIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -614,12 +614,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.ArticleIdPut(id, updateArticleRequest);
+                ArticleModel result = apiInstance.Put(id, updateArticleRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticleIdPut: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -628,20 +628,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticleIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.ArticleIdPutWithHttpInfo(id, updateArticleRequest);
+    ApiResponse<ArticleModel> response = apiInstance.PutWithHttpInfo(id, updateArticleRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticleIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -678,8 +678,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="articlepost"></a>
-# **ArticlePost**
-> ArticleModel ArticlePost (CreateArticleRequest? createArticleRequest = null)
+# **Post**
+> ArticleModel Post (CreateArticleRequest? createArticleRequest = null)
 
 
 
@@ -693,7 +693,7 @@ using Simplic.OxS.SDK.Article;
 
 namespace Example
 {
-    public class ArticlePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -709,12 +709,12 @@ namespace Example
 
             try
             {
-                ArticleModel result = apiInstance.ArticlePost(createArticleRequest);
+                ArticleModel result = apiInstance.Post(createArticleRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArticleClient.ArticlePost: " + e.Message);
+                Debug.Print("Exception when calling ArticleClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -723,20 +723,20 @@ namespace Example
 }
 ```
 
-#### Using the ArticlePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ArticleModel> response = apiInstance.ArticlePostWithHttpInfo(createArticleRequest);
+    ApiResponse<ArticleModel> response = apiInstance.PostWithHttpInfo(createArticleRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArticleClient.ArticlePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArticleClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

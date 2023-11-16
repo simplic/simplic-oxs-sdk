@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/construction-site-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalConstructionSiteGetByIdGet**](InternalConstructionSiteClient.md#internalinternalconstructionsitegetbyidget) | **GET** /internal/InternalConstructionSite/get-by-id |  |
+| [**GetById**](InternalConstructionSiteClient.md#internalinternalconstructionsitegetbyidget) | **GET** /internal/InternalConstructionSite/get-by-id |  |
 
 <a id="internalinternalconstructionsitegetbyidget"></a>
-# **InternalInternalConstructionSiteGetByIdGet**
-> ConstructionSiteModel InternalInternalConstructionSiteGetByIdGet (Guid? id = null)
+# **GetById**
+> ConstructionSiteModel GetById (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Construction.Site;
 
 namespace Example
 {
-    public class InternalInternalConstructionSiteGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                ConstructionSiteModel result = apiInstance.InternalInternalConstructionSiteGetByIdGet(id);
+                ConstructionSiteModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalConstructionSiteClient.InternalInternalConstructionSiteGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalConstructionSiteClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalConstructionSiteGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConstructionSiteModel> response = apiInstance.InternalInternalConstructionSiteGetByIdGetWithHttpInfo(id);
+    ApiResponse<ConstructionSiteModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalConstructionSiteClient.InternalInternalConstructionSiteGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalConstructionSiteClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AppointmentIdDelete**](AppointmentClient.md#appointmentiddelete) | **DELETE** /Appointment/{id} |  |
-| [**AppointmentIdGet**](AppointmentClient.md#appointmentidget) | **GET** /Appointment/{id} |  |
-| [**AppointmentIdPatch**](AppointmentClient.md#appointmentidpatch) | **PATCH** /Appointment/{id} |  |
-| [**AppointmentPost**](AppointmentClient.md#appointmentpost) | **POST** /Appointment |  |
+| [**Delete**](AppointmentClient.md#appointmentiddelete) | **DELETE** /Appointment/{id} |  |
+| [**Get**](AppointmentClient.md#appointmentidget) | **GET** /Appointment/{id} |  |
+| [**Patch**](AppointmentClient.md#appointmentidpatch) | **PATCH** /Appointment/{id} |  |
+| [**Post**](AppointmentClient.md#appointmentpost) | **POST** /Appointment |  |
 
 <a id="appointmentiddelete"></a>
-# **AppointmentIdDelete**
-> void AppointmentIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class AppointmentIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.AppointmentIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AppointmentClient.AppointmentIdDelete: " + e.Message);
+                Debug.Print("Exception when calling AppointmentClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the AppointmentIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.AppointmentIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AppointmentClient.AppointmentIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AppointmentClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="appointmentidget"></a>
-# **AppointmentIdGet**
-> AppointmentModel AppointmentIdGet (Guid id)
+# **Get**
+> AppointmentModel Get (Guid id)
 
 
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class AppointmentIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -131,12 +131,12 @@ namespace Example
 
             try
             {
-                AppointmentModel result = apiInstance.AppointmentIdGet(id);
+                AppointmentModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AppointmentClient.AppointmentIdGet: " + e.Message);
+                Debug.Print("Exception when calling AppointmentClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -145,20 +145,20 @@ namespace Example
 }
 ```
 
-#### Using the AppointmentIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<AppointmentModel> response = apiInstance.AppointmentIdGetWithHttpInfo(id);
+    ApiResponse<AppointmentModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AppointmentClient.AppointmentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AppointmentClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -194,8 +194,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="appointmentidpatch"></a>
-# **AppointmentIdPatch**
-> AppointmentModel AppointmentIdPatch (Guid id, PatchAppointmentRequest? patchAppointmentRequest = null)
+# **Patch**
+> AppointmentModel Patch (Guid id, PatchAppointmentRequest? patchAppointmentRequest = null)
 
 
 
@@ -209,7 +209,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class AppointmentIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -226,12 +226,12 @@ namespace Example
 
             try
             {
-                AppointmentModel result = apiInstance.AppointmentIdPatch(id, patchAppointmentRequest);
+                AppointmentModel result = apiInstance.Patch(id, patchAppointmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AppointmentClient.AppointmentIdPatch: " + e.Message);
+                Debug.Print("Exception when calling AppointmentClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -240,20 +240,20 @@ namespace Example
 }
 ```
 
-#### Using the AppointmentIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<AppointmentModel> response = apiInstance.AppointmentIdPatchWithHttpInfo(id, patchAppointmentRequest);
+    ApiResponse<AppointmentModel> response = apiInstance.PatchWithHttpInfo(id, patchAppointmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AppointmentClient.AppointmentIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AppointmentClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -290,8 +290,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="appointmentpost"></a>
-# **AppointmentPost**
-> AppointmentModel AppointmentPost (CreateAppointmentRequest? createAppointmentRequest = null)
+# **Post**
+> AppointmentModel Post (CreateAppointmentRequest? createAppointmentRequest = null)
 
 
 
@@ -305,7 +305,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class AppointmentPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -321,12 +321,12 @@ namespace Example
 
             try
             {
-                AppointmentModel result = apiInstance.AppointmentPost(createAppointmentRequest);
+                AppointmentModel result = apiInstance.Post(createAppointmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AppointmentClient.AppointmentPost: " + e.Message);
+                Debug.Print("Exception when calling AppointmentClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -335,20 +335,20 @@ namespace Example
 }
 ```
 
-#### Using the AppointmentPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<AppointmentModel> response = apiInstance.AppointmentPostWithHttpInfo(createAppointmentRequest);
+    ApiResponse<AppointmentModel> response = apiInstance.PostWithHttpInfo(createAppointmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AppointmentClient.AppointmentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AppointmentClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

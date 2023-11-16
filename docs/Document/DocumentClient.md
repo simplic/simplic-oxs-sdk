@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DocumentDocumentIdGet**](DocumentClient.md#documentdocumentidget) | **GET** /Document/{documentId} |  |
-| [**DocumentGetCurrentDocumentIdGet**](DocumentClient.md#documentgetcurrentdocumentidget) | **GET** /Document/get-current/{documentId} |  |
-| [**DocumentGetVersionByIdVersionIdGet**](DocumentClient.md#documentgetversionbyidversionidget) | **GET** /Document/get-version-by-id/{versionId} |  |
-| [**DocumentGetVersionDocumentIdGet**](DocumentClient.md#documentgetversiondocumentidget) | **GET** /Document/get-version/{documentId} |  |
-| [**DocumentIdPatch**](DocumentClient.md#documentidpatch) | **PATCH** /Document/{id} |  |
-| [**DocumentPost**](DocumentClient.md#documentpost) | **POST** /Document |  |
+| [**Get**](DocumentClient.md#documentdocumentidget) | **GET** /Document/{documentId} |  |
+| [**GetCurrent**](DocumentClient.md#documentgetcurrentdocumentidget) | **GET** /Document/get-current/{documentId} |  |
+| [**GetVersionById**](DocumentClient.md#documentgetversionbyidversionidget) | **GET** /Document/get-version-by-id/{versionId} |  |
+| [**GetVersion**](DocumentClient.md#documentgetversiondocumentidget) | **GET** /Document/get-version/{documentId} |  |
+| [**Patch**](DocumentClient.md#documentidpatch) | **PATCH** /Document/{id} |  |
+| [**Post**](DocumentClient.md#documentpost) | **POST** /Document |  |
 
 <a id="documentdocumentidget"></a>
-# **DocumentDocumentIdGet**
-> DocumentResponse DocumentDocumentIdGet (Guid documentId)
+# **Get**
+> DocumentResponse Get (Guid documentId)
 
 
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentDocumentIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -43,12 +43,12 @@ namespace Example
 
             try
             {
-                DocumentResponse result = apiInstance.DocumentDocumentIdGet(documentId);
+                DocumentResponse result = apiInstance.Get(documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentDocumentIdGet: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -57,20 +57,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentDocumentIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentResponse> response = apiInstance.DocumentDocumentIdGetWithHttpInfo(documentId);
+    ApiResponse<DocumentResponse> response = apiInstance.GetWithHttpInfo(documentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentDocumentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -106,8 +106,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="documentgetcurrentdocumentidget"></a>
-# **DocumentGetCurrentDocumentIdGet**
-> DocumentVersionResponse DocumentGetCurrentDocumentIdGet (Guid documentId)
+# **GetCurrent**
+> DocumentVersionResponse GetCurrent (Guid documentId)
 
 
 
@@ -121,7 +121,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentGetCurrentDocumentIdGetExample
+    public class GetCurrentExample
     {
         public static void Main()
         {
@@ -137,12 +137,12 @@ namespace Example
 
             try
             {
-                DocumentVersionResponse result = apiInstance.DocumentGetCurrentDocumentIdGet(documentId);
+                DocumentVersionResponse result = apiInstance.GetCurrent(documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentGetCurrentDocumentIdGet: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.GetCurrent: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -151,20 +151,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentGetCurrentDocumentIdGetWithHttpInfo variant
+#### Using the GetCurrentWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentVersionResponse> response = apiInstance.DocumentGetCurrentDocumentIdGetWithHttpInfo(documentId);
+    ApiResponse<DocumentVersionResponse> response = apiInstance.GetCurrentWithHttpInfo(documentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentGetCurrentDocumentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.GetCurrentWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -200,8 +200,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="documentgetversionbyidversionidget"></a>
-# **DocumentGetVersionByIdVersionIdGet**
-> DocumentVersionResponse DocumentGetVersionByIdVersionIdGet (Guid versionId)
+# **GetVersionById**
+> DocumentVersionResponse GetVersionById (Guid versionId)
 
 
 
@@ -215,7 +215,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentGetVersionByIdVersionIdGetExample
+    public class GetVersionByIdExample
     {
         public static void Main()
         {
@@ -231,12 +231,12 @@ namespace Example
 
             try
             {
-                DocumentVersionResponse result = apiInstance.DocumentGetVersionByIdVersionIdGet(versionId);
+                DocumentVersionResponse result = apiInstance.GetVersionById(versionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentGetVersionByIdVersionIdGet: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.GetVersionById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -245,20 +245,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentGetVersionByIdVersionIdGetWithHttpInfo variant
+#### Using the GetVersionByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentVersionResponse> response = apiInstance.DocumentGetVersionByIdVersionIdGetWithHttpInfo(versionId);
+    ApiResponse<DocumentVersionResponse> response = apiInstance.GetVersionByIdWithHttpInfo(versionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentGetVersionByIdVersionIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.GetVersionByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -294,8 +294,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="documentgetversiondocumentidget"></a>
-# **DocumentGetVersionDocumentIdGet**
-> DocumentVersionResponse DocumentGetVersionDocumentIdGet (Guid documentId, int? varVersion = null)
+# **GetVersion**
+> DocumentVersionResponse GetVersion (Guid documentId, int? varVersion = null)
 
 
 
@@ -309,7 +309,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentGetVersionDocumentIdGetExample
+    public class GetVersionExample
     {
         public static void Main()
         {
@@ -326,12 +326,12 @@ namespace Example
 
             try
             {
-                DocumentVersionResponse result = apiInstance.DocumentGetVersionDocumentIdGet(documentId, varVersion);
+                DocumentVersionResponse result = apiInstance.GetVersion(documentId, varVersion);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentGetVersionDocumentIdGet: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.GetVersion: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -340,20 +340,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentGetVersionDocumentIdGetWithHttpInfo variant
+#### Using the GetVersionWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentVersionResponse> response = apiInstance.DocumentGetVersionDocumentIdGetWithHttpInfo(documentId, varVersion);
+    ApiResponse<DocumentVersionResponse> response = apiInstance.GetVersionWithHttpInfo(documentId, varVersion);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentGetVersionDocumentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.GetVersionWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -390,8 +390,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="documentidpatch"></a>
-# **DocumentIdPatch**
-> DocumentResponse DocumentIdPatch (Guid id, PatchDocumentRequest? patchDocumentRequest = null)
+# **Patch**
+> DocumentResponse Patch (Guid id, PatchDocumentRequest? patchDocumentRequest = null)
 
 
 
@@ -405,7 +405,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -422,12 +422,12 @@ namespace Example
 
             try
             {
-                DocumentResponse result = apiInstance.DocumentIdPatch(id, patchDocumentRequest);
+                DocumentResponse result = apiInstance.Patch(id, patchDocumentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentIdPatch: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -436,20 +436,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentResponse> response = apiInstance.DocumentIdPatchWithHttpInfo(id, patchDocumentRequest);
+    ApiResponse<DocumentResponse> response = apiInstance.PatchWithHttpInfo(id, patchDocumentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -487,8 +487,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="documentpost"></a>
-# **DocumentPost**
-> DocumentResponse DocumentPost (PostDocumentRequest? postDocumentRequest = null)
+# **Post**
+> DocumentResponse Post (PostDocumentRequest? postDocumentRequest = null)
 
 
 
@@ -502,7 +502,7 @@ using Simplic.OxS.SDK.Document;
 
 namespace Example
 {
-    public class DocumentPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -518,12 +518,12 @@ namespace Example
 
             try
             {
-                DocumentResponse result = apiInstance.DocumentPost(postDocumentRequest);
+                DocumentResponse result = apiInstance.Post(postDocumentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.DocumentPost: " + e.Message);
+                Debug.Print("Exception when calling DocumentClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -532,20 +532,20 @@ namespace Example
 }
 ```
 
-#### Using the DocumentPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DocumentResponse> response = apiInstance.DocumentPostWithHttpInfo(postDocumentRequest);
+    ApiResponse<DocumentResponse> response = apiInstance.PostWithHttpInfo(postDocumentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.DocumentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DocumentClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

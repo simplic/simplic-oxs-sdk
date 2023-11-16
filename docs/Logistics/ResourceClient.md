@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ResourceGetAllByGroupGet**](ResourceClient.md#resourcegetallbygroupget) | **GET** /Resource/get-all-by-group | Retrieves all resources. |
-| [**ResourceGetAllGet**](ResourceClient.md#resourcegetallget) | **GET** /Resource/get-all | Retrieves all resources. |
-| [**ResourceGetPageDataGet**](ResourceClient.md#resourcegetpagedataget) | **GET** /Resource/get-page-data | Retrieves a data page of resources. |
-| [**ResourceIdGet**](ResourceClient.md#resourceidget) | **GET** /Resource/{id} | Retrives the resource with the given id. |
-| [**ResourceIdPut**](ResourceClient.md#resourceidput) | **PUT** /Resource/{id} |  |
-| [**ResourcePost**](ResourceClient.md#resourcepost) | **POST** /Resource |  |
+| [**GetAllByGroup**](ResourceClient.md#resourcegetallbygroupget) | **GET** /Resource/get-all-by-group | Retrieves all resources. |
+| [**GetAll**](ResourceClient.md#resourcegetallget) | **GET** /Resource/get-all | Retrieves all resources. |
+| [**GetPageData**](ResourceClient.md#resourcegetpagedataget) | **GET** /Resource/get-page-data | Retrieves a data page of resources. |
+| [**Get**](ResourceClient.md#resourceidget) | **GET** /Resource/{id} | Retrives the resource with the given id. |
+| [**Put**](ResourceClient.md#resourceidput) | **PUT** /Resource/{id} |  |
+| [**Post**](ResourceClient.md#resourcepost) | **POST** /Resource |  |
 
 <a id="resourcegetallbygroupget"></a>
-# **ResourceGetAllByGroupGet**
-> List&lt;ResourceModel&gt; ResourceGetAllByGroupGet (string? group = null, DateTime? useableUntil = null)
+# **GetAllByGroup**
+> List&lt;ResourceModel&gt; GetAllByGroup (string? group = null, DateTime? useableUntil = null)
 
 Retrieves all resources.
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGetAllByGroupGetExample
+    public class GetAllByGroupExample
     {
         public static void Main()
         {
@@ -45,12 +45,12 @@ namespace Example
             try
             {
                 // Retrieves all resources.
-                List<ResourceModel> result = apiInstance.ResourceGetAllByGroupGet(group, useableUntil);
+                List<ResourceModel> result = apiInstance.GetAllByGroup(group, useableUntil);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourceGetAllByGroupGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.GetAllByGroup: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,21 +59,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGetAllByGroupGetWithHttpInfo variant
+#### Using the GetAllByGroupWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all resources.
-    ApiResponse<List<ResourceModel>> response = apiInstance.ResourceGetAllByGroupGetWithHttpInfo(group, useableUntil);
+    ApiResponse<List<ResourceModel>> response = apiInstance.GetAllByGroupWithHttpInfo(group, useableUntil);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourceGetAllByGroupGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.GetAllByGroupWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -109,8 +109,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegetallget"></a>
-# **ResourceGetAllGet**
-> List&lt;ResourceModel&gt; ResourceGetAllGet (DateTime? useableUntil = null)
+# **GetAll**
+> List&lt;ResourceModel&gt; GetAll (DateTime? useableUntil = null)
 
 Retrieves all resources.
 
@@ -124,7 +124,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -141,12 +141,12 @@ namespace Example
             try
             {
                 // Retrieves all resources.
-                List<ResourceModel> result = apiInstance.ResourceGetAllGet(useableUntil);
+                List<ResourceModel> result = apiInstance.GetAll(useableUntil);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourceGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -155,21 +155,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all resources.
-    ApiResponse<List<ResourceModel>> response = apiInstance.ResourceGetAllGetWithHttpInfo(useableUntil);
+    ApiResponse<List<ResourceModel>> response = apiInstance.GetAllWithHttpInfo(useableUntil);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourceGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -204,8 +204,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcegetpagedataget"></a>
-# **ResourceGetPageDataGet**
-> List&lt;ResourceModel&gt; ResourceGetPageDataGet (int? skip = null, int? page = null, int? pageSize = null, string? filterString = null)
+# **GetPageData**
+> List&lt;ResourceModel&gt; GetPageData (int? skip = null, int? page = null, int? pageSize = null, string? filterString = null)
 
 Retrieves a data page of resources.
 
@@ -219,7 +219,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceGetPageDataGetExample
+    public class GetPageDataExample
     {
         public static void Main()
         {
@@ -239,12 +239,12 @@ namespace Example
             try
             {
                 // Retrieves a data page of resources.
-                List<ResourceModel> result = apiInstance.ResourceGetPageDataGet(skip, page, pageSize, filterString);
+                List<ResourceModel> result = apiInstance.GetPageData(skip, page, pageSize, filterString);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourceGetPageDataGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.GetPageData: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -253,21 +253,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceGetPageDataGetWithHttpInfo variant
+#### Using the GetPageDataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves a data page of resources.
-    ApiResponse<List<ResourceModel>> response = apiInstance.ResourceGetPageDataGetWithHttpInfo(skip, page, pageSize, filterString);
+    ApiResponse<List<ResourceModel>> response = apiInstance.GetPageDataWithHttpInfo(skip, page, pageSize, filterString);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourceGetPageDataGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.GetPageDataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -305,8 +305,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourceidget"></a>
-# **ResourceIdGet**
-> ResourceModel ResourceIdGet (Guid id)
+# **Get**
+> ResourceModel Get (Guid id)
 
 Retrives the resource with the given id.
 
@@ -320,7 +320,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -337,12 +337,12 @@ namespace Example
             try
             {
                 // Retrives the resource with the given id.
-                ResourceModel result = apiInstance.ResourceIdGet(id);
+                ResourceModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourceIdGet: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -351,21 +351,21 @@ namespace Example
 }
 ```
 
-#### Using the ResourceIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrives the resource with the given id.
-    ApiResponse<ResourceModel> response = apiInstance.ResourceIdGetWithHttpInfo(id);
+    ApiResponse<ResourceModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourceIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -400,8 +400,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourceidput"></a>
-# **ResourceIdPut**
-> ResourceModel ResourceIdPut (Guid id, UpdateResourceRequest? updateResourceRequest = null)
+# **Put**
+> ResourceModel Put (Guid id, UpdateResourceRequest? updateResourceRequest = null)
 
 
 
@@ -415,7 +415,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourceIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -432,12 +432,12 @@ namespace Example
 
             try
             {
-                ResourceModel result = apiInstance.ResourceIdPut(id, updateResourceRequest);
+                ResourceModel result = apiInstance.Put(id, updateResourceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourceIdPut: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -446,20 +446,20 @@ namespace Example
 }
 ```
 
-#### Using the ResourceIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ResourceModel> response = apiInstance.ResourceIdPutWithHttpInfo(id, updateResourceRequest);
+    ApiResponse<ResourceModel> response = apiInstance.PutWithHttpInfo(id, updateResourceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourceIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -496,8 +496,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="resourcepost"></a>
-# **ResourcePost**
-> ResourceModel ResourcePost (CreateResourceRequest? createResourceRequest = null)
+# **Post**
+> ResourceModel Post (CreateResourceRequest? createResourceRequest = null)
 
 
 
@@ -511,7 +511,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ResourcePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -527,12 +527,12 @@ namespace Example
 
             try
             {
-                ResourceModel result = apiInstance.ResourcePost(createResourceRequest);
+                ResourceModel result = apiInstance.Post(createResourceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ResourceClient.ResourcePost: " + e.Message);
+                Debug.Print("Exception when calling ResourceClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -541,20 +541,20 @@ namespace Example
 }
 ```
 
-#### Using the ResourcePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ResourceModel> response = apiInstance.ResourcePostWithHttpInfo(createResourceRequest);
+    ApiResponse<ResourceModel> response = apiInstance.PostWithHttpInfo(createResourceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ResourceClient.ResourcePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ResourceClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

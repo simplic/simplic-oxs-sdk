@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/geo-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**RoutingCalculateRoutePost**](RoutingClient.md#routingcalculateroutepost) | **POST** /Routing/calculate-route |  |
+| [**CalculateRoute**](RoutingClient.md#routingcalculateroutepost) | **POST** /Routing/calculate-route |  |
 
 <a id="routingcalculateroutepost"></a>
-# **RoutingCalculateRoutePost**
-> RoutingResponse RoutingCalculateRoutePost (RequestRoute? requestRoute = null)
+# **CalculateRoute**
+> RoutingResponse CalculateRoute (RequestRoute? requestRoute = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Geo;
 
 namespace Example
 {
-    public class RoutingCalculateRoutePostExample
+    public class CalculateRouteExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                RoutingResponse result = apiInstance.RoutingCalculateRoutePost(requestRoute);
+                RoutingResponse result = apiInstance.CalculateRoute(requestRoute);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RoutingClient.RoutingCalculateRoutePost: " + e.Message);
+                Debug.Print("Exception when calling RoutingClient.CalculateRoute: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the RoutingCalculateRoutePostWithHttpInfo variant
+#### Using the CalculateRouteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<RoutingResponse> response = apiInstance.RoutingCalculateRoutePostWithHttpInfo(requestRoute);
+    ApiResponse<RoutingResponse> response = apiInstance.CalculateRouteWithHttpInfo(requestRoute);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling RoutingClient.RoutingCalculateRoutePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling RoutingClient.CalculateRouteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

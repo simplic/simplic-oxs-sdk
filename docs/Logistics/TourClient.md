@@ -4,25 +4,25 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TourAddTagToTourPut**](TourClient.md#touraddtagtotourput) | **PUT** /Tour/add-tag-to-tour |  |
-| [**TourConvertShipmentToTourPost**](TourClient.md#tourconvertshipmenttotourpost) | **POST** /Tour/convert-shipment-to-tour |  |
-| [**TourConvertShipmentsToTourPost**](TourClient.md#tourconvertshipmentstotourpost) | **POST** /Tour/convert-shipments-to-tour |  |
-| [**TourGetAggregatedLoadingSlotsGet**](TourClient.md#tourgetaggregatedloadingslotsget) | **GET** /Tour/get-aggregated-loading-slots | Get all used loading slots for a specific resource |
-| [**TourGetAllByDatesGet**](TourClient.md#tourgetallbydatesget) | **GET** /Tour/get-all-by-dates | Retrieves all tours between two dates. |
-| [**TourGetByGlobalTourIdGet**](TourClient.md#tourgetbyglobaltouridget) | **GET** /Tour/get-by-global-tour-id | Retrieves all tours with the given global tour id. |
-| [**TourGetByShipmentIdGet**](TourClient.md#tourgetbyshipmentidget) | **GET** /Tour/get-by-shipment-id | Retrieves all tours that contains actions with the given shipment id. |
-| [**TourIdDelete**](TourClient.md#touriddelete) | **DELETE** /Tour/{id} | Deletes the given tour. |
-| [**TourIdGet**](TourClient.md#touridget) | **GET** /Tour/{id} | Retrieves the tour with the given id. |
-| [**TourIdPatch**](TourClient.md#touridpatch) | **PATCH** /Tour/{id} | Patches a tour object. |
-| [**TourManipulatePost**](TourClient.md#tourmanipulatepost) | **POST** /Tour/manipulate | Updates/saves the given tour. |
-| [**TourPost**](TourClient.md#tourpost) | **POST** /Tour | Creates a new tour object. |
-| [**TourRemoveTagFromTourPut**](TourClient.md#tourremovetagfromtourput) | **PUT** /Tour/remove-tag-from-tour |  |
-| [**TourSendToTelematicPut**](TourClient.md#toursendtotelematicput) | **PUT** /Tour/send-to-telematic |  |
-| [**TourSetTourActualTimesPut**](TourClient.md#toursettouractualtimesput) | **PUT** /Tour/set-tour-actual-times | Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started. |
+| [**AddTagToTour**](TourClient.md#touraddtagtotourput) | **PUT** /Tour/add-tag-to-tour |  |
+| [**ConvertShipmentToTour**](TourClient.md#tourconvertshipmenttotourpost) | **POST** /Tour/convert-shipment-to-tour |  |
+| [**ConvertShipmentsToTour**](TourClient.md#tourconvertshipmentstotourpost) | **POST** /Tour/convert-shipments-to-tour |  |
+| [**GetAggregatedLoadingSlots**](TourClient.md#tourgetaggregatedloadingslotsget) | **GET** /Tour/get-aggregated-loading-slots | Get all used loading slots for a specific resource |
+| [**GetAllByDates**](TourClient.md#tourgetallbydatesget) | **GET** /Tour/get-all-by-dates | Retrieves all tours between two dates. |
+| [**GetByGlobalTourId**](TourClient.md#tourgetbyglobaltouridget) | **GET** /Tour/get-by-global-tour-id | Retrieves all tours with the given global tour id. |
+| [**GetByShipmentId**](TourClient.md#tourgetbyshipmentidget) | **GET** /Tour/get-by-shipment-id | Retrieves all tours that contains actions with the given shipment id. |
+| [**Delete**](TourClient.md#touriddelete) | **DELETE** /Tour/{id} | Deletes the given tour. |
+| [**Get**](TourClient.md#touridget) | **GET** /Tour/{id} | Retrieves the tour with the given id. |
+| [**Patch**](TourClient.md#touridpatch) | **PATCH** /Tour/{id} | Patches a tour object. |
+| [**Manipulate**](TourClient.md#tourmanipulatepost) | **POST** /Tour/manipulate | Updates/saves the given tour. |
+| [**Post**](TourClient.md#tourpost) | **POST** /Tour | Creates a new tour object. |
+| [**RemoveTagFromTour**](TourClient.md#tourremovetagfromtourput) | **PUT** /Tour/remove-tag-from-tour |  |
+| [**SendToTelematic**](TourClient.md#toursendtotelematicput) | **PUT** /Tour/send-to-telematic |  |
+| [**SetTourActualTimes**](TourClient.md#toursettouractualtimesput) | **PUT** /Tour/set-tour-actual-times | Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started. |
 
 <a id="touraddtagtotourput"></a>
-# **TourAddTagToTourPut**
-> void TourAddTagToTourPut (AddTagToTourRequest? addTagToTourRequest = null)
+# **AddTagToTour**
+> void AddTagToTour (AddTagToTourRequest? addTagToTourRequest = null)
 
 
 
@@ -36,7 +36,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourAddTagToTourPutExample
+    public class AddTagToTourExample
     {
         public static void Main()
         {
@@ -52,11 +52,11 @@ namespace Example
 
             try
             {
-                apiInstance.TourAddTagToTourPut(addTagToTourRequest);
+                apiInstance.AddTagToTour(addTagToTourRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourAddTagToTourPut: " + e.Message);
+                Debug.Print("Exception when calling TourClient.AddTagToTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -65,17 +65,17 @@ namespace Example
 }
 ```
 
-#### Using the TourAddTagToTourPutWithHttpInfo variant
+#### Using the AddTagToTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TourAddTagToTourPutWithHttpInfo(addTagToTourRequest);
+    apiInstance.AddTagToTourWithHttpInfo(addTagToTourRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourAddTagToTourPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.AddTagToTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -111,8 +111,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourconvertshipmenttotourpost"></a>
-# **TourConvertShipmentToTourPost**
-> TourModel TourConvertShipmentToTourPost (ShipmentToTourRequest? shipmentToTourRequest = null)
+# **ConvertShipmentToTour**
+> TourModel ConvertShipmentToTour (ShipmentToTourRequest? shipmentToTourRequest = null)
 
 
 
@@ -126,7 +126,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourConvertShipmentToTourPostExample
+    public class ConvertShipmentToTourExample
     {
         public static void Main()
         {
@@ -142,12 +142,12 @@ namespace Example
 
             try
             {
-                TourModel result = apiInstance.TourConvertShipmentToTourPost(shipmentToTourRequest);
+                TourModel result = apiInstance.ConvertShipmentToTour(shipmentToTourRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourConvertShipmentToTourPost: " + e.Message);
+                Debug.Print("Exception when calling TourClient.ConvertShipmentToTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -156,20 +156,20 @@ namespace Example
 }
 ```
 
-#### Using the TourConvertShipmentToTourPostWithHttpInfo variant
+#### Using the ConvertShipmentToTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TourModel> response = apiInstance.TourConvertShipmentToTourPostWithHttpInfo(shipmentToTourRequest);
+    ApiResponse<TourModel> response = apiInstance.ConvertShipmentToTourWithHttpInfo(shipmentToTourRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourConvertShipmentToTourPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.ConvertShipmentToTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -205,8 +205,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourconvertshipmentstotourpost"></a>
-# **TourConvertShipmentsToTourPost**
-> TourModel TourConvertShipmentsToTourPost (ShipmentsToTourRequest? shipmentsToTourRequest = null)
+# **ConvertShipmentsToTour**
+> TourModel ConvertShipmentsToTour (ShipmentsToTourRequest? shipmentsToTourRequest = null)
 
 
 
@@ -220,7 +220,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourConvertShipmentsToTourPostExample
+    public class ConvertShipmentsToTourExample
     {
         public static void Main()
         {
@@ -236,12 +236,12 @@ namespace Example
 
             try
             {
-                TourModel result = apiInstance.TourConvertShipmentsToTourPost(shipmentsToTourRequest);
+                TourModel result = apiInstance.ConvertShipmentsToTour(shipmentsToTourRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourConvertShipmentsToTourPost: " + e.Message);
+                Debug.Print("Exception when calling TourClient.ConvertShipmentsToTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -250,20 +250,20 @@ namespace Example
 }
 ```
 
-#### Using the TourConvertShipmentsToTourPostWithHttpInfo variant
+#### Using the ConvertShipmentsToTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TourModel> response = apiInstance.TourConvertShipmentsToTourPostWithHttpInfo(shipmentsToTourRequest);
+    ApiResponse<TourModel> response = apiInstance.ConvertShipmentsToTourWithHttpInfo(shipmentsToTourRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourConvertShipmentsToTourPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.ConvertShipmentsToTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -299,8 +299,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourgetaggregatedloadingslotsget"></a>
-# **TourGetAggregatedLoadingSlotsGet**
-> List&lt;UsedLoadingSlotAggregationModel&gt; TourGetAggregatedLoadingSlotsGet (Guid? resourceId = null, string? loadingSlotNames = null, int? count = null)
+# **GetAggregatedLoadingSlots**
+> List&lt;UsedLoadingSlotAggregationModel&gt; GetAggregatedLoadingSlots (Guid? resourceId = null, string? loadingSlotNames = null, int? count = null)
 
 Get all used loading slots for a specific resource
 
@@ -314,7 +314,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourGetAggregatedLoadingSlotsGetExample
+    public class GetAggregatedLoadingSlotsExample
     {
         public static void Main()
         {
@@ -333,12 +333,12 @@ namespace Example
             try
             {
                 // Get all used loading slots for a specific resource
-                List<UsedLoadingSlotAggregationModel> result = apiInstance.TourGetAggregatedLoadingSlotsGet(resourceId, loadingSlotNames, count);
+                List<UsedLoadingSlotAggregationModel> result = apiInstance.GetAggregatedLoadingSlots(resourceId, loadingSlotNames, count);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourGetAggregatedLoadingSlotsGet: " + e.Message);
+                Debug.Print("Exception when calling TourClient.GetAggregatedLoadingSlots: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -347,21 +347,21 @@ namespace Example
 }
 ```
 
-#### Using the TourGetAggregatedLoadingSlotsGetWithHttpInfo variant
+#### Using the GetAggregatedLoadingSlotsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get all used loading slots for a specific resource
-    ApiResponse<List<UsedLoadingSlotAggregationModel>> response = apiInstance.TourGetAggregatedLoadingSlotsGetWithHttpInfo(resourceId, loadingSlotNames, count);
+    ApiResponse<List<UsedLoadingSlotAggregationModel>> response = apiInstance.GetAggregatedLoadingSlotsWithHttpInfo(resourceId, loadingSlotNames, count);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourGetAggregatedLoadingSlotsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.GetAggregatedLoadingSlotsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -398,8 +398,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourgetallbydatesget"></a>
-# **TourGetAllByDatesGet**
-> List&lt;TourModel&gt; TourGetAllByDatesGet (DateTime? start = null, DateTime? end = null)
+# **GetAllByDates**
+> List&lt;TourModel&gt; GetAllByDates (DateTime? start = null, DateTime? end = null)
 
 Retrieves all tours between two dates.
 
@@ -413,7 +413,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourGetAllByDatesGetExample
+    public class GetAllByDatesExample
     {
         public static void Main()
         {
@@ -431,12 +431,12 @@ namespace Example
             try
             {
                 // Retrieves all tours between two dates.
-                List<TourModel> result = apiInstance.TourGetAllByDatesGet(start, end);
+                List<TourModel> result = apiInstance.GetAllByDates(start, end);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourGetAllByDatesGet: " + e.Message);
+                Debug.Print("Exception when calling TourClient.GetAllByDates: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -445,21 +445,21 @@ namespace Example
 }
 ```
 
-#### Using the TourGetAllByDatesGetWithHttpInfo variant
+#### Using the GetAllByDatesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all tours between two dates.
-    ApiResponse<List<TourModel>> response = apiInstance.TourGetAllByDatesGetWithHttpInfo(start, end);
+    ApiResponse<List<TourModel>> response = apiInstance.GetAllByDatesWithHttpInfo(start, end);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourGetAllByDatesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.GetAllByDatesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -496,8 +496,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourgetbyglobaltouridget"></a>
-# **TourGetByGlobalTourIdGet**
-> List&lt;TourModel&gt; TourGetByGlobalTourIdGet (Guid? id = null)
+# **GetByGlobalTourId**
+> List&lt;TourModel&gt; GetByGlobalTourId (Guid? id = null)
 
 Retrieves all tours with the given global tour id.
 
@@ -511,7 +511,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourGetByGlobalTourIdGetExample
+    public class GetByGlobalTourIdExample
     {
         public static void Main()
         {
@@ -528,12 +528,12 @@ namespace Example
             try
             {
                 // Retrieves all tours with the given global tour id.
-                List<TourModel> result = apiInstance.TourGetByGlobalTourIdGet(id);
+                List<TourModel> result = apiInstance.GetByGlobalTourId(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourGetByGlobalTourIdGet: " + e.Message);
+                Debug.Print("Exception when calling TourClient.GetByGlobalTourId: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -542,21 +542,21 @@ namespace Example
 }
 ```
 
-#### Using the TourGetByGlobalTourIdGetWithHttpInfo variant
+#### Using the GetByGlobalTourIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all tours with the given global tour id.
-    ApiResponse<List<TourModel>> response = apiInstance.TourGetByGlobalTourIdGetWithHttpInfo(id);
+    ApiResponse<List<TourModel>> response = apiInstance.GetByGlobalTourIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourGetByGlobalTourIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.GetByGlobalTourIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -591,8 +591,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourgetbyshipmentidget"></a>
-# **TourGetByShipmentIdGet**
-> List&lt;TourModel&gt; TourGetByShipmentIdGet (Guid? id = null)
+# **GetByShipmentId**
+> List&lt;TourModel&gt; GetByShipmentId (Guid? id = null)
 
 Retrieves all tours that contains actions with the given shipment id.
 
@@ -606,7 +606,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourGetByShipmentIdGetExample
+    public class GetByShipmentIdExample
     {
         public static void Main()
         {
@@ -623,12 +623,12 @@ namespace Example
             try
             {
                 // Retrieves all tours that contains actions with the given shipment id.
-                List<TourModel> result = apiInstance.TourGetByShipmentIdGet(id);
+                List<TourModel> result = apiInstance.GetByShipmentId(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourGetByShipmentIdGet: " + e.Message);
+                Debug.Print("Exception when calling TourClient.GetByShipmentId: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -637,21 +637,21 @@ namespace Example
 }
 ```
 
-#### Using the TourGetByShipmentIdGetWithHttpInfo variant
+#### Using the GetByShipmentIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves all tours that contains actions with the given shipment id.
-    ApiResponse<List<TourModel>> response = apiInstance.TourGetByShipmentIdGetWithHttpInfo(id);
+    ApiResponse<List<TourModel>> response = apiInstance.GetByShipmentIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourGetByShipmentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.GetByShipmentIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -686,8 +686,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="touriddelete"></a>
-# **TourIdDelete**
-> Object TourIdDelete (Guid id)
+# **Delete**
+> Object Delete (Guid id)
 
 Deletes the given tour.
 
@@ -701,7 +701,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -718,12 +718,12 @@ namespace Example
             try
             {
                 // Deletes the given tour.
-                Object result = apiInstance.TourIdDelete(id);
+                Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TourClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -732,21 +732,21 @@ namespace Example
 }
 ```
 
-#### Using the TourIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes the given tour.
-    ApiResponse<Object> response = apiInstance.TourIdDeleteWithHttpInfo(id);
+    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -782,8 +782,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="touridget"></a>
-# **TourIdGet**
-> TourModel TourIdGet (Guid id)
+# **Get**
+> TourModel Get (Guid id)
 
 Retrieves the tour with the given id.
 
@@ -797,7 +797,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -814,12 +814,12 @@ namespace Example
             try
             {
                 // Retrieves the tour with the given id.
-                TourModel result = apiInstance.TourIdGet(id);
+                TourModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourIdGet: " + e.Message);
+                Debug.Print("Exception when calling TourClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -828,21 +828,21 @@ namespace Example
 }
 ```
 
-#### Using the TourIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Retrieves the tour with the given id.
-    ApiResponse<TourModel> response = apiInstance.TourIdGetWithHttpInfo(id);
+    ApiResponse<TourModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -878,8 +878,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="touridpatch"></a>
-# **TourIdPatch**
-> TourModel TourIdPatch (Guid id, PatchTourRequest? patchTourRequest = null)
+# **Patch**
+> TourModel Patch (Guid id, PatchTourRequest? patchTourRequest = null)
 
 Patches a tour object.
 
@@ -893,7 +893,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -911,12 +911,12 @@ namespace Example
             try
             {
                 // Patches a tour object.
-                TourModel result = apiInstance.TourIdPatch(id, patchTourRequest);
+                TourModel result = apiInstance.Patch(id, patchTourRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourIdPatch: " + e.Message);
+                Debug.Print("Exception when calling TourClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -925,21 +925,21 @@ namespace Example
 }
 ```
 
-#### Using the TourIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches a tour object.
-    ApiResponse<TourModel> response = apiInstance.TourIdPatchWithHttpInfo(id, patchTourRequest);
+    ApiResponse<TourModel> response = apiInstance.PatchWithHttpInfo(id, patchTourRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -976,8 +976,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourmanipulatepost"></a>
-# **TourManipulatePost**
-> TourManipulateResponse TourManipulatePost (ManipulateTourRequest? manipulateTourRequest = null)
+# **Manipulate**
+> TourManipulateResponse Manipulate (ManipulateTourRequest? manipulateTourRequest = null)
 
 Updates/saves the given tour.
 
@@ -991,7 +991,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourManipulatePostExample
+    public class ManipulateExample
     {
         public static void Main()
         {
@@ -1008,12 +1008,12 @@ namespace Example
             try
             {
                 // Updates/saves the given tour.
-                TourManipulateResponse result = apiInstance.TourManipulatePost(manipulateTourRequest);
+                TourManipulateResponse result = apiInstance.Manipulate(manipulateTourRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourManipulatePost: " + e.Message);
+                Debug.Print("Exception when calling TourClient.Manipulate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1022,21 +1022,21 @@ namespace Example
 }
 ```
 
-#### Using the TourManipulatePostWithHttpInfo variant
+#### Using the ManipulateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates/saves the given tour.
-    ApiResponse<TourManipulateResponse> response = apiInstance.TourManipulatePostWithHttpInfo(manipulateTourRequest);
+    ApiResponse<TourManipulateResponse> response = apiInstance.ManipulateWithHttpInfo(manipulateTourRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourManipulatePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.ManipulateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1073,8 +1073,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourpost"></a>
-# **TourPost**
-> TourModel TourPost (CreateTourRequest? createTourRequest = null)
+# **Post**
+> TourModel Post (CreateTourRequest? createTourRequest = null)
 
 Creates a new tour object.
 
@@ -1088,7 +1088,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -1105,12 +1105,12 @@ namespace Example
             try
             {
                 // Creates a new tour object.
-                TourModel result = apiInstance.TourPost(createTourRequest);
+                TourModel result = apiInstance.Post(createTourRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourPost: " + e.Message);
+                Debug.Print("Exception when calling TourClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1119,21 +1119,21 @@ namespace Example
 }
 ```
 
-#### Using the TourPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new tour object.
-    ApiResponse<TourModel> response = apiInstance.TourPostWithHttpInfo(createTourRequest);
+    ApiResponse<TourModel> response = apiInstance.PostWithHttpInfo(createTourRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1169,8 +1169,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="tourremovetagfromtourput"></a>
-# **TourRemoveTagFromTourPut**
-> void TourRemoveTagFromTourPut (RemoveTagFromTourRequest? removeTagFromTourRequest = null)
+# **RemoveTagFromTour**
+> void RemoveTagFromTour (RemoveTagFromTourRequest? removeTagFromTourRequest = null)
 
 
 
@@ -1184,7 +1184,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourRemoveTagFromTourPutExample
+    public class RemoveTagFromTourExample
     {
         public static void Main()
         {
@@ -1200,11 +1200,11 @@ namespace Example
 
             try
             {
-                apiInstance.TourRemoveTagFromTourPut(removeTagFromTourRequest);
+                apiInstance.RemoveTagFromTour(removeTagFromTourRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourRemoveTagFromTourPut: " + e.Message);
+                Debug.Print("Exception when calling TourClient.RemoveTagFromTour: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1213,17 +1213,17 @@ namespace Example
 }
 ```
 
-#### Using the TourRemoveTagFromTourPutWithHttpInfo variant
+#### Using the RemoveTagFromTourWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TourRemoveTagFromTourPutWithHttpInfo(removeTagFromTourRequest);
+    apiInstance.RemoveTagFromTourWithHttpInfo(removeTagFromTourRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourRemoveTagFromTourPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.RemoveTagFromTourWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1259,8 +1259,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="toursendtotelematicput"></a>
-# **TourSendToTelematicPut**
-> List&lt;UsedLoadingSlotAggregationModel&gt; TourSendToTelematicPut (Guid? tourId = null)
+# **SendToTelematic**
+> List&lt;UsedLoadingSlotAggregationModel&gt; SendToTelematic (Guid? tourId = null)
 
 
 
@@ -1274,7 +1274,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourSendToTelematicPutExample
+    public class SendToTelematicExample
     {
         public static void Main()
         {
@@ -1290,12 +1290,12 @@ namespace Example
 
             try
             {
-                List<UsedLoadingSlotAggregationModel> result = apiInstance.TourSendToTelematicPut(tourId);
+                List<UsedLoadingSlotAggregationModel> result = apiInstance.SendToTelematic(tourId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourSendToTelematicPut: " + e.Message);
+                Debug.Print("Exception when calling TourClient.SendToTelematic: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1304,20 +1304,20 @@ namespace Example
 }
 ```
 
-#### Using the TourSendToTelematicPutWithHttpInfo variant
+#### Using the SendToTelematicWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<UsedLoadingSlotAggregationModel>> response = apiInstance.TourSendToTelematicPutWithHttpInfo(tourId);
+    ApiResponse<List<UsedLoadingSlotAggregationModel>> response = apiInstance.SendToTelematicWithHttpInfo(tourId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourSendToTelematicPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.SendToTelematicWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1353,8 +1353,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="toursettouractualtimesput"></a>
-# **TourSetTourActualTimesPut**
-> void TourSetTourActualTimesPut (SetTourActualTimesRequest? setTourActualTimesRequest = null)
+# **SetTourActualTimes**
+> void SetTourActualTimes (SetTourActualTimesRequest? setTourActualTimesRequest = null)
 
 Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started.
 
@@ -1368,7 +1368,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class TourSetTourActualTimesPutExample
+    public class SetTourActualTimesExample
     {
         public static void Main()
         {
@@ -1385,11 +1385,11 @@ namespace Example
             try
             {
                 // Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started.
-                apiInstance.TourSetTourActualTimesPut(setTourActualTimesRequest);
+                apiInstance.SetTourActualTimes(setTourActualTimesRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TourClient.TourSetTourActualTimesPut: " + e.Message);
+                Debug.Print("Exception when calling TourClient.SetTourActualTimes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1398,18 +1398,18 @@ namespace Example
 }
 ```
 
-#### Using the TourSetTourActualTimesPutWithHttpInfo variant
+#### Using the SetTourActualTimesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started.
-    apiInstance.TourSetTourActualTimesPutWithHttpInfo(setTourActualTimesRequest);
+    apiInstance.SetTourActualTimesWithHttpInfo(setTourActualTimesRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TourClient.TourSetTourActualTimesPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TourClient.SetTourActualTimesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

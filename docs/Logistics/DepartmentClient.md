@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DepartmentGetByNameNameGet**](DepartmentClient.md#departmentgetbynamenameget) | **GET** /Department/get-by-name/{name} | Gets departments with given name. |
-| [**DepartmentGetByOrderOrderIdGet**](DepartmentClient.md#departmentgetbyorderorderidget) | **GET** /Department/get-by-order/{orderId} | Gets departments with given order id. |
-| [**DepartmentIdDelete**](DepartmentClient.md#departmentiddelete) | **DELETE** /Department/{id} | Deletes department matching given id. |
-| [**DepartmentIdGet**](DepartmentClient.md#departmentidget) | **GET** /Department/{id} | Gets department matching given id. |
-| [**DepartmentIdPatch**](DepartmentClient.md#departmentidpatch) | **PATCH** /Department/{id} | Patches department matching given id. |
-| [**DepartmentPost**](DepartmentClient.md#departmentpost) | **POST** /Department | Creates a new department. |
+| [**GetByName**](DepartmentClient.md#departmentgetbynamenameget) | **GET** /Department/get-by-name/{name} | Gets departments with given name. |
+| [**GetByOrder**](DepartmentClient.md#departmentgetbyorderorderidget) | **GET** /Department/get-by-order/{orderId} | Gets departments with given order id. |
+| [**Delete**](DepartmentClient.md#departmentiddelete) | **DELETE** /Department/{id} | Deletes department matching given id. |
+| [**Get**](DepartmentClient.md#departmentidget) | **GET** /Department/{id} | Gets department matching given id. |
+| [**Patch**](DepartmentClient.md#departmentidpatch) | **PATCH** /Department/{id} | Patches department matching given id. |
+| [**Post**](DepartmentClient.md#departmentpost) | **POST** /Department | Creates a new department. |
 
 <a id="departmentgetbynamenameget"></a>
-# **DepartmentGetByNameNameGet**
-> List&lt;DepartmentResponse&gt; DepartmentGetByNameNameGet (string name)
+# **GetByName**
+> List&lt;DepartmentResponse&gt; GetByName (string name)
 
 Gets departments with given name.
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentGetByNameNameGetExample
+    public class GetByNameExample
     {
         public static void Main()
         {
@@ -44,12 +44,12 @@ namespace Example
             try
             {
                 // Gets departments with given name.
-                List<DepartmentResponse> result = apiInstance.DepartmentGetByNameNameGet(name);
+                List<DepartmentResponse> result = apiInstance.GetByName(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentGetByNameNameGet: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.GetByName: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,21 +58,21 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentGetByNameNameGetWithHttpInfo variant
+#### Using the GetByNameWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets departments with given name.
-    ApiResponse<List<DepartmentResponse>> response = apiInstance.DepartmentGetByNameNameGetWithHttpInfo(name);
+    ApiResponse<List<DepartmentResponse>> response = apiInstance.GetByNameWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentGetByNameNameGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.GetByNameWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -108,8 +108,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="departmentgetbyorderorderidget"></a>
-# **DepartmentGetByOrderOrderIdGet**
-> List&lt;DepartmentResponse&gt; DepartmentGetByOrderOrderIdGet (int orderId)
+# **GetByOrder**
+> List&lt;DepartmentResponse&gt; GetByOrder (int orderId)
 
 Gets departments with given order id.
 
@@ -123,7 +123,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentGetByOrderOrderIdGetExample
+    public class GetByOrderExample
     {
         public static void Main()
         {
@@ -140,12 +140,12 @@ namespace Example
             try
             {
                 // Gets departments with given order id.
-                List<DepartmentResponse> result = apiInstance.DepartmentGetByOrderOrderIdGet(orderId);
+                List<DepartmentResponse> result = apiInstance.GetByOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentGetByOrderOrderIdGet: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.GetByOrder: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -154,21 +154,21 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentGetByOrderOrderIdGetWithHttpInfo variant
+#### Using the GetByOrderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets departments with given order id.
-    ApiResponse<List<DepartmentResponse>> response = apiInstance.DepartmentGetByOrderOrderIdGetWithHttpInfo(orderId);
+    ApiResponse<List<DepartmentResponse>> response = apiInstance.GetByOrderWithHttpInfo(orderId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentGetByOrderOrderIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.GetByOrderWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -204,8 +204,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="departmentiddelete"></a>
-# **DepartmentIdDelete**
-> void DepartmentIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Deletes department matching given id.
 
@@ -219,7 +219,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -236,11 +236,11 @@ namespace Example
             try
             {
                 // Deletes department matching given id.
-                apiInstance.DepartmentIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentIdDelete: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -249,18 +249,18 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes department matching given id.
-    apiInstance.DepartmentIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -296,8 +296,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="departmentidget"></a>
-# **DepartmentIdGet**
-> DepartmentResponse DepartmentIdGet (Guid id)
+# **Get**
+> DepartmentResponse Get (Guid id)
 
 Gets department matching given id.
 
@@ -311,7 +311,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -328,12 +328,12 @@ namespace Example
             try
             {
                 // Gets department matching given id.
-                DepartmentResponse result = apiInstance.DepartmentIdGet(id);
+                DepartmentResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentIdGet: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -342,21 +342,21 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets department matching given id.
-    ApiResponse<DepartmentResponse> response = apiInstance.DepartmentIdGetWithHttpInfo(id);
+    ApiResponse<DepartmentResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -392,8 +392,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="departmentidpatch"></a>
-# **DepartmentIdPatch**
-> DepartmentResponse DepartmentIdPatch (Guid id, PatchDepartmentRequest? patchDepartmentRequest = null)
+# **Patch**
+> DepartmentResponse Patch (Guid id, PatchDepartmentRequest? patchDepartmentRequest = null)
 
 Patches department matching given id.
 
@@ -407,7 +407,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -425,12 +425,12 @@ namespace Example
             try
             {
                 // Patches department matching given id.
-                DepartmentResponse result = apiInstance.DepartmentIdPatch(id, patchDepartmentRequest);
+                DepartmentResponse result = apiInstance.Patch(id, patchDepartmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentIdPatch: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -439,21 +439,21 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches department matching given id.
-    ApiResponse<DepartmentResponse> response = apiInstance.DepartmentIdPatchWithHttpInfo(id, patchDepartmentRequest);
+    ApiResponse<DepartmentResponse> response = apiInstance.PatchWithHttpInfo(id, patchDepartmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -491,8 +491,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="departmentpost"></a>
-# **DepartmentPost**
-> DepartmentResponse DepartmentPost (PostDepartmentRequest? postDepartmentRequest = null)
+# **Post**
+> DepartmentResponse Post (PostDepartmentRequest? postDepartmentRequest = null)
 
 Creates a new department.
 
@@ -506,7 +506,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class DepartmentPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -523,12 +523,12 @@ namespace Example
             try
             {
                 // Creates a new department.
-                DepartmentResponse result = apiInstance.DepartmentPost(postDepartmentRequest);
+                DepartmentResponse result = apiInstance.Post(postDepartmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentClient.DepartmentPost: " + e.Message);
+                Debug.Print("Exception when calling DepartmentClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -537,21 +537,21 @@ namespace Example
 }
 ```
 
-#### Using the DepartmentPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new department.
-    ApiResponse<DepartmentResponse> response = apiInstance.DepartmentPostWithHttpInfo(postDepartmentRequest);
+    ApiResponse<DepartmentResponse> response = apiInstance.PostWithHttpInfo(postDepartmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DepartmentClient.DepartmentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DepartmentClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

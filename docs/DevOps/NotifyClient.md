@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiNotifySendPost**](NotifyClient.md#apinotifysendpost) | **POST** /api/Notify/send |  |
+| [**Send**](NotifyClient.md#apinotifysendpost) | **POST** /api/Notify/send |  |
 
 <a id="apinotifysendpost"></a>
-# **ApiNotifySendPost**
-> void ApiNotifySendPost (Guid? guid = null)
+# **Send**
+> void Send (Guid? guid = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class ApiNotifySendPostExample
+    public class SendExample
     {
         public static void Main()
         {
@@ -38,11 +38,11 @@ namespace Example
 
             try
             {
-                apiInstance.ApiNotifySendPost(guid);
+                apiInstance.Send(guid);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NotifyClient.ApiNotifySendPost: " + e.Message);
+                Debug.Print("Exception when calling NotifyClient.Send: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -51,17 +51,17 @@ namespace Example
 }
 ```
 
-#### Using the ApiNotifySendPostWithHttpInfo variant
+#### Using the SendWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ApiNotifySendPostWithHttpInfo(guid);
+    apiInstance.SendWithHttpInfo(guid);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling NotifyClient.ApiNotifySendPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling NotifyClient.SendWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

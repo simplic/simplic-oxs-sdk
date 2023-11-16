@@ -9,7 +9,7 @@ import os
 import re
 import shutil
 
-DEBUG = False
+DEBUG = True
 
 # preserve old file
 PRESERVE = False
@@ -75,7 +75,7 @@ def parse_params(s: str) -> list[ParamMeta]:
     rx_generic_comma = r"(<[^>]*),([^>]*>)"
     while re.search(rx_generic_comma, s):
         s = re.sub(rx_generic_comma, r'\1%\2', s)
-        
+
     # replace , that appear in >..> with % (cover multi argument nested generics)
     rx_generic_comma_multi = r"([>,]\s*),([^>]*>)"
     while re.search(rx_generic_comma_multi, s):
@@ -83,10 +83,10 @@ def parse_params(s: str) -> list[ParamMeta]:
 
     # split params
     params = s.split(',')
-    
+
     # replace % with ,
     params = [p.replace('%', ',') for p in params]
-    
+
     pattern = fr"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
 
     metas = []
@@ -188,11 +188,17 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
 
 def main(args: Namespace):
     file = args.file
+    doc_file = args.doc_file
     controller = args.controller
     log(f"Reading file contents from `{file}`..")
-    file_content = None
+    file_content = ""
+    doc_file_content = ""
     with open(file, 'r') as f:
         file_content = f.read()
+
+    if doc_file:
+        with open(doc_file, 'r') as f:
+            doc_file_content = f.read()
 
     if PRESERVE:
         path, full_file_name = os.path.split(file)
@@ -208,12 +214,19 @@ def main(args: Namespace):
 
         # replace old name
         file_content = file_content.replace(fn.name, pretty_name)
+        if doc_file:
+            doc_file_content = doc_file_content.replace(fn.name, pretty_name)
 
         log(f"-->: `{pretty_name}`\n")
 
     log(f"Writing changes to `{file}`..")
     with open(file, 'w') as f:
         f.write(file_content)
+
+    if doc_file:
+        log(f"Writing changes to `{doc_file}`..")
+        with open(doc_file, 'w') as f:
+            f.write(doc_file_content)
 
 
 #
@@ -225,6 +238,12 @@ argparser.add_argument(
     "--file",
     required=True,
     help="File in which the function names shall be beautified"
+)
+argparser.add_argument(
+    "-d",
+    "--doc-file",
+    required=False,
+    help="Correlating documentation which makes mention of functions that appear in the code file"
 )
 argparser.add_argument(
     "-c",

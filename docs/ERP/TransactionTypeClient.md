@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TransactionTypeIdDelete**](TransactionTypeClient.md#transactiontypeiddelete) | **DELETE** /TransactionType/{id} |  |
-| [**TransactionTypeIdGet**](TransactionTypeClient.md#transactiontypeidget) | **GET** /TransactionType/{id} |  |
-| [**TransactionTypeIdPut**](TransactionTypeClient.md#transactiontypeidput) | **PUT** /TransactionType/{id} |  |
-| [**TransactionTypePost**](TransactionTypeClient.md#transactiontypepost) | **POST** /TransactionType |  |
+| [**Delete**](TransactionTypeClient.md#transactiontypeiddelete) | **DELETE** /TransactionType/{id} |  |
+| [**Get**](TransactionTypeClient.md#transactiontypeidget) | **GET** /TransactionType/{id} |  |
+| [**Put**](TransactionTypeClient.md#transactiontypeidput) | **PUT** /TransactionType/{id} |  |
+| [**Post**](TransactionTypeClient.md#transactiontypepost) | **POST** /TransactionType |  |
 
 <a id="transactiontypeiddelete"></a>
-# **TransactionTypeIdDelete**
-> void TransactionTypeIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionTypeIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.TransactionTypeIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TransactionTypeClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the TransactionTypeIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TransactionTypeIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionTypeClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiontypeidget"></a>
-# **TransactionTypeIdGet**
-> TransactionTypeModel TransactionTypeIdGet (Guid id)
+# **Get**
+> TransactionTypeModel Get (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionTypeIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                TransactionTypeModel result = apiInstance.TransactionTypeIdGet(id);
+                TransactionTypeModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdGet: " + e.Message);
+                Debug.Print("Exception when calling TransactionTypeClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionTypeIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTypeModel> response = apiInstance.TransactionTypeIdGetWithHttpInfo(id);
+    ApiResponse<TransactionTypeModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionTypeClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiontypeidput"></a>
-# **TransactionTypeIdPut**
-> TransactionTypeModel TransactionTypeIdPut (Guid id, CreateTransactionTypeRequest? createTransactionTypeRequest = null)
+# **Put**
+> TransactionTypeModel Put (Guid id, CreateTransactionTypeRequest? createTransactionTypeRequest = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionTypeIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -224,12 +224,12 @@ namespace Example
 
             try
             {
-                TransactionTypeModel result = apiInstance.TransactionTypeIdPut(id, createTransactionTypeRequest);
+                TransactionTypeModel result = apiInstance.Put(id, createTransactionTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdPut: " + e.Message);
+                Debug.Print("Exception when calling TransactionTypeClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +238,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionTypeIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTypeModel> response = apiInstance.TransactionTypeIdPutWithHttpInfo(id, createTransactionTypeRequest);
+    ApiResponse<TransactionTypeModel> response = apiInstance.PutWithHttpInfo(id, createTransactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionTypeClient.TransactionTypeIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionTypeClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -288,8 +288,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactiontypepost"></a>
-# **TransactionTypePost**
-> TransactionTypeModel TransactionTypePost (CreateTransactionTypeRequest? createTransactionTypeRequest = null)
+# **Post**
+> TransactionTypeModel Post (CreateTransactionTypeRequest? createTransactionTypeRequest = null)
 
 
 
@@ -303,7 +303,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TransactionTypePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -319,12 +319,12 @@ namespace Example
 
             try
             {
-                TransactionTypeModel result = apiInstance.TransactionTypePost(createTransactionTypeRequest);
+                TransactionTypeModel result = apiInstance.Post(createTransactionTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionTypeClient.TransactionTypePost: " + e.Message);
+                Debug.Print("Exception when calling TransactionTypeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -333,20 +333,20 @@ namespace Example
 }
 ```
 
-#### Using the TransactionTypePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTypeModel> response = apiInstance.TransactionTypePostWithHttpInfo(createTransactionTypeRequest);
+    ApiResponse<TransactionTypeModel> response = apiInstance.PostWithHttpInfo(createTransactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionTypeClient.TransactionTypePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionTypeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

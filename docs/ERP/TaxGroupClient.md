@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TaxGroupIdDelete**](TaxGroupClient.md#taxgroupiddelete) | **DELETE** /TaxGroup/{id} |  |
-| [**TaxGroupIdGet**](TaxGroupClient.md#taxgroupidget) | **GET** /TaxGroup/{id} |  |
-| [**TaxGroupIdPut**](TaxGroupClient.md#taxgroupidput) | **PUT** /TaxGroup/{id} |  |
-| [**TaxGroupPost**](TaxGroupClient.md#taxgrouppost) | **POST** /TaxGroup |  |
+| [**Delete**](TaxGroupClient.md#taxgroupiddelete) | **DELETE** /TaxGroup/{id} |  |
+| [**Get**](TaxGroupClient.md#taxgroupidget) | **GET** /TaxGroup/{id} |  |
+| [**Put**](TaxGroupClient.md#taxgroupidput) | **PUT** /TaxGroup/{id} |  |
+| [**Post**](TaxGroupClient.md#taxgrouppost) | **POST** /TaxGroup |  |
 
 <a id="taxgroupiddelete"></a>
-# **TaxGroupIdDelete**
-> void TaxGroupIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TaxGroupIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -41,11 +41,11 @@ namespace Example
 
             try
             {
-                apiInstance.TaxGroupIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdDelete: " + e.Message);
+                Debug.Print("Exception when calling TaxGroupClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +54,17 @@ namespace Example
 }
 ```
 
-#### Using the TaxGroupIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.TaxGroupIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxGroupClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="taxgroupidget"></a>
-# **TaxGroupIdGet**
-> TransactionTaxGroupModel TaxGroupIdGet (Guid id)
+# **Get**
+> TransactionTaxGroupModel Get (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TaxGroupIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.TaxGroupIdGet(id);
+                TransactionTaxGroupModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdGet: " + e.Message);
+                Debug.Print("Exception when calling TaxGroupClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the TaxGroupIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.TaxGroupIdGetWithHttpInfo(id);
+    ApiResponse<TransactionTaxGroupModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxGroupClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="taxgroupidput"></a>
-# **TaxGroupIdPut**
-> TransactionTaxGroupModel TaxGroupIdPut (Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
+# **Put**
+> TransactionTaxGroupModel Put (Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TaxGroupIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -224,12 +224,12 @@ namespace Example
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.TaxGroupIdPut(id, createTransactionTaxGroupRequest);
+                TransactionTaxGroupModel result = apiInstance.Put(id, createTransactionTaxGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdPut: " + e.Message);
+                Debug.Print("Exception when calling TaxGroupClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +238,20 @@ namespace Example
 }
 ```
 
-#### Using the TaxGroupIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.TaxGroupIdPutWithHttpInfo(id, createTransactionTaxGroupRequest);
+    ApiResponse<TransactionTaxGroupModel> response = apiInstance.PutWithHttpInfo(id, createTransactionTaxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxGroupClient.TaxGroupIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxGroupClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -288,8 +288,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="taxgrouppost"></a>
-# **TaxGroupPost**
-> TransactionTaxGroupModel TaxGroupPost (CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
+# **Post**
+> TransactionTaxGroupModel Post (CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
 
 
 
@@ -303,7 +303,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class TaxGroupPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -319,12 +319,12 @@ namespace Example
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.TaxGroupPost(createTransactionTaxGroupRequest);
+                TransactionTaxGroupModel result = apiInstance.Post(createTransactionTaxGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxGroupClient.TaxGroupPost: " + e.Message);
+                Debug.Print("Exception when calling TaxGroupClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -333,20 +333,20 @@ namespace Example
 }
 ```
 
-#### Using the TaxGroupPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.TaxGroupPostWithHttpInfo(createTransactionTaxGroupRequest);
+    ApiResponse<TransactionTaxGroupModel> response = apiInstance.PostWithHttpInfo(createTransactionTaxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxGroupClient.TaxGroupPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxGroupClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

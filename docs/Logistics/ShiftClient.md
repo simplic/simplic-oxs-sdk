@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ShiftGetByNameNameGet**](ShiftClient.md#shiftgetbynamenameget) | **GET** /Shift/get-by-name/{name} | Gets shifts matching given name. |
-| [**ShiftGetByRangeGet**](ShiftClient.md#shiftgetbyrangeget) | **GET** /Shift/get-by-range | Gets shifts in given range. |
-| [**ShiftIdDelete**](ShiftClient.md#shiftiddelete) | **DELETE** /Shift/{id} | Deletes shift matching given id. |
-| [**ShiftIdGet**](ShiftClient.md#shiftidget) | **GET** /Shift/{id} | Gets shift matching given id. |
-| [**ShiftIdPatch**](ShiftClient.md#shiftidpatch) | **PATCH** /Shift/{id} | Patches shift matching given id. |
-| [**ShiftPost**](ShiftClient.md#shiftpost) | **POST** /Shift | Creates a new shift. |
+| [**GetByName**](ShiftClient.md#shiftgetbynamenameget) | **GET** /Shift/get-by-name/{name} | Gets shifts matching given name. |
+| [**GetByRange**](ShiftClient.md#shiftgetbyrangeget) | **GET** /Shift/get-by-range | Gets shifts in given range. |
+| [**Delete**](ShiftClient.md#shiftiddelete) | **DELETE** /Shift/{id} | Deletes shift matching given id. |
+| [**Get**](ShiftClient.md#shiftidget) | **GET** /Shift/{id} | Gets shift matching given id. |
+| [**Patch**](ShiftClient.md#shiftidpatch) | **PATCH** /Shift/{id} | Patches shift matching given id. |
+| [**Post**](ShiftClient.md#shiftpost) | **POST** /Shift | Creates a new shift. |
 
 <a id="shiftgetbynamenameget"></a>
-# **ShiftGetByNameNameGet**
-> List&lt;ShiftResponse&gt; ShiftGetByNameNameGet (string name)
+# **GetByName**
+> List&lt;ShiftResponse&gt; GetByName (string name)
 
 Gets shifts matching given name.
 
@@ -27,7 +27,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftGetByNameNameGetExample
+    public class GetByNameExample
     {
         public static void Main()
         {
@@ -44,12 +44,12 @@ namespace Example
             try
             {
                 // Gets shifts matching given name.
-                List<ShiftResponse> result = apiInstance.ShiftGetByNameNameGet(name);
+                List<ShiftResponse> result = apiInstance.GetByName(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftGetByNameNameGet: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.GetByName: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,21 +58,21 @@ namespace Example
 }
 ```
 
-#### Using the ShiftGetByNameNameGetWithHttpInfo variant
+#### Using the GetByNameWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets shifts matching given name.
-    ApiResponse<List<ShiftResponse>> response = apiInstance.ShiftGetByNameNameGetWithHttpInfo(name);
+    ApiResponse<List<ShiftResponse>> response = apiInstance.GetByNameWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftGetByNameNameGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.GetByNameWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -108,8 +108,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shiftgetbyrangeget"></a>
-# **ShiftGetByRangeGet**
-> List&lt;ShiftResponse&gt; ShiftGetByRangeGet (string? start = null, string? end = null)
+# **GetByRange**
+> List&lt;ShiftResponse&gt; GetByRange (string? start = null, string? end = null)
 
 Gets shifts in given range.
 
@@ -123,7 +123,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftGetByRangeGetExample
+    public class GetByRangeExample
     {
         public static void Main()
         {
@@ -141,12 +141,12 @@ namespace Example
             try
             {
                 // Gets shifts in given range.
-                List<ShiftResponse> result = apiInstance.ShiftGetByRangeGet(start, end);
+                List<ShiftResponse> result = apiInstance.GetByRange(start, end);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftGetByRangeGet: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.GetByRange: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -155,21 +155,21 @@ namespace Example
 }
 ```
 
-#### Using the ShiftGetByRangeGetWithHttpInfo variant
+#### Using the GetByRangeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets shifts in given range.
-    ApiResponse<List<ShiftResponse>> response = apiInstance.ShiftGetByRangeGetWithHttpInfo(start, end);
+    ApiResponse<List<ShiftResponse>> response = apiInstance.GetByRangeWithHttpInfo(start, end);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftGetByRangeGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.GetByRangeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -206,8 +206,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shiftiddelete"></a>
-# **ShiftIdDelete**
-> void ShiftIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 Deletes shift matching given id.
 
@@ -221,7 +221,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -238,11 +238,11 @@ namespace Example
             try
             {
                 // Deletes shift matching given id.
-                apiInstance.ShiftIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -251,18 +251,18 @@ namespace Example
 }
 ```
 
-#### Using the ShiftIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Deletes shift matching given id.
-    apiInstance.ShiftIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -298,8 +298,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shiftidget"></a>
-# **ShiftIdGet**
-> ShiftResponse ShiftIdGet (Guid id)
+# **Get**
+> ShiftResponse Get (Guid id)
 
 Gets shift matching given id.
 
@@ -313,7 +313,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -330,12 +330,12 @@ namespace Example
             try
             {
                 // Gets shift matching given id.
-                ShiftResponse result = apiInstance.ShiftIdGet(id);
+                ShiftResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftIdGet: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -344,21 +344,21 @@ namespace Example
 }
 ```
 
-#### Using the ShiftIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets shift matching given id.
-    ApiResponse<ShiftResponse> response = apiInstance.ShiftIdGetWithHttpInfo(id);
+    ApiResponse<ShiftResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -394,8 +394,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shiftidpatch"></a>
-# **ShiftIdPatch**
-> ShiftResponse ShiftIdPatch (Guid id, PatchShiftRequest? patchShiftRequest = null)
+# **Patch**
+> ShiftResponse Patch (Guid id, PatchShiftRequest? patchShiftRequest = null)
 
 Patches shift matching given id.
 
@@ -409,7 +409,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -427,12 +427,12 @@ namespace Example
             try
             {
                 // Patches shift matching given id.
-                ShiftResponse result = apiInstance.ShiftIdPatch(id, patchShiftRequest);
+                ShiftResponse result = apiInstance.Patch(id, patchShiftRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftIdPatch: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -441,21 +441,21 @@ namespace Example
 }
 ```
 
-#### Using the ShiftIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Patches shift matching given id.
-    ApiResponse<ShiftResponse> response = apiInstance.ShiftIdPatchWithHttpInfo(id, patchShiftRequest);
+    ApiResponse<ShiftResponse> response = apiInstance.PatchWithHttpInfo(id, patchShiftRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -493,8 +493,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="shiftpost"></a>
-# **ShiftPost**
-> ShiftResponse ShiftPost (PostShiftRequest? postShiftRequest = null)
+# **Post**
+> ShiftResponse Post (PostShiftRequest? postShiftRequest = null)
 
 Creates a new shift.
 
@@ -508,7 +508,7 @@ using Simplic.OxS.SDK.Logistics;
 
 namespace Example
 {
-    public class ShiftPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -525,12 +525,12 @@ namespace Example
             try
             {
                 // Creates a new shift.
-                ShiftResponse result = apiInstance.ShiftPost(postShiftRequest);
+                ShiftResponse result = apiInstance.Post(postShiftRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShiftClient.ShiftPost: " + e.Message);
+                Debug.Print("Exception when calling ShiftClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -539,21 +539,21 @@ namespace Example
 }
 ```
 
-#### Using the ShiftPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Creates a new shift.
-    ApiResponse<ShiftResponse> response = apiInstance.ShiftPostWithHttpInfo(postShiftRequest);
+    ApiResponse<ShiftResponse> response = apiInstance.PostWithHttpInfo(postShiftRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ShiftClient.ShiftPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ShiftClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

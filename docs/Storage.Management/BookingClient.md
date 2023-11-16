@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BookingGetAllGet**](BookingClient.md#bookinggetallget) | **GET** /Booking/get-all |  |
-| [**BookingIdDelete**](BookingClient.md#bookingiddelete) | **DELETE** /Booking/{id} |  |
-| [**BookingIdGet**](BookingClient.md#bookingidget) | **GET** /Booking/{id} |  |
-| [**BookingIdPatch**](BookingClient.md#bookingidpatch) | **PATCH** /Booking/{id} |  |
-| [**BookingPost**](BookingClient.md#bookingpost) | **POST** /Booking |  |
+| [**GetAll**](BookingClient.md#bookinggetallget) | **GET** /Booking/get-all |  |
+| [**Delete**](BookingClient.md#bookingiddelete) | **DELETE** /Booking/{id} |  |
+| [**Get**](BookingClient.md#bookingidget) | **GET** /Booking/{id} |  |
+| [**Patch**](BookingClient.md#bookingidpatch) | **PATCH** /Booking/{id} |  |
+| [**Post**](BookingClient.md#bookingpost) | **POST** /Booking |  |
 
 <a id="bookinggetallget"></a>
-# **BookingGetAllGet**
-> List&lt;Booking&gt; BookingGetAllGet ()
+# **GetAll**
+> List&lt;Booking&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<Booking> result = apiInstance.BookingGetAllGet();
+                List<Booking> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Booking>> response = apiInstance.BookingGetAllGetWithHttpInfo();
+    ApiResponse<List<Booking>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingiddelete"></a>
-# **BookingIdDelete**
-> void BookingIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -130,11 +130,11 @@ namespace Example
 
             try
             {
-                apiInstance.BookingIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingIdDelete: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,17 +143,17 @@ namespace Example
 }
 ```
 
-#### Using the BookingIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.BookingIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -189,8 +189,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingidget"></a>
-# **BookingIdGet**
-> Booking BookingIdGet (Guid id)
+# **Get**
+> Booking Get (Guid id)
 
 
 
@@ -204,7 +204,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -220,12 +220,12 @@ namespace Example
 
             try
             {
-                Booking result = apiInstance.BookingIdGet(id);
+                Booking result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingIdGet: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -234,20 +234,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.BookingIdGetWithHttpInfo(id);
+    ApiResponse<Booking> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -283,8 +283,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingidpatch"></a>
-# **BookingIdPatch**
-> Booking BookingIdPatch (Guid id, PatchBookingRequest? patchBookingRequest = null)
+# **Patch**
+> Booking Patch (Guid id, PatchBookingRequest? patchBookingRequest = null)
 
 
 
@@ -298,7 +298,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingIdPatchExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -315,12 +315,12 @@ namespace Example
 
             try
             {
-                Booking result = apiInstance.BookingIdPatch(id, patchBookingRequest);
+                Booking result = apiInstance.Patch(id, patchBookingRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingIdPatch: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -329,20 +329,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingIdPatchWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.BookingIdPatchWithHttpInfo(id, patchBookingRequest);
+    ApiResponse<Booking> response = apiInstance.PatchWithHttpInfo(id, patchBookingRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -380,8 +380,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingpost"></a>
-# **BookingPost**
-> Booking BookingPost (PostBookingCreate? postBookingCreate = null)
+# **Post**
+> Booking Post (PostBookingCreate? postBookingCreate = null)
 
 
 
@@ -395,7 +395,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BookingPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -411,12 +411,12 @@ namespace Example
 
             try
             {
-                Booking result = apiInstance.BookingPost(postBookingCreate);
+                Booking result = apiInstance.Post(postBookingCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingPost: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -425,20 +425,20 @@ namespace Example
 }
 ```
 
-#### Using the BookingPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.BookingPostWithHttpInfo(postBookingCreate);
+    ApiResponse<Booking> response = apiInstance.PostWithHttpInfo(postBookingCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

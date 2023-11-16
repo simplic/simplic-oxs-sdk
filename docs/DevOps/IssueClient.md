@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**IssueChangeStatePut**](IssueClient.md#issuechangestateput) | **PUT** /Issue/change-state |  |
-| [**IssueGetIssueTypesGet**](IssueClient.md#issuegetissuetypesget) | **GET** /Issue/get-issue-types |  |
-| [**IssuePost**](IssueClient.md#issuepost) | **POST** /Issue |  |
+| [**ChangeState**](IssueClient.md#issuechangestateput) | **PUT** /Issue/change-state |  |
+| [**GetIssueTypes**](IssueClient.md#issuegetissuetypesget) | **GET** /Issue/get-issue-types |  |
+| [**Post**](IssueClient.md#issuepost) | **POST** /Issue |  |
 
 <a id="issuechangestateput"></a>
-# **IssueChangeStatePut**
-> void IssueChangeStatePut (UpdateModelStateRequest? updateModelStateRequest = null)
+# **ChangeState**
+> void ChangeState (UpdateModelStateRequest? updateModelStateRequest = null)
 
 
 
@@ -24,7 +24,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class IssueChangeStatePutExample
+    public class ChangeStateExample
     {
         public static void Main()
         {
@@ -40,11 +40,11 @@ namespace Example
 
             try
             {
-                apiInstance.IssueChangeStatePut(updateModelStateRequest);
+                apiInstance.ChangeState(updateModelStateRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling IssueClient.IssueChangeStatePut: " + e.Message);
+                Debug.Print("Exception when calling IssueClient.ChangeState: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,17 +53,17 @@ namespace Example
 }
 ```
 
-#### Using the IssueChangeStatePutWithHttpInfo variant
+#### Using the ChangeStateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.IssueChangeStatePutWithHttpInfo(updateModelStateRequest);
+    apiInstance.ChangeStateWithHttpInfo(updateModelStateRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling IssueClient.IssueChangeStatePutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling IssueClient.ChangeStateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="issuegetissuetypesget"></a>
-# **IssueGetIssueTypesGet**
-> List&lt;string&gt; IssueGetIssueTypesGet ()
+# **GetIssueTypes**
+> List&lt;string&gt; GetIssueTypes ()
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class IssueGetIssueTypesGetExample
+    public class GetIssueTypesExample
     {
         public static void Main()
         {
@@ -129,12 +129,12 @@ namespace Example
 
             try
             {
-                List<string> result = apiInstance.IssueGetIssueTypesGet();
+                List<string> result = apiInstance.GetIssueTypes();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling IssueClient.IssueGetIssueTypesGet: " + e.Message);
+                Debug.Print("Exception when calling IssueClient.GetIssueTypes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -143,20 +143,20 @@ namespace Example
 }
 ```
 
-#### Using the IssueGetIssueTypesGetWithHttpInfo variant
+#### Using the GetIssueTypesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<string>> response = apiInstance.IssueGetIssueTypesGetWithHttpInfo();
+    ApiResponse<List<string>> response = apiInstance.GetIssueTypesWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling IssueClient.IssueGetIssueTypesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling IssueClient.GetIssueTypesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -188,8 +188,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="issuepost"></a>
-# **IssuePost**
-> IssueModel IssuePost (CreateIssueRequest? createIssueRequest = null)
+# **Post**
+> IssueModel Post (CreateIssueRequest? createIssueRequest = null)
 
 
 
@@ -203,7 +203,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class IssuePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -219,12 +219,12 @@ namespace Example
 
             try
             {
-                IssueModel result = apiInstance.IssuePost(createIssueRequest);
+                IssueModel result = apiInstance.Post(createIssueRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling IssueClient.IssuePost: " + e.Message);
+                Debug.Print("Exception when calling IssueClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -233,20 +233,20 @@ namespace Example
 }
 ```
 
-#### Using the IssuePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<IssueModel> response = apiInstance.IssuePostWithHttpInfo(createIssueRequest);
+    ApiResponse<IssueModel> response = apiInstance.PostWithHttpInfo(createIssueRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling IssueClient.IssuePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling IssueClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

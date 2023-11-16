@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/contact-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ContactIdDelete**](ContactClient.md#contactiddelete) | **DELETE** /Contact/{id} |  |
-| [**ContactIdGet**](ContactClient.md#contactidget) | **GET** /Contact/{id} |  |
-| [**ContactIdPut**](ContactClient.md#contactidput) | **PUT** /Contact/{id} |  |
-| [**ContactPost**](ContactClient.md#contactpost) | **POST** /Contact |  |
-| [**ContactSearchGet**](ContactClient.md#contactsearchget) | **GET** /Contact/search |  |
+| [**Delete**](ContactClient.md#contactiddelete) | **DELETE** /Contact/{id} |  |
+| [**Get**](ContactClient.md#contactidget) | **GET** /Contact/{id} |  |
+| [**Put**](ContactClient.md#contactidput) | **PUT** /Contact/{id} |  |
+| [**Post**](ContactClient.md#contactpost) | **POST** /Contact |  |
+| [**Search**](ContactClient.md#contactsearchget) | **GET** /Contact/search |  |
 
 <a id="contactiddelete"></a>
-# **ContactIdDelete**
-> void ContactIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class ContactIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -42,11 +42,11 @@ namespace Example
 
             try
             {
-                apiInstance.ContactIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContactClient.ContactIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ContactClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,17 +55,17 @@ namespace Example
 }
 ```
 
-#### Using the ContactIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ContactIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContactClient.ContactIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContactClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,8 +101,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contactidget"></a>
-# **ContactIdGet**
-> ContactModel ContactIdGet (Guid id)
+# **Get**
+> ContactModel Get (Guid id)
 
 
 
@@ -116,7 +116,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class ContactIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
 
             try
             {
-                ContactModel result = apiInstance.ContactIdGet(id);
+                ContactModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContactClient.ContactIdGet: " + e.Message);
+                Debug.Print("Exception when calling ContactClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,20 +146,20 @@ namespace Example
 }
 ```
 
-#### Using the ContactIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContactModel> response = apiInstance.ContactIdGetWithHttpInfo(id);
+    ApiResponse<ContactModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContactClient.ContactIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContactClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -195,8 +195,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contactidput"></a>
-# **ContactIdPut**
-> ContactModel ContactIdPut (Guid id, UpdateContactRequest? updateContactRequest = null)
+# **Put**
+> ContactModel Put (Guid id, UpdateContactRequest? updateContactRequest = null)
 
 
 
@@ -210,7 +210,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class ContactIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -227,12 +227,12 @@ namespace Example
 
             try
             {
-                ContactModel result = apiInstance.ContactIdPut(id, updateContactRequest);
+                ContactModel result = apiInstance.Put(id, updateContactRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContactClient.ContactIdPut: " + e.Message);
+                Debug.Print("Exception when calling ContactClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -241,20 +241,20 @@ namespace Example
 }
 ```
 
-#### Using the ContactIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContactModel> response = apiInstance.ContactIdPutWithHttpInfo(id, updateContactRequest);
+    ApiResponse<ContactModel> response = apiInstance.PutWithHttpInfo(id, updateContactRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContactClient.ContactIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContactClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -291,8 +291,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contactpost"></a>
-# **ContactPost**
-> ContactModel ContactPost (CreateContactRequest? createContactRequest = null)
+# **Post**
+> ContactModel Post (CreateContactRequest? createContactRequest = null)
 
 
 
@@ -306,7 +306,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class ContactPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -322,12 +322,12 @@ namespace Example
 
             try
             {
-                ContactModel result = apiInstance.ContactPost(createContactRequest);
+                ContactModel result = apiInstance.Post(createContactRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContactClient.ContactPost: " + e.Message);
+                Debug.Print("Exception when calling ContactClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -336,20 +336,20 @@ namespace Example
 }
 ```
 
-#### Using the ContactPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContactModel> response = apiInstance.ContactPostWithHttpInfo(createContactRequest);
+    ApiResponse<ContactModel> response = apiInstance.PostWithHttpInfo(createContactRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContactClient.ContactPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContactClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -385,8 +385,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contactsearchget"></a>
-# **ContactSearchGet**
-> List&lt;ContactModel&gt; ContactSearchGet (string? text = null, int? skip = null, int? limit = null)
+# **Search**
+> List&lt;ContactModel&gt; Search (string? text = null, int? skip = null, int? limit = null)
 
 
 
@@ -400,7 +400,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class ContactSearchGetExample
+    public class SearchExample
     {
         public static void Main()
         {
@@ -418,12 +418,12 @@ namespace Example
 
             try
             {
-                List<ContactModel> result = apiInstance.ContactSearchGet(text, skip, limit);
+                List<ContactModel> result = apiInstance.Search(text, skip, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContactClient.ContactSearchGet: " + e.Message);
+                Debug.Print("Exception when calling ContactClient.Search: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -432,20 +432,20 @@ namespace Example
 }
 ```
 
-#### Using the ContactSearchGetWithHttpInfo variant
+#### Using the SearchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ContactModel>> response = apiInstance.ContactSearchGetWithHttpInfo(text, skip, limit);
+    ApiResponse<List<ContactModel>> response = apiInstance.SearchWithHttpInfo(text, skip, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContactClient.ContactSearchGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContactClient.SearchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

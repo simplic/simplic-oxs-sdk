@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/devops-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AzureIssueUpdateIssuePost**](AzureIssueClient.md#azureissueupdateissuepost) | **POST** /AzureIssue/update-issue |  |
+| [**UpdateIssue**](AzureIssueClient.md#azureissueupdateissuepost) | **POST** /AzureIssue/update-issue |  |
 
 <a id="azureissueupdateissuepost"></a>
-# **AzureIssueUpdateIssuePost**
-> IssueModel AzureIssueUpdateIssuePost (string apiKey, Object? body = null)
+# **UpdateIssue**
+> IssueModel UpdateIssue (string apiKey, Object? body = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.DevOps;
 
 namespace Example
 {
-    public class AzureIssueUpdateIssuePostExample
+    public class UpdateIssueExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
 
             try
             {
-                IssueModel result = apiInstance.AzureIssueUpdateIssuePost(apiKey, body);
+                IssueModel result = apiInstance.UpdateIssue(apiKey, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AzureIssueClient.AzureIssueUpdateIssuePost: " + e.Message);
+                Debug.Print("Exception when calling AzureIssueClient.UpdateIssue: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,20 +53,20 @@ namespace Example
 }
 ```
 
-#### Using the AzureIssueUpdateIssuePostWithHttpInfo variant
+#### Using the UpdateIssueWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<IssueModel> response = apiInstance.AzureIssueUpdateIssuePostWithHttpInfo(apiKey, body);
+    ApiResponse<IssueModel> response = apiInstance.UpdateIssueWithHttpInfo(apiKey, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AzureIssueClient.AzureIssueUpdateIssuePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AzureIssueClient.UpdateIssueWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

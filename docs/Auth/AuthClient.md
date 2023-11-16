@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/auth-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AuthChangePasswordPost**](AuthClient.md#authchangepasswordpost) | **POST** /Auth/change-password |  |
-| [**AuthLoginPost**](AuthClient.md#authloginpost) | **POST** /Auth/login | Login using username and password. Will return a JWT when logging in was successful. |
-| [**AuthRegisterPost**](AuthClient.md#authregisterpost) | **POST** /Auth/register |  |
-| [**AuthRestorePasswordPost**](AuthClient.md#authrestorepasswordpost) | **POST** /Auth/restore-password |  |
-| [**AuthSelectOrganizationPost**](AuthClient.md#authselectorganizationpost) | **POST** /Auth/select-organization |  |
-| [**AuthSendVerificationCodePost**](AuthClient.md#authsendverificationcodepost) | **POST** /Auth/send-verification-code |  |
-| [**AuthVerifyMailPost**](AuthClient.md#authverifymailpost) | **POST** /Auth/verify-mail |  |
-| [**AuthVerifyTwoFactorPost**](AuthClient.md#authverifytwofactorpost) | **POST** /Auth/verify-two-factor |  |
+| [**ChangePassword**](AuthClient.md#authchangepasswordpost) | **POST** /Auth/change-password |  |
+| [**Login**](AuthClient.md#authloginpost) | **POST** /Auth/login | Login using username and password. Will return a JWT when logging in was successful. |
+| [**Register**](AuthClient.md#authregisterpost) | **POST** /Auth/register |  |
+| [**RestorePassword**](AuthClient.md#authrestorepasswordpost) | **POST** /Auth/restore-password |  |
+| [**SelectOrganization**](AuthClient.md#authselectorganizationpost) | **POST** /Auth/select-organization |  |
+| [**SendVerificationCode**](AuthClient.md#authsendverificationcodepost) | **POST** /Auth/send-verification-code |  |
+| [**VerifyMail**](AuthClient.md#authverifymailpost) | **POST** /Auth/verify-mail |  |
+| [**VerifyTwoFactor**](AuthClient.md#authverifytwofactorpost) | **POST** /Auth/verify-two-factor |  |
 
 <a id="authchangepasswordpost"></a>
-# **AuthChangePasswordPost**
-> ChangePasswordResponse AuthChangePasswordPost (ChangePasswordRequest? changePasswordRequest = null)
+# **ChangePassword**
+> ChangePasswordResponse ChangePassword (ChangePasswordRequest? changePasswordRequest = null)
 
 
 
@@ -29,7 +29,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthChangePasswordPostExample
+    public class ChangePasswordExample
     {
         public static void Main()
         {
@@ -45,12 +45,12 @@ namespace Example
 
             try
             {
-                ChangePasswordResponse result = apiInstance.AuthChangePasswordPost(changePasswordRequest);
+                ChangePasswordResponse result = apiInstance.ChangePassword(changePasswordRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthChangePasswordPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.ChangePassword: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +59,20 @@ namespace Example
 }
 ```
 
-#### Using the AuthChangePasswordPostWithHttpInfo variant
+#### Using the ChangePasswordWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ChangePasswordResponse> response = apiInstance.AuthChangePasswordPostWithHttpInfo(changePasswordRequest);
+    ApiResponse<ChangePasswordResponse> response = apiInstance.ChangePasswordWithHttpInfo(changePasswordRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthChangePasswordPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.ChangePasswordWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -106,8 +106,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authloginpost"></a>
-# **AuthLoginPost**
-> LoginResponse AuthLoginPost (LoginRequest? loginRequest = null)
+# **Login**
+> LoginResponse Login (LoginRequest? loginRequest = null)
 
 Login using username and password. Will return a JWT when logging in was successful.
 
@@ -121,7 +121,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthLoginPostExample
+    public class LoginExample
     {
         public static void Main()
         {
@@ -138,12 +138,12 @@ namespace Example
             try
             {
                 // Login using username and password. Will return a JWT when logging in was successful.
-                LoginResponse result = apiInstance.AuthLoginPost(loginRequest);
+                LoginResponse result = apiInstance.Login(loginRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthLoginPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.Login: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -152,21 +152,21 @@ namespace Example
 }
 ```
 
-#### Using the AuthLoginPostWithHttpInfo variant
+#### Using the LoginWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Login using username and password. Will return a JWT when logging in was successful.
-    ApiResponse<LoginResponse> response = apiInstance.AuthLoginPostWithHttpInfo(loginRequest);
+    ApiResponse<LoginResponse> response = apiInstance.LoginWithHttpInfo(loginRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthLoginPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.LoginWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -202,8 +202,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authregisterpost"></a>
-# **AuthRegisterPost**
-> RegisterResponse AuthRegisterPost (RegisterRequest? registerRequest = null)
+# **Register**
+> RegisterResponse Register (RegisterRequest? registerRequest = null)
 
 
 
@@ -217,7 +217,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthRegisterPostExample
+    public class RegisterExample
     {
         public static void Main()
         {
@@ -233,12 +233,12 @@ namespace Example
 
             try
             {
-                RegisterResponse result = apiInstance.AuthRegisterPost(registerRequest);
+                RegisterResponse result = apiInstance.Register(registerRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthRegisterPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.Register: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -247,20 +247,20 @@ namespace Example
 }
 ```
 
-#### Using the AuthRegisterPostWithHttpInfo variant
+#### Using the RegisterWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<RegisterResponse> response = apiInstance.AuthRegisterPostWithHttpInfo(registerRequest);
+    ApiResponse<RegisterResponse> response = apiInstance.RegisterWithHttpInfo(registerRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthRegisterPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.RegisterWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -295,8 +295,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authrestorepasswordpost"></a>
-# **AuthRestorePasswordPost**
-> ResetPasswordResponse AuthRestorePasswordPost (ResetPasswordRequest? resetPasswordRequest = null)
+# **RestorePassword**
+> ResetPasswordResponse RestorePassword (ResetPasswordRequest? resetPasswordRequest = null)
 
 
 
@@ -310,7 +310,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthRestorePasswordPostExample
+    public class RestorePasswordExample
     {
         public static void Main()
         {
@@ -326,12 +326,12 @@ namespace Example
 
             try
             {
-                ResetPasswordResponse result = apiInstance.AuthRestorePasswordPost(resetPasswordRequest);
+                ResetPasswordResponse result = apiInstance.RestorePassword(resetPasswordRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthRestorePasswordPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.RestorePassword: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -340,20 +340,20 @@ namespace Example
 }
 ```
 
-#### Using the AuthRestorePasswordPostWithHttpInfo variant
+#### Using the RestorePasswordWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ResetPasswordResponse> response = apiInstance.AuthRestorePasswordPostWithHttpInfo(resetPasswordRequest);
+    ApiResponse<ResetPasswordResponse> response = apiInstance.RestorePasswordWithHttpInfo(resetPasswordRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthRestorePasswordPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.RestorePasswordWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -388,8 +388,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authselectorganizationpost"></a>
-# **AuthSelectOrganizationPost**
-> LoginResponse AuthSelectOrganizationPost (SelectOrganizationRequest? selectOrganizationRequest = null)
+# **SelectOrganization**
+> LoginResponse SelectOrganization (SelectOrganizationRequest? selectOrganizationRequest = null)
 
 
 
@@ -403,7 +403,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthSelectOrganizationPostExample
+    public class SelectOrganizationExample
     {
         public static void Main()
         {
@@ -419,12 +419,12 @@ namespace Example
 
             try
             {
-                LoginResponse result = apiInstance.AuthSelectOrganizationPost(selectOrganizationRequest);
+                LoginResponse result = apiInstance.SelectOrganization(selectOrganizationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthSelectOrganizationPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.SelectOrganization: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -433,20 +433,20 @@ namespace Example
 }
 ```
 
-#### Using the AuthSelectOrganizationPostWithHttpInfo variant
+#### Using the SelectOrganizationWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<LoginResponse> response = apiInstance.AuthSelectOrganizationPostWithHttpInfo(selectOrganizationRequest);
+    ApiResponse<LoginResponse> response = apiInstance.SelectOrganizationWithHttpInfo(selectOrganizationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthSelectOrganizationPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.SelectOrganizationWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -482,8 +482,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authsendverificationcodepost"></a>
-# **AuthSendVerificationCodePost**
-> void AuthSendVerificationCodePost (SendVerificationCodeRequest? sendVerificationCodeRequest = null)
+# **SendVerificationCode**
+> void SendVerificationCode (SendVerificationCodeRequest? sendVerificationCodeRequest = null)
 
 
 
@@ -497,7 +497,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthSendVerificationCodePostExample
+    public class SendVerificationCodeExample
     {
         public static void Main()
         {
@@ -513,11 +513,11 @@ namespace Example
 
             try
             {
-                apiInstance.AuthSendVerificationCodePost(sendVerificationCodeRequest);
+                apiInstance.SendVerificationCode(sendVerificationCodeRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthSendVerificationCodePost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.SendVerificationCode: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -526,17 +526,17 @@ namespace Example
 }
 ```
 
-#### Using the AuthSendVerificationCodePostWithHttpInfo variant
+#### Using the SendVerificationCodeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.AuthSendVerificationCodePostWithHttpInfo(sendVerificationCodeRequest);
+    apiInstance.SendVerificationCodeWithHttpInfo(sendVerificationCodeRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthSendVerificationCodePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.SendVerificationCodeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -570,8 +570,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authverifymailpost"></a>
-# **AuthVerifyMailPost**
-> void AuthVerifyMailPost (VerifyMailRequest? verifyMailRequest = null)
+# **VerifyMail**
+> void VerifyMail (VerifyMailRequest? verifyMailRequest = null)
 
 
 
@@ -585,7 +585,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthVerifyMailPostExample
+    public class VerifyMailExample
     {
         public static void Main()
         {
@@ -601,11 +601,11 @@ namespace Example
 
             try
             {
-                apiInstance.AuthVerifyMailPost(verifyMailRequest);
+                apiInstance.VerifyMail(verifyMailRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthVerifyMailPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.VerifyMail: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -614,17 +614,17 @@ namespace Example
 }
 ```
 
-#### Using the AuthVerifyMailPostWithHttpInfo variant
+#### Using the VerifyMailWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.AuthVerifyMailPostWithHttpInfo(verifyMailRequest);
+    apiInstance.VerifyMailWithHttpInfo(verifyMailRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthVerifyMailPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.VerifyMailWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -659,8 +659,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="authverifytwofactorpost"></a>
-# **AuthVerifyTwoFactorPost**
-> TwoFactorResponse AuthVerifyTwoFactorPost (TwoFactorRequest? twoFactorRequest = null)
+# **VerifyTwoFactor**
+> TwoFactorResponse VerifyTwoFactor (TwoFactorRequest? twoFactorRequest = null)
 
 
 
@@ -674,7 +674,7 @@ using Simplic.OxS.SDK.Auth;
 
 namespace Example
 {
-    public class AuthVerifyTwoFactorPostExample
+    public class VerifyTwoFactorExample
     {
         public static void Main()
         {
@@ -690,12 +690,12 @@ namespace Example
 
             try
             {
-                TwoFactorResponse result = apiInstance.AuthVerifyTwoFactorPost(twoFactorRequest);
+                TwoFactorResponse result = apiInstance.VerifyTwoFactor(twoFactorRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AuthClient.AuthVerifyTwoFactorPost: " + e.Message);
+                Debug.Print("Exception when calling AuthClient.VerifyTwoFactor: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -704,20 +704,20 @@ namespace Example
 }
 ```
 
-#### Using the AuthVerifyTwoFactorPostWithHttpInfo variant
+#### Using the VerifyTwoFactorWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TwoFactorResponse> response = apiInstance.AuthVerifyTwoFactorPostWithHttpInfo(twoFactorRequest);
+    ApiResponse<TwoFactorResponse> response = apiInstance.VerifyTwoFactorWithHttpInfo(twoFactorRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AuthClient.AuthVerifyTwoFactorPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AuthClient.VerifyTwoFactorWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

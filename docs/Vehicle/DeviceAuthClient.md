@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeviceAuthGet**](DeviceAuthClient.md#deviceauthget) | **GET** /DeviceAuth |  |
-| [**DeviceAuthLoginPost**](DeviceAuthClient.md#deviceauthloginpost) | **POST** /DeviceAuth/login |  |
-| [**DeviceAuthLogoutPost**](DeviceAuthClient.md#deviceauthlogoutpost) | **POST** /DeviceAuth/logout |  |
-| [**DeviceAuthRefreshTokenPost**](DeviceAuthClient.md#deviceauthrefreshtokenpost) | **POST** /DeviceAuth/refresh-token |  |
+| [**Get**](DeviceAuthClient.md#deviceauthget) | **GET** /DeviceAuth |  |
+| [**Login**](DeviceAuthClient.md#deviceauthloginpost) | **POST** /DeviceAuth/login |  |
+| [**Logout**](DeviceAuthClient.md#deviceauthlogoutpost) | **POST** /DeviceAuth/logout |  |
+| [**RefreshToken**](DeviceAuthClient.md#deviceauthrefreshtokenpost) | **POST** /DeviceAuth/refresh-token |  |
 
 <a id="deviceauthget"></a>
-# **DeviceAuthGet**
-> DeviceModel DeviceAuthGet ()
+# **Get**
+> DeviceModel Get ()
 
 
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class DeviceAuthGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -40,12 +40,12 @@ namespace Example
 
             try
             {
-                DeviceModel result = apiInstance.DeviceAuthGet();
+                DeviceModel result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthGet: " + e.Message);
+                Debug.Print("Exception when calling DeviceAuthClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,20 +54,20 @@ namespace Example
 }
 ```
 
-#### Using the DeviceAuthGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DeviceModel> response = apiInstance.DeviceAuthGetWithHttpInfo();
+    ApiResponse<DeviceModel> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DeviceAuthClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="deviceauthloginpost"></a>
-# **DeviceAuthLoginPost**
-> DeviceLoginResponse DeviceAuthLoginPost (DeviceLoginRequest? deviceLoginRequest = null)
+# **Login**
+> DeviceLoginResponse Login (DeviceLoginRequest? deviceLoginRequest = null)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class DeviceAuthLoginPostExample
+    public class LoginExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                DeviceLoginResponse result = apiInstance.DeviceAuthLoginPost(deviceLoginRequest);
+                DeviceLoginResponse result = apiInstance.Login(deviceLoginRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthLoginPost: " + e.Message);
+                Debug.Print("Exception when calling DeviceAuthClient.Login: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the DeviceAuthLoginPostWithHttpInfo variant
+#### Using the LoginWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DeviceLoginResponse> response = apiInstance.DeviceAuthLoginPostWithHttpInfo(deviceLoginRequest);
+    ApiResponse<DeviceLoginResponse> response = apiInstance.LoginWithHttpInfo(deviceLoginRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthLoginPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DeviceAuthClient.LoginWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -192,8 +192,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="deviceauthlogoutpost"></a>
-# **DeviceAuthLogoutPost**
-> void DeviceAuthLogoutPost (DeviceLogoutRequest? deviceLogoutRequest = null)
+# **Logout**
+> void Logout (DeviceLogoutRequest? deviceLogoutRequest = null)
 
 
 
@@ -207,7 +207,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class DeviceAuthLogoutPostExample
+    public class LogoutExample
     {
         public static void Main()
         {
@@ -223,11 +223,11 @@ namespace Example
 
             try
             {
-                apiInstance.DeviceAuthLogoutPost(deviceLogoutRequest);
+                apiInstance.Logout(deviceLogoutRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthLogoutPost: " + e.Message);
+                Debug.Print("Exception when calling DeviceAuthClient.Logout: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -236,17 +236,17 @@ namespace Example
 }
 ```
 
-#### Using the DeviceAuthLogoutPostWithHttpInfo variant
+#### Using the LogoutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.DeviceAuthLogoutPostWithHttpInfo(deviceLogoutRequest);
+    apiInstance.LogoutWithHttpInfo(deviceLogoutRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthLogoutPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DeviceAuthClient.LogoutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -282,8 +282,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="deviceauthrefreshtokenpost"></a>
-# **DeviceAuthRefreshTokenPost**
-> DeviceLoginResponse DeviceAuthRefreshTokenPost (RefreshTokenRequest? refreshTokenRequest = null)
+# **RefreshToken**
+> DeviceLoginResponse RefreshToken (RefreshTokenRequest? refreshTokenRequest = null)
 
 
 
@@ -297,7 +297,7 @@ using Simplic.OxS.SDK.Vehicle;
 
 namespace Example
 {
-    public class DeviceAuthRefreshTokenPostExample
+    public class RefreshTokenExample
     {
         public static void Main()
         {
@@ -313,12 +313,12 @@ namespace Example
 
             try
             {
-                DeviceLoginResponse result = apiInstance.DeviceAuthRefreshTokenPost(refreshTokenRequest);
+                DeviceLoginResponse result = apiInstance.RefreshToken(refreshTokenRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthRefreshTokenPost: " + e.Message);
+                Debug.Print("Exception when calling DeviceAuthClient.RefreshToken: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -327,20 +327,20 @@ namespace Example
 }
 ```
 
-#### Using the DeviceAuthRefreshTokenPostWithHttpInfo variant
+#### Using the RefreshTokenWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<DeviceLoginResponse> response = apiInstance.DeviceAuthRefreshTokenPostWithHttpInfo(refreshTokenRequest);
+    ApiResponse<DeviceLoginResponse> response = apiInstance.RefreshTokenWithHttpInfo(refreshTokenRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DeviceAuthClient.DeviceAuthRefreshTokenPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DeviceAuthClient.RefreshTokenWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

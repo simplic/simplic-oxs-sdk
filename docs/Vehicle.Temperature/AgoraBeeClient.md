@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-temperature-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AgoraBeePost**](AgoraBeeClient.md#agorabeepost) | **POST** /AgoraBee |  |
+| [**Post**](AgoraBeeClient.md#agorabeepost) | **POST** /AgoraBee |  |
 
 <a id="agorabeepost"></a>
-# **AgoraBeePost**
-> PostAgoraBeeResponse AgoraBeePost (PostAgoraBeeRequest? postAgoraBeeRequest = null)
+# **Post**
+> PostAgoraBeeResponse Post (PostAgoraBeeRequest? postAgoraBeeRequest = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class AgoraBeePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                PostAgoraBeeResponse result = apiInstance.AgoraBeePost(postAgoraBeeRequest);
+                PostAgoraBeeResponse result = apiInstance.Post(postAgoraBeeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling AgoraBeeClient.AgoraBeePost: " + e.Message);
+                Debug.Print("Exception when calling AgoraBeeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the AgoraBeePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PostAgoraBeeResponse> response = apiInstance.AgoraBeePostWithHttpInfo(postAgoraBeeRequest);
+    ApiResponse<PostAgoraBeeResponse> response = apiInstance.PostWithHttpInfo(postAgoraBeeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling AgoraBeeClient.AgoraBeePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling AgoraBeeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

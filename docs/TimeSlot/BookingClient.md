@@ -4,14 +4,14 @@ All URIs are relative to *https://dev-oxs.simplic.io/timeslot-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BookingCancelBookingIdDelete**](BookingClient.md#bookingcancelbookingiddelete) | **DELETE** /Booking/cancel-booking/{id} | Removes a time slot booking the a time slot |
-| [**BookingCreateBookingIdPut**](BookingClient.md#bookingcreatebookingidput) | **PUT** /Booking/create-booking/{id} | Book a time slot |
-| [**BookingIdGet**](BookingClient.md#bookingidget) | **GET** /Booking/{id} | Gets a time slot for the current foreign organization by its id |
-| [**BookingUpdateBookingIdPut**](BookingClient.md#bookingupdatebookingidput) | **PUT** /Booking/update-booking/{id} | Updates an existing booking |
+| [**CancelBooking**](BookingClient.md#bookingcancelbookingiddelete) | **DELETE** /Booking/cancel-booking/{id} | Removes a time slot booking the a time slot |
+| [**CreateBooking**](BookingClient.md#bookingcreatebookingidput) | **PUT** /Booking/create-booking/{id} | Book a time slot |
+| [**Get**](BookingClient.md#bookingidget) | **GET** /Booking/{id} | Gets a time slot for the current foreign organization by its id |
+| [**UpdateBooking**](BookingClient.md#bookingupdatebookingidput) | **PUT** /Booking/update-booking/{id} | Updates an existing booking |
 
 <a id="bookingcancelbookingiddelete"></a>
-# **BookingCancelBookingIdDelete**
-> void BookingCancelBookingIdDelete (Guid id)
+# **CancelBooking**
+> void CancelBooking (Guid id)
 
 Removes a time slot booking the a time slot
 
@@ -25,7 +25,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class BookingCancelBookingIdDeleteExample
+    public class CancelBookingExample
     {
         public static void Main()
         {
@@ -42,11 +42,11 @@ namespace Example
             try
             {
                 // Removes a time slot booking the a time slot
-                apiInstance.BookingCancelBookingIdDelete(id);
+                apiInstance.CancelBooking(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingCancelBookingIdDelete: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.CancelBooking: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,18 +55,18 @@ namespace Example
 }
 ```
 
-#### Using the BookingCancelBookingIdDeleteWithHttpInfo variant
+#### Using the CancelBookingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Removes a time slot booking the a time slot
-    apiInstance.BookingCancelBookingIdDeleteWithHttpInfo(id);
+    apiInstance.CancelBookingWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingCancelBookingIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.CancelBookingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -102,8 +102,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingcreatebookingidput"></a>
-# **BookingCreateBookingIdPut**
-> TimeSlotModel BookingCreateBookingIdPut (Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = null)
+# **CreateBooking**
+> TimeSlotModel CreateBooking (Guid id, CreateTimeSlotBookingRequest? createTimeSlotBookingRequest = null)
 
 Book a time slot
 
@@ -117,7 +117,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class BookingCreateBookingIdPutExample
+    public class CreateBookingExample
     {
         public static void Main()
         {
@@ -135,12 +135,12 @@ namespace Example
             try
             {
                 // Book a time slot
-                TimeSlotModel result = apiInstance.BookingCreateBookingIdPut(id, createTimeSlotBookingRequest);
+                TimeSlotModel result = apiInstance.CreateBooking(id, createTimeSlotBookingRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingCreateBookingIdPut: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.CreateBooking: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -149,21 +149,21 @@ namespace Example
 }
 ```
 
-#### Using the BookingCreateBookingIdPutWithHttpInfo variant
+#### Using the CreateBookingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Book a time slot
-    ApiResponse<TimeSlotModel> response = apiInstance.BookingCreateBookingIdPutWithHttpInfo(id, createTimeSlotBookingRequest);
+    ApiResponse<TimeSlotModel> response = apiInstance.CreateBookingWithHttpInfo(id, createTimeSlotBookingRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingCreateBookingIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.CreateBookingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -200,8 +200,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingidget"></a>
-# **BookingIdGet**
-> TimeSlotModel BookingIdGet (Guid id)
+# **Get**
+> TimeSlotModel Get (Guid id)
 
 Gets a time slot for the current foreign organization by its id
 
@@ -215,7 +215,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class BookingIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -232,12 +232,12 @@ namespace Example
             try
             {
                 // Gets a time slot for the current foreign organization by its id
-                TimeSlotModel result = apiInstance.BookingIdGet(id);
+                TimeSlotModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingIdGet: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -246,21 +246,21 @@ namespace Example
 }
 ```
 
-#### Using the BookingIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Gets a time slot for the current foreign organization by its id
-    ApiResponse<TimeSlotModel> response = apiInstance.BookingIdGetWithHttpInfo(id);
+    ApiResponse<TimeSlotModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -296,8 +296,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="bookingupdatebookingidput"></a>
-# **BookingUpdateBookingIdPut**
-> TimeSlotModel BookingUpdateBookingIdPut (Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = null)
+# **UpdateBooking**
+> TimeSlotModel UpdateBooking (Guid id, UpdateTimeSlotBookingRequest? updateTimeSlotBookingRequest = null)
 
 Updates an existing booking
 
@@ -311,7 +311,7 @@ using Simplic.OxS.SDK.TimeSlot;
 
 namespace Example
 {
-    public class BookingUpdateBookingIdPutExample
+    public class UpdateBookingExample
     {
         public static void Main()
         {
@@ -329,12 +329,12 @@ namespace Example
             try
             {
                 // Updates an existing booking
-                TimeSlotModel result = apiInstance.BookingUpdateBookingIdPut(id, updateTimeSlotBookingRequest);
+                TimeSlotModel result = apiInstance.UpdateBooking(id, updateTimeSlotBookingRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BookingClient.BookingUpdateBookingIdPut: " + e.Message);
+                Debug.Print("Exception when calling BookingClient.UpdateBooking: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -343,21 +343,21 @@ namespace Example
 }
 ```
 
-#### Using the BookingUpdateBookingIdPutWithHttpInfo variant
+#### Using the UpdateBookingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Updates an existing booking
-    ApiResponse<TimeSlotModel> response = apiInstance.BookingUpdateBookingIdPutWithHttpInfo(id, updateTimeSlotBookingRequest);
+    ApiResponse<TimeSlotModel> response = apiInstance.UpdateBookingWithHttpInfo(id, updateTimeSlotBookingRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BookingClient.BookingUpdateBookingIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BookingClient.UpdateBookingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

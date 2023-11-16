@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **SupplierContactId** | **Guid?** |  | [optional] 
 **LoadingAddressId** | **Guid?** |  | [optional] 
 **UnloadingAddressId** | **Guid?** |  | [optional] 
+**ContractNumber** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

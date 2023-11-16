@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/contact-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**InternalInternalContactGetByIdGet**](InternalContactClient.md#internalinternalcontactgetbyidget) | **GET** /internal/InternalContact/get-by-id |  |
+| [**GetById**](InternalContactClient.md#internalinternalcontactgetbyidget) | **GET** /internal/InternalContact/get-by-id |  |
 
 <a id="internalinternalcontactgetbyidget"></a>
-# **InternalInternalContactGetByIdGet**
-> ContactModel InternalInternalContactGetByIdGet (Guid? id = null)
+# **GetById**
+> ContactModel GetById (Guid? id = null)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Contact;
 
 namespace Example
 {
-    public class InternalInternalContactGetByIdGetExample
+    public class GetByIdExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                ContactModel result = apiInstance.InternalInternalContactGetByIdGet(id);
+                ContactModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InternalContactClient.InternalInternalContactGetByIdGet: " + e.Message);
+                Debug.Print("Exception when calling InternalContactClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the InternalInternalContactGetByIdGetWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContactModel> response = apiInstance.InternalInternalContactGetByIdGetWithHttpInfo(id);
+    ApiResponse<ContactModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling InternalContactClient.InternalInternalContactGetByIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalContactClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

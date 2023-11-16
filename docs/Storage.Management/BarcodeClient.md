@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BarcodeGetAllGet**](BarcodeClient.md#barcodegetallget) | **GET** /Barcode/get-all |  |
-| [**BarcodeGetOrchestrationForCustomerGet**](BarcodeClient.md#barcodegetorchestrationforcustomerget) | **GET** /Barcode/get-orchestration-for-customer |  |
-| [**BarcodeIdDelete**](BarcodeClient.md#barcodeiddelete) | **DELETE** /Barcode/{id} |  |
-| [**BarcodeIdGet**](BarcodeClient.md#barcodeidget) | **GET** /Barcode/{id} |  |
-| [**BarcodePost**](BarcodeClient.md#barcodepost) | **POST** /Barcode |  |
+| [**GetAll**](BarcodeClient.md#barcodegetallget) | **GET** /Barcode/get-all |  |
+| [**GetOrchestrationForCustomer**](BarcodeClient.md#barcodegetorchestrationforcustomerget) | **GET** /Barcode/get-orchestration-for-customer |  |
+| [**Delete**](BarcodeClient.md#barcodeiddelete) | **DELETE** /Barcode/{id} |  |
+| [**Get**](BarcodeClient.md#barcodeidget) | **GET** /Barcode/{id} |  |
+| [**Post**](BarcodeClient.md#barcodepost) | **POST** /Barcode |  |
 
 <a id="barcodegetallget"></a>
-# **BarcodeGetAllGet**
-> List&lt;Barcode&gt; BarcodeGetAllGet ()
+# **GetAll**
+> List&lt;Barcode&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BarcodeGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<Barcode> result = apiInstance.BarcodeGetAllGet();
+                List<Barcode> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BarcodeClient.BarcodeGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling BarcodeClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the BarcodeGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Barcode>> response = apiInstance.BarcodeGetAllGetWithHttpInfo();
+    ApiResponse<List<Barcode>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BarcodeClient.BarcodeGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BarcodeClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -99,8 +99,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="barcodegetorchestrationforcustomerget"></a>
-# **BarcodeGetOrchestrationForCustomerGet**
-> Barcode BarcodeGetOrchestrationForCustomerGet (Guid? customerId = null)
+# **GetOrchestrationForCustomer**
+> Barcode GetOrchestrationForCustomer (Guid? customerId = null)
 
 
 
@@ -114,7 +114,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BarcodeGetOrchestrationForCustomerGetExample
+    public class GetOrchestrationForCustomerExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
 
             try
             {
-                Barcode result = apiInstance.BarcodeGetOrchestrationForCustomerGet(customerId);
+                Barcode result = apiInstance.GetOrchestrationForCustomer(customerId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BarcodeClient.BarcodeGetOrchestrationForCustomerGet: " + e.Message);
+                Debug.Print("Exception when calling BarcodeClient.GetOrchestrationForCustomer: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,20 +144,20 @@ namespace Example
 }
 ```
 
-#### Using the BarcodeGetOrchestrationForCustomerGetWithHttpInfo variant
+#### Using the GetOrchestrationForCustomerWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Barcode> response = apiInstance.BarcodeGetOrchestrationForCustomerGetWithHttpInfo(customerId);
+    ApiResponse<Barcode> response = apiInstance.GetOrchestrationForCustomerWithHttpInfo(customerId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BarcodeClient.BarcodeGetOrchestrationForCustomerGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BarcodeClient.GetOrchestrationForCustomerWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -193,8 +193,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="barcodeiddelete"></a>
-# **BarcodeIdDelete**
-> void BarcodeIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -208,7 +208,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BarcodeIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -224,11 +224,11 @@ namespace Example
 
             try
             {
-                apiInstance.BarcodeIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BarcodeClient.BarcodeIdDelete: " + e.Message);
+                Debug.Print("Exception when calling BarcodeClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -237,17 +237,17 @@ namespace Example
 }
 ```
 
-#### Using the BarcodeIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.BarcodeIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BarcodeClient.BarcodeIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BarcodeClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -283,8 +283,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="barcodeidget"></a>
-# **BarcodeIdGet**
-> Barcode BarcodeIdGet (Guid id)
+# **Get**
+> Barcode Get (Guid id)
 
 
 
@@ -298,7 +298,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BarcodeIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -314,12 +314,12 @@ namespace Example
 
             try
             {
-                Barcode result = apiInstance.BarcodeIdGet(id);
+                Barcode result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BarcodeClient.BarcodeIdGet: " + e.Message);
+                Debug.Print("Exception when calling BarcodeClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -328,20 +328,20 @@ namespace Example
 }
 ```
 
-#### Using the BarcodeIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Barcode> response = apiInstance.BarcodeIdGetWithHttpInfo(id);
+    ApiResponse<Barcode> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BarcodeClient.BarcodeIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BarcodeClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -377,8 +377,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="barcodepost"></a>
-# **BarcodePost**
-> Barcode BarcodePost (PostBarcodeAdd? postBarcodeAdd = null)
+# **Post**
+> Barcode Post (PostBarcodeAdd? postBarcodeAdd = null)
 
 
 
@@ -392,7 +392,7 @@ using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
 {
-    public class BarcodePostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -408,12 +408,12 @@ namespace Example
 
             try
             {
-                Barcode result = apiInstance.BarcodePost(postBarcodeAdd);
+                Barcode result = apiInstance.Post(postBarcodeAdd);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BarcodeClient.BarcodePost: " + e.Message);
+                Debug.Print("Exception when calling BarcodeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -422,20 +422,20 @@ namespace Example
 }
 ```
 
-#### Using the BarcodePostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Barcode> response = apiInstance.BarcodePostWithHttpInfo(postBarcodeAdd);
+    ApiResponse<Barcode> response = apiInstance.PostWithHttpInfo(postBarcodeAdd);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BarcodeClient.BarcodePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BarcodeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

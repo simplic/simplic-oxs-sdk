@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/contract-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ReportingIdGet**](ReportingClient.md#reportingidget) | **GET** /Reporting/{id} |  |
+| [**Get**](ReportingClient.md#reportingidget) | **GET** /Reporting/{id} |  |
 
 <a id="reportingidget"></a>
-# **ReportingIdGet**
-> ContractReportModel ReportingIdGet (Guid id)
+# **Get**
+> ContractReportModel Get (Guid id)
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ReportingIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -38,12 +38,12 @@ namespace Example
 
             try
             {
-                ContractReportModel result = apiInstance.ReportingIdGet(id);
+                ContractReportModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ReportingClient.ReportingIdGet: " + e.Message);
+                Debug.Print("Exception when calling ReportingClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,20 +52,20 @@ namespace Example
 }
 ```
 
-#### Using the ReportingIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractReportModel> response = apiInstance.ReportingIdGetWithHttpInfo(id);
+    ApiResponse<ContractReportModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ReportingClient.ReportingIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ReportingClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

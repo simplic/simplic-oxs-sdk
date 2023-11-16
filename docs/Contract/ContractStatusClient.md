@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/contract-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ContractStatusGetAllGet**](ContractStatusClient.md#contractstatusgetallget) | **GET** /ContractStatus/get-all |  |
-| [**ContractStatusIdDelete**](ContractStatusClient.md#contractstatusiddelete) | **DELETE** /ContractStatus/{id} |  |
-| [**ContractStatusIdGet**](ContractStatusClient.md#contractstatusidget) | **GET** /ContractStatus/{id} |  |
-| [**ContractStatusIdPut**](ContractStatusClient.md#contractstatusidput) | **PUT** /ContractStatus/{id} |  |
-| [**ContractStatusPost**](ContractStatusClient.md#contractstatuspost) | **POST** /ContractStatus |  |
+| [**GetAll**](ContractStatusClient.md#contractstatusgetallget) | **GET** /ContractStatus/get-all |  |
+| [**Delete**](ContractStatusClient.md#contractstatusiddelete) | **DELETE** /ContractStatus/{id} |  |
+| [**Get**](ContractStatusClient.md#contractstatusidget) | **GET** /ContractStatus/{id} |  |
+| [**Put**](ContractStatusClient.md#contractstatusidput) | **PUT** /ContractStatus/{id} |  |
+| [**Post**](ContractStatusClient.md#contractstatuspost) | **POST** /ContractStatus |  |
 
 <a id="contractstatusgetallget"></a>
-# **ContractStatusGetAllGet**
-> List&lt;ContractStatusModel&gt; ContractStatusGetAllGet ()
+# **GetAll**
+> List&lt;ContractStatusModel&gt; GetAll ()
 
 
 
@@ -26,7 +26,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ContractStatusGetAllGetExample
+    public class GetAllExample
     {
         public static void Main()
         {
@@ -41,12 +41,12 @@ namespace Example
 
             try
             {
-                List<ContractStatusModel> result = apiInstance.ContractStatusGetAllGet();
+                List<ContractStatusModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusClient.ContractStatusGetAllGet: " + e.Message);
+                Debug.Print("Exception when calling ContractStatusClient.GetAll: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the ContractStatusGetAllGetWithHttpInfo variant
+#### Using the GetAllWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ContractStatusModel>> response = apiInstance.ContractStatusGetAllGetWithHttpInfo();
+    ApiResponse<List<ContractStatusModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusClient.ContractStatusGetAllGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContractStatusClient.GetAllWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -100,8 +100,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contractstatusiddelete"></a>
-# **ContractStatusIdDelete**
-> void ContractStatusIdDelete (Guid id)
+# **Delete**
+> void Delete (Guid id)
 
 
 
@@ -115,7 +115,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ContractStatusIdDeleteExample
+    public class DeleteExample
     {
         public static void Main()
         {
@@ -131,11 +131,11 @@ namespace Example
 
             try
             {
-                apiInstance.ContractStatusIdDelete(id);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdDelete: " + e.Message);
+                Debug.Print("Exception when calling ContractStatusClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -144,17 +144,17 @@ namespace Example
 }
 ```
 
-#### Using the ContractStatusIdDeleteWithHttpInfo variant
+#### Using the DeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ContractStatusIdDeleteWithHttpInfo(id);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContractStatusClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -190,8 +190,8 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contractstatusidget"></a>
-# **ContractStatusIdGet**
-> ContractStatusModel ContractStatusIdGet (Guid id)
+# **Get**
+> ContractStatusModel Get (Guid id)
 
 
 
@@ -205,7 +205,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ContractStatusIdGetExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -221,12 +221,12 @@ namespace Example
 
             try
             {
-                ContractStatusModel result = apiInstance.ContractStatusIdGet(id);
+                ContractStatusModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdGet: " + e.Message);
+                Debug.Print("Exception when calling ContractStatusClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -235,20 +235,20 @@ namespace Example
 }
 ```
 
-#### Using the ContractStatusIdGetWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractStatusModel> response = apiInstance.ContractStatusIdGetWithHttpInfo(id);
+    ApiResponse<ContractStatusModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContractStatusClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -284,8 +284,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contractstatusidput"></a>
-# **ContractStatusIdPut**
-> ContractStatusModel ContractStatusIdPut (Guid id, UpdateContractStatusRequest? updateContractStatusRequest = null)
+# **Put**
+> ContractStatusModel Put (Guid id, UpdateContractStatusRequest? updateContractStatusRequest = null)
 
 
 
@@ -299,7 +299,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ContractStatusIdPutExample
+    public class PutExample
     {
         public static void Main()
         {
@@ -316,12 +316,12 @@ namespace Example
 
             try
             {
-                ContractStatusModel result = apiInstance.ContractStatusIdPut(id, updateContractStatusRequest);
+                ContractStatusModel result = apiInstance.Put(id, updateContractStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdPut: " + e.Message);
+                Debug.Print("Exception when calling ContractStatusClient.Put: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -330,20 +330,20 @@ namespace Example
 }
 ```
 
-#### Using the ContractStatusIdPutWithHttpInfo variant
+#### Using the PutWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractStatusModel> response = apiInstance.ContractStatusIdPutWithHttpInfo(id, updateContractStatusRequest);
+    ApiResponse<ContractStatusModel> response = apiInstance.PutWithHttpInfo(id, updateContractStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusClient.ContractStatusIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContractStatusClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -380,8 +380,8 @@ catch (ApiException e)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contractstatuspost"></a>
-# **ContractStatusPost**
-> ContractStatusModel ContractStatusPost (CreateContractStatusRequest? createContractStatusRequest = null)
+# **Post**
+> ContractStatusModel Post (CreateContractStatusRequest? createContractStatusRequest = null)
 
 
 
@@ -395,7 +395,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class ContractStatusPostExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -411,12 +411,12 @@ namespace Example
 
             try
             {
-                ContractStatusModel result = apiInstance.ContractStatusPost(createContractStatusRequest);
+                ContractStatusModel result = apiInstance.Post(createContractStatusRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusClient.ContractStatusPost: " + e.Message);
+                Debug.Print("Exception when calling ContractStatusClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -425,20 +425,20 @@ namespace Example
 }
 ```
 
-#### Using the ContractStatusPostWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractStatusModel> response = apiInstance.ContractStatusPostWithHttpInfo(createContractStatusRequest);
+    ApiResponse<ContractStatusModel> response = apiInstance.PostWithHttpInfo(createContractStatusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusClient.ContractStatusPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ContractStatusClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
