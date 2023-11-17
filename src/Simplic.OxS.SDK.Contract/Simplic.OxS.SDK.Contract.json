@@ -1,1 +1,2246 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.Contract", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/contract-api/v1"}], "paths": {"/Contract/{id}": {"get": {"tags": ["Contract"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "patch": {"tags": ["Contract"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateContractRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateContractRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateContractRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["Contract"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Contract/search": {"get": {"tags": ["Contract"], "parameters": [{"name": "customerId", "in": "query", "schema": {"type": "string", "format": "uuid"}}, {"name": "status", "in": "query", "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractModel"}}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Contract": {"post": {"tags": ["Contract"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateContractRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateContractRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateContractRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/ContractStatus/{id}": {"get": {"tags": ["ContractStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "put": {"tags": ["ContractStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateContractStatusRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateContractStatusRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateContractStatusRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["ContractStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/ContractStatus": {"post": {"tags": ["ContractStatus"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateContractStatusRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateContractStatusRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateContractStatusRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/ContractStatus/get-all": {"get": {"tags": ["ContractStatus"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractStatusModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractStatusModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/ContractStatusModel"}}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Reporting/{id}": {"get": {"tags": ["Reporting"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ContractReportModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ContractReportModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ContractReportModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}}, "components": {"schemas": {"Address": {"type": "object", "properties": {"contactId": {"type": "string", "format": "uuid"}, "firstName": {"type": "string", "nullable": true}, "lastName": {"type": "string", "nullable": true}, "companyName": {"type": "string", "nullable": true}, "additional01": {"type": "string", "nullable": true}, "additional02": {"type": "string", "nullable": true}, "street": {"type": "string", "nullable": true}, "houseNumber": {"type": "string", "nullable": true}, "zipcode": {"type": "string", "nullable": true}, "city": {"type": "string", "nullable": true}, "district": {"type": "string", "nullable": true}, "federalState": {"type": "string", "nullable": true}, "countryIso": {"type": "string", "nullable": true}, "country": {"type": "string", "nullable": true}, "latitude": {"type": "number", "format": "double"}, "longitude": {"type": "number", "format": "double"}}, "additionalProperties": false}, "AddressModel": {"type": "object", "properties": {"contactId": {"type": "string", "format": "uuid"}, "firstName": {"type": "string", "nullable": true}, "lastName": {"type": "string", "nullable": true}, "companyName": {"type": "string", "nullable": true}, "additional01": {"type": "string", "nullable": true}, "additional02": {"type": "string", "nullable": true}, "street": {"type": "string", "nullable": true}, "houseNumber": {"type": "string", "nullable": true}, "zipcode": {"type": "string", "nullable": true}, "city": {"type": "string", "nullable": true}, "district": {"type": "string", "nullable": true}, "federalState": {"type": "string", "nullable": true}, "countryIso": {"type": "string", "nullable": true}, "country": {"type": "string", "nullable": true}, "latitude": {"type": "number", "format": "double"}, "longitude": {"type": "number", "format": "double"}}, "additionalProperties": false}, "AlternativeTypeModel": {"enum": [0, 1, 2], "type": "integer", "format": "int32"}, "ArticleGroupModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}}, "additionalProperties": false}, "ArticleModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "description": {"type": "string", "nullable": true}, "number": {"type": "integer", "format": "int32"}, "uniqueNumber": {"type": "integer", "format": "int32"}, "shortName": {"type": "string", "nullable": true}, "fullName": {"type": "string", "nullable": true}, "articleGroup": {"$ref": "#/components/schemas/ArticleGroupModel"}}, "additionalProperties": false}, "BillableContactModel": {"type": "object", "properties": {"address": {"$ref": "#/components/schemas/AddressModel"}, "accountNumber": {"type": "string", "nullable": true}, "personalAccountId": {"type": "string", "format": "uuid", "nullable": true}, "insurance": {"type": "number", "format": "double"}, "creditworthiness": {"type": "string", "nullable": true}, "creditLimit": {"type": "string", "nullable": true}}, "additionalProperties": false}, "BillingType": {"enum": [0, 1], "type": "integer", "format": "int32"}, "BillingTypeModel": {"enum": [0, 1], "type": "integer", "format": "int32"}, "ContractItemModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "text": {"type": "string", "nullable": true}, "index": {"type": "integer", "format": "int32"}, "positionNumber": {"type": "integer", "format": "int32"}, "referenceNumber": {"type": "string", "nullable": true}, "supplierReferenceNumber": {"type": "string", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingType"}, "quantity": {"$ref": "#/components/schemas/QuantityModel"}, "plannedQuantity": {"$ref": "#/components/schemas/QuantityModel"}, "costs": {"type": "array", "items": {"$ref": "#/components/schemas/CostObjectModel"}, "nullable": true}, "distance": {"type": "number", "format": "double"}, "tollDistance": {"type": "number", "format": "double"}, "vehicleType": {"$ref": "#/components/schemas/VehicleTypeModel"}, "cashDiscount": {"type": "boolean"}, "alternativeType": {"$ref": "#/components/schemas/AlternativeTypeModel"}, "parentItem": {"type": "string", "format": "uuid", "nullable": true}, "printToReporting": {"type": "boolean"}, "useInDisposition": {"type": "boolean"}, "type": {"type": "string", "nullable": true}, "isDiscount": {"type": "boolean", "nullable": true}, "contractNumber": {"type": "string", "nullable": true}, "supplier": {"$ref": "#/components/schemas/Address"}, "article": {"$ref": "#/components/schemas/ArticleModel"}, "loadingAddress": {"$ref": "#/components/schemas/Address"}, "unloadingAddress": {"$ref": "#/components/schemas/Address"}}, "additionalProperties": false}, "ContractModel": {"type": "object", "properties": {"number": {"type": "string", "nullable": true}, "name": {"type": "string", "nullable": true}, "referenceNumber": {"type": "string", "nullable": true}, "orderDate": {"type": "string", "format": "date-time", "nullable": true}, "startDate": {"type": "string", "format": "date-time", "nullable": true}, "endDate": {"type": "string", "format": "date-time", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingTypeModel"}, "projectId": {"type": "string", "format": "uuid", "nullable": true}, "termOfPayment": {"$ref": "#/components/schemas/TermsOfPaymentModel"}, "submissionDate": {"type": "string", "nullable": true}, "insurance": {"type": "number", "format": "double", "nullable": true}, "creditworthiness": {"type": "string", "nullable": true}, "creditLimit": {"type": "string", "nullable": true}, "id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "status": {"$ref": "#/components/schemas/ContractStatusModel"}, "businessPartner": {"$ref": "#/components/schemas/BillableContactModel"}, "customer": {"$ref": "#/components/schemas/BillableContactModel"}, "representativeUser": {"$ref": "#/components/schemas/UserModel"}, "contactPerson": {"$ref": "#/components/schemas/AddressModel"}, "items": {"type": "array", "items": {"$ref": "#/components/schemas/ContractItemModel"}, "nullable": true}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "ContractReportModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "status": {"$ref": "#/components/schemas/ContractStatusModel"}, "businessPartner": {"$ref": "#/components/schemas/BillableContactModel"}, "customer": {"$ref": "#/components/schemas/BillableContactModel"}, "representativeUser": {"$ref": "#/components/schemas/UserModel"}, "contactPerson": {"$ref": "#/components/schemas/AddressModel"}, "items": {"type": "array", "items": {"$ref": "#/components/schemas/ContractItemModel"}, "nullable": true}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}, "name": {"type": "string", "nullable": true}, "referenceNumber": {"type": "string", "nullable": true}, "orderDate": {"type": "string", "format": "date-time", "nullable": true}, "startDate": {"type": "string", "format": "date-time", "nullable": true}, "endDate": {"type": "string", "format": "date-time", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingTypeModel"}, "projectId": {"type": "string", "format": "uuid", "nullable": true}, "termOfPayment": {"$ref": "#/components/schemas/TermsOfPaymentModel"}, "submissionDate": {"type": "string", "nullable": true}, "insurance": {"type": "number", "format": "double", "nullable": true}, "creditworthiness": {"type": "string", "nullable": true}, "creditLimit": {"type": "string", "nullable": true}}, "additionalProperties": false}, "ContractStatusModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}, "roles": {"type": "array", "items": {"type": "string"}, "nullable": true}, "hexCode": {"type": "string", "nullable": true}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}}, "additionalProperties": false}, "CostObjectModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "isDefault": {"type": "boolean"}, "startDate": {"type": "string", "format": "date-time"}, "endDate": {"type": "string", "format": "date-time"}, "purchasePrice": {"type": "number", "format": "double"}, "freightPrice": {"type": "number", "format": "double"}, "salePrice": {"type": "number", "format": "double"}, "tollPrice": {"type": "number", "format": "double"}, "pricePerKilometer": {"type": "number", "format": "double"}, "minimumDistance": {"type": "number", "format": "double"}, "additionalMaterialCost": {"type": "number", "format": "double"}}, "additionalProperties": false}, "CreateContractRequest": {"type": "object", "properties": {"number": {"type": "string", "nullable": true}, "name": {"type": "string", "nullable": true}, "referenceNumber": {"type": "string", "nullable": true}, "orderDate": {"type": "string", "format": "date-time", "nullable": true}, "startDate": {"type": "string", "format": "date-time", "nullable": true}, "endDate": {"type": "string", "format": "date-time", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingTypeModel"}, "projectId": {"type": "string", "format": "uuid", "nullable": true}, "termOfPayment": {"$ref": "#/components/schemas/TermsOfPaymentModel"}, "submissionDate": {"type": "string", "nullable": true}, "insurance": {"type": "number", "format": "double", "nullable": true}, "creditworthiness": {"type": "string", "nullable": true}, "creditLimit": {"type": "string", "nullable": true}, "businessPartnerContactId": {"type": "string", "format": "uuid", "nullable": true}, "businessPartnerPersonalAccountId": {"type": "string", "format": "uuid", "nullable": true}, "customerContactId": {"type": "string", "format": "uuid", "nullable": true}, "customerPersonalAccountId": {"type": "string", "format": "uuid", "nullable": true}, "representativeUserId": {"type": "string", "format": "uuid", "nullable": true}, "contactPersonContactId": {"type": "string", "format": "uuid", "nullable": true}, "items": {"type": "array", "items": {"$ref": "#/components/schemas/CreateItemModel"}, "nullable": true}, "statusId": {"type": "string", "format": "uuid"}}, "additionalProperties": false}, "CreateContractStatusRequest": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}, "roles": {"type": "array", "items": {"type": "string"}, "nullable": true}, "hexCode": {"type": "string", "nullable": true}}, "additionalProperties": false}, "CreateItemModel": {"type": "object", "properties": {"text": {"type": "string", "nullable": true}, "index": {"type": "integer", "format": "int32"}, "positionNumber": {"type": "integer", "format": "int32"}, "referenceNumber": {"type": "string", "nullable": true}, "supplierReferenceNumber": {"type": "string", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingType"}, "articleId": {"type": "string", "format": "uuid", "nullable": true}, "quantity": {"$ref": "#/components/schemas/QuantityModel"}, "plannedQuantity": {"$ref": "#/components/schemas/QuantityModel"}, "costs": {"type": "array", "items": {"$ref": "#/components/schemas/CostObjectModel"}, "nullable": true}, "distance": {"type": "number", "format": "double"}, "tollDistance": {"type": "number", "format": "double"}, "vehicleType": {"$ref": "#/components/schemas/VehicleTypeModel"}, "cashDiscount": {"type": "boolean"}, "alternativeType": {"$ref": "#/components/schemas/AlternativeTypeModel"}, "parentItem": {"type": "string", "format": "uuid", "nullable": true}, "printToReporting": {"type": "boolean"}, "useInDisposition": {"type": "boolean"}, "type": {"type": "string", "nullable": true}, "supplierContactId": {"type": "string", "format": "uuid", "nullable": true}, "loadingAddressId": {"type": "string", "format": "uuid", "nullable": true}, "unloadingAddressId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "PatchCostObject": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "isDefault": {"type": "boolean", "nullable": true}, "startDate": {"type": "string", "format": "date-time", "nullable": true}, "endDate": {"type": "string", "format": "date-time", "nullable": true}, "purchasePrice": {"type": "number", "format": "double", "nullable": true}, "freightPrice": {"type": "number", "format": "double", "nullable": true}, "salePrice": {"type": "number", "format": "double", "nullable": true}, "tollPrice": {"type": "number", "format": "double", "nullable": true}, "pricePerKilometer": {"type": "number", "format": "double", "nullable": true}, "minimumDistance": {"type": "number", "format": "double", "nullable": true}, "additionalMaterialCost": {"type": "number", "format": "double", "nullable": true}}, "additionalProperties": false}, "PatchItemModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "text": {"type": "string", "nullable": true}, "index": {"type": "integer", "format": "int32", "nullable": true}, "positionNumber": {"type": "integer", "format": "int32", "nullable": true}, "referenceNumber": {"type": "string", "nullable": true}, "supplierReferenceNumber": {"type": "string", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingType"}, "articleId": {"type": "string", "format": "uuid", "nullable": true}, "quantity": {"$ref": "#/components/schemas/QuantityModel"}, "plannedQuantity": {"$ref": "#/components/schemas/QuantityModel"}, "costs": {"type": "array", "items": {"$ref": "#/components/schemas/PatchCostObject"}, "nullable": true}, "distance": {"type": "number", "format": "double", "nullable": true}, "tollDistance": {"type": "number", "format": "double", "nullable": true}, "vehicleType": {"$ref": "#/components/schemas/VehicleTypeModel"}, "cashDiscount": {"type": "boolean", "nullable": true}, "alternativeType": {"$ref": "#/components/schemas/AlternativeTypeModel"}, "parentItem": {"type": "string", "format": "uuid", "nullable": true}, "printToReporting": {"type": "boolean", "nullable": true}, "useInDisposition": {"type": "boolean", "nullable": true}, "type": {"type": "string", "nullable": true}, "supplierContactId": {"type": "string", "format": "uuid", "nullable": true}, "loadingAddressId": {"type": "string", "format": "uuid", "nullable": true}, "unloadingAddressId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}, "QuantityModel": {"type": "object", "properties": {"value": {"type": "number", "format": "double"}, "quantityUnit": {"$ref": "#/components/schemas/QuantityUnitModel"}}, "additionalProperties": false}, "QuantityUnitModel": {"type": "object", "properties": {"guid": {"type": "string", "format": "uuid"}, "ident": {"type": "integer", "format": "int32"}, "name": {"type": "string", "nullable": true}, "shortName": {"type": "string", "nullable": true}, "digits": {"type": "integer", "format": "int32", "nullable": true}}, "additionalProperties": false}, "TermsOfPaymentModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}}, "additionalProperties": false}, "UpdateContractRequest": {"type": "object", "properties": {"number": {"type": "string", "nullable": true}, "name": {"type": "string", "nullable": true}, "referenceNumber": {"type": "string", "nullable": true}, "orderDate": {"type": "string", "format": "date-time", "nullable": true}, "startDate": {"type": "string", "format": "date-time", "nullable": true}, "endDate": {"type": "string", "format": "date-time", "nullable": true}, "billingType": {"$ref": "#/components/schemas/BillingTypeModel"}, "projectId": {"type": "string", "format": "uuid", "nullable": true}, "termOfPayment": {"$ref": "#/components/schemas/TermsOfPaymentModel"}, "submissionDate": {"type": "string", "nullable": true}, "insurance": {"type": "number", "format": "double", "nullable": true}, "creditworthiness": {"type": "string", "nullable": true}, "creditLimit": {"type": "string", "nullable": true}, "businessPartnerContactId": {"type": "string", "format": "uuid", "nullable": true}, "businessPartnerPersonalAccountId": {"type": "string", "format": "uuid", "nullable": true}, "customerContactId": {"type": "string", "format": "uuid", "nullable": true}, "customerPersonalAccountId": {"type": "string", "format": "uuid", "nullable": true}, "representativeUserId": {"type": "string", "format": "uuid", "nullable": true}, "contactPersonContactId": {"type": "string", "format": "uuid", "nullable": true}, "items": {"type": "array", "items": {"$ref": "#/components/schemas/PatchItemModel"}, "nullable": true}, "statusId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "UpdateContractStatusRequest": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "number": {"type": "string", "nullable": true}, "roles": {"type": "array", "items": {"type": "string"}, "nullable": true}, "hexCode": {"type": "string", "nullable": true}}, "additionalProperties": false}, "UserModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleTypeModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "loadableWeight": {"type": "number", "format": "double"}}, "additionalProperties": false}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.Contract",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/contract-api/v1"
+        }
+    ],
+    "paths": {
+        "/Contract/{id}": {
+            "get": {
+                "tags": [
+                    "Contract"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Contract"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Contract"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Contract/search": {
+            "get": {
+                "tags": [
+                    "Contract"
+                ],
+                "parameters": [
+                    {
+                        "name": "customerId",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Contract": {
+            "post": {
+                "tags": [
+                    "Contract"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ContractStatus/{id}": {
+            "get": {
+                "tags": [
+                    "ContractStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ContractStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateContractStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ContractStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ContractStatus": {
+            "post": {
+                "tags": [
+                    "ContractStatus"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContractStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ContractStatus/get-all": {
+            "get": {
+                "tags": [
+                    "ContractStatus"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractStatusModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractStatusModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ContractStatusModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Reporting/{id}": {
+            "get": {
+                "tags": [
+                    "Reporting"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractReportModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractReportModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContractReportModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "contactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional01": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional02": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "district": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "AddressModel": {
+                "type": "object",
+                "properties": {
+                    "contactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional01": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional02": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "district": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "AlternativeTypeModel": {
+                "enum": [
+                    0,
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "ArticleGroupModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ArticleModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "uniqueNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fullName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "articleGroup": {
+                        "$ref": "#/components/schemas/ArticleGroupModel"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BillableContactModel": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "personalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "insurance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "creditworthiness": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "creditLimit": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BillingType": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "BillingTypeModel": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "ContractItemModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "index": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "positionNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplierReferenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingType"
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "plannedQuantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "costs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostObjectModel"
+                        },
+                        "nullable": true
+                    },
+                    "distance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "tollDistance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "vehicleType": {
+                        "$ref": "#/components/schemas/VehicleTypeModel"
+                    },
+                    "cashDiscount": {
+                        "type": "boolean"
+                    },
+                    "alternativeType": {
+                        "$ref": "#/components/schemas/AlternativeTypeModel"
+                    },
+                    "parentItem": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "printToReporting": {
+                        "type": "boolean"
+                    },
+                    "useInDisposition": {
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isDiscount": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "contractNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplier": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "article": {
+                        "$ref": "#/components/schemas/ArticleModel"
+                    },
+                    "loadingAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "unloadingAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ContractModel": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingTypeModel"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "termOfPayment": {
+                        "$ref": "#/components/schemas/TermsOfPaymentModel"
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "insurance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "creditworthiness": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "creditLimit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ContractStatusModel"
+                    },
+                    "businessPartner": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "customer": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "representativeUser": {
+                        "$ref": "#/components/schemas/UserModel"
+                    },
+                    "contactPerson": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ContractItemModel"
+                        },
+                        "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ContractReportModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ContractStatusModel"
+                    },
+                    "businessPartner": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "customer": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "representativeUser": {
+                        "$ref": "#/components/schemas/UserModel"
+                    },
+                    "contactPerson": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ContractItemModel"
+                        },
+                        "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingTypeModel"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "termOfPayment": {
+                        "$ref": "#/components/schemas/TermsOfPaymentModel"
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "insurance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "creditworthiness": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "creditLimit": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ContractStatusModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "hexCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CostObjectModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDefault": {
+                        "type": "boolean"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "purchasePrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "freightPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "salePrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "tollPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "pricePerKilometer": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "minimumDistance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "additionalMaterialCost": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateContractRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingTypeModel"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "termOfPayment": {
+                        "$ref": "#/components/schemas/TermsOfPaymentModel"
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "insurance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "creditworthiness": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "creditLimit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "businessPartnerContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "businessPartnerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "representativeUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "contactPersonContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateItemModel"
+                        },
+                        "nullable": true
+                    },
+                    "statusId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateContractStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "hexCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateItemModel": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "index": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "positionNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplierReferenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingType"
+                    },
+                    "articleId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "plannedQuantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "costs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostObjectModel"
+                        },
+                        "nullable": true
+                    },
+                    "distance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "tollDistance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "vehicleType": {
+                        "$ref": "#/components/schemas/VehicleTypeModel"
+                    },
+                    "cashDiscount": {
+                        "type": "boolean"
+                    },
+                    "alternativeType": {
+                        "$ref": "#/components/schemas/AlternativeTypeModel"
+                    },
+                    "parentItem": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "printToReporting": {
+                        "type": "boolean"
+                    },
+                    "useInDisposition": {
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplierContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "loadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "unloadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "contractNumber": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchCostObject": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "purchasePrice": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "freightPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "salePrice": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tollPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pricePerKilometer": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "minimumDistance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "additionalMaterialCost": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchItemModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "index": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "positionNumber": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplierReferenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingType"
+                    },
+                    "articleId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "plannedQuantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "costs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchCostObject"
+                        },
+                        "nullable": true
+                    },
+                    "distance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tollDistance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "vehicleType": {
+                        "$ref": "#/components/schemas/VehicleTypeModel"
+                    },
+                    "cashDiscount": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "alternativeType": {
+                        "$ref": "#/components/schemas/AlternativeTypeModel"
+                    },
+                    "parentItem": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "printToReporting": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "useInDisposition": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "supplierContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "loadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "unloadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "contractNumber": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "QuantityModel": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitModel"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "QuantityUnitModel": {
+                "type": "object",
+                "properties": {
+                    "guid": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "ident": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "digits": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TermsOfPaymentModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateContractRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "billingType": {
+                        "$ref": "#/components/schemas/BillingTypeModel"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "termOfPayment": {
+                        "$ref": "#/components/schemas/TermsOfPaymentModel"
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "insurance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "creditworthiness": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "creditLimit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "businessPartnerContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "businessPartnerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "representativeUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "contactPersonContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchItemModel"
+                        },
+                        "nullable": true
+                    },
+                    "statusId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateContractStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "hexCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UserModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleTypeModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loadableWeight": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}
