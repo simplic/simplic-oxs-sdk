@@ -1,1 +1,361 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.Geo", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/geo-api/v1"}], "paths": {"/Routing/calculate-route": {"post": {"tags": ["Routing"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/RequestRoute"}}, "text/json": {"schema": {"$ref": "#/components/schemas/RequestRoute"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/RequestRoute"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/RoutingResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/RoutingResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/RoutingResponse"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}}, "components": {"schemas": {"ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}, "RequestRoute": {"required": ["waypoints"], "type": "object", "properties": {"traffic": {"$ref": "#/components/schemas/Traffic"}, "waypoints": {"minItems": 2, "type": "array", "items": {"$ref": "#/components/schemas/WaypointModel"}}}, "additionalProperties": false}, "RoutingResponse": {"type": "object", "properties": {"totalDistance": {"type": "number", "format": "double"}, "totalTollDistance": {"type": "number", "format": "double"}, "travelTime": {"type": "integer", "format": "int32"}, "totalTollCosts": {"type": "number", "format": "double"}}, "additionalProperties": false}, "Traffic": {"enum": [0], "type": "integer", "format": "int32"}, "WaypointModel": {"required": ["latitude", "longitude"], "type": "object", "properties": {"latitude": {"type": "number", "format": "double"}, "longitude": {"type": "number", "format": "double"}}, "additionalProperties": false}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.Geo",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/geo-api/v1"
+        }
+    ],
+    "paths": {
+        "/Location/search-address": {
+            "post": {
+                "tags": [
+                    "Location"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestGeoLocation"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestGeoLocation"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestGeoLocation"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Routing/calculate-route": {
+            "post": {
+                "tags": [
+                    "Routing"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestRoute"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestRoute"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RequestRoute"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoutingResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoutingResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RoutingResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LocationResponse": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "roadAccessPosition": {
+                        "$ref": "#/components/schemas/RoadAccessPosition"
+                    },
+                    "formattedAddress": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "RequestGeoLocation": {
+                "type": "object",
+                "properties": {
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RequestRoute": {
+                "required": [
+                    "waypoints"
+                ],
+                "type": "object",
+                "properties": {
+                    "traffic": {
+                        "$ref": "#/components/schemas/Traffic"
+                    },
+                    "waypoints": {
+                        "minItems": 2,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WaypointModel"
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RoadAccessPosition": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RoutingResponse": {
+                "type": "object",
+                "properties": {
+                    "totalDistance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totalTollDistance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "travelTime": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalTollCosts": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Traffic": {
+                "enum": [
+                    0
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "WaypointModel": {
+                "required": [
+                    "latitude",
+                    "longitude"
+                ],
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}
