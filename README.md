@@ -14,6 +14,6 @@ Currently only works with the `restsharp` library (specified in config.yaml)
 - npm
 - python3 along with used libraries (list may be incomplete):
   - requests
-  - yaml
+  - yaml (pyyaml)
   - typing_extensions
 - dotnet framework specified in config.yaml (Default: netstandard 2.0)
