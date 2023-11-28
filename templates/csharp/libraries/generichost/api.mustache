@@ -13,7 +13,6 @@ using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using {{packageName}}.{{clientPackage}};
 {{^netStandard}}
 using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
@@ -243,7 +242,7 @@ namespace {{packageName}}
     /// <summary>
     /// The <see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>
     /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.{{clientPackage}}.{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
     {
         {{#responses}}
         {{#vendorExtensions.x-http-status-is-default}}
@@ -741,7 +740,7 @@ namespace {{packageName}}
         /// <summary>
         /// The <see cref="{{operationId}}ApiResponse"/>
         /// </summary>
-        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.{{clientPackage}}.ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
+        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
         {
             /// <summary>
             /// The logger
