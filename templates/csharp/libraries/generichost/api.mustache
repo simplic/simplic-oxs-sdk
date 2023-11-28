@@ -308,11 +308,6 @@ namespace {{packageName}}
         private JsonSerializerOptions _jsonSerializerOptions;
 
         /// <summary>
-        /// The logger factory
-        /// </summary>
-        public ILoggerFactory LoggerFactory { get; }
-
-        /// <summary>
         /// The logger
         /// </summary>
         public ILogger<{{classname}}> Logger { get; }
@@ -331,11 +326,10 @@ namespace {{packageName}}
         /// Initializes a new instance of the <see cref="__{{classname}}"/> class.
         /// </summary>
         /// <returns></returns>
-        public __{{classname}}(ILogger<{{classname}}> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}})
+        public __{{classname}}(ILogger<{{classname}}> logger, HttpClient httpClient, JsonSerializerOptions jsonSerializerOptions, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}})
         {
-            _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
-            LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<{{classname}}>();
+            _jsonSerializerOptions = jsonSerializerOptions;
+            Logger = logger;
             HttpClient = httpClient;
             Events = {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}};
         }

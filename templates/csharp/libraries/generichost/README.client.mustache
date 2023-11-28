@@ -51,7 +51,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using {{packageName}}.Api;
-using {{packageName}};
+using {{packageName}}.Client;
 using {{packageName}}.Model;
 
 namespace YourProject
@@ -139,7 +139,7 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-models"></a>
 ## Documentation for Models
 
-{{#modelPackage}}{{#models}}{{#model}} - [}.{{{classname}}}]({{modelDocPath}}{{{classname}}}.md){{/model}}{{/models}}{{/modelPackage}}
+{{#modelPackage}}{{#models}}{{#model}} - [{{{modelPackage}}}.{{{classname}}}]({{modelDocPath}}{{{classname}}}.md){{/model}}{{/models}}{{/modelPackage}}
 {{^modelPackage}}No model defined in this package{{/modelPackage}}{{/modelDocs}}
 
 <a id="documentation-for-authorization"></a>

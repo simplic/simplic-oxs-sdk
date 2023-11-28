@@ -15,7 +15,7 @@ using KellermanSoftware.CompareNetObjects;{{/useCompareNetObjects}}
 using {{packageName}};
 using System.Runtime.CompilerServices;
 
-{{>Assembly}}namespace {{packageName}}.{{clientPackage}}
+{{>Assembly}}namespace {{packageName}}
 {
     /// <summary>
     /// Utility functions providing some benefit to API client consumers.
@@ -33,7 +33,11 @@ using System.Runtime.CompilerServices;
         /// </summary>
         static ClientUtils()
         {
-            compareLogic = new CompareLogic();
+            {{#equatable}}
+            ComparisonConfig comparisonConfig = new{{^net70OrLater}} ComparisonConfig{{/net70OrLater}}();
+            comparisonConfig.UseHashCodeIdentifier = true;
+            {{/equatable}}
+            compareLogic = new{{^net70OrLater}} CompareLogic{{/net70OrLater}}({{#equatable}}comparisonConfig{{/equatable}});
         }
         {{/useCompareNetObjects}}
 

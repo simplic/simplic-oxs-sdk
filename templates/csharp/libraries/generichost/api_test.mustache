@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 using Microsoft.Extensions.DependencyInjection;
-using {{packageName}};{{#hasImport}}
+using {{packageName}}.{{apiPackage}};{{#hasImport}}
 using {{packageName}};{{/hasImport}}
 
 
 {{>testInstructions}}
 
 
-namespace {{packageName}}.Test
+namespace {{packageName}}.Test.{{apiPackage}}
 {
     /// <summary>
     ///  Class for testing {{classname}}

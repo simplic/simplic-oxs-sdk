@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace {{packageName}}.{{clientPackage}}
+namespace {{packageName}}
 {
     /// <summary>
     /// A token constructed from a username and password.
@@ -40,7 +40,7 @@ namespace {{packageName}}.{{clientPackage}}
         /// <param name="headerName"></param>
         public virtual void UseInHeader(System.Net.Http.HttpRequestMessage request, string headerName)
         {
-            request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", {{packageName}}.ClientUtils.Base64Encode(_username + ":" + _password));
+            request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", {{packageName}}.Client.ClientUtils.Base64Encode(_username + ":" + _password));
         }
     }
 }
