@@ -88,8 +88,12 @@ stages:
               if [[ $COMMIT_MSG == *"[skip gen]"* ]]; then
                   echo "* Last commit is marked with [skip gen] *"
                   echo "--> Skipping generation"
+              elif [[ $COMMIT_MSG == *"[force gen]"* ]]; then
+                  echo "* Last commit is marked with [force gen] *"
+                  echo "--> Forcing complete generation"
+                  python ./generate.py --force
               else
-                  ./generate.sh
+                  python ./generate.py
               fi
             displayName: "Generate projects"
             condition: ne(variables['Build.Reason'], 'PullRequest')
