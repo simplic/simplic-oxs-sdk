@@ -16,6 +16,7 @@ DEBUG = True
 SAVE_SPECIFICATIONS = True
 
 GEN_CLI = "@openapitools/openapi-generator-cli"
+GEN_VER = "7.1.0"
 GEN_OUT = "openapi-out"
 LIB_DEPS = {
     "generichost": [
@@ -118,7 +119,7 @@ def main(args: Namespace):
             dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
 
     core.cmd(f"npm install {GEN_CLI} -D", DEBUG)
-    core.cmd(f"npx {GEN_CLI} version-manager set 7.0.1", DEBUG)
+    core.cmd(f"npx {GEN_CLI} version-manager set {GEN_VER}", DEBUG)
 
     # read services file
     services_yaml = fsutil.read_yaml(args.input_file)
@@ -161,7 +162,7 @@ def main(args: Namespace):
         sdk_proj_specification = f"{sdk_proj_folder}/{sdk_proj_name}.json"
         if SAVE_SPECIFICATIONS:
             # check if new specification matches old -> skip if true
-            if os.path.isfile(sdk_proj_specification):
+            if not args.force and os.path.isfile(sdk_proj_specification):
                 with open(sdk_proj_specification, 'r') as f:
                     if os.path.getsize(sdk_proj_specification) > 0:
                         print(f"* using old specification for comparison *")
@@ -221,7 +222,7 @@ def main(args: Namespace):
         # Boiler Plate
         fsutil.rec_replace(gen_proj_folder, sdk_proj_name, args.name)
         problem_details = f"{gen_proj_folder}/Model/ProblemDetails.cs"
-        if library != "generichost" and os.path.exists(problem_details):
+        if os.path.exists(problem_details):
             fsutil.move(problem_details, base_proj_folder)
 
         abstract_schema = f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs"
@@ -319,6 +320,13 @@ argparser.add_argument(
     "--api-name-suffix",
     required=True,
     help="Suffix for generated api clients"
+)
+
+argparser.add_argument(
+    "--force",
+    action="store_true",
+    required=False,
+    help="If specified, will generate all projects no matter if anything changed in the specification"
 )
 
 main(argparser.parse_args())
