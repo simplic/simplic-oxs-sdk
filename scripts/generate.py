@@ -229,6 +229,11 @@ def main(args: Namespace):
         if os.path.exists(abstract_schema):
             fsutil.move(abstract_schema, base_proj_folder)
 
+        if library == "generichost":
+            iapi = f"{gen_proj_folder}/Api/IApi.cs"
+            if os.path.exists(iapi):
+                fsutil.move(iapi, base_proj_folder)
+
         fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
 
         # remove service name from boiler plate comments
