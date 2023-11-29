@@ -106,7 +106,9 @@ namespace {{packageName}}
         {
             try
             {
-                {{#returnType}}return {{/returnType}}_internalClient.{{operationId}}({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex);
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex).GetAwaiter().GetResult();
+                
+                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -128,7 +130,9 @@ namespace {{packageName}}
         {
             try
             {
-                return _internalClient.{{operationId}}{{withHttpInfoSuffix}}({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex);
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex).GetAwaiter().GetResult();
+                
+                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -150,11 +154,13 @@ namespace {{packageName}}
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        {{#returnType}}public System.Threading.Tasks.Task<{{{.}}}>{{/returnType}}{{^returnType}}public System.Threading.Tasks.Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {{#returnType}}public async System.Threading.Tasks.Task<{{{.}}}>{{/returnType}}{{^returnType}}public System.Threading.Tasks.Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+            
+                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -175,11 +181,13 @@ namespace {{packageName}}
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        public System.Threading.Tasks.Task<{{packageName}}.ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.{{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+                
+                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -242,7 +250,7 @@ namespace {{packageName}}
     /// <summary>
     /// The <see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>
     /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
     {
         {{#responses}}
         {{#vendorExtensions.x-http-status-is-default}}
@@ -302,9 +310,14 @@ namespace {{packageName}}
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal sealed partial class __{{classname}} : {{interfacePrefix}}{{classname}}
+    {{>visibility}} sealed partial class __{{classname}} : {{interfacePrefix}}{{classname}}
     {
         private JsonSerializerOptions _jsonSerializerOptions;
+
+        /// <summary>
+        /// The logger factory
+        /// </summary>
+        public ILoggerFactory LoggerFactory { get; }
 
         /// <summary>
         /// The logger
@@ -319,18 +332,54 @@ namespace {{packageName}}
         /// <summary>
         /// The class containing the events
         /// </summary>
-        public {{classname}}Events Events { get; }
+        public {{classname}}Events Events { get; }{{#hasApiKeyMethods}}
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__{{classname}}"/> class.
+        /// A token provider of type <see cref="ApiKeyProvider"/>
+        /// </summary>
+        public TokenProvider<ApiKeyToken> ApiKeyProvider { get; }{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}}
+
+        /// <summary>
+        /// A token provider of type <see cref="BearerToken"/>
+        /// </summary>
+        public TokenProvider<BearerToken> BearerTokenProvider { get; }{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}}
+
+        /// <summary>
+        /// A token provider of type <see cref="BasicTokenProvider"/>
+        /// </summary>
+        public TokenProvider<BasicToken> BasicTokenProvider { get; }{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}}
+
+        /// <summary>
+        /// A token provider of type <see cref="HttpSignatureTokenProvider"/>
+        /// </summary>
+        public TokenProvider<HttpSignatureToken> HttpSignatureTokenProvider { get; }{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}}
+
+        /// <summary>
+        /// A token provider of type <see cref="OauthTokenProvider"/>
+        /// </summary>
+        public TokenProvider<OAuthToken> OauthTokenProvider { get; }{{/hasOAuthMethods}}
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="{{classname}}"/> class.
         /// </summary>
         /// <returns></returns>
-        public __{{classname}}(ILogger<{{classname}}> logger, HttpClient httpClient, JsonSerializerOptions jsonSerializerOptions, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}})
+        public {{classname}}(ILogger<{{classname}}> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
+            TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}},
+            TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}},
+            TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}},
+            TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}},
+            TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}})
         {
-            _jsonSerializerOptions = jsonSerializerOptions;
-            Logger = logger;
+            _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
+            LoggerFactory = loggerFactory;
+            Logger = LoggerFactory.CreateLogger<{{classname}}>();
             HttpClient = httpClient;
-            Events = {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}};
+            Events = {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}};{{#hasApiKeyMethods}}
+            ApiKeyProvider = apiKeyProvider;{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}}
+            BearerTokenProvider = bearerTokenProvider;{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}}
+            BasicTokenProvider = basicTokenProvider;{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}}
+            HttpSignatureTokenProvider = httpSignatureTokenProvider;{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}}
+            OauthTokenProvider = oauthTokenProvider;{{/hasOAuthMethods}}
         }
         {{#operation}}
 
@@ -595,14 +644,13 @@ namespace {{packageName}}
                     {{#authMethods}}
                     {{#-first}}
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-
                     {{/-first}}
                     {{#isApiKey}}
-                    ApiKeyToken apiKeyTokenLocalVar = (ApiKeyToken) await ApiKeyProvider.GetAsync(cancellationToken).ConfigureAwait(false);
-
+                    ApiKeyToken apiKeyTokenLocalVar;
+                    apiKeyTokenLocalVar = (ApiKeyToken) await ApiKeyProvider.GetAsync(cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar);{{#isKeyInHeader}}
-
                     apiKeyTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+
                     {{/isKeyInHeader}}
                     {{#isKeyInQuery}}
 
@@ -740,7 +788,7 @@ namespace {{packageName}}
         /// <summary>
         /// The <see cref="{{operationId}}ApiResponse"/>
         /// </summary>
-        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
+        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.__ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
         {
             /// <summary>
             /// The logger
