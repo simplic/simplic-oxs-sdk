@@ -112,7 +112,7 @@ generate()
 
 ########################
 #  fix function names  #
-# beautify()
+beautify()
 ########################
 
 print(f"\n\n{Color.LMAGENTA}**{Color.YELLOW} All done! {Color.LMAGENTA}**{Color.NC}\n\n")
