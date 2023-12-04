@@ -106,9 +106,9 @@ namespace {{packageName}}
         {
             try
             {
-                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex).GetAwaiter().GetResult();
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
                 
-                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -130,9 +130,9 @@ namespace {{packageName}}
         {
             try
             {
-                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex).GetAwaiter().GetResult();
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
                 
-                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -158,9 +158,9 @@ namespace {{packageName}}
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
             
-                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -185,9 +185,9 @@ namespace {{packageName}}
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}operationIndex, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
                 
-                return new ApiResponse<ArticleModel>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -363,12 +363,18 @@ namespace {{packageName}}
         /// Initializes a new instance of the <see cref="{{classname}}"/> class.
         /// </summary>
         /// <returns></returns>
-        public {{classname}}(ILogger<{{classname}}> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
+        public __{{classname}}(
+            ILogger<{{classname}}> logger,
+            ILoggerFactory loggerFactory,
+            HttpClient httpClient,
+            JsonSerializerOptionsProvider jsonSerializerOptionsProvider,
+            {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
             TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}},
             TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}},
             TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}},
             TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}},
-            TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}})
+            TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}}
+        )
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
             LoggerFactory = loggerFactory;
