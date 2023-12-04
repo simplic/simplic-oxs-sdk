@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -315,16 +314,6 @@ namespace {{packageName}}
         private JsonSerializerOptions _jsonSerializerOptions;
 
         /// <summary>
-        /// The logger factory
-        /// </summary>
-        public ILoggerFactory LoggerFactory { get; }
-
-        /// <summary>
-        /// The logger
-        /// </summary>
-        public ILogger<{{classname}}> Logger { get; }
-
-        /// <summary>
         /// The HttpClient
         /// </summary>
         public HttpClient HttpClient { get; }
@@ -364,8 +353,6 @@ namespace {{packageName}}
         /// </summary>
         /// <returns></returns>
         public __{{classname}}(
-            ILogger<{{classname}}> logger,
-            ILoggerFactory loggerFactory,
             HttpClient httpClient,
             JsonSerializerOptionsProvider jsonSerializerOptionsProvider,
             {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
@@ -377,8 +364,6 @@ namespace {{packageName}}
         )
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
-            LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<{{classname}}>();
             HttpClient = httpClient;
             Events = {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}};{{#hasApiKeyMethods}}
             ApiKeyProvider = apiKeyProvider;{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}}
@@ -760,9 +745,7 @@ namespace {{packageName}}
                     {
                         string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
 
-                        ILogger<{{operationId}}ApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<{{operationId}}ApiResponse>();
-
-                        {{operationId}}ApiResponse apiResponseLocalVar = new{{^net60OrLater}} {{operationId}}ApiResponse{{/net60OrLater}}(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "{{path}}", requestedAtLocalVar, _jsonSerializerOptions);
+                        {{operationId}}ApiResponse apiResponseLocalVar = new{{^net60OrLater}} {{operationId}}ApiResponse{{/net60OrLater}}(httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "{{path}}", requestedAtLocalVar, _jsonSerializerOptions);
 
                         After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}apiResponseLocalVar  {{#allParams}}{{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
 
@@ -797,23 +780,16 @@ namespace {{packageName}}
         {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.__ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
         {
             /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<{{operationId}}ApiResponse> Logger { get; }
-
-            /// <summary>
             /// The <see cref="{{operationId}}ApiResponse"/>
             /// </summary>
-            /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
             /// <param name="httpResponseMessage"></param>
             /// <param name="rawContent"></param>
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public {{operationId}}ApiResponse(ILogger<{{operationId}}ApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public {{operationId}}ApiResponse(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
-                Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
