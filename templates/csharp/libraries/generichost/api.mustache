@@ -108,7 +108,7 @@ namespace {{packageName}}
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
                 
-                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return response.Ok();
             }
             catch (ApiException e)
             {
@@ -132,7 +132,7 @@ namespace {{packageName}}
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
                 
-                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -160,7 +160,7 @@ namespace {{packageName}}
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
             
-                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return response.Ok();
             }
             catch (ApiException e)
             {
@@ -187,7 +187,7 @@ namespace {{packageName}}
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
                 
-                return new ApiResponse(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
+                return new ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>(response.StatusCode, response.Headers, response.Ok(), response.RawContent);
             }
             catch (ApiException e)
             {
@@ -250,7 +250,7 @@ namespace {{packageName}}
     /// <summary>
     /// The <see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>
     /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
     {
         {{#responses}}
         {{#vendorExtensions.x-http-status-is-default}}
@@ -840,7 +840,7 @@ namespace {{packageName}}
             /// Deserializes the response if the response is {{code}} {{vendorExtensions.x-http-status}}
             /// </summary>
             /// <returns></returns>
-            public {{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{vendorExtensions.x-http-status}}()
+            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{vendorExtensions.x-http-status}}()
             {
                 {{#lambda.trimTrailingWithNewLine}}
                 {{#lambda.indent4}}
@@ -854,7 +854,7 @@ namespace {{packageName}}
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} result)
+            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} result)
             {
                 result = null;
 
