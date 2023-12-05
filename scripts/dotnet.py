@@ -151,6 +151,6 @@ def add_project_reference(proj_file: str, ref_proj_file: str):
     core.cmd(f"dotnet add {proj_file} reference {ref_proj_file}")
 
 
-def add_project_deps(proj_file, dependencies: list[str]):
+def add_project_deps(proj_file, dependencies: list[str], source: str = "https://api.nuget.org/v3/index.json"):
     for dep in dependencies:
-        core.cmd(f"dotnet add {proj_file} package {dep}")
+        core.cmd(f"dotnet add {proj_file} package {dep} --source {source}")
