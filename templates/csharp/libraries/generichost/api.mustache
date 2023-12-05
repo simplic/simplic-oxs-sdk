@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 {{^netStandard}}
 using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
+using static {{packageName}}.__{{classname}};
 
 namespace {{packageName}}
 {
@@ -239,7 +240,7 @@ namespace {{packageName}}
     /// Represents a collection of functions to interact with the API endpoints
     /// This class is registered as transient.
     /// </summary>
-    {{>visibility}} interface __{{interfacePrefix}}{{classname}} : IApi
+    internal interface __{{interfacePrefix}}{{classname}} : IApi
     {
         /// <summary>
         /// The class containing the events
@@ -258,8 +259,8 @@ namespace {{packageName}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        Task<{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}});
+        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse"/>&gt;</returns>
+        Task<{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}});
 
         /// <summary>
         /// {{summary}}
@@ -271,45 +272,14 @@ namespace {{packageName}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>{{nrt?}}&gt;</returns>
-        Task<{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}});
+        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse"/>{{nrt?}}&gt;</returns>
+        Task<{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}});
         {{^-last}}
 
         {{/-last}}
         {{/operation}}
     }
-    {{#operation}}
-    {{#responses}}
-    {{#-first}}
 
-    /// <summary>
-    /// The <see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>
-    /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
-    {
-        {{#responses}}
-        {{#vendorExtensions.x-http-status-is-default}}
-        /// <summary>
-        /// Returns true if the response is the default response type
-        /// </summary>
-        /// <returns></returns>
-        bool Is{{vendorExtensions.x-http-status}} { get; }
-        {{/vendorExtensions.x-http-status-is-default}}
-        {{^vendorExtensions.x-http-status-is-default}}
-        /// <summary>
-        /// Returns true if the response is {{code}} {{vendorExtensions.x-http-status}}
-        /// </summary>
-        /// <returns></returns>
-        bool Is{{vendorExtensions.x-http-status}} { get; }
-        {{/vendorExtensions.x-http-status-is-default}}
-        {{^-last}}
-
-        {{/-last}}
-        {{/responses}}
-    }
-    {{/-first}}
-    {{/responses}}
-    {{/operation}}
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -328,7 +298,7 @@ namespace {{packageName}}
         /// </summary>
         public event EventHandler<ExceptionEventArgs>{{nrt?}} OnError{{operationId}};
 
-        internal void ExecuteOn{{operationId}}({{classname}}.{{operationId}}ApiResponse apiResponse)
+        internal void ExecuteOn{{operationId}}({{classname}}{{operationId}}ApiResponse apiResponse)
         {
             On{{operationId}}?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
@@ -345,7 +315,7 @@ namespace {{packageName}}
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    {{>visibility}} sealed partial class __{{classname}} : __{{interfacePrefix}}{{classname}}
+    internal sealed partial class __{{classname}} : __{{interfacePrefix}}{{classname}}
     {
         private JsonSerializerOptions _jsonSerializerOptions;
 
@@ -454,7 +424,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        private void After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}{{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
+        private void After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
         {
             bool suppressDefaultLog = false;
             After{{operationId}}({{#lambda.joinWithComma}}ref suppressDefaultLog  apiResponseLocalVar  {{#allParams}}{{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
@@ -469,7 +439,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        partial void After{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  {{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
+        partial void After{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  {{interfacePrefix}}{{classname}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -506,8 +476,8 @@ namespace {{packageName}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        public async Task<{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}})
+        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse"/>&gt;</returns>
+        public async Task<{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}})
         {
             try
             {
@@ -527,8 +497,8 @@ namespace {{packageName}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        public async Task<{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}})
+        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse"/>&gt;</returns>
+        public async Task<{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}})
         {
             {{#lambda.trimLineBreaks}}
             UriBuilder uriBuilderLocalVar = new UriBuilder();
@@ -781,7 +751,7 @@ namespace {{packageName}}
                     {
                         string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
 
-                        {{operationId}}ApiResponse apiResponseLocalVar = new{{^net60OrLater}} {{operationId}}ApiResponse{{/net60OrLater}}(httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "{{path}}", requestedAtLocalVar, _jsonSerializerOptions);
+                        {{classname}}{{operationId}}ApiResponse apiResponseLocalVar = new{{^net60OrLater}} {{classname}}{{operationId}}ApiResponse{{/net60OrLater}}(httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "{{path}}", requestedAtLocalVar, _jsonSerializerOptions);
 
                         After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}apiResponseLocalVar  {{#allParams}}{{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
 
@@ -811,12 +781,38 @@ namespace {{packageName}}
         {{#-first}}
 
         /// <summary>
-        /// The <see cref="{{operationId}}ApiResponse"/>
+        /// The <see cref="{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse"/>
         /// </summary>
-        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.__ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
+        internal interface {{interfacePrefix}}{{classname}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+        {
+            {{#responses}}
+            {{#vendorExtensions.x-http-status-is-default}}
+            /// <summary>
+            /// Returns true if the response is the default response type
+            /// </summary>
+            /// <returns></returns>
+            bool Is{{vendorExtensions.x-http-status}} { get; }
+            {{/vendorExtensions.x-http-status-is-default}}
+            {{^vendorExtensions.x-http-status-is-default}}
+            /// <summary>
+            /// Returns true if the response is {{code}} {{vendorExtensions.x-http-status}}
+            /// </summary>
+            /// <returns></returns>
+            bool Is{{vendorExtensions.x-http-status}} { get; }
+            {{/vendorExtensions.x-http-status-is-default}}
+            {{^-last}}
+    
+            {{/-last}}
+            {{/responses}}
+        }
+
+        /// <summary>
+        /// The <see cref="{{classname}}{{operationId}}ApiResponse"/>
+        /// </summary>
+        internal partial class {{classname}}{{operationId}}ApiResponse : {{packageName}}.__ApiResponse, {{interfacePrefix}}{{classname}}{{operationId}}ApiResponse
         {
             /// <summary>
-            /// The <see cref="{{operationId}}ApiResponse"/>
+            /// The <see cref="{{classname}}{{operationId}}ApiResponse"/>
             /// </summary>
             /// <param name="httpRequestMessage"></param>
             /// <param name="httpResponseMessage"></param>
@@ -824,7 +820,7 @@ namespace {{packageName}}
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public {{operationId}}ApiResponse(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public {{classname}}{{operationId}}ApiResponse(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
