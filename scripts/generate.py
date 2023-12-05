@@ -23,7 +23,8 @@ LIB_DEPS = {
         "Microsoft.Extensions.Http",
         "Microsoft.Extensions.Hosting",
         "Microsoft.Extensions.Http.Polly",
-        "System.ComponentModel.Annotations"
+        "System.ComponentModel.Annotations",
+        "System.Text.Json"
     ],
     "httpclient": [
         "Newtonsoft.Json",
@@ -114,6 +115,7 @@ def main(args: Namespace):
                 LIB_DEPS[library]
             )
             dotnet.add_project_to_solution(sln_file, base_proj_file)
+            dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
         else:
             print("* keeping pre existing base project *")
             dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
@@ -220,25 +222,28 @@ def main(args: Namespace):
 
         # move generated files to proper project(s) and update references
         # Boiler Plate
+        boiler_plate_folder = f"{base_proj_folder}/BoilerPlate"
+        fsutil.create_directory(boiler_plate_folder)
+        
         fsutil.rec_replace(gen_proj_folder, sdk_proj_name, args.name)
         problem_details = f"{gen_proj_folder}/Model/ProblemDetails.cs"
         if os.path.exists(problem_details):
-            fsutil.move(problem_details, base_proj_folder)
+            fsutil.move(problem_details, boiler_plate_folder)
 
         abstract_schema = f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs"
         if os.path.exists(abstract_schema):
-            fsutil.move(abstract_schema, base_proj_folder)
+            fsutil.move(abstract_schema, boiler_plate_folder)
 
         if library == "generichost":
             iapi = f"{gen_proj_folder}/Api/IApi.cs"
             if os.path.exists(iapi):
-                fsutil.move(iapi, base_proj_folder)
+                fsutil.move(iapi, boiler_plate_folder)
 
-        fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
+        fsutil.move(f"{gen_proj_folder}/Client/*", boiler_plate_folder)
 
         # remove service name from boiler plate comments
         print("* cleaning boiler plate.. *")
-        fsutil.rec_replace(base_proj_folder, title, "", ".cs")
+        fsutil.rec_replace(boiler_plate_folder, title, "", ".cs")
 
         # SDK specific
         # insert using for base project and fix namespace
