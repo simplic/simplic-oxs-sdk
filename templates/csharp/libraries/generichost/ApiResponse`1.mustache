@@ -17,6 +17,15 @@ using System.Net.Http.Headers;
 namespace {{packageName}}
 {
     /// <summary>
+    /// Remote environment.
+    /// </summary>
+    {{>visibility}} enum Environment
+    {
+        Development,
+        Production,
+    }
+
+    /// <summary>
     /// A dictionary in which one key has many associated values.
     /// </summary>
     /// <typeparam name="TKey">The type of the key</typeparam>
@@ -603,26 +612,144 @@ namespace {{packageName}}
 
         partial void OnCreated(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
     }
-    {{#x-http-statuses-with-return}}
 
     /// <summary>
-    /// An interface for responses of type {{TType}}
+    /// An interface for responses of type Ok.
     /// </summary>
     /// <typeparam name="TType"></typeparam>
-    {{>visibility}} interface I{{.}}<TType> : __IApiResponse
+    {{>visibility}} interface IOk<TType> : __IApiResponse
     {
         /// <summary>
-        /// Deserializes the response if the response is {{.}}
+        /// Deserializes the response if the response is Ok.
         /// </summary>
         /// <returns></returns>
-        TType {{.}}();
+        TType Ok();
 
         /// <summary>
-        /// Returns true if the response is {{.}} and the deserialized response is not null
+        /// Returns true if the response is Ok and the deserialized response is not null.
         /// </summary>
         /// <param name="result"></param>
         /// <returns></returns>
-        bool Try{{.}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+        bool TryOk({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
     }
-    {{/x-http-statuses-with-return}}
+
+    /// <summary>
+    /// An interface for responses of type Unauthorized.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface IUnauthorized<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is Unauthorized.
+        /// </summary>
+        /// <returns></returns>
+        TType Unauthorized();
+
+        /// <summary>
+        /// Returns true if the response is Unauthorized and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryUnauthorized({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
+
+    /// <summary>
+    /// An interface for responses of type BadRequest.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface IBadRequest<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is BadRequest.
+        /// </summary>
+        /// <returns></returns>
+        TType BadRequest();
+
+        /// <summary>
+        /// Returns true if the response is BadRequest and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryBadRequest({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
+
+    /// <summary>
+    /// An interface for responses of type NotFound.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface INotFound<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is NotFound.
+        /// </summary>
+        /// <returns></returns>
+        TType NotFound();
+
+        /// <summary>
+        /// Returns true if the response is NotFound and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryNotFound({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
+
+    /// <summary>
+    /// An interface for responses of type InternalServerError.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface IInternalServerError<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is InternalServerError.
+        /// </summary>
+        /// <returns></returns>
+        TType InternalServerError();
+    
+        /// <summary>
+        /// Returns true if the response is InternalServerError and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryInternalServerError({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
+    
+    /// <summary>
+    /// An interface for responses of type Forbidden.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface IForbidden<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is Forbidden.
+        /// </summary>
+        /// <returns></returns>
+        TType Forbidden();
+    
+        /// <summary>
+        /// Returns true if the response is Forbidden and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryForbidden({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
+    
+    /// <summary>
+    /// An interface for responses of type NotImplemented.
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    {{>visibility}} interface INotImplemented<TType> : __IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is NotImplemented.
+        /// </summary>
+        /// <returns></returns>
+        TType NotImplemented();
+    
+        /// <summary>
+        /// Returns true if the response is NotImplemented and the deserialized response is not null.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryNotImplemented({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+    }
 }
