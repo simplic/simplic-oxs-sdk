@@ -59,7 +59,7 @@ namespace {{packageName}}
         /// </summary>
         /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
         {{#allParams}}/// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}/// <param name="operationIndex">Index associated with the operation.</param>
+        {{/allParams}}
         /// <returns>ApiResponse of {{returnType}}{{^returnType}}Object(void){{/returnType}}</returns>
         {{#isDeprecated}}
         [Obsolete]
@@ -74,13 +74,12 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
         {{/allParams}}
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of {{returnType}}{{^returnType}}void{{/returnType}}</returns>
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        {{#returnType}}Task<{{{.}}}>{{/returnType}}{{^returnType}}Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}, CancellationToken cancellationToken = default(CancellationToken));
+        {{#returnType}}Task<{{{.}}}>{{/returnType}}{{^returnType}}Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// {{summary}} {{notes}}
@@ -89,13 +88,12 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
         {{/allParams}}
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse{{#returnType}} ({{.}}){{/returnType}}</returns>
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken));
         {{/supportsAsync}}
 
         {{/operation}}
@@ -194,11 +192,11 @@ namespace {{packageName}}
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        {{#returnType}}public async Task<{{{.}}}>{{/returnType}}{{^returnType}}public async Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}, CancellationToken cancellationToken = default(CancellationToken))
+        {{#returnType}}public async Task<{{{.}}}>{{/returnType}}{{^returnType}}public async Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken))
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
                 if (!response.IsSuccessStatusCode)
                     throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
             
@@ -214,11 +212,11 @@ namespace {{packageName}}
         {{#isDeprecated}}
         [Obsolete]
         {{/isDeprecated}}
-        public async Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken))
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}, cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
                 if (!response.IsSuccessStatusCode)
                     throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
                 
