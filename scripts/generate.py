@@ -24,7 +24,8 @@ LIB_DEPS = {
         "Microsoft.Extensions.Hosting",
         "Microsoft.Extensions.Http.Polly",
         "System.ComponentModel.Annotations",
-        "System.Text.Json"
+        "System.Text.Json",
+        "System.Threading.Channels"
     ],
     "httpclient": [
         "Newtonsoft.Json",
@@ -238,6 +239,10 @@ def main(args: Namespace):
             iapi = f"{gen_proj_folder}/Api/IApi.cs"
             if os.path.exists(iapi):
                 fsutil.move(iapi, boiler_plate_folder)
+                
+            host_cfg = f"{gen_proj_folder}/Client/HostConfiguration.cs"
+            if os.path.exists(host_cfg):
+                fsutil.remove(host_cfg)
 
         fsutil.move(f"{gen_proj_folder}/Client/*", boiler_plate_folder)
 
