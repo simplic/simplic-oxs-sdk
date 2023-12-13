@@ -217,7 +217,7 @@ def main(args: Namespace):
         # explanation:
         #   match fn name that ends with `(` (function call)
         #   or is preceeded by `(` (function reference) as in MyReferringCall(MyFunction, ...)
-        pattern = re.compile(rf'{re.escape(fn.name)}(?=\()|(?<=\(){re.escape(fn.name)}')
+        pattern = re.compile(rf'\b{re.escape(fn.name)}(?=\()\b|\b(?<=\(){re.escape(fn.name)}\b')
         file_content = pattern.sub(pretty_name, file_content, count=10)
 
         if doc_file:
