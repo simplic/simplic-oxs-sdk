@@ -5,6 +5,8 @@
 
 {{/nrt}}
 
+using System;
+
 namespace {{packageName}}
 {
     /// <summary>
@@ -32,6 +34,175 @@ namespace {{packageName}}
             Value = value;
         }
 
+        //--custom ctors and overloads
+        /* #########################
+        # For special nullables #
+        ######################### */
+
+        public Option(bool? value)
+        {
+            ThrowIfNotType(typeof(bool));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(int? value)
+        {
+            ThrowIfNotType(typeof(int));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(float? value)
+        {
+            ThrowIfNotType(typeof(float));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(double? value)
+        {
+            ThrowIfNotType(typeof(double));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(DateTime? value)
+        {
+            ThrowIfNotType(typeof(DateTime));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(Enum? value)
+        {
+            ThrowIfNotType(typeof(Enum));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        public Option(Guid? value)
+        {
+            ThrowIfNotType(typeof(Guid));
+
+            IsSet = true;
+            Value = (TType)(object)value!;
+        }
+
+        /* #########################
+            # From other options    #
+            ######################### */
+
+        // public Option(Option<bool?> option)
+        // {
+        //     ThrowIfNotType(typeof(bool));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+        // public Option(Option<int?> option)
+        // {
+        //     ThrowIfNotType(typeof(int));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+        // public Option(Option<float?> option)
+        // {
+        //     ThrowIfNotType(typeof(float));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+        // public Option(Option<double?> option)
+        // {
+        //     ThrowIfNotType(typeof(double));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+        // public Option(Option<DateTime?> option)
+        // {
+        //     ThrowIfNotType(typeof(DateTime));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+        public Option(Option<Enum?> option)
+        {
+            ThrowIfNotType(typeof(Enum));
+
+            IsSet = true;
+            Value = (TType)(object)option.Value!;
+        }
+
+        // public Option(Option<Guid?> option)
+        // {
+        //     ThrowIfNotType(typeof(Guid));
+
+        //     IsSet = true;
+        //     Value = (TType)(object)option.Value!;
+        // }
+
+
+        /* #########################
+            # For conversion of SNs #
+            ######################### */
+            
+        public static implicit operator Option<TType>(Option<bool?> right)
+        {
+            ThrowIfNotType(typeof(bool));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+
+        public static implicit operator Option<TType>(Option<int?> right)
+        {
+            ThrowIfNotType(typeof(int));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+
+        public static implicit operator Option<TType>(Option<double?> right)
+        {
+            ThrowIfNotType(typeof(double));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+
+        public static implicit operator Option<TType>(Option<DateTime?> right)
+        {
+            ThrowIfNotType(typeof(DateTime));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+
+        public static implicit operator Option<TType>(Option<Enum?> right)
+        {
+            ThrowIfNotType(typeof(Enum));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+
+        public static implicit operator Option<TType>(Option<Guid?> right)
+        {
+            ThrowIfNotType(typeof(Guid));
+
+            return right.IsSet ? new Option<TType>((TType)(object)right.Value!) : new Option<TType>();
+        }
+        //
+
         /// <summary>
         /// Implicitly converts this option to the contained type
         /// </summary>
@@ -43,5 +214,11 @@ namespace {{packageName}}
         /// </summary>
         /// <param name="value"></param>
         public static implicit operator Option<TType>(TType value) => new Option<TType>(value);
+
+        private static void ThrowIfNotType(Type type)
+        {
+            if (typeof(TType) != type)
+                throw new InvalidOperationException($"Invalid type. Expected: {type}, Actual: {typeof(TType)}");
+        }
     }
 }
