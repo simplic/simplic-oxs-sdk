@@ -25,6 +25,37 @@ namespace {{packageName}}
         Production,
     }
 
+    public static class Utf8JsonWriterExtension
+    {
+        public static void WriteString(this Utf8JsonWriter writer, string propertyName, Guid? id)
+        {
+            writer.WriteString(propertyName, id!.Value);
+        }
+
+        public static void WriteNumber(this Utf8JsonWriter writer, string propertyName, int? number)
+        {
+            writer.WriteNumber(propertyName, number!.Value);
+        }
+
+        public static void WriteNumber(this Utf8JsonWriter writer, string propertyName, float? number)
+        {
+            writer.WriteNumber(propertyName, number!.Value);
+        }
+
+        public static void WriteNumber(this Utf8JsonWriter writer, string propertyName, double? number)
+        {
+            writer.WriteNumber(propertyName, number!.Value);
+        }
+    }
+
+    public static class DateTimeExtension
+    {
+        public static string ToString(this DateTime? dateTime, string format)
+        {
+            return dateTime.GetValueOrDefault().ToString(format);
+        }
+    }
+
     /// <summary>
     /// A dictionary in which one key has many associated values.
     /// </summary>
