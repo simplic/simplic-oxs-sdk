@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 {{^netStandard}}
@@ -102,23 +103,22 @@ namespace {{packageName}}
     {{>visibility}} class {{classname}} : {{interfacePrefix}}{{classname}}
     {
         private __{{classname}} _internalClient;
+        private HttpClient _httpClient;
 
         public {{classname}}(string host, string? authorization = null)
         {
-            if (authorization != null)
+            _httpClient = new HttpClient() { BaseAddress = new Uri($"{host}/{{service}}-api/{{apiVersion}}") };
+            var jsonSerializerOptions = new JsonSerializerOptions() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+            var jsonSerializerOptionsProvider = new JsonSerializerOptionsProvider(jsonSerializerOptions);
+            var events = new {{classname}}Events();
+            if (authorization is null)
             {
-                _internalClient = new __{{classname}}(new Configuration
-                {
-                    BasePath = $"{host}/{{service}}-api/{{apiVersion}}",
-                    DefaultHeaders = { { "Authorization", authorization } }
-                });
+                _internalClient = new __{{classname}}(_httpClient, jsonSerializerOptionsProvider, events, new NullTokenProvider<ApiKeyToken>());
             }
             else
             {
-                _internalClient = new __{{classname}}(new Configuration
-                {
-                    BasePath = $"{host}/{{service}}-api/{{apiVersion}}",
-                });
+                var token = new ApiKeyToken(authorization, "Authorization", "");
+                _internalClient = new __{{classname}}(_httpClient, jsonSerializerOptionsProvider, events, new ApiKeyTokenProvider(new[] { token }));
             }
         }
 
@@ -131,17 +131,7 @@ namespace {{packageName}}
             ) { }
 
         /// <inheritdoc />
-        public string GetBasePath() => _internalClient.GetBasePath();
-        
-        /// <inheritdoc />
-        //public IReadableConfiguration Configuration
-        //{
-        //    get => _internalClient.Configuration;
-        //    set
-        //    {
-        //        _internalClient.Configuration = value;
-        //    }
-        //}
+        public string GetBasePath() => _httpClient.BaseAddress.ToString();
 
         {{#operation}}
         /// <inheritdoc />
@@ -640,16 +630,21 @@ namespace {{packageName}}
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     {{/-first}}
                     {{#isApiKey}}
-                    ApiKeyToken apiKeyTokenLocalVar;
-                    apiKeyTokenLocalVar = (ApiKeyToken) await ApiKeyProvider.GetAsync(cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar);{{#isKeyInHeader}}
-                    apiKeyTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
-
-                    {{/isKeyInHeader}}
+                    if (ApiKeyProvider.HasTokens)
+                    {
+                        ApiKeyToken apiKeyTokenLocalVar;
+                        apiKeyTokenLocalVar = (ApiKeyToken) await ApiKeyProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+                        tokenBaseLocalVars.Add(apiKeyTokenLocalVar);
+                        {{#isKeyInHeader}}
+                        //apiKeyTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                        apiKeyTokenLocalVar.UseInHeader(httpRequestMessageLocalVar);
+                        {{/isKeyInHeader}}
+                        {{#isKeyInQuery}}
+                        apiKeyTokenLocalVar.UseInQuery(httpRequestMessageLocalVar, uriBuilderLocalVar, parseQueryStringLocalVar, "{{keyParamName}}");
+                        {{/isKeyInQuery}}
+                    }
+                    
                     {{#isKeyInQuery}}
-
-                    apiKeyTokenLocalVar.UseInQuery(httpRequestMessageLocalVar, uriBuilderLocalVar, parseQueryStringLocalVar, "{{keyParamName}}");
-
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
                     {{/isKeyInQuery}}
                     {{/isApiKey}}
@@ -657,41 +652,50 @@ namespace {{packageName}}
 
                     {{! below line must be after any UseInQuery calls, but before using the HttpSignatureToken}}
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
                     {{#authMethods}}
                     {{#isBasicBasic}}
+                    if (BasicTokenProvider.HasTokens)
+                    {
+                        BasicToken basicTokenLocalVar = (BasicToken) await BasicTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
-                    BasicToken basicTokenLocalVar = (BasicToken) await BasicTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        tokenBaseLocalVars.Add(basicTokenLocalVar);
 
-                    tokenBaseLocalVars.Add(basicTokenLocalVar);
-
-                    basicTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                        basicTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isBasicBasic}}
                     {{#isBasicBearer}}
+                    if (BearerTokenProvider.HasTokens)
+                    {
+                        BearerToken bearerTokenLocalVar = (BearerToken) await BearerTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
-                    BearerToken bearerTokenLocalVar = (BearerToken) await BearerTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        tokenBaseLocalVars.Add(bearerTokenLocalVar);
 
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar);
-
-                    bearerTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                        bearerTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isBasicBearer}}
                     {{#isOAuth}}
+                    if (OauthTokenProvider.HasTokens)
+                    {
+                        OAuthToken oauthTokenLocalVar = (OAuthToken) await OauthTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
-                    OAuthToken oauthTokenLocalVar = (OAuthToken) await OauthTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        tokenBaseLocalVars.Add(oauthTokenLocalVar);
 
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar);
-
-                    oauthTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                        oauthTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isOAuth}}
                     {{#isHttpSignature}}
+                    if (HttpSignatureTokenProvider.HasTokens)
+                    {
+                        HttpSignatureToken httpSignatureTokenLocalVar = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
-                    HttpSignatureToken httpSignatureTokenLocalVar = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        tokenBaseLocalVars.Add(httpSignatureTokenLocalVar);
 
-                    tokenBaseLocalVars.Add(httpSignatureTokenLocalVar);
+                        if (httpRequestMessageLocalVar.Content != null) {
+                            string requestBodyLocalVar = await httpRequestMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
 
-                    if (httpRequestMessageLocalVar.Content != null) {
-                        string requestBodyLocalVar = await httpRequestMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
-
-                        httpSignatureTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, requestBodyLocalVar, cancellationToken);
+                            httpSignatureTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, requestBodyLocalVar, cancellationToken);
+                        }
                     }
                     {{/isHttpSignature}}
                     {{/authMethods}}
