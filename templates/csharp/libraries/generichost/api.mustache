@@ -846,10 +846,11 @@ namespace {{packageName}}
             {{#dataType}}
 
             /// <summary>
-            /// Deserializes the response if the response is {{code}} {{vendorExtensions.x-http-status}}
+            /// Deserializes the response if the response is {{code}} {{vendorExtensions.x-http-status}}.
+            /// Throws <see cref="ApiException"> otherwise.
             /// </summary>
             /// <returns></returns>
-            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{vendorExtensions.x-http-status}}()
+            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}} {{vendorExtensions.x-http-status}}()
             {
                 {{#lambda.trimTrailingWithNewLine}}
                 {{#lambda.indent4}}
