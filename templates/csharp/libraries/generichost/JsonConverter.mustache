@@ -38,7 +38,7 @@
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             {{#allVars}}
-            Option<{{#isInnerEnum}}{{^isMap}}{{classname}}.{{/isMap}}{{/isInnerEnum}}{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}> {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            Option<{{#isInnerEnum}}{{^isMap}}{{classname}}.{{/isMap}}{{/isInnerEnum}}{{{datatypeWithEnum}}}> {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             {{/-last}}
@@ -88,7 +88,7 @@
             {{#composedSchemas}}
             {{#oneOf}}
             {{^vendorExtensions.x-duplicated-data-type}}
-            {{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            {{{datatypeWithEnum}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             Utf8JsonReader utf8JsonReaderOneOf = utf8JsonReader;
@@ -104,7 +104,7 @@
                 {
                     {{#oneOf}}
                     Utf8JsonReader utf8JsonReader{{name}} = utf8JsonReader;
-                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
+                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
                     {{^-last}}
 
                     {{/-last}}
@@ -117,7 +117,7 @@
 
             {{#anyOf}}
             {{^vendorExtensions.x-duplicated-data-type}}
-            {{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            {{{datatypeWithEnum}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             Utf8JsonReader utf8JsonReaderAnyOf = utf8JsonReader;
@@ -133,7 +133,7 @@
                 {
                     {{#anyOf}}
                     Utf8JsonReader utf8JsonReader{{name}} = utf8JsonReader;
-                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
+                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
                     {{^-last}}
 
                     {{/-last}}
@@ -291,9 +291,9 @@
             {{^composedSchemas.oneOf}}
             {{^required}}
             {{#model.composedSchemas.anyOf}}
-            Option<{{baseType}}{{>NullConditionalProperty}}> {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue = {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}} == null
+            Option<{{baseType}}> {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue = {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}} == null
                 ? default
-                : new Option<{{baseType}}{{>NullConditionalProperty}}>({{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}});
+                : new Option<{{baseType}}>({{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}});
             {{/model.composedSchemas.anyOf}}
             {{#-last}}
 
