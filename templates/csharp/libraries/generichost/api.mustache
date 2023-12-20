@@ -601,12 +601,12 @@ namespace {{packageName}}
                     {{/isFile}}
                     {{#isFile}}
                     {{#required}}
-                    multipartContentLocalVar.Add(new StreamContent({{paramName}}));
+                    multipartContentLocalVar.Add(StreamContentExtension.From({{paramName}}));
 
                     {{/required}}
                     {{^required}}
                     if ({{paramName}}.IsSet)
-                        multipartContentLocalVar.Add(new StreamContent({{paramName}}.Value));
+                        multipartContentLocalVar.Add(StreamContentExtension.From({{paramName}}.Value));
 
                     {{/required}}
                     {{/isFile}}
