@@ -108,7 +108,7 @@ namespace {{packageName}}
         public {{classname}}(string host, string? authorization = null)
         {
             _httpClient = new HttpClient() { BaseAddress = new Uri($"{host}/{{service}}-api/{{apiVersion}}") };
-            var jsonSerializerOptions = new JsonSerializerOptions() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+            var jsonSerializerOptions = new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
             var jsonSerializerOptionsProvider = new JsonSerializerOptionsProvider(jsonSerializerOptions);
             var events = new {{classname}}Events();
             if (authorization is null)
@@ -508,7 +508,7 @@ namespace {{packageName}}
                     uriBuilderLocalVar.Host = HttpClient.BaseAddress{{nrt!}}.Host;
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = ClientUtils.CONTEXT_PATH + "{{path}}";
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.PathAndQuery + "{{path}}";
                     {{/servers}}
                     {{#servers}}
                     {{#-first}}
