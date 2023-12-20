@@ -26,6 +26,38 @@ namespace {{packageName}}
         Production,
     }
 
+    public static class StreamContentExtension
+    {
+        public static StreamContent From(Stream stream)
+        {
+            return new StreamContent(stream);
+        }
+
+        public static StreamContent From(Stream stream, int bufferSize)
+        {
+            return new StreamContent(stream, bufferSize);
+        }
+
+        public static IEnumerable<StreamContent> From(IEnumerable<Stream> streams)
+        {
+            var result = new List<StreamContent>();
+            foreach (var stream in streams)
+                result.Add(new StreamContent(stream));
+
+            return result;
+        }
+    }
+
+    public static class MultipartContentExtension
+    {
+        public static void Add(this MultipartContent multipartContent, IEnumerable<StreamContent> streamContents)
+        {
+            var result = new List<StreamContent>();
+            foreach (var streamContent in streamContents)
+                result.Add(streamContent);
+        }
+    }
+
     public static class Utf8JsonWriterExtension
     {
         public static void WriteString(this Utf8JsonWriter writer, string propertyName, Guid? id)
