@@ -3,6 +3,16 @@
     /// </summary>
     {{>visibility}} partial class {{classname}}{{#lambda.firstDot}}{{#parent}} : .{{/parent}}{{#validatable}} : .{{/validatable}}{{#equatable}}{{#readOnlyVars}}{{#-first}} : .{{/-first}}{{/readOnlyVars}}{{/equatable}}{{/lambda.firstDot}}{{#lambda.joinWithComma}}{{#parent}}{{{.}}}  {{/parent}}{{>ImplementsIEquatable}}{{#validatable}}IValidatableObject  {{/validatable}}{{/lambda.joinWithComma}}
     {
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        [JsonConstructor]
+        {{#model.vendorExtensions.x-model-is-mutatable}}{{>visibility}}{{/model.vendorExtensions.x-model-is-mutatable}}{{^model.vendorExtensions.x-model-is-mutatable}}internal{{/model.vendorExtensions.x-model-is-mutatable}} {{classname}}()
+        {
+
+        }
+
         {{#composedSchemas.oneOf}}
         {{^vendorExtensions.x-duplicated-data-type}}
         /// <summary>
@@ -47,7 +57,7 @@
         /// <param name="{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}">{{description}}{{^description}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{/description}}{{#defaultValue}} (default to {{.}}){{/defaultValue}}</param>
         {{/allVars}}
         {{^composedSchemas.anyOf}}
-        [JsonConstructor]
+        //[JsonConstructor]
         {{/composedSchemas.anyOf}}
         {{#model.vendorExtensions.x-model-is-mutatable}}{{>visibility}}{{/model.vendorExtensions.x-model-is-mutatable}}{{^model.vendorExtensions.x-model-is-mutatable}}internal{{/model.vendorExtensions.x-model-is-mutatable}} {{classname}}({{#lambda.joinWithComma}}{{#composedSchemas.anyOf}}{{^required}}Option<{{/required}}{{{name}}}{{^required}}>{{/required}} {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}  {{/composedSchemas.anyOf}}{{>ModelSignature}}{{/lambda.joinWithComma}}){{#parent}} : base({{#lambda.joinWithComma}}{{>ModelBaseSignature}}{{/lambda.joinWithComma}}){{/parent}}
         {
@@ -90,6 +100,7 @@
         /// </summary>
         [JsonIgnore]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        //[JsonConverter(typeof(OptionJsonConverter<{{{datatypeWithEnum}}}>))]
         public {{#isNew}}new {{/isNew}}Option<{{{datatypeWithEnum}}}> {{name}}Option { get; {{^isReadOnly}}private set; {{/isReadOnly}}}
 
         {{/required}}
@@ -118,6 +129,7 @@
         /// </summary>
         [JsonIgnore]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        //[JsonConverter(typeof(OptionJsonConverter<{{{datatypeWithEnum}}}>))]
         public {{#isNew}}new {{/isNew}}Option<{{{datatypeWithEnum}}}> {{#lambda.titlecase}}{{baseType}}{{/lambda.titlecase}}Option { get; {{^isReadOnly}}private set; {{/isReadOnly}}}
 
         {{/required}}
@@ -161,6 +173,7 @@
         /// </summary>
         [JsonIgnore]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        //[JsonConverter(typeof(OptionJsonConverter<{{{datatypeWithEnum}}}>))]
         public new Option<{{{datatypeWithEnum}}}> {{name}}Option { get; {{^isReadOnly}}private set; {{/isReadOnly}}}
 
         {{/required}}
@@ -186,6 +199,7 @@
         /// </summary>
         [JsonIgnore]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        //[JsonConverter(typeof(OptionJsonConverter<{{{datatypeWithEnum}}}>))]
         public Option<{{{datatypeWithEnum}}}> {{name}}Option { get; {{^isReadOnly}}private set; {{/isReadOnly}}}
 
         {{/required}}
