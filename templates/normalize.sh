@@ -40,7 +40,7 @@ rec_replace() {
 
 echo ">> Normalizing.."
 
-DIR="./csharp"
+DIR="$(dirname "$0")/csharp"
 
 # Files in Client/ are boiler plate and belong to the base project
 # Normalize namespaces & usages to remove unwanted suffixes

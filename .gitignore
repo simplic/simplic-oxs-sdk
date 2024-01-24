@@ -379,3 +379,4 @@ openapitools.json
 openapi-out*/
 test*.*
 .config/
+.python/
