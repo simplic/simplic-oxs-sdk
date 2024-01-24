@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
-**Number** | **int** |  | [optional] 
+**Number** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Street** | **string** |  | [optional] 
 **Zipcode** | **string** |  | [optional] 
 **District** | **string** |  | [optional] 
-**Land** | **string** |  | [optional] 
+**FederalState** | **string** |  | [optional] 
 **Country** | **string** |  | [optional] 
 **CountryIso** | **string** |  | [optional] 
 **City** | **string** |  | [optional] 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **Number** | **string** |  | [optional] 
 **VatId** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **CreditLimit** | [**CreditLimitModel**](CreditLimitModel.md) |  | [optional] 
-**AddressContactIds** | **List&lt;Guid&gt;** |  | [optional] 
 **SaleTermsOfPaymentId** | **Guid?** |  | [optional] 
 **PurchaseTermsOfPaymentId** | **Guid?** |  | [optional] 
 **TaxGroupId** | **Guid?** |  | [optional] 

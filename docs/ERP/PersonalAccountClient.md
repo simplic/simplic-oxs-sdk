@@ -7,7 +7,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**AddAddressContactId**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} |  |
 | [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} |  |
 | [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} |  |
-| [**Put**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} |  |
+| [**Patch**](PersonalAccountClient.md#personalaccountidpatch) | **PATCH** /PersonalAccount/{id} |  |
 | [**Post**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount |  |
 | [**RemoveAddressContactId**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} |  |
 
@@ -290,9 +290,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="personalaccountidput"></a>
-# **Put**
-> PersonalAccountModel Put (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
+<a id="personalaccountidpatch"></a>
+# **Patch**
+> PersonalAccountModel Patch (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
 
 
 
@@ -306,7 +306,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -323,12 +323,12 @@ namespace Example
 
             try
             {
-                PersonalAccountModel result = apiInstance.Put(id, updatePersonalAccountRequest);
+                PersonalAccountModel result = apiInstance.Patch(id, updatePersonalAccountRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PersonalAccountClient.Put: " + e.Message);
+                Debug.Print("Exception when calling PersonalAccountClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -337,20 +337,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PersonalAccountModel> response = apiInstance.PutWithHttpInfo(id, updatePersonalAccountRequest);
+    ApiResponse<PersonalAccountModel> response = apiInstance.PatchWithHttpInfo(id, updatePersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PersonalAccountClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PersonalAccountClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

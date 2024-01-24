@@ -5,6 +5,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**GetAll**](LoadingAidTypeClient.md#loadingaidtypegetallget) | **GET** /LoadingAidType/get-all | Retrieves all loading aid types. |
+| [**Delete**](LoadingAidTypeClient.md#loadingaidtypeiddelete) | **DELETE** /LoadingAidType/{id} | Deletes loading aid type matching given id. |
 | [**Get**](LoadingAidTypeClient.md#loadingaidtypeidget) | **GET** /LoadingAidType/{id} | Retrives the loading aid type with the given id. |
 | [**Patch**](LoadingAidTypeClient.md#loadingaidtypeidpatch) | **PATCH** /LoadingAidType/{id} | Patches the loading aid type. |
 | [**Post**](LoadingAidTypeClient.md#loadingaidtypepost) | **POST** /LoadingAidType | Creates a new loading aid type. |
@@ -96,6 +97,98 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="loadingaidtypeiddelete"></a>
+# **Delete**
+> void Delete (Guid id)
+
+Deletes loading aid type matching given id.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+using Simplic.OxS.SDK.Logistics;
+
+namespace Example
+{
+    public class DeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new LoadingAidTypeClient(config);
+            var id = "id_example";  // Guid | 
+
+            try
+            {
+                // Deletes loading aid type matching given id.
+                apiInstance.Delete(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling LoadingAidTypeClient.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Deletes loading aid type matching given id.
+    apiInstance.DeleteWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling LoadingAidTypeClient.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

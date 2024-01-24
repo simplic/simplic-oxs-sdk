@@ -6,7 +6,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 |--------|--------------|-------------|
 | [**Delete**](CurrencyClient.md#currencyiddelete) | **DELETE** /Currency/{id} |  |
 | [**Get**](CurrencyClient.md#currencyidget) | **GET** /Currency/{id} |  |
-| [**Put**](CurrencyClient.md#currencyidput) | **PUT** /Currency/{id} |  |
+| [**Patch**](CurrencyClient.md#currencyidpatch) | **PATCH** /Currency/{id} |  |
 | [**Post**](CurrencyClient.md#currencypost) | **POST** /Currency |  |
 
 <a id="currencyiddelete"></a>
@@ -100,7 +100,7 @@ void (empty response body)
 
 <a id="currencyidget"></a>
 # **Get**
-> TransactionCurrencyModel Get (Guid id)
+> CurrencyModel Get (Guid id)
 
 
 
@@ -130,7 +130,7 @@ namespace Example
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.Get(id);
+                CurrencyModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -150,7 +150,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<CurrencyModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -171,7 +171,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionCurrencyModel**](TransactionCurrencyModel.md)
+[**CurrencyModel**](CurrencyModel.md)
 
 ### Authorization
 
@@ -188,12 +188,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="currencyidput"></a>
-# **Put**
-> TransactionCurrencyModel Put (Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
+<a id="currencyidpatch"></a>
+# **Patch**
+> CurrencyModel Patch (Guid id, UpdateCurrencyRequest? updateCurrencyRequest = null)
 
 
 
@@ -207,7 +208,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -220,16 +221,16 @@ namespace Example
 
             var apiInstance = new CurrencyClient(config);
             var id = "id_example";  // Guid | 
-            var createTransactionCurrencyRequest = new CreateTransactionCurrencyRequest?(); // CreateTransactionCurrencyRequest? |  (optional) 
+            var updateCurrencyRequest = new UpdateCurrencyRequest?(); // UpdateCurrencyRequest? |  (optional) 
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.Put(id, createTransactionCurrencyRequest);
+                CurrencyModel result = apiInstance.Patch(id, updateCurrencyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CurrencyClient.Put: " + e.Message);
+                Debug.Print("Exception when calling CurrencyClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +239,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.PutWithHttpInfo(id, createTransactionCurrencyRequest);
+    ApiResponse<CurrencyModel> response = apiInstance.PatchWithHttpInfo(id, updateCurrencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CurrencyClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CurrencyClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -262,11 +263,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **createTransactionCurrencyRequest** | [**CreateTransactionCurrencyRequest?**](CreateTransactionCurrencyRequest?.md) |  | [optional]  |
+| **updateCurrencyRequest** | [**UpdateCurrencyRequest?**](UpdateCurrencyRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**TransactionCurrencyModel**](TransactionCurrencyModel.md)
+[**CurrencyModel**](CurrencyModel.md)
 
 ### Authorization
 
@@ -289,7 +290,7 @@ catch (ApiException e)
 
 <a id="currencypost"></a>
 # **Post**
-> TransactionCurrencyModel Post (CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = null)
+> CurrencyModel Post (CurrencyRequest? currencyRequest = null)
 
 
 
@@ -315,11 +316,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CurrencyClient(config);
-            var createTransactionCurrencyRequest = new CreateTransactionCurrencyRequest?(); // CreateTransactionCurrencyRequest? |  (optional) 
+            var currencyRequest = new CurrencyRequest?(); // CurrencyRequest? |  (optional) 
 
             try
             {
-                TransactionCurrencyModel result = apiInstance.Post(createTransactionCurrencyRequest);
+                CurrencyModel result = apiInstance.Post(currencyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -339,7 +340,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionCurrencyModel> response = apiInstance.PostWithHttpInfo(createTransactionCurrencyRequest);
+    ApiResponse<CurrencyModel> response = apiInstance.PostWithHttpInfo(currencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -356,11 +357,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createTransactionCurrencyRequest** | [**CreateTransactionCurrencyRequest?**](CreateTransactionCurrencyRequest?.md) |  | [optional]  |
+| **currencyRequest** | [**CurrencyRequest?**](CurrencyRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**TransactionCurrencyModel**](TransactionCurrencyModel.md)
+[**CurrencyModel**](CurrencyModel.md)
 
 ### Authorization
 

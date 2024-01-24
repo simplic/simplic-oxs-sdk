@@ -14,6 +14,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+using System.Threading;
+using System.Threading.Tasks;
 {{^netStandard}}
 using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
@@ -21,7 +24,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace {{packageName}}
 {
     {{#operations}}
-    //--Custom wrapper start
+    // ----------------------- Custom wrapper start -------------------------
     /// <summary>
     /// Client to interact with the API endpoints of the {{service}} service.
     /// </summary>
@@ -143,9 +146,6 @@ namespace {{packageName}}
             try
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
-                if (!response.IsSuccessStatusCode)
-                    throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
-                
                 {{#returnType}}return response.Ok();{{/returnType}}
                 
             }
@@ -164,9 +164,6 @@ namespace {{packageName}}
             try
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
-                if (!response.IsSuccessStatusCode)
-                    throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
-                
                 {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
                 {{#returnType}}return new ApiResponse<{{{returnType}}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
             }
@@ -186,9 +183,6 @@ namespace {{packageName}}
             try
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
-                if (!response.IsSuccessStatusCode)
-                    throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
-            
                 {{#returnType}}return response.Ok();{{/returnType}}
             }
             catch (ApiException e)
@@ -206,9 +200,6 @@ namespace {{packageName}}
             try
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
-                if (!response.IsSuccessStatusCode)
-                    throw new ApiException((int)response.StatusCode, response.ReasonPhrase, response.StatusCode, response.Headers.ToMultimap());
-                
                 {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
                 {{#returnType}}return new ApiResponse<{{{returnType}}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
             }
@@ -222,7 +213,14 @@ namespace {{packageName}}
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+    // ----------------------- Custom wrapper end   -------------------------
+
+
+
+
+
+
+
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// This class is registered as transient.
@@ -488,7 +486,7 @@ namespace {{packageName}}
         public async Task<__{{classname}}.{{interfacePrefix}}{{classname}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}})
         {
             {{#lambda.trimLineBreaks}}
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
+            var uriBuilderLocalVar = new UriBuilder();
 
             try
             {
@@ -502,7 +500,7 @@ namespace {{packageName}}
 
                 {{/-first}}
                 {{/allParams}}
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                using (var httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
                     {{^servers}}
                     uriBuilderLocalVar.Host = HttpClient.BaseAddress{{nrt!}}.Host;
@@ -582,7 +580,7 @@ namespace {{packageName}}
                     {{/headerParams}}
                     {{#formParams}}
                     {{#-first}}
-                    MultipartContent multipartContentLocalVar = new MultipartContent();
+                    var multipartContentLocalVar = new MultipartContent();
 
                     httpRequestMessageLocalVar.Content = multipartContentLocalVar;
 
@@ -627,7 +625,7 @@ namespace {{packageName}}
                     {{/bodyParam}}
                     {{#authMethods}}
                     {{#-first}}
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    var tokenBaseLocalVars = new List<TokenBase>();
                     {{/-first}}
                     {{#isApiKey}}
                     if (ApiKeyProvider.HasTokens)
@@ -657,7 +655,7 @@ namespace {{packageName}}
                     {{#isBasicBasic}}
                     if (BasicTokenProvider.HasTokens)
                     {
-                        BasicToken basicTokenLocalVar = (BasicToken) await BasicTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        var basicTokenLocalVar = (BasicToken) await BasicTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
                         tokenBaseLocalVars.Add(basicTokenLocalVar);
 
@@ -667,7 +665,7 @@ namespace {{packageName}}
                     {{#isBasicBearer}}
                     if (BearerTokenProvider.HasTokens)
                     {
-                        BearerToken bearerTokenLocalVar = (BearerToken) await BearerTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        var bearerTokenLocalVar = (BearerToken) await BearerTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
                         tokenBaseLocalVars.Add(bearerTokenLocalVar);
 
@@ -677,7 +675,7 @@ namespace {{packageName}}
                     {{#isOAuth}}
                     if (OauthTokenProvider.HasTokens)
                     {
-                        OAuthToken oauthTokenLocalVar = (OAuthToken) await OauthTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        var oauthTokenLocalVar = (OAuthToken) await OauthTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
                         tokenBaseLocalVars.Add(oauthTokenLocalVar);
 
@@ -687,7 +685,7 @@ namespace {{packageName}}
                     {{#isHttpSignature}}
                     if (HttpSignatureTokenProvider.HasTokens)
                     {
-                        HttpSignatureToken httpSignatureTokenLocalVar = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                        var httpSignatureTokenLocalVar = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
 
                         tokenBaseLocalVars.Add(httpSignatureTokenLocalVar);
 
@@ -746,11 +744,11 @@ namespace {{packageName}}
                     httpRequestMessageLocalVar.Method = new HttpMethod("{{#lambda.uppercase}}{{httpMethod}}{{/lambda.uppercase}}");
                     {{/netStandard}}
 
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+                    var requestedAtLocalVar = DateTime.UtcNow;
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
+                        var responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
 
                         {{classname}}{{operationId}}ApiResponse apiResponseLocalVar = new{{^net60OrLater}} {{classname}}{{operationId}}ApiResponse{{/net60OrLater}}(httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "{{path}}", requestedAtLocalVar, _jsonSerializerOptions);
 

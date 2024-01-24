@@ -16,7 +16,7 @@ DEBUG = True
 SAVE_SPECIFICATIONS = True
 
 GEN_CLI = "@openapitools/openapi-generator-cli"
-GEN_VER = "7.1.0"
+GEN_VER = "7.2.0"
 GEN_OUT = "openapi-out"
 LIB_DEPS = {
     "generichost": [
