@@ -22,7 +22,7 @@ RX_FN_NAME = r"[A-Z][A-Za-z0-9_]*"
 RX_FN_ARGS = r"\((?:(?!=>)[^;{}])*\)"
 RX_KEYWORD = r"\b(?:in|out|ref|readonly|params)\b"
 RX_NAME = r"[A-Za-z_][A-Za-z0-9_]*"
-RX_TYPE = fr"(?:{RX_NAME}\.)*{RX_NAME}(?:<[^>]*>)?\??"
+RX_TYPE = fr"(?:{RX_NAME}\.)*{RX_NAME}(?:<.*>)?\??"
 
 
 @dataclass
@@ -121,7 +121,7 @@ def collect_functions(code: str) -> list[FunctionMeta]:
     visibility = r"public"
     accessibility = r"static"
 
-    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*({RX_TYPE})\s+({RX_FN_NAME})\s*({RX_FN_ARGS})"
+    pattern = rf"^\s*({visibility})\s*(new)?\s*({accessibility})?\s*(?:async)?\s*({RX_TYPE})\s+({RX_FN_NAME})\s*({RX_FN_ARGS})"
     metas = []
 
     # get all functions
@@ -212,8 +212,14 @@ def main(args: Namespace):
         log(f"___: `{fn.name}`")
         pretty_name = parse_pretty(fn, controller)
 
-        # replace old name
-        file_content = file_content.replace(fn.name, pretty_name)
+        # replace old function name
+        # file_content = file_content.replace(fn.name, pretty_name)
+        # explanation:
+        #   match fn name that ends with `(` (function call)
+        #   or is preceeded by `(` (function reference) as in MyReferringCall(MyFunction, ...)
+        pattern = re.compile(rf'\b{re.escape(fn.name)}(?=\()\b|\b(?<=\(){re.escape(fn.name)}\b')
+        file_content = pattern.sub(pretty_name, file_content, count=10)
+
         if doc_file:
             doc_file_content = doc_file_content.replace(fn.name, pretty_name)
 

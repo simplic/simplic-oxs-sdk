@@ -16,13 +16,16 @@ DEBUG = True
 SAVE_SPECIFICATIONS = True
 
 GEN_CLI = "@openapitools/openapi-generator-cli"
+GEN_VER = "7.2.0"
 GEN_OUT = "openapi-out"
 LIB_DEPS = {
     "generichost": [
         "Microsoft.Extensions.Http",
         "Microsoft.Extensions.Hosting",
         "Microsoft.Extensions.Http.Polly",
-        "System.ComponentModel.Annotations"
+        "System.ComponentModel.Annotations",
+        "System.Text.Json",
+        "System.Threading.Channels"
     ],
     "httpclient": [
         "Newtonsoft.Json",
@@ -113,12 +116,13 @@ def main(args: Namespace):
                 LIB_DEPS[library]
             )
             dotnet.add_project_to_solution(sln_file, base_proj_file)
+            dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
         else:
             print("* keeping pre existing base project *")
             dotnet.add_project_deps(base_proj_file, LIB_DEPS[library])
 
     core.cmd(f"npm install {GEN_CLI} -D", DEBUG)
-    core.cmd(f"npx {GEN_CLI} version-manager set 7.0.1", DEBUG)
+    core.cmd(f"npx {GEN_CLI} version-manager set {GEN_VER}", DEBUG)
 
     # read services file
     services_yaml = fsutil.read_yaml(args.input_file)
@@ -161,7 +165,7 @@ def main(args: Namespace):
         sdk_proj_specification = f"{sdk_proj_folder}/{sdk_proj_name}.json"
         if SAVE_SPECIFICATIONS:
             # check if new specification matches old -> skip if true
-            if os.path.isfile(sdk_proj_specification):
+            if not args.force and os.path.isfile(sdk_proj_specification):
                 with open(sdk_proj_specification, 'r') as f:
                     if os.path.getsize(sdk_proj_specification) > 0:
                         print(f"* using old specification for comparison *")
@@ -219,20 +223,32 @@ def main(args: Namespace):
 
         # move generated files to proper project(s) and update references
         # Boiler Plate
+        boiler_plate_folder = f"{base_proj_folder}/BoilerPlate"
+        fsutil.create_directory(boiler_plate_folder)
+        
         fsutil.rec_replace(gen_proj_folder, sdk_proj_name, args.name)
         problem_details = f"{gen_proj_folder}/Model/ProblemDetails.cs"
-        if library != "generichost" and os.path.exists(problem_details):
-            fsutil.move(problem_details, base_proj_folder)
+        if os.path.exists(problem_details):
+            fsutil.move(problem_details, boiler_plate_folder)
 
         abstract_schema = f"{gen_proj_folder}/Model/AbstractOpenAPISchema.cs"
         if os.path.exists(abstract_schema):
-            fsutil.move(abstract_schema, base_proj_folder)
+            fsutil.move(abstract_schema, boiler_plate_folder)
 
-        fsutil.move(f"{gen_proj_folder}/Client/*", base_proj_folder)
+        if library == "generichost":
+            iapi = f"{gen_proj_folder}/Api/IApi.cs"
+            if os.path.exists(iapi):
+                fsutil.move(iapi, boiler_plate_folder)
+                
+            host_cfg = f"{gen_proj_folder}/Client/HostConfiguration.cs"
+            if os.path.exists(host_cfg):
+                fsutil.remove(host_cfg)
+
+        fsutil.move(f"{gen_proj_folder}/Client/*", boiler_plate_folder)
 
         # remove service name from boiler plate comments
         print("* cleaning boiler plate.. *")
-        fsutil.rec_replace(base_proj_folder, title, "", ".cs")
+        fsutil.rec_replace(boiler_plate_folder, title, "", ".cs")
 
         # SDK specific
         # insert using for base project and fix namespace
@@ -319,6 +335,13 @@ argparser.add_argument(
     "--api-name-suffix",
     required=True,
     help="Suffix for generated api clients"
+)
+
+argparser.add_argument(
+    "--force",
+    action="store_true",
+    required=False,
+    help="If specified, will generate all projects no matter if anything changed in the specification"
 )
 
 main(argparser.parse_args())
