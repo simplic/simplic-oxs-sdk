@@ -376,3 +376,6 @@ pat
 current_version
 __ignore.*
 openapitools.json
+openapi-out*/
+test*.*
+.config/
