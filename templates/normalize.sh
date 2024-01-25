@@ -47,6 +47,11 @@ DIR="$(dirname "$0")/csharp"
 rec_replace "$DIR" "namespace {{packageName}}.Client"       "namespace {{packageName}}" "mustache"
 rec_replace "$DIR" "{{packageName}}.Client\."               "{{packageName}}."          "mustache"
 rec_replace "$DIR" "{{packageName}}.Client;"                "{{packageName}};"          "mustache"
+
+rec_replace "$DIR" "namespace {{packageName}}.Auth"       "namespace {{packageName}}" "mustache"
+rec_replace "$DIR" "{{packageName}}.Auth\."               "{{packageName}}."          "mustache"
+rec_replace "$DIR" "{{packageName}}.Auth;"                "{{packageName}};"          "mustache"
+
 rec_replace "$DIR" "{{packageName}}.Test.Client"            "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.Api"               "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.{{apiPackage}}"    "{{packageName}}.Test"      "mustache"
