@@ -94,6 +94,83 @@ namespace Simplic.OxS.SDK.Vehicle
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;VehicleModel&gt;</returns>
+        public List<VehicleModel> GetByQrcode(string? qRCode = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByQrcode(qRCode, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;VehicleModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> GetByQrcodeWithHttpInfo(string? qRCode = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByQrcodeWithHttpInfo(qRCode, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;VehicleModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<VehicleModel>> GetByQrcodeAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByQrcodeAsync(qRCode, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;VehicleModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<VehicleModel>>> GetByQrcodeWithHttpInfoAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByQrcodeWithHttpInfoAsync(qRCode, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>int</returns>
@@ -652,6 +729,26 @@ namespace Simplic.OxS.SDK.Vehicle
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;VehicleModel&gt;</returns>
+        List<VehicleModel> GetByQrcode(string? qRCode = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;VehicleModel&gt;</returns>
+        ApiResponse<List<VehicleModel>> GetByQrcodeWithHttpInfo(string? qRCode = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>int</returns>
@@ -801,6 +898,31 @@ namespace Simplic.OxS.SDK.Vehicle
     public interface IVehicleClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;VehicleModel&gt;</returns>
+        System.Threading.Tasks.Task<List<VehicleModel>> GetByQrcodeAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;VehicleModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<VehicleModel>>> GetByQrcodeWithHttpInfoAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1104,6 +1226,158 @@ namespace Simplic.OxS.SDK.Vehicle
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;VehicleModel&gt;</returns>
+        public List<VehicleModel> GetByQrcode(string? qRCode = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> localVarResponse = GetByQrcodeWithHttpInfo(qRCode);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;VehicleModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> GetByQrcodeWithHttpInfo(string? qRCode = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (qRCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "qRCode", qRCode));
+            }
+
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetByQrcodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<VehicleModel>>("/Vehicle/get-by-qrcode", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("VehicleGetByQrcodeGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;VehicleModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<VehicleModel>> GetByQrcodeAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<VehicleModel>> localVarResponse = await GetByQrcodeWithHttpInfoAsync(qRCode, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qRCode"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;VehicleModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<VehicleModel>>> GetByQrcodeWithHttpInfoAsync(string? qRCode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (qRCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "qRCode", qRCode));
+            }
+
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetByQrcodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<VehicleModel>>("/Vehicle/get-by-qrcode", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("VehicleGetByQrcodeGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchText"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>int</returns>
@@ -1151,7 +1425,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
 
-            localVarRequestOptions.Operation = "VehicleClient.GetCountOfVehicles";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetCountOfVehiclesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1164,7 +1438,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<int>("/Vehicle/get-count-of-vehicles", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCountOfVehicles", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetCountOfVehiclesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1228,7 +1502,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
             }
 
-            localVarRequestOptions.Operation = "VehicleClient.GetCountOfVehicles";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetCountOfVehiclesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1242,7 +1516,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCountOfVehicles", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetCountOfVehiclesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1315,7 +1589,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
-            localVarRequestOptions.Operation = "VehicleClient.GetFilteredWithPaging";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetFilteredWithPagingGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1328,7 +1602,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<List<VehicleModel>>("/Vehicle/get-filtered-with-paging", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFilteredWithPaging", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetFilteredWithPagingGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1404,7 +1678,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
-            localVarRequestOptions.Operation = "VehicleClient.GetFilteredWithPaging";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetFilteredWithPagingGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1418,7 +1692,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFilteredWithPaging", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetFilteredWithPagingGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1473,7 +1747,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "VehicleClient.GetFleetAge";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetFleetAgeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1486,7 +1760,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<double>("/Vehicle/get-fleet-age", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFleetAge", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetFleetAgeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1544,7 +1818,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "VehicleClient.GetFleetAge";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleGetFleetAgeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1558,7 +1832,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFleetAge", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleGetFleetAgeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1615,7 +1889,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleClient.Delete";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1628,7 +1902,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Delete<Object>("/Vehicle/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1688,7 +1962,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleClient.Delete";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1702,7 +1976,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1760,7 +2034,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleClient.Get";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1773,7 +2047,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<VehicleModel>("/Vehicle/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1834,7 +2108,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleClient.Get";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1848,7 +2122,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1912,7 +2186,7 @@ namespace Simplic.OxS.SDK.Vehicle
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateVehicleRequest;
 
-            localVarRequestOptions.Operation = "VehicleClient.Put";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1925,7 +2199,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Put<VehicleModel>("/Vehicle/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1992,7 +2266,7 @@ namespace Simplic.OxS.SDK.Vehicle
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateVehicleRequest;
 
-            localVarRequestOptions.Operation = "VehicleClient.Put";
+            localVarRequestOptions.Operation = "VehicleClient.VehicleIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2006,7 +2280,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2067,7 +2341,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleRequest;
 
-            localVarRequestOptions.Operation = "VehicleClient.Post";
+            localVarRequestOptions.Operation = "VehicleClient.VehiclePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2080,7 +2354,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<VehicleModel>("/Vehicle", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehiclePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2144,7 +2418,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleRequest;
 
-            localVarRequestOptions.Operation = "VehicleClient.Post";
+            localVarRequestOptions.Operation = "VehicleClient.VehiclePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2158,7 +2432,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehiclePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

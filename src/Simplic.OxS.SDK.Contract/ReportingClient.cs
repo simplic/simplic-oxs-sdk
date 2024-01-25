@@ -400,7 +400,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingClient.Get";
+            localVarRequestOptions.Operation = "ReportingClient.ReportingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -413,7 +413,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Get<ContractReportModel>("/Reporting/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ReportingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -474,7 +474,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingClient.Get";
+            localVarRequestOptions.Operation = "ReportingClient.ReportingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -488,7 +488,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ReportingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

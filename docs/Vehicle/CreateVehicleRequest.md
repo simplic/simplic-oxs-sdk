@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Toll** | [**TollModel**](TollModel.md) |  | [optional] 
 **UsableUntil** | **DateTime?** |  | [optional] 
 **LoadingSlots** | [**List&lt;LoadingSlotModel&gt;**](LoadingSlotModel.md) |  | [optional] 
+**QrCode** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

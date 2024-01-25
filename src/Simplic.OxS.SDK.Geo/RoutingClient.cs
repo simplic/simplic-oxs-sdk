@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.Geo
 
             localVarRequestOptions.Data = requestRoute;
 
-            localVarRequestOptions.Operation = "RoutingClient.CalculateRoute";
+            localVarRequestOptions.Operation = "RoutingClient.RoutingCalculateRoutePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.Geo
             var localVarResponse = this.Client.Post<RoutingResponse>("/Routing/calculate-route", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CalculateRoute", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RoutingCalculateRoutePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.Geo
 
             localVarRequestOptions.Data = requestRoute;
 
-            localVarRequestOptions.Operation = "RoutingClient.CalculateRoute";
+            localVarRequestOptions.Operation = "RoutingClient.RoutingCalculateRoutePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Geo
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CalculateRoute", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RoutingCalculateRoutePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

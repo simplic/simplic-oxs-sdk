@@ -42,13 +42,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="street">street.</param>
         /// <param name="zipcode">zipcode.</param>
         /// <param name="district">district.</param>
-        /// <param name="land">land.</param>
+        /// <param name="federalState">federalState.</param>
         /// <param name="country">country.</param>
         /// <param name="countryIso">countryIso.</param>
         /// <param name="city">city.</param>
         /// <param name="latitude">latitude.</param>
         /// <param name="longitude">longitude.</param>
-        public TransactionAddressModel(Guid id = default(Guid), int number = default(int), string name = default(string), string street = default(string), string zipcode = default(string), string district = default(string), string land = default(string), string country = default(string), string countryIso = default(string), string city = default(string), double? latitude = default(double?), double? longitude = default(double?))
+        public TransactionAddressModel(Guid id = default(Guid), string number = default(string), string name = default(string), string street = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string), double? latitude = default(double?), double? longitude = default(double?))
         {
             this.Id = id;
             this.Number = number;
@@ -56,7 +56,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Street = street;
             this.Zipcode = zipcode;
             this.District = district;
-            this.Land = land;
+            this.FederalState = federalState;
             this.Country = country;
             this.CountryIso = countryIso;
             this.City = city;
@@ -73,8 +73,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets Number
         /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = false)]
-        public int Number { get; set; }
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -101,10 +101,10 @@ namespace Simplic.OxS.SDK.ERP
         public string District { get; set; }
 
         /// <summary>
-        /// Gets or Sets Land
+        /// Gets or Sets FederalState
         /// </summary>
-        [DataMember(Name = "land", EmitDefaultValue = true)]
-        public string Land { get; set; }
+        [DataMember(Name = "federalState", EmitDefaultValue = true)]
+        public string FederalState { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
@@ -150,7 +150,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Street: ").Append(Street).Append("\n");
             sb.Append("  Zipcode: ").Append(Zipcode).Append("\n");
             sb.Append("  District: ").Append(District).Append("\n");
-            sb.Append("  Land: ").Append(Land).Append("\n");
+            sb.Append("  FederalState: ").Append(FederalState).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  CountryIso: ").Append(CountryIso).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
@@ -198,7 +198,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Number == input.Number ||
-                    this.Number.Equals(input.Number)
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -221,9 +222,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.District.Equals(input.District))
                 ) && 
                 (
-                    this.Land == input.Land ||
-                    (this.Land != null &&
-                    this.Land.Equals(input.Land))
+                    this.FederalState == input.FederalState ||
+                    (this.FederalState != null &&
+                    this.FederalState.Equals(input.FederalState))
                 ) && 
                 (
                     this.Country == input.Country ||
@@ -265,7 +266,10 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -282,9 +286,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.District.GetHashCode();
                 }
-                if (this.Land != null)
+                if (this.FederalState != null)
                 {
-                    hashCode = (hashCode * 59) + this.Land.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FederalState.GetHashCode();
                 }
                 if (this.Country != null)
                 {

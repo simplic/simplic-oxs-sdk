@@ -888,7 +888,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.Delete";
+            localVarRequestOptions.Operation = "CDNClient.CDNBlobIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -901,7 +901,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Delete<BlobMetadata>("/CDN/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNBlobIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -962,7 +962,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.Delete";
+            localVarRequestOptions.Operation = "CDNClient.CDNBlobIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -976,7 +976,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNBlobIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1034,7 +1034,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.GetFile";
+            localVarRequestOptions.Operation = "CDNClient.CDNGetFileBlobIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1047,7 +1047,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Get<System.IO.Stream>("/CDN/get-file/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNGetFileBlobIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1108,7 +1108,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.GetFile";
+            localVarRequestOptions.Operation = "CDNClient.CDNGetFileBlobIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1122,7 +1122,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetFile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNGetFileBlobIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1180,7 +1180,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.GetMetadata";
+            localVarRequestOptions.Operation = "CDNClient.CDNGetMetadataBlobIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1193,7 +1193,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Get<BlobMetadata>("/CDN/get-metadata/{blobId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMetadata", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNGetMetadataBlobIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1254,7 +1254,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
 
-            localVarRequestOptions.Operation = "CDNClient.GetMetadata";
+            localVarRequestOptions.Operation = "CDNClient.CDNGetMetadataBlobIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1268,7 +1268,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMetadata", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNGetMetadataBlobIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1333,7 +1333,7 @@ namespace Simplic.OxS.SDK.CDN
                 }
             }
 
-            localVarRequestOptions.Operation = "CDNClient.UploadFile";
+            localVarRequestOptions.Operation = "CDNClient.CDNUploadFilePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1346,7 +1346,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Post<UploadFilesResponse>("/CDN/upload-file", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UploadFile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNUploadFilePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1414,7 +1414,7 @@ namespace Simplic.OxS.SDK.CDN
                 }
             }
 
-            localVarRequestOptions.Operation = "CDNClient.UploadFile";
+            localVarRequestOptions.Operation = "CDNClient.CDNUploadFilePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1428,7 +1428,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UploadFile", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNUploadFilePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1489,7 +1489,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.Data = uploadBytesRequest;
 
-            localVarRequestOptions.Operation = "CDNClient.Upload";
+            localVarRequestOptions.Operation = "CDNClient.CDNUploadPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1502,7 +1502,7 @@ namespace Simplic.OxS.SDK.CDN
             var localVarResponse = this.Client.Post<UploadResponse>("/CDN/upload", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNUploadPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1566,7 +1566,7 @@ namespace Simplic.OxS.SDK.CDN
 
             localVarRequestOptions.Data = uploadBytesRequest;
 
-            localVarRequestOptions.Operation = "CDNClient.Upload";
+            localVarRequestOptions.Operation = "CDNClient.CDNUploadPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1580,7 +1580,7 @@ namespace Simplic.OxS.SDK.CDN
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CDNUploadPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

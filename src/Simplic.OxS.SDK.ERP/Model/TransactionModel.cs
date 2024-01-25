@@ -39,6 +39,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "convertState", EmitDefaultValue = false)]
         public TransactionConvertState? ConvertState { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OperationItemCombinationMode
+        /// </summary>
+        [DataMember(Name = "operationItemCombinationMode", EmitDefaultValue = false)]
+        public OperationItemCombinationMode? OperationItemCombinationMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionModel" /> class.
         /// </summary>
@@ -77,7 +83,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="notes">notes.</param>
         /// <param name="dueDate">dueDate.</param>
         /// <param name="referenceNr">referenceNr.</param>
-        /// <param name="standingOrder">standingOrder.</param>
         /// <param name="taxGroup">taxGroup.</param>
         /// <param name="totalPrice">totalPrice.</param>
         /// <param name="totalPriceGross">totalPriceGross.</param>
@@ -90,7 +95,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="signedTotalPrice">signedTotalPrice.</param>
         /// <param name="signedTotalPriceTax">signedTotalPriceTax.</param>
         /// <param name="sign">sign.</param>
-        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionType type = default(TransactionType), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), TransactionPaymentMethodModel paymentMethod = default(TransactionPaymentMethodModel), TransactionCurrencyModel currency = default(TransactionCurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double balance = default(double), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocument document = default(TransactionDocument), TransactionPeriod financialAccountingPeriod = default(TransactionPeriod), TransactionPeriod period = default(TransactionPeriod), List<string> states = default(List<string>), TransactionManualVat manualVat = default(TransactionManualVat), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TransactionStandingOrder standingOrder = default(TransactionStandingOrder), TaxGroup taxGroup = default(TaxGroup), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUser updateUser = default(TransactionUser), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int))
+        /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
+        /// <param name="createDateTime">createDateTime.</param>
+        /// <param name="createUserId">createUserId.</param>
+        /// <param name="createUserName">createUserName.</param>
+        /// <param name="updateDateTime">updateDateTime.</param>
+        /// <param name="updateUserId">updateUserId.</param>
+        /// <param name="updateUserName">updateUserName.</param>
+        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double balance = default(double), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -127,7 +139,6 @@ namespace Simplic.OxS.SDK.ERP
             this.Notes = notes;
             this.DueDate = dueDate;
             this.ReferenceNr = referenceNr;
-            this.StandingOrder = standingOrder;
             this.TaxGroup = taxGroup;
             this.TotalPrice = totalPrice;
             this.TotalPriceGross = totalPriceGross;
@@ -140,6 +151,13 @@ namespace Simplic.OxS.SDK.ERP
             this.SignedTotalPrice = signedTotalPrice;
             this.SignedTotalPriceTax = signedTotalPriceTax;
             this.Sign = sign;
+            this.OperationItemCombinationMode = operationItemCombinationMode;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
@@ -176,7 +194,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TransactionType Type { get; set; }
+        public TransactionTransactionTypeModel Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Date
@@ -200,13 +218,13 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets PaymentMethod
         /// </summary>
         [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
-        public TransactionPaymentMethodModel PaymentMethod { get; set; }
+        public PaymentMethodModel PaymentMethod { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
         /// </summary>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public TransactionCurrencyModel Currency { get; set; }
+        public CurrencyModel Currency { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -302,19 +320,19 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets Document
         /// </summary>
         [DataMember(Name = "document", EmitDefaultValue = false)]
-        public TransactionDocument Document { get; set; }
+        public TransactionDocumentModel Document { get; set; }
 
         /// <summary>
         /// Gets or Sets FinancialAccountingPeriod
         /// </summary>
         [DataMember(Name = "financialAccountingPeriod", EmitDefaultValue = false)]
-        public TransactionPeriod FinancialAccountingPeriod { get; set; }
+        public TransactionPeriodModel FinancialAccountingPeriod { get; set; }
 
         /// <summary>
         /// Gets or Sets Period
         /// </summary>
         [DataMember(Name = "period", EmitDefaultValue = false)]
-        public TransactionPeriod Period { get; set; }
+        public TransactionPeriodModel Period { get; set; }
 
         /// <summary>
         /// Gets or Sets States
@@ -326,7 +344,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets ManualVat
         /// </summary>
         [DataMember(Name = "manualVat", EmitDefaultValue = false)]
-        public TransactionManualVat ManualVat { get; set; }
+        public TransactionManualVatModel ManualVat { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
@@ -347,16 +365,10 @@ namespace Simplic.OxS.SDK.ERP
         public string ReferenceNr { get; set; }
 
         /// <summary>
-        /// Gets or Sets StandingOrder
-        /// </summary>
-        [DataMember(Name = "standingOrder", EmitDefaultValue = false)]
-        public TransactionStandingOrder StandingOrder { get; set; }
-
-        /// <summary>
         /// Gets or Sets TaxGroup
         /// </summary>
         [DataMember(Name = "taxGroup", EmitDefaultValue = false)]
-        public TaxGroup TaxGroup { get; set; }
+        public TaxGroupModel TaxGroup { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPrice
@@ -392,7 +404,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets UpdateUser
         /// </summary>
         [DataMember(Name = "updateUser", EmitDefaultValue = false)]
-        public TransactionUser UpdateUser { get; set; }
+        public TransactionUserModel UpdateUser { get; set; }
 
         /// <summary>
         /// Gets or Sets SignedTotalPriceNet
@@ -423,6 +435,42 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "sign", EmitDefaultValue = false)]
         public int Sign { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateDateTime
+        /// </summary>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserId
+        /// </summary>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserName
+        /// </summary>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateDateTime
+        /// </summary>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserId
+        /// </summary>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserName
+        /// </summary>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -467,7 +515,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
             sb.Append("  ReferenceNr: ").Append(ReferenceNr).Append("\n");
-            sb.Append("  StandingOrder: ").Append(StandingOrder).Append("\n");
             sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  TotalPriceGross: ").Append(TotalPriceGross).Append("\n");
@@ -480,6 +527,13 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SignedTotalPrice: ").Append(SignedTotalPrice).Append("\n");
             sb.Append("  SignedTotalPriceTax: ").Append(SignedTotalPriceTax).Append("\n");
             sb.Append("  Sign: ").Append(Sign).Append("\n");
+            sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -688,11 +742,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.ReferenceNr.Equals(input.ReferenceNr))
                 ) && 
                 (
-                    this.StandingOrder == input.StandingOrder ||
-                    (this.StandingOrder != null &&
-                    this.StandingOrder.Equals(input.StandingOrder))
-                ) && 
-                (
                     this.TaxGroup == input.TaxGroup ||
                     (this.TaxGroup != null &&
                     this.TaxGroup.Equals(input.TaxGroup))
@@ -741,6 +790,40 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.Sign == input.Sign ||
                     this.Sign.Equals(input.Sign)
+                ) && 
+                (
+                    this.OperationItemCombinationMode == input.OperationItemCombinationMode ||
+                    this.OperationItemCombinationMode.Equals(input.OperationItemCombinationMode)
+                ) && 
+                (
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
+                ) && 
+                (
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -878,10 +961,6 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.ReferenceNr.GetHashCode();
                 }
-                if (this.StandingOrder != null)
-                {
-                    hashCode = (hashCode * 59) + this.StandingOrder.GetHashCode();
-                }
                 if (this.TaxGroup != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxGroup.GetHashCode();
@@ -900,6 +979,31 @@ namespace Simplic.OxS.SDK.ERP
                 hashCode = (hashCode * 59) + this.SignedTotalPrice.GetHashCode();
                 hashCode = (hashCode * 59) + this.SignedTotalPriceTax.GetHashCode();
                 hashCode = (hashCode * 59) + this.Sign.GetHashCode();
+                hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
+                if (this.CreateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.CreateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
+                }
                 return hashCode;
             }
         }

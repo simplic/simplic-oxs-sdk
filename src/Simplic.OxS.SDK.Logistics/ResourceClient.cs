@@ -249,6 +249,99 @@ namespace Simplic.OxS.SDK.Logistics
             }
         }    
         /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        public List<ResourceModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByLocation(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<ResourceModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -626,6 +719,34 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
         ApiResponse<List<ResourceModel>> GetAllWithHttpInfo(DateTime? useableUntil = default(DateTime?), int operationIndex = 0);
         /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        List<ResourceModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        ApiResponse<List<ResourceModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0);
+        /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -774,6 +895,39 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetAllWithHttpInfoAsync(DateTime? useableUntil = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        System.Threading.Tasks.Task<List<ResourceModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
@@ -1059,7 +1213,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAllByGroup";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetAllByGroupGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1072,7 +1226,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-all-by-group", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByGroup", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetAllByGroupGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1142,7 +1296,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAllByGroup";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetAllByGroupGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1156,7 +1310,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByGroup", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetAllByGroupGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1217,7 +1371,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAll";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1230,7 +1384,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1294,7 +1448,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "useableUntil", useableUntil));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetAll";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1308,7 +1462,207 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetAllGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        public List<ResourceModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, group);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (maxDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "maxDistanceMeter", maxDistanceMeter));
+            }
+            if (minDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "minDistanceMeter", minDistanceMeter));
+            }
+            if (group != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "group", group));
+            }
+
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-by-location", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResourceGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="group"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (maxDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "maxDistanceMeter", maxDistanceMeter));
+            }
+            if (minDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "minDistanceMeter", minDistanceMeter));
+            }
+            if (group != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "group", group));
+            }
+
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ResourceModel>>("/Resource/get-by-location", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResourceGetByLocationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1387,7 +1741,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetPageData";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetPageDataGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1400,7 +1754,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-page-data", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPageData", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetPageDataGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1482,7 +1836,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "filterString", filterString));
             }
 
-            localVarRequestOptions.Operation = "ResourceClient.GetPageData";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetPageDataGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1496,7 +1850,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPageData", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGetPageDataGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1554,7 +1908,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceClient.Get";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1567,7 +1921,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ResourceModel>("/Resource/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1628,7 +1982,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceClient.Get";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1642,7 +1996,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1706,7 +2060,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceClient.Put";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1719,7 +2073,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<ResourceModel>("/Resource/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1786,7 +2140,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceClient.Put";
+            localVarRequestOptions.Operation = "ResourceClient.ResourceIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1800,7 +2154,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1861,7 +2215,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceClient.Post";
+            localVarRequestOptions.Operation = "ResourceClient.ResourcePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1874,7 +2228,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ResourceModel>("/Resource", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourcePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1938,7 +2292,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceRequest;
 
-            localVarRequestOptions.Operation = "ResourceClient.Post";
+            localVarRequestOptions.Operation = "ResourceClient.ResourcePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1952,7 +2306,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourcePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

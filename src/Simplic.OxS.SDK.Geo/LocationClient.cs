@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.Geo
 
             localVarRequestOptions.Data = requestGeoLocation;
 
-            localVarRequestOptions.Operation = "LocationClient.SearchAddress";
+            localVarRequestOptions.Operation = "LocationClient.LocationSearchAddressPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.Geo
             var localVarResponse = this.Client.Post<LocationResponse>("/Location/search-address", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SearchAddress", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LocationSearchAddressPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.Geo
 
             localVarRequestOptions.Data = requestGeoLocation;
 
-            localVarRequestOptions.Operation = "LocationClient.SearchAddress";
+            localVarRequestOptions.Operation = "LocationClient.LocationSearchAddressPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Geo
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SearchAddress", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LocationSearchAddressPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

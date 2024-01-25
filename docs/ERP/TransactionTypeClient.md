@@ -6,7 +6,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 |--------|--------------|-------------|
 | [**Delete**](TransactionTypeClient.md#transactiontypeiddelete) | **DELETE** /TransactionType/{id} |  |
 | [**Get**](TransactionTypeClient.md#transactiontypeidget) | **GET** /TransactionType/{id} |  |
-| [**Put**](TransactionTypeClient.md#transactiontypeidput) | **PUT** /TransactionType/{id} |  |
+| [**Patch**](TransactionTypeClient.md#transactiontypeidpatch) | **PATCH** /TransactionType/{id} |  |
 | [**Post**](TransactionTypeClient.md#transactiontypepost) | **POST** /TransactionType |  |
 
 <a id="transactiontypeiddelete"></a>
@@ -188,12 +188,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactiontypeidput"></a>
-# **Put**
-> TransactionTypeModel Put (Guid id, CreateTransactionTypeRequest? createTransactionTypeRequest = null)
+<a id="transactiontypeidpatch"></a>
+# **Patch**
+> TransactionTypeModel Patch (Guid id, UpdateTransactionTypeRequest? updateTransactionTypeRequest = null)
 
 
 
@@ -207,7 +208,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -220,16 +221,16 @@ namespace Example
 
             var apiInstance = new TransactionTypeClient(config);
             var id = "id_example";  // Guid | 
-            var createTransactionTypeRequest = new CreateTransactionTypeRequest?(); // CreateTransactionTypeRequest? |  (optional) 
+            var updateTransactionTypeRequest = new UpdateTransactionTypeRequest?(); // UpdateTransactionTypeRequest? |  (optional) 
 
             try
             {
-                TransactionTypeModel result = apiInstance.Put(id, createTransactionTypeRequest);
+                TransactionTypeModel result = apiInstance.Patch(id, updateTransactionTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionTypeClient.Put: " + e.Message);
+                Debug.Print("Exception when calling TransactionTypeClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +239,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTypeModel> response = apiInstance.PutWithHttpInfo(id, createTransactionTypeRequest);
+    ApiResponse<TransactionTypeModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionTypeClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionTypeClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -262,7 +263,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **createTransactionTypeRequest** | [**CreateTransactionTypeRequest?**](CreateTransactionTypeRequest?.md) |  | [optional]  |
+| **updateTransactionTypeRequest** | [**UpdateTransactionTypeRequest?**](UpdateTransactionTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -289,7 +290,7 @@ catch (ApiException e)
 
 <a id="transactiontypepost"></a>
 # **Post**
-> TransactionTypeModel Post (CreateTransactionTypeRequest? createTransactionTypeRequest = null)
+> TransactionTypeModel Post (TransactionTypeRequest? transactionTypeRequest = null)
 
 
 
@@ -315,11 +316,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionTypeClient(config);
-            var createTransactionTypeRequest = new CreateTransactionTypeRequest?(); // CreateTransactionTypeRequest? |  (optional) 
+            var transactionTypeRequest = new TransactionTypeRequest?(); // TransactionTypeRequest? |  (optional) 
 
             try
             {
-                TransactionTypeModel result = apiInstance.Post(createTransactionTypeRequest);
+                TransactionTypeModel result = apiInstance.Post(transactionTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -339,7 +340,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionTypeModel> response = apiInstance.PostWithHttpInfo(createTransactionTypeRequest);
+    ApiResponse<TransactionTypeModel> response = apiInstance.PostWithHttpInfo(transactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -356,7 +357,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createTransactionTypeRequest** | [**CreateTransactionTypeRequest?**](CreateTransactionTypeRequest?.md) |  | [optional]  |
+| **transactionTypeRequest** | [**TransactionTypeRequest?**](TransactionTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 

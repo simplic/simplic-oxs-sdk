@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="planningOrderKey">Gets or sets an order key for the disposition.</param>
         /// <param name="usableUntil">Gets or sets a date, until.</param>
         /// <param name="notes">Gets or sets resource notes.</param>
-        public CreateResourceRequest(string type = default(string), string matchCode = default(string), string displayName = default(string), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), AddressModel location = default(AddressModel), bool isLoadable = default(bool), string planningOrderKey = default(string), DateTime? usableUntil = default(DateTime?), string notes = default(string))
+        public CreateResourceRequest(string type = default(string), string matchCode = default(string), string displayName = default(string), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), ResourceLocationModel location = default(ResourceLocationModel), bool isLoadable = default(bool), string planningOrderKey = default(string), DateTime? usableUntil = default(DateTime?), string notes = default(string))
         {
             this.Type = type;
             this.MatchCode = matchCode;
@@ -90,7 +90,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name = "location", EmitDefaultValue = false)]
-        public AddressModel Location { get; set; }
+        public ResourceLocationModel Location { get; set; }
 
         /// <summary>
         /// Gets or sets whether the resource is loadable

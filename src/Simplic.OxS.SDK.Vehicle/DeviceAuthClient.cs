@@ -755,7 +755,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Get";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -768,7 +768,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<DeviceModel>("/DeviceAuth", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -826,7 +826,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Get";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -840,7 +840,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -901,7 +901,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = deviceLoginRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Login";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthLoginPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -914,7 +914,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<DeviceLoginResponse>("/DeviceAuth/login", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Login", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthLoginPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -978,7 +978,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = deviceLoginRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Login";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthLoginPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Login", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthLoginPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1052,7 +1052,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = deviceLogoutRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Logout";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthLogoutPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1065,7 +1065,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<Object>("/DeviceAuth/logout", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Logout", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthLogoutPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1128,7 +1128,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = deviceLogoutRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.Logout";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthLogoutPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1142,7 +1142,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Logout", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthLogoutPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1203,7 +1203,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = refreshTokenRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.RefreshToken";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthRefreshTokenPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1216,7 +1216,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<DeviceLoginResponse>("/DeviceAuth/refresh-token", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RefreshToken", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthRefreshTokenPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1280,7 +1280,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = refreshTokenRequest;
 
-            localVarRequestOptions.Operation = "DeviceAuthClient.RefreshToken";
+            localVarRequestOptions.Operation = "DeviceAuthClient.DeviceAuthRefreshTokenPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1294,7 +1294,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RefreshToken", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeviceAuthRefreshTokenPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

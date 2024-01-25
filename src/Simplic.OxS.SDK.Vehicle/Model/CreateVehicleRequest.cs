@@ -58,7 +58,8 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="toll">toll.</param>
         /// <param name="usableUntil">usableUntil.</param>
         /// <param name="loadingSlots">loadingSlots.</param>
-        public CreateVehicleRequest(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>))
+        /// <param name="qrCode">qrCode.</param>
+        public CreateVehicleRequest(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), string qrCode = default(string))
         {
             this.Location = location;
             this.MatchCode = matchCode;
@@ -82,6 +83,7 @@ namespace Simplic.OxS.SDK.Vehicle
             this.Toll = toll;
             this.UsableUntil = usableUntil;
             this.LoadingSlots = loadingSlots;
+            this.QrCode = qrCode;
         }
 
         /// <summary>
@@ -217,6 +219,12 @@ namespace Simplic.OxS.SDK.Vehicle
         public List<LoadingSlotModel> LoadingSlots { get; set; }
 
         /// <summary>
+        /// Gets or Sets QrCode
+        /// </summary>
+        [DataMember(Name = "qrCode", EmitDefaultValue = true)]
+        public string QrCode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -246,6 +254,7 @@ namespace Simplic.OxS.SDK.Vehicle
             sb.Append("  Toll: ").Append(Toll).Append("\n");
             sb.Append("  UsableUntil: ").Append(UsableUntil).Append("\n");
             sb.Append("  LoadingSlots: ").Append(LoadingSlots).Append("\n");
+            sb.Append("  QrCode: ").Append(QrCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -391,6 +400,11 @@ namespace Simplic.OxS.SDK.Vehicle
                     this.LoadingSlots != null &&
                     input.LoadingSlots != null &&
                     this.LoadingSlots.SequenceEqual(input.LoadingSlots)
+                ) && 
+                (
+                    this.QrCode == input.QrCode ||
+                    (this.QrCode != null &&
+                    this.QrCode.Equals(input.QrCode))
                 );
         }
 
@@ -490,6 +504,10 @@ namespace Simplic.OxS.SDK.Vehicle
                 if (this.LoadingSlots != null)
                 {
                     hashCode = (hashCode * 59) + this.LoadingSlots.GetHashCode();
+                }
+                if (this.QrCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.QrCode.GetHashCode();
                 }
                 return hashCode;
             }

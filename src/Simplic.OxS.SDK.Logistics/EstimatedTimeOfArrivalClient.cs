@@ -641,7 +641,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.GetAll";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -654,7 +654,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<EstimatedTimeOfArrivalResponse>>("/EstimatedTimeOfArrival/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -712,7 +712,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.GetAll";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -726,7 +726,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -763,7 +763,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling EstimatedTimeOfArrivalClient->GetByTour");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling EstimatedTimeOfArrivalClient->EstimatedTimeOfArrivalGetByTourIdGet");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -796,7 +796,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "tourId", tourId));
             }
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.GetByTour";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetByTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -809,7 +809,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<EstimatedTimeOfArrivalResponse>("/EstimatedTimeOfArrival/get-by-tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalGetByTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -848,7 +848,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling EstimatedTimeOfArrivalClient->GetByTour");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling EstimatedTimeOfArrivalClient->EstimatedTimeOfArrivalGetByTourIdGet");
             }
 
 
@@ -882,7 +882,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "tourId", tourId));
             }
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.GetByTour";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalGetByTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -896,7 +896,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalGetByTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -954,7 +954,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.Get";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -967,7 +967,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<EstimatedTimeOfArrivalResponse>("/EstimatedTimeOfArrival/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1028,7 +1028,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.Get";
+            localVarRequestOptions.Operation = "EstimatedTimeOfArrivalClient.EstimatedTimeOfArrivalIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1042,7 +1042,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EstimatedTimeOfArrivalIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

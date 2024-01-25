@@ -1003,7 +1003,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftClient->GetByName");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftClient->ShiftGetByNameNameGet");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1032,7 +1032,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.GetByName";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftGetByNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1045,7 +1045,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShiftResponse>>("/Shift/get-by-name/{name}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftGetByNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1082,7 +1082,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftClient->GetByName");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling ShiftClient->ShiftGetByNameNameGet");
             }
 
 
@@ -1112,7 +1112,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.GetByName";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftGetByNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1126,7 +1126,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftGetByNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1193,7 +1193,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "ShiftClient.GetByRange";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftGetByRangeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1206,7 +1206,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShiftResponse>>("/Shift/get-by-range", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByRange", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftGetByRangeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1276,7 +1276,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "ShiftClient.GetByRange";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftGetByRangeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1290,7 +1290,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByRange", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftGetByRangeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1347,7 +1347,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.Delete";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1360,7 +1360,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/Shift/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1420,7 +1420,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.Delete";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1434,7 +1434,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1492,7 +1492,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.Get";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1505,7 +1505,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ShiftResponse>("/Shift/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1566,7 +1566,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShiftClient.Get";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1580,7 +1580,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1644,7 +1644,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftClient.Patch";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1657,7 +1657,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<ShiftResponse>("/Shift/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1724,7 +1724,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftClient.Patch";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1738,7 +1738,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1799,7 +1799,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftClient.Post";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1812,7 +1812,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ShiftResponse>("/Shift", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1876,7 +1876,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postShiftRequest;
 
-            localVarRequestOptions.Operation = "ShiftClient.Post";
+            localVarRequestOptions.Operation = "ShiftClient.ShiftPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1890,7 +1890,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShiftPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

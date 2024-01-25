@@ -999,7 +999,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             }
 
 
-            localVarRequestOptions.Operation = "SiteClient.GetAll";
+            localVarRequestOptions.Operation = "SiteClient.SiteGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1012,7 +1012,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<List<SiteModel>>("/Site/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1070,7 +1070,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             }
 
 
-            localVarRequestOptions.Operation = "SiteClient.GetAll";
+            localVarRequestOptions.Operation = "SiteClient.SiteGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1084,7 +1084,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1139,7 +1139,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             }
 
 
-            localVarRequestOptions.Operation = "SiteClient.GetByOrganization";
+            localVarRequestOptions.Operation = "SiteClient.SiteGetByOrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1152,7 +1152,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<List<SiteModel>>("/Site/get-by-organization", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByOrganization", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteGetByOrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1210,7 +1210,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             }
 
 
-            localVarRequestOptions.Operation = "SiteClient.GetByOrganization";
+            localVarRequestOptions.Operation = "SiteClient.SiteGetByOrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1224,7 +1224,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByOrganization", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteGetByOrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1281,7 +1281,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "SiteClient.Delete";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1294,7 +1294,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Delete<Object>("/Site/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1354,7 +1354,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "SiteClient.Delete";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1368,7 +1368,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1426,7 +1426,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "SiteClient.Get";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1439,7 +1439,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<SiteModel>("/Site/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1500,7 +1500,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "SiteClient.Get";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1514,7 +1514,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1578,7 +1578,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateSiteRequest;
 
-            localVarRequestOptions.Operation = "SiteClient.Put";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1591,7 +1591,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<SiteModel>("/Site/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1658,7 +1658,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateSiteRequest;
 
-            localVarRequestOptions.Operation = "SiteClient.Put";
+            localVarRequestOptions.Operation = "SiteClient.SiteIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1672,7 +1672,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SiteIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1733,7 +1733,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.Data = createSiteRequest;
 
-            localVarRequestOptions.Operation = "SiteClient.Post";
+            localVarRequestOptions.Operation = "SiteClient.SitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1746,7 +1746,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Post<SiteModel>("/Site", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1810,7 +1810,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.Data = createSiteRequest;
 
-            localVarRequestOptions.Operation = "SiteClient.Post";
+            localVarRequestOptions.Operation = "SiteClient.SitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1824,7 +1824,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

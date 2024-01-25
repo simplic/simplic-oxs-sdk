@@ -4,11 +4,11 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Hook**](RossumClient.md#apirossumhookpost) | **POST** /api/Rossum/hook |  |
+| [**Hook**](RossumClient.md#apirossumorganizationidhookpost) | **POST** /api/Rossum/{organizationId}/hook |  |
 
-<a id="apirossumhookpost"></a>
+<a id="apirossumorganizationidhookpost"></a>
 # **Hook**
-> void Hook ()
+> void Hook (Guid organizationId)
 
 
 
@@ -34,10 +34,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RossumClient(config);
+            var organizationId = "organizationId_example";  // Guid | 
 
             try
             {
-                apiInstance.Hook();
+                apiInstance.Hook(organizationId);
             }
             catch (ApiException  e)
             {
@@ -56,7 +57,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.HookWithHttpInfo();
+    apiInstance.HookWithHttpInfo(organizationId);
 }
 catch (ApiException e)
 {
@@ -67,7 +68,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **Guid** |  |  |
+
 ### Return type
 
 void (empty response body)

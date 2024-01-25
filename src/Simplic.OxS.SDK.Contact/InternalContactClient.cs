@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.Contact
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalContactClient.GetById";
+            localVarRequestOptions.Operation = "InternalContactClient.InternalInternalContactGetByIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Get<ContactModel>("/internal/InternalContact/get-by-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalContactGetByIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.Contact
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalContactClient.GetById";
+            localVarRequestOptions.Operation = "InternalContactClient.InternalInternalContactGetByIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalContactGetByIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

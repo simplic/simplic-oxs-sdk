@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Insurance** | **double?** |  | [optional] 
 **Creditworthiness** | **string** |  | [optional] 
 **CreditLimit** | **string** |  | [optional] 
+**IsDeleted** | **bool?** |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 
 **Status** | [**ContractStatusModel**](ContractStatusModel.md) |  | [optional] 

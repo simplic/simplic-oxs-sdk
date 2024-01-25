@@ -173,8 +173,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Get(Guid id, int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Get(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -192,8 +192,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -212,8 +212,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public System.Threading.Tasks.Task<TransactionTaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public System.Threading.Tasks.Task<TaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -232,8 +232,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -249,14 +249,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Put(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Patch(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Put(id, createTransactionTaxGroupRequest, operationIndex);
+                return _internalClient.Patch(id, updateTaxGroupRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -269,14 +269,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> PutWithHttpInfo(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> PatchWithHttpInfo(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PutWithHttpInfo(id, createTransactionTaxGroupRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updateTaxGroupRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -289,15 +289,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public System.Threading.Tasks.Task<TransactionTaxGroupModel> PutAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public System.Threading.Tasks.Task<TaxGroupModel> PatchAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutAsync(id, createTransactionTaxGroupRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updateTaxGroupRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -310,15 +310,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutWithHttpInfoAsync(id, createTransactionTaxGroupRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateTaxGroupRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -329,14 +329,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Post(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Post(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Post(createTransactionTaxGroupRequest, operationIndex);
+                return _internalClient.Post(taxGroupRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -348,14 +348,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> PostWithHttpInfo(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> PostWithHttpInfo(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createTransactionTaxGroupRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(taxGroupRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -367,15 +367,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public System.Threading.Tasks.Task<TransactionTaxGroupModel> PostAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public System.Threading.Tasks.Task<TaxGroupModel> PostAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createTransactionTaxGroupRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(taxGroupRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -387,15 +387,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> PostWithHttpInfoAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> PostWithHttpInfoAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createTransactionTaxGroupRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(taxGroupRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -439,8 +439,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        TransactionTaxGroupModel Get(Guid id, int operationIndex = 0);
+        /// <returns>TaxGroupModel</returns>
+        TaxGroupModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -451,17 +451,17 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        ApiResponse<TransactionTaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        ApiResponse<TaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        TransactionTaxGroupModel Put(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0);
+        /// <returns>TaxGroupModel</returns>
+        TaxGroupModel Patch(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -471,18 +471,18 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        ApiResponse<TransactionTaxGroupModel> PutWithHttpInfo(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        ApiResponse<TaxGroupModel> PatchWithHttpInfo(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        TransactionTaxGroupModel Post(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0);
+        /// <returns>TaxGroupModel</returns>
+        TaxGroupModel Post(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -491,10 +491,10 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        ApiResponse<TransactionTaxGroupModel> PostWithHttpInfo(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        ApiResponse<TaxGroupModel> PostWithHttpInfo(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -539,8 +539,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        System.Threading.Tasks.Task<TransactionTaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxGroupModel</returns>
+        System.Threading.Tasks.Task<TaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -552,8 +552,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionTaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -562,11 +562,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        System.Threading.Tasks.Task<TransactionTaxGroupModel> PutAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxGroupModel</returns>
+        System.Threading.Tasks.Task<TaxGroupModel> PatchAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -576,11 +576,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionTaxGroupModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxGroupModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -588,11 +588,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        System.Threading.Tasks.Task<TransactionTaxGroupModel> PostAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxGroupModel</returns>
+        System.Threading.Tasks.Task<TaxGroupModel> PostAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -601,11 +601,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionTaxGroupModel>> PostWithHttpInfoAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxGroupModel>> PostWithHttpInfoAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Delete";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Delete";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -860,7 +860,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -876,10 +876,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Get(Guid id, int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -889,8 +889,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Get";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -928,10 +928,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TransactionTaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -948,10 +948,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public async System.Threading.Tasks.Task<TransactionTaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public async System.Threading.Tasks.Task<TaxGroupModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -962,8 +962,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Get";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1002,11 +1002,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransactionTaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1021,12 +1021,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Put(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Patch(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = PutWithHttpInfo(id, createTransactionTaxGroupRequest);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = PatchWithHttpInfo(id, updateTaxGroupRequest);
             return localVarResponse.Data;
         }
 
@@ -1035,10 +1035,10 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> PutWithHttpInfo(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> PatchWithHttpInfo(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1068,9 +1068,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionTaxGroupRequest;
+            localVarRequestOptions.Data = updateTaxGroupRequest;
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Put";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1080,10 +1080,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionTaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1098,13 +1098,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public async System.Threading.Tasks.Task<TransactionTaxGroupModel> PutAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public async System.Threading.Tasks.Task<TaxGroupModel> PatchAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = await PutWithHttpInfoAsync(id, createTransactionTaxGroupRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateTaxGroupRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1113,11 +1113,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="updateTaxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = default(UpdateTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1148,9 +1148,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionTaxGroupRequest;
+            localVarRequestOptions.Data = updateTaxGroupRequest;
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Put";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1160,11 +1160,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionTaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TaxGroupModel>("/TaxGroup/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1178,12 +1178,12 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionTaxGroupModel</returns>
-        public TransactionTaxGroupModel Post(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>TaxGroupModel</returns>
+        public TaxGroupModel Post(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = PostWithHttpInfo(createTransactionTaxGroupRequest);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = PostWithHttpInfo(taxGroupRequest);
             return localVarResponse.Data;
         }
 
@@ -1191,10 +1191,10 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionTaxGroupModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> PostWithHttpInfo(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxGroupModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxGroupModel> PostWithHttpInfo(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1223,9 +1223,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionTaxGroupRequest;
+            localVarRequestOptions.Data = taxGroupRequest;
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Post";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1235,10 +1235,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionTaxGroupModel>("/TaxGroup", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TaxGroupModel>("/TaxGroup", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1252,13 +1252,13 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionTaxGroupModel</returns>
-        public async System.Threading.Tasks.Task<TransactionTaxGroupModel> PostAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxGroupModel</returns>
+        public async System.Threading.Tasks.Task<TaxGroupModel> PostAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel> localVarResponse = await PostWithHttpInfoAsync(createTransactionTaxGroupRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxGroupModel> localVarResponse = await PostWithHttpInfoAsync(taxGroupRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1266,11 +1266,11 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionTaxGroupRequest"> (optional)</param>
+        /// <param name="taxGroupRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionTaxGroupModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionTaxGroupModel>> PostWithHttpInfoAsync(CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = default(CreateTransactionTaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxGroupModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxGroupModel>> PostWithHttpInfoAsync(TaxGroupRequest? taxGroupRequest = default(TaxGroupRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1300,9 +1300,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionTaxGroupRequest;
+            localVarRequestOptions.Data = taxGroupRequest;
 
-            localVarRequestOptions.Operation = "TaxGroupClient.Post";
+            localVarRequestOptions.Operation = "TaxGroupClient.TaxGroupPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1312,11 +1312,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionTaxGroupModel>("/TaxGroup", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TaxGroupModel>("/TaxGroup", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxGroupPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

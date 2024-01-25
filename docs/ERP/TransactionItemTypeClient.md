@@ -6,7 +6,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 |--------|--------------|-------------|
 | [**Delete**](TransactionItemTypeClient.md#transactionitemtypeiddelete) | **DELETE** /TransactionItemType/{id} |  |
 | [**Get**](TransactionItemTypeClient.md#transactionitemtypeidget) | **GET** /TransactionItemType/{id} |  |
-| [**Put**](TransactionItemTypeClient.md#transactionitemtypeidput) | **PUT** /TransactionItemType/{id} |  |
+| [**Patch**](TransactionItemTypeClient.md#transactionitemtypeidpatch) | **PATCH** /TransactionItemType/{id} |  |
 | [**Post**](TransactionItemTypeClient.md#transactionitemtypepost) | **POST** /TransactionItemType |  |
 
 <a id="transactionitemtypeiddelete"></a>
@@ -188,12 +188,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactionitemtypeidput"></a>
-# **Put**
-> TransactionItemTypeModel Put (Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = null)
+<a id="transactionitemtypeidpatch"></a>
+# **Patch**
+> TransactionItemTypeModel Patch (Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = null)
 
 
 
@@ -207,7 +208,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -220,16 +221,16 @@ namespace Example
 
             var apiInstance = new TransactionItemTypeClient(config);
             var id = "id_example";  // Guid | 
-            var createTransactionItemTypeRequest = new CreateTransactionItemTypeRequest?(); // CreateTransactionItemTypeRequest? |  (optional) 
+            var updateTransactionItemTypeRequest = new UpdateTransactionItemTypeRequest?(); // UpdateTransactionItemTypeRequest? |  (optional) 
 
             try
             {
-                TransactionItemTypeModel result = apiInstance.Put(id, createTransactionItemTypeRequest);
+                TransactionItemTypeModel result = apiInstance.Patch(id, updateTransactionItemTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionItemTypeClient.Put: " + e.Message);
+                Debug.Print("Exception when calling TransactionItemTypeClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +239,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionItemTypeModel> response = apiInstance.PutWithHttpInfo(id, createTransactionItemTypeRequest);
+    ApiResponse<TransactionItemTypeModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionItemTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionItemTypeClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionItemTypeClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -262,7 +263,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **createTransactionItemTypeRequest** | [**CreateTransactionItemTypeRequest?**](CreateTransactionItemTypeRequest?.md) |  | [optional]  |
+| **updateTransactionItemTypeRequest** | [**UpdateTransactionItemTypeRequest?**](UpdateTransactionItemTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -289,7 +290,7 @@ catch (ApiException e)
 
 <a id="transactionitemtypepost"></a>
 # **Post**
-> TransactionItemTypeModel Post (CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = null)
+> TransactionItemTypeModel Post (TransactionItemTypeRequest? transactionItemTypeRequest = null)
 
 
 
@@ -315,11 +316,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionItemTypeClient(config);
-            var createTransactionItemTypeRequest = new CreateTransactionItemTypeRequest?(); // CreateTransactionItemTypeRequest? |  (optional) 
+            var transactionItemTypeRequest = new TransactionItemTypeRequest?(); // TransactionItemTypeRequest? |  (optional) 
 
             try
             {
-                TransactionItemTypeModel result = apiInstance.Post(createTransactionItemTypeRequest);
+                TransactionItemTypeModel result = apiInstance.Post(transactionItemTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -339,7 +340,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionItemTypeModel> response = apiInstance.PostWithHttpInfo(createTransactionItemTypeRequest);
+    ApiResponse<TransactionItemTypeModel> response = apiInstance.PostWithHttpInfo(transactionItemTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -356,7 +357,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createTransactionItemTypeRequest** | [**CreateTransactionItemTypeRequest?**](CreateTransactionItemTypeRequest?.md) |  | [optional]  |
+| **transactionItemTypeRequest** | [**TransactionItemTypeRequest?**](TransactionItemTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 

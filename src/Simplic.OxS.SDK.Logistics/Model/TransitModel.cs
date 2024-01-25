@@ -42,10 +42,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="endAddress">endAddress.</param>
         /// <param name="endDateTime">Gets or sets the end date time off the transit..</param>
         /// <param name="startActionId">Gets or sets the id of the start action.  &lt;br&gt;  When the guid is null the transit will start at the start of the tour.  .</param>
+        /// <param name="globalStartActionId">Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  .</param>
         /// <param name="endActionId">Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  .</param>
+        /// <param name="globalEndActionId">Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  .</param>
         /// <param name="distance">Gets or sets the distance in meter.</param>
         /// <param name="tollDistance">Gets or sets the toll distance in meter.</param>
-        public TransitModel(Guid id = default(Guid), AddressModel startAddress = default(AddressModel), DateTime startDateTime = default(DateTime), AddressModel endAddress = default(AddressModel), DateTime endDateTime = default(DateTime), Guid? startActionId = default(Guid?), Guid? endActionId = default(Guid?), int distance = default(int), int tollDistance = default(int))
+        public TransitModel(Guid id = default(Guid), AddressModel startAddress = default(AddressModel), DateTime startDateTime = default(DateTime), AddressModel endAddress = default(AddressModel), DateTime endDateTime = default(DateTime), Guid? startActionId = default(Guid?), Guid? globalStartActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? globalEndActionId = default(Guid?), int distance = default(int), int tollDistance = default(int))
         {
             this.Id = id;
             this.StartAddress = startAddress;
@@ -53,7 +55,9 @@ namespace Simplic.OxS.SDK.Logistics
             this.EndAddress = endAddress;
             this.EndDateTime = endDateTime;
             this.StartActionId = startActionId;
+            this.GlobalStartActionId = globalStartActionId;
             this.EndActionId = endActionId;
+            this.GlobalEndActionId = globalEndActionId;
             this.Distance = distance;
             this.TollDistance = tollDistance;
         }
@@ -99,11 +103,25 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid? StartActionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  
+        /// </summary>
+        /// <value>Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  </value>
+        [DataMember(Name = "globalStartActionId", EmitDefaultValue = true)]
+        public Guid? GlobalStartActionId { get; set; }
+
+        /// <summary>
         /// Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  
         /// </summary>
         /// <value>Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  </value>
         [DataMember(Name = "endActionId", EmitDefaultValue = true)]
         public Guid? EndActionId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  
+        /// </summary>
+        /// <value>Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  </value>
+        [DataMember(Name = "globalEndActionId", EmitDefaultValue = true)]
+        public Guid? GlobalEndActionId { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in meter
@@ -133,7 +151,9 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  EndAddress: ").Append(EndAddress).Append("\n");
             sb.Append("  EndDateTime: ").Append(EndDateTime).Append("\n");
             sb.Append("  StartActionId: ").Append(StartActionId).Append("\n");
+            sb.Append("  GlobalStartActionId: ").Append(GlobalStartActionId).Append("\n");
             sb.Append("  EndActionId: ").Append(EndActionId).Append("\n");
+            sb.Append("  GlobalEndActionId: ").Append(GlobalEndActionId).Append("\n");
             sb.Append("  Distance: ").Append(Distance).Append("\n");
             sb.Append("  TollDistance: ").Append(TollDistance).Append("\n");
             sb.Append("}\n");
@@ -202,9 +222,19 @@ namespace Simplic.OxS.SDK.Logistics
                     this.StartActionId.Equals(input.StartActionId))
                 ) && 
                 (
+                    this.GlobalStartActionId == input.GlobalStartActionId ||
+                    (this.GlobalStartActionId != null &&
+                    this.GlobalStartActionId.Equals(input.GlobalStartActionId))
+                ) && 
+                (
                     this.EndActionId == input.EndActionId ||
                     (this.EndActionId != null &&
                     this.EndActionId.Equals(input.EndActionId))
+                ) && 
+                (
+                    this.GlobalEndActionId == input.GlobalEndActionId ||
+                    (this.GlobalEndActionId != null &&
+                    this.GlobalEndActionId.Equals(input.GlobalEndActionId))
                 ) && 
                 (
                     this.Distance == input.Distance ||
@@ -249,9 +279,17 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.StartActionId.GetHashCode();
                 }
+                if (this.GlobalStartActionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.GlobalStartActionId.GetHashCode();
+                }
                 if (this.EndActionId != null)
                 {
                     hashCode = (hashCode * 59) + this.EndActionId.GetHashCode();
+                }
+                if (this.GlobalEndActionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.GlobalEndActionId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Distance.GetHashCode();
                 hashCode = (hashCode * 59) + this.TollDistance.GetHashCode();

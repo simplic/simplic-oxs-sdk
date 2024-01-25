@@ -95,8 +95,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;Booking&gt;</returns>
-        public List<Booking> GetAll(int operationIndex = 0)
+        /// <returns>List&lt;BookingModel&gt;</returns>
+        public List<BookingModel> GetAll(int operationIndex = 0)
         {
             try
             {
@@ -113,8 +113,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;Booking&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<Booking>> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;BookingModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<BookingModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             try
             {
@@ -132,8 +132,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Booking&gt;</returns>
-        public System.Threading.Tasks.Task<List<Booking>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;BookingModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<BookingModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -151,8 +151,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Booking&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<Booking>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;BookingModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<BookingModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -246,8 +246,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Get(Guid id, int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Get(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -265,8 +265,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -285,8 +285,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public System.Threading.Tasks.Task<Booking> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public System.Threading.Tasks.Task<BookingModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -305,8 +305,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -324,8 +324,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
         {
             try
             {
@@ -344,8 +344,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
         {
             try
             {
@@ -365,8 +365,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public System.Threading.Tasks.Task<Booking> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public System.Threading.Tasks.Task<BookingModel> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -386,8 +386,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -402,14 +402,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Post(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Post(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Post(postBookingCreate, operationIndex);
+                return _internalClient.Post(createBookingRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -421,14 +421,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> PostWithHttpInfo(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> PostWithHttpInfo(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(postBookingCreate, operationIndex);
+                return _internalClient.PostWithHttpInfo(createBookingRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -440,15 +440,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public System.Threading.Tasks.Task<Booking> PostAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public System.Threading.Tasks.Task<BookingModel> PostAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(postBookingCreate, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(createBookingRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -460,15 +460,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> PostWithHttpInfoAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> PostWithHttpInfoAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(postBookingCreate, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(createBookingRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -491,8 +491,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;Booking&gt;</returns>
-        List<Booking> GetAll(int operationIndex = 0);
+        /// <returns>List&lt;BookingModel&gt;</returns>
+        List<BookingModel> GetAll(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -502,8 +502,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;Booking&gt;</returns>
-        ApiResponse<List<Booking>> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;BookingModel&gt;</returns>
+        ApiResponse<List<BookingModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -530,8 +530,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        Booking Get(Guid id, int operationIndex = 0);
+        /// <returns>BookingModel</returns>
+        BookingModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -542,38 +542,17 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        ApiResponse<Booking> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of BookingModel</returns>
+        ApiResponse<BookingModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchBookingRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        Booking Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        ApiResponse<Booking> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        Booking Post(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0);
+        /// <returns>BookingModel</returns>
+        BookingModel Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -582,10 +561,31 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="id"></param>
+        /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        ApiResponse<Booking> PostWithHttpInfo(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0);
+        /// <returns>ApiResponse of BookingModel</returns>
+        ApiResponse<BookingModel> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>BookingModel</returns>
+        BookingModel Post(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of BookingModel</returns>
+        ApiResponse<BookingModel> PostWithHttpInfo(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -604,8 +604,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Booking&gt;</returns>
-        System.Threading.Tasks.Task<List<Booking>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;BookingModel&gt;</returns>
+        System.Threading.Tasks.Task<List<BookingModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -616,8 +616,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Booking&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Booking>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;BookingModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<BookingModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -653,8 +653,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        System.Threading.Tasks.Task<Booking> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of BookingModel</returns>
+        System.Threading.Tasks.Task<BookingModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -666,22 +666,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Booking>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchBookingRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        System.Threading.Tasks.Task<Booking> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BookingModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -693,20 +679,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Booking>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        System.Threading.Tasks.Task<Booking> PostAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of BookingModel</returns>
+        System.Threading.Tasks.Task<BookingModel> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -715,11 +689,37 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="id"></param>
+        /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Booking>> PostWithHttpInfoAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BookingModel>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BookingModel</returns>
+        System.Threading.Tasks.Task<BookingModel> PostAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BookingModel>> PostWithHttpInfoAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -845,10 +845,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;Booking&gt;</returns>
-        public List<Booking> GetAll(int operationIndex = 0)
+        /// <returns>List&lt;BookingModel&gt;</returns>
+        public List<BookingModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<Booking>> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<BookingModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -857,8 +857,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;Booking&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<Booking>> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;BookingModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<BookingModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
 
-            localVarRequestOptions.Operation = "BookingClient.GetAll";
+            localVarRequestOptions.Operation = "BookingClient.BookingGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -895,10 +895,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Booking>>("/Booking/get-all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<BookingModel>>("/Booking/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -914,10 +914,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Booking&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Booking>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;BookingModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<BookingModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<Booking>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<BookingModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -927,8 +927,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Booking&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<Booking>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;BookingModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<BookingModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
 
-            localVarRequestOptions.Operation = "BookingClient.GetAll";
+            localVarRequestOptions.Operation = "BookingClient.BookingGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -966,11 +966,11 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Booking>>("/Booking/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<BookingModel>>("/Booking/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1027,7 +1027,7 @@ namespace Simplic.OxS.SDK.Storage.Management
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Delete";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1040,7 +1040,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             var localVarResponse = this.Client.Delete<Object>("/Booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1100,7 +1100,7 @@ namespace Simplic.OxS.SDK.Storage.Management
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Delete";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.Storage.Management
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1130,10 +1130,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Get(Guid id, int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1143,8 +1143,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.Storage.Management
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Get";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1182,10 +1182,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Booking>("/Booking/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<BookingModel>("/Booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1202,10 +1202,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public async System.Threading.Tasks.Task<Booking> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public async System.Threading.Tasks.Task<BookingModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1216,8 +1216,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1246,7 +1246,7 @@ namespace Simplic.OxS.SDK.Storage.Management
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Get";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1256,11 +1256,11 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Booking>("/Booking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BookingModel>("/Booking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1277,10 +1277,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Patch(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = PatchWithHttpInfo(id, patchBookingRequest);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = PatchWithHttpInfo(id, patchBookingRequest);
             return localVarResponse.Data;
         }
 
@@ -1291,8 +1291,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id"></param>
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> PatchWithHttpInfo(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1324,7 +1324,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.Patch";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1334,10 +1334,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Booking>("/Booking/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<BookingModel>("/Booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1355,10 +1355,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public async System.Threading.Tasks.Task<Booking> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public async System.Threading.Tasks.Task<BookingModel> PatchAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = await PatchWithHttpInfoAsync(id, patchBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1370,8 +1370,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="patchBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> PatchWithHttpInfoAsync(Guid id, PatchBookingRequest? patchBookingRequest = default(PatchBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1404,7 +1404,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.Patch";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1414,11 +1414,11 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Booking>("/Booking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<BookingModel>("/Booking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1432,12 +1432,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Booking</returns>
-        public Booking Post(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0)
+        /// <returns>BookingModel</returns>
+        public BookingModel Post(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = PostWithHttpInfo(postBookingCreate);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = PostWithHttpInfo(createBookingRequest);
             return localVarResponse.Data;
         }
 
@@ -1445,10 +1445,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Booking</returns>
-        public Simplic.OxS.SDK.ApiResponse<Booking> PostWithHttpInfo(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0)
+        /// <returns>ApiResponse of BookingModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BookingModel> PostWithHttpInfo(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1477,9 +1477,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = postBookingCreate;
+            localVarRequestOptions.Data = createBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.Post";
+            localVarRequestOptions.Operation = "BookingClient.BookingPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1489,10 +1489,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Booking>("/Booking", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<BookingModel>("/Booking", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1506,13 +1506,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Booking</returns>
-        public async System.Threading.Tasks.Task<Booking> PostAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BookingModel</returns>
+        public async System.Threading.Tasks.Task<BookingModel> PostAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<Booking> localVarResponse = await PostWithHttpInfoAsync(postBookingCreate, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BookingModel> localVarResponse = await PostWithHttpInfoAsync(createBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1520,11 +1520,11 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postBookingCreate"> (optional)</param>
+        /// <param name="createBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Booking)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Booking>> PostWithHttpInfoAsync(PostBookingCreate? postBookingCreate = default(PostBookingCreate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BookingModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BookingModel>> PostWithHttpInfoAsync(CreateBookingRequest? createBookingRequest = default(CreateBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1554,9 +1554,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = postBookingCreate;
+            localVarRequestOptions.Data = createBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.Post";
+            localVarRequestOptions.Operation = "BookingClient.BookingPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1566,11 +1566,11 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Booking>("/Booking", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BookingModel>("/Booking", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

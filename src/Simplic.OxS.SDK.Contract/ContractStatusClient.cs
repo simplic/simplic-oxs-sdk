@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Contract
             }
 
 
-            localVarRequestOptions.Operation = "ContractStatusClient.GetAll";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Get<List<ContractStatusModel>>("/ContractStatus/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Contract
             }
 
 
-            localVarRequestOptions.Operation = "ContractStatusClient.GetAll";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1027,7 +1027,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Delete";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1040,7 +1040,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Delete<Object>("/ContractStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1100,7 +1100,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Delete";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Get";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1185,7 +1185,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Get<ContractStatusModel>("/ContractStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1246,7 +1246,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Get";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1260,7 +1260,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1324,7 +1324,7 @@ namespace Simplic.OxS.SDK.Contract
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Put";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1337,7 +1337,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Put<ContractStatusModel>("/ContractStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1404,7 +1404,7 @@ namespace Simplic.OxS.SDK.Contract
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Put";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1418,7 +1418,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1479,7 +1479,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.Data = createContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Post";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1492,7 +1492,7 @@ namespace Simplic.OxS.SDK.Contract
             var localVarResponse = this.Client.Post<ContractStatusModel>("/ContractStatus", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1556,7 +1556,7 @@ namespace Simplic.OxS.SDK.Contract
 
             localVarRequestOptions.Data = createContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusClient.Post";
+            localVarRequestOptions.Operation = "ContractStatusClient.ContractStatusPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1570,7 +1570,7 @@ namespace Simplic.OxS.SDK.Contract
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContractStatusPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

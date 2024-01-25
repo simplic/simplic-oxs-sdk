@@ -46,7 +46,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="detailHtml">detailHtml.</param>
         /// <param name="dataTemplate">dataTemplate.</param>
         /// <param name="articleGLAResolver">articleGLAResolver.</param>
-        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string))
+        /// <param name="createDateTime">createDateTime.</param>
+        /// <param name="createUserId">createUserId.</param>
+        /// <param name="createUserName">createUserName.</param>
+        /// <param name="updateDateTime">updateDateTime.</param>
+        /// <param name="updateUserId">updateUserId.</param>
+        /// <param name="updateUserName">updateUserName.</param>
+        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -58,6 +64,12 @@ namespace Simplic.OxS.SDK.ERP
             this.DetailHtml = detailHtml;
             this.DataTemplate = dataTemplate;
             this.ArticleGLAResolver = articleGLAResolver;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
@@ -121,6 +133,42 @@ namespace Simplic.OxS.SDK.ERP
         public string ArticleGLAResolver { get; set; }
 
         /// <summary>
+        /// Gets or Sets CreateDateTime
+        /// </summary>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserId
+        /// </summary>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserName
+        /// </summary>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateDateTime
+        /// </summary>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserId
+        /// </summary>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserName
+        /// </summary>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +186,12 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  DetailHtml: ").Append(DetailHtml).Append("\n");
             sb.Append("  DataTemplate: ").Append(DataTemplate).Append("\n");
             sb.Append("  ArticleGLAResolver: ").Append(ArticleGLAResolver).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,6 +272,36 @@ namespace Simplic.OxS.SDK.ERP
                     this.ArticleGLAResolver == input.ArticleGLAResolver ||
                     (this.ArticleGLAResolver != null &&
                     this.ArticleGLAResolver.Equals(input.ArticleGLAResolver))
+                ) && 
+                (
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
+                ) && 
+                (
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -257,6 +341,30 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ArticleGLAResolver != null)
                 {
                     hashCode = (hashCode * 59) + this.ArticleGLAResolver.GetHashCode();
+                }
+                if (this.CreateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.CreateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
                 return hashCode;
             }

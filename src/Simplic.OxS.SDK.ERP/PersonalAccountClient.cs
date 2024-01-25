@@ -333,11 +333,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PersonalAccountModel</returns>
-        public PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        public PersonalAccountModel Patch(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Put(id, updatePersonalAccountRequest, operationIndex);
+                return _internalClient.Patch(id, updatePersonalAccountRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -353,11 +353,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PersonalAccountModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PatchWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PutWithHttpInfo(id, updatePersonalAccountRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updatePersonalAccountRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -374,11 +374,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PersonalAccountModel</returns>
-        public System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<PersonalAccountModel> PatchAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -395,11 +395,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PatchWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutWithHttpInfoAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -645,7 +645,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PersonalAccountModel</returns>
-        PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
+        PersonalAccountModel Patch(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -658,7 +658,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PersonalAccountModel</returns>
-        ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
+        ApiResponse<PersonalAccountModel> PatchWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -799,7 +799,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PersonalAccountModel</returns>
-        System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PersonalAccountModel> PatchAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -813,7 +813,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PatchWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1037,7 +1037,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.AddAddressContactId";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountAddAddressIdContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1050,7 +1050,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Put<PersonalAccountModel>("/PersonalAccount/add-address/{id}/{contactId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddAddressContactId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountAddAddressIdContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.AddAddressContactId";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountAddAddressIdContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1128,7 +1128,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddAddressContactId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountAddAddressIdContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1185,7 +1185,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Delete";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1198,7 +1198,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1258,7 +1258,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Delete";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1272,7 +1272,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1330,7 +1330,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Get";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1343,7 +1343,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Get<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1404,7 +1404,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Get";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1418,7 +1418,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1436,9 +1436,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PersonalAccountModel</returns>
-        public PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        public PersonalAccountModel Patch(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = PutWithHttpInfo(id, updatePersonalAccountRequest);
+            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = PatchWithHttpInfo(id, updatePersonalAccountRequest);
             return localVarResponse.Data;
         }
 
@@ -1450,7 +1450,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updatePersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PersonalAccountModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PatchWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1482,7 +1482,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updatePersonalAccountRequest;
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Put";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1492,10 +1492,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1514,9 +1514,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PersonalAccountModel</returns>
-        public async System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PersonalAccountModel> PatchAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = await PutWithHttpInfoAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = await PatchWithHttpInfoAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1529,7 +1529,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PatchWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1562,7 +1562,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updatePersonalAccountRequest;
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Put";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1572,11 +1572,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1637,7 +1637,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.Data = createPersonalAccountRequest;
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Post";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1650,7 +1650,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Post<PersonalAccountModel>("/PersonalAccount", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1714,7 +1714,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.Data = createPersonalAccountRequest;
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.Post";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1728,7 +1728,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1789,7 +1789,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.RemoveAddressContactId";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountRemoveAddressIdContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1802,7 +1802,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Put<PersonalAccountModel>("/PersonalAccount/remove-address/{id}/{contactId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveAddressContactId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountRemoveAddressIdContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1866,7 +1866,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
 
-            localVarRequestOptions.Operation = "PersonalAccountClient.RemoveAddressContactId";
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountRemoveAddressIdContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1880,7 +1880,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveAddressContactId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PersonalAccountRemoveAddressIdContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

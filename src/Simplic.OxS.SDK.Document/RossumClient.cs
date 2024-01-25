@@ -94,13 +94,14 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Hook(int operationIndex = 0)
+        public void Hook(Guid organizationId, int operationIndex = 0)
         {
             try
             {
-                _internalClient.Hook(operationIndex);
+                _internalClient.Hook(organizationId, operationIndex);
             }
             catch (ApiException e)
             {
@@ -112,13 +113,14 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> HookWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> HookWithHttpInfo(Guid organizationId, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.HookWithHttpInfo(operationIndex);
+                return _internalClient.HookWithHttpInfo(organizationId, operationIndex);
             }
             catch (ApiException e)
             {
@@ -130,14 +132,15 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task HookAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task HookAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.HookAsync(operationIndex, cancellationToken);
+                return _internalClient.HookAsync(organizationId, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -149,14 +152,15 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HookWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HookWithHttpInfoAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.HookWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.HookWithHttpInfoAsync(organizationId, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -178,9 +182,10 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Hook(int operationIndex = 0);
+        void Hook(Guid organizationId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -189,9 +194,10 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> HookWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Object> HookWithHttpInfo(Guid organizationId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -208,10 +214,11 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HookAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task HookAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -220,10 +227,11 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HookWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> HookWithHttpInfoAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -348,20 +356,22 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Hook(int operationIndex = 0)
+        public void Hook(Guid organizationId, int operationIndex = 0)
         {
-            HookWithHttpInfo();
+            HookWithHttpInfo(organizationId);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> HookWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> HookWithHttpInfo(Guid organizationId, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -384,8 +394,9 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.PathParameters.Add("organizationId", Simplic.OxS.SDK.ClientUtils.ParameterToString(organizationId)); // path parameter
 
-            localVarRequestOptions.Operation = "RossumClient.Hook";
+            localVarRequestOptions.Operation = "RossumClient.ApiRossumOrganizationIdHookPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -395,10 +406,10 @@ namespace Simplic.OxS.SDK.Document
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/api/Rossum/hook", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/api/Rossum/{organizationId}/hook", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Hook", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiRossumOrganizationIdHookPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -412,22 +423,24 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HookAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task HookAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await HookWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            await HookWithHttpInfoAsync(organizationId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HookWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HookWithHttpInfoAsync(Guid organizationId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -451,8 +464,9 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.PathParameters.Add("organizationId", Simplic.OxS.SDK.ClientUtils.ParameterToString(organizationId)); // path parameter
 
-            localVarRequestOptions.Operation = "RossumClient.Hook";
+            localVarRequestOptions.Operation = "RossumClient.ApiRossumOrganizationIdHookPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -462,11 +476,11 @@ namespace Simplic.OxS.SDK.Document
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/Rossum/hook", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/Rossum/{organizationId}/hook", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Hook", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiRossumOrganizationIdHookPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

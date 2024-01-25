@@ -4,18 +4,113 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel |  |
 | [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionsput) | **PUT** /Transaction/convert-transactions |  |
 | [**GetByBarcode**](TransactionClient.md#transactiongetbybarcodeget) | **GET** /Transaction/get-by-barcode |  |
 | [**GetByDate**](TransactionClient.md#transactiongetbydateget) | **GET** /Transaction/get-by-date |  |
 | [**GetByNumber**](TransactionClient.md#transactiongetbynumberget) | **GET** /Transaction/get-by-number |  |
 | [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} |  |
 | [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} |  |
-| [**Put**](TransactionClient.md#transactionidput) | **PUT** /Transaction/{id} |  |
+| [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} |  |
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction |  |
+
+<a id="transactioncancelput"></a>
+# **Cancel**
+> TransactionResultModel Cancel (Guid? id = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Simplic.OxS.SDK.ERP;
+using Simplic.OxS.SDK.ERP;
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class CancelExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new TransactionClient(config);
+            var id = "id_example";  // Guid? |  (optional) 
+
+            try
+            {
+                TransactionResultModel result = apiInstance.Cancel(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TransactionClient.Cancel: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CancelWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<TransactionResultModel> response = apiInstance.CancelWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TransactionClient.CancelWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid?** |  | [optional]  |
+
+### Return type
+
+[**TransactionResultModel**](TransactionResultModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactionconverttransactionsput"></a>
 # **ConvertTransactions**
-> ConvertResult ConvertTransactions (ConvertTransactionRequest? convertTransactionRequest = null)
+> ConvertResultModel ConvertTransactions (ConvertTransactionsRequest? convertTransactionsRequest = null)
 
 
 
@@ -41,11 +136,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionClient(config);
-            var convertTransactionRequest = new ConvertTransactionRequest?(); // ConvertTransactionRequest? |  (optional) 
+            var convertTransactionsRequest = new ConvertTransactionsRequest?(); // ConvertTransactionsRequest? |  (optional) 
 
             try
             {
-                ConvertResult result = apiInstance.ConvertTransactions(convertTransactionRequest);
+                ConvertResultModel result = apiInstance.ConvertTransactions(convertTransactionsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<ConvertResult> response = apiInstance.ConvertTransactionsWithHttpInfo(convertTransactionRequest);
+    ApiResponse<ConvertResultModel> response = apiInstance.ConvertTransactionsWithHttpInfo(convertTransactionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -82,11 +177,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **convertTransactionRequest** | [**ConvertTransactionRequest?**](ConvertTransactionRequest?.md) |  | [optional]  |
+| **convertTransactionsRequest** | [**ConvertTransactionsRequest?**](ConvertTransactionsRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**ConvertResult**](ConvertResult.md)
+[**ConvertResultModel**](ConvertResultModel.md)
 
 ### Authorization
 
@@ -197,6 +292,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -292,6 +388,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -385,6 +482,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -473,13 +571,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="transactionidget"></a>
 # **Get**
-> TransactionModel Get (Guid id)
+> TransactionModel Get (Guid id, bool? lockResource = null)
 
 
 
@@ -506,10 +605,11 @@ namespace Example
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | 
+            var lockResource = true;  // bool? |  (optional) 
 
             try
             {
-                TransactionModel result = apiInstance.Get(id);
+                TransactionModel result = apiInstance.Get(id, lockResource);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -529,7 +629,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<TransactionModel> response = apiInstance.GetWithHttpInfo(id, lockResource);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -547,6 +647,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
+| **lockResource** | **bool?** |  | [optional]  |
 
 ### Return type
 
@@ -567,12 +668,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactionidput"></a>
-# **Put**
-> TransactionModel Put (Guid id, UpdateTransactionRequest? updateTransactionRequest = null)
+<a id="transactionidpatch"></a>
+# **Patch**
+> TransactionResultModel Patch (Guid id, UpdateTransactionRequest? updateTransactionRequest = null)
 
 
 
@@ -586,7 +688,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -603,12 +705,12 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.Put(id, updateTransactionRequest);
+                TransactionResultModel result = apiInstance.Patch(id, updateTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.Put: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -617,20 +719,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.PutWithHttpInfo(id, updateTransactionRequest);
+    ApiResponse<TransactionResultModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -645,7 +747,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionModel**](TransactionModel.md)
+[**TransactionResultModel**](TransactionResultModel.md)
 
 ### Authorization
 
@@ -668,7 +770,7 @@ catch (ApiException e)
 
 <a id="transactionpost"></a>
 # **Post**
-> TransactionModel Post (CreateTransactionRequest? createTransactionRequest = null)
+> TransactionResultModel Post (CreateTransactionRequest? createTransactionRequest = null)
 
 
 
@@ -698,7 +800,7 @@ namespace Example
 
             try
             {
-                TransactionModel result = apiInstance.Post(createTransactionRequest);
+                TransactionResultModel result = apiInstance.Post(createTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -718,7 +820,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionModel> response = apiInstance.PostWithHttpInfo(createTransactionRequest);
+    ApiResponse<TransactionResultModel> response = apiInstance.PostWithHttpInfo(createTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -739,7 +841,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionModel**](TransactionModel.md)
+[**TransactionResultModel**](TransactionResultModel.md)
 
 ### Authorization
 

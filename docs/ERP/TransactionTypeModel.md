@@ -12,8 +12,13 @@ Name | Type | Description | Notes
 **ReportName** | **string** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
 **Functions** | **List&lt;string&gt;** |  | [optional] 
-**TransactionCalculationServiceIds** | **List&lt;Guid&gt;** |  | [optional] 
-**Subtype** | [**TransactionSubtypeModel**](TransactionSubtypeModel.md) |  | [optional] 
+**Subtypes** | [**List&lt;TransactionSubtypeModel&gt;**](TransactionSubtypeModel.md) |  | [optional] 
+**CreateDateTime** | **DateTime** |  | [optional] 
+**CreateUserId** | **Guid?** |  | [optional] 
+**CreateUserName** | **string** |  | [optional] 
+**UpdateDateTime** | **DateTime** |  | [optional] 
+**UpdateUserId** | **Guid?** |  | [optional] 
+**UpdateUserName** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalVehicleClient.Get";
+            localVarRequestOptions.Operation = "InternalVehicleClient.InternalInternalVehicleGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<VehicleModel>("/internal/InternalVehicle", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalVehicleGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.Vehicle
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalVehicleClient.Get";
+            localVarRequestOptions.Operation = "InternalVehicleClient.InternalInternalVehicleGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalVehicleGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="currentVersion">currentVersion.</param>
         /// <param name="reference">reference.</param>
         /// <param name="barcode">barcode.</param>
-        public DocumentResponse(Guid id = default(Guid), string name = default(string), DateTime dateTime = default(DateTime), List<DocumentVersionResponse> versions = default(List<DocumentVersionResponse>), DocumentVersionResponse currentVersion = default(DocumentVersionResponse), string reference = default(string), string barcode = default(string))
+        /// <param name="primaryClassification">primaryClassification.</param>
+        public DocumentResponse(Guid id = default(Guid), string name = default(string), DateTime dateTime = default(DateTime), List<DocumentVersionResponse> versions = default(List<DocumentVersionResponse>), DocumentVersionResponse currentVersion = default(DocumentVersionResponse), string reference = default(string), string barcode = default(string), ClassificationResponse primaryClassification = default(ClassificationResponse))
         {
             this.Id = id;
             this.Name = name;
@@ -52,6 +53,7 @@ namespace Simplic.OxS.SDK.Document
             this.CurrentVersion = currentVersion;
             this.Reference = reference;
             this.Barcode = barcode;
+            this.PrimaryClassification = primaryClassification;
         }
 
         /// <summary>
@@ -97,6 +99,12 @@ namespace Simplic.OxS.SDK.Document
         public string Barcode { get; set; }
 
         /// <summary>
+        /// Gets or Sets PrimaryClassification
+        /// </summary>
+        [DataMember(Name = "primaryClassification", EmitDefaultValue = false)]
+        public ClassificationResponse PrimaryClassification { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +119,7 @@ namespace Simplic.OxS.SDK.Document
             sb.Append("  CurrentVersion: ").Append(CurrentVersion).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Barcode: ").Append(Barcode).Append("\n");
+            sb.Append("  PrimaryClassification: ").Append(PrimaryClassification).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +190,11 @@ namespace Simplic.OxS.SDK.Document
                     this.Barcode == input.Barcode ||
                     (this.Barcode != null &&
                     this.Barcode.Equals(input.Barcode))
+                ) && 
+                (
+                    this.PrimaryClassification == input.PrimaryClassification ||
+                    (this.PrimaryClassification != null &&
+                    this.PrimaryClassification.Equals(input.PrimaryClassification))
                 );
         }
 
@@ -220,6 +234,10 @@ namespace Simplic.OxS.SDK.Document
                 if (this.Barcode != null)
                 {
                     hashCode = (hashCode * 59) + this.Barcode.GetHashCode();
+                }
+                if (this.PrimaryClassification != null)
+                {
+                    hashCode = (hashCode * 59) + this.PrimaryClassification.GetHashCode();
                 }
                 return hashCode;
             }

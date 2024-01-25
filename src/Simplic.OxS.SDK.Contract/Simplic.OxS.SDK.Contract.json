@@ -1321,6 +1321,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "isDeleted": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
                     "id": {
                         "type": "string",
                         "format": "uuid"
@@ -1578,6 +1582,10 @@
                     "additionalMaterialCost": {
                         "type": "number",
                         "format": "double"
+                    },
+                    "additionalFreightCost": {
+                        "type": "number",
+                        "format": "double"
                     }
                 },
                 "additionalProperties": false
@@ -1638,6 +1646,10 @@
                     },
                     "creditLimit": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
                         "nullable": true
                     },
                     "businessPartnerContactId": {
@@ -1863,6 +1875,11 @@
                         "nullable": true
                     },
                     "additionalMaterialCost": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "additionalFreightCost": {
                         "type": "number",
                         "format": "double",
                         "nullable": true
@@ -2120,6 +2137,10 @@
                     },
                     "creditLimit": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
                         "nullable": true
                     },
                     "businessPartnerContactId": {

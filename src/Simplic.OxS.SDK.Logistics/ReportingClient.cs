@@ -400,7 +400,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingClient.GetByTour";
+            localVarRequestOptions.Operation = "ReportingClient.ReportingGetByTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -413,7 +413,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<TourReportingModel>("/Reporting/get-by-tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ReportingGetByTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -474,7 +474,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ReportingClient.GetByTour";
+            localVarRequestOptions.Operation = "ReportingClient.ReportingGetByTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -488,7 +488,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ReportingGetByTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

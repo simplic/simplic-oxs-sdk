@@ -36,12 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonalAccountModel" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="number">number.</param>
         /// <param name="vatId">vatId.</param>
         /// <param name="type">type.</param>
         /// <param name="creditLimit">creditLimit.</param>
-        /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
         /// <param name="saleTermsOfPayment">saleTermsOfPayment.</param>
         /// <param name="purchaseTermsOfPayment">purchaseTermsOfPayment.</param>
         /// <param name="taxGroup">taxGroup.</param>
@@ -52,15 +51,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        public PersonalAccountModel(string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid id = default(Guid), Guid organizationId = default(Guid), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TransactionTaxGroupModel taxGroup = default(TransactionTaxGroupModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
+            this.Id = id;
             this.Number = number;
             this.VatId = vatId;
             this.Type = type;
             this.CreditLimit = creditLimit;
-            this.Id = id;
-            this.OrganizationId = organizationId;
             this.SaleTermsOfPayment = saleTermsOfPayment;
             this.PurchaseTermsOfPayment = purchaseTermsOfPayment;
             this.TaxGroup = taxGroup;
@@ -71,8 +68,13 @@ namespace Simplic.OxS.SDK.ERP
             this.UpdateDateTime = updateDateTime;
             this.UpdateUserId = updateUserId;
             this.UpdateUserName = updateUserName;
-            this.IsDeleted = isDeleted;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -99,18 +101,6 @@ namespace Simplic.OxS.SDK.ERP
         public CreditLimitModel CreditLimit { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OrganizationId
-        /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets SaleTermsOfPayment
         /// </summary>
         [DataMember(Name = "saleTermsOfPayment", EmitDefaultValue = false)]
@@ -126,7 +116,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets TaxGroup
         /// </summary>
         [DataMember(Name = "taxGroup", EmitDefaultValue = false)]
-        public TransactionTaxGroupModel TaxGroup { get; set; }
+        public TaxGroupModel TaxGroup { get; set; }
 
         /// <summary>
         /// Gets or Sets Addresses
@@ -171,12 +161,6 @@ namespace Simplic.OxS.SDK.ERP
         public string UpdateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
-        /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -184,12 +168,11 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PersonalAccountModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  SaleTermsOfPayment: ").Append(SaleTermsOfPayment).Append("\n");
             sb.Append("  PurchaseTermsOfPayment: ").Append(PurchaseTermsOfPayment).Append("\n");
             sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
@@ -200,7 +183,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
             sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
             sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +219,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Number == input.Number ||
                     (this.Number != null &&
                     this.Number.Equals(input.Number))
@@ -255,16 +242,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit == input.CreditLimit ||
                     (this.CreditLimit != null &&
                     this.CreditLimit.Equals(input.CreditLimit))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.SaleTermsOfPayment == input.SaleTermsOfPayment ||
@@ -316,10 +293,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.UpdateUserName == input.UpdateUserName ||
                     (this.UpdateUserName != null &&
                     this.UpdateUserName.Equals(input.UpdateUserName))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
                 );
         }
 
@@ -332,6 +305,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
@@ -347,14 +324,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 if (this.SaleTermsOfPayment != null)
                 {
@@ -396,7 +365,6 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

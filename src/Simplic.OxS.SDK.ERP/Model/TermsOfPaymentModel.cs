@@ -36,14 +36,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsOfPaymentModel" /> class.
         /// </summary>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="cashDiscount">cashDiscount.</param>
-        /// <param name="cashDiscountDays">cashDiscountDays.</param>
-        /// <param name="paymentDeadlineDays">paymentDeadlineDays.</param>
-        /// <param name="states">states.</param>
-        /// <param name="formattedText">formattedText.</param>
         /// <param name="id">id.</param>
+        /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="createDateTime">createDateTime.</param>
         /// <param name="createUserId">createUserId.</param>
@@ -51,17 +45,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        /// <param name="organizationId">organizationId.</param>
-        public TermsOfPaymentModel(int number = default(int), string name = default(string), double cashDiscount = default(double), int cashDiscountDays = default(int), int paymentDeadlineDays = default(int), List<string> states = default(List<string>), string formattedText = default(string), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public TermsOfPaymentModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
-            this.Number = number;
-            this.Name = name;
-            this.CashDiscount = cashDiscount;
-            this.CashDiscountDays = cashDiscountDays;
-            this.PaymentDeadlineDays = paymentDeadlineDays;
-            this.States = states;
-            this.FormattedText = formattedText;
             this.Id = id;
+            this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
@@ -69,56 +56,19 @@ namespace Simplic.OxS.SDK.ERP
             this.UpdateDateTime = updateDateTime;
             this.UpdateUserId = updateUserId;
             this.UpdateUserName = updateUserName;
-            this.OrganizationId = organizationId;
         }
-
-        /// <summary>
-        /// Gets or Sets Number
-        /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = false)]
-        public int Number { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashDiscount
-        /// </summary>
-        [DataMember(Name = "cashDiscount", EmitDefaultValue = false)]
-        public double CashDiscount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashDiscountDays
-        /// </summary>
-        [DataMember(Name = "cashDiscountDays", EmitDefaultValue = false)]
-        public int CashDiscountDays { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentDeadlineDays
-        /// </summary>
-        [DataMember(Name = "paymentDeadlineDays", EmitDefaultValue = false)]
-        public int PaymentDeadlineDays { get; set; }
-
-        /// <summary>
-        /// Gets or Sets States
-        /// </summary>
-        [DataMember(Name = "states", EmitDefaultValue = true)]
-        public List<string> States { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FormattedText
-        /// </summary>
-        [DataMember(Name = "formattedText", EmitDefaultValue = true)]
-        public string FormattedText { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public Guid OrganizationId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDeleted
@@ -163,12 +113,6 @@ namespace Simplic.OxS.SDK.ERP
         public string UpdateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
-        /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -176,14 +120,8 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TermsOfPaymentModel {\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CashDiscount: ").Append(CashDiscount).Append("\n");
-            sb.Append("  CashDiscountDays: ").Append(CashDiscountDays).Append("\n");
-            sb.Append("  PaymentDeadlineDays: ").Append(PaymentDeadlineDays).Append("\n");
-            sb.Append("  States: ").Append(States).Append("\n");
-            sb.Append("  FormattedText: ").Append(FormattedText).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
@@ -191,7 +129,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
             sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
             sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,41 +165,14 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Number == input.Number ||
-                    this.Number.Equals(input.Number)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CashDiscount == input.CashDiscount ||
-                    this.CashDiscount.Equals(input.CashDiscount)
-                ) && 
-                (
-                    this.CashDiscountDays == input.CashDiscountDays ||
-                    this.CashDiscountDays.Equals(input.CashDiscountDays)
-                ) && 
-                (
-                    this.PaymentDeadlineDays == input.PaymentDeadlineDays ||
-                    this.PaymentDeadlineDays.Equals(input.PaymentDeadlineDays)
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.FormattedText == input.FormattedText ||
-                    (this.FormattedText != null &&
-                    this.FormattedText.Equals(input.FormattedText))
-                ) && 
-                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
@@ -297,11 +207,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.UpdateUserName == input.UpdateUserName ||
                     (this.UpdateUserName != null &&
                     this.UpdateUserName.Equals(input.UpdateUserName))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
                 );
         }
 
@@ -314,25 +219,13 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CashDiscount.GetHashCode();
-                hashCode = (hashCode * 59) + this.CashDiscountDays.GetHashCode();
-                hashCode = (hashCode * 59) + this.PaymentDeadlineDays.GetHashCode();
-                if (this.States != null)
-                {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
-                }
-                if (this.FormattedText != null)
-                {
-                    hashCode = (hashCode * 59) + this.FormattedText.GetHashCode();
-                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.OrganizationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.CreateDateTime != null)
@@ -358,10 +251,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.UpdateUserName != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
-                }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 return hashCode;
             }

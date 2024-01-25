@@ -1281,7 +1281,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByDate";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByDateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1294,7 +1294,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ScheduledPlanningAssignmentResponse>>("/ScheduledPlanning/get-by-date", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByDate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByDateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1358,7 +1358,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByDate";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByDateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1372,7 +1372,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByDate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByDateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1442,7 +1442,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByResource";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByResourceResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1455,7 +1455,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ScheduledPlanningAssignmentResponse>("/ScheduledPlanning/get-by-resource/{resourceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByResource", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByResourceResourceIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1528,7 +1528,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shiftId", shiftId));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByResource";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByResourceResourceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1542,7 +1542,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByResource", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByResourceResourceIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1606,7 +1606,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByShift";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByShiftShiftIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1619,7 +1619,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ScheduledPlanningAssignmentResponse>>("/ScheduledPlanning/get-by-shift/{shiftId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShift", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByShiftShiftIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1686,7 +1686,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
             }
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.GetByShift";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningGetByShiftShiftIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1700,7 +1700,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShift", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningGetByShiftShiftIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1757,7 +1757,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Delete";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1770,7 +1770,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/ScheduledPlanning/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1830,7 +1830,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Delete";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1844,7 +1844,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1902,7 +1902,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Get";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1915,7 +1915,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ScheduledPlanningAssignmentResponse>("/ScheduledPlanning/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1976,7 +1976,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Get";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1990,7 +1990,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2054,7 +2054,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchScheduledPlanningRequest;
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Patch";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2067,7 +2067,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<ScheduledPlanningAssignmentResponse>("/ScheduledPlanning/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2134,7 +2134,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchScheduledPlanningRequest;
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Patch";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2148,7 +2148,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2209,7 +2209,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postScheduledPlanningRequest;
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Post";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2222,7 +2222,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ScheduledPlanningAssignmentResponse>("/ScheduledPlanning", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2286,7 +2286,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postScheduledPlanningRequest;
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Post";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2300,7 +2300,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2355,7 +2355,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Validate";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningValidateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2368,7 +2368,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ValidateResponse>("/ScheduledPlanning/validate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Validate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningValidateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2426,7 +2426,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ScheduledPlanningClient.Validate";
+            localVarRequestOptions.Operation = "ScheduledPlanningClient.ScheduledPlanningValidateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2440,7 +2440,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Validate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ScheduledPlanningValidateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -525,7 +525,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalTeamClient.GetAllByUser";
+            localVarRequestOptions.Operation = "InternalTeamClient.InternalInternalTeamGetAllByUserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -538,7 +538,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<TeamModel>>("/internal/InternalTeam/get-all-by-user", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByUser", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalTeamGetAllByUserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -602,7 +602,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalTeamClient.GetAllByUser";
+            localVarRequestOptions.Operation = "InternalTeamClient.InternalInternalTeamGetAllByUserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -616,7 +616,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByUser", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalTeamGetAllByUserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -674,7 +674,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "InternalTeamClient.Get";
+            localVarRequestOptions.Operation = "InternalTeamClient.InternalInternalTeamIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -687,7 +687,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<TeamModel>("/internal/InternalTeam/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalTeamIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -748,7 +748,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "InternalTeamClient.Get";
+            localVarRequestOptions.Operation = "InternalTeamClient.InternalInternalTeamIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -762,7 +762,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalTeamIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

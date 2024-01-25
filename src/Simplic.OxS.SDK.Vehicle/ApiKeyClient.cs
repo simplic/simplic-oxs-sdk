@@ -525,7 +525,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleApiKeyRequest;
 
-            localVarRequestOptions.Operation = "ApiKeyClient.Create";
+            localVarRequestOptions.Operation = "ApiKeyClient.ApiKeyCreatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -538,7 +538,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<VehicleApiKeyModel>("/ApiKey/create", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Create", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiKeyCreatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -602,7 +602,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleApiKeyRequest;
 
-            localVarRequestOptions.Operation = "ApiKeyClient.Create";
+            localVarRequestOptions.Operation = "ApiKeyClient.ApiKeyCreatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -616,7 +616,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Create", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiKeyCreatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -673,7 +673,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ApiKeyClient.Delete";
+            localVarRequestOptions.Operation = "ApiKeyClient.ApiKeyDeleteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -686,7 +686,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Delete<Object>("/ApiKey/delete/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiKeyDeleteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -746,7 +746,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ApiKeyClient.Delete";
+            localVarRequestOptions.Operation = "ApiKeyClient.ApiKeyDeleteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -760,7 +760,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiKeyDeleteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

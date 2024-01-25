@@ -1026,7 +1026,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.Get";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1039,7 +1039,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentResponse>("/Document/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1100,7 +1100,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.Get";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.GetCurrent";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetCurrentDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1185,7 +1185,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-current/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCurrent", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetCurrentDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1246,7 +1246,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.GetCurrent";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetCurrentDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1260,7 +1260,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCurrent", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetCurrentDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1318,7 +1318,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.GetVersionById";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetVersionByIdVersionIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1331,7 +1331,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-version-by-id/{versionId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetVersionById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetVersionByIdVersionIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1392,7 +1392,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("versionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(versionId)); // path parameter
 
-            localVarRequestOptions.Operation = "DocumentClient.GetVersionById";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetVersionByIdVersionIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1406,7 +1406,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetVersionById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetVersionByIdVersionIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1470,7 +1470,7 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
-            localVarRequestOptions.Operation = "DocumentClient.GetVersion";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetVersionDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1483,7 +1483,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<DocumentVersionResponse>("/Document/get-version/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetVersion", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetVersionDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1550,7 +1550,7 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "version", varVersion));
             }
 
-            localVarRequestOptions.Operation = "DocumentClient.GetVersion";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetVersionDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1564,7 +1564,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetVersion", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentGetVersionDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1628,7 +1628,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.Patch";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1641,7 +1641,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Patch<DocumentResponse>("/Document/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1708,7 +1708,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.Patch";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1722,7 +1722,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1783,7 +1783,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = postDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.Post";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1796,7 +1796,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Post<DocumentResponse>("/Document", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1860,7 +1860,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = postDocumentRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.Post";
+            localVarRequestOptions.Operation = "DocumentClient.DocumentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1874,7 +1874,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DocumentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

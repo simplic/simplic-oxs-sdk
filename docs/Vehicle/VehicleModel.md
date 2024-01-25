@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Toll** | [**TollModel**](TollModel.md) |  | [optional] 
 **UsableUntil** | **DateTime?** |  | [optional] 
 **LoadingSlots** | [**List&lt;LoadingSlotModel&gt;**](LoadingSlotModel.md) |  | [optional] 
+**QrCode** | **string** |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 

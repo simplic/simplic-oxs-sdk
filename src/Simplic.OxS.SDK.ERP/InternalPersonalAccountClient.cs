@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalPersonalAccountClient.GetById";
+            localVarRequestOptions.Operation = "InternalPersonalAccountClient.InternalInternalPersonalAccountGetByIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Get<PersonalAccountModel>("/internal/InternalPersonalAccount/get-by-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalPersonalAccountGetByIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "InternalPersonalAccountClient.GetById";
+            localVarRequestOptions.Operation = "InternalPersonalAccountClient.InternalInternalPersonalAccountGetByIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalPersonalAccountGetByIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

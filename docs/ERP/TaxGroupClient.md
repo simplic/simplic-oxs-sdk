@@ -6,7 +6,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 |--------|--------------|-------------|
 | [**Delete**](TaxGroupClient.md#taxgroupiddelete) | **DELETE** /TaxGroup/{id} |  |
 | [**Get**](TaxGroupClient.md#taxgroupidget) | **GET** /TaxGroup/{id} |  |
-| [**Put**](TaxGroupClient.md#taxgroupidput) | **PUT** /TaxGroup/{id} |  |
+| [**Patch**](TaxGroupClient.md#taxgroupidpatch) | **PATCH** /TaxGroup/{id} |  |
 | [**Post**](TaxGroupClient.md#taxgrouppost) | **POST** /TaxGroup |  |
 
 <a id="taxgroupiddelete"></a>
@@ -100,7 +100,7 @@ void (empty response body)
 
 <a id="taxgroupidget"></a>
 # **Get**
-> TransactionTaxGroupModel Get (Guid id)
+> TaxGroupModel Get (Guid id)
 
 
 
@@ -130,7 +130,7 @@ namespace Example
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.Get(id);
+                TaxGroupModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -150,7 +150,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<TaxGroupModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -171,7 +171,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionTaxGroupModel**](TransactionTaxGroupModel.md)
+[**TaxGroupModel**](TaxGroupModel.md)
 
 ### Authorization
 
@@ -188,12 +188,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="taxgroupidput"></a>
-# **Put**
-> TransactionTaxGroupModel Put (Guid id, CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
+<a id="taxgroupidpatch"></a>
+# **Patch**
+> TaxGroupModel Patch (Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = null)
 
 
 
@@ -207,7 +208,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class PutExample
+    public class PatchExample
     {
         public static void Main()
         {
@@ -220,16 +221,16 @@ namespace Example
 
             var apiInstance = new TaxGroupClient(config);
             var id = "id_example";  // Guid | 
-            var createTransactionTaxGroupRequest = new CreateTransactionTaxGroupRequest?(); // CreateTransactionTaxGroupRequest? |  (optional) 
+            var updateTaxGroupRequest = new UpdateTaxGroupRequest?(); // UpdateTaxGroupRequest? |  (optional) 
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.Put(id, createTransactionTaxGroupRequest);
+                TaxGroupModel result = apiInstance.Patch(id, updateTaxGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaxGroupClient.Put: " + e.Message);
+                Debug.Print("Exception when calling TaxGroupClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -238,20 +239,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the PatchWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.PutWithHttpInfo(id, createTransactionTaxGroupRequest);
+    ApiResponse<TaxGroupModel> response = apiInstance.PatchWithHttpInfo(id, updateTaxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TaxGroupClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TaxGroupClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -262,11 +263,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **createTransactionTaxGroupRequest** | [**CreateTransactionTaxGroupRequest?**](CreateTransactionTaxGroupRequest?.md) |  | [optional]  |
+| **updateTaxGroupRequest** | [**UpdateTaxGroupRequest?**](UpdateTaxGroupRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**TransactionTaxGroupModel**](TransactionTaxGroupModel.md)
+[**TaxGroupModel**](TaxGroupModel.md)
 
 ### Authorization
 
@@ -289,7 +290,7 @@ catch (ApiException e)
 
 <a id="taxgrouppost"></a>
 # **Post**
-> TransactionTaxGroupModel Post (CreateTransactionTaxGroupRequest? createTransactionTaxGroupRequest = null)
+> TaxGroupModel Post (TaxGroupRequest? taxGroupRequest = null)
 
 
 
@@ -315,11 +316,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TaxGroupClient(config);
-            var createTransactionTaxGroupRequest = new CreateTransactionTaxGroupRequest?(); // CreateTransactionTaxGroupRequest? |  (optional) 
+            var taxGroupRequest = new TaxGroupRequest?(); // TaxGroupRequest? |  (optional) 
 
             try
             {
-                TransactionTaxGroupModel result = apiInstance.Post(createTransactionTaxGroupRequest);
+                TaxGroupModel result = apiInstance.Post(taxGroupRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -339,7 +340,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<TransactionTaxGroupModel> response = apiInstance.PostWithHttpInfo(createTransactionTaxGroupRequest);
+    ApiResponse<TaxGroupModel> response = apiInstance.PostWithHttpInfo(taxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -356,11 +357,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createTransactionTaxGroupRequest** | [**CreateTransactionTaxGroupRequest?**](CreateTransactionTaxGroupRequest?.md) |  | [optional]  |
+| **taxGroupRequest** | [**TaxGroupRequest?**](TaxGroupRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**TransactionTaxGroupModel**](TransactionTaxGroupModel.md)
+[**TaxGroupModel**](TaxGroupModel.md)
 
 ### Authorization
 

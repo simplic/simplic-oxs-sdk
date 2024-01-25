@@ -995,7 +995,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentClient->GetByName");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentClient->DepartmentGetByNameNameGet");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1024,7 +1024,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.GetByName";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentGetByNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1037,7 +1037,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<DepartmentResponse>>("/Department/get-by-name/{name}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentGetByNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1074,7 +1074,7 @@ namespace Simplic.OxS.SDK.Logistics
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentClient->GetByName");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling DepartmentClient->DepartmentGetByNameNameGet");
             }
 
 
@@ -1104,7 +1104,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.GetByName";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentGetByNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1118,7 +1118,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentGetByNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1176,7 +1176,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.GetByOrder";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentGetByOrderOrderIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1189,7 +1189,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<DepartmentResponse>>("/Department/get-by-order/{orderId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByOrder", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentGetByOrderOrderIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1250,7 +1250,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.GetByOrder";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentGetByOrderOrderIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1264,7 +1264,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByOrder", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentGetByOrderOrderIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1321,7 +1321,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.Delete";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1334,7 +1334,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/Department/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1394,7 +1394,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.Delete";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1408,7 +1408,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1466,7 +1466,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.Get";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1479,7 +1479,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<DepartmentResponse>("/Department/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1540,7 +1540,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DepartmentClient.Get";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1554,7 +1554,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1618,7 +1618,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentClient.Patch";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1631,7 +1631,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<DepartmentResponse>("/Department/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1698,7 +1698,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentClient.Patch";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1712,7 +1712,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1773,7 +1773,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentClient.Post";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1786,7 +1786,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<DepartmentResponse>("/Department", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1850,7 +1850,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = postDepartmentRequest;
 
-            localVarRequestOptions.Operation = "DepartmentClient.Post";
+            localVarRequestOptions.Operation = "DepartmentClient.DepartmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1864,7 +1864,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DepartmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

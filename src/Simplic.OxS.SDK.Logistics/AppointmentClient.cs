@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentClient.Delete";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/Appointment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentClient.Delete";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -860,7 +860,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentClient.Get";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -931,7 +931,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<AppointmentModel>("/Appointment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "AppointmentClient.Get";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1006,7 +1006,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1070,7 +1070,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentClient.Patch";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1083,7 +1083,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<AppointmentModel>("/Appointment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1150,7 +1150,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentClient.Patch";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1164,7 +1164,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1225,7 +1225,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentClient.Post";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1238,7 +1238,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<AppointmentModel>("/Appointment", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1302,7 +1302,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createAppointmentRequest;
 
-            localVarRequestOptions.Operation = "AppointmentClient.Post";
+            localVarRequestOptions.Operation = "AppointmentClient.AppointmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1316,7 +1316,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AppointmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

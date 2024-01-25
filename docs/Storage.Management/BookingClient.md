@@ -12,7 +12,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 
 <a id="bookinggetallget"></a>
 # **GetAll**
-> List&lt;Booking&gt; GetAll ()
+> List&lt;BookingModel&gt; GetAll ()
 
 
 
@@ -41,7 +41,7 @@ namespace Example
 
             try
             {
-                List<Booking> result = apiInstance.GetAll();
+                List<BookingModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Booking>> response = apiInstance.GetAllWithHttpInfo();
+    ApiResponse<List<BookingModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -78,7 +78,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;Booking&gt;**](Booking.md)
+[**List&lt;BookingModel&gt;**](BookingModel.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ void (empty response body)
 
 <a id="bookingidget"></a>
 # **Get**
-> Booking Get (Guid id)
+> BookingModel Get (Guid id)
 
 
 
@@ -220,7 +220,7 @@ namespace Example
 
             try
             {
-                Booking result = apiInstance.Get(id);
+                BookingModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -240,7 +240,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<BookingModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -261,7 +261,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Booking**](Booking.md)
+[**BookingModel**](BookingModel.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ catch (ApiException e)
 
 <a id="bookingidpatch"></a>
 # **Patch**
-> Booking Patch (Guid id, PatchBookingRequest? patchBookingRequest = null)
+> BookingModel Patch (Guid id, PatchBookingRequest? patchBookingRequest = null)
 
 
 
@@ -315,7 +315,7 @@ namespace Example
 
             try
             {
-                Booking result = apiInstance.Patch(id, patchBookingRequest);
+                BookingModel result = apiInstance.Patch(id, patchBookingRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -335,7 +335,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.PatchWithHttpInfo(id, patchBookingRequest);
+    ApiResponse<BookingModel> response = apiInstance.PatchWithHttpInfo(id, patchBookingRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -357,7 +357,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Booking**](Booking.md)
+[**BookingModel**](BookingModel.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ catch (ApiException e)
 
 <a id="bookingpost"></a>
 # **Post**
-> Booking Post (PostBookingCreate? postBookingCreate = null)
+> BookingModel Post (CreateBookingRequest? createBookingRequest = null)
 
 
 
@@ -407,11 +407,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BookingClient(config);
-            var postBookingCreate = new PostBookingCreate?(); // PostBookingCreate? |  (optional) 
+            var createBookingRequest = new CreateBookingRequest?(); // CreateBookingRequest? |  (optional) 
 
             try
             {
-                Booking result = apiInstance.Post(postBookingCreate);
+                BookingModel result = apiInstance.Post(createBookingRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -431,7 +431,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Booking> response = apiInstance.PostWithHttpInfo(postBookingCreate);
+    ApiResponse<BookingModel> response = apiInstance.PostWithHttpInfo(createBookingRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -448,11 +448,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postBookingCreate** | [**PostBookingCreate?**](PostBookingCreate?.md) |  | [optional]  |
+| **createBookingRequest** | [**CreateBookingRequest?**](CreateBookingRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**Booking**](Booking.md)
+[**BookingModel**](BookingModel.md)
 
 ### Authorization
 

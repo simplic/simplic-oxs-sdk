@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.GetAll";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<OrganizationSiteModel>("/OrganizationSite/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.GetAll";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1027,7 +1027,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Delete";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1040,7 +1040,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Delete<Object>("/OrganizationSite/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1100,7 +1100,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Delete";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Get";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1185,7 +1185,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<OrganizationSiteModel>("/OrganizationSite/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1246,7 +1246,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Get";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1260,7 +1260,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1324,7 +1324,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateOrganizationSiteRequest;
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Put";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1337,7 +1337,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<OrganizationSiteModel>("/OrganizationSite/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1404,7 +1404,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateOrganizationSiteRequest;
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Put";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1418,7 +1418,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSiteIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1479,7 +1479,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createOrganizationSiteRequest;
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Post";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1492,7 +1492,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<OrganizationSiteModel>("/OrganizationSite", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1556,7 +1556,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createOrganizationSiteRequest;
 
-            localVarRequestOptions.Operation = "OrganizationSiteClient.Post";
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1570,7 +1570,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

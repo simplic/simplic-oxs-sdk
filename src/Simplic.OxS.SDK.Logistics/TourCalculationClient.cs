@@ -403,7 +403,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = calculateRouteRequest;
 
-            localVarRequestOptions.Operation = "TourCalculationClient.CalculateRoutes";
+            localVarRequestOptions.Operation = "TourCalculationClient.TourCalculationCalculateRoutesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -416,7 +416,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<CalculateRouteResponse>("/TourCalculation/calculate-routes", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CalculateRoutes", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourCalculationCalculateRoutesPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -480,7 +480,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = calculateRouteRequest;
 
-            localVarRequestOptions.Operation = "TourCalculationClient.CalculateRoutes";
+            localVarRequestOptions.Operation = "TourCalculationClient.TourCalculationCalculateRoutesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -494,7 +494,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CalculateRoutes", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourCalculationCalculateRoutesPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **Number** | **string** |  | [optional] 
 **VatId** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 

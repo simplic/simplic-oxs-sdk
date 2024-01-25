@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Get";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<GroupedResourcesModel>>("/ResourceGroup", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Get";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1028,7 +1028,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Delete";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1041,7 +1041,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/ResourceGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1102,7 +1102,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Delete";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1116,7 +1116,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1174,7 +1174,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Get";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1187,7 +1187,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<GroupedResourcesModel>("/ResourceGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1248,7 +1248,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Get";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1262,7 +1262,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1326,7 +1326,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceGroupRequest;
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Patch";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1339,7 +1339,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<GroupedResourcesModel>("/ResourceGroup/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1406,7 +1406,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateResourceGroupRequest;
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Patch";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1420,7 +1420,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1481,7 +1481,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceGroupRequest;
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Post";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1494,7 +1494,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<GroupedResourcesModel>("/ResourceGroup", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1558,7 +1558,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createResourceGroupRequest;
 
-            localVarRequestOptions.Operation = "ResourceGroupClient.Post";
+            localVarRequestOptions.Operation = "ResourceGroupClient.ResourceGroupPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1572,7 +1572,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ResourceGroupPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

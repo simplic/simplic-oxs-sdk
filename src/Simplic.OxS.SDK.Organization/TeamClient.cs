@@ -1382,7 +1382,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addTeamMemberRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.AddMember";
+            localVarRequestOptions.Operation = "TeamClient.TeamAddMemberIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1395,7 +1395,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<TeamModel>("/Team/add-member/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddMember", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamAddMemberIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1462,7 +1462,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addTeamMemberRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.AddMember";
+            localVarRequestOptions.Operation = "TeamClient.TeamAddMemberIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1476,7 +1476,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddMember", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamAddMemberIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1531,7 +1531,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAllByCurrentuser";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllByCurrentuserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1544,7 +1544,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<TeamModel>>("/Team/get-all-by-currentuser", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByCurrentuser", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllByCurrentuserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1602,7 +1602,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAllByCurrentuser";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllByCurrentuserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1616,7 +1616,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByCurrentuser", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllByCurrentuserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1671,7 +1671,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAllByOrganization";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllByOrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1684,7 +1684,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<TeamModel>>("/Team/get-all-by-organization", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByOrganization", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllByOrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1742,7 +1742,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAllByOrganization";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllByOrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1756,7 +1756,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByOrganization", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllByOrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1811,7 +1811,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAll";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1824,7 +1824,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<TeamModel>>("/Team/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1882,7 +1882,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "TeamClient.GetAll";
+            localVarRequestOptions.Operation = "TeamClient.TeamGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1896,7 +1896,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1953,7 +1953,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TeamClient.Delete";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1966,7 +1966,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Delete<Object>("/Team/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2026,7 +2026,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TeamClient.Delete";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2040,7 +2040,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2098,7 +2098,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TeamClient.Get";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2111,7 +2111,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<TeamModel>("/Team/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2172,7 +2172,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TeamClient.Get";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2186,7 +2186,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2250,7 +2250,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTeamRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.Put";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2263,7 +2263,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<TeamModel>("/Team/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2330,7 +2330,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTeamRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.Put";
+            localVarRequestOptions.Operation = "TeamClient.TeamIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2344,7 +2344,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2405,7 +2405,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createTeamRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.Post";
+            localVarRequestOptions.Operation = "TeamClient.TeamPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2418,7 +2418,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<TeamModel>("/Team", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2482,7 +2482,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createTeamRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.Post";
+            localVarRequestOptions.Operation = "TeamClient.TeamPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2496,7 +2496,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2560,7 +2560,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = removeTeamMemberRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.RemoveMember";
+            localVarRequestOptions.Operation = "TeamClient.TeamRemoveMemberIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2573,7 +2573,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<TeamModel>("/Team/remove-member/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveMember", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamRemoveMemberIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2640,7 +2640,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = removeTeamMemberRequest;
 
-            localVarRequestOptions.Operation = "TeamClient.RemoveMember";
+            localVarRequestOptions.Operation = "TeamClient.TeamRemoveMemberIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2654,7 +2654,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveMember", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TeamRemoveMemberIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

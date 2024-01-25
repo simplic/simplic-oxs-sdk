@@ -45,7 +45,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="tourId">Gets or sets the tour id..</param>
         /// <param name="resourceId">Gets or sets the id of the main resource of the tour..</param>
         /// <param name="startActionId">Gets or sets the id of the action that starts the eta.  &lt;br&gt;  When the start action id is null the tour start will be the start of the eta.  .</param>
+        /// <param name="globalStartActionId">Gets or sets the global id of the start action..</param>
         /// <param name="endActionId">Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  .</param>
+        /// <param name="globalEndActionId">Gets or sets the global id of the end action..</param>
         /// <param name="startDateTime">Gets or sets the date and time when the eta will start..</param>
         /// <param name="startLongitude">Gets or sets the longitude of the start of the eta..</param>
         /// <param name="startLatitude">Gets or sets the latitude of the start of the eta..</param>
@@ -62,12 +64,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="toleranceMinutes">Gets or sets the tolerance for a delay in minutes..</param>
         /// <param name="lastCalculation">Gets or sets the date and time of the last calculation..</param>
         /// <param name="state">state.</param>
-        public EstimatedTimeOfArrivalResponse(Guid tourId = default(Guid), Guid resourceId = default(Guid), Guid? startActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? startDateTime = default(Guid?), long startLongitude = default(long), long startLatitude = default(long), long currentLongitude = default(long), long currentLatitude = default(long), long endLongitude = default(long), long endLatitude = default(long), int remainingMinutes = default(int), int remainingDistanceMeters = default(int), int remainingTimePercent = default(int), int remainingDistancePercent = default(int), DateTime calculatedEndDateTime = default(DateTime), DateTime plannedEndDateTime = default(DateTime), int toleranceMinutes = default(int), DateTime lastCalculation = default(DateTime), ETAState? state = default(ETAState?))
+        public EstimatedTimeOfArrivalResponse(Guid tourId = default(Guid), Guid resourceId = default(Guid), Guid? startActionId = default(Guid?), Guid? globalStartActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? globalEndActionId = default(Guid?), DateTime? startDateTime = default(DateTime?), double startLongitude = default(double), double startLatitude = default(double), double currentLongitude = default(double), double currentLatitude = default(double), double endLongitude = default(double), double endLatitude = default(double), int remainingMinutes = default(int), int remainingDistanceMeters = default(int), int remainingTimePercent = default(int), int remainingDistancePercent = default(int), DateTime calculatedEndDateTime = default(DateTime), DateTime plannedEndDateTime = default(DateTime), int toleranceMinutes = default(int), DateTime lastCalculation = default(DateTime), ETAState? state = default(ETAState?))
         {
             this.TourId = tourId;
             this.ResourceId = resourceId;
             this.StartActionId = startActionId;
+            this.GlobalStartActionId = globalStartActionId;
             this.EndActionId = endActionId;
+            this.GlobalEndActionId = globalEndActionId;
             this.StartDateTime = startDateTime;
             this.StartLongitude = startLongitude;
             this.StartLatitude = startLatitude;
@@ -108,6 +112,13 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid? StartActionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the global id of the start action.
+        /// </summary>
+        /// <value>Gets or sets the global id of the start action.</value>
+        [DataMember(Name = "globalStartActionId", EmitDefaultValue = true)]
+        public Guid? GlobalStartActionId { get; set; }
+
+        /// <summary>
         /// Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  
         /// </summary>
         /// <value>Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  </value>
@@ -115,53 +126,60 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid? EndActionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the global id of the end action.
+        /// </summary>
+        /// <value>Gets or sets the global id of the end action.</value>
+        [DataMember(Name = "globalEndActionId", EmitDefaultValue = true)]
+        public Guid? GlobalEndActionId { get; set; }
+
+        /// <summary>
         /// Gets or sets the date and time when the eta will start.
         /// </summary>
         /// <value>Gets or sets the date and time when the eta will start.</value>
         [DataMember(Name = "startDateTime", EmitDefaultValue = true)]
-        public Guid? StartDateTime { get; set; }
+        public DateTime? StartDateTime { get; set; }
 
         /// <summary>
         /// Gets or sets the longitude of the start of the eta.
         /// </summary>
         /// <value>Gets or sets the longitude of the start of the eta.</value>
         [DataMember(Name = "startLongitude", EmitDefaultValue = false)]
-        public long StartLongitude { get; set; }
+        public double StartLongitude { get; set; }
 
         /// <summary>
         /// Gets or sets the latitude of the start of the eta.
         /// </summary>
         /// <value>Gets or sets the latitude of the start of the eta.</value>
         [DataMember(Name = "startLatitude", EmitDefaultValue = false)]
-        public long StartLatitude { get; set; }
+        public double StartLatitude { get; set; }
 
         /// <summary>
         /// Gets or sets the longitude of the current position of the resource.
         /// </summary>
         /// <value>Gets or sets the longitude of the current position of the resource.</value>
         [DataMember(Name = "currentLongitude", EmitDefaultValue = false)]
-        public long CurrentLongitude { get; set; }
+        public double CurrentLongitude { get; set; }
 
         /// <summary>
         /// Gets or sets the latitude of the current position of the resource.
         /// </summary>
         /// <value>Gets or sets the latitude of the current position of the resource.</value>
         [DataMember(Name = "currentLatitude", EmitDefaultValue = false)]
-        public long CurrentLatitude { get; set; }
+        public double CurrentLatitude { get; set; }
 
         /// <summary>
         /// Gets or sets the longitude of the end of th eta.
         /// </summary>
         /// <value>Gets or sets the longitude of the end of th eta.</value>
         [DataMember(Name = "endLongitude", EmitDefaultValue = false)]
-        public long EndLongitude { get; set; }
+        public double EndLongitude { get; set; }
 
         /// <summary>
         /// Gets or sets the latitude of the end of the eta.
         /// </summary>
         /// <value>Gets or sets the latitude of the end of the eta.</value>
         [DataMember(Name = "endLatitude", EmitDefaultValue = false)]
-        public long EndLatitude { get; set; }
+        public double EndLatitude { get; set; }
 
         /// <summary>
         /// Gets or sets the remaining time in minutes.
@@ -230,7 +248,9 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  TourId: ").Append(TourId).Append("\n");
             sb.Append("  ResourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  StartActionId: ").Append(StartActionId).Append("\n");
+            sb.Append("  GlobalStartActionId: ").Append(GlobalStartActionId).Append("\n");
             sb.Append("  EndActionId: ").Append(EndActionId).Append("\n");
+            sb.Append("  GlobalEndActionId: ").Append(GlobalEndActionId).Append("\n");
             sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
             sb.Append("  StartLongitude: ").Append(StartLongitude).Append("\n");
             sb.Append("  StartLatitude: ").Append(StartLatitude).Append("\n");
@@ -298,9 +318,19 @@ namespace Simplic.OxS.SDK.Logistics
                     this.StartActionId.Equals(input.StartActionId))
                 ) && 
                 (
+                    this.GlobalStartActionId == input.GlobalStartActionId ||
+                    (this.GlobalStartActionId != null &&
+                    this.GlobalStartActionId.Equals(input.GlobalStartActionId))
+                ) && 
+                (
                     this.EndActionId == input.EndActionId ||
                     (this.EndActionId != null &&
                     this.EndActionId.Equals(input.EndActionId))
+                ) && 
+                (
+                    this.GlobalEndActionId == input.GlobalEndActionId ||
+                    (this.GlobalEndActionId != null &&
+                    this.GlobalEndActionId.Equals(input.GlobalEndActionId))
                 ) && 
                 (
                     this.StartDateTime == input.StartDateTime ||
@@ -393,9 +423,17 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.StartActionId.GetHashCode();
                 }
+                if (this.GlobalStartActionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.GlobalStartActionId.GetHashCode();
+                }
                 if (this.EndActionId != null)
                 {
                     hashCode = (hashCode * 59) + this.EndActionId.GetHashCode();
+                }
+                if (this.GlobalEndActionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.GlobalEndActionId.GetHashCode();
                 }
                 if (this.StartDateTime != null)
                 {

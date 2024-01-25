@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "TourTagClient.Get";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourTagModel>>("/TourTag", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "TourTagClient.Get";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1028,7 +1028,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagClient.Delete";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1041,7 +1041,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1102,7 +1102,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagClient.Delete";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1116,7 +1116,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1174,7 +1174,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagClient.Get";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1187,7 +1187,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<TourTagModel>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1248,7 +1248,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourTagClient.Get";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1262,7 +1262,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1326,7 +1326,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagClient.Patch";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1339,7 +1339,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<TourTagModel>("/TourTag/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1406,7 +1406,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagClient.Patch";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1420,7 +1420,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1481,7 +1481,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagClient.Post";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1494,7 +1494,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourTagModel>("/TourTag", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1558,7 +1558,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourTagRequest;
 
-            localVarRequestOptions.Operation = "TourTagClient.Post";
+            localVarRequestOptions.Operation = "TourTagClient.TourTagPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1572,7 +1572,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourTagPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -1492,7 +1492,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = acceptJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Accept";
+            localVarRequestOptions.Operation = "MemberClient.MemberAcceptPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1505,7 +1505,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/accept", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Accept", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberAcceptPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1568,7 +1568,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = acceptJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Accept";
+            localVarRequestOptions.Operation = "MemberClient.MemberAcceptPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1582,7 +1582,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Accept", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberAcceptPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1642,7 +1642,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = declineJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Decline";
+            localVarRequestOptions.Operation = "MemberClient.MemberDeclinePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1655,7 +1655,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/decline", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Decline", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberDeclinePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1718,7 +1718,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = declineJoinMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Decline";
+            localVarRequestOptions.Operation = "MemberClient.MemberDeclinePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1732,7 +1732,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Decline", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberDeclinePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1792,7 +1792,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = deleteInviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.DeleteInvite";
+            localVarRequestOptions.Operation = "MemberClient.MemberDeleteInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1805,7 +1805,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/delete-invite", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteInvite", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberDeleteInvitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1868,7 +1868,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = deleteInviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.DeleteInvite";
+            localVarRequestOptions.Operation = "MemberClient.MemberDeleteInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1882,7 +1882,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteInvite", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberDeleteInvitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1937,7 +1937,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "MemberClient.GetAll";
+            localVarRequestOptions.Operation = "MemberClient.MemberGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1950,7 +1950,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationMemberModel>>("/Member/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2008,7 +2008,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "MemberClient.GetAll";
+            localVarRequestOptions.Operation = "MemberClient.MemberGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2022,7 +2022,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2077,7 +2077,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "MemberClient.GetPendingInvitations";
+            localVarRequestOptions.Operation = "MemberClient.MemberGetPendingInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2090,7 +2090,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationMemberInvitationModel>>("/Member/get-pending-invitations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPendingInvitations", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberGetPendingInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2148,7 +2148,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "MemberClient.GetPendingInvitations";
+            localVarRequestOptions.Operation = "MemberClient.MemberGetPendingInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2162,7 +2162,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPendingInvitations", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberGetPendingInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2222,7 +2222,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = inviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.InviteMultiple";
+            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2235,7 +2235,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/invite-multiple", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InviteMultiple", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2298,7 +2298,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = inviteMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.InviteMultiple";
+            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2312,7 +2312,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InviteMultiple", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2372,7 +2372,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "MemberClient.Invite";
+            localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2385,7 +2385,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/invite", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Invite", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberInvitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2448,7 +2448,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
             }
 
-            localVarRequestOptions.Operation = "MemberClient.Invite";
+            localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2462,7 +2462,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Invite", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberInvitePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2522,7 +2522,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = leaveOrganizationRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Leave";
+            localVarRequestOptions.Operation = "MemberClient.MemberLeavePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2535,7 +2535,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/leave", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Leave", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberLeavePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2598,7 +2598,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = leaveOrganizationRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Leave";
+            localVarRequestOptions.Operation = "MemberClient.MemberLeavePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2612,7 +2612,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Leave", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberLeavePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2672,7 +2672,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = removeMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Remove";
+            localVarRequestOptions.Operation = "MemberClient.MemberRemovePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2685,7 +2685,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<Object>("/Member/remove", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Remove", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberRemovePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2748,7 +2748,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = removeMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Remove";
+            localVarRequestOptions.Operation = "MemberClient.MemberRemovePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2762,7 +2762,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Remove", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberRemovePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2825,7 +2825,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Update";
+            localVarRequestOptions.Operation = "MemberClient.MemberUpdateIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2838,7 +2838,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<Object>("/Member/update/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Update", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberUpdateIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2904,7 +2904,7 @@ namespace Simplic.OxS.SDK.Organization
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateMemberRequest;
 
-            localVarRequestOptions.Operation = "MemberClient.Update";
+            localVarRequestOptions.Operation = "MemberClient.MemberUpdateIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2918,7 +2918,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Update", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MemberUpdateIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

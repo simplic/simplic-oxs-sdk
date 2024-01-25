@@ -763,7 +763,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.GetAll";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -776,7 +776,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<ShipmentStatusModel>>("/ShipmentStatus/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -834,7 +834,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.GetAll";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -848,7 +848,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -906,7 +906,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Get";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -919,7 +919,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<ShipmentStatusModel>("/ShipmentStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -980,7 +980,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Get";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -994,7 +994,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1058,7 +1058,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Put";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1071,7 +1071,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<ShipmentStatusModel>("/ShipmentStatus/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1138,7 +1138,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Put";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1152,7 +1152,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1213,7 +1213,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Post";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1226,7 +1226,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<ShipmentStatusModel>("/ShipmentStatus", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1290,7 +1290,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createShipmentStatusRequest;
 
-            localVarRequestOptions.Operation = "ShipmentStatusClient.Post";
+            localVarRequestOptions.Operation = "ShipmentStatusClient.ShipmentStatusPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1304,7 +1304,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ShipmentStatusPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

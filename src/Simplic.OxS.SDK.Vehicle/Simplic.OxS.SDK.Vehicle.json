@@ -1,1 +1,3256 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.Vehicle", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/vehicle-api/v1"}], "paths": {"/ApiKey/create": {"post": {"tags": ["ApiKey"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleApiKeyRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleApiKeyRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateVehicleApiKeyRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleApiKeyModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleApiKeyModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleApiKeyModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/ApiKey/delete/{id}": {"delete": {"tags": ["ApiKey"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/DeviceAuth": {"get": {"tags": ["DeviceAuth"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DeviceModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DeviceModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DeviceModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/DeviceAuth/login": {"post": {"tags": ["DeviceAuth"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/DeviceLoginRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/DeviceAuth/refresh-token": {"post": {"tags": ["DeviceAuth"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/RefreshTokenRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/RefreshTokenRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/RefreshTokenRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DeviceLoginResponse"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/DeviceAuth/logout": {"post": {"tags": ["DeviceAuth"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/DeviceLogoutRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DeviceLogoutRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/DeviceLogoutRequest"}}}}, "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/internal/InternalVehicle": {"get": {"tags": ["InternalVehicle"], "parameters": [{"name": "id", "in": "query", "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Vehicle/{id}": {"get": {"tags": ["Vehicle"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "put": {"tags": ["Vehicle"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["Vehicle"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Vehicle": {"post": {"tags": ["Vehicle"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateVehicleRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Vehicle/get-filtered-with-paging": {"get": {"tags": ["Vehicle"], "parameters": [{"name": "searchText", "in": "query", "schema": {"type": "string"}}, {"name": "skip", "in": "query", "schema": {"type": "integer", "format": "int32"}}, {"name": "limit", "in": "query", "schema": {"type": "integer", "format": "int32"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleModel"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Vehicle/get-count-of-vehicles": {"get": {"tags": ["Vehicle"], "parameters": [{"name": "searchText", "in": "query", "schema": {"type": "string"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "integer", "format": "int32"}}, "application/json": {"schema": {"type": "integer", "format": "int32"}}, "text/json": {"schema": {"type": "integer", "format": "int32"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Vehicle/get-fleet-age": {"get": {"tags": ["Vehicle"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "number", "format": "double"}}, "application/json": {"schema": {"type": "number", "format": "double"}}, "text/json": {"schema": {"type": "number", "format": "double"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleStatus/{id}": {"get": {"tags": ["VehicleStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "put": {"tags": ["VehicleStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleStatusRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleStatusRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateVehicleStatusRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["VehicleStatus"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleStatus": {"post": {"tags": ["VehicleStatus"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleStatusRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleStatusRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateVehicleStatusRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleStatusModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleStatus/get-all": {"get": {"tags": ["VehicleStatus"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleStatusModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleStatusModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleStatusModel"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleType/{id}": {"get": {"tags": ["VehicleType"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "patch": {"tags": ["VehicleType"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PatchVehicleTypeRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PatchVehicleTypeRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PatchVehicleTypeRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["VehicleType"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleType": {"post": {"tags": ["VehicleType"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleTypeRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateVehicleTypeRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateVehicleTypeRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/VehicleTypeModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/VehicleType/get-all": {"get": {"tags": ["VehicleType"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleTypeModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleTypeModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleTypeModel"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}}, "components": {"schemas": {"AdditionalTechnicalDataModel": {"type": "object", "properties": {"emptyWeight": {"type": "number", "format": "double", "nullable": true}, "totalWeight": {"type": "number", "format": "double", "nullable": true}, "tireAmount": {"type": "integer", "format": "int32", "nullable": true}, "tireSizeSteeringAxle": {"type": "number", "format": "double", "nullable": true}, "tireSizeLiftAxle": {"type": "number", "format": "double", "nullable": true}, "tireSizeDriveAxle": {"type": "number", "format": "double", "nullable": true}, "payload": {"type": "number", "format": "double", "nullable": true}, "fuelAmount": {"type": "number", "format": "double", "nullable": true}, "rimSizeAxle1": {"type": "string", "nullable": true}, "rimSizeAxle2": {"type": "string", "nullable": true}, "rimSizeAxle3": {"type": "string", "nullable": true}, "frameColor": {"type": "string", "nullable": true}, "vehicleExecution": {"type": "string", "nullable": true}, "hasFixedSuperstructure": {"type": "boolean", "nullable": true}, "superstructureParkingSpaces": {"type": "integer", "format": "int32", "nullable": true}, "superstructureVolume": {"type": "number", "format": "double", "nullable": true}, "superstructureInsideLength": {"type": "number", "format": "double", "nullable": true}, "superstructureInsideWidth": {"type": "number", "format": "double", "nullable": true}, "superstructureInsideHeight": {"type": "number", "format": "double", "nullable": true}, "superstructureLoadingHeightBack": {"type": "number", "format": "double", "nullable": true}, "superstructureLoadingHeightFront": {"type": "number", "format": "double", "nullable": true}, "superstructureTireAmount": {"type": "integer", "format": "int32", "nullable": true}, "superstructureTireSizeNormalAxis": {"type": "number", "format": "double", "nullable": true}, "superstructureTireSizeLiftAxle": {"type": "number", "format": "double", "nullable": true}}, "additionalProperties": false}, "CreateVehicleApiKeyRequest": {"required": ["vehicleId"], "type": "object", "properties": {"vehicleId": {"type": "string", "format": "uuid"}}, "additionalProperties": false}, "CreateVehicleRequest": {"type": "object", "properties": {"location": {"type": "string", "nullable": true}, "matchCode": {"type": "string", "nullable": true}, "status": {"$ref": "#/components/schemas/VehicleStatusModel"}, "mileage": {"type": "number", "format": "double", "nullable": true}, "mileageDate": {"type": "string", "format": "date-time", "nullable": true}, "operatingHours": {"type": "number", "format": "double", "nullable": true}, "fuelTankCapacity": {"type": "integer", "format": "int32", "nullable": true}, "remark": {"type": "string", "nullable": true}, "dispositionSortingKey": {"type": "string", "nullable": true}, "yearOfManufacturing": {"type": "string", "format": "date-time", "nullable": true}, "registrationDocument": {"type": "string", "nullable": true}, "vehicleRegistration": {"type": "string", "nullable": true}, "isSystemVehicle": {"type": "boolean", "nullable": true}, "department": {"$ref": "#/components/schemas/DepartmentModel"}, "vehicleTypeSubType": {"$ref": "#/components/schemas/VehicleTypeSubTypeModel"}, "additionalTechnicalData": {"$ref": "#/components/schemas/AdditionalTechnicalDataModel"}, "registrationCertificate": {"$ref": "#/components/schemas/RegistrationCertificateModel"}, "registrationPlate": {"$ref": "#/components/schemas/RegistrationPlateModel"}, "registrationDocumentLocation": {"$ref": "#/components/schemas/RegistrationDocumentLocationModel"}, "toll": {"$ref": "#/components/schemas/TollModel"}, "usableUntil": {"type": "string", "format": "date-time", "nullable": true}, "loadingSlots": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingSlotModel"}, "nullable": true}}, "additionalProperties": false}, "CreateVehicleStatusRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "isSelectable": {"type": "boolean", "nullable": true}}, "additionalProperties": false}, "CreateVehicleTypeRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "displayName": {"type": "string", "nullable": true}, "vehicleSubType": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleSubTypeModel"}, "nullable": true}}, "additionalProperties": false}, "DepartmentModel": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "isSelectable": {"type": "boolean", "nullable": true}, "color": {"type": "string", "nullable": true}, "orderId": {"type": "string", "nullable": true}}, "additionalProperties": false}, "DeviceLoginRequest": {"required": ["apiKey", "deviceId"], "type": "object", "properties": {"apiKey": {"type": "string"}, "deviceId": {"maxLength": 255, "minLength": 10, "type": "string"}}, "additionalProperties": false}, "DeviceLoginResponse": {"type": "object", "properties": {"token": {"type": "string", "nullable": true}, "scheme": {"type": "string", "nullable": true, "readOnly": true}}, "additionalProperties": false}, "DeviceLogoutRequest": {"required": ["vehicleId"], "type": "object", "properties": {"vehicleId": {"type": "string", "format": "uuid"}}, "additionalProperties": false}, "DeviceModel": {"type": "object", "properties": {"vehicles": {"type": "array", "items": {"$ref": "#/components/schemas/DeviceVehicleModel"}, "nullable": true}}, "additionalProperties": false}, "DeviceVehicleModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "matchCode": {"type": "string", "nullable": true}, "registrationPlate": {"type": "string", "nullable": true}, "type": {"type": "string", "nullable": true}}, "additionalProperties": false}, "LoadingSlotModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "description": {"type": "string", "nullable": true}, "resourceId": {"type": "string", "format": "uuid"}}, "additionalProperties": false}, "PatchVehicleTypeRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "displayName": {"type": "string", "nullable": true}, "vehicleSubType": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleSubTypeModel"}, "nullable": true}}, "additionalProperties": false}, "ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}, "RefreshTokenRequest": {"required": ["token"], "type": "object", "properties": {"token": {"maxLength": 255, "minLength": 10, "type": "string"}}, "additionalProperties": false}, "RegistrationCertificateModel": {"type": "object", "properties": {"number": {"type": "string", "nullable": true}, "registratorId": {"type": "string", "format": "uuid", "nullable": true}, "remarks": {"type": "string", "nullable": true}, "firstRegistrationDate": {"type": "string", "format": "date-time", "nullable": true}, "manufacturer": {"type": "string", "nullable": true}, "type": {"type": "string", "nullable": true}, "commercialDesignation": {"type": "string", "nullable": true}, "vehicleIdentificationNumber": {"type": "string", "nullable": true}, "permissableTotalWeight": {"type": "integer", "format": "int32", "nullable": true}, "permissableTotalWeightInRegistrationState": {"type": "integer", "format": "int32", "nullable": true}, "emptyWeight": {"type": "integer", "format": "int32", "nullable": true}, "registrationValidityPeriod": {"type": "string", "format": "date-time", "nullable": true}, "registrationDate": {"type": "string", "format": "date-time", "nullable": true}, "vehicleClass": {"type": "string", "nullable": true}, "egTypeApprovalNumber": {"type": "string", "nullable": true}, "axleAmount": {"type": "integer", "format": "int32", "nullable": true}, "permissableBrakedTrailerLoad": {"type": "integer", "format": "int32", "nullable": true}, "permissableUnbrakedTrailerLoad": {"type": "integer", "format": "int32", "nullable": true}, "displacement": {"type": "integer", "format": "int32", "nullable": true}, "ratedPower": {"type": "integer", "format": "int32", "nullable": true}, "ratedRPM": {"type": "integer", "format": "int32", "nullable": true}, "fuelType": {"type": "string", "nullable": true}, "powerToWeightRatio": {"type": "number", "format": "double", "nullable": true}, "vehicleColor": {"type": "string", "nullable": true}, "seatsIncludingDriverSeat": {"type": "integer", "format": "int32", "nullable": true}, "standingPlaces": {"type": "integer", "format": "int32", "nullable": true}, "topSpeed": {"type": "integer", "format": "int32", "nullable": true}, "standingNoise": {"type": "integer", "format": "int32", "nullable": true}, "standingNoiseRPM": {"type": "integer", "format": "int32", "nullable": true}, "drivingNoise": {"type": "integer", "format": "int32", "nullable": true}, "emissions": {"type": "integer", "format": "int32", "nullable": true}, "egTypeEmissionClass": {"type": "string", "nullable": true}, "manufacturerShortName": {"type": "string", "nullable": true}, "manufacturerCode": {"type": "integer", "format": "int32", "nullable": true}, "typeCodeWithCheckDigit": {"type": "string", "nullable": true}, "vehicleIdentificationCheckDigit": {"type": "integer", "format": "int32", "nullable": true}, "superStructureType": {"type": "string", "nullable": true}, "vehicleClassDesignation": {"type": "string", "nullable": true}, "egTypeApprovalDate": {"type": "string", "format": "date-time", "nullable": true}, "permissableMaximumLoadAxle1": {"type": "integer", "format": "int32", "nullable": true}, "permissableMaximumLoadAxle2": {"type": "integer", "format": "int32", "nullable": true}, "permissableMaximumLoadAxle3": {"type": "integer", "format": "int32", "nullable": true}, "permissableMaximumLoadAxle1InRegistrationState": {"type": "integer", "format": "int32", "nullable": true}, "permissableMaximumLoadAxle2InRegistrationState": {"type": "integer", "format": "int32", "nullable": true}, "permissableMaximumLoadAxle3InRegistrationState": {"type": "integer", "format": "int32", "nullable": true}, "driveAxleAmount": {"type": "integer", "format": "int32", "nullable": true}, "fuelTypeCode": {"type": "string", "nullable": true}, "colorCode": {"type": "string", "nullable": true}, "tankerTankCapacity": {"type": "integer", "format": "int32", "nullable": true}, "trailerNoseWeight": {"type": "integer", "format": "int32", "nullable": true}, "nationalEmissionClass": {"type": "string", "nullable": true}, "emissionClassCode": {"type": "string", "nullable": true}, "tiresAxle1": {"type": "string", "nullable": true}, "tiresAxle2": {"type": "string", "nullable": true}, "tiresAxle3": {"type": "string", "nullable": true}, "registrationCertificateNumberPart2": {"type": "string", "nullable": true}, "operatingPermitFeature": {"type": "string", "nullable": true}, "length": {"type": "integer", "format": "int32", "nullable": true}, "width": {"type": "integer", "format": "int32", "nullable": true}, "height": {"type": "integer", "format": "int32", "nullable": true}, "otherNotes": {"type": "string", "nullable": true}, "remarksAndExeptions": {"type": "string", "nullable": true}, "zlbiIatId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "RegistrationDocumentLocationModel": {"type": "object", "properties": {"location": {"type": "string", "nullable": true}}, "additionalProperties": false}, "RegistrationPlateModel": {"type": "object", "properties": {"countryIso": {"type": "string", "nullable": true}, "isSeaosnal": {"type": "boolean", "nullable": true}, "registrationIdentifier": {"type": "string", "nullable": true}, "remark": {"type": "string", "nullable": true}}, "additionalProperties": false}, "TollModel": {"type": "object", "properties": {"tollRegistrationDate": {"type": "string", "format": "date-time", "nullable": true}, "axleCount": {"type": "integer", "format": "int32", "nullable": true}, "emissionClassId": {"type": "string", "format": "uuid", "nullable": true}, "permissableTotalWeight": {"type": "number", "format": "double", "nullable": true}, "tollEmissionClassId": {"type": "string", "format": "uuid", "nullable": true}, "orderNumber": {"type": "string", "nullable": true}}, "additionalProperties": false}, "UpdateVehicleRequest": {"type": "object", "properties": {"location": {"type": "string", "nullable": true}, "matchCode": {"type": "string", "nullable": true}, "status": {"$ref": "#/components/schemas/VehicleStatusModel"}, "mileage": {"type": "number", "format": "double", "nullable": true}, "mileageDate": {"type": "string", "format": "date-time", "nullable": true}, "operatingHours": {"type": "number", "format": "double", "nullable": true}, "fuelTankCapacity": {"type": "integer", "format": "int32", "nullable": true}, "remark": {"type": "string", "nullable": true}, "dispositionSortingKey": {"type": "string", "nullable": true}, "yearOfManufacturing": {"type": "string", "format": "date-time", "nullable": true}, "registrationDocument": {"type": "string", "nullable": true}, "vehicleRegistration": {"type": "string", "nullable": true}, "isSystemVehicle": {"type": "boolean", "nullable": true}, "department": {"$ref": "#/components/schemas/DepartmentModel"}, "vehicleTypeSubType": {"$ref": "#/components/schemas/VehicleTypeSubTypeModel"}, "additionalTechnicalData": {"$ref": "#/components/schemas/AdditionalTechnicalDataModel"}, "registrationCertificate": {"$ref": "#/components/schemas/RegistrationCertificateModel"}, "registrationPlate": {"$ref": "#/components/schemas/RegistrationPlateModel"}, "registrationDocumentLocation": {"$ref": "#/components/schemas/RegistrationDocumentLocationModel"}, "toll": {"$ref": "#/components/schemas/TollModel"}, "usableUntil": {"type": "string", "format": "date-time", "nullable": true}, "loadingSlots": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingSlotModel"}, "nullable": true}}, "additionalProperties": false}, "UpdateVehicleStatusRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "isSelectable": {"type": "boolean", "nullable": true}}, "additionalProperties": false}, "VehicleApiKeyModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}, "vehicleId": {"type": "string", "format": "uuid"}, "apiKey": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleModel": {"type": "object", "properties": {"location": {"type": "string", "nullable": true}, "matchCode": {"type": "string", "nullable": true}, "status": {"$ref": "#/components/schemas/VehicleStatusModel"}, "mileage": {"type": "number", "format": "double", "nullable": true}, "mileageDate": {"type": "string", "format": "date-time", "nullable": true}, "operatingHours": {"type": "number", "format": "double", "nullable": true}, "fuelTankCapacity": {"type": "integer", "format": "int32", "nullable": true}, "remark": {"type": "string", "nullable": true}, "dispositionSortingKey": {"type": "string", "nullable": true}, "yearOfManufacturing": {"type": "string", "format": "date-time", "nullable": true}, "registrationDocument": {"type": "string", "nullable": true}, "vehicleRegistration": {"type": "string", "nullable": true}, "isSystemVehicle": {"type": "boolean", "nullable": true}, "department": {"$ref": "#/components/schemas/DepartmentModel"}, "vehicleTypeSubType": {"$ref": "#/components/schemas/VehicleTypeSubTypeModel"}, "additionalTechnicalData": {"$ref": "#/components/schemas/AdditionalTechnicalDataModel"}, "registrationCertificate": {"$ref": "#/components/schemas/RegistrationCertificateModel"}, "registrationPlate": {"$ref": "#/components/schemas/RegistrationPlateModel"}, "registrationDocumentLocation": {"$ref": "#/components/schemas/RegistrationDocumentLocationModel"}, "toll": {"$ref": "#/components/schemas/TollModel"}, "usableUntil": {"type": "string", "format": "date-time", "nullable": true}, "loadingSlots": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingSlotModel"}, "nullable": true}, "id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleStatusModel": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "isSelectable": {"type": "boolean", "nullable": true}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "id": {"type": "string", "format": "uuid"}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleSubTypeModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "displayName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleTypeModel": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "displayName": {"type": "string", "nullable": true}, "vehicleSubType": {"type": "array", "items": {"$ref": "#/components/schemas/VehicleSubTypeModel"}, "nullable": true}, "id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "VehicleTypeSubTypeModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "subType": {"type": "string", "nullable": true}, "subTypeId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.Vehicle",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/vehicle-api/v1"
+        }
+    ],
+    "paths": {
+        "/ApiKey/create": {
+            "post": {
+                "tags": [
+                    "ApiKey"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleApiKeyRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleApiKeyRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleApiKeyRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleApiKeyModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleApiKeyModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleApiKeyModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ApiKey/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "ApiKey"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/DeviceAuth": {
+            "get": {
+                "tags": [
+                    "DeviceAuth"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/DeviceAuth/login": {
+            "post": {
+                "tags": [
+                    "DeviceAuth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLoginRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLoginRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/DeviceAuth/refresh-token": {
+            "post": {
+                "tags": [
+                    "DeviceAuth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshTokenRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshTokenRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RefreshTokenRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceLoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/DeviceAuth/logout": {
+            "post": {
+                "tags": [
+                    "DeviceAuth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLogoutRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLogoutRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLogoutRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/internal/InternalVehicle": {
+            "get": {
+                "tags": [
+                    "InternalVehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle/{id}": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle": {
+            "post": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle/get-filtered-with-paging": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle/get-count-of-vehicles": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle/get-fleet-age": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "number",
+                                    "format": "double"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "number",
+                                    "format": "double"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "number",
+                                    "format": "double"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Vehicle/get-by-qrcode": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "parameters": [
+                    {
+                        "name": "qRCode",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleStatus/{id}": {
+            "get": {
+                "tags": [
+                    "VehicleStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "VehicleStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateVehicleStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "VehicleStatus"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleStatus": {
+            "post": {
+                "tags": [
+                    "VehicleStatus"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleStatus/get-all": {
+            "get": {
+                "tags": [
+                    "VehicleStatus"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleStatusModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleStatusModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleStatusModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleType/{id}": {
+            "get": {
+                "tags": [
+                    "VehicleType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "VehicleType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchVehicleTypeRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchVehicleTypeRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchVehicleTypeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "VehicleType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleType": {
+            "post": {
+                "tags": [
+                    "VehicleType"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleTypeRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleTypeRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVehicleTypeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehicleTypeModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/VehicleType/get-all": {
+            "get": {
+                "tags": [
+                    "VehicleType"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleTypeModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleTypeModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VehicleTypeModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AdditionalTechnicalDataModel": {
+                "type": "object",
+                "properties": {
+                    "emptyWeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalWeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tireAmount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "tireSizeSteeringAxle": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tireSizeLiftAxle": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tireSizeDriveAxle": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "payload": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fuelAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "rimSizeAxle1": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rimSizeAxle2": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rimSizeAxle3": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "frameColor": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleExecution": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "hasFixedSuperstructure": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "superstructureParkingSpaces": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "superstructureVolume": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureInsideLength": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureInsideWidth": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureInsideHeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureLoadingHeightBack": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureLoadingHeightFront": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureTireAmount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "superstructureTireSizeNormalAxis": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "superstructureTireSizeLiftAxle": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateVehicleApiKeyRequest": {
+                "required": [
+                    "vehicleId"
+                ],
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateVehicleRequest": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/VehicleStatusModel"
+                    },
+                    "mileage": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "mileageDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "operatingHours": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fuelTankCapacity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "remark": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dispositionSortingKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "yearOfManufacturing": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "registrationDocument": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleRegistration": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSystemVehicle": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentModel"
+                    },
+                    "vehicleTypeSubType": {
+                        "$ref": "#/components/schemas/VehicleTypeSubTypeModel"
+                    },
+                    "additionalTechnicalData": {
+                        "$ref": "#/components/schemas/AdditionalTechnicalDataModel"
+                    },
+                    "registrationCertificate": {
+                        "$ref": "#/components/schemas/RegistrationCertificateModel"
+                    },
+                    "registrationPlate": {
+                        "$ref": "#/components/schemas/RegistrationPlateModel"
+                    },
+                    "registrationDocumentLocation": {
+                        "$ref": "#/components/schemas/RegistrationDocumentLocationModel"
+                    },
+                    "toll": {
+                        "$ref": "#/components/schemas/TollModel"
+                    },
+                    "usableUntil": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingSlots": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingSlotModel"
+                        },
+                        "nullable": true
+                    },
+                    "qrCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateVehicleStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSelectable": {
+                        "type": "boolean",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateVehicleTypeRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleSubType": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VehicleSubTypeModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DepartmentModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSelectable": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "color": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeviceLoginRequest": {
+                "required": [
+                    "apiKey",
+                    "deviceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "apiKey": {
+                        "type": "string"
+                    },
+                    "deviceId": {
+                        "maxLength": 255,
+                        "minLength": 10,
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeviceLoginResponse": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "scheme": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeviceLogoutRequest": {
+                "required": [
+                    "vehicleId"
+                ],
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeviceModel": {
+                "type": "object",
+                "properties": {
+                    "vehicles": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DeviceVehicleModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeviceVehicleModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "registrationPlate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoadingSlotModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "resourceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchVehicleTypeRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleSubType": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VehicleSubTypeModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "RefreshTokenRequest": {
+                "required": [
+                    "token"
+                ],
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "maxLength": 255,
+                        "minLength": 10,
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RegistrationCertificateModel": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "registratorId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "remarks": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "firstRegistrationDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "manufacturer": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "commercialDesignation": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleIdentificationNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "permissableTotalWeight": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableTotalWeightInRegistrationState": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "emptyWeight": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "registrationValidityPeriod": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "registrationDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "vehicleClass": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "egTypeApprovalNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "axleAmount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableBrakedTrailerLoad": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableUnbrakedTrailerLoad": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "displacement": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "ratedPower": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "ratedRPM": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "fuelType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "powerToWeightRatio": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "vehicleColor": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "seatsIncludingDriverSeat": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "standingPlaces": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "topSpeed": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "standingNoise": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "standingNoiseRPM": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "drivingNoise": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "emissions": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "egTypeEmissionClass": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "manufacturerShortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "manufacturerCode": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "typeCodeWithCheckDigit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleIdentificationCheckDigit": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "superStructureType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleClassDesignation": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "egTypeApprovalDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle1": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle2": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle3": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle1InRegistrationState": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle2InRegistrationState": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "permissableMaximumLoadAxle3InRegistrationState": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "driveAxleAmount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "fuelTypeCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "colorCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tankerTankCapacity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "trailerNoseWeight": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "nationalEmissionClass": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "emissionClassCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tiresAxle1": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tiresAxle2": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tiresAxle3": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "registrationCertificateNumberPart2": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "operatingPermitFeature": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "length": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "width": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "height": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "otherNotes": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "remarksAndExeptions": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zlbiIatId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RegistrationDocumentLocationModel": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RegistrationPlateModel": {
+                "type": "object",
+                "properties": {
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSeaosnal": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "registrationIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "remark": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TollModel": {
+                "type": "object",
+                "properties": {
+                    "tollRegistrationDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "axleCount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "emissionClassId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "permissableTotalWeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "tollEmissionClassId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "orderNumber": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateVehicleRequest": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/VehicleStatusModel"
+                    },
+                    "mileage": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "mileageDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "operatingHours": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fuelTankCapacity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "remark": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dispositionSortingKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "yearOfManufacturing": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "registrationDocument": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleRegistration": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSystemVehicle": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentModel"
+                    },
+                    "vehicleTypeSubType": {
+                        "$ref": "#/components/schemas/VehicleTypeSubTypeModel"
+                    },
+                    "additionalTechnicalData": {
+                        "$ref": "#/components/schemas/AdditionalTechnicalDataModel"
+                    },
+                    "registrationCertificate": {
+                        "$ref": "#/components/schemas/RegistrationCertificateModel"
+                    },
+                    "registrationPlate": {
+                        "$ref": "#/components/schemas/RegistrationPlateModel"
+                    },
+                    "registrationDocumentLocation": {
+                        "$ref": "#/components/schemas/RegistrationDocumentLocationModel"
+                    },
+                    "toll": {
+                        "$ref": "#/components/schemas/TollModel"
+                    },
+                    "usableUntil": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingSlots": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingSlotModel"
+                        },
+                        "nullable": true
+                    },
+                    "qrCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateVehicleStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSelectable": {
+                        "type": "boolean",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleApiKeyModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleModel": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/VehicleStatusModel"
+                    },
+                    "mileage": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "mileageDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "operatingHours": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fuelTankCapacity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "remark": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dispositionSortingKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "yearOfManufacturing": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "registrationDocument": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleRegistration": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSystemVehicle": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentModel"
+                    },
+                    "vehicleTypeSubType": {
+                        "$ref": "#/components/schemas/VehicleTypeSubTypeModel"
+                    },
+                    "additionalTechnicalData": {
+                        "$ref": "#/components/schemas/AdditionalTechnicalDataModel"
+                    },
+                    "registrationCertificate": {
+                        "$ref": "#/components/schemas/RegistrationCertificateModel"
+                    },
+                    "registrationPlate": {
+                        "$ref": "#/components/schemas/RegistrationPlateModel"
+                    },
+                    "registrationDocumentLocation": {
+                        "$ref": "#/components/schemas/RegistrationDocumentLocationModel"
+                    },
+                    "toll": {
+                        "$ref": "#/components/schemas/TollModel"
+                    },
+                    "usableUntil": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingSlots": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingSlotModel"
+                        },
+                        "nullable": true
+                    },
+                    "qrCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleStatusModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isSelectable": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleSubTypeModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleTypeModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleSubType": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/VehicleSubTypeModel"
+                        },
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VehicleTypeSubTypeModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "subType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "subTypeId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}

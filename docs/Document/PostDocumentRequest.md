@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **VarVersion** | [**PostDocumentVersionRequest**](PostDocumentVersionRequest.md) |  | 
 **Reference** | **string** |  | [optional] 
 **Barcode** | **string** |  | [optional] 
+**PrimaryClassificationId** | **Guid?** |  | [optional] 
+**RawDataUrl** | **string** |  | [optional] 
+**RawDataProvider** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

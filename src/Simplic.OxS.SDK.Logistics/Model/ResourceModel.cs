@@ -54,7 +54,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the update user name..</param>
         /// <param name="organizationId">Gets or sets the organization id for the contact..</param>
-        public ResourceModel(string type = default(string), string matchCode = default(string), string displayName = default(string), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), AddressModel location = default(AddressModel), bool isLoadable = default(bool), string planningOrderKey = default(string), DateTime? usableUntil = default(DateTime?), string notes = default(string), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public ResourceModel(string type = default(string), string matchCode = default(string), string displayName = default(string), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), ResourceLocationModel location = default(ResourceLocationModel), bool isLoadable = default(bool), string planningOrderKey = default(string), DateTime? usableUntil = default(DateTime?), string notes = default(string), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
         {
             this.Type = type;
             this.MatchCode = matchCode;
@@ -108,7 +108,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name = "location", EmitDefaultValue = false)]
-        public AddressModel Location { get; set; }
+        public ResourceLocationModel Location { get; set; }
 
         /// <summary>
         /// Gets or sets whether the resource is loadable

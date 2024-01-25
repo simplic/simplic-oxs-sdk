@@ -781,7 +781,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.CancelBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingCancelBookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -794,7 +794,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Delete<Object>("/Booking/cancel-booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingCancelBookingIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -854,7 +854,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.CancelBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingCancelBookingIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -868,7 +868,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingCancelBookingIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -932,7 +932,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = createTimeSlotBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.CreateBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingCreateBookingIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -945,7 +945,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<TimeSlotModel>("/Booking/create-booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingCreateBookingIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1012,7 +1012,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = createTimeSlotBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.CreateBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingCreateBookingIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1026,7 +1026,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingCreateBookingIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1084,7 +1084,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Get";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1097,7 +1097,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<TimeSlotModel>("/Booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1158,7 +1158,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BookingClient.Get";
+            localVarRequestOptions.Operation = "BookingClient.BookingIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1236,7 +1236,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.UpdateBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingUpdateBookingIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1249,7 +1249,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<TimeSlotModel>("/Booking/update-booking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdateBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingUpdateBookingIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1316,7 +1316,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotBookingRequest;
 
-            localVarRequestOptions.Operation = "BookingClient.UpdateBooking";
+            localVarRequestOptions.Operation = "BookingClient.BookingUpdateBookingIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1330,7 +1330,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UpdateBooking", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BookingUpdateBookingIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

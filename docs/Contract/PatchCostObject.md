@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **PricePerKilometer** | **double?** |  | [optional] 
 **MinimumDistance** | **double?** |  | [optional] 
 **AdditionalMaterialCost** | **double?** |  | [optional] 
+**AdditionalFreightCost** | **double?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

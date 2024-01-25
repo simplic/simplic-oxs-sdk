@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="firstName">firstName.</param>
         /// <param name="lastName">lastName.</param>
         /// <param name="address">address.</param>
-        public TransactionContactModel(Guid id = default(Guid), int accountNumber = default(int), string companyName = default(string), string firstName = default(string), string lastName = default(string), TransactionAddressModel address = default(TransactionAddressModel))
+        public TransactionContactModel(Guid id = default(Guid), string accountNumber = default(string), string companyName = default(string), string firstName = default(string), string lastName = default(string), TransactionAddressModel address = default(TransactionAddressModel))
         {
             this.Id = id;
             this.AccountNumber = accountNumber;
@@ -61,8 +61,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets AccountNumber
         /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
-        public int AccountNumber { get; set; }
+        [DataMember(Name = "accountNumber", EmitDefaultValue = true)]
+        public string AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets CompanyName
@@ -144,7 +144,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.AccountNumber == input.AccountNumber ||
-                    this.AccountNumber.Equals(input.AccountNumber)
+                    (this.AccountNumber != null &&
+                    this.AccountNumber.Equals(input.AccountNumber))
                 ) && 
                 (
                     this.CompanyName == input.CompanyName ||
@@ -181,7 +182,10 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.AccountNumber.GetHashCode();
+                if (this.AccountNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccountNumber.GetHashCode();
+                }
                 if (this.CompanyName != null)
                 {
                     hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();

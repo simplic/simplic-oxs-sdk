@@ -36,6 +36,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdatePersonalAccountRequest" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="number">number.</param>
         /// <param name="vatId">vatId.</param>
         /// <param name="type">type.</param>
@@ -43,8 +44,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="saleTermsOfPaymentId">saleTermsOfPaymentId.</param>
         /// <param name="purchaseTermsOfPaymentId">purchaseTermsOfPaymentId.</param>
         /// <param name="taxGroupId">taxGroupId.</param>
-        public UpdatePersonalAccountRequest(string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
+        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
         {
+            this.Id = id;
             this.Number = number;
             this.VatId = vatId;
             this.Type = type;
@@ -53,6 +55,12 @@ namespace Simplic.OxS.SDK.ERP
             this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
             this.TaxGroupId = taxGroupId;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -104,6 +112,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdatePersonalAccountRequest {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -146,6 +155,11 @@ namespace Simplic.OxS.SDK.ERP
                 return false;
             }
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Number == input.Number ||
                     (this.Number != null &&
@@ -192,6 +206,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();

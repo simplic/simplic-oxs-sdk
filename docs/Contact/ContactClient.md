@@ -4,11 +4,211 @@ All URIs are relative to *https://dev-oxs.simplic.io/contact-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**GetByFunction**](ContactClient.md#contactgetbyfunctionget) | **GET** /Contact/get-by-function |  |
+| [**GetByLocation**](ContactClient.md#contactgetbylocationget) | **GET** /Contact/get-by-location |  |
 | [**Delete**](ContactClient.md#contactiddelete) | **DELETE** /Contact/{id} |  |
 | [**Get**](ContactClient.md#contactidget) | **GET** /Contact/{id} |  |
 | [**Put**](ContactClient.md#contactidput) | **PUT** /Contact/{id} |  |
 | [**Post**](ContactClient.md#contactpost) | **POST** /Contact |  |
 | [**Search**](ContactClient.md#contactsearchget) | **GET** /Contact/search |  |
+
+<a id="contactgetbyfunctionget"></a>
+# **GetByFunction**
+> List&lt;ContactModel&gt; GetByFunction (string? function = null, int? limit = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Simplic.OxS.SDK.Contact;
+using Simplic.OxS.SDK.Contact;
+using Simplic.OxS.SDK.Contact;
+
+namespace Example
+{
+    public class GetByFunctionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/contact-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ContactClient(config);
+            var function = "function_example";  // string? |  (optional) 
+            var limit = 56;  // int? |  (optional) 
+
+            try
+            {
+                List<ContactModel> result = apiInstance.GetByFunction(function, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ContactClient.GetByFunction: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetByFunctionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<ContactModel>> response = apiInstance.GetByFunctionWithHttpInfo(function, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ContactClient.GetByFunctionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **function** | **string?** |  | [optional]  |
+| **limit** | **int?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;ContactModel&gt;**](ContactModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="contactgetbylocationget"></a>
+# **GetByLocation**
+> List&lt;ContactModel&gt; GetByLocation (double? longitude = null, double? latitude = null, double? maxDistanceMeter = null, double? minDistanceMeter = null, string? function = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Simplic.OxS.SDK.Contact;
+using Simplic.OxS.SDK.Contact;
+using Simplic.OxS.SDK.Contact;
+
+namespace Example
+{
+    public class GetByLocationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/contact-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ContactClient(config);
+            var longitude = 1.2D;  // double? |  (optional) 
+            var latitude = 1.2D;  // double? |  (optional) 
+            var maxDistanceMeter = 1.2D;  // double? |  (optional) 
+            var minDistanceMeter = 1.2D;  // double? |  (optional) 
+            var function = "function_example";  // string? |  (optional) 
+
+            try
+            {
+                List<ContactModel> result = apiInstance.GetByLocation(longitude, latitude, maxDistanceMeter, minDistanceMeter, function);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ContactClient.GetByLocation: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetByLocationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<ContactModel>> response = apiInstance.GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, function);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ContactClient.GetByLocationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **longitude** | **double?** |  | [optional]  |
+| **latitude** | **double?** |  | [optional]  |
+| **maxDistanceMeter** | **double?** |  | [optional]  |
+| **minDistanceMeter** | **double?** |  | [optional]  |
+| **function** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;ContactModel&gt;**](ContactModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contactiddelete"></a>
 # **Delete**

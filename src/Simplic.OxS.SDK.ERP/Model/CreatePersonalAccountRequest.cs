@@ -36,25 +36,31 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreatePersonalAccountRequest" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="number">number.</param>
         /// <param name="vatId">vatId.</param>
         /// <param name="type">type.</param>
         /// <param name="creditLimit">creditLimit.</param>
-        /// <param name="addressContactIds">addressContactIds.</param>
         /// <param name="saleTermsOfPaymentId">saleTermsOfPaymentId.</param>
         /// <param name="purchaseTermsOfPaymentId">purchaseTermsOfPaymentId.</param>
         /// <param name="taxGroupId">taxGroupId.</param>
-        public CreatePersonalAccountRequest(string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
+        public CreatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
         {
+            this.Id = id;
             this.Number = number;
             this.VatId = vatId;
             this.Type = type;
             this.CreditLimit = creditLimit;
-            this.AddressContactIds = addressContactIds;
             this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
             this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
             this.TaxGroupId = taxGroupId;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -79,12 +85,6 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "creditLimit", EmitDefaultValue = false)]
         public CreditLimitModel CreditLimit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AddressContactIds
-        /// </summary>
-        [DataMember(Name = "addressContactIds", EmitDefaultValue = true)]
-        public List<Guid> AddressContactIds { get; set; }
 
         /// <summary>
         /// Gets or Sets SaleTermsOfPaymentId
@@ -112,11 +112,11 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreatePersonalAccountRequest {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
-            sb.Append("  AddressContactIds: ").Append(AddressContactIds).Append("\n");
             sb.Append("  SaleTermsOfPaymentId: ").Append(SaleTermsOfPaymentId).Append("\n");
             sb.Append("  PurchaseTermsOfPaymentId: ").Append(PurchaseTermsOfPaymentId).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
@@ -156,6 +156,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Number == input.Number ||
                     (this.Number != null &&
                     this.Number.Equals(input.Number))
@@ -174,12 +179,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit == input.CreditLimit ||
                     (this.CreditLimit != null &&
                     this.CreditLimit.Equals(input.CreditLimit))
-                ) && 
-                (
-                    this.AddressContactIds == input.AddressContactIds ||
-                    this.AddressContactIds != null &&
-                    input.AddressContactIds != null &&
-                    this.AddressContactIds.SequenceEqual(input.AddressContactIds)
                 ) && 
                 (
                     this.SaleTermsOfPaymentId == input.SaleTermsOfPaymentId ||
@@ -207,6 +206,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
@@ -222,10 +225,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
-                }
-                if (this.AddressContactIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.AddressContactIds.GetHashCode();
                 }
                 if (this.SaleTermsOfPaymentId != null)
                 {

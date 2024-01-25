@@ -885,7 +885,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.GetAll";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<List<VehicleTypeModel>>("/VehicleType/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -956,7 +956,7 @@ namespace Simplic.OxS.SDK.Vehicle
             }
 
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.GetAll";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeGetAllGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1027,7 +1027,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Delete";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1040,7 +1040,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Delete<Object>("/VehicleType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1100,7 +1100,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Delete";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1114,7 +1114,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1172,7 +1172,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Get";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1185,7 +1185,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Get<VehicleTypeModel>("/VehicleType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1246,7 +1246,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Get";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1260,7 +1260,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1324,7 +1324,7 @@ namespace Simplic.OxS.SDK.Vehicle
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchVehicleTypeRequest;
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Patch";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1337,7 +1337,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Patch<VehicleTypeModel>("/VehicleType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1404,7 +1404,7 @@ namespace Simplic.OxS.SDK.Vehicle
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchVehicleTypeRequest;
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Patch";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypeIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1418,7 +1418,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypeIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1479,7 +1479,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleTypeRequest;
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Post";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1492,7 +1492,7 @@ namespace Simplic.OxS.SDK.Vehicle
             var localVarResponse = this.Client.Post<VehicleTypeModel>("/VehicleType", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1556,7 +1556,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             localVarRequestOptions.Data = createVehicleTypeRequest;
 
-            localVarRequestOptions.Operation = "VehicleTypeClient.Post";
+            localVarRequestOptions.Operation = "VehicleTypeClient.VehicleTypePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1570,7 +1570,7 @@ namespace Simplic.OxS.SDK.Vehicle
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleTypePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

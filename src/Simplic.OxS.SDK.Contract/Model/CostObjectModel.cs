@@ -47,7 +47,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="pricePerKilometer">pricePerKilometer.</param>
         /// <param name="minimumDistance">minimumDistance.</param>
         /// <param name="additionalMaterialCost">additionalMaterialCost.</param>
-        public CostObjectModel(Guid id = default(Guid), bool isDefault = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), double purchasePrice = default(double), double freightPrice = default(double), double salePrice = default(double), double tollPrice = default(double), double pricePerKilometer = default(double), double minimumDistance = default(double), double additionalMaterialCost = default(double))
+        /// <param name="additionalFreightCost">additionalFreightCost.</param>
+        public CostObjectModel(Guid id = default(Guid), bool isDefault = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), double purchasePrice = default(double), double freightPrice = default(double), double salePrice = default(double), double tollPrice = default(double), double pricePerKilometer = default(double), double minimumDistance = default(double), double additionalMaterialCost = default(double), double additionalFreightCost = default(double))
         {
             this.Id = id;
             this.IsDefault = isDefault;
@@ -60,6 +61,7 @@ namespace Simplic.OxS.SDK.Contract
             this.PricePerKilometer = pricePerKilometer;
             this.MinimumDistance = minimumDistance;
             this.AdditionalMaterialCost = additionalMaterialCost;
+            this.AdditionalFreightCost = additionalFreightCost;
         }
 
         /// <summary>
@@ -129,6 +131,12 @@ namespace Simplic.OxS.SDK.Contract
         public double AdditionalMaterialCost { get; set; }
 
         /// <summary>
+        /// Gets or Sets AdditionalFreightCost
+        /// </summary>
+        [DataMember(Name = "additionalFreightCost", EmitDefaultValue = false)]
+        public double AdditionalFreightCost { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +155,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  PricePerKilometer: ").Append(PricePerKilometer).Append("\n");
             sb.Append("  MinimumDistance: ").Append(MinimumDistance).Append("\n");
             sb.Append("  AdditionalMaterialCost: ").Append(AdditionalMaterialCost).Append("\n");
+            sb.Append("  AdditionalFreightCost: ").Append(AdditionalFreightCost).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,6 +237,10 @@ namespace Simplic.OxS.SDK.Contract
                 (
                     this.AdditionalMaterialCost == input.AdditionalMaterialCost ||
                     this.AdditionalMaterialCost.Equals(input.AdditionalMaterialCost)
+                ) && 
+                (
+                    this.AdditionalFreightCost == input.AdditionalFreightCost ||
+                    this.AdditionalFreightCost.Equals(input.AdditionalFreightCost)
                 );
         }
 
@@ -260,6 +273,7 @@ namespace Simplic.OxS.SDK.Contract
                 hashCode = (hashCode * 59) + this.PricePerKilometer.GetHashCode();
                 hashCode = (hashCode * 59) + this.MinimumDistance.GetHashCode();
                 hashCode = (hashCode * 59) + this.AdditionalMaterialCost.GetHashCode();
+                hashCode = (hashCode * 59) + this.AdditionalFreightCost.GetHashCode();
                 return hashCode;
             }
         }

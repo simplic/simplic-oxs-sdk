@@ -173,8 +173,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Get(Guid id, int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Get(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -192,8 +192,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             try
             {
@@ -212,8 +212,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public System.Threading.Tasks.Task<TransactionCurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public System.Threading.Tasks.Task<CurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -232,8 +232,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -249,14 +249,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Put(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Patch(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Put(id, createTransactionCurrencyRequest, operationIndex);
+                return _internalClient.Patch(id, updateCurrencyRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -269,14 +269,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> PutWithHttpInfo(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> PatchWithHttpInfo(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PutWithHttpInfo(id, createTransactionCurrencyRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updateCurrencyRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -289,15 +289,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public System.Threading.Tasks.Task<TransactionCurrencyModel> PutAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public System.Threading.Tasks.Task<CurrencyModel> PatchAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutAsync(id, createTransactionCurrencyRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updateCurrencyRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -310,15 +310,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> PatchWithHttpInfoAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutWithHttpInfoAsync(id, createTransactionCurrencyRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateCurrencyRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -329,14 +329,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Post(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Post(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Post(createTransactionCurrencyRequest, operationIndex);
+                return _internalClient.Post(currencyRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -348,14 +348,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> PostWithHttpInfo(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> PostWithHttpInfo(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createTransactionCurrencyRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(currencyRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -367,15 +367,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public System.Threading.Tasks.Task<TransactionCurrencyModel> PostAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public System.Threading.Tasks.Task<CurrencyModel> PostAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createTransactionCurrencyRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(currencyRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -387,15 +387,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> PostWithHttpInfoAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> PostWithHttpInfoAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createTransactionCurrencyRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(currencyRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -439,8 +439,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        TransactionCurrencyModel Get(Guid id, int operationIndex = 0);
+        /// <returns>CurrencyModel</returns>
+        CurrencyModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -451,17 +451,17 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        ApiResponse<TransactionCurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        ApiResponse<CurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        TransactionCurrencyModel Put(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0);
+        /// <returns>CurrencyModel</returns>
+        CurrencyModel Patch(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -471,18 +471,18 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        ApiResponse<TransactionCurrencyModel> PutWithHttpInfo(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        ApiResponse<CurrencyModel> PatchWithHttpInfo(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        TransactionCurrencyModel Post(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0);
+        /// <returns>CurrencyModel</returns>
+        CurrencyModel Post(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -491,10 +491,10 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        ApiResponse<TransactionCurrencyModel> PostWithHttpInfo(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        ApiResponse<CurrencyModel> PostWithHttpInfo(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -539,8 +539,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        System.Threading.Tasks.Task<TransactionCurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CurrencyModel</returns>
+        System.Threading.Tasks.Task<CurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -552,8 +552,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionCurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -562,11 +562,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        System.Threading.Tasks.Task<TransactionCurrencyModel> PutAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CurrencyModel</returns>
+        System.Threading.Tasks.Task<CurrencyModel> PatchAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -576,11 +576,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionCurrencyModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CurrencyModel>> PatchWithHttpInfoAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -588,11 +588,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        System.Threading.Tasks.Task<TransactionCurrencyModel> PostAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CurrencyModel</returns>
+        System.Threading.Tasks.Task<CurrencyModel> PostAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -601,11 +601,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionCurrencyModel>> PostWithHttpInfoAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CurrencyModel>> PostWithHttpInfoAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "CurrencyClient.Delete";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/Currency/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "CurrencyClient.Delete";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -860,7 +860,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -876,10 +876,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Get(Guid id, int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -889,8 +889,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "CurrencyClient.Get";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -928,10 +928,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TransactionCurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<CurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -948,10 +948,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public async System.Threading.Tasks.Task<TransactionCurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public async System.Threading.Tasks.Task<CurrencyModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -962,8 +962,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "CurrencyClient.Get";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1002,11 +1002,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransactionCurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1021,12 +1021,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Put(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Patch(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = PutWithHttpInfo(id, createTransactionCurrencyRequest);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = PatchWithHttpInfo(id, updateCurrencyRequest);
             return localVarResponse.Data;
         }
 
@@ -1035,10 +1035,10 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> PutWithHttpInfo(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> PatchWithHttpInfo(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1068,9 +1068,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionCurrencyRequest;
+            localVarRequestOptions.Data = updateCurrencyRequest;
 
-            localVarRequestOptions.Operation = "CurrencyClient.Put";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1080,10 +1080,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionCurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<CurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1098,13 +1098,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public async System.Threading.Tasks.Task<TransactionCurrencyModel> PutAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public async System.Threading.Tasks.Task<CurrencyModel> PatchAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = await PutWithHttpInfoAsync(id, createTransactionCurrencyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateCurrencyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1113,11 +1113,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="updateCurrencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> PatchWithHttpInfoAsync(Guid id, UpdateCurrencyRequest? updateCurrencyRequest = default(UpdateCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1148,9 +1148,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionCurrencyRequest;
+            localVarRequestOptions.Data = updateCurrencyRequest;
 
-            localVarRequestOptions.Operation = "CurrencyClient.Put";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1160,11 +1160,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionCurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<CurrencyModel>("/Currency/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1178,12 +1178,12 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionCurrencyModel</returns>
-        public TransactionCurrencyModel Post(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>CurrencyModel</returns>
+        public CurrencyModel Post(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = PostWithHttpInfo(createTransactionCurrencyRequest);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = PostWithHttpInfo(currencyRequest);
             return localVarResponse.Data;
         }
 
@@ -1191,10 +1191,10 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionCurrencyModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> PostWithHttpInfo(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of CurrencyModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<CurrencyModel> PostWithHttpInfo(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1223,9 +1223,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionCurrencyRequest;
+            localVarRequestOptions.Data = currencyRequest;
 
-            localVarRequestOptions.Operation = "CurrencyClient.Post";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1235,10 +1235,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionCurrencyModel>("/Currency", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CurrencyModel>("/Currency", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1252,13 +1252,13 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionCurrencyModel</returns>
-        public async System.Threading.Tasks.Task<TransactionCurrencyModel> PostAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CurrencyModel</returns>
+        public async System.Threading.Tasks.Task<CurrencyModel> PostAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel> localVarResponse = await PostWithHttpInfoAsync(createTransactionCurrencyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<CurrencyModel> localVarResponse = await PostWithHttpInfoAsync(currencyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1266,11 +1266,11 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionCurrencyRequest"> (optional)</param>
+        /// <param name="currencyRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionCurrencyModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionCurrencyModel>> PostWithHttpInfoAsync(CreateTransactionCurrencyRequest? createTransactionCurrencyRequest = default(CreateTransactionCurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CurrencyModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CurrencyModel>> PostWithHttpInfoAsync(CurrencyRequest? currencyRequest = default(CurrencyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1300,9 +1300,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionCurrencyRequest;
+            localVarRequestOptions.Data = currencyRequest;
 
-            localVarRequestOptions.Operation = "CurrencyClient.Post";
+            localVarRequestOptions.Operation = "CurrencyClient.CurrencyPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1312,11 +1312,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionCurrencyModel>("/Currency", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CurrencyModel>("/Currency", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CurrencyPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -1057,7 +1057,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.GetByDate";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotGetByDateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1070,7 +1070,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<List<TimeSlotModel>>("/TimeSlot/get-by-date", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByDate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotGetByDateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1146,7 +1146,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.GetByDate";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotGetByDateGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1160,7 +1160,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByDate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotGetByDateGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1217,7 +1217,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Delete";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1230,7 +1230,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Delete<Object>("/TimeSlot/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1290,7 +1290,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Delete";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1304,7 +1304,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1362,7 +1362,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Get";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1375,7 +1375,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Get<TimeSlotModel>("/TimeSlot/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1436,7 +1436,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Get";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1450,7 +1450,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1514,7 +1514,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotRequest;
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Put";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1527,7 +1527,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<TimeSlotModel>("/TimeSlot/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1594,7 +1594,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTimeSlotRequest;
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Put";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1608,7 +1608,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1669,7 +1669,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.Data = createTimeSlotRequest;
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Post";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1682,7 +1682,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Post<TimeSlotModel>("/TimeSlot", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1746,7 +1746,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             localVarRequestOptions.Data = createTimeSlotRequest;
 
-            localVarRequestOptions.Operation = "TimeSlotClient.Post";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1760,7 +1760,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1826,7 +1826,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "bookingState", bookingState));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.SetState";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotSetStatePut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1839,7 +1839,7 @@ namespace Simplic.OxS.SDK.TimeSlot
             var localVarResponse = this.Client.Put<Object>("/TimeSlot/set-state", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetState", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotSetStatePut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1908,7 +1908,7 @@ namespace Simplic.OxS.SDK.TimeSlot
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "bookingState", bookingState));
             }
 
-            localVarRequestOptions.Operation = "TimeSlotClient.SetState";
+            localVarRequestOptions.Operation = "TimeSlotClient.TimeSlotSetStatePut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1922,7 +1922,7 @@ namespace Simplic.OxS.SDK.TimeSlot
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetState", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TimeSlotSetStatePut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

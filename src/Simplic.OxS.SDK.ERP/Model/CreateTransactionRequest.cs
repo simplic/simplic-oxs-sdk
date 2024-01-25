@@ -35,10 +35,10 @@ namespace Simplic.OxS.SDK.ERP
     {
 
         /// <summary>
-        /// Gets or Sets ConvertState
+        /// Gets or Sets OperationItemCombinationMode
         /// </summary>
-        [DataMember(Name = "convertState", EmitDefaultValue = false)]
-        public TransactionConvertState? ConvertState { get; set; }
+        [DataMember(Name = "operationItemCombinationMode", EmitDefaultValue = false)]
+        public OperationItemCombinationMode? OperationItemCombinationMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="creator">creator (required).</param>
         /// <param name="number">number (required).</param>
         /// <param name="reference">reference.</param>
         /// <param name="typeId">typeId (required).</param>
@@ -55,7 +55,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="date">date (required).</param>
         /// <param name="deliveryDate">deliveryDate.</param>
         /// <param name="termsOfPaymentId">termsOfPaymentId (required).</param>
-        /// <param name="paymentMethod">paymentMethod (required).</param>
+        /// <param name="paymentMethodId">paymentMethodId (required).</param>
         /// <param name="currencyId">currencyId (required).</param>
         /// <param name="description">description.</param>
         /// <param name="financialPartner">financialPartner (required).</param>
@@ -63,46 +63,30 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="invoiceRecipient">invoiceRecipient (required).</param>
         /// <param name="payer">payer (required).</param>
         /// <param name="responsible">responsible (required).</param>
-        /// <param name="representative">representative.</param>
+        /// <param name="representative">representative (required).</param>
         /// <param name="items">items.</param>
-        /// <param name="convertState">convertState.</param>
         /// <param name="alternativePaymentDeadline">alternativePaymentDeadline.</param>
         /// <param name="balance">balance.</param>
         /// <param name="barcode">barcode.</param>
         /// <param name="billToText">billToText.</param>
         /// <param name="cashDiscountPercentValue">cashDiscountPercentValue.</param>
         /// <param name="cashDiscountTotal">cashDiscountTotal.</param>
-        /// <param name="document">document.</param>
-        /// <param name="financialAccountingPeriod">financialAccountingPeriod.</param>
-        /// <param name="period">period.</param>
-        /// <param name="states">states.</param>
+        /// <param name="financialAccountingPeriodId">financialAccountingPeriodId (required).</param>
+        /// <param name="periodId">periodId (required).</param>
         /// <param name="manualVAT">manualVAT.</param>
         /// <param name="notes">notes.</param>
         /// <param name="dueDate">dueDate.</param>
         /// <param name="referenceNr">referenceNr.</param>
-        /// <param name="standingOrder">standingOrder.</param>
-        /// <param name="taxGroupId">taxGroupId.</param>
-        /// <param name="totalPrice">totalPrice.</param>
-        /// <param name="totalPriceGross">totalPriceGross.</param>
-        /// <param name="totalPriceNet">totalPriceNet.</param>
-        /// <param name="totalPriceTax">totalPriceTax.</param>
-        /// <param name="transactionYear">transactionYear.</param>
-        /// <param name="updateUser">updateUser (required).</param>
-        /// <param name="signedTotalPriceNet">signedTotalPriceNet.</param>
-        /// <param name="signedTotalPriceGross">signedTotalPriceGross.</param>
-        /// <param name="signedTotalPrice">signedTotalPrice.</param>
-        /// <param name="signedTotalPriceTax">signedTotalPriceTax.</param>
-        /// <param name="sign">sign.</param>
-        /// <param name="itemGroupTermsOfPayments">itemGroupTermsOfPayments.</param>
-        /// <param name="creator">creator (required).</param>
-        public CreateTransactionRequest(string name = default(string), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), Guid termsOfPaymentId = default(Guid), TransactionPaymentMethod paymentMethod = default(TransactionPaymentMethod), Guid currencyId = default(Guid), string description = default(string), TransactionContact financialPartner = default(TransactionContact), TransactionContact deliveryAddress = default(TransactionContact), TransactionContact invoiceRecipient = default(TransactionContact), TransactionContact payer = default(TransactionContact), TransactionContact responsible = default(TransactionContact), TransactionContact representative = default(TransactionContact), List<TransactionItem> items = default(List<TransactionItem>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double balance = default(double), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocument document = default(TransactionDocument), TransactionPeriod financialAccountingPeriod = default(TransactionPeriod), TransactionPeriod period = default(TransactionPeriod), List<string> states = default(List<string>), TransactionManualVat manualVAT = default(TransactionManualVat), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TransactionStandingOrder standingOrder = default(TransactionStandingOrder), Guid taxGroupId = default(Guid), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUser updateUser = default(TransactionUser), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), List<TransactionItemGroupTermsOfPayment> itemGroupTermsOfPayments = default(List<TransactionItemGroupTermsOfPayment>), TransactionContact creator = default(TransactionContact))
+        /// <param name="taxGroupId">taxGroupId (required).</param>
+        /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
+        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), Guid termsOfPaymentId = default(Guid), Guid paymentMethodId = default(Guid), Guid currencyId = default(Guid), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid financialAccountingPeriodId = default(Guid), Guid periodId = default(Guid), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid taxGroupId = default(Guid), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
+            // to ensure "creator" is required (not null)
+            if (creator == null)
             {
-                throw new ArgumentNullException("name is a required property for CreateTransactionRequest and cannot be null");
+                throw new ArgumentNullException("creator is a required property for CreateTransactionRequest and cannot be null");
             }
-            this.Name = name;
+            this.Creator = creator;
             // to ensure "number" is required (not null)
             if (number == null)
             {
@@ -113,12 +97,7 @@ namespace Simplic.OxS.SDK.ERP
             this.SubtypeId = subtypeId;
             this.Date = date;
             this.TermsOfPaymentId = termsOfPaymentId;
-            // to ensure "paymentMethod" is required (not null)
-            if (paymentMethod == null)
-            {
-                throw new ArgumentNullException("paymentMethod is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.PaymentMethod = paymentMethod;
+            this.PaymentMethodId = paymentMethodId;
             this.CurrencyId = currencyId;
             // to ensure "financialPartner" is required (not null)
             if (financialPartner == null)
@@ -144,59 +123,38 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("responsible is a required property for CreateTransactionRequest and cannot be null");
             }
             this.Responsible = responsible;
-            // to ensure "updateUser" is required (not null)
-            if (updateUser == null)
+            // to ensure "representative" is required (not null)
+            if (representative == null)
             {
-                throw new ArgumentNullException("updateUser is a required property for CreateTransactionRequest and cannot be null");
+                throw new ArgumentNullException("representative is a required property for CreateTransactionRequest and cannot be null");
             }
-            this.UpdateUser = updateUser;
-            // to ensure "creator" is required (not null)
-            if (creator == null)
-            {
-                throw new ArgumentNullException("creator is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.Creator = creator;
+            this.Representative = representative;
+            this.FinancialAccountingPeriodId = financialAccountingPeriodId;
+            this.PeriodId = periodId;
+            this.TaxGroupId = taxGroupId;
             this.Reference = reference;
             this.DeliveryDate = deliveryDate;
             this.Description = description;
             this.DeliveryAddress = deliveryAddress;
-            this.Representative = representative;
             this.Items = items;
-            this.ConvertState = convertState;
             this.AlternativePaymentDeadline = alternativePaymentDeadline;
             this.Balance = balance;
             this.Barcode = barcode;
             this.BillToText = billToText;
             this.CashDiscountPercentValue = cashDiscountPercentValue;
             this.CashDiscountTotal = cashDiscountTotal;
-            this.Document = document;
-            this.FinancialAccountingPeriod = financialAccountingPeriod;
-            this.Period = period;
-            this.States = states;
             this.ManualVAT = manualVAT;
             this.Notes = notes;
             this.DueDate = dueDate;
             this.ReferenceNr = referenceNr;
-            this.StandingOrder = standingOrder;
-            this.TaxGroupId = taxGroupId;
-            this.TotalPrice = totalPrice;
-            this.TotalPriceGross = totalPriceGross;
-            this.TotalPriceNet = totalPriceNet;
-            this.TotalPriceTax = totalPriceTax;
-            this.TransactionYear = transactionYear;
-            this.SignedTotalPriceNet = signedTotalPriceNet;
-            this.SignedTotalPriceGross = signedTotalPriceGross;
-            this.SignedTotalPrice = signedTotalPrice;
-            this.SignedTotalPriceTax = signedTotalPriceTax;
-            this.Sign = sign;
-            this.ItemGroupTermsOfPayments = itemGroupTermsOfPayments;
+            this.OperationItemCombinationMode = operationItemCombinationMode;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Creator
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
+        public TransactionContactRequest Creator { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -241,10 +199,10 @@ namespace Simplic.OxS.SDK.ERP
         public Guid TermsOfPaymentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentMethod
+        /// Gets or Sets PaymentMethodId
         /// </summary>
-        [DataMember(Name = "paymentMethod", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionPaymentMethod PaymentMethod { get; set; }
+        [DataMember(Name = "paymentMethodId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid PaymentMethodId { get; set; }
 
         /// <summary>
         /// Gets or Sets CurrencyId
@@ -262,43 +220,43 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets FinancialPartner
         /// </summary>
         [DataMember(Name = "financialPartner", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionContact FinancialPartner { get; set; }
+        public TransactionContactRequest FinancialPartner { get; set; }
 
         /// <summary>
         /// Gets or Sets DeliveryAddress
         /// </summary>
         [DataMember(Name = "deliveryAddress", EmitDefaultValue = false)]
-        public TransactionContact DeliveryAddress { get; set; }
+        public TransactionContactRequest DeliveryAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets InvoiceRecipient
         /// </summary>
         [DataMember(Name = "invoiceRecipient", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionContact InvoiceRecipient { get; set; }
+        public TransactionContactRequest InvoiceRecipient { get; set; }
 
         /// <summary>
         /// Gets or Sets Payer
         /// </summary>
         [DataMember(Name = "payer", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionContact Payer { get; set; }
+        public TransactionContactRequest Payer { get; set; }
 
         /// <summary>
         /// Gets or Sets Responsible
         /// </summary>
         [DataMember(Name = "responsible", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionContact Responsible { get; set; }
+        public TransactionContactRequest Responsible { get; set; }
 
         /// <summary>
         /// Gets or Sets Representative
         /// </summary>
-        [DataMember(Name = "representative", EmitDefaultValue = false)]
-        public TransactionContact Representative { get; set; }
+        [DataMember(Name = "representative", IsRequired = true, EmitDefaultValue = true)]
+        public TransactionContactRequest Representative { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<TransactionItem> Items { get; set; }
+        public List<TransactionItemRequest> Items { get; set; }
 
         /// <summary>
         /// Gets or Sets AlternativePaymentDeadline
@@ -309,8 +267,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets Balance
         /// </summary>
-        [DataMember(Name = "balance", EmitDefaultValue = false)]
-        public double Balance { get; set; }
+        [DataMember(Name = "balance", EmitDefaultValue = true)]
+        public double? Balance { get; set; }
 
         /// <summary>
         /// Gets or Sets Barcode
@@ -327,44 +285,32 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets CashDiscountPercentValue
         /// </summary>
-        [DataMember(Name = "cashDiscountPercentValue", EmitDefaultValue = false)]
-        public double CashDiscountPercentValue { get; set; }
+        [DataMember(Name = "cashDiscountPercentValue", EmitDefaultValue = true)]
+        public double? CashDiscountPercentValue { get; set; }
 
         /// <summary>
         /// Gets or Sets CashDiscountTotal
         /// </summary>
-        [DataMember(Name = "cashDiscountTotal", EmitDefaultValue = false)]
-        public double CashDiscountTotal { get; set; }
+        [DataMember(Name = "cashDiscountTotal", EmitDefaultValue = true)]
+        public double? CashDiscountTotal { get; set; }
 
         /// <summary>
-        /// Gets or Sets Document
+        /// Gets or Sets FinancialAccountingPeriodId
         /// </summary>
-        [DataMember(Name = "document", EmitDefaultValue = false)]
-        public TransactionDocument Document { get; set; }
+        [DataMember(Name = "financialAccountingPeriodId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid FinancialAccountingPeriodId { get; set; }
 
         /// <summary>
-        /// Gets or Sets FinancialAccountingPeriod
+        /// Gets or Sets PeriodId
         /// </summary>
-        [DataMember(Name = "financialAccountingPeriod", EmitDefaultValue = false)]
-        public TransactionPeriod FinancialAccountingPeriod { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Period
-        /// </summary>
-        [DataMember(Name = "period", EmitDefaultValue = false)]
-        public TransactionPeriod Period { get; set; }
-
-        /// <summary>
-        /// Gets or Sets States
-        /// </summary>
-        [DataMember(Name = "states", EmitDefaultValue = true)]
-        public List<string> States { get; set; }
+        [DataMember(Name = "periodId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid PeriodId { get; set; }
 
         /// <summary>
         /// Gets or Sets ManualVAT
         /// </summary>
         [DataMember(Name = "manualVAT", EmitDefaultValue = false)]
-        public TransactionManualVat ManualVAT { get; set; }
+        public TransactionManualVatRequest ManualVAT { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
@@ -385,94 +331,10 @@ namespace Simplic.OxS.SDK.ERP
         public string ReferenceNr { get; set; }
 
         /// <summary>
-        /// Gets or Sets StandingOrder
-        /// </summary>
-        [DataMember(Name = "standingOrder", EmitDefaultValue = false)]
-        public TransactionStandingOrder StandingOrder { get; set; }
-
-        /// <summary>
         /// Gets or Sets TaxGroupId
         /// </summary>
-        [DataMember(Name = "taxGroupId", EmitDefaultValue = false)]
+        [DataMember(Name = "taxGroupId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TaxGroupId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TotalPrice
-        /// </summary>
-        [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
-        public double TotalPrice { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TotalPriceGross
-        /// </summary>
-        [DataMember(Name = "totalPriceGross", EmitDefaultValue = false)]
-        public double TotalPriceGross { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TotalPriceNet
-        /// </summary>
-        [DataMember(Name = "totalPriceNet", EmitDefaultValue = false)]
-        public double TotalPriceNet { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TotalPriceTax
-        /// </summary>
-        [DataMember(Name = "totalPriceTax", EmitDefaultValue = false)]
-        public double TotalPriceTax { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TransactionYear
-        /// </summary>
-        [DataMember(Name = "transactionYear", EmitDefaultValue = false)]
-        public int TransactionYear { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UpdateUser
-        /// </summary>
-        [DataMember(Name = "updateUser", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionUser UpdateUser { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SignedTotalPriceNet
-        /// </summary>
-        [DataMember(Name = "signedTotalPriceNet", EmitDefaultValue = false)]
-        public double SignedTotalPriceNet { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SignedTotalPriceGross
-        /// </summary>
-        [DataMember(Name = "signedTotalPriceGross", EmitDefaultValue = false)]
-        public double SignedTotalPriceGross { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SignedTotalPrice
-        /// </summary>
-        [DataMember(Name = "signedTotalPrice", EmitDefaultValue = false)]
-        public double SignedTotalPrice { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SignedTotalPriceTax
-        /// </summary>
-        [DataMember(Name = "signedTotalPriceTax", EmitDefaultValue = false)]
-        public double SignedTotalPriceTax { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Sign
-        /// </summary>
-        [DataMember(Name = "sign", EmitDefaultValue = false)]
-        public int Sign { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ItemGroupTermsOfPayments
-        /// </summary>
-        [DataMember(Name = "itemGroupTermsOfPayments", EmitDefaultValue = true)]
-        public List<TransactionItemGroupTermsOfPayment> ItemGroupTermsOfPayments { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Creator
-        /// </summary>
-        [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
-        public TransactionContact Creator { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -482,7 +344,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateTransactionRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Creator: ").Append(Creator).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  TypeId: ").Append(TypeId).Append("\n");
@@ -490,7 +352,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  TermsOfPaymentId: ").Append(TermsOfPaymentId).Append("\n");
-            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  PaymentMethodId: ").Append(PaymentMethodId).Append("\n");
             sb.Append("  CurrencyId: ").Append(CurrencyId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  FinancialPartner: ").Append(FinancialPartner).Append("\n");
@@ -500,36 +362,20 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Responsible: ").Append(Responsible).Append("\n");
             sb.Append("  Representative: ").Append(Representative).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
-            sb.Append("  ConvertState: ").Append(ConvertState).Append("\n");
             sb.Append("  AlternativePaymentDeadline: ").Append(AlternativePaymentDeadline).Append("\n");
             sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("  Barcode: ").Append(Barcode).Append("\n");
             sb.Append("  BillToText: ").Append(BillToText).Append("\n");
             sb.Append("  CashDiscountPercentValue: ").Append(CashDiscountPercentValue).Append("\n");
             sb.Append("  CashDiscountTotal: ").Append(CashDiscountTotal).Append("\n");
-            sb.Append("  Document: ").Append(Document).Append("\n");
-            sb.Append("  FinancialAccountingPeriod: ").Append(FinancialAccountingPeriod).Append("\n");
-            sb.Append("  Period: ").Append(Period).Append("\n");
-            sb.Append("  States: ").Append(States).Append("\n");
+            sb.Append("  FinancialAccountingPeriodId: ").Append(FinancialAccountingPeriodId).Append("\n");
+            sb.Append("  PeriodId: ").Append(PeriodId).Append("\n");
             sb.Append("  ManualVAT: ").Append(ManualVAT).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
             sb.Append("  ReferenceNr: ").Append(ReferenceNr).Append("\n");
-            sb.Append("  StandingOrder: ").Append(StandingOrder).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
-            sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
-            sb.Append("  TotalPriceGross: ").Append(TotalPriceGross).Append("\n");
-            sb.Append("  TotalPriceNet: ").Append(TotalPriceNet).Append("\n");
-            sb.Append("  TotalPriceTax: ").Append(TotalPriceTax).Append("\n");
-            sb.Append("  TransactionYear: ").Append(TransactionYear).Append("\n");
-            sb.Append("  UpdateUser: ").Append(UpdateUser).Append("\n");
-            sb.Append("  SignedTotalPriceNet: ").Append(SignedTotalPriceNet).Append("\n");
-            sb.Append("  SignedTotalPriceGross: ").Append(SignedTotalPriceGross).Append("\n");
-            sb.Append("  SignedTotalPrice: ").Append(SignedTotalPrice).Append("\n");
-            sb.Append("  SignedTotalPriceTax: ").Append(SignedTotalPriceTax).Append("\n");
-            sb.Append("  Sign: ").Append(Sign).Append("\n");
-            sb.Append("  ItemGroupTermsOfPayments: ").Append(ItemGroupTermsOfPayments).Append("\n");
-            sb.Append("  Creator: ").Append(Creator).Append("\n");
+            sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -566,9 +412,9 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Creator == input.Creator ||
+                    (this.Creator != null &&
+                    this.Creator.Equals(input.Creator))
                 ) && 
                 (
                     this.Number == input.Number ||
@@ -606,9 +452,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.TermsOfPaymentId.Equals(input.TermsOfPaymentId))
                 ) && 
                 (
-                    this.PaymentMethod == input.PaymentMethod ||
-                    (this.PaymentMethod != null &&
-                    this.PaymentMethod.Equals(input.PaymentMethod))
+                    this.PaymentMethodId == input.PaymentMethodId ||
+                    (this.PaymentMethodId != null &&
+                    this.PaymentMethodId.Equals(input.PaymentMethodId))
                 ) && 
                 (
                     this.CurrencyId == input.CurrencyId ||
@@ -657,17 +503,14 @@ namespace Simplic.OxS.SDK.ERP
                     this.Items.SequenceEqual(input.Items)
                 ) && 
                 (
-                    this.ConvertState == input.ConvertState ||
-                    this.ConvertState.Equals(input.ConvertState)
-                ) && 
-                (
                     this.AlternativePaymentDeadline == input.AlternativePaymentDeadline ||
                     (this.AlternativePaymentDeadline != null &&
                     this.AlternativePaymentDeadline.Equals(input.AlternativePaymentDeadline))
                 ) && 
                 (
                     this.Balance == input.Balance ||
-                    this.Balance.Equals(input.Balance)
+                    (this.Balance != null &&
+                    this.Balance.Equals(input.Balance))
                 ) && 
                 (
                     this.Barcode == input.Barcode ||
@@ -681,32 +524,23 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.CashDiscountPercentValue == input.CashDiscountPercentValue ||
-                    this.CashDiscountPercentValue.Equals(input.CashDiscountPercentValue)
+                    (this.CashDiscountPercentValue != null &&
+                    this.CashDiscountPercentValue.Equals(input.CashDiscountPercentValue))
                 ) && 
                 (
                     this.CashDiscountTotal == input.CashDiscountTotal ||
-                    this.CashDiscountTotal.Equals(input.CashDiscountTotal)
+                    (this.CashDiscountTotal != null &&
+                    this.CashDiscountTotal.Equals(input.CashDiscountTotal))
                 ) && 
                 (
-                    this.Document == input.Document ||
-                    (this.Document != null &&
-                    this.Document.Equals(input.Document))
+                    this.FinancialAccountingPeriodId == input.FinancialAccountingPeriodId ||
+                    (this.FinancialAccountingPeriodId != null &&
+                    this.FinancialAccountingPeriodId.Equals(input.FinancialAccountingPeriodId))
                 ) && 
                 (
-                    this.FinancialAccountingPeriod == input.FinancialAccountingPeriod ||
-                    (this.FinancialAccountingPeriod != null &&
-                    this.FinancialAccountingPeriod.Equals(input.FinancialAccountingPeriod))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
+                    this.PeriodId == input.PeriodId ||
+                    (this.PeriodId != null &&
+                    this.PeriodId.Equals(input.PeriodId))
                 ) && 
                 (
                     this.ManualVAT == input.ManualVAT ||
@@ -729,70 +563,13 @@ namespace Simplic.OxS.SDK.ERP
                     this.ReferenceNr.Equals(input.ReferenceNr))
                 ) && 
                 (
-                    this.StandingOrder == input.StandingOrder ||
-                    (this.StandingOrder != null &&
-                    this.StandingOrder.Equals(input.StandingOrder))
-                ) && 
-                (
                     this.TaxGroupId == input.TaxGroupId ||
                     (this.TaxGroupId != null &&
                     this.TaxGroupId.Equals(input.TaxGroupId))
                 ) && 
                 (
-                    this.TotalPrice == input.TotalPrice ||
-                    this.TotalPrice.Equals(input.TotalPrice)
-                ) && 
-                (
-                    this.TotalPriceGross == input.TotalPriceGross ||
-                    this.TotalPriceGross.Equals(input.TotalPriceGross)
-                ) && 
-                (
-                    this.TotalPriceNet == input.TotalPriceNet ||
-                    this.TotalPriceNet.Equals(input.TotalPriceNet)
-                ) && 
-                (
-                    this.TotalPriceTax == input.TotalPriceTax ||
-                    this.TotalPriceTax.Equals(input.TotalPriceTax)
-                ) && 
-                (
-                    this.TransactionYear == input.TransactionYear ||
-                    this.TransactionYear.Equals(input.TransactionYear)
-                ) && 
-                (
-                    this.UpdateUser == input.UpdateUser ||
-                    (this.UpdateUser != null &&
-                    this.UpdateUser.Equals(input.UpdateUser))
-                ) && 
-                (
-                    this.SignedTotalPriceNet == input.SignedTotalPriceNet ||
-                    this.SignedTotalPriceNet.Equals(input.SignedTotalPriceNet)
-                ) && 
-                (
-                    this.SignedTotalPriceGross == input.SignedTotalPriceGross ||
-                    this.SignedTotalPriceGross.Equals(input.SignedTotalPriceGross)
-                ) && 
-                (
-                    this.SignedTotalPrice == input.SignedTotalPrice ||
-                    this.SignedTotalPrice.Equals(input.SignedTotalPrice)
-                ) && 
-                (
-                    this.SignedTotalPriceTax == input.SignedTotalPriceTax ||
-                    this.SignedTotalPriceTax.Equals(input.SignedTotalPriceTax)
-                ) && 
-                (
-                    this.Sign == input.Sign ||
-                    this.Sign.Equals(input.Sign)
-                ) && 
-                (
-                    this.ItemGroupTermsOfPayments == input.ItemGroupTermsOfPayments ||
-                    this.ItemGroupTermsOfPayments != null &&
-                    input.ItemGroupTermsOfPayments != null &&
-                    this.ItemGroupTermsOfPayments.SequenceEqual(input.ItemGroupTermsOfPayments)
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
+                    this.OperationItemCombinationMode == input.OperationItemCombinationMode ||
+                    this.OperationItemCombinationMode.Equals(input.OperationItemCombinationMode)
                 );
         }
 
@@ -805,9 +582,9 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Creator != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Creator.GetHashCode();
                 }
                 if (this.Number != null)
                 {
@@ -837,9 +614,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.TermsOfPaymentId.GetHashCode();
                 }
-                if (this.PaymentMethod != null)
+                if (this.PaymentMethodId != null)
                 {
-                    hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PaymentMethodId.GetHashCode();
                 }
                 if (this.CurrencyId != null)
                 {
@@ -877,12 +654,14 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.ConvertState.GetHashCode();
                 if (this.AlternativePaymentDeadline != null)
                 {
                     hashCode = (hashCode * 59) + this.AlternativePaymentDeadline.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Balance.GetHashCode();
+                if (this.Balance != null)
+                {
+                    hashCode = (hashCode * 59) + this.Balance.GetHashCode();
+                }
                 if (this.Barcode != null)
                 {
                     hashCode = (hashCode * 59) + this.Barcode.GetHashCode();
@@ -891,23 +670,21 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.BillToText.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CashDiscountPercentValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.CashDiscountTotal.GetHashCode();
-                if (this.Document != null)
+                if (this.CashDiscountPercentValue != null)
                 {
-                    hashCode = (hashCode * 59) + this.Document.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CashDiscountPercentValue.GetHashCode();
                 }
-                if (this.FinancialAccountingPeriod != null)
+                if (this.CashDiscountTotal != null)
                 {
-                    hashCode = (hashCode * 59) + this.FinancialAccountingPeriod.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CashDiscountTotal.GetHashCode();
                 }
-                if (this.Period != null)
+                if (this.FinancialAccountingPeriodId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Period.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FinancialAccountingPeriodId.GetHashCode();
                 }
-                if (this.States != null)
+                if (this.PeriodId != null)
                 {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PeriodId.GetHashCode();
                 }
                 if (this.ManualVAT != null)
                 {
@@ -925,36 +702,11 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.ReferenceNr.GetHashCode();
                 }
-                if (this.StandingOrder != null)
-                {
-                    hashCode = (hashCode * 59) + this.StandingOrder.GetHashCode();
-                }
                 if (this.TaxGroupId != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.TotalPrice.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPriceGross.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPriceNet.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPriceTax.GetHashCode();
-                hashCode = (hashCode * 59) + this.TransactionYear.GetHashCode();
-                if (this.UpdateUser != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdateUser.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SignedTotalPriceNet.GetHashCode();
-                hashCode = (hashCode * 59) + this.SignedTotalPriceGross.GetHashCode();
-                hashCode = (hashCode * 59) + this.SignedTotalPrice.GetHashCode();
-                hashCode = (hashCode * 59) + this.SignedTotalPriceTax.GetHashCode();
-                hashCode = (hashCode * 59) + this.Sign.GetHashCode();
-                if (this.ItemGroupTermsOfPayments != null)
-                {
-                    hashCode = (hashCode * 59) + this.ItemGroupTermsOfPayments.GetHashCode();
-                }
-                if (this.Creator != null)
-                {
-                    hashCode = (hashCode * 59) + this.Creator.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
                 return hashCode;
             }
         }
@@ -966,6 +718,30 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Notes (string) maxLength
+            if (this.Notes != null && this.Notes.Length > 10000)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Notes, length must be less than 10000.", new [] { "Notes" });
+            }
+
+            // Notes (string) minLength
+            if (this.Notes != null && this.Notes.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Notes, length must be greater than 1.", new [] { "Notes" });
+            }
+
+            // ReferenceNr (string) maxLength
+            if (this.ReferenceNr != null && this.ReferenceNr.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be less than 100.", new [] { "ReferenceNr" });
+            }
+
+            // ReferenceNr (string) minLength
+            if (this.ReferenceNr != null && this.ReferenceNr.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be greater than 1.", new [] { "ReferenceNr" });
+            }
+
             yield break;
         }
     }

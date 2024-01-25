@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Delete";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/TermsOfPayment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Delete";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -860,7 +860,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Get";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -931,7 +931,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Get<TermsOfPaymentModel>("/TermsOfPayment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Get";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1006,7 +1006,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1070,7 +1070,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTermsOfPaymentRequest;
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Patch";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1083,7 +1083,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Patch<TermsOfPaymentModel>("/TermsOfPayment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1150,7 +1150,7 @@ namespace Simplic.OxS.SDK.ERP
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateTermsOfPaymentRequest;
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Patch";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1164,7 +1164,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1225,7 +1225,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.Data = termsOfPaymentRequest;
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Post";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1238,7 +1238,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Post<TermsOfPaymentModel>("/TermsOfPayment", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1302,7 +1302,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.Data = termsOfPaymentRequest;
 
-            localVarRequestOptions.Operation = "TermsOfPaymentClient.Post";
+            localVarRequestOptions.Operation = "TermsOfPaymentClient.TermsOfPaymentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1316,7 +1316,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TermsOfPaymentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

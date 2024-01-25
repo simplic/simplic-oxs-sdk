@@ -652,7 +652,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("classificationId", Simplic.OxS.SDK.ClientUtils.ParameterToString(classificationId)); // path parameter
 
-            localVarRequestOptions.Operation = "ClassificationClient.Get";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationClassificationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -665,7 +665,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Get<ClassificationResponse>("/api/Classification/{classificationId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationClassificationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -726,7 +726,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.PathParameters.Add("classificationId", Simplic.OxS.SDK.ClientUtils.ParameterToString(classificationId)); // path parameter
 
-            localVarRequestOptions.Operation = "ClassificationClient.Get";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationClassificationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -740,7 +740,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationClassificationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -804,7 +804,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchClassificationRequest;
 
-            localVarRequestOptions.Operation = "ClassificationClient.Patch";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -817,7 +817,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Patch<ClassificationResponse>("/api/Classification/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -884,7 +884,7 @@ namespace Simplic.OxS.SDK.Document
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchClassificationRequest;
 
-            localVarRequestOptions.Operation = "ClassificationClient.Patch";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -898,7 +898,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -959,7 +959,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = createClassificationRequest;
 
-            localVarRequestOptions.Operation = "ClassificationClient.Post";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -972,7 +972,7 @@ namespace Simplic.OxS.SDK.Document
             var localVarResponse = this.Client.Post<ClassificationResponse>("/api/Classification", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1036,7 +1036,7 @@ namespace Simplic.OxS.SDK.Document
 
             localVarRequestOptions.Data = createClassificationRequest;
 
-            localVarRequestOptions.Operation = "ClassificationClient.Post";
+            localVarRequestOptions.Operation = "ClassificationClient.ApiClassificationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1050,7 +1050,7 @@ namespace Simplic.OxS.SDK.Document
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiClassificationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

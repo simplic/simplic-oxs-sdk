@@ -58,6 +58,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="toll">toll.</param>
         /// <param name="usableUntil">usableUntil.</param>
         /// <param name="loadingSlots">loadingSlots.</param>
+        /// <param name="qrCode">qrCode.</param>
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
@@ -67,7 +68,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        public VehicleModel(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public VehicleModel(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), string qrCode = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Location = location;
             this.MatchCode = matchCode;
@@ -91,6 +92,7 @@ namespace Simplic.OxS.SDK.Vehicle
             this.Toll = toll;
             this.UsableUntil = usableUntil;
             this.LoadingSlots = loadingSlots;
+            this.QrCode = qrCode;
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
@@ -235,6 +237,12 @@ namespace Simplic.OxS.SDK.Vehicle
         public List<LoadingSlotModel> LoadingSlots { get; set; }
 
         /// <summary>
+        /// Gets or Sets QrCode
+        /// </summary>
+        [DataMember(Name = "qrCode", EmitDefaultValue = true)]
+        public string QrCode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
@@ -318,6 +326,7 @@ namespace Simplic.OxS.SDK.Vehicle
             sb.Append("  Toll: ").Append(Toll).Append("\n");
             sb.Append("  UsableUntil: ").Append(UsableUntil).Append("\n");
             sb.Append("  LoadingSlots: ").Append(LoadingSlots).Append("\n");
+            sb.Append("  QrCode: ").Append(QrCode).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -474,6 +483,11 @@ namespace Simplic.OxS.SDK.Vehicle
                     this.LoadingSlots.SequenceEqual(input.LoadingSlots)
                 ) && 
                 (
+                    this.QrCode == input.QrCode ||
+                    (this.QrCode != null &&
+                    this.QrCode.Equals(input.QrCode))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -615,6 +629,10 @@ namespace Simplic.OxS.SDK.Vehicle
                 if (this.LoadingSlots != null)
                 {
                     hashCode = (hashCode * 59) + this.LoadingSlots.GetHashCode();
+                }
+                if (this.QrCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.QrCode.GetHashCode();
                 }
                 if (this.Id != null)
                 {

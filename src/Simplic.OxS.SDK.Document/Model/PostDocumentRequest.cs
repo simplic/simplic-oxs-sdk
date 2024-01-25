@@ -46,7 +46,10 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="varVersion">varVersion (required).</param>
         /// <param name="reference">reference.</param>
         /// <param name="barcode">barcode.</param>
-        public PostDocumentRequest(string name = default(string), DateTime dateTime = default(DateTime), PostDocumentVersionRequest varVersion = default(PostDocumentVersionRequest), string reference = default(string), string barcode = default(string))
+        /// <param name="primaryClassificationId">primaryClassificationId.</param>
+        /// <param name="rawDataUrl">rawDataUrl.</param>
+        /// <param name="rawDataProvider">rawDataProvider.</param>
+        public PostDocumentRequest(string name = default(string), DateTime dateTime = default(DateTime), PostDocumentVersionRequest varVersion = default(PostDocumentVersionRequest), string reference = default(string), string barcode = default(string), Guid? primaryClassificationId = default(Guid?), string rawDataUrl = default(string), string rawDataProvider = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -63,6 +66,9 @@ namespace Simplic.OxS.SDK.Document
             this.DateTime = dateTime;
             this.Reference = reference;
             this.Barcode = barcode;
+            this.PrimaryClassificationId = primaryClassificationId;
+            this.RawDataUrl = rawDataUrl;
+            this.RawDataProvider = rawDataProvider;
         }
 
         /// <summary>
@@ -96,6 +102,24 @@ namespace Simplic.OxS.SDK.Document
         public string Barcode { get; set; }
 
         /// <summary>
+        /// Gets or Sets PrimaryClassificationId
+        /// </summary>
+        [DataMember(Name = "primaryClassificationId", EmitDefaultValue = true)]
+        public Guid? PrimaryClassificationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RawDataUrl
+        /// </summary>
+        [DataMember(Name = "rawDataUrl", EmitDefaultValue = true)]
+        public string RawDataUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RawDataProvider
+        /// </summary>
+        [DataMember(Name = "rawDataProvider", EmitDefaultValue = true)]
+        public string RawDataProvider { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -108,6 +132,9 @@ namespace Simplic.OxS.SDK.Document
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Barcode: ").Append(Barcode).Append("\n");
+            sb.Append("  PrimaryClassificationId: ").Append(PrimaryClassificationId).Append("\n");
+            sb.Append("  RawDataUrl: ").Append(RawDataUrl).Append("\n");
+            sb.Append("  RawDataProvider: ").Append(RawDataProvider).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,6 +194,21 @@ namespace Simplic.OxS.SDK.Document
                     this.Barcode == input.Barcode ||
                     (this.Barcode != null &&
                     this.Barcode.Equals(input.Barcode))
+                ) && 
+                (
+                    this.PrimaryClassificationId == input.PrimaryClassificationId ||
+                    (this.PrimaryClassificationId != null &&
+                    this.PrimaryClassificationId.Equals(input.PrimaryClassificationId))
+                ) && 
+                (
+                    this.RawDataUrl == input.RawDataUrl ||
+                    (this.RawDataUrl != null &&
+                    this.RawDataUrl.Equals(input.RawDataUrl))
+                ) && 
+                (
+                    this.RawDataProvider == input.RawDataProvider ||
+                    (this.RawDataProvider != null &&
+                    this.RawDataProvider.Equals(input.RawDataProvider))
                 );
         }
 
@@ -198,6 +240,18 @@ namespace Simplic.OxS.SDK.Document
                 if (this.Barcode != null)
                 {
                     hashCode = (hashCode * 59) + this.Barcode.GetHashCode();
+                }
+                if (this.PrimaryClassificationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PrimaryClassificationId.GetHashCode();
+                }
+                if (this.RawDataUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.RawDataUrl.GetHashCode();
+                }
+                if (this.RawDataProvider != null)
+                {
+                    hashCode = (hashCode * 59) + this.RawDataProvider.GetHashCode();
                 }
                 return hashCode;
             }

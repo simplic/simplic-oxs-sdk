@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets ArchiveMode
         /// </summary>
         [DataMember(Name = "archiveMode", EmitDefaultValue = false)]
-        public SubtypeArchiveMode? ArchiveMode { get; set; }
+        public TransactionSubtypeArchiveMode? ArchiveMode { get; set; }
 
         /// <summary>
         /// Gets or Sets DueDateMode
@@ -61,19 +61,14 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="TransactionSubtypeModel" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="reportId">reportId.</param>
-        /// <param name="sequenceId">sequenceId.</param>
+        /// <param name="report">report.</param>
+        /// <param name="sequence">sequence.</param>
+        /// <param name="outputConfiguration">outputConfiguration.</param>
         /// <param name="number">number.</param>
         /// <param name="name">name.</param>
-        /// <param name="typeId">typeId.</param>
         /// <param name="documentTitleTemplate">documentTitleTemplate.</param>
         /// <param name="archiveMode">archiveMode.</param>
-        /// <param name="reportName">reportName.</param>
-        /// <param name="outputConfigurationId">outputConfigurationId.</param>
         /// <param name="barcodeTemplate">barcodeTemplate.</param>
-        /// <param name="isWorkshopOrder">isWorkshopOrder.</param>
         /// <param name="useNumberReservation">useNumberReservation.</param>
         /// <param name="customField2Template">customField2Template.</param>
         /// <param name="customField1Template">customField1Template.</param>
@@ -81,25 +76,20 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="summarizeBookings">summarizeBookings.</param>
         /// <param name="accountingExportGroup">accountingExportGroup.</param>
         /// <param name="dueDateMode">dueDateMode.</param>
-        /// <param name="mdpBookingText">mdpBookingText.</param>
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
-        public TransactionSubtypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), Guid reportId = default(Guid), Guid sequenceId = default(Guid), int number = default(int), string name = default(string), Guid typeId = default(Guid), string documentTitleTemplate = default(string), SubtypeArchiveMode? archiveMode = default(SubtypeArchiveMode?), string reportName = default(string), Guid? outputConfigurationId = default(Guid?), string barcodeTemplate = default(string), bool isWorkshopOrder = default(bool), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), string mdpBookingText = default(string), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?))
+        /// <param name="isDeleted">isDeleted.</param>
+        public TransactionSubtypeModel(Guid id = default(Guid), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSubtypeSequenceModel sequence = default(TransactionSubtypeSequenceModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
         {
             this.Id = id;
-            this.OrganizationId = organizationId;
-            this.IsDeleted = isDeleted;
-            this.ReportId = reportId;
-            this.SequenceId = sequenceId;
+            this.Report = report;
+            this.Sequence = sequence;
+            this.OutputConfiguration = outputConfiguration;
             this.Number = number;
             this.Name = name;
-            this.TypeId = typeId;
             this.DocumentTitleTemplate = documentTitleTemplate;
             this.ArchiveMode = archiveMode;
-            this.ReportName = reportName;
-            this.OutputConfigurationId = outputConfigurationId;
             this.BarcodeTemplate = barcodeTemplate;
-            this.IsWorkshopOrder = isWorkshopOrder;
             this.UseNumberReservation = useNumberReservation;
             this.CustomField2Template = customField2Template;
             this.CustomField1Template = customField1Template;
@@ -107,9 +97,9 @@ namespace Simplic.OxS.SDK.ERP
             this.SummarizeBookings = summarizeBookings;
             this.AccountingExportGroup = accountingExportGroup;
             this.DueDateMode = dueDateMode;
-            this.MdpBookingText = mdpBookingText;
             this.TransactionNumberDateSource = transactionNumberDateSource;
             this.ExportCostQuantity = exportCostQuantity;
+            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -119,28 +109,22 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or Sets Report
         /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
+        [DataMember(Name = "report", EmitDefaultValue = false)]
+        public TransactionSubtypeReportModel Report { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Gets or Sets Sequence
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
+        [DataMember(Name = "sequence", EmitDefaultValue = false)]
+        public TransactionSubtypeSequenceModel Sequence { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReportId
+        /// Gets or Sets OutputConfiguration
         /// </summary>
-        [DataMember(Name = "reportId", EmitDefaultValue = false)]
-        public Guid ReportId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SequenceId
-        /// </summary>
-        [DataMember(Name = "sequenceId", EmitDefaultValue = false)]
-        public Guid SequenceId { get; set; }
+        [DataMember(Name = "outputConfiguration", EmitDefaultValue = false)]
+        public TransactionSubtypeOutputConfigurationModel OutputConfiguration { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -155,40 +139,16 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeId
-        /// </summary>
-        [DataMember(Name = "typeId", EmitDefaultValue = false)]
-        public Guid TypeId { get; set; }
-
-        /// <summary>
         /// Gets or Sets DocumentTitleTemplate
         /// </summary>
         [DataMember(Name = "documentTitleTemplate", EmitDefaultValue = true)]
         public string DocumentTitleTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReportName
-        /// </summary>
-        [DataMember(Name = "reportName", EmitDefaultValue = true)]
-        public string ReportName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OutputConfigurationId
-        /// </summary>
-        [DataMember(Name = "outputConfigurationId", EmitDefaultValue = true)]
-        public Guid? OutputConfigurationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets BarcodeTemplate
         /// </summary>
         [DataMember(Name = "barcodeTemplate", EmitDefaultValue = true)]
         public string BarcodeTemplate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsWorkshopOrder
-        /// </summary>
-        [DataMember(Name = "isWorkshopOrder", EmitDefaultValue = true)]
-        public bool IsWorkshopOrder { get; set; }
 
         /// <summary>
         /// Gets or Sets UseNumberReservation
@@ -227,10 +187,10 @@ namespace Simplic.OxS.SDK.ERP
         public string AccountingExportGroup { get; set; }
 
         /// <summary>
-        /// Gets or Sets MdpBookingText
+        /// Gets or Sets IsDeleted
         /// </summary>
-        [DataMember(Name = "mdpBookingText", EmitDefaultValue = true)]
-        public string MdpBookingText { get; set; }
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -241,19 +201,14 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionSubtypeModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  ReportId: ").Append(ReportId).Append("\n");
-            sb.Append("  SequenceId: ").Append(SequenceId).Append("\n");
+            sb.Append("  Report: ").Append(Report).Append("\n");
+            sb.Append("  Sequence: ").Append(Sequence).Append("\n");
+            sb.Append("  OutputConfiguration: ").Append(OutputConfiguration).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  TypeId: ").Append(TypeId).Append("\n");
             sb.Append("  DocumentTitleTemplate: ").Append(DocumentTitleTemplate).Append("\n");
             sb.Append("  ArchiveMode: ").Append(ArchiveMode).Append("\n");
-            sb.Append("  ReportName: ").Append(ReportName).Append("\n");
-            sb.Append("  OutputConfigurationId: ").Append(OutputConfigurationId).Append("\n");
             sb.Append("  BarcodeTemplate: ").Append(BarcodeTemplate).Append("\n");
-            sb.Append("  IsWorkshopOrder: ").Append(IsWorkshopOrder).Append("\n");
             sb.Append("  UseNumberReservation: ").Append(UseNumberReservation).Append("\n");
             sb.Append("  CustomField2Template: ").Append(CustomField2Template).Append("\n");
             sb.Append("  CustomField1Template: ").Append(CustomField1Template).Append("\n");
@@ -261,9 +216,9 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SummarizeBookings: ").Append(SummarizeBookings).Append("\n");
             sb.Append("  AccountingExportGroup: ").Append(AccountingExportGroup).Append("\n");
             sb.Append("  DueDateMode: ").Append(DueDateMode).Append("\n");
-            sb.Append("  MdpBookingText: ").Append(MdpBookingText).Append("\n");
             sb.Append("  TransactionNumberDateSource: ").Append(TransactionNumberDateSource).Append("\n");
             sb.Append("  ExportCostQuantity: ").Append(ExportCostQuantity).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -305,23 +260,19 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
+                    this.Report == input.Report ||
+                    (this.Report != null &&
+                    this.Report.Equals(input.Report))
                 ) && 
                 (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
+                    this.Sequence == input.Sequence ||
+                    (this.Sequence != null &&
+                    this.Sequence.Equals(input.Sequence))
                 ) && 
                 (
-                    this.ReportId == input.ReportId ||
-                    (this.ReportId != null &&
-                    this.ReportId.Equals(input.ReportId))
-                ) && 
-                (
-                    this.SequenceId == input.SequenceId ||
-                    (this.SequenceId != null &&
-                    this.SequenceId.Equals(input.SequenceId))
+                    this.OutputConfiguration == input.OutputConfiguration ||
+                    (this.OutputConfiguration != null &&
+                    this.OutputConfiguration.Equals(input.OutputConfiguration))
                 ) && 
                 (
                     this.Number == input.Number ||
@@ -333,11 +284,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.TypeId == input.TypeId ||
-                    (this.TypeId != null &&
-                    this.TypeId.Equals(input.TypeId))
-                ) && 
-                (
                     this.DocumentTitleTemplate == input.DocumentTitleTemplate ||
                     (this.DocumentTitleTemplate != null &&
                     this.DocumentTitleTemplate.Equals(input.DocumentTitleTemplate))
@@ -347,23 +293,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.ArchiveMode.Equals(input.ArchiveMode)
                 ) && 
                 (
-                    this.ReportName == input.ReportName ||
-                    (this.ReportName != null &&
-                    this.ReportName.Equals(input.ReportName))
-                ) && 
-                (
-                    this.OutputConfigurationId == input.OutputConfigurationId ||
-                    (this.OutputConfigurationId != null &&
-                    this.OutputConfigurationId.Equals(input.OutputConfigurationId))
-                ) && 
-                (
                     this.BarcodeTemplate == input.BarcodeTemplate ||
                     (this.BarcodeTemplate != null &&
                     this.BarcodeTemplate.Equals(input.BarcodeTemplate))
-                ) && 
-                (
-                    this.IsWorkshopOrder == input.IsWorkshopOrder ||
-                    this.IsWorkshopOrder.Equals(input.IsWorkshopOrder)
                 ) && 
                 (
                     this.UseNumberReservation == input.UseNumberReservation ||
@@ -398,17 +330,16 @@ namespace Simplic.OxS.SDK.ERP
                     this.DueDateMode.Equals(input.DueDateMode)
                 ) && 
                 (
-                    this.MdpBookingText == input.MdpBookingText ||
-                    (this.MdpBookingText != null &&
-                    this.MdpBookingText.Equals(input.MdpBookingText))
-                ) && 
-                (
                     this.TransactionNumberDateSource == input.TransactionNumberDateSource ||
                     this.TransactionNumberDateSource.Equals(input.TransactionNumberDateSource)
                 ) && 
                 (
                     this.ExportCostQuantity == input.ExportCostQuantity ||
                     this.ExportCostQuantity.Equals(input.ExportCostQuantity)
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    this.IsDeleted.Equals(input.IsDeleted)
                 );
         }
 
@@ -425,46 +356,32 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.OrganizationId != null)
+                if (this.Report != null)
                 {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Report.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.ReportId != null)
+                if (this.Sequence != null)
                 {
-                    hashCode = (hashCode * 59) + this.ReportId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Sequence.GetHashCode();
                 }
-                if (this.SequenceId != null)
+                if (this.OutputConfiguration != null)
                 {
-                    hashCode = (hashCode * 59) + this.SequenceId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OutputConfiguration.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.TypeId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TypeId.GetHashCode();
-                }
                 if (this.DocumentTitleTemplate != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentTitleTemplate.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ArchiveMode.GetHashCode();
-                if (this.ReportName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReportName.GetHashCode();
-                }
-                if (this.OutputConfigurationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OutputConfigurationId.GetHashCode();
-                }
                 if (this.BarcodeTemplate != null)
                 {
                     hashCode = (hashCode * 59) + this.BarcodeTemplate.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsWorkshopOrder.GetHashCode();
                 hashCode = (hashCode * 59) + this.UseNumberReservation.GetHashCode();
                 if (this.CustomField2Template != null)
                 {
@@ -484,12 +401,9 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.AccountingExportGroup.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.DueDateMode.GetHashCode();
-                if (this.MdpBookingText != null)
-                {
-                    hashCode = (hashCode * 59) + this.MdpBookingText.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.TransactionNumberDateSource.GetHashCode();
                 hashCode = (hashCode * 59) + this.ExportCostQuantity.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

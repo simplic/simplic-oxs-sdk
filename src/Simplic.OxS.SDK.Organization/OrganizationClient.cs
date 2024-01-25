@@ -169,11 +169,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        public List<OrganizationMemberModel> GetForUserGet(int operationIndex = 0)
+        public List<OrganizationMemberModel> GetForUser(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetForUserGet(operationIndex);
+                return _internalClient.GetForUser(operationIndex);
             }
             catch (ApiException e)
             {
@@ -187,11 +187,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetForUserWithHttpInfo(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetForUserGetWithHttpInfo(operationIndex);
+                return _internalClient.GetForUserWithHttpInfo(operationIndex);
             }
             catch (ApiException e)
             {
@@ -206,11 +206,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetForUserGetAsync(operationIndex, cancellationToken);
+                return _internalClient.GetForUserAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -225,11 +225,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetForUserGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetForUserWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetForUserGetWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetForUserWithHttpInfoAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -242,11 +242,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public List<OrganizationMemberInvitationModel> GetMemberInvitationsGet(int operationIndex = 0)
+        public List<OrganizationMemberInvitationModel> GetMemberInvitations(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMemberInvitationsGet(operationIndex);
+                return _internalClient.GetMemberInvitations(operationIndex);
             }
             catch (ApiException e)
             {
@@ -260,11 +260,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsWithHttpInfo(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMemberInvitationsGetWithHttpInfo(operationIndex);
+                return _internalClient.GetMemberInvitationsWithHttpInfo(operationIndex);
             }
             catch (ApiException e)
             {
@@ -279,11 +279,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMemberInvitationsGetAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMemberInvitationsAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -298,11 +298,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMemberInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMemberInvitationsWithHttpInfoAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -315,11 +315,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        public List<OrganizationMemberModel> GetMemberListGet(int operationIndex = 0)
+        public List<OrganizationMemberModel> GetMemberList(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMemberListGet(operationIndex);
+                return _internalClient.GetMemberList(operationIndex);
             }
             catch (ApiException e)
             {
@@ -333,11 +333,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetMemberListWithHttpInfo(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMemberListGetWithHttpInfo(operationIndex);
+                return _internalClient.GetMemberListWithHttpInfo(operationIndex);
             }
             catch (ApiException e)
             {
@@ -352,11 +352,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMemberListGetAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMemberListAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -371,11 +371,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetMemberListGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetMemberListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMemberListGetWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMemberListWithHttpInfoAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -571,7 +571,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        List<OrganizationMemberModel> GetForUserGet(int operationIndex = 0);
+        List<OrganizationMemberModel> GetForUser(int operationIndex = 0);
 
         /// <summary>
         /// Returns a list of organizations that belongs to the current user
@@ -582,14 +582,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<OrganizationMemberModel>> GetForUserWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        List<OrganizationMemberInvitationModel> GetMemberInvitationsGet(int operationIndex = 0);
+        List<OrganizationMemberInvitationModel> GetMemberInvitations(int operationIndex = 0);
 
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user
@@ -600,14 +600,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Returns all member that belongs to the current organization
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        List<OrganizationMemberModel> GetMemberListGet(int operationIndex = 0);
+        List<OrganizationMemberModel> GetMemberList(int operationIndex = 0);
 
         /// <summary>
         /// Returns all member that belongs to the current organization
@@ -618,7 +618,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<OrganizationMemberModel>> GetMemberListWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user
         /// </summary>
@@ -701,7 +701,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns a list of organizations that belongs to the current user
@@ -713,7 +713,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberModel>>> GetForUserGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberModel>>> GetForUserWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user
         /// </summary>
@@ -724,7 +724,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns a list of member invitations for the organization that belongs to the current user
@@ -736,7 +736,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Returns all member that belongs to the current organization
         /// </summary>
@@ -747,7 +747,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns all member that belongs to the current organization
@@ -759,7 +759,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberModel>>> GetMemberListGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberModel>>> GetMemberListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new organization and connects it with the currently logged in user
         /// </summary>
@@ -975,7 +975,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.Get";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -988,7 +988,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<OrganizationModel>("/Organization", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1046,7 +1046,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.Get";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1060,7 +1060,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1076,9 +1076,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        public List<OrganizationMemberModel> GetForUserGet(int operationIndex = 0)
+        public List<OrganizationMemberModel> GetForUser(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetForUserGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetForUserWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -1088,7 +1088,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetForUserGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetForUserWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1115,7 +1115,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetForUserGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetForUserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1128,7 +1128,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationMemberModel>>("/Organization/get-for-user", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForUserGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetForUserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1145,9 +1145,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetForUserAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetForUserGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetForUserWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1158,7 +1158,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetForUserGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetForUserWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1186,7 +1186,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetForUserGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetForUserGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1200,7 +1200,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForUserGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetForUserGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1216,9 +1216,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public List<OrganizationMemberInvitationModel> GetMemberInvitationsGet(int operationIndex = 0)
+        public List<OrganizationMemberInvitationModel> GetMemberInvitations(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = GetMemberInvitationsGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = GetMemberInvitationsWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -1228,7 +1228,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> GetMemberInvitationsWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1255,7 +1255,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetMemberInvitationsGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetMemberInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1268,7 +1268,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationMemberInvitationModel>>("/Organization/get-member-invitations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMemberInvitationsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetMemberInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1285,9 +1285,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberInvitationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<OrganizationMemberInvitationModel>> GetMemberInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = await GetMemberInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>> localVarResponse = await GetMemberInvitationsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1298,7 +1298,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberInvitationModel>>> GetMemberInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1326,7 +1326,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetMemberInvitationsGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetMemberInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1340,7 +1340,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMemberInvitationsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetMemberInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1356,9 +1356,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationMemberModel&gt;</returns>
-        public List<OrganizationMemberModel> GetMemberListGet(int operationIndex = 0)
+        public List<OrganizationMemberModel> GetMemberList(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetMemberListGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = GetMemberListWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -1368,7 +1368,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationMemberModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetMemberListGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> GetMemberListWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1395,7 +1395,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetMemberListGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetMemberListGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1408,7 +1408,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationMemberModel>>("/Organization/get-member-list", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMemberListGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetMemberListGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1425,9 +1425,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationMemberModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<OrganizationMemberModel>> GetMemberListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetMemberListGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>> localVarResponse = await GetMemberListWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1438,7 +1438,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetMemberListGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationMemberModel>>> GetMemberListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1466,7 +1466,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationClient.GetMemberListGet";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationGetMemberListGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1480,7 +1480,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMemberListGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationGetMemberListGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1541,7 +1541,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createOrganizationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationClient.Post";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1554,7 +1554,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<OrganizationModel>("/Organization", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1618,7 +1618,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = createOrganizationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationClient.Post";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1632,7 +1632,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1693,7 +1693,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = updateOrganizationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationClient.Put";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1706,7 +1706,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<OrganizationModel>("/Organization", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1770,7 +1770,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = updateOrganizationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationClient.Put";
+            localVarRequestOptions.Operation = "OrganizationClient.OrganizationPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1784,7 +1784,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

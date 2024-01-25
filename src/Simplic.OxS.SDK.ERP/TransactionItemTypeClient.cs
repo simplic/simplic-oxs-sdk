@@ -249,14 +249,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        public TransactionItemTypeModel Put(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public TransactionItemTypeModel Patch(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Put(id, createTransactionItemTypeRequest, operationIndex);
+                return _internalClient.Patch(id, updateTransactionItemTypeRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -269,14 +269,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PutWithHttpInfo(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PatchWithHttpInfo(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PutWithHttpInfo(id, createTransactionItemTypeRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updateTransactionItemTypeRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -289,15 +289,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        public System.Threading.Tasks.Task<TransactionItemTypeModel> PutAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionItemTypeModel> PatchAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutAsync(id, createTransactionItemTypeRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updateTransactionItemTypeRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -310,15 +310,15 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutWithHttpInfoAsync(id, createTransactionItemTypeRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateTransactionItemTypeRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -329,14 +329,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        public TransactionItemTypeModel Post(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public TransactionItemTypeModel Post(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Post(createTransactionItemTypeRequest, operationIndex);
+                return _internalClient.Post(transactionItemTypeRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -348,14 +348,14 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0)
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createTransactionItemTypeRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(transactionItemTypeRequest, operationIndex);
             }
             catch (ApiException e)
             {
@@ -367,15 +367,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        public System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createTransactionItemTypeRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(transactionItemTypeRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -387,15 +387,15 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createTransactionItemTypeRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(transactionItemTypeRequest, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -458,10 +458,10 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        TransactionItemTypeModel Put(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0);
+        TransactionItemTypeModel Patch(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -471,18 +471,18 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        ApiResponse<TransactionItemTypeModel> PutWithHttpInfo(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0);
+        ApiResponse<TransactionItemTypeModel> PatchWithHttpInfo(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        TransactionItemTypeModel Post(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0);
+        TransactionItemTypeModel Post(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -491,10 +491,10 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0);
+        ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -562,11 +562,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        System.Threading.Tasks.Task<TransactionItemTypeModel> PutAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionItemTypeModel> PatchAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -576,11 +576,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionItemTypeModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionItemTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -588,11 +588,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -601,11 +601,11 @@ namespace Simplic.OxS.SDK.ERP
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -773,7 +773,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Delete";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -786,7 +786,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Delete<Object>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -846,7 +846,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Delete";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -860,7 +860,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -918,7 +918,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Get";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -931,7 +931,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Get<TransactionItemTypeModel>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -992,7 +992,7 @@ namespace Simplic.OxS.SDK.ERP
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Get";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1006,7 +1006,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1021,12 +1021,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        public TransactionItemTypeModel Put(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public TransactionItemTypeModel Patch(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = PutWithHttpInfo(id, createTransactionItemTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = PatchWithHttpInfo(id, updateTransactionItemTypeRequest);
             return localVarResponse.Data;
         }
 
@@ -1035,10 +1035,10 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PutWithHttpInfo(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PatchWithHttpInfo(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1068,9 +1068,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionItemTypeRequest;
+            localVarRequestOptions.Data = updateTransactionItemTypeRequest;
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Put";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1080,10 +1080,10 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionItemTypeModel>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionItemTypeModel>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1098,13 +1098,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        public async System.Threading.Tasks.Task<TransactionItemTypeModel> PutAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionItemTypeModel> PatchAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = await PutWithHttpInfoAsync(id, createTransactionItemTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateTransactionItemTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1113,11 +1113,11 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="updateTransactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PutWithHttpInfoAsync(Guid id, CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = default(UpdateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1148,9 +1148,9 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = createTransactionItemTypeRequest;
+            localVarRequestOptions.Data = updateTransactionItemTypeRequest;
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Put";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypeIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1160,11 +1160,11 @@ namespace Simplic.OxS.SDK.ERP
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionItemTypeModel>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionItemTypeModel>("/TransactionItemType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypeIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1178,12 +1178,12 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionItemTypeModel</returns>
-        public TransactionItemTypeModel Post(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public TransactionItemTypeModel Post(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = PostWithHttpInfo(createTransactionItemTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = PostWithHttpInfo(transactionItemTypeRequest);
             return localVarResponse.Data;
         }
 
@@ -1191,10 +1191,10 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionItemTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> PostWithHttpInfo(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1223,9 +1223,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionItemTypeRequest;
+            localVarRequestOptions.Data = transactionItemTypeRequest;
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Post";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1238,7 +1238,7 @@ namespace Simplic.OxS.SDK.ERP
             var localVarResponse = this.Client.Post<TransactionItemTypeModel>("/TransactionItemType", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1252,13 +1252,13 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionItemTypeModel</returns>
-        public async System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionItemTypeModel> PostAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = await PostWithHttpInfoAsync(createTransactionItemTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel> localVarResponse = await PostWithHttpInfoAsync(transactionItemTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1266,11 +1266,11 @@ namespace Simplic.OxS.SDK.ERP
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createTransactionItemTypeRequest"> (optional)</param>
+        /// <param name="transactionItemTypeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionItemTypeModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(CreateTransactionItemTypeRequest? createTransactionItemTypeRequest = default(CreateTransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionItemTypeModel>> PostWithHttpInfoAsync(TransactionItemTypeRequest? transactionItemTypeRequest = default(TransactionItemTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1300,9 +1300,9 @@ namespace Simplic.OxS.SDK.ERP
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createTransactionItemTypeRequest;
+            localVarRequestOptions.Data = transactionItemTypeRequest;
 
-            localVarRequestOptions.Operation = "TransactionItemTypeClient.Post";
+            localVarRequestOptions.Operation = "TransactionItemTypeClient.TransactionItemTypePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1316,7 +1316,7 @@ namespace Simplic.OxS.SDK.ERP
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionItemTypePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

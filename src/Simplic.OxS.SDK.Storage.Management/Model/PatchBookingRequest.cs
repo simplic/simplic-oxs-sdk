@@ -38,34 +38,34 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <param name="customerId">customerId.</param>
         /// <param name="locationId">locationId.</param>
-        /// <param name="isExternalDriver">isExternalDriver.</param>
-        /// <param name="driverExt">driverExt.</param>
         /// <param name="driverId">driverId.</param>
-        /// <param name="isExternalTractorUnit">isExternalTractorUnit.</param>
-        /// <param name="tractorUnitExt">tractorUnitExt.</param>
-        /// <param name="tractorUnitId">tractorUnitId.</param>
-        /// <param name="isUnknownCarrier">isUnknownCarrier.</param>
-        /// <param name="carrierExt">carrierExt.</param>
+        /// <param name="vehicleId">vehicleId.</param>
         /// <param name="carrierId">carrierId.</param>
+        /// <param name="externalVehicle">externalVehicle.</param>
+        /// <param name="externalCarrier">externalCarrier.</param>
+        /// <param name="externalDriver">externalDriver.</param>
         /// <param name="date">date.</param>
-        /// <param name="signatureUrl">signatureUrl.</param>
+        /// <param name="signatureUser">signatureUser.</param>
+        /// <param name="signatureDriver">signatureDriver.</param>
+        /// <param name="ecoNumber">ecoNumber.</param>
+        /// <param name="deliveryNote">deliveryNote.</param>
         /// <param name="loadingAids">loadingAids.</param>
         /// <param name="images">images.</param>
-        public PatchBookingRequest(Guid customerId = default(Guid), Guid locationId = default(Guid), bool? isExternalDriver = default(bool?), string driverExt = default(string), Guid? driverId = default(Guid?), bool? isExternalTractorUnit = default(bool?), string tractorUnitExt = default(string), Guid? tractorUnitId = default(Guid?), bool? isUnknownCarrier = default(bool?), string carrierExt = default(string), Guid? carrierId = default(Guid?), DateTime? date = default(DateTime?), Guid? signatureUrl = default(Guid?), List<LoadingAid> loadingAids = default(List<LoadingAid>), List<Guid> images = default(List<Guid>))
+        public PatchBookingRequest(Guid? customerId = default(Guid?), Guid? locationId = default(Guid?), Guid? driverId = default(Guid?), Guid? vehicleId = default(Guid?), Guid? carrierId = default(Guid?), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<LoadingAidRequest> loadingAids = default(List<LoadingAidRequest>), List<Guid> images = default(List<Guid>))
         {
             this.CustomerId = customerId;
             this.LocationId = locationId;
-            this.IsExternalDriver = isExternalDriver;
-            this.DriverExt = driverExt;
             this.DriverId = driverId;
-            this.IsExternalTractorUnit = isExternalTractorUnit;
-            this.TractorUnitExt = tractorUnitExt;
-            this.TractorUnitId = tractorUnitId;
-            this.IsUnknownCarrier = isUnknownCarrier;
-            this.CarrierExt = carrierExt;
+            this.VehicleId = vehicleId;
             this.CarrierId = carrierId;
+            this.ExternalVehicle = externalVehicle;
+            this.ExternalCarrier = externalCarrier;
+            this.ExternalDriver = externalDriver;
             this.Date = date;
-            this.SignatureUrl = signatureUrl;
+            this.SignatureUser = signatureUser;
+            this.SignatureDriver = signatureDriver;
+            this.EcoNumber = ecoNumber;
+            this.DeliveryNote = deliveryNote;
             this.LoadingAids = loadingAids;
             this.Images = images;
         }
@@ -73,26 +73,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        [DataMember(Name = "customerId", EmitDefaultValue = false)]
-        public Guid CustomerId { get; set; }
+        [DataMember(Name = "customerId", EmitDefaultValue = true)]
+        public Guid? CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets LocationId
         /// </summary>
-        [DataMember(Name = "locationId", EmitDefaultValue = false)]
-        public Guid LocationId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsExternalDriver
-        /// </summary>
-        [DataMember(Name = "isExternalDriver", EmitDefaultValue = true)]
-        public bool? IsExternalDriver { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DriverExt
-        /// </summary>
-        [DataMember(Name = "driverExt", EmitDefaultValue = true)]
-        public string DriverExt { get; set; }
+        [DataMember(Name = "locationId", EmitDefaultValue = true)]
+        public Guid? LocationId { get; set; }
 
         /// <summary>
         /// Gets or Sets DriverId
@@ -101,34 +89,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         public Guid? DriverId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsExternalTractorUnit
+        /// Gets or Sets VehicleId
         /// </summary>
-        [DataMember(Name = "isExternalTractorUnit", EmitDefaultValue = true)]
-        public bool? IsExternalTractorUnit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TractorUnitExt
-        /// </summary>
-        [DataMember(Name = "tractorUnitExt", EmitDefaultValue = true)]
-        public string TractorUnitExt { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TractorUnitId
-        /// </summary>
-        [DataMember(Name = "tractorUnitId", EmitDefaultValue = true)]
-        public Guid? TractorUnitId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsUnknownCarrier
-        /// </summary>
-        [DataMember(Name = "isUnknownCarrier", EmitDefaultValue = true)]
-        public bool? IsUnknownCarrier { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CarrierExt
-        /// </summary>
-        [DataMember(Name = "carrierExt", EmitDefaultValue = true)]
-        public string CarrierExt { get; set; }
+        [DataMember(Name = "vehicleId", EmitDefaultValue = true)]
+        public Guid? VehicleId { get; set; }
 
         /// <summary>
         /// Gets or Sets CarrierId
@@ -137,22 +101,58 @@ namespace Simplic.OxS.SDK.Storage.Management
         public Guid? CarrierId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExternalVehicle
+        /// </summary>
+        [DataMember(Name = "externalVehicle", EmitDefaultValue = true)]
+        public string ExternalVehicle { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalCarrier
+        /// </summary>
+        [DataMember(Name = "externalCarrier", EmitDefaultValue = true)]
+        public string ExternalCarrier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalDriver
+        /// </summary>
+        [DataMember(Name = "externalDriver", EmitDefaultValue = true)]
+        public string ExternalDriver { get; set; }
+
+        /// <summary>
         /// Gets or Sets Date
         /// </summary>
         [DataMember(Name = "date", EmitDefaultValue = true)]
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureUrl
+        /// Gets or Sets SignatureUser
         /// </summary>
-        [DataMember(Name = "signatureUrl", EmitDefaultValue = true)]
-        public Guid? SignatureUrl { get; set; }
+        [DataMember(Name = "signatureUser", EmitDefaultValue = false)]
+        public SignatureUserModel SignatureUser { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SignatureDriver
+        /// </summary>
+        [DataMember(Name = "signatureDriver", EmitDefaultValue = false)]
+        public SignatureUserModel SignatureDriver { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EcoNumber
+        /// </summary>
+        [DataMember(Name = "ecoNumber", EmitDefaultValue = true)]
+        public string EcoNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveryNote
+        /// </summary>
+        [DataMember(Name = "deliveryNote", EmitDefaultValue = true)]
+        public string DeliveryNote { get; set; }
 
         /// <summary>
         /// Gets or Sets LoadingAids
         /// </summary>
         [DataMember(Name = "loadingAids", EmitDefaultValue = true)]
-        public List<LoadingAid> LoadingAids { get; set; }
+        public List<LoadingAidRequest> LoadingAids { get; set; }
 
         /// <summary>
         /// Gets or Sets Images
@@ -170,17 +170,17 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("class PatchBookingRequest {\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
-            sb.Append("  IsExternalDriver: ").Append(IsExternalDriver).Append("\n");
-            sb.Append("  DriverExt: ").Append(DriverExt).Append("\n");
             sb.Append("  DriverId: ").Append(DriverId).Append("\n");
-            sb.Append("  IsExternalTractorUnit: ").Append(IsExternalTractorUnit).Append("\n");
-            sb.Append("  TractorUnitExt: ").Append(TractorUnitExt).Append("\n");
-            sb.Append("  TractorUnitId: ").Append(TractorUnitId).Append("\n");
-            sb.Append("  IsUnknownCarrier: ").Append(IsUnknownCarrier).Append("\n");
-            sb.Append("  CarrierExt: ").Append(CarrierExt).Append("\n");
+            sb.Append("  VehicleId: ").Append(VehicleId).Append("\n");
             sb.Append("  CarrierId: ").Append(CarrierId).Append("\n");
+            sb.Append("  ExternalVehicle: ").Append(ExternalVehicle).Append("\n");
+            sb.Append("  ExternalCarrier: ").Append(ExternalCarrier).Append("\n");
+            sb.Append("  ExternalDriver: ").Append(ExternalDriver).Append("\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  SignatureUrl: ").Append(SignatureUrl).Append("\n");
+            sb.Append("  SignatureUser: ").Append(SignatureUser).Append("\n");
+            sb.Append("  SignatureDriver: ").Append(SignatureDriver).Append("\n");
+            sb.Append("  EcoNumber: ").Append(EcoNumber).Append("\n");
+            sb.Append("  DeliveryNote: ").Append(DeliveryNote).Append("\n");
             sb.Append("  LoadingAids: ").Append(LoadingAids).Append("\n");
             sb.Append("  Images: ").Append(Images).Append("\n");
             sb.Append("}\n");
@@ -229,44 +229,14 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.LocationId.Equals(input.LocationId))
                 ) && 
                 (
-                    this.IsExternalDriver == input.IsExternalDriver ||
-                    (this.IsExternalDriver != null &&
-                    this.IsExternalDriver.Equals(input.IsExternalDriver))
-                ) && 
-                (
-                    this.DriverExt == input.DriverExt ||
-                    (this.DriverExt != null &&
-                    this.DriverExt.Equals(input.DriverExt))
-                ) && 
-                (
                     this.DriverId == input.DriverId ||
                     (this.DriverId != null &&
                     this.DriverId.Equals(input.DriverId))
                 ) && 
                 (
-                    this.IsExternalTractorUnit == input.IsExternalTractorUnit ||
-                    (this.IsExternalTractorUnit != null &&
-                    this.IsExternalTractorUnit.Equals(input.IsExternalTractorUnit))
-                ) && 
-                (
-                    this.TractorUnitExt == input.TractorUnitExt ||
-                    (this.TractorUnitExt != null &&
-                    this.TractorUnitExt.Equals(input.TractorUnitExt))
-                ) && 
-                (
-                    this.TractorUnitId == input.TractorUnitId ||
-                    (this.TractorUnitId != null &&
-                    this.TractorUnitId.Equals(input.TractorUnitId))
-                ) && 
-                (
-                    this.IsUnknownCarrier == input.IsUnknownCarrier ||
-                    (this.IsUnknownCarrier != null &&
-                    this.IsUnknownCarrier.Equals(input.IsUnknownCarrier))
-                ) && 
-                (
-                    this.CarrierExt == input.CarrierExt ||
-                    (this.CarrierExt != null &&
-                    this.CarrierExt.Equals(input.CarrierExt))
+                    this.VehicleId == input.VehicleId ||
+                    (this.VehicleId != null &&
+                    this.VehicleId.Equals(input.VehicleId))
                 ) && 
                 (
                     this.CarrierId == input.CarrierId ||
@@ -274,14 +244,44 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.CarrierId.Equals(input.CarrierId))
                 ) && 
                 (
+                    this.ExternalVehicle == input.ExternalVehicle ||
+                    (this.ExternalVehicle != null &&
+                    this.ExternalVehicle.Equals(input.ExternalVehicle))
+                ) && 
+                (
+                    this.ExternalCarrier == input.ExternalCarrier ||
+                    (this.ExternalCarrier != null &&
+                    this.ExternalCarrier.Equals(input.ExternalCarrier))
+                ) && 
+                (
+                    this.ExternalDriver == input.ExternalDriver ||
+                    (this.ExternalDriver != null &&
+                    this.ExternalDriver.Equals(input.ExternalDriver))
+                ) && 
+                (
                     this.Date == input.Date ||
                     (this.Date != null &&
                     this.Date.Equals(input.Date))
                 ) && 
                 (
-                    this.SignatureUrl == input.SignatureUrl ||
-                    (this.SignatureUrl != null &&
-                    this.SignatureUrl.Equals(input.SignatureUrl))
+                    this.SignatureUser == input.SignatureUser ||
+                    (this.SignatureUser != null &&
+                    this.SignatureUser.Equals(input.SignatureUser))
+                ) && 
+                (
+                    this.SignatureDriver == input.SignatureDriver ||
+                    (this.SignatureDriver != null &&
+                    this.SignatureDriver.Equals(input.SignatureDriver))
+                ) && 
+                (
+                    this.EcoNumber == input.EcoNumber ||
+                    (this.EcoNumber != null &&
+                    this.EcoNumber.Equals(input.EcoNumber))
+                ) && 
+                (
+                    this.DeliveryNote == input.DeliveryNote ||
+                    (this.DeliveryNote != null &&
+                    this.DeliveryNote.Equals(input.DeliveryNote))
                 ) && 
                 (
                     this.LoadingAids == input.LoadingAids ||
@@ -314,49 +314,49 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.LocationId.GetHashCode();
                 }
-                if (this.IsExternalDriver != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsExternalDriver.GetHashCode();
-                }
-                if (this.DriverExt != null)
-                {
-                    hashCode = (hashCode * 59) + this.DriverExt.GetHashCode();
-                }
                 if (this.DriverId != null)
                 {
                     hashCode = (hashCode * 59) + this.DriverId.GetHashCode();
                 }
-                if (this.IsExternalTractorUnit != null)
+                if (this.VehicleId != null)
                 {
-                    hashCode = (hashCode * 59) + this.IsExternalTractorUnit.GetHashCode();
-                }
-                if (this.TractorUnitExt != null)
-                {
-                    hashCode = (hashCode * 59) + this.TractorUnitExt.GetHashCode();
-                }
-                if (this.TractorUnitId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TractorUnitId.GetHashCode();
-                }
-                if (this.IsUnknownCarrier != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsUnknownCarrier.GetHashCode();
-                }
-                if (this.CarrierExt != null)
-                {
-                    hashCode = (hashCode * 59) + this.CarrierExt.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VehicleId.GetHashCode();
                 }
                 if (this.CarrierId != null)
                 {
                     hashCode = (hashCode * 59) + this.CarrierId.GetHashCode();
                 }
+                if (this.ExternalVehicle != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalVehicle.GetHashCode();
+                }
+                if (this.ExternalCarrier != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalCarrier.GetHashCode();
+                }
+                if (this.ExternalDriver != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalDriver.GetHashCode();
+                }
                 if (this.Date != null)
                 {
                     hashCode = (hashCode * 59) + this.Date.GetHashCode();
                 }
-                if (this.SignatureUrl != null)
+                if (this.SignatureUser != null)
                 {
-                    hashCode = (hashCode * 59) + this.SignatureUrl.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SignatureUser.GetHashCode();
+                }
+                if (this.SignatureDriver != null)
+                {
+                    hashCode = (hashCode * 59) + this.SignatureDriver.GetHashCode();
+                }
+                if (this.EcoNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.EcoNumber.GetHashCode();
+                }
+                if (this.DeliveryNote != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryNote.GetHashCode();
                 }
                 if (this.LoadingAids != null)
                 {

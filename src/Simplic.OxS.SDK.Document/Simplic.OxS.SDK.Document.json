@@ -1,1 +1,1401 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.Document", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/document-api/v1"}], "paths": {"/api/AI/enqueue/{id}": {"get": {"tags": ["AI"], "parameters": [{"name": "documentId", "in": "query", "schema": {"type": "string", "format": "uuid"}}, {"name": "id", "in": "path", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/api/Classification/{classificationId}": {"get": {"tags": ["Classification"], "parameters": [{"name": "classificationId", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/api/Classification": {"post": {"tags": ["Classification"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateClassificationRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateClassificationRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateClassificationRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/api/Classification/{id}": {"patch": {"tags": ["Classification"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PatchClassificationRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PatchClassificationRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PatchClassificationRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ClassificationResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document/{documentId}": {"get": {"tags": ["Document"], "parameters": [{"name": "documentId", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document/get-current/{documentId}": {"get": {"tags": ["Document"], "parameters": [{"name": "documentId", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document/get-version/{documentId}": {"get": {"tags": ["Document"], "parameters": [{"name": "documentId", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}, {"name": "version", "in": "query", "schema": {"type": "integer", "format": "int32"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document/get-version-by-id/{versionId}": {"get": {"tags": ["Document"], "parameters": [{"name": "versionId", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentVersionResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document": {"post": {"tags": ["Document"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PostDocumentRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PostDocumentRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PostDocumentRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Document/{id}": {"patch": {"tags": ["Document"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PatchDocumentRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PatchDocumentRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PatchDocumentRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "application/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}, "text/json": {"schema": {"$ref": "#/components/schemas/DocumentResponse"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/api/Rossum/hook": {"post": {"tags": ["Rossum"], "responses": {"200": {"description": "Success"}}}}}, "components": {"schemas": {"ClassificationAIPropertiesModel": {"type": "object", "properties": {"provider": {"type": "string", "nullable": true}, "enqueueMode": {"type": "string", "nullable": true}, "schema": {"type": "string", "nullable": true}}, "additionalProperties": false}, "ClassificationResponse": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}}, "additionalProperties": false}, "CreateClassificationRequest": {"required": ["name"], "type": "object", "properties": {"name": {"minLength": 1, "type": "string"}, "aiConfiguration": {"$ref": "#/components/schemas/ClassificationAIPropertiesModel"}}, "additionalProperties": false}, "DocumentResponse": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "name": {"type": "string", "nullable": true}, "dateTime": {"type": "string", "format": "date-time"}, "versions": {"type": "array", "items": {"$ref": "#/components/schemas/DocumentVersionResponse"}, "nullable": true}, "currentVersion": {"$ref": "#/components/schemas/DocumentVersionResponse"}, "reference": {"type": "string", "nullable": true}, "barcode": {"type": "string", "nullable": true}}, "additionalProperties": false}, "DocumentVersionResponse": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "number": {"type": "integer", "format": "int32"}, "url": {"type": "string", "nullable": true}, "fileExtension": {"type": "string", "nullable": true}, "mimeType": {"type": "string", "nullable": true}, "comment": {"type": "string", "nullable": true}, "fileSize": {"type": "integer", "format": "int64"}}, "additionalProperties": false}, "PatchAIPropertiesRequest": {"type": "object", "properties": {"provider": {"type": "string", "nullable": true}, "queueName": {"type": "string", "nullable": true}}, "additionalProperties": false}, "PatchClassificationRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "aiProperties": {"$ref": "#/components/schemas/PatchAIPropertiesRequest"}}, "additionalProperties": false}, "PatchDocumentRequest": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "dateTime": {"type": "string", "format": "date-time", "nullable": true}, "versions": {"type": "array", "items": {"$ref": "#/components/schemas/PatchDocumentVersionRequest"}, "nullable": true}, "reference": {"type": "string", "nullable": true}, "barcode": {"type": "string", "nullable": true}}, "additionalProperties": false}, "PatchDocumentVersionRequest": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "url": {"type": "string", "nullable": true}, "fileExtension": {"type": "string", "nullable": true}, "mimeType": {"type": "string", "nullable": true}, "comment": {"type": "string", "nullable": true}, "fileSize": {"type": "integer", "format": "int64", "nullable": true}, "isReleased": {"type": "boolean"}}, "additionalProperties": false}, "PostDocumentRequest": {"required": ["name", "version"], "type": "object", "properties": {"name": {"minLength": 1, "type": "string"}, "dateTime": {"type": "string", "format": "date-time"}, "version": {"$ref": "#/components/schemas/PostDocumentVersionRequest"}, "reference": {"type": "string", "nullable": true}, "barcode": {"type": "string", "nullable": true}}, "additionalProperties": false}, "PostDocumentVersionRequest": {"required": ["fileSize", "mimeType", "url"], "type": "object", "properties": {"url": {"minLength": 1, "type": "string"}, "fileExtension": {"type": "string", "nullable": true}, "mimeType": {"minLength": 1, "type": "string"}, "comment": {"type": "string", "nullable": true}, "fileSize": {"type": "integer", "format": "int64"}}, "additionalProperties": false}, "ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.Document",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/document-api/v1"
+        }
+    ],
+    "paths": {
+        "/api/AI/enqueue/{documentId}": {
+            "get": {
+                "tags": [
+                    "AI"
+                ],
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/AI/commit/{documentId}": {
+            "get": {
+                "tags": [
+                    "AI"
+                ],
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Classification/{classificationId}": {
+            "get": {
+                "tags": [
+                    "Classification"
+                ],
+                "parameters": [
+                    {
+                        "name": "classificationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Classification": {
+            "post": {
+                "tags": [
+                    "Classification"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateClassificationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateClassificationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateClassificationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Classification/{id}": {
+            "patch": {
+                "tags": [
+                    "Classification"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchClassificationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchClassificationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchClassificationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClassificationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document/{documentId}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document/get-current/{documentId}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document/get-version/{documentId}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document/get-version-by-id/{versionId}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "parameters": [
+                    {
+                        "name": "versionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentVersionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document": {
+            "post": {
+                "tags": [
+                    "Document"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostDocumentRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostDocumentRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostDocumentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Document/{id}": {
+            "patch": {
+                "tags": [
+                    "Document"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchDocumentRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchDocumentRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchDocumentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Rossum/{organizationId}/hook": {
+            "post": {
+                "tags": [
+                    "Rossum"
+                ],
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ClassificationAIPropertiesModel": {
+                "type": "object",
+                "properties": {
+                    "provider": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "enqueueMode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "schema": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ClassificationResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateClassificationRequest": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "aiConfiguration": {
+                        "$ref": "#/components/schemas/ClassificationAIPropertiesModel"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DocumentResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DocumentVersionResponse"
+                        },
+                        "nullable": true
+                    },
+                    "currentVersion": {
+                        "$ref": "#/components/schemas/DocumentVersionResponse"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "barcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "primaryClassification": {
+                        "$ref": "#/components/schemas/ClassificationResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DocumentVersionResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "url": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileExtension": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mimeType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "comment": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileSize": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchAIPropertiesRequest": {
+                "type": "object",
+                "properties": {
+                    "provider": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "queueName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchClassificationRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "aiProperties": {
+                        "$ref": "#/components/schemas/PatchAIPropertiesRequest"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchDocumentRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "versions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchDocumentVersionRequest"
+                        },
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "barcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "primaryClassificationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "rawDataUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rawDataProvider": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchDocumentVersionRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "url": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileExtension": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mimeType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "comment": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileSize": {
+                        "type": "integer",
+                        "format": "int64",
+                        "nullable": true
+                    },
+                    "isReleased": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PostDocumentRequest": {
+                "required": [
+                    "name",
+                    "version"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "version": {
+                        "$ref": "#/components/schemas/PostDocumentVersionRequest"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "barcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "primaryClassificationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "rawDataUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rawDataProvider": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PostDocumentVersionRequest": {
+                "required": [
+                    "fileSize",
+                    "mimeType",
+                    "url"
+                ],
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "fileExtension": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mimeType": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "comment": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileSize": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}

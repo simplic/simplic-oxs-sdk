@@ -2142,7 +2142,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = addTagToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.AddTagToTour";
+            localVarRequestOptions.Operation = "TourClient.TourAddTagToTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2155,7 +2155,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<Object>("/Tour/add-tag-to-tour", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddTagToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourAddTagToTourPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2218,7 +2218,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = addTagToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.AddTagToTour";
+            localVarRequestOptions.Operation = "TourClient.TourAddTagToTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2232,7 +2232,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddTagToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourAddTagToTourPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2293,7 +2293,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = shipmentToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.ConvertShipmentToTour";
+            localVarRequestOptions.Operation = "TourClient.TourConvertShipmentToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2306,7 +2306,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourModel>("/Tour/convert-shipment-to-tour", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConvertShipmentToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourConvertShipmentToTourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2370,7 +2370,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = shipmentToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.ConvertShipmentToTour";
+            localVarRequestOptions.Operation = "TourClient.TourConvertShipmentToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2384,7 +2384,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConvertShipmentToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourConvertShipmentToTourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2445,7 +2445,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = shipmentsToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.ConvertShipmentsToTour";
+            localVarRequestOptions.Operation = "TourClient.TourConvertShipmentsToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2458,7 +2458,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourModel>("/Tour/convert-shipments-to-tour", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConvertShipmentsToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourConvertShipmentsToTourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2522,7 +2522,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = shipmentsToTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.ConvertShipmentsToTour";
+            localVarRequestOptions.Operation = "TourClient.TourConvertShipmentsToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2536,7 +2536,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConvertShipmentsToTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourConvertShipmentsToTourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2609,7 +2609,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "count", count));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetAggregatedLoadingSlots";
+            localVarRequestOptions.Operation = "TourClient.TourGetAggregatedLoadingSlotsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2622,7 +2622,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<UsedLoadingSlotAggregationModel>>("/Tour/get-aggregated-loading-slots", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAggregatedLoadingSlots", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetAggregatedLoadingSlotsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2698,7 +2698,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "count", count));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetAggregatedLoadingSlots";
+            localVarRequestOptions.Operation = "TourClient.TourGetAggregatedLoadingSlotsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2712,7 +2712,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAggregatedLoadingSlots", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetAggregatedLoadingSlotsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2779,7 +2779,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetAllByDates";
+            localVarRequestOptions.Operation = "TourClient.TourGetAllByDatesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2792,7 +2792,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourModel>>("/Tour/get-all-by-dates", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByDates", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetAllByDatesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2862,7 +2862,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "end", end));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetAllByDates";
+            localVarRequestOptions.Operation = "TourClient.TourGetAllByDatesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2876,7 +2876,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetAllByDates", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetAllByDatesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2937,7 +2937,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByGlobalTourId";
+            localVarRequestOptions.Operation = "TourClient.TourGetByGlobalTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2950,7 +2950,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourModel>>("/Tour/get-by-global-tour-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByGlobalTourId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetByGlobalTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3014,7 +3014,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByGlobalTourId";
+            localVarRequestOptions.Operation = "TourClient.TourGetByGlobalTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3028,7 +3028,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByGlobalTourId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetByGlobalTourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3089,7 +3089,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByShipmentId";
+            localVarRequestOptions.Operation = "TourClient.TourGetByShipmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3102,7 +3102,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<List<TourModel>>("/Tour/get-by-shipment-id", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShipmentId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetByShipmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3166,7 +3166,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TourClient.GetByShipmentId";
+            localVarRequestOptions.Operation = "TourClient.TourGetByShipmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3180,7 +3180,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByShipmentId", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourGetByShipmentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3238,7 +3238,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourClient.Delete";
+            localVarRequestOptions.Operation = "TourClient.TourIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3251,7 +3251,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Delete<Object>("/Tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3312,7 +3312,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourClient.Delete";
+            localVarRequestOptions.Operation = "TourClient.TourIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3326,7 +3326,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3384,7 +3384,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourClient.Get";
+            localVarRequestOptions.Operation = "TourClient.TourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3397,7 +3397,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<TourModel>("/Tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3458,7 +3458,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TourClient.Get";
+            localVarRequestOptions.Operation = "TourClient.TourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3472,7 +3472,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3536,7 +3536,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Patch";
+            localVarRequestOptions.Operation = "TourClient.TourIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3549,7 +3549,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Patch<TourModel>("/Tour/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3616,7 +3616,7 @@ namespace Simplic.OxS.SDK.Logistics
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Patch";
+            localVarRequestOptions.Operation = "TourClient.TourIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3630,7 +3630,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3691,7 +3691,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = manipulateTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Manipulate";
+            localVarRequestOptions.Operation = "TourClient.TourManipulatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3704,7 +3704,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourManipulateResponse>("/Tour/manipulate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Manipulate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourManipulatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3768,7 +3768,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = manipulateTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Manipulate";
+            localVarRequestOptions.Operation = "TourClient.TourManipulatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3782,7 +3782,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Manipulate", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourManipulatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3843,7 +3843,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Post";
+            localVarRequestOptions.Operation = "TourClient.TourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3856,7 +3856,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Post<TourModel>("/Tour", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3920,7 +3920,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = createTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.Post";
+            localVarRequestOptions.Operation = "TourClient.TourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -3934,7 +3934,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3994,7 +3994,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = removeTagFromTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.RemoveTagFromTour";
+            localVarRequestOptions.Operation = "TourClient.TourRemoveTagFromTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4007,7 +4007,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<Object>("/Tour/remove-tag-from-tour", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveTagFromTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourRemoveTagFromTourPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4070,7 +4070,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = removeTagFromTourRequest;
 
-            localVarRequestOptions.Operation = "TourClient.RemoveTagFromTour";
+            localVarRequestOptions.Operation = "TourClient.TourRemoveTagFromTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4084,7 +4084,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveTagFromTour", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourRemoveTagFromTourPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4145,7 +4145,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "tourId", tourId));
             }
 
-            localVarRequestOptions.Operation = "TourClient.SendToTelematic";
+            localVarRequestOptions.Operation = "TourClient.TourSendToTelematicPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4158,7 +4158,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<List<UsedLoadingSlotAggregationModel>>("/Tour/send-to-telematic", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SendToTelematic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourSendToTelematicPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4222,7 +4222,7 @@ namespace Simplic.OxS.SDK.Logistics
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "tourId", tourId));
             }
 
-            localVarRequestOptions.Operation = "TourClient.SendToTelematic";
+            localVarRequestOptions.Operation = "TourClient.TourSendToTelematicPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4236,7 +4236,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SendToTelematic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourSendToTelematicPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4296,7 +4296,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = setTourActualTimesRequest;
 
-            localVarRequestOptions.Operation = "TourClient.SetTourActualTimes";
+            localVarRequestOptions.Operation = "TourClient.TourSetTourActualTimesPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4309,7 +4309,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Put<Object>("/Tour/set-tour-actual-times", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetTourActualTimes", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourSetTourActualTimesPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4372,7 +4372,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             localVarRequestOptions.Data = setTourActualTimesRequest;
 
-            localVarRequestOptions.Operation = "TourClient.SetTourActualTimes";
+            localVarRequestOptions.Operation = "TourClient.TourSetTourActualTimesPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -4386,7 +4386,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetTourActualTimes", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TourSetTourActualTimesPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

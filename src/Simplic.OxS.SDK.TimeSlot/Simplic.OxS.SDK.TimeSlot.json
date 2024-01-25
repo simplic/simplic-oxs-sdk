@@ -1,1 +1,2022 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.TimeSlot", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/timeslot-api/v1"}], "paths": {"/Booking/{id}": {"get": {"tags": ["Booking"], "summary": "Gets a time slot for the current foreign organization by its id", "parameters": [{"name": "id", "in": "path", "description": "Uniqiue time slot id", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking/create-booking/{id}": {"put": {"tags": ["Booking"], "summary": "Book a time slot", "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"description": "Booking request", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotBookingRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotBookingRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotBookingRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking/update-booking/{id}": {"put": {"tags": ["Booking"], "summary": "Updates an existing booking", "parameters": [{"name": "id", "in": "path", "description": "Unique time slot id", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"description": "Update request", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking/cancel-booking/{id}": {"delete": {"tags": ["Booking"], "summary": "Removes a time slot booking the a time slot", "parameters": [{"name": "id", "in": "path", "description": "Unique time-slot id", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Site/{id}": {"get": {"tags": ["Site"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "put": {"tags": ["Site"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateSiteRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateSiteRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateSiteRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["Site"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Site/get-all": {"get": {"tags": ["Site"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Site/get-by-organization": {"get": {"tags": ["Site"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/SiteModel"}}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Site": {"post": {"tags": ["Site"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateSiteRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateSiteRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateSiteRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/SiteModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/TimeSlot/{id}": {"get": {"tags": ["TimeSlot"], "summary": "Gets a time slot by its unique id", "parameters": [{"name": "id", "in": "path", "description": "Unique time slot id", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "put": {"tags": ["TimeSlot"], "summary": "Updates an existing time slot", "parameters": [{"name": "id", "in": "path", "description": "Unique timeslot id", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"description": "Time slot model to update", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/UpdateTimeSlotRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["TimeSlot"], "summary": "Deletes a time slot", "parameters": [{"name": "id", "in": "path", "description": "Id of the time slot", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/TimeSlot/get-by-date": {"get": {"tags": ["TimeSlot"], "summary": "Gets a list of time slots by a specific date range", "parameters": [{"name": "siteId", "in": "query", "description": "", "schema": {"type": "string", "format": "uuid"}}, {"name": "start", "in": "query", "description": "Start date time", "schema": {"type": "string", "format": "date-time"}}, {"name": "end", "in": "query", "description": "End date time", "schema": {"type": "string", "format": "date-time"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/TimeSlotModel"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/TimeSlotModel"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/TimeSlotModel"}}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/TimeSlot": {"post": {"tags": ["TimeSlot"], "summary": "Creates a new time slot", "requestBody": {"description": "Model containing all time slot details", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/CreateTimeSlotRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "application/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}, "text/json": {"schema": {"$ref": "#/components/schemas/TimeSlotModel"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/TimeSlot/set-state": {"put": {"tags": ["TimeSlot"], "summary": "Sets a given bookingstate", "parameters": [{"name": "id", "in": "query", "description": "Id of the time slot", "schema": {"type": "string", "format": "uuid"}}, {"name": "bookingState", "in": "query", "description": "Int of the Bookingstate\r\n            [0 = Open]\r\n            [1 = Booked]\r\n            [2 = Canceled]\r\n            [3 = Done]\r\n            [4 = Locked]", "schema": {"type": "integer", "format": "int32"}}], "responses": {"200": {"description": "Success"}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}}, "components": {"schemas": {"BookingDetailsModel": {"type": "object", "properties": {"dateTime": {"type": "string", "description": "Gets or sets the booking date time", "format": "date-time"}, "bookedByName": {"type": "string", "description": "Gets or sets the name of the user that has booked the time slot", "nullable": true}, "loadNumber": {"type": "string", "description": "Gets or sets the load number", "nullable": true}, "deliveryNumber": {"type": "string", "description": "Gets or sets the delivery number", "nullable": true}, "referenceNumber": {"type": "string", "description": "Gets or sets the reference number", "nullable": true}, "tractorUnit": {"type": "string", "description": "Gets or sets the tractor unit registration plate", "nullable": true}, "trailer": {"type": "string", "description": "Gets or sets the trailer registration plate", "nullable": true}, "driver": {"type": "string", "description": "Gets or sets the driver name", "nullable": true}, "notes": {"type": "string", "description": "Gets or sets the booking notes", "nullable": true}}, "additionalProperties": false, "description": "Represents the booking details"}, "BookingState": {"enum": [0, 1, 2, 3, 4], "type": "integer", "format": "int32"}, "CreateSiteRequest": {"type": "object", "properties": {"organizationSiteId": {"type": "string", "format": "uuid", "nullable": true}, "name": {"type": "string", "nullable": true}, "assignments": {"type": "array", "items": {"$ref": "#/components/schemas/SiteAssignment"}, "nullable": true}, "adress": {"$ref": "#/components/schemas/SiteAddressModel"}, "logoUrl": {"type": "string", "nullable": true}}, "additionalProperties": false, "description": "Represents a bookable location"}, "CreateTimeSlotBookingRequest": {"type": "object", "properties": {"bookedByName": {"type": "string", "description": "Gets or sets the name of the user that has booked the time slot", "nullable": true}, "loadNumber": {"type": "string", "description": "Gets or sets the load number", "nullable": true}, "deliveryNumber": {"type": "string", "description": "Gets or sets the delivery number", "nullable": true}, "referenceNumber": {"type": "string", "description": "Gets or sets the reference number", "nullable": true}, "tractorUnit": {"type": "string", "description": "Gets or sets the tractor unit registration plate", "nullable": true}, "trailer": {"type": "string", "description": "Gets or sets the trailer registration plate", "nullable": true}, "driver": {"type": "string", "description": "Gets or sets the driver name", "nullable": true}, "notes": {"type": "string", "description": "Gets or sets the booking notes", "nullable": true}}, "additionalProperties": false}, "CreateTimeSlotRequest": {"type": "object", "properties": {"start": {"type": "string", "description": "Gets or sets the start datetime", "format": "date-time"}, "end": {"type": "string", "description": "Gets or sets the end datetime", "format": "date-time"}, "siteId": {"type": "string", "description": "Gets or sets the organization site id", "format": "uuid"}, "location": {"type": "string", "description": "Gets or sets the locaiton name", "nullable": true}, "timeOfArrival": {"type": "string", "description": "Gets or sets the time pf arrival.", "format": "date-time", "nullable": true}, "loadingStartTime": {"type": "string", "description": "Gets or sets the starting time of loading.", "format": "date-time", "nullable": true}, "loadingEndTime": {"type": "string", "description": "Gets or sets the ending time of loading.", "format": "date-time", "nullable": true}}, "additionalProperties": false, "description": "Request for creating a new time slot"}, "ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}, "SiteAddressModel": {"type": "object", "properties": {"additional01": {"type": "string", "nullable": true}, "street": {"type": "string", "nullable": true}, "houseNumber": {"type": "string", "nullable": true}, "zipCode": {"type": "string", "nullable": true}, "city": {"type": "string", "nullable": true}, "countryIso": {"type": "string", "nullable": true}}, "additionalProperties": false}, "SiteAssignment": {"type": "object", "properties": {"organizationId": {"type": "string", "format": "uuid"}, "organizationSiteId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "SiteAssignmentModel": {"type": "object", "properties": {"organizationId": {"type": "string", "format": "uuid"}, "organizationSiteId": {"type": "string", "format": "uuid", "nullable": true}}, "additionalProperties": false}, "SiteModel": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "organizationSiteId": {"type": "string", "format": "uuid", "nullable": true}, "isDeleted": {"type": "boolean"}, "createDateTime": {"type": "string", "format": "date-time"}, "createUserId": {"type": "string", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "nullable": true}, "updateDateTime": {"type": "string", "format": "date-time"}, "updateUserId": {"type": "string", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "nullable": true}, "name": {"type": "string", "nullable": true}, "assignments": {"type": "array", "items": {"$ref": "#/components/schemas/SiteAssignmentModel"}, "nullable": true}, "adress": {"$ref": "#/components/schemas/SiteAddressModel"}, "logoUrl": {"type": "string", "nullable": true}}, "additionalProperties": false, "description": "Represents a bookable location"}, "TimeSlotModel": {"type": "object", "properties": {"id": {"type": "string", "description": "Gets or sets the timeslot id", "format": "uuid"}, "organizationId": {"type": "string", "description": "Gets or sets the timeslot orgaization id", "format": "uuid"}, "siteId": {"type": "string", "description": "Gets or sets the organization site id", "format": "uuid"}, "siteName": {"type": "string", "description": "Gets or sets the organization site name", "nullable": true}, "start": {"type": "string", "description": "Gets or sets the start datetime", "format": "date-time"}, "end": {"type": "string", "description": "Gets or sets the end datetime", "format": "date-time"}, "location": {"type": "string", "description": "Gets or sets the locaiton name", "nullable": true}, "state": {"$ref": "#/components/schemas/BookingState"}, "foreignOrganizationId": {"type": "string", "description": "Gets or sets the organization, that has booked the time slot", "format": "uuid", "nullable": true}, "bookingDetails": {"$ref": "#/components/schemas/BookingDetailsModel"}, "createDateTime": {"type": "string", "description": "Gets or sets the date and time the TimeSlot is created.", "format": "date-time"}, "createUserId": {"type": "string", "description": "Gets or sets the id of the user that created the timeslot.", "format": "uuid", "nullable": true}, "createUserName": {"type": "string", "description": "Gets or sets the name of the user taht created the timeslot.", "nullable": true}, "updateDateTime": {"type": "string", "description": "Gets or sets the date and time the TimeSlot is updated.", "format": "date-time"}, "updateUserId": {"type": "string", "description": "Gets or sets the id of the user taht updated the timeslot.", "format": "uuid", "nullable": true}, "updateUserName": {"type": "string", "description": "Gets or sets the name of the user that updated the timeslot.", "nullable": true}, "timeOfArrival": {"type": "string", "description": "Gets or sets the time pf arrival.", "format": "date-time", "nullable": true}, "loadingStartTime": {"type": "string", "description": "Gets or sets the starting time of loading.", "format": "date-time", "nullable": true}, "loadingEndTime": {"type": "string", "description": "Gets or sets the ending time of loading.", "format": "date-time", "nullable": true}}, "additionalProperties": false, "description": "Represents a timeslot model"}, "UpdateSiteRequest": {"type": "object", "properties": {"organizationSiteId": {"type": "string", "format": "uuid", "nullable": true}, "name": {"type": "string", "nullable": true}, "assignments": {"type": "array", "items": {"$ref": "#/components/schemas/SiteAssignment"}, "nullable": true}, "adress": {"$ref": "#/components/schemas/SiteAddressModel"}, "logoUrl": {"type": "string", "nullable": true}}, "additionalProperties": false, "description": "Represents a bookable location"}, "UpdateTimeSlotBookingRequest": {"type": "object", "properties": {"bookedByName": {"type": "string", "description": "Gets or sets the name of the user that has booked the time slot", "nullable": true}, "loadNumber": {"type": "string", "description": "Gets or sets the load number", "nullable": true}, "deliveryNumber": {"type": "string", "description": "Gets or sets the delivery number", "nullable": true}, "referenceNumber": {"type": "string", "description": "Gets or sets the reference number", "nullable": true}, "tractorUnit": {"type": "string", "description": "Gets or sets the tractor unit registration plate", "nullable": true}, "trailer": {"type": "string", "description": "Gets or sets the trailer registration plate", "nullable": true}, "driver": {"type": "string", "description": "Gets or sets the driver name", "nullable": true}, "notes": {"type": "string", "description": "Gets or sets the booking notes", "nullable": true}}, "additionalProperties": false, "description": "Model for updating a timeslot booking"}, "UpdateTimeSlotRequest": {"type": "object", "properties": {"start": {"type": "string", "description": "Gets or sets the start datetime", "format": "date-time"}, "end": {"type": "string", "description": "Gets or sets the end datetime", "format": "date-time"}, "siteId": {"type": "string", "description": "Gets or sets the organization site id", "format": "uuid"}, "location": {"type": "string", "description": "Gets or sets the locaiton name", "nullable": true}, "timeOfArrival": {"type": "string", "description": "Gets or sets the time pf arrival.", "format": "date-time", "nullable": true}, "loadingStartTime": {"type": "string", "description": "Gets or sets the starting time of loading.", "format": "date-time", "nullable": true}, "loadingEndTime": {"type": "string", "description": "Gets or sets the ending time of loading.", "format": "date-time", "nullable": true}}, "additionalProperties": false, "description": "Request for updating a time slot"}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.TimeSlot",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/timeslot-api/v1"
+        }
+    ],
+    "paths": {
+        "/Booking/{id}": {
+            "get": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Gets a time slot for the current foreign organization by its id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Uniqiue time slot id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking/create-booking/{id}": {
+            "put": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Book a time slot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Booking request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotBookingRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotBookingRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotBookingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking/update-booking/{id}": {
+            "put": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Updates an existing booking",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique time slot id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotBookingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking/cancel-booking/{id}": {
+            "delete": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Removes a time slot booking the a time slot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique time-slot id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/internal/InternalSite/get-by-id": {
+            "get": {
+                "tags": [
+                    "InternalSite"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Site/{id}": {
+            "get": {
+                "tags": [
+                    "Site"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Site"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSiteRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSiteRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSiteRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Site"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Site/get-all": {
+            "get": {
+                "tags": [
+                    "Site"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Site/get-by-organization": {
+            "get": {
+                "tags": [
+                    "Site"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SiteModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Site": {
+            "post": {
+                "tags": [
+                    "Site"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSiteRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSiteRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSiteRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SiteModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TimeSlot/{id}": {
+            "get": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Gets a time slot by its unique id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique time slot id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Updates an existing time slot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Unique timeslot id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Time slot model to update",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTimeSlotRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Deletes a time slot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the time slot",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TimeSlot/get-by-date": {
+            "get": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Gets a list of time slots by a specific date range",
+                "parameters": [
+                    {
+                        "name": "siteId",
+                        "in": "query",
+                        "description": "",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Start date time",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "End date time",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeSlotModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeSlotModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeSlotModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TimeSlot": {
+            "post": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Creates a new time slot",
+                "requestBody": {
+                    "description": "Model containing all time slot details",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateTimeSlotRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimeSlotModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TimeSlot/set-state": {
+            "put": {
+                "tags": [
+                    "TimeSlot"
+                ],
+                "summary": "Sets a given bookingstate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id of the time slot",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "bookingState",
+                        "in": "query",
+                        "description": "Int of the Bookingstate\r\n            [0 = Open]\r\n            [1 = Booked]\r\n            [2 = Canceled]\r\n            [3 = Done]\r\n            [4 = Locked]",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BookingDetailsModel": {
+                "type": "object",
+                "properties": {
+                    "dateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the booking date time",
+                        "format": "date-time"
+                    },
+                    "bookedByName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that has booked the time slot",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number",
+                        "nullable": true
+                    },
+                    "tractorUnit": {
+                        "type": "string",
+                        "description": "Gets or sets the tractor unit registration plate",
+                        "nullable": true
+                    },
+                    "trailer": {
+                        "type": "string",
+                        "description": "Gets or sets the trailer registration plate",
+                        "nullable": true
+                    },
+                    "driver": {
+                        "type": "string",
+                        "description": "Gets or sets the driver name",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the booking notes",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the booking details"
+            },
+            "BookingState": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "CreateSiteRequest": {
+                "type": "object",
+                "properties": {
+                    "organizationSiteId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SiteAssignment"
+                        },
+                        "nullable": true
+                    },
+                    "adress": {
+                        "$ref": "#/components/schemas/SiteAddressModel"
+                    },
+                    "logoUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a bookable location"
+            },
+            "CreateTimeSlotBookingRequest": {
+                "type": "object",
+                "properties": {
+                    "bookedByName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that has booked the time slot",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number",
+                        "nullable": true
+                    },
+                    "tractorUnit": {
+                        "type": "string",
+                        "description": "Gets or sets the tractor unit registration plate",
+                        "nullable": true
+                    },
+                    "trailer": {
+                        "type": "string",
+                        "description": "Gets or sets the trailer registration plate",
+                        "nullable": true
+                    },
+                    "driver": {
+                        "type": "string",
+                        "description": "Gets or sets the driver name",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the booking notes",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateTimeSlotRequest": {
+                "type": "object",
+                "properties": {
+                    "start": {
+                        "type": "string",
+                        "description": "Gets or sets the start datetime",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "description": "Gets or sets the end datetime",
+                        "format": "date-time"
+                    },
+                    "siteId": {
+                        "type": "string",
+                        "description": "Gets or sets the organization site id",
+                        "format": "uuid"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Gets or sets the locaiton name",
+                        "nullable": true
+                    },
+                    "timeOfArrival": {
+                        "type": "string",
+                        "description": "Gets or sets the time pf arrival.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingStartTime": {
+                        "type": "string",
+                        "description": "Gets or sets the starting time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingEndTime": {
+                        "type": "string",
+                        "description": "Gets or sets the ending time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request for creating a new time slot"
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "SiteAddressModel": {
+                "type": "object",
+                "properties": {
+                    "additional01": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SiteAssignment": {
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationSiteId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SiteAssignmentModel": {
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationSiteId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SiteModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationSiteId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SiteAssignmentModel"
+                        },
+                        "nullable": true
+                    },
+                    "adress": {
+                        "$ref": "#/components/schemas/SiteAddressModel"
+                    },
+                    "logoUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a bookable location"
+            },
+            "TimeSlotModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the timeslot id",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "description": "Gets or sets the timeslot orgaization id",
+                        "format": "uuid"
+                    },
+                    "siteId": {
+                        "type": "string",
+                        "description": "Gets or sets the organization site id",
+                        "format": "uuid"
+                    },
+                    "siteName": {
+                        "type": "string",
+                        "description": "Gets or sets the organization site name",
+                        "nullable": true
+                    },
+                    "start": {
+                        "type": "string",
+                        "description": "Gets or sets the start datetime",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "description": "Gets or sets the end datetime",
+                        "format": "date-time"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Gets or sets the locaiton name",
+                        "nullable": true
+                    },
+                    "state": {
+                        "$ref": "#/components/schemas/BookingState"
+                    },
+                    "foreignOrganizationId": {
+                        "type": "string",
+                        "description": "Gets or sets the organization, that has booked the time slot",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "bookingDetails": {
+                        "$ref": "#/components/schemas/BookingDetailsModel"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the TimeSlot is created.",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user that created the timeslot.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user taht created the timeslot.",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the TimeSlot is updated.",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user taht updated the timeslot.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that updated the timeslot.",
+                        "nullable": true
+                    },
+                    "timeOfArrival": {
+                        "type": "string",
+                        "description": "Gets or sets the time pf arrival.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingStartTime": {
+                        "type": "string",
+                        "description": "Gets or sets the starting time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingEndTime": {
+                        "type": "string",
+                        "description": "Gets or sets the ending time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a timeslot model"
+            },
+            "UpdateSiteRequest": {
+                "type": "object",
+                "properties": {
+                    "organizationSiteId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SiteAssignment"
+                        },
+                        "nullable": true
+                    },
+                    "adress": {
+                        "$ref": "#/components/schemas/SiteAddressModel"
+                    },
+                    "logoUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a bookable location"
+            },
+            "UpdateTimeSlotBookingRequest": {
+                "type": "object",
+                "properties": {
+                    "bookedByName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that has booked the time slot",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number",
+                        "nullable": true
+                    },
+                    "tractorUnit": {
+                        "type": "string",
+                        "description": "Gets or sets the tractor unit registration plate",
+                        "nullable": true
+                    },
+                    "trailer": {
+                        "type": "string",
+                        "description": "Gets or sets the trailer registration plate",
+                        "nullable": true
+                    },
+                    "driver": {
+                        "type": "string",
+                        "description": "Gets or sets the driver name",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the booking notes",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Model for updating a timeslot booking"
+            },
+            "UpdateTimeSlotRequest": {
+                "type": "object",
+                "properties": {
+                    "start": {
+                        "type": "string",
+                        "description": "Gets or sets the start datetime",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "description": "Gets or sets the end datetime",
+                        "format": "date-time"
+                    },
+                    "siteId": {
+                        "type": "string",
+                        "description": "Gets or sets the organization site id",
+                        "format": "uuid"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Gets or sets the locaiton name",
+                        "nullable": true
+                    },
+                    "timeOfArrival": {
+                        "type": "string",
+                        "description": "Gets or sets the time pf arrival.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingStartTime": {
+                        "type": "string",
+                        "description": "Gets or sets the starting time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadingEndTime": {
+                        "type": "string",
+                        "description": "Gets or sets the ending time of loading.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request for updating a time slot"
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}

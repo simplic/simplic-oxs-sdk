@@ -94,15 +94,14 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        public DocumentResponse Enqueue(string id, Guid? documentId = default(Guid?), int operationIndex = 0)
+        public DocumentResponse Commit(Guid documentId, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.Enqueue(id, documentId, operationIndex);
+                return _internalClient.Commit(documentId, operationIndex);
             }
             catch (ApiException e)
             {
@@ -114,15 +113,14 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> EnqueueWithHttpInfo(string id, Guid? documentId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> CommitWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.EnqueueWithHttpInfo(id, documentId, operationIndex);
+                return _internalClient.CommitWithHttpInfo(documentId, operationIndex);
             }
             catch (ApiException e)
             {
@@ -134,16 +132,15 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        public System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<DocumentResponse> CommitAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.EnqueueAsync(id, documentId, operationIndex, cancellationToken);
+                return _internalClient.CommitAsync(documentId, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -155,16 +152,92 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> CommitWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.EnqueueWithHttpInfoAsync(id, documentId, operationIndex, cancellationToken);
+                return _internalClient.CommitWithHttpInfoAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse Enqueue(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.Enqueue(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> EnqueueWithHttpInfo(Guid documentId, int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.EnqueueWithHttpInfo(documentId, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.EnqueueAsync(documentId, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.EnqueueWithHttpInfoAsync(documentId, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -186,11 +259,10 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        DocumentResponse Enqueue(string id, Guid? documentId = default(Guid?), int operationIndex = 0);
+        DocumentResponse Commit(Guid documentId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -199,11 +271,30 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        ApiResponse<DocumentResponse> EnqueueWithHttpInfo(string id, Guid? documentId = default(Guid?), int operationIndex = 0);
+        ApiResponse<DocumentResponse> CommitWithHttpInfo(Guid documentId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        DocumentResponse Enqueue(Guid documentId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        ApiResponse<DocumentResponse> EnqueueWithHttpInfo(Guid documentId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -220,12 +311,11 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentResponse> CommitAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -234,12 +324,36 @@ namespace Simplic.OxS.SDK.Document
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> CommitWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -364,13 +478,12 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DocumentResponse</returns>
-        public DocumentResponse Enqueue(string id, Guid? documentId = default(Guid?), int operationIndex = 0)
+        public DocumentResponse Commit(Guid documentId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = EnqueueWithHttpInfo(id, documentId);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = CommitWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
@@ -378,18 +491,11 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> EnqueueWithHttpInfo(string id, Guid? documentId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> CommitWithHttpInfo(Guid documentId, int operationIndex = 0)
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling AIClient->Enqueue");
-            }
-
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -414,13 +520,9 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            if (documentId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "documentId", documentId));
-            }
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "AIClient.Enqueue";
+            localVarRequestOptions.Operation = "AIClient.ApiAICommitDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -430,10 +532,10 @@ namespace Simplic.OxS.SDK.Document
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DocumentResponse>("/api/AI/enqueue/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DocumentResponse>("/api/AI/commit/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Enqueue", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiAICommitDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -447,14 +549,13 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentResponse> CommitAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await EnqueueWithHttpInfoAsync(id, documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await CommitWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -462,19 +563,12 @@ namespace Simplic.OxS.SDK.Document
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="documentId"> (optional)</param>
+        /// <param name="documentId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(string id, Guid? documentId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> CommitWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling AIClient->Enqueue");
-            }
-
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -500,13 +594,9 @@ namespace Simplic.OxS.SDK.Document
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            if (documentId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "documentId", documentId));
-            }
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
 
-            localVarRequestOptions.Operation = "AIClient.Enqueue";
+            localVarRequestOptions.Operation = "AIClient.ApiAICommitDocumentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -516,11 +606,157 @@ namespace Simplic.OxS.SDK.Document
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DocumentResponse>("/api/AI/enqueue/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DocumentResponse>("/api/AI/commit/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Enqueue", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiAICommitDocumentIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse Enqueue(Guid documentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = EnqueueWithHttpInfo(documentId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> EnqueueWithHttpInfo(Guid documentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AIClient.ApiAIEnqueueDocumentIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DocumentResponse>("/api/AI/enqueue/{documentId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiAIEnqueueDocumentIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public async System.Threading.Tasks.Task<DocumentResponse> EnqueueAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await EnqueueWithHttpInfoAsync(documentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> EnqueueWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AIClient.ApiAIEnqueueDocumentIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DocumentResponse>("/api/AI/enqueue/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiAIEnqueueDocumentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

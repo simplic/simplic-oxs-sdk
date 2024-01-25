@@ -417,7 +417,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchContains", searchContains));
             }
 
-            localVarRequestOptions.Operation = "OrganizationLinkClient.GetLinked";
+            localVarRequestOptions.Operation = "OrganizationLinkClient.OrganizationLinkGetLinkedGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -430,7 +430,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationLinkModel>>("/OrganizationLink/get-linked", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetLinked", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkGetLinkedGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -500,7 +500,7 @@ namespace Simplic.OxS.SDK.Organization
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "searchContains", searchContains));
             }
 
-            localVarRequestOptions.Operation = "OrganizationLinkClient.GetLinked";
+            localVarRequestOptions.Operation = "OrganizationLinkClient.OrganizationLinkGetLinkedGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -514,7 +514,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetLinked", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkGetLinkedGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

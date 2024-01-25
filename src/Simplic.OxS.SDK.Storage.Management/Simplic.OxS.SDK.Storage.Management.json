@@ -1,1 +1,1451 @@
-{"openapi": "3.0.1", "info": {"title": "Simplic.OxS.storage-management", "version": "v1"}, "servers": [{"url": "https://dev-oxs.simplic.io/storage-management-api/v1"}], "paths": {"/Barcode/{id}": {"get": {"tags": ["Barcode"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}, "text/json": {"schema": {"type": "string"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["Barcode"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}, "text/json": {"schema": {"type": "string"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Barcode": {"post": {"tags": ["Barcode"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PostBarcodeAdd"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PostBarcodeAdd"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PostBarcodeAdd"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Barcode/get-all": {"get": {"tags": ["Barcode"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Barcode"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Barcode"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Barcode"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Barcode/get-orchestration-for-customer": {"get": {"tags": ["Barcode"], "parameters": [{"name": "customerId", "in": "query", "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Barcode"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking": {"post": {"tags": ["Booking"], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PostBookingCreate"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PostBookingCreate"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PostBookingCreate"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Booking"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Booking"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Booking"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}, "text/json": {"schema": {"type": "string"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking/get-all": {"get": {"tags": ["Booking"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Booking"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Booking"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Booking"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/Booking/{id}": {"get": {"tags": ["Booking"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Booking"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Booking"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Booking"}}}}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}, "text/json": {"schema": {"type": "string"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "delete": {"tags": ["Booking"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "responses": {"200": {"description": "Success"}, "404": {"description": "Not Found", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}, "patch": {"tags": ["Booking"], "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "string", "format": "uuid"}}], "requestBody": {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/PatchBookingRequest"}}, "text/json": {"schema": {"$ref": "#/components/schemas/PatchBookingRequest"}}, "application/*+json": {"schema": {"$ref": "#/components/schemas/PatchBookingRequest"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/Booking"}}, "application/json": {"schema": {"$ref": "#/components/schemas/Booking"}}, "text/json": {"schema": {"$ref": "#/components/schemas/Booking"}}}}, "400": {"description": "Bad Request", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}, "501": {"description": "Server Error", "content": {"text/plain": {"schema": {"type": "string"}}, "application/json": {"schema": {"type": "string"}}, "text/json": {"schema": {"type": "string"}}}}}}}, "/BookingUpdate/get-recent-updates": {"get": {"tags": ["BookingUpdate"], "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/BookingUpdate"}}}, "application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/BookingUpdate"}}}, "text/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/BookingUpdate"}}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}, "/BookingUpdate/confirm-updates-recieved": {"post": {"tags": ["BookingUpdate"], "requestBody": {"content": {"application/json": {"schema": {"type": "string", "format": "date-time"}}, "text/json": {"schema": {"type": "string", "format": "date-time"}}, "application/*+json": {"schema": {"type": "string", "format": "date-time"}}}}, "responses": {"200": {"description": "Success", "content": {"text/plain": {"schema": {"type": "integer", "format": "int32"}}, "application/json": {"schema": {"type": "integer", "format": "int32"}}, "text/json": {"schema": {"type": "integer", "format": "int32"}}}}, "401": {"description": "Unauthorized", "content": {"text/plain": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "application/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}, "text/json": {"schema": {"$ref": "#/components/schemas/ProblemDetails"}}}}}}}}, "components": {"schemas": {"Barcode": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "customerId": {"type": "string", "format": "uuid"}, "names": {"type": "array", "items": {"type": "string"}, "nullable": true}}, "additionalProperties": false}, "Booking": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "customerId": {"type": "string", "format": "uuid"}, "locationId": {"type": "string", "format": "uuid"}, "isExternalDriver": {"type": "boolean"}, "driverExt": {"type": "string", "nullable": true}, "driverId": {"type": "string", "format": "uuid", "nullable": true}, "isExternalTractorUnit": {"type": "boolean"}, "tractorUnitExt": {"type": "string", "nullable": true}, "tractorUnitId": {"type": "string", "format": "uuid", "nullable": true}, "isUnknownCarrier": {"type": "boolean"}, "carrierExt": {"type": "string", "nullable": true}, "carrierId": {"type": "string", "format": "uuid", "nullable": true}, "date": {"type": "string", "format": "date-time"}, "signatureUrl": {"type": "string", "format": "uuid"}, "signatureUrlUser": {"type": "string", "format": "uuid", "nullable": true}, "nameUser": {"type": "string", "nullable": true}, "ecoNumber": {"type": "string", "nullable": true}, "deliveryNote": {"type": "string", "nullable": true}, "loadingAids": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingAid"}, "nullable": true}, "images": {"type": "array", "items": {"type": "string", "format": "uuid"}, "nullable": true}}, "additionalProperties": false}, "BookingUpdate": {"type": "object", "properties": {"id": {"type": "string", "format": "uuid"}, "organizationId": {"type": "string", "format": "uuid"}, "isDeleted": {"type": "boolean"}, "bookingId": {"type": "string", "format": "uuid"}, "createdDateTime": {"type": "string", "format": "date-time"}}, "additionalProperties": false}, "LoadingAid": {"type": "object", "properties": {"amount": {"type": "integer", "format": "int32"}, "typeId": {"type": "string", "format": "uuid"}, "movementType": {"$ref": "#/components/schemas/MovementType"}, "barcodes": {"type": "array", "items": {"$ref": "#/components/schemas/ScannedBarcode"}, "nullable": true}}, "additionalProperties": false}, "MovementType": {"enum": [0, 1, 2, 3], "type": "integer", "format": "int32"}, "PatchBookingRequest": {"type": "object", "properties": {"customerId": {"type": "string", "format": "uuid"}, "locationId": {"type": "string", "format": "uuid"}, "isExternalDriver": {"type": "boolean", "nullable": true}, "driverExt": {"type": "string", "nullable": true}, "driverId": {"type": "string", "format": "uuid", "nullable": true}, "isExternalTractorUnit": {"type": "boolean", "nullable": true}, "tractorUnitExt": {"type": "string", "nullable": true}, "tractorUnitId": {"type": "string", "format": "uuid", "nullable": true}, "isUnknownCarrier": {"type": "boolean", "nullable": true}, "carrierExt": {"type": "string", "nullable": true}, "carrierId": {"type": "string", "format": "uuid", "nullable": true}, "date": {"type": "string", "format": "date-time", "nullable": true}, "signatureUrl": {"type": "string", "format": "uuid", "nullable": true}, "loadingAids": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingAid"}, "nullable": true}, "images": {"type": "array", "items": {"type": "string", "format": "uuid"}, "nullable": true}}, "additionalProperties": false}, "PostBarcodeAdd": {"type": "object", "properties": {"customerId": {"type": "string", "format": "uuid"}, "names": {"type": "array", "items": {"type": "string"}, "nullable": true}}, "additionalProperties": false}, "PostBookingCreate": {"type": "object", "properties": {"locationId": {"type": "string", "format": "uuid"}, "carrierId": {"type": "string", "format": "uuid", "nullable": true}, "carrierExt": {"type": "string", "nullable": true}, "driverId": {"type": "string", "format": "uuid", "nullable": true}, "driverExt": {"type": "string", "nullable": true}, "tractorUnitId": {"type": "string", "format": "uuid", "nullable": true}, "tractorUnitExt": {"type": "string", "nullable": true}, "customerId": {"type": "string", "format": "uuid"}, "date": {"type": "string", "format": "date-time"}, "signatureUrl": {"type": "string", "format": "uuid"}, "signatureUrlUser": {"type": "string", "format": "uuid", "nullable": true}, "nameUser": {"type": "string", "nullable": true}, "ecoNumber": {"type": "string", "nullable": true}, "deliveryNote": {"type": "string", "nullable": true}, "loadingAids": {"type": "array", "items": {"$ref": "#/components/schemas/LoadingAid"}, "nullable": true}, "images": {"type": "array", "items": {"type": "string", "format": "uuid"}, "nullable": true}}, "additionalProperties": false}, "ProblemDetails": {"type": "object", "properties": {"type": {"type": "string", "nullable": true}, "title": {"type": "string", "nullable": true}, "status": {"type": "integer", "format": "int32", "nullable": true}, "detail": {"type": "string", "nullable": true}, "instance": {"type": "string", "nullable": true}}, "additionalProperties": {}}, "ScannedBarcode": {"type": "object", "properties": {"name": {"type": "string", "nullable": true}, "scannedData": {"type": "string", "nullable": true}}, "additionalProperties": false}}, "securitySchemes": {"Bearer": {"type": "apiKey", "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"", "name": "Authorization", "in": "header"}}}, "security": [{"Bearer": []}]}
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.storage-management",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/storage-management-api/v1"
+        }
+    ],
+    "paths": {
+        "/BarcodeConfiguration/{id}": {
+            "get": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBarcodeConfigurationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBarcodeConfigurationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBarcodeConfigurationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BarcodeConfiguration": {
+            "post": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBarcodeConfigurationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBarcodeConfigurationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBarcodeConfigurationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BarcodeConfiguration/get-all": {
+            "get": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BarcodeConfiguration/get-configuration-for-customer": {
+            "get": {
+                "tags": [
+                    "BarcodeConfiguration"
+                ],
+                "parameters": [
+                    {
+                        "name": "customerId",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BarcodeConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking": {
+            "post": {
+                "tags": [
+                    "Booking"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBookingRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBookingRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBookingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking/get-all": {
+            "get": {
+                "tags": [
+                    "Booking"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BookingModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BookingModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BookingModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Booking/{id}": {
+            "get": {
+                "tags": [
+                    "Booking"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Booking"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Booking"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBookingRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBookingRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchBookingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BookingModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "501": {
+                        "description": "Server Error",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AddressModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BarcodeConfigurationModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "customerId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "names": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BarcodeModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BookingModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "customer": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "driver": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "vehicle": {
+                        "$ref": "#/components/schemas/BookingVehicleModel"
+                    },
+                    "carrier": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "externalVehicle": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalCarrier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalDriver": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "signatureUser": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "signatureDriver": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "ecoNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deliveryNote": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loadingAids": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidModel"
+                        },
+                        "nullable": true
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BookingVehicleModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateBarcodeConfigurationRequest": {
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "names": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateBookingRequest": {
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "driverId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "vehicleId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "externalVehicle": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalCarrier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalDriver": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "signatureUser": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "signatureDriver": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "ecoNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deliveryNote": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loadingAids": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidRequest"
+                        },
+                        "nullable": true
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoadingAidModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "amount": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/LoadingAidTypeModel"
+                    },
+                    "movementType": {
+                        "$ref": "#/components/schemas/MovementType"
+                    },
+                    "barcodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BarcodeModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoadingAidRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "amount": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "typeId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "movementType": {
+                        "$ref": "#/components/schemas/MovementType"
+                    },
+                    "barcodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BarcodeModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoadingAidTypeModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "MovementType": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "PatchBarcodeConfigurationRequest": {
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "names": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchBookingRequest": {
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "driverId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "vehicleId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "externalVehicle": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalCarrier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalDriver": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "signatureUser": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "signatureDriver": {
+                        "$ref": "#/components/schemas/SignatureUserModel"
+                    },
+                    "ecoNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deliveryNote": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loadingAids": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidRequest"
+                        },
+                        "nullable": true
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "SignatureUserModel": {
+                "type": "object",
+                "properties": {
+                    "signatureUrl": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}

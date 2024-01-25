@@ -94,6 +94,180 @@ namespace Simplic.OxS.SDK.Contact
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        public List<ContactModel> GetByFunction(string? function = default(string?), int? limit = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByFunction(function, limit, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ContactModel>> GetByFunctionWithHttpInfo(string? function = default(string?), int? limit = default(int?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByFunctionWithHttpInfo(function, limit, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<ContactModel>> GetByFunctionAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByFunctionAsync(function, limit, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ContactModel>>> GetByFunctionWithHttpInfoAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByFunctionWithHttpInfoAsync(function, limit, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        public List<ContactModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByLocation(longitude, latitude, maxDistanceMeter, minDistanceMeter, function, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ContactModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0)
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, function, operationIndex);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<ContactModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, function, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ContactModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, function, operationIndex, cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -502,6 +676,56 @@ namespace Simplic.OxS.SDK.Contact
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        List<ContactModel> GetByFunction(string? function = default(string?), int? limit = default(int?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        ApiResponse<List<ContactModel>> GetByFunctionWithHttpInfo(string? function = default(string?), int? limit = default(int?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        List<ContactModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        ApiResponse<List<ContactModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -613,6 +837,66 @@ namespace Simplic.OxS.SDK.Contact
     public interface IContactClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        System.Threading.Tasks.Task<List<ContactModel>> GetByFunctionAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ContactModel>>> GetByFunctionWithHttpInfoAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        System.Threading.Tasks.Task<List<ContactModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ContactModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -868,6 +1152,370 @@ namespace Simplic.OxS.SDK.Contact
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        public List<ContactModel> GetByFunction(string? function = default(string?), int? limit = default(int?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ContactModel>> localVarResponse = GetByFunctionWithHttpInfo(function, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ContactModel>> GetByFunctionWithHttpInfo(string? function = default(string?), int? limit = default(int?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (function != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "function", function));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "ContactClient.ContactGetByFunctionGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ContactModel>>("/Contact/get-by-function", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactGetByFunctionGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ContactModel>> GetByFunctionAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ContactModel>> localVarResponse = await GetByFunctionWithHttpInfoAsync(function, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="function"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ContactModel>>> GetByFunctionWithHttpInfoAsync(string? function = default(string?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (function != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "function", function));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "ContactClient.ContactGetByFunctionGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ContactModel>>("/Contact/get-by-function", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactGetByFunctionGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ContactModel&gt;</returns>
+        public List<ContactModel> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ContactModel>> localVarResponse = GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, function);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ContactModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ContactModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (maxDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "maxDistanceMeter", maxDistanceMeter));
+            }
+            if (minDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "minDistanceMeter", minDistanceMeter));
+            }
+            if (function != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "function", function));
+            }
+
+            localVarRequestOptions.Operation = "ContactClient.ContactGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ContactModel>>("/Contact/get-by-location", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ContactModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ContactModel>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ContactModel>> localVarResponse = await GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, function, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="maxDistanceMeter"> (optional)</param>
+        /// <param name="minDistanceMeter"> (optional)</param>
+        /// <param name="function"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ContactModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ContactModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? function = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (maxDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "maxDistanceMeter", maxDistanceMeter));
+            }
+            if (minDistanceMeter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "minDistanceMeter", minDistanceMeter));
+            }
+            if (function != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "function", function));
+            }
+
+            localVarRequestOptions.Operation = "ContactClient.ContactGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ContactModel>>("/Contact/get-by-location", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -911,7 +1559,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContactClient.Delete";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -924,7 +1572,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Delete<Object>("/Contact/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -984,7 +1632,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContactClient.Delete";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -998,7 +1646,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1056,7 +1704,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContactClient.Get";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1069,7 +1717,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Get<ContactModel>("/Contact/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1130,7 +1778,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "ContactClient.Get";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1144,7 +1792,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1208,7 +1856,7 @@ namespace Simplic.OxS.SDK.Contact
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateContactRequest;
 
-            localVarRequestOptions.Operation = "ContactClient.Put";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1221,7 +1869,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Put<ContactModel>("/Contact/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1288,7 +1936,7 @@ namespace Simplic.OxS.SDK.Contact
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateContactRequest;
 
-            localVarRequestOptions.Operation = "ContactClient.Put";
+            localVarRequestOptions.Operation = "ContactClient.ContactIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1302,7 +1950,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Put", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1363,7 +2011,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.Data = createContactRequest;
 
-            localVarRequestOptions.Operation = "ContactClient.Post";
+            localVarRequestOptions.Operation = "ContactClient.ContactPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1376,7 +2024,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Post<ContactModel>("/Contact", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1440,7 +2088,7 @@ namespace Simplic.OxS.SDK.Contact
 
             localVarRequestOptions.Data = createContactRequest;
 
-            localVarRequestOptions.Operation = "ContactClient.Post";
+            localVarRequestOptions.Operation = "ContactClient.ContactPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1454,7 +2102,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1527,7 +2175,7 @@ namespace Simplic.OxS.SDK.Contact
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
-            localVarRequestOptions.Operation = "ContactClient.Search";
+            localVarRequestOptions.Operation = "ContactClient.ContactSearchGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1540,7 +2188,7 @@ namespace Simplic.OxS.SDK.Contact
             var localVarResponse = this.Client.Get<List<ContactModel>>("/Contact/search", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Search", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactSearchGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1616,7 +2264,7 @@ namespace Simplic.OxS.SDK.Contact
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
-            localVarRequestOptions.Operation = "ContactClient.Search";
+            localVarRequestOptions.Operation = "ContactClient.ContactSearchGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1630,7 +2278,7 @@ namespace Simplic.OxS.SDK.Contact
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Search", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ContactSearchGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

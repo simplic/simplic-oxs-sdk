@@ -389,7 +389,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "HookDefinitionClient.Get";
+            localVarRequestOptions.Operation = "HookDefinitionClient.HookDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -402,7 +402,7 @@ namespace Simplic.OxS.SDK.Logistics
             var localVarResponse = this.Client.Get<HookDefinitionResponse>("/HookDefinition", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HookDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -460,7 +460,7 @@ namespace Simplic.OxS.SDK.Logistics
             }
 
 
-            localVarRequestOptions.Operation = "HookDefinitionClient.Get";
+            localVarRequestOptions.Operation = "HookDefinitionClient.HookDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -474,7 +474,7 @@ namespace Simplic.OxS.SDK.Logistics
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HookDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

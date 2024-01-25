@@ -478,11 +478,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationLinkInvitationModel</returns>
-        public OrganizationLinkInvitationModel GetByTokenTokenGet(string token, int operationIndex = 0)
+        public OrganizationLinkInvitationModel GetByToken(string token, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetByTokenTokenGet(token, operationIndex);
+                return _internalClient.GetByToken(token, operationIndex);
             }
             catch (ApiException e)
             {
@@ -497,11 +497,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> GetByTokenTokenGetWithHttpInfo(string token, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> GetByTokenWithHttpInfo(string token, int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetByTokenTokenGetWithHttpInfo(token, operationIndex);
+                return _internalClient.GetByTokenWithHttpInfo(token, operationIndex);
             }
             catch (ApiException e)
             {
@@ -517,11 +517,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationLinkInvitationModel</returns>
-        public System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenTokenGetAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByTokenTokenGetAsync(token, operationIndex, cancellationToken);
+                return _internalClient.GetByTokenAsync(token, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -537,11 +537,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> GetByTokenTokenGetWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> GetByTokenWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByTokenTokenGetWithHttpInfoAsync(token, operationIndex, cancellationToken);
+                return _internalClient.GetByTokenWithHttpInfoAsync(token, operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -554,11 +554,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public List<OrganizationLinkInvitationModel> GetMyInvitationsGet(int operationIndex = 0)
+        public List<OrganizationLinkInvitationModel> GetMyInvitations(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMyInvitationsGet(operationIndex);
+                return _internalClient.GetMyInvitations(operationIndex);
             }
             catch (ApiException e)
             {
@@ -572,11 +572,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsWithHttpInfo(int operationIndex = 0)
         {
             try
             {
-                return _internalClient.GetMyInvitationsGetWithHttpInfo(operationIndex);
+                return _internalClient.GetMyInvitationsWithHttpInfo(operationIndex);
             }
             catch (ApiException e)
             {
@@ -591,11 +591,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMyInvitationsGetAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMyInvitationsAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -610,11 +610,11 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationLinkInvitationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetMyInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetMyInvitationsWithHttpInfoAsync(operationIndex, cancellationToken);
             }
             catch (ApiException e)
             {
@@ -891,7 +891,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationLinkInvitationModel</returns>
-        OrganizationLinkInvitationModel GetByTokenTokenGet(string token, int operationIndex = 0);
+        OrganizationLinkInvitationModel GetByToken(string token, int operationIndex = 0);
 
         /// <summary>
         /// Get invitation by token
@@ -903,14 +903,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
-        ApiResponse<OrganizationLinkInvitationModel> GetByTokenTokenGetWithHttpInfo(string token, int operationIndex = 0);
+        ApiResponse<OrganizationLinkInvitationModel> GetByTokenWithHttpInfo(string token, int operationIndex = 0);
         /// <summary>
         /// Gets a list of all pending invitations
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        List<OrganizationLinkInvitationModel> GetMyInvitationsGet(int operationIndex = 0);
+        List<OrganizationLinkInvitationModel> GetMyInvitations(int operationIndex = 0);
 
         /// <summary>
         /// Gets a list of all pending invitations
@@ -921,7 +921,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Delete an invitation
         /// </summary>
@@ -1105,7 +1105,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationLinkInvitationModel</returns>
-        System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenTokenGetAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get invitation by token
@@ -1118,7 +1118,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationLinkInvitationModel>> GetByTokenTokenGetWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OrganizationLinkInvitationModel>> GetByTokenWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets a list of all pending invitations
         /// </summary>
@@ -1129,7 +1129,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets a list of all pending invitations
@@ -1141,7 +1141,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationLinkInvitationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete an invitation
         /// </summary>
@@ -1360,7 +1360,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.AcceptOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationAcceptOneTimeIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1373,7 +1373,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<OrganizationLinkInvitationAcceptedResponse>("/OrganizationLinkInvitation/accept-one-time/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AcceptOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationAcceptOneTimeIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1434,7 +1434,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.AcceptOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationAcceptOneTimeIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1448,7 +1448,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AcceptOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationAcceptOneTimeIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1509,7 +1509,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = organizationLinkInvitationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.CreateOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateOneTimePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1522,7 +1522,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<OrganizationLinkInvitationModel>("/OrganizationLinkInvitation/create-one-time", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationCreateOneTimePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1586,7 +1586,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = organizationLinkInvitationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.CreateOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateOneTimePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1600,7 +1600,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationCreateOneTimePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1661,7 +1661,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = organizationLinkStaticInvitationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.CreateStatic";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateStaticPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1674,7 +1674,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Post<OrganizationLinkInvitationModel>("/OrganizationLinkInvitation/create-static", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateStatic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationCreateStaticPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1738,7 +1738,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.Data = organizationLinkStaticInvitationRequest;
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.CreateStatic";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationCreateStaticPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1752,7 +1752,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CreateStatic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationCreateStaticPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1809,7 +1809,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.DeclineOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1822,7 +1822,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<Object>("/OrganizationLinkInvitation/decline-one-time/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeclineOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationDeclineOneTimeIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1882,7 +1882,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.DeclineOneTime";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationDeclineOneTimeIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1896,7 +1896,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeclineOneTime", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationDeclineOneTimeIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1951,7 +1951,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Get";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1964,7 +1964,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationLinkInvitationModel>>("/OrganizationLinkInvitation", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2022,7 +2022,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Get";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2036,7 +2036,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2053,9 +2053,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OrganizationLinkInvitationModel</returns>
-        public OrganizationLinkInvitationModel GetByTokenTokenGet(string token, int operationIndex = 0)
+        public OrganizationLinkInvitationModel GetByToken(string token, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> localVarResponse = GetByTokenTokenGetWithHttpInfo(token);
+            Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> localVarResponse = GetByTokenWithHttpInfo(token);
             return localVarResponse.Data;
         }
 
@@ -2066,12 +2066,12 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="token">Invitation token</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationLinkInvitationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> GetByTokenTokenGetWithHttpInfo(string token, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> GetByTokenWithHttpInfo(string token, int operationIndex = 0)
         {
             // verify the required parameter 'token' is set
             if (token == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->GetByTokenTokenGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->OrganizationLinkInvitationGetByTokenTokenGet");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2100,7 +2100,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("token", Simplic.OxS.SDK.ClientUtils.ParameterToString(token)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.GetByTokenTokenGet";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGetByTokenTokenGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2113,7 +2113,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<OrganizationLinkInvitationModel>("/OrganizationLinkInvitation/get-by-token/{token}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTokenTokenGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGetByTokenTokenGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2131,9 +2131,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationLinkInvitationModel</returns>
-        public async System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenTokenGetAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OrganizationLinkInvitationModel> GetByTokenAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> localVarResponse = await GetByTokenTokenGetWithHttpInfoAsync(token, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel> localVarResponse = await GetByTokenWithHttpInfoAsync(token, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2145,12 +2145,12 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationLinkInvitationModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> GetByTokenTokenGetWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationLinkInvitationModel>> GetByTokenWithHttpInfoAsync(string token, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'token' is set
             if (token == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->GetByTokenTokenGet");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->OrganizationLinkInvitationGetByTokenTokenGet");
             }
 
 
@@ -2180,7 +2180,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("token", Simplic.OxS.SDK.ClientUtils.ParameterToString(token)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.GetByTokenTokenGet";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGetByTokenTokenGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2194,7 +2194,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetByTokenTokenGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGetByTokenTokenGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2210,9 +2210,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public List<OrganizationLinkInvitationModel> GetMyInvitationsGet(int operationIndex = 0)
+        public List<OrganizationLinkInvitationModel> GetMyInvitations(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> localVarResponse = GetMyInvitationsGetWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> localVarResponse = GetMyInvitationsWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -2222,7 +2222,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> GetMyInvitationsWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2249,7 +2249,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.GetMyInvitationsGet";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGetMyInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2262,7 +2262,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Get<List<OrganizationLinkInvitationModel>>("/OrganizationLinkInvitation/get-my-invitations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMyInvitationsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGetMyInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2279,9 +2279,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OrganizationLinkInvitationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<OrganizationLinkInvitationModel>> GetMyInvitationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> localVarResponse = await GetMyInvitationsGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>> localVarResponse = await GetMyInvitationsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2292,7 +2292,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OrganizationLinkInvitationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationLinkInvitationModel>>> GetMyInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2320,7 +2320,7 @@ namespace Simplic.OxS.SDK.Organization
             }
 
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.GetMyInvitationsGet";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationGetMyInvitationsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2334,7 +2334,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetMyInvitationsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationGetMyInvitationsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2391,7 +2391,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Delete";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2404,7 +2404,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Delete<Object>("/OrganizationLinkInvitation/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2464,7 +2464,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.Delete";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2478,7 +2478,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2513,7 +2513,7 @@ namespace Simplic.OxS.SDK.Organization
             // verify the required parameter 'token' is set
             if (token == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->JoinStatic");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->OrganizationLinkInvitationJoinStaticTokenPut");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2542,7 +2542,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("token", Simplic.OxS.SDK.ClientUtils.ParameterToString(token)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.JoinStatic";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationJoinStaticTokenPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2555,7 +2555,7 @@ namespace Simplic.OxS.SDK.Organization
             var localVarResponse = this.Client.Put<OrganizationLinkInvitationAcceptedResponse>("/OrganizationLinkInvitation/join-static/{token}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("JoinStatic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationJoinStaticTokenPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2592,7 +2592,7 @@ namespace Simplic.OxS.SDK.Organization
             // verify the required parameter 'token' is set
             if (token == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->JoinStatic");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'token' when calling OrganizationLinkInvitationClient->OrganizationLinkInvitationJoinStaticTokenPut");
             }
 
 
@@ -2622,7 +2622,7 @@ namespace Simplic.OxS.SDK.Organization
 
             localVarRequestOptions.PathParameters.Add("token", Simplic.OxS.SDK.ClientUtils.ParameterToString(token)); // path parameter
 
-            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.JoinStatic";
+            localVarRequestOptions.Operation = "OrganizationLinkInvitationClient.OrganizationLinkInvitationJoinStaticTokenPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -2636,7 +2636,7 @@ namespace Simplic.OxS.SDK.Organization
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("JoinStatic", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationLinkInvitationJoinStaticTokenPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
