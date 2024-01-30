@@ -1,12 +1,11 @@
-# Simplic.OxS.SDK.Telematic.AvailableServices
+# Simplic.OxS.SDK.Ai.CreateDataSetRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Spedion** | **List&lt;string&gt;** |  | [optional] 
-**Transics** | **List&lt;string&gt;** |  | [optional] 
-**Webfleet** | **List&lt;string&gt;** |  | [optional] 
+**Name** | **string** |  | 
+**Tuples** | [**List&lt;StringStringStringTuple&gt;**](StringStringStringTuple.md) |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

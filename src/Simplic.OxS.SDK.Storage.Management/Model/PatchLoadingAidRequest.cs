@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Storage.Management
 {
     /// <summary>
-    /// LoadingAidRequest
+    /// PatchLoadingAidRequest
     /// </summary>
-    [DataContract(Name = "LoadingAidRequest")]
-    public partial class LoadingAidRequest : IEquatable<LoadingAidRequest>, IValidatableObject
+    [DataContract(Name = "PatchLoadingAidRequest")]
+    public partial class PatchLoadingAidRequest : IEquatable<PatchLoadingAidRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -40,14 +40,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         [DataMember(Name = "movementType", EmitDefaultValue = false)]
         public MovementType? MovementType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoadingAidRequest" /> class.
+        /// Initializes a new instance of the <see cref="PatchLoadingAidRequest" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="amount">amount.</param>
         /// <param name="typeId">typeId.</param>
         /// <param name="movementType">movementType.</param>
         /// <param name="barcodes">barcodes.</param>
-        public LoadingAidRequest(Guid id = default(Guid), int amount = default(int), Guid typeId = default(Guid), MovementType? movementType = default(MovementType?), List<BarcodeModel> barcodes = default(List<BarcodeModel>))
+        public PatchLoadingAidRequest(Guid id = default(Guid), int? amount = default(int?), Guid? typeId = default(Guid?), MovementType? movementType = default(MovementType?), List<BarcodeModel> barcodes = default(List<BarcodeModel>))
         {
             this.Id = id;
             this.Amount = amount;
@@ -65,14 +65,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        [DataMember(Name = "amount", EmitDefaultValue = true)]
+        public int? Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets TypeId
         /// </summary>
-        [DataMember(Name = "typeId", EmitDefaultValue = false)]
-        public Guid TypeId { get; set; }
+        [DataMember(Name = "typeId", EmitDefaultValue = true)]
+        public Guid? TypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets Barcodes
@@ -87,7 +87,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LoadingAidRequest {\n");
+            sb.Append("class PatchLoadingAidRequest {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  TypeId: ").Append(TypeId).Append("\n");
@@ -113,15 +113,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LoadingAidRequest);
+            return this.Equals(input as PatchLoadingAidRequest);
         }
 
         /// <summary>
-        /// Returns true if LoadingAidRequest instances are equal
+        /// Returns true if PatchLoadingAidRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of LoadingAidRequest to be compared</param>
+        /// <param name="input">Instance of PatchLoadingAidRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LoadingAidRequest input)
+        public bool Equals(PatchLoadingAidRequest input)
         {
             if (input == null)
             {
@@ -135,7 +135,8 @@ namespace Simplic.OxS.SDK.Storage.Management
                 ) && 
                 (
                     this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
                 ) && 
                 (
                     this.TypeId == input.TypeId ||
@@ -167,7 +168,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.Amount != null)
+                {
+                    hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                }
                 if (this.TypeId != null)
                 {
                     hashCode = (hashCode * 59) + this.TypeId.GetHashCode();

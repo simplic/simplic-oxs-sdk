@@ -896,7 +896,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.GetForVehicle";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationGetForVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -909,7 +909,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<List<VehicleConfigurationModel>>("/VehicleConfiguration/get-for-vehicle/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForVehicle", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationGetForVehicleIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.GetForVehicle";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationGetForVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -984,7 +984,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForVehicle", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationGetForVehicleIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1042,7 +1042,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1055,7 +1055,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Delete<Object>("/VehicleConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1116,7 +1116,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1130,7 +1130,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1188,7 +1188,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Get";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1201,7 +1201,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<VehicleConfigurationModel>("/VehicleConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1262,7 +1262,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Get";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1276,7 +1276,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1340,7 +1340,7 @@ namespace Simplic.OxS.SDK.Telematic
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchVehicleConfigurationRequest;
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1353,7 +1353,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Patch<VehicleConfigurationModel>("/VehicleConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1420,7 +1420,7 @@ namespace Simplic.OxS.SDK.Telematic
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchVehicleConfigurationRequest;
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1434,7 +1434,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1495,7 +1495,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createVehicleConfigurationRequest;
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Post";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1508,7 +1508,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Post<VehicleConfigurationModel>("/VehicleConfiguration", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1572,7 +1572,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createVehicleConfigurationRequest;
 
-            localVarRequestOptions.Operation = "VehicleConfigurationClient.Post";
+            localVarRequestOptions.Operation = "VehicleConfigurationClient.VehicleConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1586,7 +1586,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("VehicleConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

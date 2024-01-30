@@ -896,7 +896,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.GetForEmployment";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationGetForEmploymentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -909,7 +909,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<List<EmploymentConfigurationModel>>("/EmploymentConfiguration/get-for-employment/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForEmployment", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationGetForEmploymentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -970,7 +970,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.GetForEmployment";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationGetForEmploymentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -984,7 +984,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForEmployment", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationGetForEmploymentIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1042,7 +1042,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1055,7 +1055,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Delete<Object>("/EmploymentConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1116,7 +1116,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1130,7 +1130,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1188,7 +1188,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Get";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1201,7 +1201,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<EmploymentConfigurationModel>("/EmploymentConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1262,7 +1262,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Get";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1276,7 +1276,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1340,7 +1340,7 @@ namespace Simplic.OxS.SDK.Telematic
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchEmploymentConfigurationRequest;
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1353,7 +1353,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Patch<EmploymentConfigurationModel>("/EmploymentConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1420,7 +1420,7 @@ namespace Simplic.OxS.SDK.Telematic
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = patchEmploymentConfigurationRequest;
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1434,7 +1434,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1495,7 +1495,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createEmploymentConfigurationRequest;
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Post";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1508,7 +1508,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Post<EmploymentConfigurationModel>("/EmploymentConfiguration", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1572,7 +1572,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createEmploymentConfigurationRequest;
 
-            localVarRequestOptions.Operation = "EmploymentConfigurationClient.Post";
+            localVarRequestOptions.Operation = "EmploymentConfigurationClient.EmploymentConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1586,7 +1586,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("EmploymentConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

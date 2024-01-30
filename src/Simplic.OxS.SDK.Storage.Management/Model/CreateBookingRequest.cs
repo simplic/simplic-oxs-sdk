@@ -49,9 +49,9 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="signatureDriver">signatureDriver.</param>
         /// <param name="ecoNumber">ecoNumber.</param>
         /// <param name="deliveryNote">deliveryNote.</param>
-        /// <param name="loadingAids">loadingAids.</param>
         /// <param name="images">images.</param>
-        public CreateBookingRequest(Guid? customerId = default(Guid?), Guid? locationId = default(Guid?), Guid? driverId = default(Guid?), Guid? vehicleId = default(Guid?), Guid? carrierId = default(Guid?), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<LoadingAidRequest> loadingAids = default(List<LoadingAidRequest>), List<Guid> images = default(List<Guid>))
+        /// <param name="loadingAids">loadingAids.</param>
+        public CreateBookingRequest(Guid? customerId = default(Guid?), Guid? locationId = default(Guid?), Guid? driverId = default(Guid?), Guid? vehicleId = default(Guid?), Guid? carrierId = default(Guid?), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<Guid> images = default(List<Guid>), List<CreateLoadingAidRequest> loadingAids = default(List<CreateLoadingAidRequest>))
         {
             this.CustomerId = customerId;
             this.LocationId = locationId;
@@ -66,8 +66,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.SignatureDriver = signatureDriver;
             this.EcoNumber = ecoNumber;
             this.DeliveryNote = deliveryNote;
-            this.LoadingAids = loadingAids;
             this.Images = images;
+            this.LoadingAids = loadingAids;
         }
 
         /// <summary>
@@ -149,16 +149,16 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string DeliveryNote { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadingAids
-        /// </summary>
-        [DataMember(Name = "loadingAids", EmitDefaultValue = true)]
-        public List<LoadingAidRequest> LoadingAids { get; set; }
-
-        /// <summary>
         /// Gets or Sets Images
         /// </summary>
         [DataMember(Name = "images", EmitDefaultValue = true)]
         public List<Guid> Images { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadingAids
+        /// </summary>
+        [DataMember(Name = "loadingAids", EmitDefaultValue = true)]
+        public List<CreateLoadingAidRequest> LoadingAids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -181,8 +181,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  SignatureDriver: ").Append(SignatureDriver).Append("\n");
             sb.Append("  EcoNumber: ").Append(EcoNumber).Append("\n");
             sb.Append("  DeliveryNote: ").Append(DeliveryNote).Append("\n");
-            sb.Append("  LoadingAids: ").Append(LoadingAids).Append("\n");
             sb.Append("  Images: ").Append(Images).Append("\n");
+            sb.Append("  LoadingAids: ").Append(LoadingAids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -284,16 +284,16 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.DeliveryNote.Equals(input.DeliveryNote))
                 ) && 
                 (
-                    this.LoadingAids == input.LoadingAids ||
-                    this.LoadingAids != null &&
-                    input.LoadingAids != null &&
-                    this.LoadingAids.SequenceEqual(input.LoadingAids)
-                ) && 
-                (
                     this.Images == input.Images ||
                     this.Images != null &&
                     input.Images != null &&
                     this.Images.SequenceEqual(input.Images)
+                ) && 
+                (
+                    this.LoadingAids == input.LoadingAids ||
+                    this.LoadingAids != null &&
+                    input.LoadingAids != null &&
+                    this.LoadingAids.SequenceEqual(input.LoadingAids)
                 );
         }
 
@@ -358,13 +358,13 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.DeliveryNote.GetHashCode();
                 }
-                if (this.LoadingAids != null)
-                {
-                    hashCode = (hashCode * 59) + this.LoadingAids.GetHashCode();
-                }
                 if (this.Images != null)
                 {
                     hashCode = (hashCode * 59) + this.Images.GetHashCode();
+                }
+                if (this.LoadingAids != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadingAids.GetHashCode();
                 }
                 return hashCode;
             }

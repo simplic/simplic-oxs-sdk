@@ -1192,18 +1192,43 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "loadingAids": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/LoadingAidRequest"
-                        },
-                        "nullable": true
-                    },
                     "images": {
                         "type": "array",
                         "items": {
                             "type": "string",
                             "format": "uuid"
+                        },
+                        "nullable": true
+                    },
+                    "loadingAids": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidRequest"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateLoadingAidRequest": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "typeId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "movementType": {
+                        "$ref": "#/components/schemas/MovementType"
+                    },
+                    "barcodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BarcodeModel"
                         },
                         "nullable": true
                     }
@@ -1223,34 +1248,6 @@
                     },
                     "type": {
                         "$ref": "#/components/schemas/LoadingAidTypeModel"
-                    },
-                    "movementType": {
-                        "$ref": "#/components/schemas/MovementType"
-                    },
-                    "barcodes": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BarcodeModel"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "LoadingAidRequest": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "amount": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "typeId": {
-                        "type": "string",
-                        "format": "uuid"
                     },
                     "movementType": {
                         "$ref": "#/components/schemas/MovementType"
@@ -1369,18 +1366,48 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "loadingAids": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/LoadingAidRequest"
-                        },
-                        "nullable": true
-                    },
                     "images": {
                         "type": "array",
                         "items": {
                             "type": "string",
                             "format": "uuid"
+                        },
+                        "nullable": true
+                    },
+                    "loadingAids": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchLoadingAidRequest"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchLoadingAidRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "amount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "typeId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "movementType": {
+                        "$ref": "#/components/schemas/MovementType"
+                    },
+                    "barcodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BarcodeModel"
                         },
                         "nullable": true
                     }

@@ -1,12 +1,13 @@
-# Simplic.OxS.SDK.Telematic.AvailableServices
+# Simplic.OxS.SDK.ERP.CreateCostCenterRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Spedion** | **List&lt;string&gt;** |  | [optional] 
-**Transics** | **List&lt;string&gt;** |  | [optional] 
-**Webfleet** | **List&lt;string&gt;** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Number** | **int** |  | [optional] 
+**ValidFrom** | **DateTime?** |  | [optional] 
+**ValidTo** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

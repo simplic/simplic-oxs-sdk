@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **SignatureDriver** | [**SignatureUserModel**](SignatureUserModel.md) |  | [optional] 
 **EcoNumber** | **string** |  | [optional] 
 **DeliveryNote** | **string** |  | [optional] 
-**LoadingAids** | [**List&lt;LoadingAidRequest&gt;**](LoadingAidRequest.md) |  | [optional] 
 **Images** | **List&lt;Guid&gt;** |  | [optional] 
+**LoadingAids** | [**List&lt;CreateLoadingAidRequest&gt;**](CreateLoadingAidRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

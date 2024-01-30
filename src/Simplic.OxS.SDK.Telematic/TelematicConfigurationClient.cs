@@ -873,7 +873,7 @@ namespace Simplic.OxS.SDK.Telematic
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->TelematicConfigurationGetForProviderNameGet");
             }
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -902,7 +902,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.GetForProvider";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationGetForProviderNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -915,7 +915,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<TelematicConfigurationResponse>("/TelematicConfiguration/get-for-provider/{name}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForProvider", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationGetForProviderNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -952,7 +952,7 @@ namespace Simplic.OxS.SDK.Telematic
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->GetForProvider");
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling TelematicConfigurationClient->TelematicConfigurationGetForProviderNameGet");
             }
 
 
@@ -982,7 +982,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.GetForProvider";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationGetForProviderNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -996,7 +996,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetForProvider", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationGetForProviderNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1054,7 +1054,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1067,7 +1067,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Delete<Object>("/TelematicConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1128,7 +1128,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Delete";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1142,7 +1142,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1200,7 +1200,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Get";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1213,7 +1213,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Get<TelematicConfigurationResponse>("/TelematicConfiguration/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1274,7 +1274,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Get";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1288,7 +1288,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Get", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1355,7 +1355,7 @@ namespace Simplic.OxS.SDK.Telematic
             }
             localVarRequestOptions.Data = patchTelematicConfigurationRequest;
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1368,7 +1368,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Patch<TelematicConfigurationResponse>("/TelematicConfiguration", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1438,7 +1438,7 @@ namespace Simplic.OxS.SDK.Telematic
             }
             localVarRequestOptions.Data = patchTelematicConfigurationRequest;
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Patch";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1452,7 +1452,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Patch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1513,7 +1513,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createTelematicConfigurationRequest;
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Post";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1526,7 +1526,7 @@ namespace Simplic.OxS.SDK.Telematic
             var localVarResponse = this.Client.Post<TelematicConfigurationResponse>("/TelematicConfiguration", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1590,7 +1590,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             localVarRequestOptions.Data = createTelematicConfigurationRequest;
 
-            localVarRequestOptions.Operation = "TelematicConfigurationClient.Post";
+            localVarRequestOptions.Operation = "TelematicConfigurationClient.TelematicConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1604,7 +1604,7 @@ namespace Simplic.OxS.SDK.Telematic
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Post", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TelematicConfigurationPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
