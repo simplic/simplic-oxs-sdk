@@ -1,6 +1,9 @@
-//@34
-namespace {{packageName}}
-{
+//@41
+
+// ------------------------- Custom -------------------------------
+//: Interface
+    {{>../../../.inject_shared/api_interface}}
+//: Implementation
     {{#operations}}
 
     /// <summary>
@@ -27,8 +30,9 @@ namespace {{packageName}}
         /// {{summary}} {{notes}}
         /// </summary>
         /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
-        {{#allParams}}/// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}/// <param name="operationIndex">Index associated with the operation.</param>
+        {{#allParams}}
+        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
+        {{/allParams}}
         /// <returns>{{returnType}}</returns>
         {{#isDeprecated}}
         [Obsolete]
@@ -160,7 +164,7 @@ namespace {{packageName}}
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
                 {{#returnType}}return response.Ok();{{/returnType}}
             }
             catch (ApiException e)
@@ -177,7 +181,7 @@ namespace {{packageName}}
         {
             try
             {
-                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken);
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
                 {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
                 {{#returnType}}return new ApiResponse<{{{returnType}}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
             }
@@ -193,4 +197,4 @@ namespace {{packageName}}
     }
 
     {{/operations}}
-}
+// ------------------------^ Custom ^------------------------------
