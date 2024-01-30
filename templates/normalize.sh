@@ -48,12 +48,17 @@ rec_replace "$DIR" "namespace {{packageName}}.Client"       "namespace {{package
 rec_replace "$DIR" "{{packageName}}.Client\."               "{{packageName}}."          "mustache"
 rec_replace "$DIR" "{{packageName}}.Client;"                "{{packageName}};"          "mustache"
 
+rec_replace "$DIR" "namespace {{packageName}}.{{clientPackage}}"    "namespace {{packageName}}" "mustache"
+rec_replace "$DIR" "{{packageName}}.{{clientPackage}}\."            "{{packageName}}."          "mustache"
+rec_replace "$DIR" "{{packageName}}.{{clientPackage}};"             "{{packageName}};"          "mustache"
+
 rec_replace "$DIR" "namespace {{packageName}}.Auth"       "namespace {{packageName}}" "mustache"
 rec_replace "$DIR" "{{packageName}}.Auth\."               "{{packageName}}."          "mustache"
 rec_replace "$DIR" "{{packageName}}.Auth;"                "{{packageName}};"          "mustache"
 
 rec_replace "$DIR" "{{packageName}}.Test.Client"            "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.Api"               "{{packageName}}.Test"      "mustache"
+rec_replace "$DIR" "{{packageName}}.Test.Model"             "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.{{apiPackage}}"    "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.{{apiPackage}}"         "{{packageName}}"           "mustache"
 rec_replace "$DIR" ".{{modelPackage}}"                      ""                          "mustache"

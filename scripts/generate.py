@@ -37,7 +37,10 @@ LIB_DEPS = {
     "restsharp": [
         "RestSharp",
         "Newtonsoft.Json",
-        "Polly"
+        "Polly",
+        "Microsoft.Extensions.Configuration.Abstractions",
+        "Microsoft.Extensions.DependencyInjection",
+        "System.Threading.Channels"
     ],
 }
 

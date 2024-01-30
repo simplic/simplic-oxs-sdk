@@ -1,4 +1,4 @@
-# {{packageName}}.{{apiPackage}}.{{classname}}{{#description}}
+# {{packageName}}.{{classname}}{{#description}}
 {{.}}{{/description}}
 
 All URIs are relative to *{{{basePath}}}*
@@ -28,9 +28,8 @@ using System.Diagnostics;
 {{#useHttpClient}}
 using System.Net.Http;
 {{/useHttpClient}}
-using {{packageName}}.{{apiPackage}};
-using {{packageName}}.Client;
-using {{packageName}}.{{modelPackage}};
+
+using {{packageName}};
 
 namespace Example
 {
