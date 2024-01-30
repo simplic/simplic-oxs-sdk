@@ -7,10 +7,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
-{{>.inject/api}}
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
 
 namespace {{packageName}}
 {
+{{>.inject/api}}
+
     {{#operations}}
 
     /// <summary>
