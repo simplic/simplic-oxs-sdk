@@ -50,6 +50,90 @@ using System.Runtime.CompilerServices;
         /// <returns></returns>
         public delegate void EventHandler<T>(object sender, T e) where T : EventArgs;
 
+        {{#hasApiKeyMethods}}
+//        /// <summary>
+//        /// An enum of headers
+//        /// </summary>
+//        public enum ApiKeyHeader
+//        {
+//            {{#apiKeyMethods}}
+//            /// <summary>
+//            /// The {{keyParamName}} header
+//            /// </summary>
+//            {{#lambda.titlecase}}{{keyParamName}}{{/lambda.titlecase}}{{^-last}},{{/-last}}
+//            {{/apiKeyMethods}}
+//        }
+//
+//        /// <summary>
+//        /// Converte an ApiKeyHeader to a string
+//        /// </summary>
+//        /// <param name="value"></param>
+//        /// <returns></returns>
+//        /// <exception cref="System.ComponentModel.InvalidEnumArgumentException"></exception>
+//        {{>visibility}} static string ApiKeyHeaderToString(ApiKeyHeader value)
+//        {
+//            {{#net80OrLater}}
+//            return value switch
+//            {
+//                {{#apiKeyMethods}}
+//                ApiKeyHeader.{{#lambda.titlecase}}{{keyParamName}}{{/lambda.titlecase}} => "{{keyParamName}}",
+//                {{/apiKeyMethods}}
+//                _ => throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader)),
+//            };
+//            {{/net80OrLater}}
+//            {{^net80OrLater}}
+//            switch(value)
+//            {
+//                {{#apiKeyMethods}}
+//                case ApiKeyHeader.{{#lambda.titlecase}}{{keyParamName}}{{/lambda.titlecase}}:
+//                    return "{{keyParamName}}";
+//                {{/apiKeyMethods}}
+//                default:
+//                    throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader));
+//            }
+//            {{/net80OrLater}}
+//        }
+
+// ------------ static fix ---------------
+/// <summary>
+/// An enum of headers
+/// </summary>
+public enum ApiKeyHeader
+{
+    /// <summary>
+    /// The Authorization header
+    /// </summary>
+    Authorization
+}
+
+/// <summary>
+/// Converte an ApiKeyHeader to a string
+/// </summary>
+/// <param name="value"></param>
+/// <returns></returns>
+/// <exception cref="System.ComponentModel.InvalidEnumArgumentException"></exception>
+{{>visibility}} static string ApiKeyHeaderToString(ApiKeyHeader value)
+{
+    {{#net80OrLater}}
+    return value switch
+    {
+        ApiKeyHeader.Authorization => "Authorization",
+        _ => throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader)),
+    };
+    {{/net80OrLater}}
+    {{^net80OrLater}}
+    switch(value)
+    {
+        case ApiKeyHeader.Authorization:
+            return "Authorization";
+        default:
+            throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader));
+    }
+    {{/net80OrLater}}
+}
+// -----------^ static fix ^--------------
+
+        {{/hasApiKeyMethods}}
         /// <summary>
         /// Returns true when deserialization succeeds.
         /// </summary>
@@ -294,22 +378,22 @@ using System.Runtime.CompilerServices;
         /// <summary>
         /// The base path of the API
         /// </summary>
-        //public const string BASE_ADDRESS = "{{{basePath}}}";
+        public const string BASE_ADDRESS = "{{{basePath}}}";
 
         /// <summary>
         /// The scheme of the API
         /// </summary>
-        //public const string SCHEME = "{{{scheme}}}";
+        public const string SCHEME = "{{{scheme}}}";
 
         /// <summary>
         /// The context path of the API
         /// </summary>
-        //public const string CONTEXT_PATH = "{{contextPath}}";
+        public const string CONTEXT_PATH = "{{contextPath}}";
 
         /// <summary>
         /// The host of the API
         /// </summary>
-        //public const string HOST = "{{{host}}}";
+        public const string HOST = "{{{host}}}";
 
         /// <summary>
         /// The format to use for DateTime serialization

@@ -10,14 +10,24 @@ using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
 using System.Net;
 
+// -- custom --
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
+// -^ custom ^-
+
 namespace {{packageName}}
 {
-    {{.inject/ApiResponse`1}}
+    {{>.inject/ApiResponse`1}}
 
     /// <summary>
     /// Provides a non-generic contract for the ApiResponse wrapper.
     /// </summary>
-    internal interface __IApiResponse
+    public interface __IApiResponse
     {
         /// <summary>
         /// The IsSuccessStatusCode from the api response
@@ -69,7 +79,7 @@ namespace {{packageName}}
     /// <summary>
     /// API Response
     /// </summary>
-    internal class __ApiResponse : __IApiResponse
+    public partial class __ApiResponse : __IApiResponse
     {
         /// <summary>
         /// Gets the status code (HTTP status code)
@@ -149,24 +159,24 @@ namespace {{packageName}}
     }
     {{#x-http-statuses-with-return}}
 
-    /// <summary>
-    /// An interface for responses of type {{TType}}
-    /// </summary>
-    /// <typeparam name="TType"></typeparam>
-    {{>visibility}} interface I{{.}}<TType> : __IApiResponse
-    {
-        /// <summary>
-        /// Deserializes the response if the response is {{.}}
-        /// </summary>
-        /// <returns></returns>
-        TType {{.}}();
-
-        /// <summary>
-        /// Returns true if the response is {{.}} and the deserialized response is not null
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        bool Try{{.}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
-    }
+//    /// <summary>
+//    /// An interface for responses of type {{TType}}
+//    /// </summary>
+//    /// <typeparam name="TType"></typeparam>
+//    internal interface I{{.}}<TType> : __IApiResponse
+//    {
+//        /// <summary>
+//        /// Deserializes the response if the response is {{.}}
+//        /// </summary>
+//        /// <returns></returns>
+//        TType {{.}}();
+//
+//        /// <summary>
+//        /// Returns true if the response is {{.}} and the deserialized response is not null
+//        /// </summary>
+//        /// <param name="result"></param>
+//        /// <returns></returns>
+//        bool Try{{.}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+//    }
     {{/x-http-statuses-with-return}}
 }
