@@ -1,86 +1,8 @@
 // ------------------------- Custom -------------------------------
 //: Interface
-    {{>../../../.inject_shared/api_interface}}
+    {{>.inject/api_interface}}
 //: Implementation
     {{#operations}}
-
-    /// <summary>
-    /// Client to interact with the API endpoints of the {{service}} service.
-    /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{classname}}
-    {
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        string GetBasePath();
-
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        //IReadableConfiguration Configuration;
-
-
-        {{#operation}}
-
-        /// <summary>
-        /// {{summary}} {{notes}}
-        /// </summary>
-        /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
-        {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}
-        /// <returns>{{returnType}}</returns>
-        {{#isDeprecated}}
-        [Obsolete]
-        {{/isDeprecated}}
-        {{{returnType}}}{{^returnType}}void{{/returnType}} {{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}});
-
-        /// <summary>
-        /// {{summary}} {{notes}}
-        /// </summary>
-        /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
-        {{#allParams}}/// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}
-        /// <returns>ApiResponse of {{returnType}}{{^returnType}}Object(void){{/returnType}}</returns>
-        {{#isDeprecated}}
-        [Obsolete]
-        {{/isDeprecated}}
-        ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}> {{operationId}}{{withHttpInfoSuffix}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}});
-         
-        {{#supportsAsync}}
-        /// <summary>
-        /// {{summary}} {{notes}}
-        /// </summary>
-        /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
-        {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of {{returnType}}{{^returnType}}void{{/returnType}}</returns>
-        {{#isDeprecated}}
-        [Obsolete]
-        {{/isDeprecated}}
-        {{#returnType}}Task<{{{.}}}>{{/returnType}}{{^returnType}}Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken));
-
-        /// <summary>
-        /// {{summary}} {{notes}}
-        /// </summary>
-        /// <exception cref="{{packageName}}.ApiException">Thrown when fails to make API call</exception>
-        {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
-        {{/allParams}}
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse{{#returnType}} ({{.}}){{/returnType}}</returns>
-        {{#isDeprecated}}
-        [Obsolete]
-        {{/isDeprecated}}
-        Task<ApiResponse<{{{returnType}}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken));
-        {{/supportsAsync}}
-
-        {{/operation}}
-    }
 
     /// <inheritdoc cref="{{interfacePrefix}}{{classname}}">
     {{>visibility}} class {{classname}} : {{interfacePrefix}}{{classname}}
@@ -96,12 +18,48 @@
             var events = new {{classname}}Events();
             if (authorization is null)
             {
-                _internalClient = new __{{classname}}(_httpClient, jsonSerializerOptionsProvider, events, new NullTokenProvider<ApiKeyToken>());
+                _internalClient = new __{{classname}}(
+                    NullLogger.Instance,
+                    LoggerFactory.Create(x => { }),
+                    _httpClient,
+                    jsonSerializerOptionsProvider,
+                    events
+                    {{#hasApiKeyMethods}}, new NullTokenProvider<ApiKeyToken>(){{/hasApiKeyMethods}}
+                    {{#hasHttpBearerMethods}}, new NullTokenProvider<BearerToken>(){{/hasHttpBearerMethods}}
+                    {{#hasHttpBasicMethods}}, new NullTokenProvider<BasicToken>(){{/hasHttpBasicMethods}}
+                    {{#hasHttpSignatureMethods}}, new NullTokenProvider<HttpSignatureToken>(){{/hasHttpSignatureMethods}}
+                    {{#hasOAuthMethods}}, new NullTokenProvider<OAuthToken>(){{/hasOAuthMethods}}
+                    {{#net80OrLater}}
+                        {{#operation}}
+                            {{#lambda.uniqueLines}}
+                                {{#vendorExtensions.x-set-cookie}}, new {{packageName}}.CookieContainer(){{/vendorExtensions.x-set-cookie}}
+                            {{/lambda.uniqueLines}}
+                        {{/operation}}
+                    {{/net80OrLater}}
+                );
             }
             else
             {
                 var token = new ApiKeyToken(authorization, "Authorization", "");
-                _internalClient = new __{{classname}}(_httpClient, jsonSerializerOptionsProvider, events, new ApiKeyTokenProvider(new[] { token }));
+                _internalClient = new __{{classname}}(
+                    NullLogger.Instance,
+                    LoggerFactory.Create(x => { }),
+                    _httpClient,
+                    jsonSerializerOptionsProvider,
+                    events
+                    {{#hasApiKeyMethods}}, new ApiKeyTokenProvider(new[] { token }){{/hasApiKeyMethods}}
+                    {{#hasHttpBearerMethods}}, new NullTokenProvider<BearerToken>(){{/hasHttpBearerMethods}}
+                    {{#hasHttpBasicMethods}}, new NullTokenProvider<BasicToken>(){{/hasHttpBasicMethods}}
+                    {{#hasHttpSignatureMethods}}, new NullTokenProvider<HttpSignatureToken>(){{/hasHttpSignatureMethods}}
+                    {{#hasOAuthMethods}}, new NullTokenProvider<OAuthToken>(){{/hasOAuthMethods}}
+                    {{#net80OrLater}}
+                        {{#operation}}
+                            {{#lambda.uniqueLines}}
+                                {{#vendorExtensions.x-set-cookie}}, new {{packageName}}.CookieContainer(){{/vendorExtensions.x-set-cookie}}
+                            {{/lambda.uniqueLines}}
+                        {{/operation}}
+                    {{/net80OrLater}}
+                );
             }
         }
 
