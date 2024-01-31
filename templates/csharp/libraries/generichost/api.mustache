@@ -29,12 +29,15 @@ using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
 
 // -- Custom --
+using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json.Serialization;
 using System.Threading;
 // -^ Custom ^-
 
 namespace {{packageName}}
 {
+    {{>.inject/api}}
+
     {{#operations}}
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -54,7 +57,7 @@ namespace {{packageName}}
         /// <remarks>
         /// {{notes}}
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="__ApiException">Thrown when fails to make API call</exception>
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
         {{/allParams}}
@@ -218,13 +221,25 @@ namespace {{packageName}}
         /// Initializes a new instance of the <see cref="{{classname}}"/> class.
         /// </summary>
         /// <returns></returns>
-        public {{classname}}(ILogger<{{classname}}> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
-            TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}},
-            TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}},
-            TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}},
-            TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}},
-            TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}}{{#net80OrLater}}{{#operation}}{{#lambda.uniqueLines}}{{#vendorExtensions.x-set-cookie}},
-            {{packageName}}.CookieContainer cookieContainer{{/vendorExtensions.x-set-cookie}}{{/lambda.uniqueLines}}{{/operation}}{{/net80OrLater}})
+        public {{classname}}(
+            ILogger<{{classname}}> logger,
+            ILoggerFactory loggerFactory,
+            HttpClient httpClient,
+            JsonSerializerOptionsProvider jsonSerializerOptionsProvider,
+            {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}
+            {{#hasApiKeyMethods}}, TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}
+            {{#hasHttpBearerMethods}}, TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}
+            {{#hasHttpBasicMethods}}, TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}
+            {{#hasHttpSignatureMethods}}, TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}
+            {{#hasOAuthMethods}}, TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}}
+            {{#net80OrLater}}
+                {{#operation}}
+                    {{#lambda.uniqueLines}}
+                        {{#vendorExtensions.x-set-cookie}}, {{packageName}}.CookieContainer cookieContainer{{/vendorExtensions.x-set-cookie}}
+                    {{/lambda.uniqueLines}}
+                {{/operation}}
+            {{/net80OrLater}}
+        )
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
             LoggerFactory = loggerFactory;
@@ -352,7 +367,7 @@ namespace {{packageName}}
         /// <summary>
         /// {{summary}} {{notes}}
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="__ApiException">Thrown when fails to make API call</exception>
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
@@ -678,7 +693,7 @@ namespace {{packageName}}
         /// <summary>
         /// The <see cref="{{operationId}}ApiResponse"/>
         /// </summary>
-        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
+        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.__ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
         {
             /// <summary>
             /// The logger
