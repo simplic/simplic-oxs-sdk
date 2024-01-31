@@ -23,9 +23,10 @@ LIB_DEPS = {
         "Microsoft.Extensions.Http",
         "Microsoft.Extensions.Hosting",
         "Microsoft.Extensions.Http.Polly",
+        "Microsoft.Extensions.Logging",
         "System.ComponentModel.Annotations",
         "System.Text.Json",
-        "System.Threading.Channels"
+        "System.Threading.Channels",
     ],
     "httpclient": [
         "Newtonsoft.Json",
