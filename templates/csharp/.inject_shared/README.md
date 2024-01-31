@@ -1,1 +1,0 @@
-Contains templates that are used across all libraries
