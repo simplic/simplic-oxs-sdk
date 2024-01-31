@@ -1,0 +1,15 @@
+public class OptionJsonConverter<T> : System.Text.Json.Serialization.JsonConverter<Option<T>>
+{
+    public override Option<T> Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+    {
+        var valueJson = reader.GetString()!;
+        var value = System.Text.Json.JsonSerializer.Deserialize<T>(valueJson);
+        return new Option<T>(value);
+    }
+
+    public override void Write(System.Text.Json.Utf8JsonWriter writer, Option<T> value, System.Text.Json.JsonSerializerOptions options)
+    {
+        var valueJson = System.Text.Json.JsonSerializer.Serialize(value.Value);
+        writer.WriteStringValue(valueJson);
+    }
+}
