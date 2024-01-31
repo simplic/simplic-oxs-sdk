@@ -38,7 +38,7 @@
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             {{#allVars}}
-            Option<{{#isInnerEnum}}{{^isMap}}{{classname}}.{{/isMap}}{{/isInnerEnum}}{{{datatypeWithEnum}}}> {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            Option<{{#isInnerEnum}}{{^isMap}}{{classname}}.{{/isMap}}{{/isInnerEnum}}{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}> {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             {{/-last}}
@@ -88,7 +88,7 @@
             {{#composedSchemas}}
             {{#oneOf}}
             {{^vendorExtensions.x-duplicated-data-type}}
-            {{{datatypeWithEnum}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            {{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             Utf8JsonReader utf8JsonReaderOneOf = utf8JsonReader;
@@ -104,7 +104,7 @@
                 {
                     {{#oneOf}}
                     Utf8JsonReader utf8JsonReader{{name}} = utf8JsonReader;
-                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
+                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
                     {{^-last}}
 
                     {{/-last}}
@@ -117,7 +117,7 @@
 
             {{#anyOf}}
             {{^vendorExtensions.x-duplicated-data-type}}
-            {{{datatypeWithEnum}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
+            {{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} = default;
             {{#-last}}
 
             Utf8JsonReader utf8JsonReaderAnyOf = utf8JsonReader;
@@ -133,7 +133,7 @@
                 {
                     {{#anyOf}}
                     Utf8JsonReader utf8JsonReader{{name}} = utf8JsonReader;
-                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
+                    OpenAPIClientUtils.TryDeserialize<{{{datatypeWithEnum}}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>(ref utf8JsonReader{{name}}, jsonSerializerOptions, out {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}});
                     {{^-last}}
 
                     {{/-last}}
@@ -280,8 +280,7 @@
             {{#model.hasDiscriminatorWithNonEmptyMapping}}
             {{#mappedModels}}
             if ({{#lambda.camelcase_param}}{{model.classname}}{{/lambda.camelcase_param}} != null)
-                //1return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{model.classname}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{#isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
-                return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{model.classname}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{#isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{#isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{#isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
+                return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{model.classname}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{^isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
 
             {{#-last}}
             throw new JsonException();
@@ -292,23 +291,21 @@
             {{^composedSchemas.oneOf}}
             {{^required}}
             {{#model.composedSchemas.anyOf}}
-            Option<{{baseType}}> {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue = {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}} == null
+            Option<{{baseType}}{{>NullConditionalProperty}}> {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue = {{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}} == null
                 ? default
-                : new Option<{{baseType}}>({{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}});
+                : new Option<{{baseType}}{{>NullConditionalProperty}}>({{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}});
             {{/model.composedSchemas.anyOf}}
             {{#-last}}
 
             {{/-last}}
             {{/required}}
-            //2return new {{classname}}({{#lambda.joinWithComma}}{{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue{{#required}}.Value{{#isNullable}}{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{^isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
-            return new {{classname}}({{#lambda.joinWithComma}}{{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue{{#required}}.Value{{#isNullable}}{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{#isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
+            return new {{classname}}({{#lambda.joinWithComma}}{{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{baseType}}{{/lambda.camelcase_param}}ParsedValue{{#required}}.Value{{^isNullable}}{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}.Value{{nrt!}}{{^isNullable}}{{#vendorExtensions.x-is-value-type}}.Value{{nrt!}}{{/vendorExtensions.x-is-value-type}}{{/isNullable}}{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
             {{/composedSchemas.oneOf}}
             {{^model.discriminator}}
             {{#composedSchemas}}
             {{#oneOf}}
             if ({{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}} != null)
-                //3return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{#isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}ParsedValue{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
-                return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{#isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{#isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}ParsedValue{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
+                return new {{classname}}({{#lambda.joinWithComma}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{#model.composedSchemas.anyOf}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#vendorExtensions.x-is-value-type}}{{^isNullable}}.Value{{/isNullable}}{{/vendorExtensions.x-is-value-type}}  {{/model.composedSchemas.anyOf}}{{#allVars}}{{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{#required}}ParsedValue{{/required}}  {{/allVars}}{{/lambda.joinWithComma}});
 
             {{#-last}}
             throw new JsonException();
@@ -397,7 +394,7 @@
             {{/isString}}
             {{#isBoolean}}
             {{#lambda.copy}}
-            writer.WriteBoolean("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
+            writer.WriteBoolean("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
             {{/lambda.copy}}
             {{#lambda.indent3}}
             {{>WriteProperty}}
@@ -406,7 +403,7 @@
             {{^isEnum}}
             {{#isNumeric}}
             {{#lambda.copy}}
-            writer.WriteNumber("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
+            writer.WriteNumber("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
             {{/lambda.copy}}
             {{#lambda.indent3}}
             {{>WriteProperty}}
@@ -415,7 +412,7 @@
             {{/isEnum}}
             {{#isDate}}
             {{#lambda.copy}}
-            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}}.ToString({{name}}Format));
+            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}}.ToString({{name}}Format));
             {{/lambda.copy}}
             {{#lambda.indent3}}
             {{>WriteProperty}}
@@ -423,7 +420,7 @@
             {{/isDate}}
             {{#isDateTime}}
             {{#lambda.copy}}
-            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}}.ToString({{name}}Format));
+            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}}.ToString({{name}}Format));
             {{/lambda.copy}}
             {{#lambda.indent3}}
             {{>WriteProperty}}
@@ -523,7 +520,7 @@
             {{/isEnum}}
             {{#isUuid}}
             {{#lambda.copy}}
-            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
+            writer.WriteString("{{baseName}}", {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{#vendorExtensions.x-is-value-type}}{{nrt!}}.Value{{/vendorExtensions.x-is-value-type}}{{/required}}{{#required}}{{#isNullable}}.Value{{/isNullable}}{{/required}});
             {{/lambda.copy}}
             {{#lambda.indent3}}
             {{>WriteProperty}}

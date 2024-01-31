@@ -50,9 +50,8 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using {{packageName}}.Api;
-using {{packageName}}.Client;
-using {{packageName}}.Model;
+
+using {{packageName}};
 
 namespace YourProject
 {
@@ -80,14 +79,18 @@ namespace YourProject
         public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)
           .Configure{{apiName}}((context, options) =>
           {
-              {{#authMethods}}// the type of token here depends on the api security specifications
-              ApiKeyToken token = new("<your token>");
+              {{#authMethods}}
+              {{#-first}}
+              // the type of token here depends on the api security specifications
+              ApiKeyToken token = new("<your token>", ClientUtils.ApiKeyHeader.Authorization);
               options.AddTokens(token);
 
               // optionally choose the method the tokens will be provided with, default is RateLimitProvider
               options.UseProvider<RateLimitProvider<ApiKeyToken>, ApiKeyToken>();
 
-              {{/authMethods}}options.ConfigureJsonOptions((jsonOptions) =>
+              {{/-first}}
+              {{/authMethods}}
+              options.ConfigureJsonOptions((jsonOptions) =>
               {
                   // your custom converters if any
               });
@@ -139,7 +142,7 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-models"></a>
 ## Documentation for Models
 
-{{#modelPackage}}{{#models}}{{#model}} - [{{{modelPackage}}}.{{{classname}}}]({{modelDocPath}}{{{classname}}}.md){{/model}}{{/models}}{{/modelPackage}}
+{{#modelPackage}}{{#models}}{{#model}} - [{{{classname}}}]({{modelDocPath}}{{{classname}}}.md){{/model}}{{/models}}{{/modelPackage}}
 {{^modelPackage}}No model defined in this package{{/modelPackage}}{{/modelDocs}}
 
 <a id="documentation-for-authorization"></a>
