@@ -15,10 +15,9 @@ ApiResponse`1.mustache
     add using
 ApiResponseEventArgs`1.mustache
     update refs
-    change to internal
 ClientUtils.mustache
     static fix duplicates
 Option.mustache
     change IsSet to public
-JsonConverter.mustache
+JsonConverter.mustache 
     inject
