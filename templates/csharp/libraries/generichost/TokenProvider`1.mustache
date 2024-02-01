@@ -13,6 +13,8 @@ using {{packageName}};
 
 namespace {{packageName}}
 {
+    {{>.inject/TokenProvider`1}}
+    
     /// <summary>
     /// A class which will provide tokens.
     /// </summary>
@@ -50,42 +52,5 @@ namespace {{packageName}}
         /// Gets or sets whether the provider has any tokens.
         /// </summary>
         public bool HasTokens { get; set; } = true;
-    }
-
-    /// <summary>
-    /// Dummy for token providers.
-    /// </summary>
-    /// <typeparam name="TTokenBase"></typeparam>
-    public class NullTokenProvider<TTokenBase> : TokenProvider<TTokenBase> where TTokenBase : TokenBase
-    {
-        public NullTokenProvider(IEnumerable<TTokenBase> tokens) : base(tokens)
-        {
-        }
-
-        public NullTokenProvider() : base()
-        {
-        }
-
-        public override ValueTask<TTokenBase> GetAsync(string header = "", CancellationToken cancellation = default)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    /// <summary>
-    /// Provides <see cref="ApiKeyToken"/>s.
-    /// </summary>
-    public class ApiKeyTokenProvider : TokenProvider<ApiKeyToken>
-    {
-        public ApiKeyTokenProvider(IEnumerable<ApiKeyToken> tokens) : base(tokens)
-        {
-        }
-
-        public override ValueTask<ApiKeyToken> GetAsync(string header = "", CancellationToken cancellation = default)
-        {
-            var token = string.IsNullOrEmpty(header) ? _tokens.FirstOrDefault() : _tokens.FirstOrDefault(x => x.Header == header);
-
-            return new ValueTask<ApiKeyToken>(token);
-        }
     }
 }

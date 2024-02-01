@@ -49,14 +49,4 @@
         this.ErrorContent = errorContent;
         this.Headers = headers;
     }
-
-    internal ApiException(__ApiException e)
-        : this(
-            (int)e.StatusCode,
-            FormatErrorMessage(e.ReasonPhrase ?? "", (int)e.StatusCode),
-            e.RawContent,
-            new Multimap<string, string>()
-        ) {}
-    
-    private static string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(System.Net.HttpStatusCode)errorCode}> {message}";
 }

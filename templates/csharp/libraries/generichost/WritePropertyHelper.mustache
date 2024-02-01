@@ -1,10 +1,6 @@
 {{#isNullable}}
 if ({{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{/required}} != null)
-{
     {{#lambda.pasteLine}}{{/lambda.pasteLine}}
-    //var __value = {{#lambda.camelcase_param}}{{classname}}{{/lambda.camelcase_param}}.{{name}}{{^required}}Option.Value{{/required}}{{#lambda.first}}{{#allowableValues}}{{#enumVars}}{{^isString}}{{#isNullable}}.Value{{/isNullable}}{{/isString}}{{/enumVars}}{{/allowableValues}}{{/lambda.first}};
-    //writer.WriteString("{{baseName}}", __value);
-}
 else
     writer.WriteNull("{{baseName}}");
 {{/isNullable}}

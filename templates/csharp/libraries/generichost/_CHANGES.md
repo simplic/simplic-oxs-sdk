@@ -4,6 +4,8 @@ api.mustache
     format ctor @223
     add usings
     update ApiException references
+    remove `{{packageName}}.` @742, 756, 98
+    replace all `new StreamContent` with `StreamContentExtension.From`
 ApiFactory.mustache
     inject
 ApiException.mustache
@@ -21,3 +23,10 @@ Option.mustache
     change IsSet to public
 JsonConverter.mustache 
     inject
+AsModel.mustache
+    remove `{{packageName}}.`
+TokenProvider`1.mustache
+    inject
+    change token[] to list
+RateLimitProvider`1.mustache
+    change _tokens.Length to _tokens.Count
