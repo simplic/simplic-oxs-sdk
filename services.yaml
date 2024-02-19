@@ -29,8 +29,8 @@ services:
   - x: telematic
   - x: vehicle
   - x: vehicle-temperature
-  - x: ./test/sdk-test-swagger.json
-    is_url: true
+  # - x: ./test/sdk-test-swagger.json
+  #   is_url: true
 # if you want to override the title that is used for the last segment of the project name specify it like this:
 # - x: your-service
 #   title: YourCustomTitle

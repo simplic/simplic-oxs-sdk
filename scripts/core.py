@@ -1,5 +1,15 @@
+from dataclasses import dataclass
 import subprocess
-import sys
+
+
+@dataclass
+class Package:
+    name: str
+    version: str | None
+
+    def __init__(self, name: str, version: str | None = None) -> None:
+        self.name = name
+        self.version = version
 
 
 def cmd(cmd: str, echo: bool = False, raise_on_error=False):

@@ -22,7 +22,7 @@ RX_FN_NAME = r"[A-Z][A-Za-z0-9_]*"
 RX_FN_ARGS = r"\((?:(?!=>)[^;{}])*\)"
 RX_KEYWORD = r"\b(?:in|out|ref|readonly|params)\b"
 RX_NAME = r"[A-Za-z_][A-Za-z0-9_]*"
-RX_TYPE = fr"(?:{RX_NAME}\.)*{RX_NAME}(?:<.*>)?\??"
+RX_TYPE = rf"(?:{RX_NAME}\.)*{RX_NAME}(?:<.*>)?\??"
 
 
 @dataclass
@@ -74,20 +74,20 @@ def parse_params(s: str) -> list[ParamMeta]:
     # replace , that appear in <..> with % (since % will never appear in args)
     rx_generic_comma = r"(<[^>]*),([^>]*>)"
     while re.search(rx_generic_comma, s):
-        s = re.sub(rx_generic_comma, r'\1%\2', s)
+        s = re.sub(rx_generic_comma, r"\1%\2", s)
 
     # replace , that appear in >..> with % (cover multi argument nested generics)
     rx_generic_comma_multi = r"([>,]\s*),([^>]*>)"
     while re.search(rx_generic_comma_multi, s):
-        s = re.sub(rx_generic_comma_multi, r'\1%\2', s)
+        s = re.sub(rx_generic_comma_multi, r"\1%\2", s)
 
     # split params
-    params = s.split(',')
+    params = s.split(",")
 
     # replace % with ,
-    params = [p.replace('%', ',') for p in params]
+    params = [p.replace("%", ",") for p in params]
 
-    pattern = fr"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
+    pattern = rf"({RX_DECORATOR})?\s*({RX_KEYWORD}\s+)?({RX_KEYWORD}\s+)?({RX_TYPE}\s+)({RX_NAME})\s*(=)?\s*({RX_DEFAULT_ARG})?"
 
     metas = []
     for param in params:
@@ -107,7 +107,7 @@ def parse_params(s: str) -> list[ParamMeta]:
             name=name,
             is_optional=has_default,
             default_value=defv,
-            keywords=[kw.strip() for kw in [kw1, kw2] if kw is not None]
+            keywords=[kw.strip() for kw in [kw1, kw2] if kw is not None],
         )
         metas.append(meta)
 
@@ -134,22 +134,21 @@ def collect_functions(code: str) -> list[FunctionMeta]:
             continue
         try:
             param_metas = parse_params(match[5])
-            metas.append(FunctionMeta(
-                return_type=return_type,
-                name=match[4],
-                params=param_metas
-            ))
+            metas.append(
+                FunctionMeta(return_type=return_type, name=match[4], params=param_metas)
+            )
         except Exception as e:
-            raise Exception(f"Probably malformed match: {match=}\n" +
-                            f"Used regex: '{pattern}'\n"
-                            f"Inner exception: {e}")
+            raise Exception(
+                f"Probably malformed match: {match=}\n" + f"Used regex: '{pattern}'\n"
+                f"Inner exception: {e}"
+            )
 
     return metas
 
 
 def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     """
-    Returns the decluttered function name 
+    Returns the decluttered function name
     """
     log(f"{fn.name=}")
     log(f"{controller_name=}")
@@ -160,7 +159,11 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     # Note: it appears that the first param name is always inserted when..
     # .. A) it has no default value (non-optional)
     # .. B) it is != operationIndex
-    if len(fn.params) > 0 and fn.params[0].name != "operationIndex" and not fn.params[0].is_optional:
+    if (
+        len(fn.params) > 0
+        and fn.params[0].name != "operationIndex"
+        and not fn.params[0].is_optional
+    ):
         log(f"{fn=}")
         first_param = fn.params[0].name
         fn_name = fn.name.replace(to_pascal_case(first_param), "", 1)
@@ -169,8 +172,10 @@ def parse_pretty(fn: FunctionMeta, controller_name: str) -> str:
     match = re.search(pattern, fn_name)
 
     if not match:
-        log("<parse_pretty> Failed to regex match function name (already pretty?):" +
-            f" `{fn.name}` -> returning given name.")
+        log(
+            "<parse_pretty> Failed to regex match function name (already pretty?):"
+            + f" `{fn.name}` -> returning given name."
+        )
         return fn.name
 
     groups_matched = len(match.groups())
@@ -193,20 +198,17 @@ def main(args: Namespace):
     log(f"Reading file contents from `{file}`..")
     file_content = ""
     doc_file_content = ""
-    with open(file, 'r') as f:
+    with open(file, "r") as f:
         file_content = f.read()
 
     if doc_file:
-        with open(doc_file, 'r') as f:
+        with open(doc_file, "r") as f:
             doc_file_content = f.read()
 
     if PRESERVE:
         path, full_file_name = os.path.split(file)
         file_name, file_extension = os.path.splitext(full_file_name)
-        shutil.copy(
-            file,
-            f"{os.path.join(path, file_name)}.{PRESERVED_FILE_EXT}"
-        )
+        shutil.copy(file, f"{os.path.join(path, file_name)}.{PRESERVED_FILE_EXT}")
 
     for fn in collect_functions(file_content):
         log(f"___: `{fn.name}`")
@@ -217,7 +219,9 @@ def main(args: Namespace):
         # explanation:
         #   match fn name that ends with `(` (function call)
         #   or is preceeded by `(` (function reference) as in MyReferringCall(MyFunction, ...)
-        pattern = re.compile(rf'\b{re.escape(fn.name)}(?=\()\b|\b(?<=\(){re.escape(fn.name)}\b')
+        pattern = re.compile(
+            rf"\b{re.escape(fn.name)}(?=\()\b|\b(?<=\(){re.escape(fn.name)}\b"
+        )
         file_content = pattern.sub(pretty_name, file_content, count=10)
 
         if doc_file:
@@ -226,12 +230,12 @@ def main(args: Namespace):
         log(f"-->: `{pretty_name}`\n")
 
     log(f"Writing changes to `{file}`..")
-    with open(file, 'w') as f:
+    with open(file, "w") as f:
         f.write(file_content)
 
     if doc_file:
         log(f"Writing changes to `{doc_file}`..")
-        with open(doc_file, 'w') as f:
+        with open(doc_file, "w") as f:
             f.write(doc_file_content)
 
 
@@ -243,18 +247,15 @@ argparser.add_argument(
     "-f",
     "--file",
     required=True,
-    help="File in which the function names shall be beautified"
+    help="File in which the function names shall be beautified",
 )
 argparser.add_argument(
     "-d",
     "--doc-file",
     required=False,
-    help="Correlating documentation which makes mention of functions that appear in the code file"
+    help="Correlating documentation which makes mention of functions that appear in the code file",
 )
 argparser.add_argument(
-    "-c",
-    "--controller",
-    required=True,
-    help="Name of the controller"
+    "-c", "--controller", required=True, help="Name of the controller"
 )
 main(argparser.parse_args())
