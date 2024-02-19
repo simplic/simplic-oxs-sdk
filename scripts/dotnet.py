@@ -1,6 +1,6 @@
+from core import *
 from enum import Enum
 from xml.dom import minidom
-from core import cmd, Package
 import fsutil
 import os
 import xml.etree.ElementTree as ET
@@ -105,7 +105,7 @@ def set_version(proj_file: str, version: str):
         file.write(xml_str_formatted)
 
 
-def create_solution(src_dir: str, name: str):
+def create_solution(src_dir: str, name: str, show_output: bool = True):
     """
     Generates solution along with base project and its dependencies.
     """
@@ -115,7 +115,7 @@ def create_solution(src_dir: str, name: str):
     fsutil.remove(sln_file)
 
     # create solution
-    cmd(f"dotnet new sln -n {name} -o {src_dir}")
+    cmd(f"dotnet new sln -n {name} -o {src_dir}", show_stdout=show_output)
 
 
 def create_project(
@@ -124,6 +124,7 @@ def create_project(
     framework: str,
     dependencies: list[Package] | None = None,
     version: str = "1.0.0.0",
+    show_output: bool = True,
 ):
     proj_name = os.path.basename(path)
     proj_file = os.path.join(path, f"{proj_name}.csproj")
@@ -132,9 +133,7 @@ def create_project(
     fsutil.remove(path)
 
     # create project
-    cmd(
-        f"dotnet new {type} -o {path} --framework {framework} --langVersion latestMajor"
-    )
+    cmd(f"dotnet new {type} -o {path} --framework {framework} --langVersion latestMajor", show_stdout=show_output)
     if os.path.exists(f"{path}/Class1.cs"):
         fsutil.remove(f"{path}/Class1.cs")
 
@@ -145,21 +144,22 @@ def create_project(
         add_project_deps(proj_file, dependencies)
 
 
-def add_project_to_solution(sln_file: str, proj_file: str):
+def add_project_to_solution(sln_file: str, proj_file: str, show_output: bool = True):
     """Adds project to solution"""
-    cmd(f"dotnet sln {sln_file} add {proj_file}")
+    cmd(f"dotnet sln {sln_file} add {proj_file}", show_stdout=show_output)
 
 
-def add_project_reference(proj_file: str, ref_proj_file: str):
+def add_project_reference(proj_file: str, ref_proj_file: str, show_output: bool = True):
     """Adds assembly reference to project"""
-    cmd(f"dotnet add {proj_file} reference {ref_proj_file}")
+    cmd(f"dotnet add {proj_file} reference {ref_proj_file}", show_stdout=show_output)
 
 
 def add_project_deps(
     proj_file,
     dependencies: list[Package],
     source: str = "https://api.nuget.org/v3/index.json",
+    show_output: bool = True,
 ):
     for dep in dependencies:
         pkg = dep.name if not dep.version else f"{dep.name} --version {dep.version}"
-        cmd(f"dotnet add {proj_file} package {pkg} --source {source}")
+        cmd(f"dotnet add {proj_file} package {pkg} --source {source}", show_stdout=show_output)
