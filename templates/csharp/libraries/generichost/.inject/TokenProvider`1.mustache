@@ -14,7 +14,7 @@ public class NullTokenProvider<TTokenBase> : TokenProvider<TTokenBase> where TTo
 
     public override ValueTask<TTokenBase> GetAsync(string header = "", CancellationToken cancellation = default)
     {
-        throw new NotImplementedException();
+        return ValueTask.FromResult<TTokenBase>(null);
     }
 }
 

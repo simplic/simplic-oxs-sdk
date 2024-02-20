@@ -520,7 +520,10 @@ namespace {{packageName}}
                     {{#isApiKey}}
                     {{^isKeyInCookie}}
                     ApiKeyToken apiKeyTokenLocalVar{{-index}} = (ApiKeyToken) await ApiKeyProvider.GetAsync("{{keyParamName}}", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar{{-index}});
+                    if (apiKeyTokenLocalVar is not null)
+                    {
+                        tokenBaseLocalVars.Add(apiKeyTokenLocalVar{{-index}});
+                    }
                     {{#isKeyInHeader}}
                     apiKeyTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar);
 
@@ -540,7 +543,10 @@ namespace {{packageName}}
 
                     BasicToken basicTokenLocalVar{{-index}} = (BasicToken) await BasicTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    tokenBaseLocalVars.Add(basicTokenLocalVar{{-index}});
+                    if (basicTokenLocalVar is not null)
+                    {
+                        tokenBaseLocalVars.Add(basicTokenLocalVar{{-index}});
+                    }
 
                     basicTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
                     {{/isBasicBasic}}
@@ -548,7 +554,10 @@ namespace {{packageName}}
 
                     BearerToken bearerTokenLocalVar{{-index}} = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar{{-index}});
+                    if (bearerTokenLocalVar is not null)
+                    {
+                        tokenBaseLocalVars.Add(bearerTokenLocalVar{{-index}});
+                    }
 
                     bearerTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
                     {{/isBasicBearer}}
@@ -556,15 +565,21 @@ namespace {{packageName}}
 
                     OAuthToken oauthTokenLocalVar{{-index}} = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar{{-index}});
-
+                    if (oauthTokenLocalVar is not null)
+                    {
+                        tokenBaseLocalVars.Add(oauthTokenLocalVar{{-index}});
+                    }
+                    
                     oauthTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
                     {{/isOAuth}}
                     {{#isHttpSignature}}
 
                     HttpSignatureToken httpSignatureTokenLocalVar{{-index}} = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    tokenBaseLocalVars.Add(httpSignatureTokenLocalVar{{-index}});
+                    if (httpSignatureTokenLocalVar is not null)
+                    {
+                        tokenBaseLocalVars.Add(httpSignatureTokenLocalVar{{-index}});
+                    }
 
                     if (httpRequestMessageLocalVar.Content != null) {
                         string requestBodyLocalVar = await httpRequestMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
