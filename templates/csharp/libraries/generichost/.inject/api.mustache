@@ -12,7 +12,8 @@
 
         public {{classname}}(string host, string? authorization = null)
         {
-            _httpClient = new HttpClient() { BaseAddress = new Uri($"{host}/{{service}}-api/{{apiVersion}}") };
+            var path = "{{service}}-api/{{apiVersion}}";
+            _httpClient = new HttpClient() { BaseAddress = new Uri($"{host}/{path}") };
             var jsonSerializerOptions = new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
             var jsonSerializerOptionsProvider = new JsonSerializerOptionsProvider(jsonSerializerOptions);
             var events = new {{classname}}Events();
@@ -41,7 +42,10 @@
                         {{/lambda.uniqueLines}}
                     {{/operation}}
                 {{/net80OrLater}}
-            );
+            )
+            {
+                ServicePath = path
+            };
         }
 
         public {{classname}}(Environment env, string? authorization = null)

@@ -6,6 +6,7 @@ api.mustache
     update ApiException references
     remove `{{packageName}}.` @742, 756, 98
     replace all `new StreamContent` with `StreamContentExtension.From`
+    add `ServicePath` property and replace usage of `ClientUtils.CONTEXT_PATH` with it
 ApiFactory.mustache
     inject
 ApiException.mustache
@@ -23,6 +24,7 @@ Option.mustache
     change IsSet to public
 JsonConverter.mustache 
     inject
+    remove options
 AsModel.mustache
     remove `{{packageName}}.`
 TokenProvider`1.mustache
