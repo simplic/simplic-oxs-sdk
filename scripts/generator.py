@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import fileinput
 from core import *
 from typing import Any
 import dotnet
@@ -58,6 +59,17 @@ def get_specification(url_or_path: str) -> Any:
     response.raise_for_status()
 
     return json.loads(response.text)
+
+def patch_generichost(proj_folder: str):
+    for root, dirs, files in os.walk(proj_folder):
+        for file in files:
+            if file.endswith(".cs"):
+                file_path = os.path.join(root, file)
+                with fileinput.FileInput(file_path, inplace=True) as file:
+                    for line in file:
+                        line = line.replace('Option.IsSet', '!= null')
+                        line = line.replace('Option.Value', '')
+                        print(line, end='')
 
 
 
@@ -274,6 +286,8 @@ for entry in services:
         host_cfg = f"{gen_proj_folder}/Client/HostConfiguration.cs"
         if os.path.exists(host_cfg):
             fsutil.remove(host_cfg)
+            
+        patch_generichost(gen_proj_folder)
 
     fsutil.move(f"{gen_proj_folder}/Client/*", boiler_plate_folder)
 
