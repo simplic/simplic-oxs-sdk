@@ -69,6 +69,8 @@
             try
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
+                EnsureSuccess(response);
+                
                 {{#returnType}}return response.Ok();{{/returnType}}
                 
             }
@@ -87,6 +89,8 @@
             try
             {
                 var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
+                EnsureSuccess(response);
+
                 {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
                 {{#returnType}}return new ApiResponse<{{#returnType}}{{{returnType}}}?{{/returnType}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
             }
@@ -106,6 +110,8 @@
             try
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
+                EnsureSuccess(response);
+
                 {{#returnType}}return response.Ok();{{/returnType}}
             }
             catch (__ApiException e)
@@ -123,6 +129,8 @@
             try
             {
                 var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
+                EnsureSuccess(response);
+                
                 {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
                 {{#returnType}}return new ApiResponse<{{#returnType}}{{{returnType}}}?{{/returnType}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
             }
@@ -133,6 +141,19 @@
         }    
         {{/supportsAsync}}
         {{/operation}}
+
+        private void EnsureSuccess(__IApiResponse response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new ApiException(
+                    (int)response.StatusCode,
+                    FormatErrorMessage(response.ReasonPhrase ?? "", (int)response.StatusCode),
+                    response.RawContent,
+                    response.Headers.ToMultimap()
+                );
+            }
+        }
 
         private ApiException FromInternal(__ApiException e) => new ApiException((int)e.StatusCode, FormatErrorMessage(e.ReasonPhrase ?? "", (int)e.StatusCode), e.RawContent, new Multimap<string, string>());
         private static string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(System.Net.HttpStatusCode)errorCode}> {message}";
