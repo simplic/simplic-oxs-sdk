@@ -1,9 +1,10 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using {{packageName}};
 
-namespace {{packageName}}.{{clientPackage}}
+namespace {{packageName}}
 {
+    {{>.inject/ApiFactory}}
+
     /// <summary>
     /// An IApiFactory interface
     /// </summary>

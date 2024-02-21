@@ -1,22 +1,22 @@
 using System;
 
-namespace {{packageName}}.{{clientPackage}}
+namespace {{packageName}}
 {
     /// <summary>
     /// Useful for tracking server health
     /// </summary>
-    {{>visibility}} class ApiResponseEventArgs : EventArgs
+    public class ApiResponseEventArgs : EventArgs
     {
         /// <summary>
         /// The ApiResponse
         /// </summary>
-        public ApiResponse ApiResponse { get; }
+        public __ApiResponse ApiResponse { get; }
 
         /// <summary>
         /// The ApiResponseEventArgs
         /// </summary>
         /// <param name="apiResponse"></param>
-        public ApiResponseEventArgs(ApiResponse apiResponse)
+        public ApiResponseEventArgs(__ApiResponse apiResponse)
         {
             ApiResponse = apiResponse;
         }

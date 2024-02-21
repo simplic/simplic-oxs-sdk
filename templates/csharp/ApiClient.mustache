@@ -28,14 +28,7 @@ using Polly;
 
 namespace {{packageName}}
 {
-    /// <summary>
-    /// Remote environment.
-    /// </summary>
-    {{>visibility}} enum Environment
-    {
-        Development,
-        Production,
-    }
+    {{>.inject/ApiClient}}
 
     /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
@@ -368,20 +361,7 @@ namespace {{packageName}}
                         request.RequestFormat = DataFormat.Json;
                     }
 
-                    //--custom edit: ignore default values
-                    if (request.Method == RestSharp.Method.Patch)
-                    {
-                        var defaultValueHandling = SerializerSettings.DefaultValueHandling;
-                        SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
-                        var json = Newtonsoft.Json.JsonConvert.SerializeObject(options.Data, Formatting.Indented, SerializerSettings);
-                        request.AddJsonBody(json, ContentType.Json);
-                        SerializerSettings.DefaultValueHandling = defaultValueHandling;
-                    }
-                    else
-                    {
-                        request.AddJsonBody(options.Data);
-                    }
-                    //^^custom edit
+                    request.AddJsonBody(options.Data);
                 }
             }
 
@@ -583,7 +563,8 @@ namespace {{packageName}}
                 MaxTimeout = configuration.Timeout,
                 Proxy = configuration.Proxy,
                 UserAgent = configuration.UserAgent,
-                UseDefaultCredentials = configuration.UseDefaultCredentials
+                UseDefaultCredentials = configuration.UseDefaultCredentials,
+                RemoteCertificateValidationCallback = configuration.RemoteCertificateValidationCallback
             };
 
             {{#hasOAuthMethods}}

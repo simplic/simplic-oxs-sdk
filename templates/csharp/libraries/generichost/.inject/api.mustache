@@ -1,0 +1,163 @@
+// ------------------------- Custom -------------------------------
+//: Interface
+    {{>.inject/api_interface}}
+//: Implementation
+    {{#operations}}
+
+    /// <inheritdoc cref="{{interfacePrefix}}{{classname}}">
+    {{>visibility}} class {{classname}} : {{interfacePrefix}}{{classname}}
+    {
+        private __{{classname}} _internalClient;
+        private HttpClient _httpClient;
+
+        public {{classname}}(string host, string? authorization = null)
+        {
+            var path = "{{service}}-api/{{apiVersion}}";
+            _httpClient = new HttpClient() { BaseAddress = new Uri($"{host}/{path}") };
+            var jsonSerializerOptions = new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+            var jsonSerializerOptionsProvider = new JsonSerializerOptionsProvider(jsonSerializerOptions);
+            var events = new {{classname}}Events();
+
+            {{#hasApiKeyMethods}}
+            TokenProvider<ApiKeyToken> apiKeyProvider = authorization is null
+                ? new NullTokenProvider<ApiKeyToken>()
+                : new ApiKeyTokenProvider(new[] { new ApiKeyToken(authorization, ClientUtils.ApiKeyHeader.Authorization, prefix: "") });
+            {{/hasApiKeyMethods}}
+
+            _internalClient = new __{{classname}}(
+                NullLogger<__{{classname}}>.Instance,
+                LoggerFactory.Create(x => { }),
+                _httpClient,
+                jsonSerializerOptionsProvider,
+                events
+                {{#hasApiKeyMethods}}, apiKeyProvider{{/hasApiKeyMethods}}
+                {{#hasHttpBearerMethods}}, new NullTokenProvider<BearerToken>(){{/hasHttpBearerMethods}}
+                {{#hasHttpBasicMethods}}, new NullTokenProvider<BasicToken>(){{/hasHttpBasicMethods}}
+                {{#hasHttpSignatureMethods}}, new NullTokenProvider<HttpSignatureToken>(){{/hasHttpSignatureMethods}}
+                {{#hasOAuthMethods}}, new NullTokenProvider<OAuthToken>(){{/hasOAuthMethods}}
+                {{#net80OrLater}}
+                    {{#operation}}
+                        {{#lambda.uniqueLines}}
+                            {{#vendorExtensions.x-set-cookie}}, new {{packageName}}.CookieContainer(){{/vendorExtensions.x-set-cookie}}
+                        {{/lambda.uniqueLines}}
+                    {{/operation}}
+                {{/net80OrLater}}
+            )
+            {
+                ServicePath = path
+            };
+        }
+
+        public {{classname}}(Environment env, string? authorization = null)
+            : this(
+                env == Environment.Development
+                    ? "{{environmentDevelopmentUrl}}"
+                    : "{{environmentProductionUrl}}",
+                authorization
+            ) { }
+
+        /// <inheritdoc />
+        public string GetBasePath() => _httpClient.BaseAddress.ToString();
+
+        {{#operation}}
+        /// <inheritdoc />
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        public {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}} {{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}})
+        {
+            try
+            {
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
+                EnsureSuccess(response);
+
+                {{#returnType}}return response.Ok();{{/returnType}}
+                
+            }
+            catch (__ApiException e)
+            {
+                throw FromInternal(e);
+            }
+        }
+
+        /// <inheritdoc />
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        public ApiResponse<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Object{{/returnType}}> {{operationId}}{{withHttpInfoSuffix}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}})
+        {
+            try
+            {
+                var response = _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}).GetAwaiter().GetResult();
+                EnsureSuccess(response);
+
+                {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
+                {{#returnType}}return new ApiResponse<{{#returnType}}{{{returnType}}}{{/returnType}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
+            }
+            catch (__ApiException e)
+            {
+                throw FromInternal(e);
+            }
+        } 
+
+        {{#supportsAsync}}
+        /// <inheritdoc />
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        {{#returnType}}public async Task<{{{.}}}>{{/returnType}}{{^returnType}}public async Task{{/returnType}} {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken))
+        {
+            try
+            {
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
+                EnsureSuccess(response);
+
+                {{#returnType}}return response.Ok();{{/returnType}}
+            }
+            catch (__ApiException e)
+            {
+                throw FromInternal(e);
+            }
+        }
+
+        /// <inheritdoc />
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        public async Task<ApiResponse<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Object{{/returnType}}>> {{operationId}}{{withHttpInfoSuffix}}Async({{#allParams}}{{{dataType}}} {{paramName}}{{^required}}{{#optionalMethodArgument}} = default({{{dataType}}}){{/optionalMethodArgument}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}CancellationToken cancellationToken = default(CancellationToken))
+        {
+            try
+            {
+                var response = await _internalClient.{{operationId}}Async({{#allParams}}{{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{#allParams.0}}, {{/allParams.0}}cancellationToken: cancellationToken);
+                EnsureSuccess(response);
+                
+                {{^returnType}}return new ApiResponse<Object>(response.StatusCode, response.Headers.ToMultimap(), null, response.RawContent);{{/returnType}}
+                {{#returnType}}return new ApiResponse<{{#returnType}}{{{returnType}}}{{/returnType}}>(response.StatusCode, response.Headers.ToMultimap(), response.Ok(), response.RawContent);{{/returnType}}
+            }
+            catch (__ApiException e)
+            {
+                throw FromInternal(e);
+            }
+        }    
+        {{/supportsAsync}}
+        {{/operation}}
+
+        private void EnsureSuccess(__IApiResponse response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new ApiException(
+                    (int)response.StatusCode,
+                    FormatErrorMessage(response.ReasonPhrase ?? "", (int)response.StatusCode),
+                    response.RawContent,
+                    response.Headers.ToMultimap()
+                );
+            }
+        }
+
+        private ApiException FromInternal(__ApiException e) => new ApiException((int)e.StatusCode, FormatErrorMessage(e.ReasonPhrase ?? "", (int)e.StatusCode), e.RawContent, new Multimap<string, string>());
+        private static string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(System.Net.HttpStatusCode)errorCode}> {message}";
+    }
+
+    {{/operations}}
+// ------------------------^ Custom ^------------------------------

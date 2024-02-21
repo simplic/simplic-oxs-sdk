@@ -29,9 +29,7 @@ def move(path: str, destination: str) -> list[Any] | Any:
 
     # Get a list of all files in the source directory
     files_to_move = [
-        f
-        for f in os.listdir(path)
-        if os.path.isfile(os.path.join(path, f))
+        f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))
     ]
 
     move_infos = []
@@ -93,20 +91,22 @@ def replace_in_file(file_path: str, search_term: str, replace_term: str):
     """
     with FileInput(file_path, inplace=True) as file:
         for line in file:
-            print(line.replace(search_term, replace_term), end='')
+            print(line.replace(search_term, replace_term), end="")
 
 
 def has_extension(file_path: str, extension: str):
     """
     Whether given (file)path has an extension.
     """
-    if extension.startswith('.'):
+    if extension.startswith("."):
         return file_path.endswith(extension)
 
     return file_path.endswith(f".{extension}")
 
 
-def rec_replace(path: str, old_term: str, new_term: str, file_extension: str | None = None):
+def rec_replace(
+    path: str, old_term: str, new_term: str, file_extension: str | None = None
+):
     """
     Replaces a term in all files of a directory and it's subdirectories.
     """
@@ -122,5 +122,5 @@ def read_yaml(file: str) -> Any:
     """
     Reads a yaml file and parses the contents to an appropriate object.
     """
-    with open(file, 'r') as f:
+    with open(file, "r") as f:
         return yaml.safe_load(f)

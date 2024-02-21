@@ -6,12 +6,14 @@
 {{/nrt}}
 using System;
 
-namespace {{packageName}}.{{clientPackage}}
+namespace {{packageName}}
 {
+    {{>.inject/ApiException}}
+
     /// <summary>
     /// API Exception
     /// </summary>
-    {{>visibility}} class ApiException : Exception
+    public class __ApiException : Exception
     {
         /// <summary>
         /// The reason the api request failed
@@ -34,7 +36,7 @@ namespace {{packageName}}.{{clientPackage}}
         /// <param name="reasonPhrase"></param>
         /// <param name="statusCode"></param>
         /// <param name="rawContent"></param>
-        public ApiException(string{{nrt?}} reasonPhrase, System.Net.HttpStatusCode statusCode, string rawContent) : base(reasonPhrase ?? rawContent)
+        public __ApiException(string{{nrt?}} reasonPhrase, System.Net.HttpStatusCode statusCode, string rawContent) : base(reasonPhrase ?? rawContent)
         {
             ReasonPhrase = reasonPhrase;
 

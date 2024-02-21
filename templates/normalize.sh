@@ -40,15 +40,25 @@ rec_replace() {
 
 echo ">> Normalizing.."
 
-DIR="./csharp"
+DIR="$(dirname "$0")/csharp"
 
 # Files in Client/ are boiler plate and belong to the base project
 # Normalize namespaces & usages to remove unwanted suffixes
 rec_replace "$DIR" "namespace {{packageName}}.Client"       "namespace {{packageName}}" "mustache"
 rec_replace "$DIR" "{{packageName}}.Client\."               "{{packageName}}."          "mustache"
 rec_replace "$DIR" "{{packageName}}.Client;"                "{{packageName}};"          "mustache"
+
+rec_replace "$DIR" "namespace {{packageName}}.{{clientPackage}}"    "namespace {{packageName}}" "mustache"
+rec_replace "$DIR" "{{packageName}}.{{clientPackage}}\."            "{{packageName}}."          "mustache"
+rec_replace "$DIR" "{{packageName}}.{{clientPackage}};"             "{{packageName}};"          "mustache"
+
+rec_replace "$DIR" "namespace {{packageName}}.Auth"       "namespace {{packageName}}" "mustache"
+rec_replace "$DIR" "{{packageName}}.Auth\."               "{{packageName}}."          "mustache"
+rec_replace "$DIR" "{{packageName}}.Auth;"                "{{packageName}};"          "mustache"
+
 rec_replace "$DIR" "{{packageName}}.Test.Client"            "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.Api"               "{{packageName}}.Test"      "mustache"
+rec_replace "$DIR" "{{packageName}}.Test.Model"             "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.Test.{{apiPackage}}"    "{{packageName}}.Test"      "mustache"
 rec_replace "$DIR" "{{packageName}}.{{apiPackage}}"         "{{packageName}}"           "mustache"
 rec_replace "$DIR" ".{{modelPackage}}"                      ""                          "mustache"

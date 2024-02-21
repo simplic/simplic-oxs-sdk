@@ -7,10 +7,14 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using {{packageName}}.{{clientPackage}};
+using System.Threading;
+using System.Threading.Tasks;
+using {{packageName}};
 
 namespace {{packageName}}
 {
+    {{>.inject/TokenProvider`1}}
+    
     /// <summary>
     /// A class which will provide tokens.
     /// </summary>
@@ -19,9 +23,9 @@ namespace {{packageName}}
         /// <summary>
         /// The array of tokens.
         /// </summary>
-        protected TTokenBase[] _tokens;
+        protected List<TTokenBase> _tokens;
 
-        internal abstract System.Threading.Tasks.ValueTask<TTokenBase> GetAsync(System.Threading.CancellationToken cancellation = default{{^netstandard20OrLater}}(System.Threading.CancellationToken){{/netstandard20OrLater}});
+        public abstract ValueTask<TTokenBase> GetAsync(string header = "", CancellationToken cancellation = default{{^netstandard20OrLater}}(CancellationToken){{/netstandard20OrLater}});
 
         /// <summary>
         /// Instantiates a TokenProvider.
@@ -29,10 +33,24 @@ namespace {{packageName}}
         /// <param name="tokens"></param>
         public TokenProvider(IEnumerable<TTokenBase> tokens)
         {
-            _tokens = tokens.ToArray();
+            _tokens = tokens.ToList();
 
-            if (_tokens.Length == 0)
+            if (_tokens.Count == 0)
                 throw new ArgumentException("You did not provide any tokens.");
         }
+
+        /// <summary>
+        /// Instantiate without tokens.
+        /// </summary>
+        public TokenProvider()
+        {
+            _tokens = new List<TTokenBase>();
+            HasTokens = false;
+        }
+
+        /// <summary>
+        /// Gets or sets whether the provider has any tokens.
+        /// </summary>
+        public bool HasTokens { get; set; } = true;
     }
 }

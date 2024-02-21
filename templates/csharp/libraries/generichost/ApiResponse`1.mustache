@@ -10,12 +10,24 @@ using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
 using System.Net;
 
-namespace {{packageName}}.{{clientPackage}}
+// -- custom --
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
+// -^ custom ^-
+
+namespace {{packageName}}
 {
+    {{>.inject/ApiResponse`1}}
+
     /// <summary>
     /// Provides a non-generic contract for the ApiResponse wrapper.
     /// </summary>
-    {{>visibility}} partial interface IApiResponse
+    public interface __IApiResponse
     {
         /// <summary>
         /// The IsSuccessStatusCode from the api response
@@ -67,7 +79,7 @@ namespace {{packageName}}.{{clientPackage}}
     /// <summary>
     /// API Response
     /// </summary>
-    {{>visibility}} partial class ApiResponse : IApiResponse
+    public partial class __ApiResponse : __IApiResponse
     {
         /// <summary>
         /// Gets the status code (HTTP status code)
@@ -129,7 +141,7 @@ namespace {{packageName}}.{{clientPackage}}
         /// <param name="path"></param>
         /// <param name="requestedAt"></param>
         /// <param name="jsonSerializerOptions"></param>
-        public ApiResponse(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions)
+        public __ApiResponse(System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions)
         {
             StatusCode = httpResponseMessage.StatusCode;
             Headers = httpResponseMessage.Headers;
@@ -147,24 +159,24 @@ namespace {{packageName}}.{{clientPackage}}
     }
     {{#x-http-statuses-with-return}}
 
-    /// <summary>
-    /// An interface for responses of type {{TType}}
-    /// </summary>
-    /// <typeparam name="TType"></typeparam>
-    {{>visibility}} interface I{{.}}<TType> : IApiResponse
-    {
-        /// <summary>
-        /// Deserializes the response if the response is {{.}}
-        /// </summary>
-        /// <returns></returns>
-        TType {{.}}();
-
-        /// <summary>
-        /// Returns true if the response is {{.}} and the deserialized response is not null
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        bool Try{{.}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
-    }
+//    /// <summary>
+//    /// An interface for responses of type {{TType}}
+//    /// </summary>
+//    /// <typeparam name="TType"></typeparam>
+//    internal interface I{{.}}<TType> : __IApiResponse
+//    {
+//        /// <summary>
+//        /// Deserializes the response if the response is {{.}}
+//        /// </summary>
+//        /// <returns></returns>
+//        TType {{.}}();
+//
+//        /// <summary>
+//        /// Returns true if the response is {{.}} and the deserialized response is not null
+//        /// </summary>
+//        /// <param name="result"></param>
+//        /// <returns></returns>
+//        bool Try{{.}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out TType{{nrt?}} result);
+//    }
     {{/x-http-statuses-with-return}}
 }

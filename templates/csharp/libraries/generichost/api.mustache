@@ -7,25 +7,43 @@
 {{/nrt}}
 using System;
 using System.Collections.Generic;
+{{#net80OrLater}}
+{{#lambda.uniqueLines}}
+{{#operations}}
+{{#operation}}
+{{#vendorExtensions.x-set-cookie}}
+using System.Linq;
+{{/vendorExtensions.x-set-cookie}}
+{{/operation}}
+{{/operations}}
+{{/lambda.uniqueLines}}
+{{/net80OrLater}}
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using {{packageName}}.{{clientPackage}};
 {{^netStandard}}
 using System.Diagnostics.CodeAnalysis;
 {{/netStandard}}
 
+// -- Custom --
+using Microsoft.Extensions.Logging.Abstractions;
+using System.Text.Json.Serialization;
+using System.Threading;
+// -^ Custom ^-
+
 namespace {{packageName}}
 {
+    {{>.inject/api}}
+
     {{#operations}}
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// This class is registered as transient.
     /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{classname}} : IApi
+    {{>visibility}} interface __{{interfacePrefix}}{{classname}} : IApi
     {
         /// <summary>
         /// The class containing the events
@@ -39,13 +57,16 @@ namespace {{packageName}}
         /// <remarks>
         /// {{notes}}
         /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="__ApiException">Thrown when fails to make API call</exception>
         {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
+        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        Task<{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}});
+        /// <returns><see cref="Task"/>&lt;<see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        Task<__{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}});
 
         /// <summary>
         /// {{summary}}
@@ -54,11 +75,14 @@ namespace {{packageName}}
         /// {{notes}}
         /// </remarks>
         {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
+        /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}{{#isDeprecated}} (deprecated){{/isDeprecated}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>{{nrt?}}&gt;</returns>
-        Task<{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}});
+        /// <returns><see cref="Task"/>&lt;<see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>{{nrt?}}&gt;</returns>
+        {{#isDeprecated}}
+        [Obsolete]
+        {{/isDeprecated}}
+        Task<__{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}});
         {{^-last}}
 
         {{/-last}}
@@ -69,9 +93,9 @@ namespace {{packageName}}
     {{#-first}}
 
     /// <summary>
-    /// The <see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>
+    /// The <see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>
     /// </summary>
-    {{>visibility}} interface {{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.{{clientPackage}}.{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+    public interface __{{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
     {
         {{#responses}}
         {{#vendorExtensions.x-http-status-is-default}}
@@ -114,7 +138,7 @@ namespace {{packageName}}
         /// </summary>
         public event EventHandler<ExceptionEventArgs>{{nrt?}} OnError{{operationId}};
 
-        internal void ExecuteOn{{operationId}}({{classname}}.{{operationId}}ApiResponse apiResponse)
+        internal void ExecuteOn{{operationId}}(__{{classname}}.{{operationId}}ApiResponse apiResponse)
         {
             On{{operationId}}?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
@@ -131,9 +155,11 @@ namespace {{packageName}}
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    {{>visibility}} sealed partial class {{classname}} : {{interfacePrefix}}{{classname}}
+    {{>visibility}} sealed partial class __{{classname}} : __{{interfacePrefix}}{{classname}}
     {
         private JsonSerializerOptions _jsonSerializerOptions;
+
+        public string ServicePath { get; set; }
 
         /// <summary>
         /// The logger factory
@@ -143,7 +169,7 @@ namespace {{packageName}}
         /// <summary>
         /// The logger
         /// </summary>
-        public ILogger<{{classname}}> Logger { get; }
+        public ILogger<__{{classname}}> Logger { get; }
 
         /// <summary>
         /// The HttpClient
@@ -180,33 +206,60 @@ namespace {{packageName}}
         /// </summary>
         public TokenProvider<OAuthToken> OauthTokenProvider { get; }{{/hasOAuthMethods}}
 
+        {{#net80OrLater}}
+        {{#lambda.unique}}
+        {{#operation}}
+        {{#vendorExtensions.x-set-cookie}}
         /// <summary>
-        /// Initializes a new instance of the <see cref="{{classname}}"/> class.
+        /// The token cookie container
+        /// </summary>
+        public {{packageName}}.CookieContainer CookieContainer { get; }
+
+        {{/vendorExtensions.x-set-cookie}}
+        {{/operation}}
+        {{/lambda.unique}}
+        {{/net80OrLater}}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="__{{classname}}"/> class.
         /// </summary>
         /// <returns></returns>
-        public {{classname}}(ILogger<{{classname}}> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}{{#hasApiKeyMethods}},
-            TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}},
-            TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}},
-            TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}},
-            TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}},
-            TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}})
+        public __{{classname}}(
+            ILogger<__{{classname}}> logger,
+            ILoggerFactory loggerFactory,
+            HttpClient httpClient,
+            JsonSerializerOptionsProvider jsonSerializerOptionsProvider,
+            {{classname}}Events {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}}
+            {{#hasApiKeyMethods}}, TokenProvider<ApiKeyToken> apiKeyProvider{{/hasApiKeyMethods}}
+            {{#hasHttpBearerMethods}}, TokenProvider<BearerToken> bearerTokenProvider{{/hasHttpBearerMethods}}
+            {{#hasHttpBasicMethods}}, TokenProvider<BasicToken> basicTokenProvider{{/hasHttpBasicMethods}}
+            {{#hasHttpSignatureMethods}}, TokenProvider<HttpSignatureToken> httpSignatureTokenProvider{{/hasHttpSignatureMethods}}
+            {{#hasOAuthMethods}}, TokenProvider<OAuthToken> oauthTokenProvider{{/hasOAuthMethods}}
+            {{#net80OrLater}}
+                {{#operation}}
+                    {{#lambda.uniqueLines}}
+                        {{#vendorExtensions.x-set-cookie}}, {{packageName}}.CookieContainer cookieContainer{{/vendorExtensions.x-set-cookie}}
+                    {{/lambda.uniqueLines}}
+                {{/operation}}
+            {{/net80OrLater}}
+        )
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
             LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<{{classname}}>();
+            Logger = LoggerFactory.CreateLogger<__{{classname}}>();
             HttpClient = httpClient;
             Events = {{#lambda.camelcase_param}}{{classname}}Events{{/lambda.camelcase_param}};{{#hasApiKeyMethods}}
             ApiKeyProvider = apiKeyProvider;{{/hasApiKeyMethods}}{{#hasHttpBearerMethods}}
             BearerTokenProvider = bearerTokenProvider;{{/hasHttpBearerMethods}}{{#hasHttpBasicMethods}}
             BasicTokenProvider = basicTokenProvider;{{/hasHttpBasicMethods}}{{#hasHttpSignatureMethods}}
             HttpSignatureTokenProvider = httpSignatureTokenProvider;{{/hasHttpSignatureMethods}}{{#hasOAuthMethods}}
-            OauthTokenProvider = oauthTokenProvider;{{/hasOAuthMethods}}
+            OauthTokenProvider = oauthTokenProvider;{{/hasOAuthMethods}}{{#net80OrLater}}{{#operation}}{{#lambda.uniqueLines}}{{#vendorExtensions.x-set-cookie}}
+            CookieContainer = cookieContainer;{{/vendorExtensions.x-set-cookie}}{{/lambda.uniqueLines}}{{/operation}}{{/net80OrLater}}
         }
         {{#operation}}
 
         {{#allParams}}
         {{#-first}}
-        partial void Format{{operationId}}({{#allParams}}{{#isPrimitiveType}}ref {{/isPrimitiveType}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}{{^-last}}, {{/-last}}{{/allParams}});
+        partial void Format{{operationId}}({{#allParams}}{{#isPrimitiveType}}ref {{/isPrimitiveType}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}{{^-last}}, {{/-last}}{{/allParams}});
 
         {{/-first}}
         {{/allParams}}
@@ -218,10 +271,11 @@ namespace {{packageName}}
         /// <param name="{{paramName}}"></param>
         {{/vendorExtensions.x-not-nullable-reference-types}}
         /// <returns></returns>
-        private void Validate{{operationId}}({{#vendorExtensions.x-not-nullable-reference-types}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}{{^-last}}, {{/-last}}{{/vendorExtensions.x-not-nullable-reference-types}})
+        private void Validate{{operationId}}({{#vendorExtensions.x-not-nullable-reference-types}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}{{^-last}}, {{/-last}}{{/vendorExtensions.x-not-nullable-reference-types}})
         {
             {{#lambda.trimTrailingWithNewLine}}
             {{#vendorExtensions.x-not-nullable-reference-types}}
+            
             {{#required}}
             {{^vendorExtensions.x-is-value-type}}
             if ({{paramName}} == null)
@@ -229,13 +283,15 @@ namespace {{packageName}}
 
             {{/vendorExtensions.x-is-value-type}}
             {{/required}}
+            
             {{^required}}
             {{^vendorExtensions.x-is-value-type}}
-            if ({{paramName}}.IsSet && {{paramName}}.Value == null)
+            if ({{paramName}} == null)
                 throw new ArgumentNullException(nameof({{paramName}}));
 
             {{/vendorExtensions.x-is-value-type}}
             {{/required}}
+
             {{/vendorExtensions.x-not-nullable-reference-types}}
             {{/lambda.trimTrailingWithNewLine}}
         }
@@ -248,7 +304,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        private void After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}{{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
+        private void After{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}__{{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
         {
             bool suppressDefaultLog = false;
             After{{operationId}}({{#lambda.joinWithComma}}ref suppressDefaultLog  apiResponseLocalVar  {{#allParams}}{{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
@@ -263,7 +319,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        partial void After{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  {{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
+        partial void After{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  __{{interfacePrefix}}{{operationId}}ApiResponse apiResponseLocalVar  {{#allParams}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -274,7 +330,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        private void OnError{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}Exception exception  string pathFormat  string path  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
+        private void OnError{{operationId}}DefaultImplementation({{#lambda.joinWithComma}}Exception exception  string pathFormat  string path  {{#allParams}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}})
         {
             bool suppressDefaultLog = false;
             OnError{{operationId}}({{#lambda.joinWithComma}}ref suppressDefaultLog  exception  pathFormat  path  {{#allParams}}{{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
@@ -291,7 +347,7 @@ namespace {{packageName}}
         {{#allParams}}
         /// <param name="{{paramName}}"></param>
         {{/allParams}}
-        partial void OnError{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  Exception exception  string pathFormat  string path  {{#allParams}}{{^required}}Option<{{/required}}{{{dataType}}}{{>NullConditionalParameter}}{{^required}}>{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
+        partial void OnError{{operationId}}({{#lambda.joinWithComma}}ref bool suppressDefaultLog  Exception exception  string pathFormat  string path  {{#allParams}}{{{dataType}}}{{^required}}{{>NullConditionalParameter}}{{/required}} {{paramName}}  {{/allParams}}{{/lambda.joinWithComma}});
 
         /// <summary>
         /// {{summary}} {{notes}}
@@ -300,8 +356,8 @@ namespace {{packageName}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        public async Task<{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}})
+        /// <returns><see cref="Task"/>&lt;<see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
+        public async Task<__{{interfacePrefix}}{{operationId}}ApiResponse{{nrt?}}> {{operationId}}OrDefaultAsync({{>OperationSignature}})
         {
             try
             {
@@ -316,13 +372,13 @@ namespace {{packageName}}
         /// <summary>
         /// {{summary}} {{notes}}
         /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="__ApiException">Thrown when fails to make API call</exception>
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}{{^required}} (optional{{#defaultValue}}, default to {{.}}{{/defaultValue}}){{/required}}</param>
         {{/allParams}}
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
-        public async Task<{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}})
+        /// <returns><see cref="Task"/>&lt;<see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>&gt;</returns>
+        public async Task<__{{interfacePrefix}}{{operationId}}ApiResponse> {{operationId}}Async({{>OperationSignature}})
         {
             {{#lambda.trimLineBreaks}}
             UriBuilder uriBuilderLocalVar = new UriBuilder();
@@ -345,7 +401,7 @@ namespace {{packageName}}
                     uriBuilderLocalVar.Host = HttpClient.BaseAddress{{nrt!}}.Host;
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = ClientUtils.CONTEXT_PATH + "{{path}}";
+                    uriBuilderLocalVar.Path = ServicePath + "{{path}}";
                     {{/servers}}
                     {{#servers}}
                     {{#-first}}
@@ -361,8 +417,8 @@ namespace {{packageName}}
                     {{/required}}
                     {{^required}}
 
-                    if ({{paramName}}.IsSet)
-                        uriBuilderLocalVar.Path = uriBuilderLocalVar.Path + $"/{ Uri.EscapeDataString({{paramName}}.Value).ToString()) }";
+                    if ({{paramName}} != null)
+                        uriBuilderLocalVar.Path = uriBuilderLocalVar.Path + $"/{ Uri.EscapeDataString({{paramName}}).ToString()) }";
                     {{#-last}}
 
                     {{/-last}}
@@ -397,8 +453,8 @@ namespace {{packageName}}
 
                     {{#queryParams}}
                     {{^required}}
-                    if ({{paramName}}.IsSet)
-                        parseQueryStringLocalVar["{{baseName}}"] = {{paramName}}.Value{{#isNullable}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}{{/isNullable}}.ToString();
+                    if ({{paramName}} != null)
+                        parseQueryStringLocalVar["{{baseName}}"] = {{paramName}}{{#isNullable}}{{nrt?}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}{{/isNullable}}.ToString();
 
                     {{/required}}
                     {{#-last}}
@@ -412,8 +468,8 @@ namespace {{packageName}}
 
                     {{/required}}
                     {{^required}}
-                    if ({{paramName}}.IsSet)
-                        httpRequestMessageLocalVar.Headers.Add("{{baseName}}", ClientUtils.ParameterToString({{paramName}}.Value));
+                    if ({{paramName}} != null)
+                        httpRequestMessageLocalVar.Headers.Add("{{baseName}}", ClientUtils.ParameterToString({{paramName}}));
 
                     {{/required}}
                     {{/headerParams}}
@@ -431,95 +487,106 @@ namespace {{packageName}}
 
                     {{/required}}
                     {{^required}}
-                    if ({{paramName}}.IsSet)
-                        formParameterLocalVars.Add(new KeyValuePair<string{{nrt?}}, string{{nrt?}}>("{{baseName}}", ClientUtils.ParameterToString({{paramName}}.Value)));
+                    if ({{paramName}} != null)
+                        formParameterLocalVars.Add(new KeyValuePair<string{{nrt?}}, string{{nrt?}}>("{{baseName}}", ClientUtils.ParameterToString({{paramName}})));
 
                     {{/required}}
                     {{/isFile}}
                     {{#isFile}}
                     {{#required}}
-                    multipartContentLocalVar.Add(new StreamContent({{paramName}}));
+                    multipartContentLocalVar.Add(StreamContentExtension.From({{paramName}}));
 
                     {{/required}}
                     {{^required}}
-                    if ({{paramName}}.IsSet)
-                        multipartContentLocalVar.Add(new StreamContent({{paramName}}.Value));
+                    if ({{paramName}} != null)
+                        multipartContentLocalVar.Add(StreamContentExtension.From({{paramName}}));
 
                     {{/required}}
                     {{/isFile}}
                     {{/formParams}}
                     {{#bodyParam}}
                     {{#required}}
-                    httpRequestMessageLocalVar.Content = ({{paramName}}{{^required}}.Value{{/required}} as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize({{paramName}}{{^required}}.Value{{/required}}, _jsonSerializerOptions));
+                    httpRequestMessageLocalVar.Content = ({{paramName}} as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = StreamContentExtension.From(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize({{paramName}}, _jsonSerializerOptions));
                     {{/required}}
                     {{^required}}
-                    if ({{paramName}}.IsSet)
-                        httpRequestMessageLocalVar.Content = ({{paramName}}{{^required}}.Value{{/required}} as object) is System.IO.Stream stream
-                            ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                            : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize({{paramName}}{{^required}}.Value{{/required}}, _jsonSerializerOptions));
+                    if ({{paramName}} != null)
+                        httpRequestMessageLocalVar.Content = ({{paramName}} as object) is System.IO.Stream stream
+                            ? httpRequestMessageLocalVar.Content = StreamContentExtension.From(stream)
+                            : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize({{paramName}}, _jsonSerializerOptions));
                     {{/required}}
 
                     {{/bodyParam}}
                     {{#authMethods}}
                     {{#-first}}
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-
                     {{/-first}}
                     {{#isApiKey}}
-                    ApiKeyToken apiKeyTokenLocalVar = (ApiKeyToken) await ApiKeyProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                    {{^isKeyInCookie}}
+                    ApiKeyToken apiKeyTokenLocalVar{{-index}} = (ApiKeyToken) await ApiKeyProvider.GetAsync("{{keyParamName}}", cancellationToken).ConfigureAwait(false);
+                    if (apiKeyTokenLocalVar{{-index}} != null)
+                    {
+                        tokenBaseLocalVars.Add(apiKeyTokenLocalVar{{-index}});
+                        apiKeyTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar);
+                    }
+                    {{#isKeyInHeader}}
 
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar);{{#isKeyInHeader}}
-
-                    apiKeyTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
                     {{/isKeyInHeader}}
-                    {{#isKeyInQuery}}
+                    {{/isKeyInCookie}}
 
-                    apiKeyTokenLocalVar.UseInQuery(httpRequestMessageLocalVar, uriBuilderLocalVar, parseQueryStringLocalVar, "{{keyParamName}}");
+                    {{#isKeyInQuery}}
+                    apiKeyTokenLocalVar{{-index}}?.UseInQuery(httpRequestMessageLocalVar, uriBuilderLocalVar, parseQueryStringLocalVar);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
                     {{/isKeyInQuery}}
                     {{/isApiKey}}
                     {{/authMethods}}
-
-                    {{! below line must be after any UseInQuery calls, but before using the HttpSignatureToken}}
+                    
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
                     {{#authMethods}}
                     {{#isBasicBasic}}
+                    BasicToken basicTokenLocalVar{{-index}} = (BasicToken) await BasicTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    BasicToken basicTokenLocalVar = (BasicToken) await BasicTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(basicTokenLocalVar);
-
-                    basicTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    if (basicTokenLocalVar{{-index}} != null)
+                    {
+                        tokenBaseLocalVars.Add(basicTokenLocalVar{{-index}});
+                        basicTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isBasicBasic}}
+
                     {{#isBasicBearer}}
+                    BearerToken bearerTokenLocalVar{{-index}} = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    BearerToken bearerTokenLocalVar = (BearerToken) await BearerTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar);
-
-                    bearerTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    if (bearerTokenLocalVar{{-index}} != null)
+                    {
+                        tokenBaseLocalVars.Add(bearerTokenLocalVar{{-index}});
+                        bearerTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isBasicBearer}}
+
                     {{#isOAuth}}
+                    OAuthToken oauthTokenLocalVar{{-index}} = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    OAuthToken oauthTokenLocalVar = (OAuthToken) await OauthTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar);
-
-                    oauthTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    if (oauthTokenLocalVar{{-index}} != null)
+                    {
+                        tokenBaseLocalVars.Add(oauthTokenLocalVar{{-index}});
+                        oauthTokenLocalVar{{-index}}.UseInHeader(httpRequestMessageLocalVar, "{{keyParamName}}");
+                    }
                     {{/isOAuth}}
+
                     {{#isHttpSignature}}
+                    HttpSignatureToken httpSignatureTokenLocalVar{{-index}} = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
 
-                    HttpSignatureToken httpSignatureTokenLocalVar = (HttpSignatureToken) await HttpSignatureTokenProvider.GetAsync(cancellationToken).ConfigureAwait(false);
+                    if (httpSignatureTokenLocalVar{{-index}} != null)
+                    {
+                        tokenBaseLocalVars.Add(httpSignatureTokenLocalVar{{-index}});
+                    }
 
-                    tokenBaseLocalVars.Add(httpSignatureTokenLocalVar);
-
-                    if (httpRequestMessageLocalVar.Content != null) {
+                    if (httpRequestMessageLocalVar?.Content != null) {
                         string requestBodyLocalVar = await httpRequestMessageLocalVar.Content.ReadAsStringAsync({{#net60OrLater}}cancellationToken{{/net60OrLater}}).ConfigureAwait(false);
 
-                        httpSignatureTokenLocalVar.UseInHeader(httpRequestMessageLocalVar, requestBodyLocalVar, cancellationToken);
+                        httpSignatureTokenLocalVar{{-index}}?.UseInHeader(httpRequestMessageLocalVar, requestBodyLocalVar, cancellationToken);
                     }
                     {{/isHttpSignature}}
                     {{/authMethods}}
@@ -592,6 +659,39 @@ namespace {{packageName}}
 
                         {{/-first}}
                         {{/authMethods}}
+                        {{#net80OrLater}}
+                        {{#responses}}
+                        {{#vendorExtensions.x-set-cookie}}
+                        if (httpResponseMessageLocalVar.StatusCode == (HttpStatusCode) {{code}} && httpResponseMessageLocalVar.Headers.TryGetValues("Set-Cookie", out var cookieHeadersLocalVar))
+                        {
+                            foreach(string cookieHeader in cookieHeadersLocalVar)
+                            {
+                                IList<Microsoft.Net.Http.Headers.SetCookieHeaderValue> setCookieHeaderValuesLocalVar = Microsoft.Net.Http.Headers.SetCookieHeaderValue.ParseList(cookieHeadersLocalVar.ToArray());
+
+                                foreach(Microsoft.Net.Http.Headers.SetCookieHeaderValue setCookieHeaderValueLocalVar in setCookieHeaderValuesLocalVar)
+                                {
+                                    Cookie cookieLocalVar = new Cookie(setCookieHeaderValueLocalVar.Name.ToString(), setCookieHeaderValueLocalVar.Value.ToString())
+                                    {
+                                        HttpOnly = setCookieHeaderValueLocalVar.HttpOnly
+                                    };
+
+                                    if (setCookieHeaderValueLocalVar.Expires.HasValue)
+                                        cookieLocalVar.Expires = setCookieHeaderValueLocalVar.Expires.Value.UtcDateTime;
+
+                                    if (setCookieHeaderValueLocalVar.Path.HasValue)
+                                        cookieLocalVar.Path = setCookieHeaderValueLocalVar.Path.Value;
+
+                                    if (setCookieHeaderValueLocalVar.Domain.HasValue)
+                                        cookieLocalVar.Domain = setCookieHeaderValueLocalVar.Domain.Value;
+
+                                    CookieContainer.Value.Add(new Uri($"{uriBuilderLocalVar.Scheme}://{uriBuilderLocalVar.Host}"), cookieLocalVar);
+                                }
+                            }
+                        }
+
+                        {{/vendorExtensions.x-set-cookie}}
+                        {{/responses}}
+                        {{/net80OrLater}}
                         return apiResponseLocalVar;
                     }
                 }
@@ -610,7 +710,7 @@ namespace {{packageName}}
         /// <summary>
         /// The <see cref="{{operationId}}ApiResponse"/>
         /// </summary>
-        {{>visibility}} partial class {{operationId}}ApiResponse : {{packageName}}.{{clientPackage}}.ApiResponse, {{interfacePrefix}}{{operationId}}ApiResponse
+        public partial class {{operationId}}ApiResponse : {{packageName}}.__ApiResponse, __{{interfacePrefix}}{{operationId}}ApiResponse
         {
             /// <summary>
             /// The logger
@@ -656,7 +756,7 @@ namespace {{packageName}}
             /// Deserializes the response if the response is {{code}} {{vendorExtensions.x-http-status}}
             /// </summary>
             /// <returns></returns>
-            public {{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{vendorExtensions.x-http-status}}()
+            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}} {{vendorExtensions.x-http-status}}()
             {
                 {{#lambda.trimTrailingWithNewLine}}
                 {{#lambda.indent4}}
@@ -666,23 +766,23 @@ namespace {{packageName}}
             }
 
             /// <summary>
-            /// Returns true if the response is {{code}} {{vendorExtensions.x-http-status}} and the deserialized response is not null
+            /// Returns true if the response is {{code}} {{vendorExtensions.x-http-status}} and the deserialized response != null
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{packageName}}.{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} result)
+            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}} result)
             {
-                result = null;
+                result = default;
 
                 try
                 {
                     result = {{vendorExtensions.x-http-status}}();
+                    return Is{{vendorExtensions.x-http-status}};
                 } catch (Exception e)
                 {
                     OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode){{code}});
+                    return false;
                 }
-
-                return result != null;
             }
             {{/dataType}}
             {{#-last}}

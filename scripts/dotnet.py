@@ -1,6 +1,6 @@
+from core import *
 from enum import Enum
 from xml.dom import minidom
-import core
 import fsutil
 import os
 import xml.etree.ElementTree as ET
@@ -34,9 +34,7 @@ def get_assembly_version(proj_file: str, configuration: Configuration) -> str | 
 
     if release_property_group is not None:
         # Find the AssemblyVersion element
-        assembly_version_element = release_property_group.find(
-            ".//AssemblyVersion"
-        )
+        assembly_version_element = release_property_group.find(".//AssemblyVersion")
 
         if assembly_version_element is not None:
             # Get the assembly version
@@ -64,9 +62,7 @@ def set_assembly_version(proj_file: str, version: str, configuration: Configurat
 
     if release_property_group is not None:
         # Update the AssemblyVersion
-        assembly_version_element = release_property_group.find(
-            ".//AssemblyVersion"
-        )
+        assembly_version_element = release_property_group.find(".//AssemblyVersion")
         if assembly_version_element is not None:
             assembly_version_element.text = version
 
@@ -79,27 +75,28 @@ def set_version(proj_file: str, version: str):
     root = tree.getroot()
 
     # Find the PropertyGroup
-    property_group = root.find('.//PropertyGroup')
+    property_group = root.find(".//PropertyGroup")
 
     # If PropertyGroup doesn't exist, create it
     if property_group is None:
-        property_group = ET.SubElement(root, 'PropertyGroup')
+        property_group = ET.SubElement(root, "PropertyGroup")
 
     # Find or create the Version element
-    version_element = property_group.find('Version')
+    version_element = property_group.find("Version")
     if version_element is None:
-        version_element = ET.SubElement(property_group, 'Version')
+        version_element = ET.SubElement(property_group, "Version")
 
     # Update the version
     version_element.text = version
 
     # Save the changes back to the .csproj file with proper formatting
-    xml_str = ET.tostring(root, encoding='utf-8').decode()
+    xml_str = ET.tostring(root, encoding="utf-8").decode()
     xml_str_formatted = minidom.parseString(xml_str).toprettyxml(indent="  ")
 
     # Remove unnecessary whitespace
     xml_str_formatted = "\n".join(
-        line for line in xml_str_formatted.split("\n") if line.strip())
+        line for line in xml_str_formatted.split("\n") if line.strip()
+    )
 
     # Remove the XML declaration
     xml_str_formatted = xml_str_formatted.split("\n", 1)[1]
@@ -108,7 +105,7 @@ def set_version(proj_file: str, version: str):
         file.write(xml_str_formatted)
 
 
-def create_solution(src_dir: str, name: str):
+def create_solution(src_dir: str, name: str, show_output: bool = True):
     """
     Generates solution along with base project and its dependencies.
     """
@@ -118,10 +115,17 @@ def create_solution(src_dir: str, name: str):
     fsutil.remove(sln_file)
 
     # create solution
-    core.cmd(f"dotnet new sln -n {name} -o {src_dir}")
+    cmd(f"dotnet new sln -n {name} -o {src_dir}", show_stdout=show_output)
 
 
-def create_project(type: str, path: str, framework: str, dependencies: list[str] | None = None, version: str = "1.0.0.0"):
+def create_project(
+    type: str,
+    path: str,
+    framework: str,
+    dependencies: list[Package] | None = None,
+    version: str = "1.0.0.0",
+    show_output: bool = True,
+):
     proj_name = os.path.basename(path)
     proj_file = os.path.join(path, f"{proj_name}.csproj")
 
@@ -129,8 +133,7 @@ def create_project(type: str, path: str, framework: str, dependencies: list[str]
     fsutil.remove(path)
 
     # create project
-    core.cmd(f"dotnet new {type} -o {path} --framework {framework}" +
-             f" --langVersion latestMajor")
+    cmd(f"dotnet new {type} -o {path} --framework {framework} --langVersion latestMajor", show_stdout=show_output)
     if os.path.exists(f"{path}/Class1.cs"):
         fsutil.remove(f"{path}/Class1.cs")
 
@@ -141,16 +144,22 @@ def create_project(type: str, path: str, framework: str, dependencies: list[str]
         add_project_deps(proj_file, dependencies)
 
 
-def add_project_to_solution(sln_file: str, proj_file: str):
+def add_project_to_solution(sln_file: str, proj_file: str, show_output: bool = True):
     """Adds project to solution"""
-    core.cmd(f"dotnet sln {sln_file} add {proj_file}")
+    cmd(f"dotnet sln {sln_file} add {proj_file}", show_stdout=show_output)
 
 
-def add_project_reference(proj_file: str, ref_proj_file: str):
+def add_project_reference(proj_file: str, ref_proj_file: str, show_output: bool = True):
     """Adds assembly reference to project"""
-    core.cmd(f"dotnet add {proj_file} reference {ref_proj_file}")
+    cmd(f"dotnet add {proj_file} reference {ref_proj_file}", show_stdout=show_output)
 
 
-def add_project_deps(proj_file, dependencies: list[str], source: str = "https://api.nuget.org/v3/index.json"):
+def add_project_deps(
+    proj_file,
+    dependencies: list[Package],
+    source: str = "https://api.nuget.org/v3/index.json",
+    show_output: bool = True,
+):
     for dep in dependencies:
-        core.cmd(f"dotnet add {proj_file} package {dep} --source {source}")
+        pkg = dep.name if not dep.version else f"{dep.name} --version {dep.version}"
+        cmd(f"dotnet add {proj_file} package {pkg} --source {source}", show_stdout=show_output)

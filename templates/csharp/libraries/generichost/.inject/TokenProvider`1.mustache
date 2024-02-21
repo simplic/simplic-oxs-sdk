@@ -1,0 +1,36 @@
+/// <summary>
+/// Dummy for token providers.
+/// </summary>
+/// <typeparam name="TTokenBase"></typeparam>
+public class NullTokenProvider<TTokenBase> : TokenProvider<TTokenBase> where TTokenBase : TokenBase
+{
+    public NullTokenProvider(IEnumerable<TTokenBase> tokens) : base(tokens)
+    {
+    }
+
+    public NullTokenProvider() : base()
+    {
+    }
+
+    public override ValueTask<TTokenBase> GetAsync(string header = "", CancellationToken cancellation = default)
+    {
+        return new ValueTask<TTokenBase>((TTokenBase)null);
+    }
+}
+
+/// <summary>
+/// Provides <see cref="ApiKeyToken"/>s.
+/// </summary>
+public class ApiKeyTokenProvider : TokenProvider<ApiKeyToken>
+{
+    public ApiKeyTokenProvider(IEnumerable<ApiKeyToken> tokens) : base(tokens)
+    {
+    }
+
+    public override ValueTask<ApiKeyToken> GetAsync(string header = "", CancellationToken cancellation = default)
+    {
+        var token = string.IsNullOrEmpty(header) ? _tokens.FirstOrDefault() : _tokens.FirstOrDefault(x => x.Header.ToString().ToLower()  == header.ToLower());
+
+        return new ValueTask<ApiKeyToken>(token);
+    }
+}

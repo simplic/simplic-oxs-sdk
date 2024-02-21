@@ -374,5 +374,9 @@ package.json
 
 pat
 current_version
-__ignore.*
+__*
 openapitools.json
+openapi-out*/
+test*.*
+.config/
+.python/

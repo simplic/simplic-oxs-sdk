@@ -1,1 +1,0 @@
-Contains auto-generated documentation for the generated api clients.

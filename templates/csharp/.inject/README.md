@@ -1,0 +1,1 @@
+Template code to inject for default library (restsharp)
