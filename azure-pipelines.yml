@@ -6,7 +6,7 @@ schedules:
       include:
         - master
         - production
-
+ 
 trigger:
   branches:
     include:

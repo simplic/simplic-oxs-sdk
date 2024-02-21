@@ -12,6 +12,7 @@ url:
 
 # List all services/urls here
 services:
+  - x: ai
   - x: article
   - x: auth
   - x: cdn
