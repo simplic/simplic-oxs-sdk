@@ -95,7 +95,7 @@ namespace {{packageName}}
     /// <summary>
     /// The <see cref="__{{interfacePrefix}}{{operationId}}ApiResponse"/>
     /// </summary>
-    public interface __{{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
+    public interface __{{interfacePrefix}}{{operationId}}ApiResponse : {{#lambda.joinWithComma}}{{packageName}}.__{{interfacePrefix}}ApiResponse  {{#responses}}{{#dataType}}{{interfacePrefix}}{{vendorExtensions.x-http-status}}<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}>  {{/dataType}}{{/responses}}{{/lambda.joinWithComma}}
     {
         {{#responses}}
         {{#vendorExtensions.x-http-status-is-default}}
@@ -756,7 +756,7 @@ namespace {{packageName}}
             /// Deserializes the response if the response is {{code}} {{vendorExtensions.x-http-status}}
             /// </summary>
             /// <returns></returns>
-            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} {{vendorExtensions.x-http-status}}()
+            public {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}} {{vendorExtensions.x-http-status}}()
             {
                 {{#lambda.trimTrailingWithNewLine}}
                 {{#lambda.indent4}}
@@ -770,19 +770,19 @@ namespace {{packageName}}
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}{{#nrt}}?{{/nrt}}{{^nrt}}{{#vendorExtensions.x-is-value-type}}?{{/vendorExtensions.x-is-value-type}}{{/nrt}} result)
+            public bool Try{{vendorExtensions.x-http-status}}({{^netStandard}}[NotNullWhen(true)]{{/netStandard}}out {{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}} result)
             {
-                result = null;
+                result = default;
 
                 try
                 {
                     result = {{vendorExtensions.x-http-status}}();
+                    return Is{{vendorExtensions.x-http-status}};
                 } catch (Exception e)
                 {
                     OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode){{code}});
+                    return false;
                 }
-
-                return result != null;
             }
             {{/dataType}}
             {{#-last}}

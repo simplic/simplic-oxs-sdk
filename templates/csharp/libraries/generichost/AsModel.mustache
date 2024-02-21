@@ -1,4 +1,5 @@
 // This logic may be modified with the AsModel.mustache template
 return Is{{vendorExtensions.x-http-status}}
     ? System.Text.Json.JsonSerializer.Deserialize<{{#isModel}}{{^containerType}}{{/containerType}}{{/isModel}}{{{dataType}}}>(RawContent, _jsonSerializerOptions)
+        //{{nrt!}}{{#vendorExtensions.x-is-value-type}}.Value{{/vendorExtensions.x-is-value-type}}
     : {{^netStandard}}null{{/netStandard}}{{#netStandard}}default{{/netStandard}};
