@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Initializes a new instance of the <see cref="BarcodeConfigurationModel" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="customerId">customerId.</param>
+        /// <param name="customer">customer.</param>
         /// <param name="names">names.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="organizationId">organizationId.</param>
@@ -47,10 +47,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        public BarcodeConfigurationModel(Guid id = default(Guid), Guid customerId = default(Guid), List<string> names = default(List<string>), bool isDeleted = default(bool), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public BarcodeConfigurationModel(Guid id = default(Guid), AddressModel customer = default(AddressModel), List<string> names = default(List<string>), bool isDeleted = default(bool), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
-            this.CustomerId = customerId;
+            this.Customer = customer;
             this.Names = names;
             this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
@@ -69,10 +69,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerId
+        /// Gets or Sets Customer
         /// </summary>
-        [DataMember(Name = "customerId", EmitDefaultValue = false)]
-        public Guid CustomerId { get; set; }
+        [DataMember(Name = "customer", EmitDefaultValue = false)]
+        public AddressModel Customer { get; set; }
 
         /// <summary>
         /// Gets or Sets Names
@@ -137,7 +137,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             StringBuilder sb = new StringBuilder();
             sb.Append("class BarcodeConfigurationModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Names: ").Append(Names).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -188,9 +188,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
+                    this.Customer == input.Customer ||
+                    (this.Customer != null &&
+                    this.Customer.Equals(input.Customer))
                 ) && 
                 (
                     this.Names == input.Names ||
@@ -252,9 +252,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.CustomerId != null)
+                if (this.Customer != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Customer.GetHashCode();
                 }
                 if (this.Names != null)
                 {

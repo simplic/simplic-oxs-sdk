@@ -15,11 +15,244 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Storage.Management
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the storage-management service.
+/// </summary>
+public interface IBarcodeConfigurationClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;BarcodeConfigurationModel&gt;</returns>
+    List<BarcodeConfigurationModel> GetAll();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;BarcodeConfigurationModel&gt;</returns>
+    ApiResponse<List<BarcodeConfigurationModel>> GetAllWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;BarcodeConfigurationModel&gt;</returns>
+    Task<List<BarcodeConfigurationModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;BarcodeConfigurationModel&gt;)</returns>
+    Task<ApiResponse<List<BarcodeConfigurationModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="customerId"> (optional)</param>
+    /// <returns>BarcodeConfigurationModel</returns>
+    BarcodeConfigurationModel GetConfigurationForCustomer(Guid? customerId = default(Guid?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="customerId"> (optional)</param>
+    /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
+    ApiResponse<BarcodeConfigurationModel> GetConfigurationForCustomerWithHttpInfo(Guid? customerId = default(Guid?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="customerId"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of BarcodeConfigurationModel</returns>
+    Task<BarcodeConfigurationModel> GetConfigurationForCustomerAsync(Guid? customerId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="customerId"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
+    Task<ApiResponse<BarcodeConfigurationModel>> GetConfigurationForCustomerWithHttpInfoAsync(Guid? customerId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    void Delete(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> DeleteWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>BarcodeConfigurationModel</returns>
+    BarcodeConfigurationModel Get(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
+    ApiResponse<BarcodeConfigurationModel> GetWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of BarcodeConfigurationModel</returns>
+    Task<BarcodeConfigurationModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
+    Task<ApiResponse<BarcodeConfigurationModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
+    /// <returns>BarcodeConfigurationModel</returns>
+    BarcodeConfigurationModel Patch(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
+    /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
+    ApiResponse<BarcodeConfigurationModel> PatchWithHttpInfo(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of BarcodeConfigurationModel</returns>
+    Task<BarcodeConfigurationModel> PatchAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
+    Task<ApiResponse<BarcodeConfigurationModel>> PatchWithHttpInfoAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
+    /// <returns>BarcodeConfigurationModel</returns>
+    BarcodeConfigurationModel Post(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
+    /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
+    ApiResponse<BarcodeConfigurationModel> PostWithHttpInfo(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of BarcodeConfigurationModel</returns>
+    Task<BarcodeConfigurationModel> PostAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
+    Task<ApiResponse<BarcodeConfigurationModel>> PostWithHttpInfoAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the storage-management service.
     /// </summary>
@@ -94,13 +327,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;BarcodeConfigurationModel&gt;</returns>
-        public List<BarcodeConfigurationModel> GetAll(int operationIndex = 0)
+        public List<BarcodeConfigurationModel> GetAll()
         {
             try
             {
-                return _internalClient.GetAll(operationIndex);
+                return _internalClient.GetAll();
             }
             catch (ApiException e)
             {
@@ -112,13 +344,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;BarcodeConfigurationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<BarcodeConfigurationModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<BarcodeConfigurationModel>> GetAllWithHttpInfo()
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfo(operationIndex);
+                return _internalClient.GetAllWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -130,14 +361,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BarcodeConfigurationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<BarcodeConfigurationModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<BarcodeConfigurationModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -149,14 +379,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BarcodeConfigurationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<BarcodeConfigurationModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<BarcodeConfigurationModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -168,13 +397,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BarcodeConfigurationModel</returns>
-        public BarcodeConfigurationModel GetConfigurationForCustomer(Guid? customerId = default(Guid?), int operationIndex = 0)
+        public BarcodeConfigurationModel GetConfigurationForCustomer(Guid? customerId = default(Guid?))
         {
             try
             {
-                return _internalClient.GetConfigurationForCustomer(customerId, operationIndex);
+                return _internalClient.GetConfigurationForCustomer(customerId);
             }
             catch (ApiException e)
             {
@@ -187,13 +415,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> GetConfigurationForCustomerWithHttpInfo(Guid? customerId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> GetConfigurationForCustomerWithHttpInfo(Guid? customerId = default(Guid?))
         {
             try
             {
-                return _internalClient.GetConfigurationForCustomerWithHttpInfo(customerId, operationIndex);
+                return _internalClient.GetConfigurationForCustomerWithHttpInfo(customerId);
             }
             catch (ApiException e)
             {
@@ -206,14 +433,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BarcodeConfigurationModel</returns>
-        public System.Threading.Tasks.Task<BarcodeConfigurationModel> GetConfigurationForCustomerAsync(Guid? customerId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<BarcodeConfigurationModel> GetConfigurationForCustomerAsync(Guid? customerId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetConfigurationForCustomerAsync(customerId, operationIndex, cancellationToken);
+                return _internalClient.GetConfigurationForCustomerAsync(customerId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -226,14 +452,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customerId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> GetConfigurationForCustomerWithHttpInfoAsync(Guid? customerId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> GetConfigurationForCustomerWithHttpInfoAsync(Guid? customerId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetConfigurationForCustomerWithHttpInfoAsync(customerId, operationIndex, cancellationToken);
+                return _internalClient.GetConfigurationForCustomerWithHttpInfoAsync(customerId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -245,13 +470,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Delete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id)
         {
             try
             {
-                _internalClient.Delete(id, operationIndex);
+                _internalClient.Delete(id);
             }
             catch (ApiException e)
             {
@@ -264,13 +488,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+                return _internalClient.DeleteWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -283,14 +506,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -303,14 +525,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -322,13 +543,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BarcodeConfigurationModel</returns>
-        public BarcodeConfigurationModel Get(Guid id, int operationIndex = 0)
+        public BarcodeConfigurationModel Get(Guid id)
         {
             try
             {
-                return _internalClient.Get(id, operationIndex);
+                return _internalClient.Get(id);
             }
             catch (ApiException e)
             {
@@ -341,13 +561,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> GetWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.GetWithHttpInfo(id, operationIndex);
+                return _internalClient.GetWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -360,14 +579,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BarcodeConfigurationModel</returns>
-        public System.Threading.Tasks.Task<BarcodeConfigurationModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<BarcodeConfigurationModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -380,14 +598,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -400,13 +617,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BarcodeConfigurationModel</returns>
-        public BarcodeConfigurationModel Patch(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), int operationIndex = 0)
+        public BarcodeConfigurationModel Patch(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, patchBarcodeConfigurationRequest, operationIndex);
+                return _internalClient.Patch(id, patchBarcodeConfigurationRequest);
             }
             catch (ApiException e)
             {
@@ -420,13 +636,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> PatchWithHttpInfo(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> PatchWithHttpInfo(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, patchBarcodeConfigurationRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, patchBarcodeConfigurationRequest);
             }
             catch (ApiException e)
             {
@@ -440,14 +655,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BarcodeConfigurationModel</returns>
-        public System.Threading.Tasks.Task<BarcodeConfigurationModel> PatchAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<BarcodeConfigurationModel> PatchAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, patchBarcodeConfigurationRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, patchBarcodeConfigurationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -461,14 +675,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> PatchWithHttpInfoAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> PatchWithHttpInfoAsync(Guid id, PatchBarcodeConfigurationRequest? patchBarcodeConfigurationRequest = default(PatchBarcodeConfigurationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, patchBarcodeConfigurationRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, patchBarcodeConfigurationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -480,13 +693,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>BarcodeConfigurationModel</returns>
-        public BarcodeConfigurationModel Post(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), int operationIndex = 0)
+        public BarcodeConfigurationModel Post(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?))
         {
             try
             {
-                return _internalClient.Post(createBarcodeConfigurationRequest, operationIndex);
+                return _internalClient.Post(createBarcodeConfigurationRequest);
             }
             catch (ApiException e)
             {
@@ -499,13 +711,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of BarcodeConfigurationModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> PostWithHttpInfo(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel> PostWithHttpInfo(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?))
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createBarcodeConfigurationRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(createBarcodeConfigurationRequest);
             }
             catch (ApiException e)
             {
@@ -518,14 +729,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BarcodeConfigurationModel</returns>
-        public System.Threading.Tasks.Task<BarcodeConfigurationModel> PostAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<BarcodeConfigurationModel> PostAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createBarcodeConfigurationRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(createBarcodeConfigurationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -538,14 +748,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBarcodeConfigurationRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BarcodeConfigurationModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> PostWithHttpInfoAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BarcodeConfigurationModel>> PostWithHttpInfoAsync(CreateBarcodeConfigurationRequest? createBarcodeConfigurationRequest = default(CreateBarcodeConfigurationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createBarcodeConfigurationRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(createBarcodeConfigurationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -555,12 +764,14 @@ namespace Simplic.OxS.SDK.Storage.Management
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IBarcodeConfigurationClientSync : IApiAccessor
+    internal interface __IBarcodeConfigurationClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -689,7 +900,7 @@ namespace Simplic.OxS.SDK.Storage.Management
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IBarcodeConfigurationClientAsync : IApiAccessor
+    internal interface __IBarcodeConfigurationClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -848,7 +1059,7 @@ namespace Simplic.OxS.SDK.Storage.Management
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IBarcodeConfigurationClient : IBarcodeConfigurationClientSync, IBarcodeConfigurationClientAsync
+    internal interface __IBarcodeConfigurationClient : __IBarcodeConfigurationClientSync, __IBarcodeConfigurationClientAsync
     {
 
     }
@@ -856,10 +1067,11 @@ namespace Simplic.OxS.SDK.Storage.Management
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __BarcodeConfigurationClient : IBarcodeConfigurationClient
+    internal /*partial*/ class __BarcodeConfigurationClient : __IBarcodeConfigurationClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__BarcodeConfigurationClient"/> class.
         /// </summary>
@@ -882,6 +1094,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__BarcodeConfigurationClient"/> class

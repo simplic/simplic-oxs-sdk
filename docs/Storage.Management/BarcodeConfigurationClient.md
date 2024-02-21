@@ -21,8 +21,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
@@ -109,8 +108,7 @@ This endpoint does not need any parameter.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
@@ -203,8 +201,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
@@ -293,8 +290,7 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
@@ -387,8 +383,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example
@@ -483,8 +478,7 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Storage.Management;
-using Simplic.OxS.SDK.Storage.Management;
+
 using Simplic.OxS.SDK.Storage.Management;
 
 namespace Example

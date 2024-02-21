@@ -15,11 +15,178 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.ERP
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the erp service.
+/// </summary>
+public interface ICostCenterClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    void Delete(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> DeleteWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>CostCenterModel</returns>
+    CostCenterModel Get(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of CostCenterModel</returns>
+    ApiResponse<CostCenterModel> GetWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of CostCenterModel</returns>
+    Task<CostCenterModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (CostCenterModel)</returns>
+    Task<ApiResponse<CostCenterModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateCostCenterRequest"> (optional)</param>
+    /// <returns>CostCenterModel</returns>
+    CostCenterModel Patch(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateCostCenterRequest"> (optional)</param>
+    /// <returns>ApiResponse of CostCenterModel</returns>
+    ApiResponse<CostCenterModel> PatchWithHttpInfo(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateCostCenterRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of CostCenterModel</returns>
+    Task<CostCenterModel> PatchAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateCostCenterRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (CostCenterModel)</returns>
+    Task<ApiResponse<CostCenterModel>> PatchWithHttpInfoAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createCostCenterRequest"> (optional)</param>
+    /// <returns>CostCenterModel</returns>
+    CostCenterModel Post(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createCostCenterRequest"> (optional)</param>
+    /// <returns>ApiResponse of CostCenterModel</returns>
+    ApiResponse<CostCenterModel> PostWithHttpInfo(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createCostCenterRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of CostCenterModel</returns>
+    Task<CostCenterModel> PostAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createCostCenterRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (CostCenterModel)</returns>
+    Task<ApiResponse<CostCenterModel>> PostWithHttpInfoAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the erp service.
     /// </summary>
@@ -95,13 +262,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Delete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id)
         {
             try
             {
-                _internalClient.Delete(id, operationIndex);
+                _internalClient.Delete(id);
             }
             catch (ApiException e)
             {
@@ -114,13 +280,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+                return _internalClient.DeleteWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -133,14 +298,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -153,14 +317,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -172,13 +335,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CostCenterModel</returns>
-        public CostCenterModel Get(Guid id, int operationIndex = 0)
+        public CostCenterModel Get(Guid id)
         {
             try
             {
-                return _internalClient.Get(id, operationIndex);
+                return _internalClient.Get(id);
             }
             catch (ApiException e)
             {
@@ -191,13 +353,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CostCenterModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> GetWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.GetWithHttpInfo(id, operationIndex);
+                return _internalClient.GetWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -210,14 +371,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CostCenterModel</returns>
-        public System.Threading.Tasks.Task<CostCenterModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<CostCenterModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -230,14 +390,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CostCenterModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -250,13 +409,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CostCenterModel</returns>
-        public CostCenterModel Patch(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), int operationIndex = 0)
+        public CostCenterModel Patch(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, updateCostCenterRequest, operationIndex);
+                return _internalClient.Patch(id, updateCostCenterRequest);
             }
             catch (ApiException e)
             {
@@ -270,13 +428,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CostCenterModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> PatchWithHttpInfo(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> PatchWithHttpInfo(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, updateCostCenterRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updateCostCenterRequest);
             }
             catch (ApiException e)
             {
@@ -290,14 +447,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CostCenterModel</returns>
-        public System.Threading.Tasks.Task<CostCenterModel> PatchAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<CostCenterModel> PatchAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, updateCostCenterRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updateCostCenterRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -311,14 +467,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CostCenterModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> PatchWithHttpInfoAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> PatchWithHttpInfoAsync(Guid id, UpdateCostCenterRequest? updateCostCenterRequest = default(UpdateCostCenterRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, updateCostCenterRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateCostCenterRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -330,13 +485,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CostCenterModel</returns>
-        public CostCenterModel Post(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), int operationIndex = 0)
+        public CostCenterModel Post(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?))
         {
             try
             {
-                return _internalClient.Post(createCostCenterRequest, operationIndex);
+                return _internalClient.Post(createCostCenterRequest);
             }
             catch (ApiException e)
             {
@@ -349,13 +503,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CostCenterModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> PostWithHttpInfo(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<CostCenterModel> PostWithHttpInfo(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?))
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createCostCenterRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(createCostCenterRequest);
             }
             catch (ApiException e)
             {
@@ -368,14 +521,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CostCenterModel</returns>
-        public System.Threading.Tasks.Task<CostCenterModel> PostAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<CostCenterModel> PostAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createCostCenterRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(createCostCenterRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -388,14 +540,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCostCenterRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CostCenterModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> PostWithHttpInfoAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CostCenterModel>> PostWithHttpInfoAsync(CreateCostCenterRequest? createCostCenterRequest = default(CreateCostCenterRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createCostCenterRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(createCostCenterRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -405,12 +556,14 @@ namespace Simplic.OxS.SDK.ERP
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ICostCenterClientSync : IApiAccessor
+    internal interface __ICostCenterClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -501,7 +654,7 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ICostCenterClientAsync : IApiAccessor
+    internal interface __ICostCenterClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -612,7 +765,7 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ICostCenterClient : ICostCenterClientSync, ICostCenterClientAsync
+    internal interface __ICostCenterClient : __ICostCenterClientSync, __ICostCenterClientAsync
     {
 
     }
@@ -620,10 +773,11 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __CostCenterClient : ICostCenterClient
+    internal /*partial*/ class __CostCenterClient : __ICostCenterClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__CostCenterClient"/> class.
         /// </summary>
@@ -646,6 +800,7 @@ namespace Simplic.OxS.SDK.ERP
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__CostCenterClient"/> class

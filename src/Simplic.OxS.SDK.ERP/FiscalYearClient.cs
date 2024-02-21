@@ -15,11 +15,178 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.ERP
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the erp service.
+/// </summary>
+public interface IFiscalYearClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    void Delete(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> DeleteWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>FiscalYearModel</returns>
+    FiscalYearModel Get(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of FiscalYearModel</returns>
+    ApiResponse<FiscalYearModel> GetWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of FiscalYearModel</returns>
+    Task<FiscalYearModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
+    Task<ApiResponse<FiscalYearModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateFiscalYearRequest"> (optional)</param>
+    /// <returns>FiscalYearModel</returns>
+    FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateFiscalYearRequest"> (optional)</param>
+    /// <returns>ApiResponse of FiscalYearModel</returns>
+    ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateFiscalYearRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of FiscalYearModel</returns>
+    Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateFiscalYearRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
+    Task<ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="fiscalYearRequest"> (optional)</param>
+    /// <returns>FiscalYearModel</returns>
+    FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="fiscalYearRequest"> (optional)</param>
+    /// <returns>ApiResponse of FiscalYearModel</returns>
+    ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="fiscalYearRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of FiscalYearModel</returns>
+    Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="fiscalYearRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
+    Task<ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the erp service.
     /// </summary>
@@ -95,13 +262,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Delete(Guid id, int operationIndex = 0)
+        public void Delete(Guid id)
         {
             try
             {
-                _internalClient.Delete(id, operationIndex);
+                _internalClient.Delete(id);
             }
             catch (ApiException e)
             {
@@ -114,13 +280,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfo(id, operationIndex);
+                return _internalClient.DeleteWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -133,14 +298,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -153,14 +317,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -172,13 +335,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Get(Guid id, int operationIndex = 0)
+        public FiscalYearModel Get(Guid id)
         {
             try
             {
-                return _internalClient.Get(id, operationIndex);
+                return _internalClient.Get(id);
             }
             catch (ApiException e)
             {
@@ -191,13 +353,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> GetWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.GetWithHttpInfo(id, operationIndex);
+                return _internalClient.GetWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -210,14 +371,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FiscalYearModel</returns>
-        public System.Threading.Tasks.Task<FiscalYearModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<FiscalYearModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -230,14 +390,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -250,13 +409,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
+        public FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, updateFiscalYearRequest, operationIndex);
+                return _internalClient.Patch(id, updateFiscalYearRequest);
             }
             catch (ApiException e)
             {
@@ -270,13 +428,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, updateFiscalYearRequest, operationIndex);
+                return _internalClient.PatchWithHttpInfo(id, updateFiscalYearRequest);
             }
             catch (ApiException e)
             {
@@ -290,14 +447,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FiscalYearModel</returns>
-        public System.Threading.Tasks.Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, updateFiscalYearRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchAsync(id, updateFiscalYearRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -311,14 +467,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, updateFiscalYearRequest, operationIndex, cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateFiscalYearRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -330,13 +485,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
+        public FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
         {
             try
             {
-                return _internalClient.Post(fiscalYearRequest, operationIndex);
+                return _internalClient.Post(fiscalYearRequest);
             }
             catch (ApiException e)
             {
@@ -349,13 +503,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(fiscalYearRequest, operationIndex);
+                return _internalClient.PostWithHttpInfo(fiscalYearRequest);
             }
             catch (ApiException e)
             {
@@ -368,14 +521,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FiscalYearModel</returns>
-        public System.Threading.Tasks.Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(fiscalYearRequest, operationIndex, cancellationToken);
+                return _internalClient.PostAsync(fiscalYearRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -388,14 +540,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(fiscalYearRequest, operationIndex, cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(fiscalYearRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -405,12 +556,14 @@ namespace Simplic.OxS.SDK.ERP
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IFiscalYearClientSync : IApiAccessor
+    internal interface __IFiscalYearClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -501,7 +654,7 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IFiscalYearClientAsync : IApiAccessor
+    internal interface __IFiscalYearClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -612,7 +765,7 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IFiscalYearClient : IFiscalYearClientSync, IFiscalYearClientAsync
+    internal interface __IFiscalYearClient : __IFiscalYearClientSync, __IFiscalYearClientAsync
     {
 
     }
@@ -620,10 +773,11 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __FiscalYearClient : IFiscalYearClient
+    internal /*partial*/ class __FiscalYearClient : __IFiscalYearClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__FiscalYearClient"/> class.
         /// </summary>
@@ -646,6 +800,7 @@ namespace Simplic.OxS.SDK.ERP
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__FiscalYearClient"/> class

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
-**CustomerId** | **Guid** |  | [optional] 
+**Customer** | [**AddressModel**](AddressModel.md) |  | [optional] 
 **Names** | **List&lt;string&gt;** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 
