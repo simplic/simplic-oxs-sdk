@@ -5,8 +5,8 @@ Represents the server model for a resource location.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Latitude** | **double** | Gets or sets the latitude. | [optional] 
-**Longitude** | **double** | Gets or sets the longitude. | [optional] 
+**Latitude** | **double?** | Gets or sets the latitude. | [optional] 
+**Longitude** | **double?** | Gets or sets the longitude. | [optional] 
 **LocationSetAt** | **DateTime** | Gets or sets when the location for the resource is set. | [optional] 
 **Street** | **string** | Gets or sets the street. | [optional] 
 **HouseNumber** | **string** | Gets or sets the house number. | [optional] 

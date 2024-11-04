@@ -16,8 +16,7 @@ Returns a list of available roles
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Organization;
-using Simplic.OxS.SDK.Organization;
+
 using Simplic.OxS.SDK.Organization;
 
 namespace Example

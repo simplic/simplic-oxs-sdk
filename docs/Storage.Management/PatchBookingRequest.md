@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **EcoNumber** | **string** |  | [optional] 
 **DeliveryNote** | **string** |  | [optional] 
 **Images** | **List&lt;Guid&gt;** |  | [optional] 
+**SealsArrival** | **List&lt;string&gt;** |  | [optional] 
+**SealsDeparture** | **List&lt;string&gt;** |  | [optional] 
 **LoadingAids** | [**List&lt;PatchLoadingAidRequest&gt;**](PatchLoadingAidRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

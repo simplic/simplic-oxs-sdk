@@ -15,11 +15,65 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Geo
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the geo service.
+/// </summary>
+public interface IMapClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;MapConfigurationModel&gt;</returns>
+    List<MapConfigurationModel> GetAll();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;MapConfigurationModel&gt;</returns>
+    ApiResponse<List<MapConfigurationModel>> GetAllWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;MapConfigurationModel&gt;</returns>
+    Task<List<MapConfigurationModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;MapConfigurationModel&gt;)</returns>
+    Task<ApiResponse<List<MapConfigurationModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the geo service.
     /// </summary>
@@ -94,13 +148,12 @@ namespace Simplic.OxS.SDK.Geo
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;MapConfigurationModel&gt;</returns>
-        public List<MapConfigurationModel> GetAll(int operationIndex = 0)
+        public List<MapConfigurationModel> GetAll()
         {
             try
             {
-                return _internalClient.GetAll(operationIndex);
+                return _internalClient.GetAll();
             }
             catch (ApiException e)
             {
@@ -112,13 +165,12 @@ namespace Simplic.OxS.SDK.Geo
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;MapConfigurationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<MapConfigurationModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<MapConfigurationModel>> GetAllWithHttpInfo()
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfo(operationIndex);
+                return _internalClient.GetAllWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -130,14 +182,13 @@ namespace Simplic.OxS.SDK.Geo
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MapConfigurationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<MapConfigurationModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<MapConfigurationModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -149,14 +200,13 @@ namespace Simplic.OxS.SDK.Geo
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MapConfigurationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<MapConfigurationModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<MapConfigurationModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -166,12 +216,14 @@ namespace Simplic.OxS.SDK.Geo
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMapClientSync : IApiAccessor
+    internal interface __IMapClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -198,7 +250,7 @@ namespace Simplic.OxS.SDK.Geo
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMapClientAsync : IApiAccessor
+    internal interface __IMapClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -230,7 +282,7 @@ namespace Simplic.OxS.SDK.Geo
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IMapClient : IMapClientSync, IMapClientAsync
+    internal interface __IMapClient : __IMapClientSync, __IMapClientAsync
     {
 
     }
@@ -238,10 +290,11 @@ namespace Simplic.OxS.SDK.Geo
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __MapClient : IMapClient
+    internal /*partial*/ class __MapClient : __IMapClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__MapClient"/> class.
         /// </summary>
@@ -264,6 +317,7 @@ namespace Simplic.OxS.SDK.Geo
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__MapClient"/> class

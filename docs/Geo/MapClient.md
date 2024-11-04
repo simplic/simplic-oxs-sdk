@@ -16,8 +16,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/geo-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Geo;
-using Simplic.OxS.SDK.Geo;
+
 using Simplic.OxS.SDK.Geo;
 
 namespace Example

@@ -15,11 +15,85 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Logistics
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the logistics service.
+/// </summary>
+public interface IResourceMapClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="maxDistanceMeter"> (optional)</param>
+    /// <param name="minDistanceMeter"> (optional)</param>
+    /// <param name="group"> (optional)</param>
+    /// <returns>List&lt;ResourceMapResponse&gt;</returns>
+    List<ResourceMapResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?));
+
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="maxDistanceMeter"> (optional)</param>
+    /// <param name="minDistanceMeter"> (optional)</param>
+    /// <param name="group"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;ResourceMapResponse&gt;</returns>
+    ApiResponse<List<ResourceMapResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?));
+        
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="maxDistanceMeter"> (optional)</param>
+    /// <param name="minDistanceMeter"> (optional)</param>
+    /// <param name="group"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;ResourceMapResponse&gt;</returns>
+    Task<List<ResourceMapResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="maxDistanceMeter"> (optional)</param>
+    /// <param name="minDistanceMeter"> (optional)</param>
+    /// <param name="group"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;ResourceMapResponse&gt;)</returns>
+    Task<ApiResponse<List<ResourceMapResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the logistics service.
     /// </summary>
@@ -99,13 +173,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="maxDistanceMeter"> (optional)</param>
         /// <param name="minDistanceMeter"> (optional)</param>
         /// <param name="group"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ResourceMapResponse&gt;</returns>
-        public List<ResourceMapResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        public List<ResourceMapResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?))
         {
             try
             {
-                return _internalClient.GetByLocation(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex);
+                return _internalClient.GetByLocation(longitude, latitude, maxDistanceMeter, minDistanceMeter, group);
             }
             catch (ApiException e)
             {
@@ -122,13 +195,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="maxDistanceMeter"> (optional)</param>
         /// <param name="minDistanceMeter"> (optional)</param>
         /// <param name="group"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ResourceMapResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<ResourceMapResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceMapResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?))
         {
             try
             {
-                return _internalClient.GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex);
+                return _internalClient.GetByLocationWithHttpInfo(longitude, latitude, maxDistanceMeter, minDistanceMeter, group);
             }
             catch (ApiException e)
             {
@@ -145,14 +217,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="maxDistanceMeter"> (optional)</param>
         /// <param name="minDistanceMeter"> (optional)</param>
         /// <param name="group"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ResourceMapResponse&gt;</returns>
-        public System.Threading.Tasks.Task<List<ResourceMapResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<ResourceMapResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByLocationAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex, cancellationToken);
+                return _internalClient.GetByLocationAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -169,14 +240,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="maxDistanceMeter"> (optional)</param>
         /// <param name="minDistanceMeter"> (optional)</param>
         /// <param name="group"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceMapResponse&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceMapResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceMapResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, operationIndex, cancellationToken);
+                return _internalClient.GetByLocationWithHttpInfoAsync(longitude, latitude, maxDistanceMeter, minDistanceMeter, group, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -186,12 +256,14 @@ namespace Simplic.OxS.SDK.Logistics
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IResourceMapClientSync : IApiAccessor
+    internal interface __IResourceMapClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -228,7 +300,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IResourceMapClientAsync : IApiAccessor
+    internal interface __IResourceMapClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -270,7 +342,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IResourceMapClient : IResourceMapClientSync, IResourceMapClientAsync
+    internal interface __IResourceMapClient : __IResourceMapClientSync, __IResourceMapClientAsync
     {
 
     }
@@ -278,10 +350,11 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __ResourceMapClient : IResourceMapClient
+    internal /*partial*/ class __ResourceMapClient : __IResourceMapClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__ResourceMapClient"/> class.
         /// </summary>
@@ -304,6 +377,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__ResourceMapClient"/> class

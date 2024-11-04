@@ -60,7 +60,9 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        public BookingModel(Guid id = default(Guid), bool isDeleted = default(bool), Guid organizationId = default(Guid), AddressModel customer = default(AddressModel), AddressModel location = default(AddressModel), AddressModel driver = default(AddressModel), BookingVehicleModel vehicle = default(BookingVehicleModel), AddressModel carrier = default(AddressModel), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<LoadingAidModel> loadingAids = default(List<LoadingAidModel>), List<Guid> images = default(List<Guid>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        /// <param name="sealsArrival">sealsArrival.</param>
+        /// <param name="sealsDeparture">sealsDeparture.</param>
+        public BookingModel(Guid id = default(Guid), bool isDeleted = default(bool), Guid organizationId = default(Guid), AddressModel customer = default(AddressModel), AddressModel location = default(AddressModel), AddressModel driver = default(AddressModel), BookingVehicleModel vehicle = default(BookingVehicleModel), AddressModel carrier = default(AddressModel), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<LoadingAidModel> loadingAids = default(List<LoadingAidModel>), List<Guid> images = default(List<Guid>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), List<string> sealsArrival = default(List<string>), List<string> sealsDeparture = default(List<string>))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -86,6 +88,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.UpdateDateTime = updateDateTime;
             this.UpdateUserId = updateUserId;
             this.UpdateUserName = updateUserName;
+            this.SealsArrival = sealsArrival;
+            this.SealsDeparture = sealsDeparture;
         }
 
         /// <summary>
@@ -233,6 +237,18 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string UpdateUserName { get; set; }
 
         /// <summary>
+        /// Gets or Sets SealsArrival
+        /// </summary>
+        [DataMember(Name = "sealsArrival", EmitDefaultValue = true)]
+        public List<string> SealsArrival { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SealsDeparture
+        /// </summary>
+        [DataMember(Name = "sealsDeparture", EmitDefaultValue = true)]
+        public List<string> SealsDeparture { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -264,6 +280,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
             sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
             sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
+            sb.Append("  SealsArrival: ").Append(SealsArrival).Append("\n");
+            sb.Append("  SealsDeparture: ").Append(SealsDeparture).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -419,6 +437,18 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.UpdateUserName == input.UpdateUserName ||
                     (this.UpdateUserName != null &&
                     this.UpdateUserName.Equals(input.UpdateUserName))
+                ) && 
+                (
+                    this.SealsArrival == input.SealsArrival ||
+                    this.SealsArrival != null &&
+                    input.SealsArrival != null &&
+                    this.SealsArrival.SequenceEqual(input.SealsArrival)
+                ) && 
+                (
+                    this.SealsDeparture == input.SealsDeparture ||
+                    this.SealsDeparture != null &&
+                    input.SealsDeparture != null &&
+                    this.SealsDeparture.SequenceEqual(input.SealsDeparture)
                 );
         }
 
@@ -523,6 +553,14 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.UpdateUserName != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
+                }
+                if (this.SealsArrival != null)
+                {
+                    hashCode = (hashCode * 59) + this.SealsArrival.GetHashCode();
+                }
+                if (this.SealsDeparture != null)
+                {
+                    hashCode = (hashCode * 59) + this.SealsDeparture.GetHashCode();
                 }
                 return hashCode;
             }

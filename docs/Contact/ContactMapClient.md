@@ -16,8 +16,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/contact-api/v1*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Contact;
-using Simplic.OxS.SDK.Contact;
+
 using Simplic.OxS.SDK.Contact;
 
 namespace Example

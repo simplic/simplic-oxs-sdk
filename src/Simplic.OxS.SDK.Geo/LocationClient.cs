@@ -15,11 +15,104 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Geo
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the geo service.
+/// </summary>
+public interface ILocationClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocation"> (optional)</param>
+    /// <returns>LocationResponse</returns>
+    LocationResponse SearchAddress(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocation"> (optional)</param>
+    /// <returns>ApiResponse of LocationResponse</returns>
+    ApiResponse<LocationResponse> SearchAddressWithHttpInfo(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocation"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LocationResponse</returns>
+    Task<LocationResponse> SearchAddressAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocation"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LocationResponse)</returns>
+    Task<ApiResponse<LocationResponse>> SearchAddressWithHttpInfoAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocationByText"> (optional)</param>
+    /// <returns>List&lt;LocationResponse&gt;</returns>
+    List<LocationResponse> SearchText(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocationByText"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;LocationResponse&gt;</returns>
+    ApiResponse<List<LocationResponse>> SearchTextWithHttpInfo(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocationByText"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;LocationResponse&gt;</returns>
+    Task<List<LocationResponse>> SearchTextAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestGeoLocationByText"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;LocationResponse&gt;)</returns>
+    Task<ApiResponse<List<LocationResponse>>> SearchTextWithHttpInfoAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the geo service.
     /// </summary>
@@ -95,13 +188,12 @@ namespace Simplic.OxS.SDK.Geo
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestGeoLocation"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LocationResponse</returns>
-        public LocationResponse SearchAddress(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0)
+        public LocationResponse SearchAddress(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?))
         {
             try
             {
-                return _internalClient.SearchAddress(requestGeoLocation, operationIndex);
+                return _internalClient.SearchAddress(requestGeoLocation);
             }
             catch (ApiException e)
             {
@@ -114,13 +206,12 @@ namespace Simplic.OxS.SDK.Geo
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestGeoLocation"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LocationResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<LocationResponse> SearchAddressWithHttpInfo(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<LocationResponse> SearchAddressWithHttpInfo(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?))
         {
             try
             {
-                return _internalClient.SearchAddressWithHttpInfo(requestGeoLocation, operationIndex);
+                return _internalClient.SearchAddressWithHttpInfo(requestGeoLocation);
             }
             catch (ApiException e)
             {
@@ -133,14 +224,13 @@ namespace Simplic.OxS.SDK.Geo
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestGeoLocation"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LocationResponse</returns>
-        public System.Threading.Tasks.Task<LocationResponse> SearchAddressAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<LocationResponse> SearchAddressAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.SearchAddressAsync(requestGeoLocation, operationIndex, cancellationToken);
+                return _internalClient.SearchAddressAsync(requestGeoLocation, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -153,14 +243,86 @@ namespace Simplic.OxS.SDK.Geo
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestGeoLocation"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LocationResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LocationResponse>> SearchAddressWithHttpInfoAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LocationResponse>> SearchAddressWithHttpInfoAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.SearchAddressWithHttpInfoAsync(requestGeoLocation, operationIndex, cancellationToken);
+                return _internalClient.SearchAddressWithHttpInfoAsync(requestGeoLocation, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <returns>List&lt;LocationResponse&gt;</returns>
+        public List<LocationResponse> SearchText(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?))
+        {
+            try
+            {
+                return _internalClient.SearchText(requestGeoLocationByText);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;LocationResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LocationResponse>> SearchTextWithHttpInfo(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?))
+        {
+            try
+            {
+                return _internalClient.SearchTextWithHttpInfo(requestGeoLocationByText);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LocationResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<LocationResponse>> SearchTextAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SearchTextAsync(requestGeoLocationByText, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LocationResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LocationResponse>>> SearchTextWithHttpInfoAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SearchTextWithHttpInfoAsync(requestGeoLocationByText, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -170,12 +332,14 @@ namespace Simplic.OxS.SDK.Geo
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ILocationClientSync : IApiAccessor
+    internal interface __ILocationClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -198,13 +362,33 @@ namespace Simplic.OxS.SDK.Geo
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LocationResponse</returns>
         ApiResponse<LocationResponse> SearchAddressWithHttpInfo(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LocationResponse&gt;</returns>
+        List<LocationResponse> SearchText(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LocationResponse&gt;</returns>
+        ApiResponse<List<LocationResponse>> SearchTextWithHttpInfo(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ILocationClientAsync : IApiAccessor
+    internal interface __ILocationClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -232,13 +416,38 @@ namespace Simplic.OxS.SDK.Geo
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LocationResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<LocationResponse>> SearchAddressWithHttpInfoAsync(RequestGeoLocation? requestGeoLocation = default(RequestGeoLocation?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LocationResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<LocationResponse>> SearchTextAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LocationResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LocationResponse>>> SearchTextWithHttpInfoAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ILocationClient : ILocationClientSync, ILocationClientAsync
+    internal interface __ILocationClient : __ILocationClientSync, __ILocationClientAsync
     {
 
     }
@@ -246,10 +455,11 @@ namespace Simplic.OxS.SDK.Geo
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __LocationClient : ILocationClient
+    internal /*partial*/ class __LocationClient : __ILocationClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__LocationClient"/> class.
         /// </summary>
@@ -272,6 +482,7 @@ namespace Simplic.OxS.SDK.Geo
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__LocationClient"/> class
@@ -495,6 +706,158 @@ namespace Simplic.OxS.SDK.Geo
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("LocationSearchAddressPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LocationResponse&gt;</returns>
+        public List<LocationResponse> SearchText(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LocationResponse>> localVarResponse = SearchTextWithHttpInfo(requestGeoLocationByText);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LocationResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LocationResponse>> SearchTextWithHttpInfo(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = requestGeoLocationByText;
+
+            localVarRequestOptions.Operation = "LocationClient.LocationSearchTextPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<LocationResponse>>("/Location/search-text", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LocationSearchTextPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LocationResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LocationResponse>> SearchTextAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LocationResponse>> localVarResponse = await SearchTextWithHttpInfoAsync(requestGeoLocationByText, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestGeoLocationByText"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LocationResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LocationResponse>>> SearchTextWithHttpInfoAsync(RequestGeoLocationByText? requestGeoLocationByText = default(RequestGeoLocationByText?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = requestGeoLocationByText;
+
+            localVarRequestOptions.Operation = "LocationClient.LocationSearchTextPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<LocationResponse>>("/Location/search-text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LocationSearchTextPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

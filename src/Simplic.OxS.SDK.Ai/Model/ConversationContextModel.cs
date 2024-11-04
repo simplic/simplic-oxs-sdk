@@ -36,13 +36,21 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationContextModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
         /// <param name="id">id.</param>
-        public ConversationContextModel(string name = default(string), Guid id = default(Guid))
+        /// <param name="name">name.</param>
+        /// <param name="contextMessage">contextMessage.</param>
+        public ConversationContextModel(Guid id = default(Guid), string name = default(string), string contextMessage = default(string))
         {
-            this.Name = name;
             this.Id = id;
+            this.Name = name;
+            this.ContextMessage = contextMessage;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -51,10 +59,10 @@ namespace Simplic.OxS.SDK.Ai
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets ContextMessage
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "contextMessage", EmitDefaultValue = true)]
+        public string ContextMessage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +72,9 @@ namespace Simplic.OxS.SDK.Ai
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConversationContextModel {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ContextMessage: ").Append(ContextMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -102,14 +111,19 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.ContextMessage == input.ContextMessage ||
+                    (this.ContextMessage != null &&
+                    this.ContextMessage.Equals(input.ContextMessage))
                 );
         }
 
@@ -122,13 +136,17 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Id != null)
+                if (this.ContextMessage != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ContextMessage.GetHashCode();
                 }
                 return hashCode;
             }

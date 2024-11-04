@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **UpdateDateTime** | **DateTime** |  | [optional] 
 **UpdateUserId** | **Guid?** |  | [optional] 
 **UpdateUserName** | **string** |  | [optional] 
+**SealsArrival** | **List&lt;string&gt;** |  | [optional] 
+**SealsDeparture** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
