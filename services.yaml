@@ -25,6 +25,7 @@ services:
   - x: geo
   - x: logistics
   - x: organization
+  - x: sensor
   - x: storage-management
   - x: timeslot
   - x: telematic
