@@ -380,3 +380,5 @@ openapi-out*/
 test*.*
 .config/
 .python/
+
+.idea/
