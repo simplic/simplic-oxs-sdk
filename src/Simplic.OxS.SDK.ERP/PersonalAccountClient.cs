@@ -191,6 +191,45 @@ public interface IPersonalAccountClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updatePersonalAccountRequest"> (optional)</param>
+    /// <returns>PersonalAccountModel</returns>
+    PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updatePersonalAccountRequest"> (optional)</param>
+    /// <returns>ApiResponse of PersonalAccountModel</returns>
+    ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updatePersonalAccountRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of PersonalAccountModel</returns>
+    Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updatePersonalAccountRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
+    Task<ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createPersonalAccountRequest"> (optional)</param>
     /// <returns>PersonalAccountModel</returns>
     PersonalAccountModel Post(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?));
@@ -259,6 +298,49 @@ public interface IPersonalAccountClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
     Task<ApiResponse<PersonalAccountModel>> RemoveAddressContactIdWithHttpInfoAsync(Guid id, Guid contactId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="text"> (optional)</param>
+    /// <param name="skip"> (optional)</param>
+    /// <param name="limit"> (optional)</param>
+    /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+    List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="text"> (optional)</param>
+    /// <param name="skip"> (optional)</param>
+    /// <param name="limit"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+    ApiResponse<List<PersonalAccountModel>> SearchWithHttpInfo(string? text = default(string?), int? skip = default(int?), int? limit = default(int?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="text"> (optional)</param>
+    /// <param name="skip"> (optional)</param>
+    /// <param name="limit"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+    Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="text"> (optional)</param>
+    /// <param name="skip"> (optional)</param>
+    /// <param name="limit"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+    Task<ApiResponse<List<PersonalAccountModel>>> SearchWithHttpInfoAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -639,6 +721,83 @@ public interface IPersonalAccountClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <returns>PersonalAccountModel</returns>
+        public PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?))
+        {
+            try
+            {
+                return _internalClient.Put(id, updatePersonalAccountRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <returns>ApiResponse of PersonalAccountModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?))
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfo(id, updatePersonalAccountRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PersonalAccountModel</returns>
+        public System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutAsync(id, updatePersonalAccountRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PutWithHttpInfoAsync(id, updatePersonalAccountRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
         /// <returns>PersonalAccountModel</returns>
         public PersonalAccountModel Post(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?))
@@ -785,6 +944,87 @@ public interface IPersonalAccountClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        public List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?))
+        {
+            try
+            {
+                return _internalClient.Search(text, skip, limit);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> SearchWithHttpInfo(string? text = default(string?), int? skip = default(int?), int? limit = default(int?))
+        {
+            try
+            {
+                return _internalClient.SearchWithHttpInfo(text, skip, limit);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SearchAsync(text, skip, limit, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>>> SearchWithHttpInfoAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SearchWithHttpInfoAsync(text, skip, limit, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -886,6 +1126,28 @@ public interface IPersonalAccountClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PersonalAccountModel</returns>
+        PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PersonalAccountModel</returns>
+        ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PersonalAccountModel</returns>
@@ -924,6 +1186,30 @@ public interface IPersonalAccountClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> RemoveAddressContactIdWithHttpInfo(Guid id, Guid contactId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        ApiResponse<List<PersonalAccountModel>> SearchWithHttpInfo(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1044,6 +1330,33 @@ public interface IPersonalAccountClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PersonalAccountModel</returns>
+        System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1089,6 +1402,35 @@ public interface IPersonalAccountClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> RemoveAddressContactIdWithHttpInfoAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        System.Threading.Tasks.Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PersonalAccountModel>>> SearchWithHttpInfoAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1815,6 +2157,164 @@ public interface IPersonalAccountClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PersonalAccountModel</returns>
+        public PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = PutWithHttpInfo(id, updatePersonalAccountRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PersonalAccountModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updatePersonalAccountRequest;
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PersonalAccountModel</returns>
+        public async System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<PersonalAccountModel> localVarResponse = await PutWithHttpInfoAsync(id, updatePersonalAccountRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updatePersonalAccountRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updatePersonalAccountRequest;
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<PersonalAccountModel>("/PersonalAccount/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PersonalAccountModel</returns>
@@ -2106,6 +2606,182 @@ public interface IPersonalAccountClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PersonalAccountRemoveAddressIdContactIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        public List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> localVarResponse = SearchWithHttpInfo(text, skip, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> SearchWithHttpInfo(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (text != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "text", text));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountSearchGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<PersonalAccountModel>>("/PersonalAccount/search", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountSearchGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> localVarResponse = await SearchWithHttpInfoAsync(text, skip, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>>> SearchWithHttpInfoAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (text != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "text", text));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountSearchGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<PersonalAccountModel>>("/PersonalAccount/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountSearchGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -15,11 +15,65 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Organization
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the organization service.
+/// </summary>
+public interface IRoleClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    /// Returns a list of available roles 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;MemberRoleModel&gt;</returns>
+    List<MemberRoleModel> GetAll();
+
+    /// <summary>
+    /// Returns a list of available roles 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;MemberRoleModel&gt;</returns>
+    ApiResponse<List<MemberRoleModel>> GetAllWithHttpInfo();
+        
+    /// <summary>
+    /// Returns a list of available roles 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;MemberRoleModel&gt;</returns>
+    Task<List<MemberRoleModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Returns a list of available roles 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;MemberRoleModel&gt;)</returns>
+    Task<ApiResponse<List<MemberRoleModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the organization service.
     /// </summary>
@@ -94,13 +148,12 @@ namespace Simplic.OxS.SDK.Organization
         /// Returns a list of available roles 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;MemberRoleModel&gt;</returns>
-        public List<MemberRoleModel> GetAll(int operationIndex = 0)
+        public List<MemberRoleModel> GetAll()
         {
             try
             {
-                return _internalClient.GetAll(operationIndex);
+                return _internalClient.GetAll();
             }
             catch (ApiException e)
             {
@@ -112,13 +165,12 @@ namespace Simplic.OxS.SDK.Organization
         /// Returns a list of available roles 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;MemberRoleModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<MemberRoleModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<MemberRoleModel>> GetAllWithHttpInfo()
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfo(operationIndex);
+                return _internalClient.GetAllWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -130,14 +182,13 @@ namespace Simplic.OxS.SDK.Organization
         /// Returns a list of available roles 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MemberRoleModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<MemberRoleModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<MemberRoleModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -149,14 +200,13 @@ namespace Simplic.OxS.SDK.Organization
         /// Returns a list of available roles 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MemberRoleModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<MemberRoleModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<MemberRoleModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfoAsync(operationIndex, cancellationToken);
+                return _internalClient.GetAllWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -166,12 +216,14 @@ namespace Simplic.OxS.SDK.Organization
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRoleClientSync : IApiAccessor
+    internal interface __IRoleClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -198,7 +250,7 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRoleClientAsync : IApiAccessor
+    internal interface __IRoleClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -230,7 +282,7 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRoleClient : IRoleClientSync, IRoleClientAsync
+    internal interface __IRoleClient : __IRoleClientSync, __IRoleClientAsync
     {
 
     }
@@ -238,10 +290,11 @@ namespace Simplic.OxS.SDK.Organization
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __RoleClient : IRoleClient
+    internal /*partial*/ class __RoleClient : __IRoleClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__RoleClient"/> class.
         /// </summary>
@@ -264,6 +317,7 @@ namespace Simplic.OxS.SDK.Organization
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__RoleClient"/> class

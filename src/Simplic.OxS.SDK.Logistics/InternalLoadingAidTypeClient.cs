@@ -15,11 +15,69 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 
+// -- Custom --
+using System.Threading;
+using System.Threading.Tasks;
+// -^ Custom ^-
+
 using Simplic.OxS.SDK;
 
 namespace Simplic.OxS.SDK.Logistics
 {
-    //--Custom wrapper start
+    // ------------------------- Custom -------------------------------
+//: Interface
+    
+/// <summary>
+/// Client to interact with the API endpoints of the logistics service.
+/// </summary>
+public interface IInternalLoadingAidTypeClient
+{
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    string GetBasePath();
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"> (optional)</param>
+    /// <returns>LoadingAidTypeResponse</returns>
+    LoadingAidTypeResponse GetById(Guid? id = default(Guid?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"> (optional)</param>
+    /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
+    ApiResponse<LoadingAidTypeResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LoadingAidTypeResponse</returns>
+    Task<LoadingAidTypeResponse> GetByIdAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LoadingAidTypeResponse)</returns>
+    Task<ApiResponse<LoadingAidTypeResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+
+}
+
+
+//: Implementation
+
     /// <summary>
     /// Client to interact with the API endpoints of the logistics service.
     /// </summary>
@@ -95,13 +153,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidTypeResponse</returns>
-        public LoadingAidTypeResponse GetById(Guid? id = default(Guid?), int operationIndex = 0)
+        public LoadingAidTypeResponse GetById(Guid? id = default(Guid?))
         {
             try
             {
-                return _internalClient.GetById(id, operationIndex);
+                return _internalClient.GetById(id);
             }
             catch (ApiException e)
             {
@@ -114,13 +171,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidTypeResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?))
         {
             try
             {
-                return _internalClient.GetByIdWithHttpInfo(id, operationIndex);
+                return _internalClient.GetByIdWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -133,14 +189,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadingAidTypeResponse</returns>
-        public System.Threading.Tasks.Task<LoadingAidTypeResponse> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<LoadingAidTypeResponse> GetByIdAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByIdAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetByIdAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -153,14 +208,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadingAidTypeResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidTypeResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken);
+                return _internalClient.GetByIdWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -170,12 +224,14 @@ namespace Simplic.OxS.SDK.Logistics
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
-    //--Custom wrapper end
+
+// ------------------------^ Custom ^------------------------------
+
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IInternalLoadingAidTypeClientSync : IApiAccessor
+    internal interface __IInternalLoadingAidTypeClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -204,7 +260,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IInternalLoadingAidTypeClientAsync : IApiAccessor
+    internal interface __IInternalLoadingAidTypeClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -238,7 +294,7 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IInternalLoadingAidTypeClient : IInternalLoadingAidTypeClientSync, IInternalLoadingAidTypeClientAsync
+    internal interface __IInternalLoadingAidTypeClient : __IInternalLoadingAidTypeClientSync, __IInternalLoadingAidTypeClientAsync
     {
 
     }
@@ -246,10 +302,11 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal partial class __InternalLoadingAidTypeClient : IInternalLoadingAidTypeClient
+    internal /*partial*/ class __InternalLoadingAidTypeClient : __IInternalLoadingAidTypeClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
+        /*
         /// <summary>
         /// Initializes a new instance of the <see cref="__InternalLoadingAidTypeClient"/> class.
         /// </summary>
@@ -272,6 +329,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.AsynchronousClient = new Simplic.OxS.SDK.ApiClient(this.Configuration.BasePath);
             this.ExceptionFactory = Simplic.OxS.SDK.Configuration.DefaultExceptionFactory;
         }
+        */
 
         /// <summary>
         /// Initializes a new instance of the <see cref="__InternalLoadingAidTypeClient"/> class

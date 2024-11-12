@@ -16,8 +16,7 @@ Retrieves resources from a specific group and location.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Simplic.OxS.SDK.Logistics;
-using Simplic.OxS.SDK.Logistics;
+
 using Simplic.OxS.SDK.Logistics;
 
 namespace Example

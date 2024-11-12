@@ -40,12 +40,14 @@ namespace Simplic.OxS.SDK.Geo
         /// <param name="longitude">longitude.</param>
         /// <param name="roadAccessPosition">roadAccessPosition.</param>
         /// <param name="formattedAddress">formattedAddress.</param>
-        public LocationResponse(double latitude = default(double), double longitude = default(double), RoadAccessPosition roadAccessPosition = default(RoadAccessPosition), string formattedAddress = default(string))
+        /// <param name="score">score.</param>
+        public LocationResponse(double latitude = default(double), double longitude = default(double), RoadAccessPosition roadAccessPosition = default(RoadAccessPosition), string formattedAddress = default(string), double score = default(double))
         {
             this.Latitude = latitude;
             this.Longitude = longitude;
             this.RoadAccessPosition = roadAccessPosition;
             this.FormattedAddress = formattedAddress;
+            this.Score = score;
         }
 
         /// <summary>
@@ -73,6 +75,12 @@ namespace Simplic.OxS.SDK.Geo
         public string FormattedAddress { get; set; }
 
         /// <summary>
+        /// Gets or Sets Score
+        /// </summary>
+        [DataMember(Name = "score", EmitDefaultValue = false)]
+        public double Score { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +92,7 @@ namespace Simplic.OxS.SDK.Geo
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
             sb.Append("  RoadAccessPosition: ").Append(RoadAccessPosition).Append("\n");
             sb.Append("  FormattedAddress: ").Append(FormattedAddress).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,6 +145,10 @@ namespace Simplic.OxS.SDK.Geo
                     this.FormattedAddress == input.FormattedAddress ||
                     (this.FormattedAddress != null &&
                     this.FormattedAddress.Equals(input.FormattedAddress))
+                ) && 
+                (
+                    this.Score == input.Score ||
+                    this.Score.Equals(input.Score)
                 );
         }
 
@@ -158,6 +171,7 @@ namespace Simplic.OxS.SDK.Geo
                 {
                     hashCode = (hashCode * 59) + this.FormattedAddress.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Score.GetHashCode();
                 return hashCode;
             }
         }

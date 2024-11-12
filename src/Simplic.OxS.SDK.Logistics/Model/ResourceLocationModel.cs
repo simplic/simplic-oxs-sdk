@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="country">Gets or sets the country..</param>
         /// <param name="countryIso">Gets or sets the country..</param>
         /// <param name="city">Gets or sets the city..</param>
-        public ResourceLocationModel(double latitude = default(double), double longitude = default(double), DateTime locationSetAt = default(DateTime), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string))
+        public ResourceLocationModel(double? latitude = default(double?), double? longitude = default(double?), DateTime locationSetAt = default(DateTime), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string))
         {
             this.Latitude = latitude;
             this.Longitude = longitude;
@@ -66,15 +66,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the latitude.
         /// </summary>
         /// <value>Gets or sets the latitude.</value>
-        [DataMember(Name = "latitude", EmitDefaultValue = false)]
-        public double Latitude { get; set; }
+        [DataMember(Name = "latitude", EmitDefaultValue = true)]
+        public double? Latitude { get; set; }
 
         /// <summary>
         /// Gets or sets the longitude.
         /// </summary>
         /// <value>Gets or sets the longitude.</value>
-        [DataMember(Name = "longitude", EmitDefaultValue = false)]
-        public double Longitude { get; set; }
+        [DataMember(Name = "longitude", EmitDefaultValue = true)]
+        public double? Longitude { get; set; }
 
         /// <summary>
         /// Gets or sets when the location for the resource is set.
@@ -195,11 +195,13 @@ namespace Simplic.OxS.SDK.Logistics
             return 
                 (
                     this.Latitude == input.Latitude ||
-                    this.Latitude.Equals(input.Latitude)
+                    (this.Latitude != null &&
+                    this.Latitude.Equals(input.Latitude))
                 ) && 
                 (
                     this.Longitude == input.Longitude ||
-                    this.Longitude.Equals(input.Longitude)
+                    (this.Longitude != null &&
+                    this.Longitude.Equals(input.Longitude))
                 ) && 
                 (
                     this.LocationSetAt == input.LocationSetAt ||
@@ -257,8 +259,14 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Latitude.GetHashCode();
-                hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
+                if (this.Latitude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Latitude.GetHashCode();
+                }
+                if (this.Longitude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
+                }
                 if (this.LocationSetAt != null)
                 {
                     hashCode = (hashCode * 59) + this.LocationSetAt.GetHashCode();

@@ -50,7 +50,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Enum NUMBER_3 for value: 3
         /// </summary>
-        NUMBER_3 = 3
+        NUMBER_3 = 3,
+
+        /// <summary>
+        /// Enum NUMBER_4 for value: 4
+        /// </summary>
+        NUMBER_4 = 4
     }
 
 }

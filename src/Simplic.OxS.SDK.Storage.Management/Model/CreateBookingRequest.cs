@@ -50,8 +50,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="ecoNumber">ecoNumber.</param>
         /// <param name="deliveryNote">deliveryNote.</param>
         /// <param name="images">images.</param>
+        /// <param name="sealsArrival">sealsArrival.</param>
+        /// <param name="sealsDeparture">sealsDeparture.</param>
         /// <param name="loadingAids">loadingAids.</param>
-        public CreateBookingRequest(Guid? customerId = default(Guid?), Guid? locationId = default(Guid?), Guid? driverId = default(Guid?), Guid? vehicleId = default(Guid?), Guid? carrierId = default(Guid?), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<Guid> images = default(List<Guid>), List<CreateLoadingAidRequest> loadingAids = default(List<CreateLoadingAidRequest>))
+        public CreateBookingRequest(Guid? customerId = default(Guid?), Guid? locationId = default(Guid?), Guid? driverId = default(Guid?), Guid? vehicleId = default(Guid?), Guid? carrierId = default(Guid?), string externalVehicle = default(string), string externalCarrier = default(string), string externalDriver = default(string), DateTime? date = default(DateTime?), SignatureUserModel signatureUser = default(SignatureUserModel), SignatureUserModel signatureDriver = default(SignatureUserModel), string ecoNumber = default(string), string deliveryNote = default(string), List<Guid> images = default(List<Guid>), List<string> sealsArrival = default(List<string>), List<string> sealsDeparture = default(List<string>), List<CreateLoadingAidRequest> loadingAids = default(List<CreateLoadingAidRequest>))
         {
             this.CustomerId = customerId;
             this.LocationId = locationId;
@@ -67,6 +69,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.EcoNumber = ecoNumber;
             this.DeliveryNote = deliveryNote;
             this.Images = images;
+            this.SealsArrival = sealsArrival;
+            this.SealsDeparture = sealsDeparture;
             this.LoadingAids = loadingAids;
         }
 
@@ -155,6 +159,18 @@ namespace Simplic.OxS.SDK.Storage.Management
         public List<Guid> Images { get; set; }
 
         /// <summary>
+        /// Gets or Sets SealsArrival
+        /// </summary>
+        [DataMember(Name = "sealsArrival", EmitDefaultValue = true)]
+        public List<string> SealsArrival { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SealsDeparture
+        /// </summary>
+        [DataMember(Name = "sealsDeparture", EmitDefaultValue = true)]
+        public List<string> SealsDeparture { get; set; }
+
+        /// <summary>
         /// Gets or Sets LoadingAids
         /// </summary>
         [DataMember(Name = "loadingAids", EmitDefaultValue = true)]
@@ -182,6 +198,8 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  EcoNumber: ").Append(EcoNumber).Append("\n");
             sb.Append("  DeliveryNote: ").Append(DeliveryNote).Append("\n");
             sb.Append("  Images: ").Append(Images).Append("\n");
+            sb.Append("  SealsArrival: ").Append(SealsArrival).Append("\n");
+            sb.Append("  SealsDeparture: ").Append(SealsDeparture).Append("\n");
             sb.Append("  LoadingAids: ").Append(LoadingAids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -290,6 +308,18 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Images.SequenceEqual(input.Images)
                 ) && 
                 (
+                    this.SealsArrival == input.SealsArrival ||
+                    this.SealsArrival != null &&
+                    input.SealsArrival != null &&
+                    this.SealsArrival.SequenceEqual(input.SealsArrival)
+                ) && 
+                (
+                    this.SealsDeparture == input.SealsDeparture ||
+                    this.SealsDeparture != null &&
+                    input.SealsDeparture != null &&
+                    this.SealsDeparture.SequenceEqual(input.SealsDeparture)
+                ) && 
+                (
                     this.LoadingAids == input.LoadingAids ||
                     this.LoadingAids != null &&
                     input.LoadingAids != null &&
@@ -361,6 +391,14 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Images != null)
                 {
                     hashCode = (hashCode * 59) + this.Images.GetHashCode();
+                }
+                if (this.SealsArrival != null)
+                {
+                    hashCode = (hashCode * 59) + this.SealsArrival.GetHashCode();
+                }
+                if (this.SealsDeparture != null)
+                {
+                    hashCode = (hashCode * 59) + this.SealsDeparture.GetHashCode();
                 }
                 if (this.LoadingAids != null)
                 {

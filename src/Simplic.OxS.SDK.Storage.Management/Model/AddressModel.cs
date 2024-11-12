@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressModel" /> class.
         /// </summary>
-        /// <param name="contactId">contactId.</param>
+        /// <param name="id">id.</param>
         /// <param name="companyName">companyName.</param>
         /// <param name="firstName">firstName.</param>
         /// <param name="lastName">lastName.</param>
@@ -46,9 +46,9 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="country">country.</param>
         /// <param name="countryIso">countryIso.</param>
         /// <param name="city">city.</param>
-        public AddressModel(Guid contactId = default(Guid), string companyName = default(string), string firstName = default(string), string lastName = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string country = default(string), string countryIso = default(string), string city = default(string))
+        public AddressModel(Guid id = default(Guid), string companyName = default(string), string firstName = default(string), string lastName = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string country = default(string), string countryIso = default(string), string city = default(string))
         {
-            this.ContactId = contactId;
+            this.Id = id;
             this.CompanyName = companyName;
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -61,10 +61,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         }
 
         /// <summary>
-        /// Gets or Sets ContactId
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "contactId", EmitDefaultValue = false)]
-        public Guid ContactId { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CompanyName
@@ -128,7 +128,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddressModel {\n");
-            sb.Append("  ContactId: ").Append(ContactId).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
@@ -174,9 +174,9 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
             return 
                 (
-                    this.ContactId == input.ContactId ||
-                    (this.ContactId != null &&
-                    this.ContactId.Equals(input.ContactId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.CompanyName == input.CompanyName ||
@@ -234,9 +234,9 @@ namespace Simplic.OxS.SDK.Storage.Management
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContactId != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.ContactId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 if (this.CompanyName != null)
                 {
