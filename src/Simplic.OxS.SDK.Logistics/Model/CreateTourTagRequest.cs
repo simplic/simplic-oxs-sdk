@@ -38,9 +38,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="internalName">Gets or sets an internal tag name.</param>
-        /// <param name="groupName">Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
+        /// <param name="groupName">Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
         /// <param name="hexColor">Gets or sets the hex color of the string..</param>
-        /// <param name="functions">Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;.</param>
+        /// <param name="functions">Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;.</param>
         public CreateTourTagRequest(string name = default(string), string internalName = default(string), string groupName = default(string), string hexColor = default(string), List<string> functions = default(List<string>))
         {
             this.Name = name;
@@ -65,9 +65,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string InternalName { get; set; }
 
         /// <summary>
-        /// Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
+        /// Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
         /// </summary>
-        /// <value>Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
+        /// <value>Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
         [DataMember(Name = "groupName", EmitDefaultValue = true)]
         public string GroupName { get; set; }
 
@@ -79,9 +79,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string HexColor { get; set; }
 
         /// <summary>
-        /// Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;
+        /// Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;</value>
+        /// <value>Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;</value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 

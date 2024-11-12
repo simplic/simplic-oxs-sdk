@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingLineTransationItemModel" /> class.
         /// </summary>
-        /// <param name="transactionId">Gets or sets the transaction id.  &lt;br&gt;  This represents the unique identifier of a Simplic.Erp.Transaction.  .</param>
-        /// <param name="transactionItemId">Gets or sets the transaction item id.  &lt;br&gt;  This represents the unique identifier fo a Simplic.Erp.TransactionItem.  .</param>
-        /// <param name="number">Gets or sets the transaction number.  &lt;br&gt;  This represents the number of a transaction, which is a human readable number to represent the transaction.  .</param>
-        /// <param name="typeName">Gets or sets the type name.  &lt;br&gt;  Represents the name of the type of the transaction.  .</param>
-        /// <param name="subtypeName">Gets or sets the subtype name.  &lt;br&gt;  Represents the name of the subtype of the transaction.  .</param>
-        /// <param name="createDateTime">Gets or sets the create date time.  &lt;br&gt;  Represents the create date and time of the transaction.  .</param>
-        /// <param name="singlePrice">Gets or sets the single price.  &lt;br&gt;  Represents the single price of the transaction item.  .</param>
-        /// <param name="totalPrice">Gets or sets the total price.  &lt;br&gt;  Represents the total price of a transaction item.  .</param>
+        /// <param name="transactionId">Gets or sets the transaction id.     This represents the unique identifier of a Simplic.Erp.Transaction.  .</param>
+        /// <param name="transactionItemId">Gets or sets the transaction item id.     This represents the unique identifier fo a Simplic.Erp.TransactionItem.  .</param>
+        /// <param name="number">Gets or sets the transaction number.     This represents the number of a transaction, which is a human readable number to represent the transaction.  .</param>
+        /// <param name="typeName">Gets or sets the type name.     Represents the name of the type of the transaction.  .</param>
+        /// <param name="subtypeName">Gets or sets the subtype name.     Represents the name of the subtype of the transaction.  .</param>
+        /// <param name="createDateTime">Gets or sets the create date time.     Represents the create date and time of the transaction.  .</param>
+        /// <param name="singlePrice">Gets or sets the single price.     Represents the single price of the transaction item.  .</param>
+        /// <param name="totalPrice">Gets or sets the total price.     Represents the total price of a transaction item.  .</param>
         /// <param name="quantity">quantity.</param>
         public BillingLineTransationItemModel(Guid transactionId = default(Guid), Guid transactionItemId = default(Guid), string number = default(string), string typeName = default(string), string subtypeName = default(string), DateTime createDateTime = default(DateTime), double singlePrice = default(double), double totalPrice = default(double), QuantityModel quantity = default(QuantityModel))
         {
@@ -59,58 +59,58 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the transaction id.  &lt;br&gt;  This represents the unique identifier of a Simplic.Erp.Transaction.  
+        /// Gets or sets the transaction id.     This represents the unique identifier of a Simplic.Erp.Transaction.  
         /// </summary>
-        /// <value>Gets or sets the transaction id.  &lt;br&gt;  This represents the unique identifier of a Simplic.Erp.Transaction.  </value>
+        /// <value>Gets or sets the transaction id.     This represents the unique identifier of a Simplic.Erp.Transaction.  </value>
         [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public Guid TransactionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the transaction item id.  &lt;br&gt;  This represents the unique identifier fo a Simplic.Erp.TransactionItem.  
+        /// Gets or sets the transaction item id.     This represents the unique identifier fo a Simplic.Erp.TransactionItem.  
         /// </summary>
-        /// <value>Gets or sets the transaction item id.  &lt;br&gt;  This represents the unique identifier fo a Simplic.Erp.TransactionItem.  </value>
+        /// <value>Gets or sets the transaction item id.     This represents the unique identifier fo a Simplic.Erp.TransactionItem.  </value>
         [DataMember(Name = "transactionItemId", EmitDefaultValue = false)]
         public Guid TransactionItemId { get; set; }
 
         /// <summary>
-        /// Gets or sets the transaction number.  &lt;br&gt;  This represents the number of a transaction, which is a human readable number to represent the transaction.  
+        /// Gets or sets the transaction number.     This represents the number of a transaction, which is a human readable number to represent the transaction.  
         /// </summary>
-        /// <value>Gets or sets the transaction number.  &lt;br&gt;  This represents the number of a transaction, which is a human readable number to represent the transaction.  </value>
+        /// <value>Gets or sets the transaction number.     This represents the number of a transaction, which is a human readable number to represent the transaction.  </value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the type name.  &lt;br&gt;  Represents the name of the type of the transaction.  
+        /// Gets or sets the type name.     Represents the name of the type of the transaction.  
         /// </summary>
-        /// <value>Gets or sets the type name.  &lt;br&gt;  Represents the name of the type of the transaction.  </value>
+        /// <value>Gets or sets the type name.     Represents the name of the type of the transaction.  </value>
         [DataMember(Name = "typeName", EmitDefaultValue = true)]
         public string TypeName { get; set; }
 
         /// <summary>
-        /// Gets or sets the subtype name.  &lt;br&gt;  Represents the name of the subtype of the transaction.  
+        /// Gets or sets the subtype name.     Represents the name of the subtype of the transaction.  
         /// </summary>
-        /// <value>Gets or sets the subtype name.  &lt;br&gt;  Represents the name of the subtype of the transaction.  </value>
+        /// <value>Gets or sets the subtype name.     Represents the name of the subtype of the transaction.  </value>
         [DataMember(Name = "subtypeName", EmitDefaultValue = true)]
         public string SubtypeName { get; set; }
 
         /// <summary>
-        /// Gets or sets the create date time.  &lt;br&gt;  Represents the create date and time of the transaction.  
+        /// Gets or sets the create date time.     Represents the create date and time of the transaction.  
         /// </summary>
-        /// <value>Gets or sets the create date time.  &lt;br&gt;  Represents the create date and time of the transaction.  </value>
+        /// <value>Gets or sets the create date time.     Represents the create date and time of the transaction.  </value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the single price.  &lt;br&gt;  Represents the single price of the transaction item.  
+        /// Gets or sets the single price.     Represents the single price of the transaction item.  
         /// </summary>
-        /// <value>Gets or sets the single price.  &lt;br&gt;  Represents the single price of the transaction item.  </value>
+        /// <value>Gets or sets the single price.     Represents the single price of the transaction item.  </value>
         [DataMember(Name = "singlePrice", EmitDefaultValue = false)]
         public double SinglePrice { get; set; }
 
         /// <summary>
-        /// Gets or sets the total price.  &lt;br&gt;  Represents the total price of a transaction item.  
+        /// Gets or sets the total price.     Represents the total price of a transaction item.  
         /// </summary>
-        /// <value>Gets or sets the total price.  &lt;br&gt;  Represents the total price of a transaction item.  </value>
+        /// <value>Gets or sets the total price.     Represents the total price of a transaction item.  </value>
         [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
         public double TotalPrice { get; set; }
 

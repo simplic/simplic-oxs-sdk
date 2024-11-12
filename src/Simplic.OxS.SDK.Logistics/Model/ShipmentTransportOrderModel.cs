@@ -36,22 +36,22 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTransportOrderModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents the primary identifier of a transport order.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents the primary identifier of a transport order.  .</param>
         /// <param name="customerAddress">customerAddress.</param>
-        /// <param name="overriceCustomerAddress">Gets or sets whether the customer address will be overwritten.  &lt;br&gt;  If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  .</param>
+        /// <param name="overriceCustomerAddress">Gets or sets whether the customer address will be overwritten.     If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  .</param>
         /// <param name="carrierAddress">carrierAddress.</param>
-        /// <param name="overrideCarrierAddress">Gets or sets whether the carrier address will be overwritten.  &lt;br&gt;  If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  .</param>
+        /// <param name="overrideCarrierAddress">Gets or sets whether the carrier address will be overwritten.     If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  .</param>
         /// <param name="freightPayerAddress">freightPayerAddress.</param>
-        /// <param name="overrideFreightPayerAddress">Gets or sets whether the freight payer address will be overwritten.  &lt;br&gt;  If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  .</param>
-        /// <param name="number">Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager..</param>
-        /// <param name="referenceNumber">Gets or sets the reference number.  &lt;br&gt;  Usually represents the number of another programm or the customer number for this object.  .</param>
+        /// <param name="overrideFreightPayerAddress">Gets or sets whether the freight payer address will be overwritten.     If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  .</param>
+        /// <param name="number">Gets or sets the number.     The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number.     Usually represents the number of another programm or the customer number for this object.  .</param>
         /// <param name="internalNumber">Gets or sets the number..</param>
-        /// <param name="orderDate">Gets or sets the order date.  &lt;br&gt;  This represents the date on which the order is ordered.  .</param>
+        /// <param name="orderDate">Gets or sets the order date.     This represents the date on which the order is ordered.  .</param>
         /// <param name="isDeleted">Gets or sets whether the transport order is deleted..</param>
-        /// <param name="beginDate">Gets or sets the begin date.  &lt;br&gt;  Represents the date the transport order will begin.  .</param>
-        /// <param name="endDate">Gets or sets the end date.  &lt;br&gt;  Represents the date the transport order should end.  .</param>
-        /// <param name="customCustomerPrice">Gets or sets the custom customer price.  &lt;br&gt;  This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  .</param>
-        /// <param name="calculatedCustomerPrice">Gets or sets the calculated customet price.  &lt;br&gt;  This field is for a calculated price for the customer.  .</param>
+        /// <param name="beginDate">Gets or sets the begin date.     Represents the date the transport order will begin.  .</param>
+        /// <param name="endDate">Gets or sets the end date.     Represents the date the transport order should end.  .</param>
+        /// <param name="customCustomerPrice">Gets or sets the custom customer price.     This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  .</param>
+        /// <param name="calculatedCustomerPrice">Gets or sets the calculated customet price.     This field is for a calculated price for the customer.  .</param>
         /// <param name="status">status.</param>
         public ShipmentTransportOrderModel(Guid id = default(Guid), AddressModel customerAddress = default(AddressModel), bool overriceCustomerAddress = default(bool), AddressModel carrierAddress = default(AddressModel), bool overrideCarrierAddress = default(bool), AddressModel freightPayerAddress = default(AddressModel), bool overrideFreightPayerAddress = default(bool), string number = default(string), string referenceNumber = default(string), string internalNumber = default(string), DateTime? orderDate = default(DateTime?), bool isDeleted = default(bool), DateTime? beginDate = default(DateTime?), DateTime? endDate = default(DateTime?), double customCustomerPrice = default(double), double calculatedCustomerPrice = default(double), TransportOrderStatusModel status = default(TransportOrderStatusModel))
         {
@@ -75,9 +75,9 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents the primary identifier of a transport order.  
+        /// Gets or sets the id.     Represents the primary identifier of a transport order.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents the primary identifier of a transport order.  </value>
+        /// <value>Gets or sets the id.     Represents the primary identifier of a transport order.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -88,9 +88,9 @@ namespace Simplic.OxS.SDK.Logistics
         public AddressModel CustomerAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the customer address will be overwritten.  &lt;br&gt;  If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  
+        /// Gets or sets whether the customer address will be overwritten.     If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  
         /// </summary>
-        /// <value>Gets or sets whether the customer address will be overwritten.  &lt;br&gt;  If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  </value>
+        /// <value>Gets or sets whether the customer address will be overwritten.     If this one is set to true the customer address of all contained shipments will be set to the same  cusomer address as the one in this transport order.  </value>
         [DataMember(Name = "overriceCustomerAddress", EmitDefaultValue = true)]
         public bool OverriceCustomerAddress { get; set; }
 
@@ -101,9 +101,9 @@ namespace Simplic.OxS.SDK.Logistics
         public AddressModel CarrierAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the carrier address will be overwritten.  &lt;br&gt;  If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  
+        /// Gets or sets whether the carrier address will be overwritten.     If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  
         /// </summary>
-        /// <value>Gets or sets whether the carrier address will be overwritten.  &lt;br&gt;  If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  </value>
+        /// <value>Gets or sets whether the carrier address will be overwritten.     If this is set to true the carrier address of all contained shipments will be set to the same carrier  address as the one in this transport order.  </value>
         [DataMember(Name = "overrideCarrierAddress", EmitDefaultValue = true)]
         public bool OverrideCarrierAddress { get; set; }
 
@@ -114,23 +114,23 @@ namespace Simplic.OxS.SDK.Logistics
         public AddressModel FreightPayerAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the freight payer address will be overwritten.  &lt;br&gt;  If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  
+        /// Gets or sets whether the freight payer address will be overwritten.     If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  
         /// </summary>
-        /// <value>Gets or sets whether the freight payer address will be overwritten.  &lt;br&gt;  If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  </value>
+        /// <value>Gets or sets whether the freight payer address will be overwritten.     If ths is set to true the freight payer address of all contained shipments will be set to the same   freight payer address as the one in this transport order.  </value>
         [DataMember(Name = "overrideFreightPayerAddress", EmitDefaultValue = true)]
         public bool OverrideFreightPayerAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager.
+        /// Gets or sets the number.     The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager.
         /// </summary>
-        /// <value>Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager.</value>
+        /// <value>Gets or sets the number.     The number is a human readable identifier for this transport order.    A number should be  unique within a tenant and is usually set by the sequence manager.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the reference number.  &lt;br&gt;  Usually represents the number of another programm or the customer number for this object.  
+        /// Gets or sets the reference number.     Usually represents the number of another programm or the customer number for this object.  
         /// </summary>
-        /// <value>Gets or sets the reference number.  &lt;br&gt;  Usually represents the number of another programm or the customer number for this object.  </value>
+        /// <value>Gets or sets the reference number.     Usually represents the number of another programm or the customer number for this object.  </value>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
 
@@ -142,9 +142,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string InternalNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets the order date.  &lt;br&gt;  This represents the date on which the order is ordered.  
+        /// Gets or sets the order date.     This represents the date on which the order is ordered.  
         /// </summary>
-        /// <value>Gets or sets the order date.  &lt;br&gt;  This represents the date on which the order is ordered.  </value>
+        /// <value>Gets or sets the order date.     This represents the date on which the order is ordered.  </value>
         [DataMember(Name = "orderDate", EmitDefaultValue = true)]
         public DateTime? OrderDate { get; set; }
 
@@ -156,30 +156,30 @@ namespace Simplic.OxS.SDK.Logistics
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or sets the begin date.  &lt;br&gt;  Represents the date the transport order will begin.  
+        /// Gets or sets the begin date.     Represents the date the transport order will begin.  
         /// </summary>
-        /// <value>Gets or sets the begin date.  &lt;br&gt;  Represents the date the transport order will begin.  </value>
+        /// <value>Gets or sets the begin date.     Represents the date the transport order will begin.  </value>
         [DataMember(Name = "beginDate", EmitDefaultValue = true)]
         public DateTime? BeginDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date.  &lt;br&gt;  Represents the date the transport order should end.  
+        /// Gets or sets the end date.     Represents the date the transport order should end.  
         /// </summary>
-        /// <value>Gets or sets the end date.  &lt;br&gt;  Represents the date the transport order should end.  </value>
+        /// <value>Gets or sets the end date.     Represents the date the transport order should end.  </value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the custom customer price.  &lt;br&gt;  This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  
+        /// Gets or sets the custom customer price.     This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  
         /// </summary>
-        /// <value>Gets or sets the custom customer price.  &lt;br&gt;  This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  </value>
+        /// <value>Gets or sets the custom customer price.     This field is to hold a custom price for the customer.   E.g. when he has to pay a specific amount which will not be calculted from the shipments.  </value>
         [DataMember(Name = "customCustomerPrice", EmitDefaultValue = false)]
         public double CustomCustomerPrice { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated customet price.  &lt;br&gt;  This field is for a calculated price for the customer.  
+        /// Gets or sets the calculated customet price.     This field is for a calculated price for the customer.  
         /// </summary>
-        /// <value>Gets or sets the calculated customet price.  &lt;br&gt;  This field is for a calculated price for the customer.  </value>
+        /// <value>Gets or sets the calculated customet price.     This field is for a calculated price for the customer.  </value>
         [DataMember(Name = "calculatedCustomerPrice", EmitDefaultValue = false)]
         public double CalculatedCustomerPrice { get; set; }
 

@@ -5,9 +5,9 @@ Shared model of resource.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | Gets the type of the resource.  &lt;br&gt;  E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;   | [optional] 
-**MatchCode** | **string** | Gets or sets the match code.  &lt;br&gt;  This will be a non unique human readable number for the resource.   | [optional] 
-**DisplayName** | **string** | Gets or sets the user-friendly display name  &lt;br&gt;  This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.   | [optional] 
+**Type** | **string** | Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;   | [optional] 
+**MatchCode** | **string** | Gets or sets the match code.     This will be a non unique human readable number for the resource.   | [optional] 
+**DisplayName** | **string** | Gets or sets the user-friendly display name     This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.   | [optional] 
 **LoadingSlots** | [**List&lt;LoadingSlotModel&gt;**](LoadingSlotModel.md) | Gets or sets the loading slots of the resource. | [optional] 
 **Location** | [**ResourceLocationModel**](ResourceLocationModel.md) |  | [optional] 
 **IsLoadable** | **bool** | Gets or sets whether the resource is loadable | [optional] 

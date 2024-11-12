@@ -38,10 +38,10 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="id">Gets or sets the id..</param>
         /// <param name="orderId">Gets or sets the order id in which the actions are processed..</param>
-        /// <param name="dateTime">Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  .</param>
-        /// <param name="actualDateTime">Gets or sets the actual date time.  &lt;br&gt;  Represents the actual date and time of the action.  .</param>
-        /// <param name="calculatedDateTime">Gets or sets the calculated date time.  &lt;br&gt;  Represents the calculated date and time of the action.  .</param>
-        /// <param name="mirroredTourNumber">Gets or sets the tour number of the mirrored tour.  &lt;br&gt;  The tour number will be used to make sure that all generated tours from this action have the same   tour number.  .</param>
+        /// <param name="dateTime">Gets or sets the date time.     Represents the planned date and time of the action.  .</param>
+        /// <param name="actualDateTime">Gets or sets the actual date time.     Represents the actual date and time of the action.  .</param>
+        /// <param name="calculatedDateTime">Gets or sets the calculated date time.     Represents the calculated date and time of the action.  .</param>
+        /// <param name="mirroredTourNumber">Gets or sets the tour number of the mirrored tour.     The tour number will be used to make sure that all generated tours from this action have the same   tour number.  .</param>
         /// <param name="type">Gets or sets the type..</param>
         /// <param name="notes">Gets or sets notes, which are attached to the current action in the tour.</param>
         /// <param name="globalActionId">Gets or sets the global action id..</param>
@@ -50,9 +50,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="address">address.</param>
         /// <param name="cleaningSlots">Gets or sets a list of used loading slots..</param>
         /// <param name="usedLoadingSlots">Gets or sets a list of used loading slots..</param>
-        /// <param name="mirroredTourTags">Gets or sets the mirrored tour tags.   &lt;br&gt;  The mirrored tour tags will be used to add tags to the mirrored tour.  .</param>
+        /// <param name="mirroredTourTags">Gets or sets the mirrored tour tags.      The mirrored tour tags will be used to add tags to the mirrored tour.  .</param>
         /// <param name="mirroredTourStatus">mirroredTourStatus.</param>
-        /// <param name="outOfTour">Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.  &lt;br&gt;  The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  .</param>
+        /// <param name="outOfTour">Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.     The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  .</param>
         public TourActionModel(Guid id = default(Guid), int orderId = default(int), DateTime? dateTime = default(DateTime?), DateTime? actualDateTime = default(DateTime?), DateTime? calculatedDateTime = default(DateTime?), string mirroredTourNumber = default(string), string type = default(string), string notes = default(string), Guid globalActionId = default(Guid), TourEntityModel entity = default(TourEntityModel), ResourceModel resource = default(ResourceModel), AddressModel address = default(AddressModel), List<LoadingSlotModel> cleaningSlots = default(List<LoadingSlotModel>), List<LoadingSlotModel> usedLoadingSlots = default(List<LoadingSlotModel>), List<TourTagModel> mirroredTourTags = default(List<TourTagModel>), TourStatusModel mirroredTourStatus = default(TourStatusModel), bool outOfTour = default(bool))
         {
             this.Id = id;
@@ -89,30 +89,30 @@ namespace Simplic.OxS.SDK.Logistics
         public int OrderId { get; set; }
 
         /// <summary>
-        /// Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  
+        /// Gets or sets the date time.     Represents the planned date and time of the action.  
         /// </summary>
-        /// <value>Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  </value>
+        /// <value>Gets or sets the date time.     Represents the planned date and time of the action.  </value>
         [DataMember(Name = "dateTime", EmitDefaultValue = true)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual date time.  &lt;br&gt;  Represents the actual date and time of the action.  
+        /// Gets or sets the actual date time.     Represents the actual date and time of the action.  
         /// </summary>
-        /// <value>Gets or sets the actual date time.  &lt;br&gt;  Represents the actual date and time of the action.  </value>
+        /// <value>Gets or sets the actual date time.     Represents the actual date and time of the action.  </value>
         [DataMember(Name = "actualDateTime", EmitDefaultValue = true)]
         public DateTime? ActualDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated date time.  &lt;br&gt;  Represents the calculated date and time of the action.  
+        /// Gets or sets the calculated date time.     Represents the calculated date and time of the action.  
         /// </summary>
-        /// <value>Gets or sets the calculated date time.  &lt;br&gt;  Represents the calculated date and time of the action.  </value>
+        /// <value>Gets or sets the calculated date time.     Represents the calculated date and time of the action.  </value>
         [DataMember(Name = "calculatedDateTime", EmitDefaultValue = true)]
         public DateTime? CalculatedDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the tour number of the mirrored tour.  &lt;br&gt;  The tour number will be used to make sure that all generated tours from this action have the same   tour number.  
+        /// Gets or sets the tour number of the mirrored tour.     The tour number will be used to make sure that all generated tours from this action have the same   tour number.  
         /// </summary>
-        /// <value>Gets or sets the tour number of the mirrored tour.  &lt;br&gt;  The tour number will be used to make sure that all generated tours from this action have the same   tour number.  </value>
+        /// <value>Gets or sets the tour number of the mirrored tour.     The tour number will be used to make sure that all generated tours from this action have the same   tour number.  </value>
         [DataMember(Name = "mirroredTourNumber", EmitDefaultValue = true)]
         public string MirroredTourNumber { get; set; }
 
@@ -170,9 +170,9 @@ namespace Simplic.OxS.SDK.Logistics
         public List<LoadingSlotModel> UsedLoadingSlots { get; set; }
 
         /// <summary>
-        /// Gets or sets the mirrored tour tags.   &lt;br&gt;  The mirrored tour tags will be used to add tags to the mirrored tour.  
+        /// Gets or sets the mirrored tour tags.      The mirrored tour tags will be used to add tags to the mirrored tour.  
         /// </summary>
-        /// <value>Gets or sets the mirrored tour tags.   &lt;br&gt;  The mirrored tour tags will be used to add tags to the mirrored tour.  </value>
+        /// <value>Gets or sets the mirrored tour tags.      The mirrored tour tags will be used to add tags to the mirrored tour.  </value>
         [DataMember(Name = "mirroredTourTags", EmitDefaultValue = true)]
         public List<TourTagModel> MirroredTourTags { get; set; }
 
@@ -183,9 +183,9 @@ namespace Simplic.OxS.SDK.Logistics
         public TourStatusModel MirroredTourStatus { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.  &lt;br&gt;  The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  
+        /// Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.     The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  
         /// </summary>
-        /// <value>Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.  &lt;br&gt;  The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  </value>
+        /// <value>Gets or sets whether the tour action is not happening during the tour, but is required to be   present for attached resources and entities being complete.     The property does only need to be set in mirrored tours and should ALWAYS be false in \&quot;normal\&quot; tours.  </value>
         [DataMember(Name = "outOfTour", EmitDefaultValue = true)]
         public bool OutOfTour { get; set; }
 

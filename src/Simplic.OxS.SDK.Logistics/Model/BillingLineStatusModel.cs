@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingLineStatusModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  The id is the unique identifier of the status.  .</param>
+        /// <param name="id">Gets or sets the id.     The id is the unique identifier of the status.  .</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="number">Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for the status.  .</param>
-        /// <param name="roles">Gets or sets roles.  &lt;br&gt;  These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;.</param>
+        /// <param name="number">Gets or sets the number.     The number is a human readable identifier for the status.  .</param>
+        /// <param name="roles">Gets or sets roles.     These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;.</param>
         /// <param name="hexColor">Gets or sets the color as as hexadecimal value..</param>
         public BillingLineStatusModel(Guid id = default(Guid), string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexColor = default(string))
         {
@@ -51,9 +51,9 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  The id is the unique identifier of the status.  
+        /// Gets or sets the id.     The id is the unique identifier of the status.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  The id is the unique identifier of the status.  </value>
+        /// <value>Gets or sets the id.     The id is the unique identifier of the status.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -65,16 +65,16 @@ namespace Simplic.OxS.SDK.Logistics
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for the status.  
+        /// Gets or sets the number.     The number is a human readable identifier for the status.  
         /// </summary>
-        /// <value>Gets or sets the number.  &lt;br&gt;  The number is a human readable identifier for the status.  </value>
+        /// <value>Gets or sets the number.     The number is a human readable identifier for the status.  </value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets roles.  &lt;br&gt;  These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;
+        /// Gets or sets roles.     These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets roles.  &lt;br&gt;  These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;</value>
+        /// <value>Gets or sets roles.     These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;item&gt;billed&lt;/item&gt;&lt;/list&gt;</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 

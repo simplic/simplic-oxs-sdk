@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
-    /// Class to represent a transit.  &lt;br&gt;  A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.
+    /// Class to represent a transit.     A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.
     /// </summary>
     [DataContract(Name = "TransitModel")]
     public partial class TransitModel : IEquatable<TransitModel>, IValidatableObject
@@ -41,10 +41,10 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="startDateTime">Gets or sets the start date time of the transit..</param>
         /// <param name="endAddress">endAddress.</param>
         /// <param name="endDateTime">Gets or sets the end date time off the transit..</param>
-        /// <param name="startActionId">Gets or sets the id of the start action.  &lt;br&gt;  When the guid is null the transit will start at the start of the tour.  .</param>
-        /// <param name="globalStartActionId">Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  .</param>
-        /// <param name="endActionId">Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  .</param>
-        /// <param name="globalEndActionId">Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  .</param>
+        /// <param name="startActionId">Gets or sets the id of the start action.     When the guid is null the transit will start at the start of the tour.  .</param>
+        /// <param name="globalStartActionId">Gets or sets the global id of the start action.     Will contain the tour id in case of the start of the tour.  .</param>
+        /// <param name="endActionId">Gets or sets the id of the end action.     When the guid is null the transit will end at the end of the tour.  .</param>
+        /// <param name="globalEndActionId">Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.  .</param>
         /// <param name="distance">Gets or sets the distance in meter.</param>
         /// <param name="tollDistance">Gets or sets the toll distance in meter.</param>
         public TransitModel(Guid id = default(Guid), AddressModel startAddress = default(AddressModel), DateTime startDateTime = default(DateTime), AddressModel endAddress = default(AddressModel), DateTime endDateTime = default(DateTime), Guid? startActionId = default(Guid?), Guid? globalStartActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? globalEndActionId = default(Guid?), int distance = default(int), int tollDistance = default(int))
@@ -96,30 +96,30 @@ namespace Simplic.OxS.SDK.Logistics
         public DateTime EndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the id of the start action.  &lt;br&gt;  When the guid is null the transit will start at the start of the tour.  
+        /// Gets or sets the id of the start action.     When the guid is null the transit will start at the start of the tour.  
         /// </summary>
-        /// <value>Gets or sets the id of the start action.  &lt;br&gt;  When the guid is null the transit will start at the start of the tour.  </value>
+        /// <value>Gets or sets the id of the start action.     When the guid is null the transit will start at the start of the tour.  </value>
         [DataMember(Name = "startActionId", EmitDefaultValue = true)]
         public Guid? StartActionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  
+        /// Gets or sets the global id of the start action.     Will contain the tour id in case of the start of the tour.  
         /// </summary>
-        /// <value>Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.  </value>
+        /// <value>Gets or sets the global id of the start action.     Will contain the tour id in case of the start of the tour.  </value>
         [DataMember(Name = "globalStartActionId", EmitDefaultValue = true)]
         public Guid? GlobalStartActionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  
+        /// Gets or sets the id of the end action.     When the guid is null the transit will end at the end of the tour.  
         /// </summary>
-        /// <value>Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.  </value>
+        /// <value>Gets or sets the id of the end action.     When the guid is null the transit will end at the end of the tour.  </value>
         [DataMember(Name = "endActionId", EmitDefaultValue = true)]
         public Guid? EndActionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  
+        /// Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.  
         /// </summary>
-        /// <value>Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.  </value>
+        /// <value>Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.  </value>
         [DataMember(Name = "globalEndActionId", EmitDefaultValue = true)]
         public Guid? GlobalEndActionId { get; set; }
 

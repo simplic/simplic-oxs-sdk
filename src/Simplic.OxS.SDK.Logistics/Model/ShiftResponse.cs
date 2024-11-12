@@ -38,9 +38,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="id">Gets or sets the id..</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="startTime">startTime.</param>
-        /// <param name="endTime">endTime.</param>
-        public ShiftResponse(Guid id = default(Guid), string name = default(string), TimeSpan startTime = default(TimeSpan), TimeSpan endTime = default(TimeSpan))
+        /// <param name="startTime">Gets or sets the start time..</param>
+        /// <param name="endTime">Gets or sets the end time..</param>
+        public ShiftResponse(Guid id = default(Guid), string name = default(string), string startTime = default(string), string endTime = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -63,16 +63,18 @@ namespace Simplic.OxS.SDK.Logistics
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartTime
+        /// Gets or sets the start time.
         /// </summary>
+        /// <value>Gets or sets the start time.</value>
         [DataMember(Name = "startTime", EmitDefaultValue = false)]
-        public TimeSpan StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndTime
+        /// Gets or sets the end time.
         /// </summary>
+        /// <value>Gets or sets the end time.</value>
         [DataMember(Name = "endTime", EmitDefaultValue = false)]
-        public TimeSpan EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

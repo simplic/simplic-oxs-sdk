@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTagModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the guid.  &lt;br&gt;  This represents a unique identifier for the tag.  .</param>
+        /// <param name="id">Gets or sets the guid.     This represents a unique identifier for the tag.  .</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="groupName">Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
+        /// <param name="groupName">Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
         /// <param name="hexColor">Gets or sets the hex color of the string..</param>
         /// <param name="organizationId">Gets or sets the organization id..</param>
         /// <param name="isDeleted">Gets or sets whether the shipment tag is deleted..</param>
@@ -53,9 +53,9 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the guid.  &lt;br&gt;  This represents a unique identifier for the tag.  
+        /// Gets or sets the guid.     This represents a unique identifier for the tag.  
         /// </summary>
-        /// <value>Gets or sets the guid.  &lt;br&gt;  This represents a unique identifier for the tag.  </value>
+        /// <value>Gets or sets the guid.     This represents a unique identifier for the tag.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -67,9 +67,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
+        /// Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
         /// </summary>
-        /// <value>Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
+        /// <value>Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
         [DataMember(Name = "groupName", EmitDefaultValue = true)]
         public string GroupName { get; set; }
 

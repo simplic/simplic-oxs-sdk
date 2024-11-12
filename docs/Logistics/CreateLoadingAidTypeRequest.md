@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | **int** | Gets or sets the number.  &lt;br&gt;  Represents a human readable identifier.   | [optional] 
+**Number** | **int** | Gets or sets the number.     Represents a human readable identifier.   | [optional] 
 **DisplayName** | **string** | Gets or sets the display name. | [optional] 
 **Weight** | **double** | Gets or sets the weight. | [optional] 
 **ShortText** | **string** | Gets or sets the short text. | [optional] 

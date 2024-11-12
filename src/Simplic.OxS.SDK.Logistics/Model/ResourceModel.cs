@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceModel" /> class.
         /// </summary>
-        /// <param name="type">Gets the type of the resource.  &lt;br&gt;  E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  .</param>
-        /// <param name="matchCode">Gets or sets the match code.  &lt;br&gt;  This will be a non unique human readable number for the resource.  .</param>
-        /// <param name="displayName">Gets or sets the user-friendly display name  &lt;br&gt;  This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  .</param>
+        /// <param name="type">Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  .</param>
+        /// <param name="matchCode">Gets or sets the match code.     This will be a non unique human readable number for the resource.  .</param>
+        /// <param name="displayName">Gets or sets the user-friendly display name     This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  .</param>
         /// <param name="loadingSlots">Gets or sets the loading slots of the resource..</param>
         /// <param name="location">location.</param>
         /// <param name="isLoadable">Gets or sets whether the resource is loadable.</param>
@@ -77,23 +77,23 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets the type of the resource.  &lt;br&gt;  E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  
+        /// Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  
         /// </summary>
-        /// <value>Gets the type of the resource.  &lt;br&gt;  E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  </value>
+        /// <value>Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  </value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the match code.  &lt;br&gt;  This will be a non unique human readable number for the resource.  
+        /// Gets or sets the match code.     This will be a non unique human readable number for the resource.  
         /// </summary>
-        /// <value>Gets or sets the match code.  &lt;br&gt;  This will be a non unique human readable number for the resource.  </value>
+        /// <value>Gets or sets the match code.     This will be a non unique human readable number for the resource.  </value>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 
         /// <summary>
-        /// Gets or sets the user-friendly display name  &lt;br&gt;  This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  
+        /// Gets or sets the user-friendly display name     This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  
         /// </summary>
-        /// <value>Gets or sets the user-friendly display name  &lt;br&gt;  This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  </value>
+        /// <value>Gets or sets the user-friendly display name     This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  </value>
         [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 

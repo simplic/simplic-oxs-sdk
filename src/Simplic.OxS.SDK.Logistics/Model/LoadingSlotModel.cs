@@ -37,8 +37,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// Initializes a new instance of the <see cref="LoadingSlotModel" /> class.
         /// </summary>
         /// <param name="id">Gets or sets the id of the loading slot..</param>
-        /// <param name="name">Gets or sets the name of the loading slot.  &lt;br&gt;  This should be used as a short human readable identifier for the loading slot.  .</param>
-        /// <param name="description">Gets or sets the description.  &lt;br&gt;  This could be used to notate the size or exact location of the loading slot.  .</param>
+        /// <param name="name">Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  .</param>
+        /// <param name="description">Gets or sets the description.     This could be used to notate the size or exact location of the loading slot.  .</param>
         /// <param name="resourceId">Gets or sets the id of the resource this loading slot is assigned to..</param>
         public LoadingSlotModel(Guid id = default(Guid), string name = default(string), string description = default(string), Guid resourceId = default(Guid))
         {
@@ -56,16 +56,16 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the loading slot.  &lt;br&gt;  This should be used as a short human readable identifier for the loading slot.  
+        /// Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  
         /// </summary>
-        /// <value>Gets or sets the name of the loading slot.  &lt;br&gt;  This should be used as a short human readable identifier for the loading slot.  </value>
+        /// <value>Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  </value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.  &lt;br&gt;  This could be used to notate the size or exact location of the loading slot.  
+        /// Gets or sets the description.     This could be used to notate the size or exact location of the loading slot.  
         /// </summary>
-        /// <value>Gets or sets the description.  &lt;br&gt;  This could be used to notate the size or exact location of the loading slot.  </value>
+        /// <value>Gets or sets the description.     This could be used to notate the size or exact location of the loading slot.  </value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 

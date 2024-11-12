@@ -40,7 +40,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="hexColor">Gets or sets the hex color of the planning region..</param>
         /// <param name="include">Gets or sets a list of country iso / zipcode tuples which are included from the plannig region..</param>
         /// <param name="exclude">Gets or sets a list of country iso / zipcode tuples which are excluded from the planning region..</param>
-        /// <param name="functions">Gets or sets a list of functions for the region.  &lt;br&gt;  Currently planned are:  show_loadings,  show_unloading,  show_transits  .</param>
+        /// <param name="functions">Gets or sets a list of functions for the region.     Currently planned are:  show_loadings,  show_unloading,  show_transits  .</param>
         public PatchPlanningRegionRequest(string name = default(string), string hexColor = default(string), List<RegionModel> include = default(List<RegionModel>), List<RegionModel> exclude = default(List<RegionModel>), List<string> functions = default(List<string>))
         {
             this.Name = name;
@@ -79,9 +79,9 @@ namespace Simplic.OxS.SDK.Logistics
         public List<RegionModel> Exclude { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of functions for the region.  &lt;br&gt;  Currently planned are:  show_loadings,  show_unloading,  show_transits  
+        /// Gets or sets a list of functions for the region.     Currently planned are:  show_loadings,  show_unloading,  show_transits  
         /// </summary>
-        /// <value>Gets or sets a list of functions for the region.  &lt;br&gt;  Currently planned are:  show_loadings,  show_unloading,  show_transits  </value>
+        /// <value>Gets or sets a list of functions for the region.     Currently planned are:  show_loadings,  show_unloading,  show_transits  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 

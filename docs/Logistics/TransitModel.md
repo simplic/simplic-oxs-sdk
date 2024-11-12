@@ -1,5 +1,5 @@
 # Simplic.OxS.SDK.Logistics.TransitModel
-Class to represent a transit.  <br>  A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.
+Class to represent a transit.     A transit describes a movement of the primary resource from one place to another during a tour.    Transits will be automaically generated and updated from a service.
 
 ## Properties
 
@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **StartDateTime** | **DateTime** | Gets or sets the start date time of the transit. | [optional] 
 **EndAddress** | [**AddressModel**](AddressModel.md) |  | [optional] 
 **EndDateTime** | **DateTime** | Gets or sets the end date time off the transit. | [optional] 
-**StartActionId** | **Guid?** | Gets or sets the id of the start action.  &lt;br&gt;  When the guid is null the transit will start at the start of the tour.   | [optional] 
-**GlobalStartActionId** | **Guid?** | Gets or sets the global id of the start action.  &lt;br&gt;  Will contain the tour id in case of the start of the tour.   | [optional] 
-**EndActionId** | **Guid?** | Gets or sets the id of the end action.  &lt;br&gt;  When the guid is null the transit will end at the end of the tour.   | [optional] 
-**GlobalEndActionId** | **Guid?** | Gets or sets the global id of the end action.  &lt;br&gt;  Will contain the tour id in case of the end of the tour.   | [optional] 
+**StartActionId** | **Guid?** | Gets or sets the id of the start action.     When the guid is null the transit will start at the start of the tour.   | [optional] 
+**GlobalStartActionId** | **Guid?** | Gets or sets the global id of the start action.     Will contain the tour id in case of the start of the tour.   | [optional] 
+**EndActionId** | **Guid?** | Gets or sets the id of the end action.     When the guid is null the transit will end at the end of the tour.   | [optional] 
+**GlobalEndActionId** | **Guid?** | Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.   | [optional] 
 **Distance** | **int** | Gets or sets the distance in meter | [optional] 
 **TollDistance** | **int** | Gets or sets the toll distance in meter | [optional] 
 

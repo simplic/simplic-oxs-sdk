@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="address">address.</param>
         /// <param name="id">Gets or sets the id..</param>
         /// <param name="orderId">Gets or sets the order id in which the actions are processed..</param>
-        /// <param name="dateTime">Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  .</param>
+        /// <param name="dateTime">Gets or sets the date time.     Represents the planned date and time of the action.  .</param>
         public CalculateTourActionModel(AddressModel address = default(AddressModel), Guid id = default(Guid), int orderId = default(int), DateTime? dateTime = default(DateTime?))
         {
             this.Address = address;
@@ -69,9 +69,9 @@ namespace Simplic.OxS.SDK.Logistics
         public int OrderId { get; set; }
 
         /// <summary>
-        /// Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  
+        /// Gets or sets the date time.     Represents the planned date and time of the action.  
         /// </summary>
-        /// <value>Gets or sets the date time.  &lt;br&gt;  Represents the planned date and time of the action.  </value>
+        /// <value>Gets or sets the date time.     Represents the planned date and time of the action.  </value>
         [DataMember(Name = "dateTime", EmitDefaultValue = true)]
         public DateTime? DateTime { get; set; }
 

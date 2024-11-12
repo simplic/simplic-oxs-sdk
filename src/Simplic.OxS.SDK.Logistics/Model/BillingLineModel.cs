@@ -42,15 +42,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingLineModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of a billing line.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents the unique identifier of a billing line.  .</param>
         /// <param name="type">type.</param>
         /// <param name="billableContact">billableContact.</param>
         /// <param name="pricing">pricing.</param>
         /// <param name="status">status.</param>
-        /// <param name="singlePrice">Gets or sets the single price.  &lt;br&gt;  Represents the price of a single item.  .</param>
-        /// <param name="totalPrice">Gets or sets the total price.  &lt;br&gt;  Represents the price of all items.  .</param>
+        /// <param name="singlePrice">Gets or sets the single price.     Represents the price of a single item.  .</param>
+        /// <param name="totalPrice">Gets or sets the total price.     Represents the price of all items.  .</param>
         /// <param name="quantity">quantity.</param>
-        /// <param name="transactionItems">Gets or sets the transaction items where the billing line is present in.  &lt;br&gt;  The list will be filled during the billing process.  .</param>
+        /// <param name="transactionItems">Gets or sets the transaction items where the billing line is present in.     The list will be filled during the billing process.  .</param>
         /// <param name="article">article.</param>
         /// <param name="weightNoteId">Gets or sets the weight note id that will be billed.</param>
         /// <param name="reference">Gets or sets the external reference..</param>
@@ -71,9 +71,9 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of a billing line.  
+        /// Gets or sets the id.     Represents the unique identifier of a billing line.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of a billing line.  </value>
+        /// <value>Gets or sets the id.     Represents the unique identifier of a billing line.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -96,16 +96,16 @@ namespace Simplic.OxS.SDK.Logistics
         public BillingLineStatusModel Status { get; set; }
 
         /// <summary>
-        /// Gets or sets the single price.  &lt;br&gt;  Represents the price of a single item.  
+        /// Gets or sets the single price.     Represents the price of a single item.  
         /// </summary>
-        /// <value>Gets or sets the single price.  &lt;br&gt;  Represents the price of a single item.  </value>
+        /// <value>Gets or sets the single price.     Represents the price of a single item.  </value>
         [DataMember(Name = "singlePrice", EmitDefaultValue = false)]
         public double SinglePrice { get; set; }
 
         /// <summary>
-        /// Gets or sets the total price.  &lt;br&gt;  Represents the price of all items.  
+        /// Gets or sets the total price.     Represents the price of all items.  
         /// </summary>
-        /// <value>Gets or sets the total price.  &lt;br&gt;  Represents the price of all items.  </value>
+        /// <value>Gets or sets the total price.     Represents the price of all items.  </value>
         [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
         public double TotalPrice { get; set; }
 
@@ -116,9 +116,9 @@ namespace Simplic.OxS.SDK.Logistics
         public QuantityModel Quantity { get; set; }
 
         /// <summary>
-        /// Gets or sets the transaction items where the billing line is present in.  &lt;br&gt;  The list will be filled during the billing process.  
+        /// Gets or sets the transaction items where the billing line is present in.     The list will be filled during the billing process.  
         /// </summary>
-        /// <value>Gets or sets the transaction items where the billing line is present in.  &lt;br&gt;  The list will be filled during the billing process.  </value>
+        /// <value>Gets or sets the transaction items where the billing line is present in.     The list will be filled during the billing process.  </value>
         [DataMember(Name = "transactionItems", EmitDefaultValue = true)]
         public List<BillingLineTransationItemModel> TransactionItems { get; set; }
 

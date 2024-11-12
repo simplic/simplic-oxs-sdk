@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="address">address.</param>
         /// <param name="accountNumber">Gets or sets the account number..</param>
-        /// <param name="personalAccountId">Gets or sets the personal account id.  &lt;br&gt;  Represents the id of a personal account from the Simplic.ApplicationCollection project.  .</param>
+        /// <param name="personalAccountId">Gets or sets the personal account id.     Represents the id of a personal account from the Simplic.ApplicationCollection project.  .</param>
         public BillableContactModel(AddressModel address = default(AddressModel), string accountNumber = default(string), Guid? personalAccountId = default(Guid?))
         {
             this.Address = address;
@@ -60,9 +60,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string AccountNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets the personal account id.  &lt;br&gt;  Represents the id of a personal account from the Simplic.ApplicationCollection project.  
+        /// Gets or sets the personal account id.     Represents the id of a personal account from the Simplic.ApplicationCollection project.  
         /// </summary>
-        /// <value>Gets or sets the personal account id.  &lt;br&gt;  Represents the id of a personal account from the Simplic.ApplicationCollection project.  </value>
+        /// <value>Gets or sets the personal account id.     Represents the id of a personal account from the Simplic.ApplicationCollection project.  </value>
         [DataMember(Name = "personalAccountId", EmitDefaultValue = true)]
         public Guid? PersonalAccountId { get; set; }
 

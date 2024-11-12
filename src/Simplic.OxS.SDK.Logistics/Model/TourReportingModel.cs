@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="TourReportingModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  .</param>
-        /// <param name="globalTourId">Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents a unique identifier for a tour.  .</param>
+        /// <param name="globalTourId">Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  .</param>
         /// <param name="number">Gets or sets the number of the tour..</param>
         /// <param name="reference">Gets or sets the reference number..</param>
         /// <param name="startAddress">startAddress.</param>
         /// <param name="endAddress">endAddress.</param>
-        /// <param name="startDateTime">Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
-        /// <param name="endDateTime">Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
+        /// <param name="startDateTime">Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
+        /// <param name="endDateTime">Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
         /// <param name="tractorUnit1">tractorUnit1.</param>
         /// <param name="tractorUnit2">tractorUnit2.</param>
         /// <param name="tractorUnit3">tractorUnit3.</param>
@@ -87,16 +87,16 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  
+        /// Gets or sets the id.     Represents a unique identifier for a tour.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  </value>
+        /// <value>Gets or sets the id.     Represents a unique identifier for a tour.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  
+        /// Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  
         /// </summary>
-        /// <value>Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  </value>
+        /// <value>Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  </value>
         [DataMember(Name = "globalTourId", EmitDefaultValue = false)]
         public Guid GlobalTourId { get; set; }
 
@@ -127,16 +127,16 @@ namespace Simplic.OxS.SDK.Logistics
         public AddressModel EndAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
+        /// Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
         /// </summary>
-        /// <value>Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
+        /// <value>Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
         [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime StartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
+        /// Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
         /// </summary>
-        /// <value>Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
+        /// <value>Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
         [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
         public DateTime EndDateTime { get; set; }
 

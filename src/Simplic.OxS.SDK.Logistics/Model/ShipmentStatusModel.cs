@@ -37,12 +37,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// Initializes a new instance of the <see cref="ShipmentStatusModel" /> class.
         /// </summary>
         /// <param name="name">Gets or sets the namme of the status..</param>
-        /// <param name="number">Gets or sets the number of the status.  &lt;br&gt;  The number is a human readable short name or number of the shipment.  .</param>
-        /// <param name="roles">Gets or sets roles.  &lt;br&gt;  These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;.</param>
-        /// <param name="hexColor">Gets or sets the hex color.  &lt;br&gt;  Will define the color of the status as hex code.  .</param>
-        /// <param name="orderNr">Gets or sets the order number.  &lt;br&gt;  The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first..</param>
-        /// <param name="resolver">Gets or sets the resolver name.  &lt;br&gt;  The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name..</param>
-        /// <param name="id">Gets or sets the id of the status as guid.  &lt;br&gt;  This will define the unique identifier of the status.  .</param>
+        /// <param name="number">Gets or sets the number of the status.     The number is a human readable short name or number of the shipment.  .</param>
+        /// <param name="roles">Gets or sets roles.     These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;.</param>
+        /// <param name="hexColor">Gets or sets the hex color.     Will define the color of the status as hex code.  .</param>
+        /// <param name="orderNr">Gets or sets the order number.     The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first..</param>
+        /// <param name="resolver">Gets or sets the resolver name.     The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name..</param>
+        /// <param name="id">Gets or sets the id of the status as guid.     This will define the unique identifier of the status.  .</param>
         /// <param name="isDeleted">Gets or sets whether the status is deleted..</param>
         public ShipmentStatusModel(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexColor = default(string), int orderNr = default(int), string resolver = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
         {
@@ -64,44 +64,44 @@ namespace Simplic.OxS.SDK.Logistics
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the number of the status.  &lt;br&gt;  The number is a human readable short name or number of the shipment.  
+        /// Gets or sets the number of the status.     The number is a human readable short name or number of the shipment.  
         /// </summary>
-        /// <value>Gets or sets the number of the status.  &lt;br&gt;  The number is a human readable short name or number of the shipment.  </value>
+        /// <value>Gets or sets the number of the status.     The number is a human readable short name or number of the shipment.  </value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets roles.  &lt;br&gt;  These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;
+        /// Gets or sets roles.     These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets roles.  &lt;br&gt;  These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;</value>
+        /// <value>Gets or sets roles.     These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt;</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 
         /// <summary>
-        /// Gets or sets the hex color.  &lt;br&gt;  Will define the color of the status as hex code.  
+        /// Gets or sets the hex color.     Will define the color of the status as hex code.  
         /// </summary>
-        /// <value>Gets or sets the hex color.  &lt;br&gt;  Will define the color of the status as hex code.  </value>
+        /// <value>Gets or sets the hex color.     Will define the color of the status as hex code.  </value>
         [DataMember(Name = "hexColor", EmitDefaultValue = true)]
         public string HexColor { get; set; }
 
         /// <summary>
-        /// Gets or sets the order number.  &lt;br&gt;  The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first.
+        /// Gets or sets the order number.     The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first.
         /// </summary>
-        /// <value>Gets or sets the order number.  &lt;br&gt;  The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first.</value>
+        /// <value>Gets or sets the order number.     The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first.</value>
         [DataMember(Name = "orderNr", EmitDefaultValue = false)]
         public int OrderNr { get; set; }
 
         /// <summary>
-        /// Gets or sets the resolver name.  &lt;br&gt;  The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name.
+        /// Gets or sets the resolver name.     The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name.
         /// </summary>
-        /// <value>Gets or sets the resolver name.  &lt;br&gt;  The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name.</value>
+        /// <value>Gets or sets the resolver name.     The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name.</value>
         [DataMember(Name = "resolver", EmitDefaultValue = true)]
         public string Resolver { get; set; }
 
         /// <summary>
-        /// Gets or sets the id of the status as guid.  &lt;br&gt;  This will define the unique identifier of the status.  
+        /// Gets or sets the id of the status as guid.     This will define the unique identifier of the status.  
         /// </summary>
-        /// <value>Gets or sets the id of the status as guid.  &lt;br&gt;  This will define the unique identifier of the status.  </value>
+        /// <value>Gets or sets the id of the status as guid.     This will define the unique identifier of the status.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 

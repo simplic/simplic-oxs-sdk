@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentItemRequest" /> class.
         /// </summary>
-        /// <param name="text">Gets or sets the text.  &lt;br&gt;  The text is a field for the user to give more context to the shipment item and the billing.  .</param>
-        /// <param name="loadingMeters">Gets or sets the loading meters.  &lt;br&gt;  Loading meters define how many space a packed object will use on a trailer.  .</param>
+        /// <param name="text">Gets or sets the text.     The text is a field for the user to give more context to the shipment item and the billing.  .</param>
+        /// <param name="loadingMeters">Gets or sets the loading meters.     Loading meters define how many space a packed object will use on a trailer.  .</param>
         /// <param name="reference">Gets or sets the external reference..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="weight">weight.</param>
-        /// <param name="billingLines">Gets or sets the billing lines.  &lt;br&gt;  Billing lines determine which persons can be billed which amounts.  .</param>
+        /// <param name="billingLines">Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.  .</param>
         /// <param name="article">article.</param>
-        /// <param name="weightNotes">Gets or sets the weight notes.  &lt;br&gt;  Weight notes are used to get the real amount of the driven freight.  .</param>
+        /// <param name="weightNotes">Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.  .</param>
         /// <param name="status">status.</param>
         /// <param name="loadigAidId">Gets or sets the id of the loading aid..</param>
         public CreateShipmentItemRequest(string text = default(string), double loadingMeters = default(double), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), List<BillingLineModel> billingLines = default(List<BillingLineModel>), ShipmentArticleModel article = default(ShipmentArticleModel), List<WeightNoteModel> weightNotes = default(List<WeightNoteModel>), ShipmentItemStatusModel status = default(ShipmentItemStatusModel), Guid? loadigAidId = default(Guid?))
@@ -61,16 +61,16 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the text.  &lt;br&gt;  The text is a field for the user to give more context to the shipment item and the billing.  
+        /// Gets or sets the text.     The text is a field for the user to give more context to the shipment item and the billing.  
         /// </summary>
-        /// <value>Gets or sets the text.  &lt;br&gt;  The text is a field for the user to give more context to the shipment item and the billing.  </value>
+        /// <value>Gets or sets the text.     The text is a field for the user to give more context to the shipment item and the billing.  </value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets the loading meters.  &lt;br&gt;  Loading meters define how many space a packed object will use on a trailer.  
+        /// Gets or sets the loading meters.     Loading meters define how many space a packed object will use on a trailer.  
         /// </summary>
-        /// <value>Gets or sets the loading meters.  &lt;br&gt;  Loading meters define how many space a packed object will use on a trailer.  </value>
+        /// <value>Gets or sets the loading meters.     Loading meters define how many space a packed object will use on a trailer.  </value>
         [DataMember(Name = "loadingMeters", EmitDefaultValue = false)]
         public double LoadingMeters { get; set; }
 
@@ -94,9 +94,9 @@ namespace Simplic.OxS.SDK.Logistics
         public QuantityModel Weight { get; set; }
 
         /// <summary>
-        /// Gets or sets the billing lines.  &lt;br&gt;  Billing lines determine which persons can be billed which amounts.  
+        /// Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.  
         /// </summary>
-        /// <value>Gets or sets the billing lines.  &lt;br&gt;  Billing lines determine which persons can be billed which amounts.  </value>
+        /// <value>Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.  </value>
         [DataMember(Name = "billingLines", EmitDefaultValue = true)]
         public List<BillingLineModel> BillingLines { get; set; }
 
@@ -107,9 +107,9 @@ namespace Simplic.OxS.SDK.Logistics
         public ShipmentArticleModel Article { get; set; }
 
         /// <summary>
-        /// Gets or sets the weight notes.  &lt;br&gt;  Weight notes are used to get the real amount of the driven freight.  
+        /// Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.  
         /// </summary>
-        /// <value>Gets or sets the weight notes.  &lt;br&gt;  Weight notes are used to get the real amount of the driven freight.  </value>
+        /// <value>Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.  </value>
         [DataMember(Name = "weightNotes", EmitDefaultValue = true)]
         public List<WeightNoteModel> WeightNotes { get; set; }
 

@@ -44,9 +44,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="tourId">Gets or sets the tour id..</param>
         /// <param name="resourceId">Gets or sets the id of the main resource of the tour..</param>
-        /// <param name="startActionId">Gets or sets the id of the action that starts the eta.  &lt;br&gt;  When the start action id is null the tour start will be the start of the eta.  .</param>
+        /// <param name="startActionId">Gets or sets the id of the action that starts the eta.     When the start action id is null the tour start will be the start of the eta.  .</param>
         /// <param name="globalStartActionId">Gets or sets the global id of the start action..</param>
-        /// <param name="endActionId">Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  .</param>
+        /// <param name="endActionId">Gets er sets the id of the action that ends the eta.     When the end action id is null the tour end will be the end of the eta.  .</param>
         /// <param name="globalEndActionId">Gets or sets the global id of the end action..</param>
         /// <param name="startDateTime">Gets or sets the date and time when the eta will start..</param>
         /// <param name="startLongitude">Gets or sets the longitude of the start of the eta..</param>
@@ -60,7 +60,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="remainingTimePercent">Gets or sets the percentage of the time remaining..</param>
         /// <param name="remainingDistancePercent">Gets or sets the percentage of the distance remaining..</param>
         /// <param name="calculatedEndDateTime">Gets or sets the calculated end date time..</param>
-        /// <param name="plannedEndDateTime">Gets or sets the planned end date and time.   &lt;br&gt;The State will be calculated by comparing the calculated end date time with the planned and the tolerance..</param>
+        /// <param name="plannedEndDateTime">Gets or sets the planned end date and time.    The State will be calculated by comparing the calculated end date time with the planned and the tolerance..</param>
         /// <param name="toleranceMinutes">Gets or sets the tolerance for a delay in minutes..</param>
         /// <param name="lastCalculation">Gets or sets the date and time of the last calculation..</param>
         /// <param name="state">state.</param>
@@ -105,9 +105,9 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid ResourceId { get; set; }
 
         /// <summary>
-        /// Gets or sets the id of the action that starts the eta.  &lt;br&gt;  When the start action id is null the tour start will be the start of the eta.  
+        /// Gets or sets the id of the action that starts the eta.     When the start action id is null the tour start will be the start of the eta.  
         /// </summary>
-        /// <value>Gets or sets the id of the action that starts the eta.  &lt;br&gt;  When the start action id is null the tour start will be the start of the eta.  </value>
+        /// <value>Gets or sets the id of the action that starts the eta.     When the start action id is null the tour start will be the start of the eta.  </value>
         [DataMember(Name = "startActionId", EmitDefaultValue = true)]
         public Guid? StartActionId { get; set; }
 
@@ -119,9 +119,9 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid? GlobalStartActionId { get; set; }
 
         /// <summary>
-        /// Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  
+        /// Gets er sets the id of the action that ends the eta.     When the end action id is null the tour end will be the end of the eta.  
         /// </summary>
-        /// <value>Gets er sets the id of the action that ends the eta.  &lt;br&gt;  When the end action id is null the tour end will be the end of the eta.  </value>
+        /// <value>Gets er sets the id of the action that ends the eta.     When the end action id is null the tour end will be the end of the eta.  </value>
         [DataMember(Name = "endActionId", EmitDefaultValue = true)]
         public Guid? EndActionId { get; set; }
 
@@ -217,9 +217,9 @@ namespace Simplic.OxS.SDK.Logistics
         public DateTime CalculatedEndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the planned end date and time.   &lt;br&gt;The State will be calculated by comparing the calculated end date time with the planned and the tolerance.
+        /// Gets or sets the planned end date and time.    The State will be calculated by comparing the calculated end date time with the planned and the tolerance.
         /// </summary>
-        /// <value>Gets or sets the planned end date and time.   &lt;br&gt;The State will be calculated by comparing the calculated end date time with the planned and the tolerance.</value>
+        /// <value>Gets or sets the planned end date and time.    The State will be calculated by comparing the calculated end date time with the planned and the tolerance.</value>
         [DataMember(Name = "plannedEndDateTime", EmitDefaultValue = false)]
         public DateTime PlannedEndDateTime { get; set; }
 

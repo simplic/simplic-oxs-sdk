@@ -36,24 +36,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="TourModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  .</param>
-        /// <param name="globalTourId">Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents a unique identifier for a tour.  .</param>
+        /// <param name="globalTourId">Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  .</param>
         /// <param name="number">Gets or sets the number of the tour..</param>
         /// <param name="reference">Gets or sets the reference number..</param>
         /// <param name="resource">resource.</param>
         /// <param name="startAddress">startAddress.</param>
         /// <param name="endAddress">endAddress.</param>
-        /// <param name="startDateTime">Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
-        /// <param name="endDateTime">Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
-        /// <param name="actualStartDateTime">Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  .</param>
-        /// <param name="actualEndDateTime">Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  .</param>
-        /// <param name="calculatedStartDateTime">Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  .</param>
-        /// <param name="calculatedEndDateTime">Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  .</param>
-        /// <param name="actions">Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  .</param>
-        /// <param name="attachedResources">Gets or sets the attached resources.  &lt;br&gt;  Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly..</param>
-        /// <param name="attachedEntities">Gets or sets the attached entities.  &lt;br&gt;  Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly..</param>
-        /// <param name="tags">Gets or sets tour tags.  &lt;br&gt;  Tags are shorts additional information that can be added to a tour.  .</param>
-        /// <param name="transits">Gets or sets transits.  &lt;br&gt;  A transit is a trip/movement of the primary resource from one place to another.  .</param>
+        /// <param name="startDateTime">Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
+        /// <param name="endDateTime">Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
+        /// <param name="actualStartDateTime">Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  .</param>
+        /// <param name="actualEndDateTime">Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  .</param>
+        /// <param name="calculatedStartDateTime">Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  .</param>
+        /// <param name="calculatedEndDateTime">Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  .</param>
+        /// <param name="actions">Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  .</param>
+        /// <param name="attachedResources">Gets or sets the attached resources.     Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly..</param>
+        /// <param name="attachedEntities">Gets or sets the attached entities.     Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly..</param>
+        /// <param name="tags">Gets or sets tour tags.     Tags are shorts additional information that can be added to a tour.  .</param>
+        /// <param name="transits">Gets or sets transits.     A transit is a trip/movement of the primary resource from one place to another.  .</param>
         /// <param name="status">status.</param>
         /// <param name="isMirroredTour">Gets or sets whether the tour is mirrored..</param>
         /// <param name="notes">Gets or sets a note to the tour..</param>
@@ -89,16 +89,16 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  
+        /// Gets or sets the id.     Represents a unique identifier for a tour.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents a unique identifier for a tour.  </value>
+        /// <value>Gets or sets the id.     Represents a unique identifier for a tour.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  
+        /// Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  
         /// </summary>
-        /// <value>Gets or sets the global tour id.  &lt;br&gt;  The global tour id is used to group tours that were generated from the same tour.  </value>
+        /// <value>Gets or sets the global tour id.     The global tour id is used to group tours that were generated from the same tour.  </value>
         [DataMember(Name = "globalTourId", EmitDefaultValue = false)]
         public Guid GlobalTourId { get; set; }
 
@@ -135,79 +135,79 @@ namespace Simplic.OxS.SDK.Logistics
         public AddressModel EndAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
+        /// Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
         /// </summary>
-        /// <value>Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
+        /// <value>Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
         [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime StartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
+        /// Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
         /// </summary>
-        /// <value>Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
+        /// <value>Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
         [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
         public DateTime EndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  
+        /// Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  
         /// </summary>
-        /// <value>Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  </value>
+        /// <value>Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  </value>
         [DataMember(Name = "actualStartDateTime", EmitDefaultValue = true)]
         public DateTime? ActualStartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  
+        /// Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  
         /// </summary>
-        /// <value>Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  </value>
+        /// <value>Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  </value>
         [DataMember(Name = "actualEndDateTime", EmitDefaultValue = true)]
         public DateTime? ActualEndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  
+        /// Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  
         /// </summary>
-        /// <value>Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  </value>
+        /// <value>Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  </value>
         [DataMember(Name = "calculatedStartDateTime", EmitDefaultValue = true)]
         public DateTime? CalculatedStartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  
+        /// Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  
         /// </summary>
-        /// <value>Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  </value>
+        /// <value>Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  </value>
         [DataMember(Name = "calculatedEndDateTime", EmitDefaultValue = true)]
         public DateTime? CalculatedEndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  
+        /// Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  
         /// </summary>
-        /// <value>Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  </value>
+        /// <value>Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  </value>
         [DataMember(Name = "actions", EmitDefaultValue = true)]
         public List<TourActionModel> Actions { get; set; }
 
         /// <summary>
-        /// Gets or sets the attached resources.  &lt;br&gt;  Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly.
+        /// Gets or sets the attached resources.     Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly.
         /// </summary>
-        /// <value>Gets or sets the attached resources.  &lt;br&gt;  Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly.</value>
+        /// <value>Gets or sets the attached resources.     Each attached resource will be generetad from a attaching and detaching action.    The user should not be able to add data to this list directly.</value>
         [DataMember(Name = "attachedResources", EmitDefaultValue = true)]
         public List<AttachedResourceModel> AttachedResources { get; set; }
 
         /// <summary>
-        /// Gets or sets the attached entities.  &lt;br&gt;  Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly.
+        /// Gets or sets the attached entities.     Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly.
         /// </summary>
-        /// <value>Gets or sets the attached entities.  &lt;br&gt;  Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly.</value>
+        /// <value>Gets or sets the attached entities.     Each attached entity will be generated from a attaching and detaching action.    The user should not be able to add data to this list directly.</value>
         [DataMember(Name = "attachedEntities", EmitDefaultValue = true)]
         public List<AttachedEntityModel> AttachedEntities { get; set; }
 
         /// <summary>
-        /// Gets or sets tour tags.  &lt;br&gt;  Tags are shorts additional information that can be added to a tour.  
+        /// Gets or sets tour tags.     Tags are shorts additional information that can be added to a tour.  
         /// </summary>
-        /// <value>Gets or sets tour tags.  &lt;br&gt;  Tags are shorts additional information that can be added to a tour.  </value>
+        /// <value>Gets or sets tour tags.     Tags are shorts additional information that can be added to a tour.  </value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<TourTagModel> Tags { get; set; }
 
         /// <summary>
-        /// Gets or sets transits.  &lt;br&gt;  A transit is a trip/movement of the primary resource from one place to another.  
+        /// Gets or sets transits.     A transit is a trip/movement of the primary resource from one place to another.  
         /// </summary>
-        /// <value>Gets or sets transits.  &lt;br&gt;  A transit is a trip/movement of the primary resource from one place to another.  </value>
+        /// <value>Gets or sets transits.     A transit is a trip/movement of the primary resource from one place to another.  </value>
         [DataMember(Name = "transits", EmitDefaultValue = true)]
         public List<TransitModel> Transits { get; set; }
 

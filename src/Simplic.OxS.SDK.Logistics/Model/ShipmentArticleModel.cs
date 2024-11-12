@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentArticleModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents the id of an article in Simplic.ArticleMaster.Article.  .</param>
-        /// <param name="number">Gets or sets the number.  &lt;br&gt;  Represents the number of an article.  .</param>
-        /// <param name="name">Gets or sets the name.  &lt;br&gt;  This is just a display name which may be made of an offset of the name of the article.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents the id of an article in Simplic.ArticleMaster.Article.  .</param>
+        /// <param name="number">Gets or sets the number.     Represents the number of an article.  .</param>
+        /// <param name="name">Gets or sets the name.     This is just a display name which may be made of an offset of the name of the article.  .</param>
         public ShipmentArticleModel(Guid id = default(Guid), string number = default(string), string name = default(string))
         {
             this.Id = id;
@@ -47,23 +47,23 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents the id of an article in Simplic.ArticleMaster.Article.  
+        /// Gets or sets the id.     Represents the id of an article in Simplic.ArticleMaster.Article.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents the id of an article in Simplic.ArticleMaster.Article.  </value>
+        /// <value>Gets or sets the id.     Represents the id of an article in Simplic.ArticleMaster.Article.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the number.  &lt;br&gt;  Represents the number of an article.  
+        /// Gets or sets the number.     Represents the number of an article.  
         /// </summary>
-        /// <value>Gets or sets the number.  &lt;br&gt;  Represents the number of an article.  </value>
+        /// <value>Gets or sets the number.     Represents the number of an article.  </value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.  &lt;br&gt;  This is just a display name which may be made of an offset of the name of the article.  
+        /// Gets or sets the name.     This is just a display name which may be made of an offset of the name of the article.  
         /// </summary>
-        /// <value>Gets or sets the name.  &lt;br&gt;  This is just a display name which may be made of an offset of the name of the article.  </value>
+        /// <value>Gets or sets the name.     This is just a display name which may be made of an offset of the name of the article.  </value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

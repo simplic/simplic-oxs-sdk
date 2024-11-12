@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
-    /// Represents the server model of a tag for tours.  &lt;br&gt;  Tags are short texts to add information to a tour without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions.
+    /// Represents the server model of a tag for tours.     Tags are short texts to add information to a tour without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions.
     /// </summary>
     [DataContract(Name = "TourTagModel")]
     public partial class TourTagModel : IEquatable<TourTagModel>, IValidatableObject
@@ -38,11 +38,11 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="id">Gets or sets the unique identifier of the tour tag..</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="groupName">Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
+        /// <param name="groupName">Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
         /// <param name="hexColor">Gets or sets the hex color of the string..</param>
         /// <param name="organizationId">Gets or sets the organization id..</param>
         /// <param name="isDeleted">Gets or sets whether the tour tag is deleted..</param>
-        /// <param name="functions">Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;.</param>
+        /// <param name="functions">Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;.</param>
         public TourTagModel(Guid id = default(Guid), string name = default(string), string groupName = default(string), string hexColor = default(string), Guid organizationId = default(Guid), bool isDeleted = default(bool), List<string> functions = default(List<string>))
         {
             this.Id = id;
@@ -69,9 +69,9 @@ namespace Simplic.OxS.SDK.Logistics
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
+        /// Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
         /// </summary>
-        /// <value>Gets or sets the group name.  &lt;br&gt;  Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
+        /// <value>Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  </value>
         [DataMember(Name = "groupName", EmitDefaultValue = true)]
         public string GroupName { get; set; }
 
@@ -97,9 +97,9 @@ namespace Simplic.OxS.SDK.Logistics
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;
+        /// Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets the functions of the tour tag.  &lt;br&gt;  Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;</value>
+        /// <value>Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;</value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 

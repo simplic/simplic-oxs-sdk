@@ -39,11 +39,11 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="startAddressId">Gets or sets the id of the start address..</param>
         /// <param name="endAddressId">Gets or sets the id of the end address..</param>
         /// <param name="resources">Gets or sets the resources for the appointment..</param>
-        /// <param name="functions">Gets or sets a list of functinos for an appointment.  &lt;br&gt;  A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;.</param>
+        /// <param name="functions">Gets or sets a list of functinos for an appointment.     A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;.</param>
         /// <param name="title">Gets or sets the title of the appointment..</param>
         /// <param name="startDateTime">Gets or sets the start date and time of the appointment..</param>
         /// <param name="endDateTime">Gets or sets the end date and time of the appointment..</param>
-        /// <param name="hexColor">Gets or sets the hex color for the appointment.  &lt;br&gt;  Default color is light red.  .</param>
+        /// <param name="hexColor">Gets or sets the hex color for the appointment.     Default color is light red.  .</param>
         public PatchAppointmentRequest(Guid? startAddressId = default(Guid?), Guid? endAddressId = default(Guid?), List<Guid> resources = default(List<Guid>), List<string> functions = default(List<string>), string title = default(string), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), string hexColor = default(string))
         {
             this.StartAddressId = startAddressId;
@@ -78,9 +78,9 @@ namespace Simplic.OxS.SDK.Logistics
         public List<Guid> Resources { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of functinos for an appointment.  &lt;br&gt;  A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;
+        /// Gets or sets a list of functinos for an appointment.     A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets a list of functinos for an appointment.  &lt;br&gt;  A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;</value>
+        /// <value>Gets or sets a list of functinos for an appointment.     A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;</value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 
@@ -106,9 +106,9 @@ namespace Simplic.OxS.SDK.Logistics
         public DateTime? EndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the hex color for the appointment.  &lt;br&gt;  Default color is light red.  
+        /// Gets or sets the hex color for the appointment.     Default color is light red.  
         /// </summary>
-        /// <value>Gets or sets the hex color for the appointment.  &lt;br&gt;  Default color is light red.  </value>
+        /// <value>Gets or sets the hex color for the appointment.     Default color is light red.  </value>
         [DataMember(Name = "hexColor", EmitDefaultValue = true)]
         public string HexColor { get; set; }
 

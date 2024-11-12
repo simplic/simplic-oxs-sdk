@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ShipmentTelematicWorkflowModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Rerpesents the id of a telematic workflow.  .</param>
-        /// <param name="name">Gets or sets the name.  &lt;br&gt;  Represents the display name of a telematic workflow.  .</param>
+        /// <param name="id">Gets or sets the id.     Rerpesents the id of a telematic workflow.  .</param>
+        /// <param name="name">Gets or sets the name.     Represents the display name of a telematic workflow.  .</param>
         public ShipmentTelematicWorkflowModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
@@ -45,16 +45,16 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Rerpesents the id of a telematic workflow.  
+        /// Gets or sets the id.     Rerpesents the id of a telematic workflow.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Rerpesents the id of a telematic workflow.  </value>
+        /// <value>Gets or sets the id.     Rerpesents the id of a telematic workflow.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.  &lt;br&gt;  Represents the display name of a telematic workflow.  
+        /// Gets or sets the name.     Represents the display name of a telematic workflow.  
         /// </summary>
-        /// <value>Gets or sets the name.  &lt;br&gt;  Represents the display name of a telematic workflow.  </value>
+        /// <value>Gets or sets the name.     Represents the display name of a telematic workflow.  </value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

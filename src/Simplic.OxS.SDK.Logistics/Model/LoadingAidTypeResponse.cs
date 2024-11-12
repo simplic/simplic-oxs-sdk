@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadingAidTypeResponse" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the guid.  &lt;br&gt;  Represents the unique identifier of a loading aid type.  .</param>
-        /// <param name="number">Gets or sets the number.  &lt;br&gt;  Represents a human readable identifier.  .</param>
+        /// <param name="id">Gets or sets the guid.     Represents the unique identifier of a loading aid type.  .</param>
+        /// <param name="number">Gets or sets the number.     Represents a human readable identifier.  .</param>
         /// <param name="displayName">Gets or sets the display name..</param>
         /// <param name="weight">Gets or sets the weight..</param>
         /// <param name="shortText">Gets or sets the short text..</param>
@@ -57,16 +57,16 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the guid.  &lt;br&gt;  Represents the unique identifier of a loading aid type.  
+        /// Gets or sets the guid.     Represents the unique identifier of a loading aid type.  
         /// </summary>
-        /// <value>Gets or sets the guid.  &lt;br&gt;  Represents the unique identifier of a loading aid type.  </value>
+        /// <value>Gets or sets the guid.     Represents the unique identifier of a loading aid type.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the number.  &lt;br&gt;  Represents a human readable identifier.  
+        /// Gets or sets the number.     Represents a human readable identifier.  
         /// </summary>
-        /// <value>Gets or sets the number.  &lt;br&gt;  Represents a human readable identifier.  </value>
+        /// <value>Gets or sets the number.     Represents a human readable identifier.  </value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 

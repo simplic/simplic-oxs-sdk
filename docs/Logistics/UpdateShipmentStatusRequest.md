@@ -6,11 +6,11 @@ Represents a request to create a shipment status.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Gets or sets the namme of the status. | [optional] 
-**Number** | **string** | Gets or sets the number of the status.  &lt;br&gt;  The number is a human readable short name or number of the shipment.   | [optional] 
-**Roles** | **List&lt;string&gt;** | Gets or sets roles.  &lt;br&gt;  These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt; | [optional] 
-**HexColor** | **string** | Gets or sets the hex color.  &lt;br&gt;  Will define the color of the status as hex code.   | [optional] 
-**OrderNr** | **int?** | Gets or sets the order number.  &lt;br&gt;  The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first. | [optional] 
-**Resolver** | **string** | Gets or sets the resolver name.  &lt;br&gt;  The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name. | [optional] 
+**Number** | **string** | Gets or sets the number of the status.     The number is a human readable short name or number of the shipment.   | [optional] 
+**Roles** | **List&lt;string&gt;** | Gets or sets roles.     These roles will decide whether shipments with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt;&lt;item&gt;disable_edit&lt;/item&gt;&lt;item&gt;billable&lt;/item&gt;&lt;item&gt;disable_delete&lt;/item&gt;&lt;/list&gt; | [optional] 
+**HexColor** | **string** | Gets or sets the hex color.     Will define the color of the status as hex code.   | [optional] 
+**OrderNr** | **int?** | Gets or sets the order number.     The order nr will define in which order the statuses are resolved.     The lowest value will always be resolved first. | [optional] 
+**Resolver** | **string** | Gets or sets the resolver name.     The name of the resolver is also the name which the resolver is registererd.     Within the resolving of the status the service will try to find a resolver with the given name. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

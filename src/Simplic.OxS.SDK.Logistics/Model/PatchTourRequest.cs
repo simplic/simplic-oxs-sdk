@@ -38,18 +38,18 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="number">Gets or sets the number of the tour..</param>
         /// <param name="reference">Gets or sets the reference number..</param>
-        /// <param name="resourceId">Gets or sets the resource id.  &lt;br&gt;  Will be resolved as resouce.  .</param>
-        /// <param name="startAddressId">Gets or sets the start address id.  &lt;br&gt;  Will be resolved to the start address.  .</param>
-        /// <param name="endAddressId">Gets or sets the end address id.  &lt;br&gt;  Will be resolved to the end address.  .</param>
-        /// <param name="startDateTime">Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
-        /// <param name="endDateTime">Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
-        /// <param name="actualStartDateTime">Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  .</param>
-        /// <param name="actualEndDateTime">Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  .</param>
-        /// <param name="calculatedStartDateTime">Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  .</param>
-        /// <param name="calculatedEndDateTime">Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  .</param>
+        /// <param name="resourceId">Gets or sets the resource id.     Will be resolved as resouce.  .</param>
+        /// <param name="startAddressId">Gets or sets the start address id.     Will be resolved to the start address.  .</param>
+        /// <param name="endAddressId">Gets or sets the end address id.     Will be resolved to the end address.  .</param>
+        /// <param name="startDateTime">Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start..</param>
+        /// <param name="endDateTime">Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end..</param>
+        /// <param name="actualStartDateTime">Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  .</param>
+        /// <param name="actualEndDateTime">Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  .</param>
+        /// <param name="calculatedStartDateTime">Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  .</param>
+        /// <param name="calculatedEndDateTime">Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  .</param>
         /// <param name="notes">Gets or sets a note..</param>
         /// <param name="tags">Sets the tags of the tour..</param>
-        /// <param name="actions">Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  .</param>
+        /// <param name="actions">Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  .</param>
         public PatchTourRequest(string number = default(string), string reference = default(string), Guid? resourceId = default(Guid?), Guid? startAddressId = default(Guid?), Guid? endAddressId = default(Guid?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualEndDateTime = default(DateTime?), DateTime? calculatedStartDateTime = default(DateTime?), DateTime? calculatedEndDateTime = default(DateTime?), string notes = default(string), List<Guid> tags = default(List<Guid>), List<PatchTourActionRequest> actions = default(List<PatchTourActionRequest>))
         {
             this.Number = number;
@@ -83,65 +83,65 @@ namespace Simplic.OxS.SDK.Logistics
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource id.  &lt;br&gt;  Will be resolved as resouce.  
+        /// Gets or sets the resource id.     Will be resolved as resouce.  
         /// </summary>
-        /// <value>Gets or sets the resource id.  &lt;br&gt;  Will be resolved as resouce.  </value>
+        /// <value>Gets or sets the resource id.     Will be resolved as resouce.  </value>
         [DataMember(Name = "resourceId", EmitDefaultValue = true)]
         public Guid? ResourceId { get; set; }
 
         /// <summary>
-        /// Gets or sets the start address id.  &lt;br&gt;  Will be resolved to the start address.  
+        /// Gets or sets the start address id.     Will be resolved to the start address.  
         /// </summary>
-        /// <value>Gets or sets the start address id.  &lt;br&gt;  Will be resolved to the start address.  </value>
+        /// <value>Gets or sets the start address id.     Will be resolved to the start address.  </value>
         [DataMember(Name = "startAddressId", EmitDefaultValue = true)]
         public Guid? StartAddressId { get; set; }
 
         /// <summary>
-        /// Gets or sets the end address id.  &lt;br&gt;  Will be resolved to the end address.  
+        /// Gets or sets the end address id.     Will be resolved to the end address.  
         /// </summary>
-        /// <value>Gets or sets the end address id.  &lt;br&gt;  Will be resolved to the end address.  </value>
+        /// <value>Gets or sets the end address id.     Will be resolved to the end address.  </value>
         [DataMember(Name = "endAddressId", EmitDefaultValue = true)]
         public Guid? EndAddressId { get; set; }
 
         /// <summary>
-        /// Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
+        /// Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.
         /// </summary>
-        /// <value>Gets or sets the start date time.  &lt;br&gt;  Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
+        /// <value>Gets or sets the start date time.     Represents the date and time when the resource should start it&#39;s trip.    This just represents the planned date and time, not the actual start.</value>
         [DataMember(Name = "startDateTime", EmitDefaultValue = true)]
         public DateTime? StartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
+        /// Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.
         /// </summary>
-        /// <value>Gets or sets the end date time.  &lt;br&gt;  Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
+        /// <value>Gets or sets the end date time.     Rerpresents the date and time when the resource should end it&#39;s trip.    This just represents the planned date and time, not the actual end.</value>
         [DataMember(Name = "endDateTime", EmitDefaultValue = true)]
         public DateTime? EndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  
+        /// Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  
         /// </summary>
-        /// <value>Gets or sets the actual start date and time.  &lt;br&gt;  This represents the time the resource actually started it&#39;s trip, not the planned start.  </value>
+        /// <value>Gets or sets the actual start date and time.     This represents the time the resource actually started it&#39;s trip, not the planned start.  </value>
         [DataMember(Name = "actualStartDateTime", EmitDefaultValue = true)]
         public DateTime? ActualStartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  
+        /// Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  
         /// </summary>
-        /// <value>Gets or sets the actual end date and time.  &lt;br&gt;  This represents the time the resource actually ended it&#39;s trip, not the planned end.  </value>
+        /// <value>Gets or sets the actual end date and time.     This represents the time the resource actually ended it&#39;s trip, not the planned end.  </value>
         [DataMember(Name = "actualEndDateTime", EmitDefaultValue = true)]
         public DateTime? ActualEndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  
+        /// Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  
         /// </summary>
-        /// <value>Gets or sets the calculated start date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  </value>
+        /// <value>Gets or sets the calculated start date and time.     This value should be calculated by a service and not set by the user in most cases.  </value>
         [DataMember(Name = "calculatedStartDateTime", EmitDefaultValue = true)]
         public DateTime? CalculatedStartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  
+        /// Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  
         /// </summary>
-        /// <value>Gets or sets the calculated end date and time.  &lt;br&gt;  This value should be calculated by a service and not set by the user in most cases.  </value>
+        /// <value>Gets or sets the calculated end date and time.     This value should be calculated by a service and not set by the user in most cases.  </value>
         [DataMember(Name = "calculatedEndDateTime", EmitDefaultValue = true)]
         public DateTime? CalculatedEndDateTime { get; set; }
 
@@ -160,9 +160,9 @@ namespace Simplic.OxS.SDK.Logistics
         public List<Guid> Tags { get; set; }
 
         /// <summary>
-        /// Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  
+        /// Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  
         /// </summary>
-        /// <value>Gets or sets the tour actions.  &lt;br&gt;  This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.  &lt;br&gt;  Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  </value>
+        /// <value>Gets or sets the tour actions.     This list contains a list of actions which define single events during the trip.    This list will be the primary resource for the generation of attached resources and entities.     Some of these actoins might be e.g.: \&quot;Add trailer\&quot;, \&quot;Change tractor unit\&quot; or \&quot;Load shipment\&quot;.  </value>
         [DataMember(Name = "actions", EmitDefaultValue = true)]
         public List<PatchTourActionRequest> Actions { get; set; }
 

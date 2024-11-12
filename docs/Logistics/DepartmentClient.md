@@ -100,7 +100,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
@@ -195,7 +195,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
@@ -286,7 +286,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
@@ -381,7 +381,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
@@ -478,7 +478,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
@@ -574,7 +574,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 

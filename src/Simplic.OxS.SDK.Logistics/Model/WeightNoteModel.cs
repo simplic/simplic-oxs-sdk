@@ -42,17 +42,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="WeightNoteModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of the weight note.  .</param>
+        /// <param name="id">Gets or sets the id.     Represents the unique identifier of the weight note.  .</param>
         /// <param name="isDeleted">Gets or sets whether the weight note is deleted..</param>
-        /// <param name="number">Gets or sets the number.  &lt;br&gt;  The number is usually given by the scale operator/ scale document.  .</param>
-        /// <param name="documentId">Gets or sets the document id.  &lt;br&gt;  References a document with the weight note.  .</param>
+        /// <param name="number">Gets or sets the number.     The number is usually given by the scale operator/ scale document.  .</param>
+        /// <param name="documentId">Gets or sets the document id.     References a document with the weight note.  .</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="type">type.</param>
         /// <param name="createDateTime">Gets or sets the create date time..</param>
         /// <param name="firstWeight">firstWeight.</param>
         /// <param name="secondWeight">secondWeight.</param>
-        /// <param name="firstDateTime">Gets or sets the first date time.  &lt;br&gt;  Represents the date and time of the first weighing.  .</param>
-        /// <param name="secondDateTime">Gets or sets the second date time.  &lt;br&gt;  Represents the date and time of the second weighing.  .</param>
+        /// <param name="firstDateTime">Gets or sets the first date time.     Represents the date and time of the first weighing.  .</param>
+        /// <param name="secondDateTime">Gets or sets the second date time.     Represents the date and time of the second weighing.  .</param>
         /// <param name="reference">Gets or sets the external reference..</param>
         public WeightNoteModel(Guid id = default(Guid), bool isDeleted = default(bool), string number = default(string), Guid? documentId = default(Guid?), QuantityModel quantity = default(QuantityModel), WeightNoteType? type = default(WeightNoteType?), DateTime createDateTime = default(DateTime), QuantityModel firstWeight = default(QuantityModel), QuantityModel secondWeight = default(QuantityModel), DateTime firstDateTime = default(DateTime), DateTime secondDateTime = default(DateTime), string reference = default(string))
         {
@@ -71,9 +71,9 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of the weight note.  
+        /// Gets or sets the id.     Represents the unique identifier of the weight note.  
         /// </summary>
-        /// <value>Gets or sets the id.  &lt;br&gt;  Represents the unique identifier of the weight note.  </value>
+        /// <value>Gets or sets the id.     Represents the unique identifier of the weight note.  </value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -85,16 +85,16 @@ namespace Simplic.OxS.SDK.Logistics
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or sets the number.  &lt;br&gt;  The number is usually given by the scale operator/ scale document.  
+        /// Gets or sets the number.     The number is usually given by the scale operator/ scale document.  
         /// </summary>
-        /// <value>Gets or sets the number.  &lt;br&gt;  The number is usually given by the scale operator/ scale document.  </value>
+        /// <value>Gets or sets the number.     The number is usually given by the scale operator/ scale document.  </value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the document id.  &lt;br&gt;  References a document with the weight note.  
+        /// Gets or sets the document id.     References a document with the weight note.  
         /// </summary>
-        /// <value>Gets or sets the document id.  &lt;br&gt;  References a document with the weight note.  </value>
+        /// <value>Gets or sets the document id.     References a document with the weight note.  </value>
         [DataMember(Name = "documentId", EmitDefaultValue = true)]
         public Guid? DocumentId { get; set; }
 
@@ -124,16 +124,16 @@ namespace Simplic.OxS.SDK.Logistics
         public QuantityModel SecondWeight { get; set; }
 
         /// <summary>
-        /// Gets or sets the first date time.  &lt;br&gt;  Represents the date and time of the first weighing.  
+        /// Gets or sets the first date time.     Represents the date and time of the first weighing.  
         /// </summary>
-        /// <value>Gets or sets the first date time.  &lt;br&gt;  Represents the date and time of the first weighing.  </value>
+        /// <value>Gets or sets the first date time.     Represents the date and time of the first weighing.  </value>
         [DataMember(Name = "firstDateTime", EmitDefaultValue = false)]
         public DateTime FirstDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the second date time.  &lt;br&gt;  Represents the date and time of the second weighing.  
+        /// Gets or sets the second date time.     Represents the date and time of the second weighing.  
         /// </summary>
-        /// <value>Gets or sets the second date time.  &lt;br&gt;  Represents the date and time of the second weighing.  </value>
+        /// <value>Gets or sets the second date time.     Represents the date and time of the second weighing.  </value>
         [DataMember(Name = "secondDateTime", EmitDefaultValue = false)]
         public DateTime SecondDateTime { get; set; }
 
