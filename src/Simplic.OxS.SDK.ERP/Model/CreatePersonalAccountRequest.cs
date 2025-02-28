@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// CreatePersonalAccountRequest
+    /// Represents a request to create a personal account.
     /// </summary>
     [DataContract(Name = "CreatePersonalAccountRequest")]
     public partial class CreatePersonalAccountRequest : IEquatable<CreatePersonalAccountRequest>, IValidatableObject
@@ -36,47 +36,72 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreatePersonalAccountRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="vatId">vatId.</param>
-        /// <param name="type">type.</param>
+        /// <param name="addressContactIds">Gets or sets the contact id&#39;s for the addresses contained in the personal account..</param>
+        /// <param name="saleTermsOfPaymentId">Gets or sets the id of the sale terms of payment..</param>
+        /// <param name="purchaseTermsOfPaymentId">Gets or sets the id of the purchase terms of payment..</param>
+        /// <param name="taxGroupId">Gets or sets the id of the tax group..</param>
+        /// <param name="number">gets or sets the number..</param>
+        /// <param name="vatId">Gets or sets the vat id..</param>
+        /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
-        /// <param name="saleTermsOfPaymentId">saleTermsOfPaymentId.</param>
-        /// <param name="purchaseTermsOfPaymentId">purchaseTermsOfPaymentId.</param>
-        /// <param name="taxGroupId">taxGroupId.</param>
-        public CreatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
+        public CreatePersonalAccountRequest(List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel))
         {
-            this.Id = id;
+            this.AddressContactIds = addressContactIds;
+            this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
+            this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
+            this.TaxGroupId = taxGroupId;
             this.Number = number;
             this.VatId = vatId;
             this.Type = type;
             this.CreditLimit = creditLimit;
-            this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
-            this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
-            this.TaxGroupId = taxGroupId;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the contact id&#39;s for the addresses contained in the personal account.
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        /// <value>Gets or sets the contact id&#39;s for the addresses contained in the personal account.</value>
+        [DataMember(Name = "addressContactIds", EmitDefaultValue = true)]
+        public List<Guid> AddressContactIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the id of the sale terms of payment.
         /// </summary>
+        /// <value>Gets or sets the id of the sale terms of payment.</value>
+        [DataMember(Name = "saleTermsOfPaymentId", EmitDefaultValue = true)]
+        public Guid? SaleTermsOfPaymentId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the purchase terms of payment.
+        /// </summary>
+        /// <value>Gets or sets the id of the purchase terms of payment.</value>
+        [DataMember(Name = "purchaseTermsOfPaymentId", EmitDefaultValue = true)]
+        public Guid? PurchaseTermsOfPaymentId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the tax group.
+        /// </summary>
+        /// <value>Gets or sets the id of the tax group.</value>
+        [DataMember(Name = "taxGroupId", EmitDefaultValue = true)]
+        public Guid? TaxGroupId { get; set; }
+
+        /// <summary>
+        /// gets or sets the number.
+        /// </summary>
+        /// <value>gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets VatId
+        /// Gets or sets the vat id.
         /// </summary>
+        /// <value>Gets or sets the vat id.</value>
         [DataMember(Name = "vatId", EmitDefaultValue = true)]
         public string VatId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the personal account type. (creditor / debitor)
         /// </summary>
+        /// <value>Gets or sets the personal account type. (creditor / debitor)</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -87,24 +112,6 @@ namespace Simplic.OxS.SDK.ERP
         public CreditLimitModel CreditLimit { get; set; }
 
         /// <summary>
-        /// Gets or Sets SaleTermsOfPaymentId
-        /// </summary>
-        [DataMember(Name = "saleTermsOfPaymentId", EmitDefaultValue = true)]
-        public Guid? SaleTermsOfPaymentId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PurchaseTermsOfPaymentId
-        /// </summary>
-        [DataMember(Name = "purchaseTermsOfPaymentId", EmitDefaultValue = true)]
-        public Guid? PurchaseTermsOfPaymentId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxGroupId
-        /// </summary>
-        [DataMember(Name = "taxGroupId", EmitDefaultValue = true)]
-        public Guid? TaxGroupId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -112,14 +119,14 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreatePersonalAccountRequest {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  AddressContactIds: ").Append(AddressContactIds).Append("\n");
+            sb.Append("  SaleTermsOfPaymentId: ").Append(SaleTermsOfPaymentId).Append("\n");
+            sb.Append("  PurchaseTermsOfPaymentId: ").Append(PurchaseTermsOfPaymentId).Append("\n");
+            sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
-            sb.Append("  SaleTermsOfPaymentId: ").Append(SaleTermsOfPaymentId).Append("\n");
-            sb.Append("  PurchaseTermsOfPaymentId: ").Append(PurchaseTermsOfPaymentId).Append("\n");
-            sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,9 +163,25 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.AddressContactIds == input.AddressContactIds ||
+                    this.AddressContactIds != null &&
+                    input.AddressContactIds != null &&
+                    this.AddressContactIds.SequenceEqual(input.AddressContactIds)
+                ) && 
+                (
+                    this.SaleTermsOfPaymentId == input.SaleTermsOfPaymentId ||
+                    (this.SaleTermsOfPaymentId != null &&
+                    this.SaleTermsOfPaymentId.Equals(input.SaleTermsOfPaymentId))
+                ) && 
+                (
+                    this.PurchaseTermsOfPaymentId == input.PurchaseTermsOfPaymentId ||
+                    (this.PurchaseTermsOfPaymentId != null &&
+                    this.PurchaseTermsOfPaymentId.Equals(input.PurchaseTermsOfPaymentId))
+                ) && 
+                (
+                    this.TaxGroupId == input.TaxGroupId ||
+                    (this.TaxGroupId != null &&
+                    this.TaxGroupId.Equals(input.TaxGroupId))
                 ) && 
                 (
                     this.Number == input.Number ||
@@ -179,21 +202,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit == input.CreditLimit ||
                     (this.CreditLimit != null &&
                     this.CreditLimit.Equals(input.CreditLimit))
-                ) && 
-                (
-                    this.SaleTermsOfPaymentId == input.SaleTermsOfPaymentId ||
-                    (this.SaleTermsOfPaymentId != null &&
-                    this.SaleTermsOfPaymentId.Equals(input.SaleTermsOfPaymentId))
-                ) && 
-                (
-                    this.PurchaseTermsOfPaymentId == input.PurchaseTermsOfPaymentId ||
-                    (this.PurchaseTermsOfPaymentId != null &&
-                    this.PurchaseTermsOfPaymentId.Equals(input.PurchaseTermsOfPaymentId))
-                ) && 
-                (
-                    this.TaxGroupId == input.TaxGroupId ||
-                    (this.TaxGroupId != null &&
-                    this.TaxGroupId.Equals(input.TaxGroupId))
                 );
         }
 
@@ -206,9 +214,21 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.AddressContactIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AddressContactIds.GetHashCode();
+                }
+                if (this.SaleTermsOfPaymentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SaleTermsOfPaymentId.GetHashCode();
+                }
+                if (this.PurchaseTermsOfPaymentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PurchaseTermsOfPaymentId.GetHashCode();
+                }
+                if (this.TaxGroupId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
                 }
                 if (this.Number != null)
                 {
@@ -225,18 +245,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
-                }
-                if (this.SaleTermsOfPaymentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SaleTermsOfPaymentId.GetHashCode();
-                }
-                if (this.PurchaseTermsOfPaymentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PurchaseTermsOfPaymentId.GetHashCode();
-                }
-                if (this.TaxGroupId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
                 }
                 return hashCode;
             }

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionContactRequest
+    /// Represents a request to create or update a contact in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionContactRequest")]
     public partial class TransactionContactRequest : IEquatable<TransactionContactRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionContactRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="personalAccountId">personalAccountId.</param>
+        /// <param name="id">Gets or sets the contact ID..</param>
+        /// <param name="personalAccountId">Gets or sets the personal account ID..</param>
         public TransactionContactRequest(Guid? id = default(Guid?), Guid? personalAccountId = default(Guid?))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the contact ID.
         /// </summary>
+        /// <value>Gets or sets the contact ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets PersonalAccountId
+        /// Gets or sets the personal account ID.
         /// </summary>
+        /// <value>Gets or sets the personal account ID.</value>
         [DataMember(Name = "personalAccountId", EmitDefaultValue = true)]
         public Guid? PersonalAccountId { get; set; }
 

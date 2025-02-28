@@ -6,7 +6,6 @@ All URIs are relative to *https://dev-oxs.simplic.io/document-api/v1*
 |--------|--------------|-------------|
 | [**GetEmbeddedDocumentUrl**](RossumClient.md#apirossumdocumentidgetembeddeddocumenturlpost) | **POST** /api/Rossum/{documentId}/get-embedded-document-url |  |
 | [**Hook**](RossumClient.md#apirossumorganizationidhookpost) | **POST** /api/Rossum/{organizationId}/hook |  |
-| [**TestBilling**](RossumClient.md#apirossumtestbillingpost) | **POST** /api/Rossum/TestBilling |  |
 
 <a id="apirossumdocumentidgetembeddeddocumenturlpost"></a>
 # **GetEmbeddedDocumentUrl**
@@ -167,88 +166,6 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **organizationId** | **Guid** |  |  |
 
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="apirossumtestbillingpost"></a>
-# **TestBilling**
-> void TestBilling ()
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Document;
-
-namespace Example
-{
-    public class TestBillingExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/document-api/v1";
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new RossumClient(config);
-
-            try
-            {
-                apiInstance.TestBilling();
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RossumClient.TestBilling: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the TestBillingWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    apiInstance.TestBillingWithHttpInfo();
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RossumClient.TestBillingWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
 ### Return type
 
 void (empty response body)

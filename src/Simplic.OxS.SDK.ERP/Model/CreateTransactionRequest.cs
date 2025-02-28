@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// CreateTransactionRequest
+    /// Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
     [DataContract(Name = "CreateTransactionRequest")]
     public partial class CreateTransactionRequest : IEquatable<CreateTransactionRequest>, IValidatableObject
@@ -48,36 +48,36 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
         /// </summary>
         /// <param name="creator">creator (required).</param>
-        /// <param name="number">number (required).</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="typeId">typeId (required).</param>
-        /// <param name="subtypeId">subtypeId (required).</param>
-        /// <param name="date">date (required).</param>
-        /// <param name="deliveryDate">deliveryDate.</param>
-        /// <param name="termsOfPaymentId">termsOfPaymentId (required).</param>
-        /// <param name="paymentMethodId">paymentMethodId (required).</param>
-        /// <param name="currencyId">currencyId (required).</param>
-        /// <param name="description">description.</param>
+        /// <param name="number">Gets or sets the transaction number. (required).</param>
+        /// <param name="reference">Gets or sets the reference..</param>
+        /// <param name="typeId">Gets or sets the type by ID. (required).</param>
+        /// <param name="subtypeId">Gets or sets the subtype by ID. (required).</param>
+        /// <param name="date">Gets or sets the time of the underlying transaction. (required).</param>
+        /// <param name="deliveryDate">Gets or sets the time of delivery..</param>
+        /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   (required).</param>
+        /// <param name="paymentMethodId">Gets or sets the payment method for this transaction given by ID. (required).</param>
+        /// <param name="currencyId">Gets or sets the currency used to quantify this transaction by ID. (required).</param>
+        /// <param name="description">Gets or sets the description..</param>
         /// <param name="financialPartner">financialPartner (required).</param>
         /// <param name="deliveryAddress">deliveryAddress.</param>
         /// <param name="invoiceRecipient">invoiceRecipient (required).</param>
         /// <param name="payer">payer (required).</param>
         /// <param name="responsible">responsible (required).</param>
         /// <param name="representative">representative (required).</param>
-        /// <param name="items">items.</param>
-        /// <param name="alternativePaymentDeadline">alternativePaymentDeadline.</param>
+        /// <param name="items">Gets or sets the items of this transaction..</param>
+        /// <param name="alternativePaymentDeadline">Gets or sets an alternative payment deadline to the one defined in the terms of payment..</param>
         /// <param name="balance">balance.</param>
-        /// <param name="barcode">barcode.</param>
-        /// <param name="billToText">billToText.</param>
-        /// <param name="cashDiscountPercentValue">cashDiscountPercentValue.</param>
-        /// <param name="cashDiscountTotal">cashDiscountTotal.</param>
-        /// <param name="financialAccountingPeriodId">financialAccountingPeriodId (required).</param>
-        /// <param name="periodId">periodId (required).</param>
+        /// <param name="barcode">Gets or sets the barcode..</param>
+        /// <param name="billToText">Gets or sets the bill as a text..</param>
+        /// <param name="cashDiscountPercentValue">Gets or sets the relative cash discount..</param>
+        /// <param name="cashDiscountTotal">Gets or sets the total cash discount..</param>
+        /// <param name="financialAccountingPeriodId">Gets or sets the financial year period of this transaction given by ID. (required).</param>
+        /// <param name="periodId">Gets or sets the financial year period of this transaction for inventory management given by ID. (required).</param>
         /// <param name="manualVAT">manualVAT.</param>
-        /// <param name="notes">notes.</param>
-        /// <param name="dueDate">dueDate.</param>
-        /// <param name="referenceNr">referenceNr.</param>
-        /// <param name="taxGroupId">taxGroupId (required).</param>
+        /// <param name="notes">Gets or sets notes..</param>
+        /// <param name="dueDate">Gets or sets the due date..</param>
+        /// <param name="referenceNr">Gets or sets the reference number..</param>
+        /// <param name="taxGroupId">Gets or sets the tax group by ID. (required).</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
         public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), Guid termsOfPaymentId = default(Guid), Guid paymentMethodId = default(Guid), Guid currencyId = default(Guid), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid financialAccountingPeriodId = default(Guid), Guid periodId = default(Guid), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid taxGroupId = default(Guid), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?))
         {
@@ -157,62 +157,72 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionContactRequest Creator { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the transaction number.
         /// </summary>
+        /// <value>Gets or sets the transaction number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the reference.
         /// </summary>
+        /// <value>Gets or sets the reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeId
+        /// Gets or sets the type by ID.
         /// </summary>
+        /// <value>Gets or sets the type by ID.</value>
         [DataMember(Name = "typeId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SubtypeId
+        /// Gets or sets the subtype by ID.
         /// </summary>
+        /// <value>Gets or sets the subtype by ID.</value>
         [DataMember(Name = "subtypeId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SubtypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or sets the time of the underlying transaction.
         /// </summary>
+        /// <value>Gets or sets the time of the underlying transaction.</value>
         [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryDate
+        /// Gets or sets the time of delivery.
         /// </summary>
+        /// <value>Gets or sets the time of delivery.</value>
         [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
         public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets TermsOfPaymentId
+        /// Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  
         /// </summary>
+        /// <value>Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  </value>
         [DataMember(Name = "termsOfPaymentId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TermsOfPaymentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentMethodId
+        /// Gets or sets the payment method for this transaction given by ID.
         /// </summary>
+        /// <value>Gets or sets the payment method for this transaction given by ID.</value>
         [DataMember(Name = "paymentMethodId", IsRequired = true, EmitDefaultValue = true)]
         public Guid PaymentMethodId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CurrencyId
+        /// Gets or sets the currency used to quantify this transaction by ID.
         /// </summary>
+        /// <value>Gets or sets the currency used to quantify this transaction by ID.</value>
         [DataMember(Name = "currencyId", IsRequired = true, EmitDefaultValue = true)]
         public Guid CurrencyId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -253,14 +263,16 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionContactRequest Representative { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the items of this transaction.
         /// </summary>
+        /// <value>Gets or sets the items of this transaction.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<TransactionItemRequest> Items { get; set; }
 
         /// <summary>
-        /// Gets or Sets AlternativePaymentDeadline
+        /// Gets or sets an alternative payment deadline to the one defined in the terms of payment.
         /// </summary>
+        /// <value>Gets or sets an alternative payment deadline to the one defined in the terms of payment.</value>
         [DataMember(Name = "alternativePaymentDeadline", EmitDefaultValue = true)]
         public DateTime? AlternativePaymentDeadline { get; set; }
 
@@ -271,38 +283,44 @@ namespace Simplic.OxS.SDK.ERP
         public double? Balance { get; set; }
 
         /// <summary>
-        /// Gets or Sets Barcode
+        /// Gets or sets the barcode.
         /// </summary>
+        /// <value>Gets or sets the barcode.</value>
         [DataMember(Name = "barcode", EmitDefaultValue = true)]
         public string Barcode { get; set; }
 
         /// <summary>
-        /// Gets or Sets BillToText
+        /// Gets or sets the bill as a text.
         /// </summary>
+        /// <value>Gets or sets the bill as a text.</value>
         [DataMember(Name = "billToText", EmitDefaultValue = true)]
         public string BillToText { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscountPercentValue
+        /// Gets or sets the relative cash discount.
         /// </summary>
+        /// <value>Gets or sets the relative cash discount.</value>
         [DataMember(Name = "cashDiscountPercentValue", EmitDefaultValue = true)]
         public double? CashDiscountPercentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscountTotal
+        /// Gets or sets the total cash discount.
         /// </summary>
+        /// <value>Gets or sets the total cash discount.</value>
         [DataMember(Name = "cashDiscountTotal", EmitDefaultValue = true)]
         public double? CashDiscountTotal { get; set; }
 
         /// <summary>
-        /// Gets or Sets FinancialAccountingPeriodId
+        /// Gets or sets the financial year period of this transaction given by ID.
         /// </summary>
+        /// <value>Gets or sets the financial year period of this transaction given by ID.</value>
         [DataMember(Name = "financialAccountingPeriodId", IsRequired = true, EmitDefaultValue = true)]
         public Guid FinancialAccountingPeriodId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PeriodId
+        /// Gets or sets the financial year period of this transaction for inventory management given by ID.
         /// </summary>
+        /// <value>Gets or sets the financial year period of this transaction for inventory management given by ID.</value>
         [DataMember(Name = "periodId", IsRequired = true, EmitDefaultValue = true)]
         public Guid PeriodId { get; set; }
 
@@ -313,26 +331,30 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionManualVatRequest ManualVAT { get; set; }
 
         /// <summary>
-        /// Gets or Sets Notes
+        /// Gets or sets notes.
         /// </summary>
+        /// <value>Gets or sets notes.</value>
         [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 
         /// <summary>
-        /// Gets or Sets DueDate
+        /// Gets or sets the due date.
         /// </summary>
+        /// <value>Gets or sets the due date.</value>
         [DataMember(Name = "dueDate", EmitDefaultValue = true)]
         public DateTime? DueDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceNr
+        /// Gets or sets the reference number.
         /// </summary>
+        /// <value>Gets or sets the reference number.</value>
         [DataMember(Name = "referenceNr", EmitDefaultValue = true)]
         public string ReferenceNr { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxGroupId
+        /// Gets or sets the tax group by ID.
         /// </summary>
+        /// <value>Gets or sets the tax group by ID.</value>
         [DataMember(Name = "taxGroupId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TaxGroupId { get; set; }
 

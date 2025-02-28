@@ -9,6 +9,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/sensor-api/v1*
 | [**GetAllGet**](SensorClient.md#sensorgetallget) | **GET** /Sensor/get-all |  |
 | [**GetAllWithLastMeasurementGet**](SensorClient.md#sensorgetallwithlastmeasurementget) | **GET** /Sensor/get-all-with-last-measurement |  |
 | [**GetByTagGet**](SensorClient.md#sensorgetbytagget) | **GET** /Sensor/get-by-tag |  |
+| [**GetWithLastMeasurementArrayGet**](SensorClient.md#sensorgetwithlastmeasurementarrayget) | **GET** /Sensor/get-with-last-measurement-array |  |
 | [**GetWithLastMeasurementGet**](SensorClient.md#sensorgetwithlastmeasurementget) | **GET** /Sensor/get-with-last-measurement |  |
 | [**Patch**](SensorClient.md#sensoridpatch) | **PATCH** /Sensor/{id} |  |
 | [**Post**](SensorClient.md#sensorpost) | **POST** /Sensor |  |
@@ -100,7 +101,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -193,7 +194,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -281,7 +282,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -376,7 +377,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -469,7 +470,100 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="sensorgetwithlastmeasurementarrayget"></a>
+# **GetWithLastMeasurementArrayGet**
+> GetLastMeasurementResponse GetWithLastMeasurementArrayGet (List<Guid>? requestBody = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Sensor;
+
+namespace Example
+{
+    public class GetWithLastMeasurementArrayGetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/sensor-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new SensorClient(config);
+            var requestBody = new List<Guid>?(); // List<Guid>? |  (optional) 
+
+            try
+            {
+                GetLastMeasurementResponse result = apiInstance.GetWithLastMeasurementArrayGet(requestBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SensorClient.GetWithLastMeasurementArrayGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWithLastMeasurementArrayGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<GetLastMeasurementResponse> response = apiInstance.GetWithLastMeasurementArrayGetWithHttpInfo(requestBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SensorClient.GetWithLastMeasurementArrayGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **requestBody** | [**List&lt;Guid&gt;?**](Guid.md) |  | [optional]  |
+
+### Return type
+
+[**GetLastMeasurementResponse**](GetLastMeasurementResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -562,7 +656,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -657,7 +751,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -750,7 +844,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 

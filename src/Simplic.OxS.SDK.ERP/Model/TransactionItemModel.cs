@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionItemModel
+    /// Represents the shared model for a transaction item.
     /// </summary>
     [DataContract(Name = "TransactionItemModel")]
     public partial class TransactionItemModel : IEquatable<TransactionItemModel>, IValidatableObject
@@ -54,35 +54,35 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionItemModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="text">text.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="text">Gets or sets the text..</param>
         /// <param name="type">type.</param>
-        /// <param name="bookedFromTransactionId">bookedFromTransactionId.</param>
-        /// <param name="transactionItemCollectionId">transactionItemCollectionId.</param>
-        /// <param name="sortNumber">sortNumber.</param>
-        /// <param name="deserializationType">deserializationType.</param>
+        /// <param name="bookedFromTransactionId">Gets or sets the transaction this item has been booked from by ID..</param>
+        /// <param name="transactionItemCollectionId">Gets or sets the Simplic.OxS.ERP.TransactionItemCollection.TransactionItemCollection this transaction item is part of by ID..</param>
+        /// <param name="sortNumber">Gets or sets the sort number..</param>
+        /// <param name="deserializationType">Gets or sets an identifier for the type of the item for correct deserialization..</param>
         /// <param name="assignedTransactionItems">assignedTransactionItems.</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">amount.</param>
-        /// <param name="behaviorDefinitions">behaviorDefinitions.</param>
+        /// <param name="amount">Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionModel.</param>
         /// <param name="originalOperationItem">originalOperationItem.</param>
-        /// <param name="inputPrice">inputPrice.</param>
+        /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
-        /// <param name="singlePrice">singlePrice.</param>
-        /// <param name="totalPrice">totalPrice.</param>
-        /// <param name="singlePriceNet">singlePriceNet.</param>
-        /// <param name="totalPriceNet">totalPriceNet.</param>
-        /// <param name="singlePriceGross">singlePriceGross.</param>
-        /// <param name="totalPriceGross">totalPriceGross.</param>
-        /// <param name="singlePriceVat">singlePriceVat.</param>
-        /// <param name="totalPriceVat">totalPriceVat.</param>
-        /// <param name="pricing">pricing.</param>
-        /// <param name="quantity">quantity.</param>
+        /// <param name="singlePrice">Gets or sets the resulting single price..</param>
+        /// <param name="totalPrice">Gets or sets the resulting total price..</param>
+        /// <param name="singlePriceNet">Gets or sets the resulting net single price..</param>
+        /// <param name="totalPriceNet">Gets or sets the resulting net total price..</param>
+        /// <param name="singlePriceGross">Gets or sets the gross single price..</param>
+        /// <param name="totalPriceGross">Gets or sets the gross total price..</param>
+        /// <param name="singlePriceVat">Gets or sets the VAT contained in the net single price..</param>
+        /// <param name="totalPriceVat">Gets or sets the VAT contained in the net total price..</param>
+        /// <param name="pricing">Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  .</param>
+        /// <param name="quantity">Gets or sets the quantity..</param>
         /// <param name="unit">unit.</param>
-        /// <param name="articleId">articleId.</param>
-        /// <param name="deltaValue">deltaValue.</param>
-        /// <param name="items">items.</param>
+        /// <param name="articleId">Gets or sets the article by ID..</param>
+        /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
+        /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
         public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ModelValueOperator? valueOperator = default(ModelValueOperator?), ModelAssignmentMode? assignmentMode = default(ModelAssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), double? quantity = default(double?), QuantityUnitModel unit = default(QuantityUnitModel), Guid? articleId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
         {
             this.Id = id;
@@ -117,14 +117,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text.
         /// </summary>
+        /// <value>Gets or sets the text.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -135,26 +137,30 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionItemTypeModel Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets BookedFromTransactionId
+        /// Gets or sets the transaction this item has been booked from by ID.
         /// </summary>
+        /// <value>Gets or sets the transaction this item has been booked from by ID.</value>
         [DataMember(Name = "bookedFromTransactionId", EmitDefaultValue = true)]
         public Guid? BookedFromTransactionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TransactionItemCollectionId
+        /// Gets or sets the Simplic.OxS.ERP.TransactionItemCollection.TransactionItemCollection this transaction item is part of by ID.
         /// </summary>
+        /// <value>Gets or sets the Simplic.OxS.ERP.TransactionItemCollection.TransactionItemCollection this transaction item is part of by ID.</value>
         [DataMember(Name = "transactionItemCollectionId", EmitDefaultValue = true)]
         public Guid? TransactionItemCollectionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SortNumber
+        /// Gets or sets the sort number.
         /// </summary>
+        /// <value>Gets or sets the sort number.</value>
         [DataMember(Name = "sortNumber", EmitDefaultValue = false)]
         public int SortNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeserializationType
+        /// Gets or sets an identifier for the type of the item for correct deserialization.
         /// </summary>
+        /// <value>Gets or sets an identifier for the type of the item for correct deserialization.</value>
         [DataMember(Name = "deserializationType", EmitDefaultValue = true)]
         public string DeserializationType { get; set; }
 
@@ -165,14 +171,16 @@ namespace Simplic.OxS.SDK.ERP
         public List<TransactionItemModel> AssignedTransactionItems { get; set; }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  
         /// </summary>
+        /// <value>Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  </value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets BehaviorDefinitions
+        /// Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionModel
         /// </summary>
+        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionModel</value>
         [DataMember(Name = "behaviorDefinitions", EmitDefaultValue = true)]
         public List<BehaviorDefinitionModel> BehaviorDefinitions { get; set; }
 
@@ -183,68 +191,79 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionItemModel OriginalOperationItem { get; set; }
 
         /// <summary>
-        /// Gets or Sets InputPrice
+        /// Gets or sets the price user input.
         /// </summary>
+        /// <value>Gets or sets the price user input.</value>
         [DataMember(Name = "inputPrice", EmitDefaultValue = true)]
         public double? InputPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePrice
+        /// Gets or sets the resulting single price.
         /// </summary>
+        /// <value>Gets or sets the resulting single price.</value>
         [DataMember(Name = "singlePrice", EmitDefaultValue = true)]
         public double? SinglePrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPrice
+        /// Gets or sets the resulting total price.
         /// </summary>
+        /// <value>Gets or sets the resulting total price.</value>
         [DataMember(Name = "totalPrice", EmitDefaultValue = true)]
         public double? TotalPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceNet
+        /// Gets or sets the resulting net single price.
         /// </summary>
+        /// <value>Gets or sets the resulting net single price.</value>
         [DataMember(Name = "singlePriceNet", EmitDefaultValue = true)]
         public double? SinglePriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceNet
+        /// Gets or sets the resulting net total price.
         /// </summary>
+        /// <value>Gets or sets the resulting net total price.</value>
         [DataMember(Name = "totalPriceNet", EmitDefaultValue = true)]
         public double? TotalPriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceGross
+        /// Gets or sets the gross single price.
         /// </summary>
+        /// <value>Gets or sets the gross single price.</value>
         [DataMember(Name = "singlePriceGross", EmitDefaultValue = true)]
         public double? SinglePriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceGross
+        /// Gets or sets the gross total price.
         /// </summary>
+        /// <value>Gets or sets the gross total price.</value>
         [DataMember(Name = "totalPriceGross", EmitDefaultValue = true)]
         public double? TotalPriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceVat
+        /// Gets or sets the VAT contained in the net single price.
         /// </summary>
+        /// <value>Gets or sets the VAT contained in the net single price.</value>
         [DataMember(Name = "singlePriceVat", EmitDefaultValue = true)]
         public double? SinglePriceVat { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceVat
+        /// Gets or sets the VAT contained in the net total price.
         /// </summary>
+        /// <value>Gets or sets the VAT contained in the net total price.</value>
         [DataMember(Name = "totalPriceVat", EmitDefaultValue = true)]
         public double? TotalPriceVat { get; set; }
 
         /// <summary>
-        /// Gets or Sets Pricing
+        /// Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  
         /// </summary>
+        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  </value>
         [DataMember(Name = "pricing", EmitDefaultValue = true)]
         public List<StringTransactionPriceObjectModelKeyValuePair> Pricing { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the quantity.
         /// </summary>
+        /// <value>Gets or sets the quantity.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = true)]
         public double? Quantity { get; set; }
 
@@ -255,20 +274,23 @@ namespace Simplic.OxS.SDK.ERP
         public QuantityUnitModel Unit { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleId
+        /// Gets or sets the article by ID.
         /// </summary>
+        /// <value>Gets or sets the article by ID.</value>
         [DataMember(Name = "articleId", EmitDefaultValue = true)]
         public Guid? ArticleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeltaValue
+        /// Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.
         /// </summary>
+        /// <value>Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.</value>
         [DataMember(Name = "deltaValue", EmitDefaultValue = true)]
         public double? DeltaValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets a set of transaction items that are part of the group.
         /// </summary>
+        /// <value>Gets or sets a set of transaction items that are part of the group.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<TransactionItemModel> Items { get; set; }
 

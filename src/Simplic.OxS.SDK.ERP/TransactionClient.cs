@@ -40,7 +40,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -48,7 +48,7 @@ public interface ITransactionClient
     TransactionResultModel Cancel(Guid? id = default(Guid?));
 
     /// <summary>
-    ///  
+    /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -56,7 +56,7 @@ public interface ITransactionClient
     ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?));
         
     /// <summary>
-    ///  
+    /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -65,7 +65,7 @@ public interface ITransactionClient
     Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -75,7 +75,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Converts a set of transactions. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -83,7 +83,7 @@ public interface ITransactionClient
     ConvertResultModel ConvertTransactions(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?));
 
     /// <summary>
-    ///  
+    /// Converts a set of transactions. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -91,7 +91,7 @@ public interface ITransactionClient
     ApiResponse<ConvertResultModel> ConvertTransactionsWithHttpInfo(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?));
         
     /// <summary>
-    ///  
+    /// Converts a set of transactions. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -100,7 +100,7 @@ public interface ITransactionClient
     Task<ConvertResultModel> ConvertTransactionsAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Converts a set of transactions. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -110,7 +110,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="barcode"> (optional)</param>
@@ -118,7 +118,7 @@ public interface ITransactionClient
     TransactionModel GetByBarcode(string? barcode = default(string?));
 
     /// <summary>
-    ///  
+    /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="barcode"> (optional)</param>
@@ -126,7 +126,7 @@ public interface ITransactionClient
     ApiResponse<TransactionModel> GetByBarcodeWithHttpInfo(string? barcode = default(string?));
         
     /// <summary>
-    ///  
+    /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="barcode"> (optional)</param>
@@ -135,7 +135,7 @@ public interface ITransactionClient
     Task<TransactionModel> GetByBarcodeAsync(string? barcode = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="barcode"> (optional)</param>
@@ -145,46 +145,46 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions occuring between two points in time. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="from"> (optional)</param>
-    /// <param name="to"> (optional)</param>
+    /// <param name="from">The first point in time (optional)</param>
+    /// <param name="to">The second point in time (optional)</param>
     /// <returns>List&lt;TransactionModel&gt;</returns>
     List<TransactionModel> GetByDate(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions occuring between two points in time. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="from"> (optional)</param>
-    /// <param name="to"> (optional)</param>
+    /// <param name="from">The first point in time (optional)</param>
+    /// <param name="to">The second point in time (optional)</param>
     /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
     ApiResponse<List<TransactionModel>> GetByDateWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
         
     /// <summary>
-    ///  
+    /// Gets a set of transactions occuring between two points in time. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="from"> (optional)</param>
-    /// <param name="to"> (optional)</param>
+    /// <param name="from">The first point in time (optional)</param>
+    /// <param name="to">The second point in time (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;TransactionModel&gt;</returns>
     Task<List<TransactionModel>> GetByDateAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions occuring between two points in time. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="from"> (optional)</param>
-    /// <param name="to"> (optional)</param>
+    /// <param name="from">The first point in time (optional)</param>
+    /// <param name="to">The second point in time (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
     Task<ApiResponse<List<TransactionModel>>> GetByDateWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="number"> (optional)</param>
@@ -192,7 +192,7 @@ public interface ITransactionClient
     List<TransactionModel> GetByNumber(string? number = default(string?));
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="number"> (optional)</param>
@@ -200,7 +200,7 @@ public interface ITransactionClient
     ApiResponse<List<TransactionModel>> GetByNumberWithHttpInfo(string? number = default(string?));
         
     /// <summary>
-    ///  
+    /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="number"> (optional)</param>
@@ -209,7 +209,7 @@ public interface ITransactionClient
     Task<List<TransactionModel>> GetByNumberAsync(string? number = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="number"> (optional)</param>
@@ -219,7 +219,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -227,7 +227,7 @@ public interface ITransactionClient
     void Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -235,7 +235,7 @@ public interface ITransactionClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -244,7 +244,7 @@ public interface ITransactionClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -254,7 +254,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Gets a transaction by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -263,7 +263,7 @@ public interface ITransactionClient
     TransactionModel Get(Guid id, bool? lockResource = default(bool?));
 
     /// <summary>
-    ///  
+    /// Gets a transaction by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -272,7 +272,7 @@ public interface ITransactionClient
     ApiResponse<TransactionModel> GetWithHttpInfo(Guid id, bool? lockResource = default(bool?));
         
     /// <summary>
-    ///  
+    /// Gets a transaction by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -282,7 +282,7 @@ public interface ITransactionClient
     Task<TransactionModel> GetAsync(Guid id, bool? lockResource = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a transaction by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -293,7 +293,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Patches a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -302,7 +302,7 @@ public interface ITransactionClient
     TransactionResultModel Patch(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -311,7 +311,7 @@ public interface ITransactionClient
     ApiResponse<TransactionResultModel> PatchWithHttpInfo(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -321,7 +321,7 @@ public interface ITransactionClient
     Task<TransactionResultModel> PatchAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -332,7 +332,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTransactionRequest"> (optional)</param>
@@ -340,7 +340,7 @@ public interface ITransactionClient
     TransactionResultModel Post(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTransactionRequest"> (optional)</param>
@@ -348,7 +348,7 @@ public interface ITransactionClient
     ApiResponse<TransactionResultModel> PostWithHttpInfo(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTransactionRequest"> (optional)</param>
@@ -357,7 +357,7 @@ public interface ITransactionClient
     Task<TransactionResultModel> PostAsync(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTransactionRequest"> (optional)</param>
@@ -441,7 +441,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -459,7 +459,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -477,7 +477,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -496,7 +496,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -514,7 +514,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -532,7 +532,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -550,7 +550,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -569,7 +569,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -587,7 +587,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -605,7 +605,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -623,7 +623,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -642,7 +642,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -660,11 +660,11 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
         public List<TransactionModel> GetByDate(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
         {
@@ -679,11 +679,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
         public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> GetByDateWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
         {
@@ -698,11 +698,11 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
         public System.Threading.Tasks.Task<List<TransactionModel>> GetByDateAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -718,11 +718,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> GetByDateWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -737,7 +737,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -755,7 +755,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -773,7 +773,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -792,7 +792,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -810,7 +810,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -828,7 +828,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -846,7 +846,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -865,7 +865,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -883,7 +883,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -902,7 +902,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -921,7 +921,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -941,7 +941,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -960,7 +960,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -979,7 +979,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -998,7 +998,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1018,7 +1018,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1037,7 +1037,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -1055,7 +1055,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -1073,7 +1073,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -1092,7 +1092,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -1123,7 +1123,7 @@ public interface ITransactionClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Cancels a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1132,7 +1132,7 @@ public interface ITransactionClient
         TransactionResultModel Cancel(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Cancels a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1143,7 +1143,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of TransactionResultModel</returns>
         ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Converts a set of transactions.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -1152,7 +1152,7 @@ public interface ITransactionClient
         ConvertResultModel ConvertTransactions(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Converts a set of transactions.
         /// </summary>
         /// <remarks>
         /// 
@@ -1163,7 +1163,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of ConvertResultModel</returns>
         ApiResponse<ConvertResultModel> ConvertTransactionsWithHttpInfo(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a transaction by barcode.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -1172,7 +1172,7 @@ public interface ITransactionClient
         TransactionModel GetByBarcode(string? barcode = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a transaction by barcode.
         /// </summary>
         /// <remarks>
         /// 
@@ -1183,29 +1183,29 @@ public interface ITransactionClient
         /// <returns>ApiResponse of TransactionModel</returns>
         ApiResponse<TransactionModel> GetByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a set of transactions occuring between two points in time.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
         List<TransactionModel> GetByDate(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a set of transactions occuring between two points in time.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
         ApiResponse<List<TransactionModel>> GetByDateWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a set of transactions by number.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -1214,7 +1214,7 @@ public interface ITransactionClient
         List<TransactionModel> GetByNumber(string? number = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a set of transactions by number.
         /// </summary>
         /// <remarks>
         /// 
@@ -1225,7 +1225,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
         ApiResponse<List<TransactionModel>> GetByNumberWithHttpInfo(string? number = default(string?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1234,7 +1234,7 @@ public interface ITransactionClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1245,7 +1245,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a transaction by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1255,7 +1255,7 @@ public interface ITransactionClient
         TransactionModel Get(Guid id, bool? lockResource = default(bool?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a transaction by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1267,7 +1267,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of TransactionModel</returns>
         ApiResponse<TransactionModel> GetWithHttpInfo(Guid id, bool? lockResource = default(bool?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1277,7 +1277,7 @@ public interface ITransactionClient
         TransactionResultModel Patch(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1289,7 +1289,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of TransactionResultModel</returns>
         ApiResponse<TransactionResultModel> PatchWithHttpInfo(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -1298,7 +1298,7 @@ public interface ITransactionClient
         TransactionResultModel Post(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1318,7 +1318,7 @@ public interface ITransactionClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Cancels a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1331,7 +1331,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Cancels a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1343,7 +1343,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Converts a set of transactions.
         /// </summary>
         /// <remarks>
         /// 
@@ -1356,7 +1356,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<ConvertResultModel> ConvertTransactionsAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Converts a set of transactions.
         /// </summary>
         /// <remarks>
         /// 
@@ -1368,7 +1368,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (ConvertResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConvertResultModel>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a transaction by barcode.
         /// </summary>
         /// <remarks>
         /// 
@@ -1381,7 +1381,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<TransactionModel> GetByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a transaction by barcode.
         /// </summary>
         /// <remarks>
         /// 
@@ -1393,34 +1393,34 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (TransactionModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionModel>> GetByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a set of transactions occuring between two points in time.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
         System.Threading.Tasks.Task<List<TransactionModel>> GetByDateAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a set of transactions occuring between two points in time.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TransactionModel>>> GetByDateWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a set of transactions by number.
         /// </summary>
         /// <remarks>
         /// 
@@ -1433,7 +1433,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<List<TransactionModel>> GetByNumberAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a set of transactions by number.
         /// </summary>
         /// <remarks>
         /// 
@@ -1445,7 +1445,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TransactionModel>>> GetByNumberWithHttpInfoAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1458,7 +1458,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1470,7 +1470,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a transaction by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1484,7 +1484,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<TransactionModel> GetAsync(Guid id, bool? lockResource = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a transaction by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1497,7 +1497,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (TransactionModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionModel>> GetWithHttpInfoAsync(Guid id, bool? lockResource = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1511,7 +1511,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<TransactionResultModel> PatchAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1524,7 +1524,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1537,7 +1537,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<TransactionResultModel> PostAsync(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -1671,7 +1671,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1684,7 +1684,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1745,7 +1745,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1759,7 +1759,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1823,7 +1823,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -1836,7 +1836,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -1897,7 +1897,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -1911,7 +1911,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Converts a set of transactions. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="convertTransactionsRequest"> (optional)</param>
@@ -1975,7 +1975,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -1988,7 +1988,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -2049,7 +2049,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -2063,7 +2063,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcode"> (optional)</param>
@@ -2127,11 +2127,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
         public List<TransactionModel> GetByDate(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
@@ -2141,11 +2141,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
         public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> GetByDateWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
@@ -2207,11 +2207,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
@@ -2222,11 +2222,11 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions occuring between two points in time. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="from"> (optional)</param>
-        /// <param name="to"> (optional)</param>
+        /// <param name="from">The first point in time (optional)</param>
+        /// <param name="to">The second point in time (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
@@ -2291,7 +2291,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -2304,7 +2304,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -2365,7 +2365,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -2379,7 +2379,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="number"> (optional)</param>
@@ -2443,7 +2443,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2455,7 +2455,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2513,7 +2513,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2526,7 +2526,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2587,7 +2587,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2601,7 +2601,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2664,7 +2664,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2679,7 +2679,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a transaction by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2745,7 +2745,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2759,7 +2759,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2822,7 +2822,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2837,7 +2837,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2903,7 +2903,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -2916,7 +2916,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -2977,7 +2977,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>
@@ -2991,7 +2991,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTransactionRequest"> (optional)</param>

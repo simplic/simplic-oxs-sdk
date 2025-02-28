@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// ConvertTransactionsRequest
+    /// Represents a request to convert a set of transactions.
     /// </summary>
     [DataContract(Name = "ConvertTransactionsRequest")]
     public partial class ConvertTransactionsRequest : IEquatable<ConvertTransactionsRequest>, IValidatableObject
@@ -41,11 +41,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="ConvertTransactionsRequest" /> class.
         /// </summary>
-        /// <param name="transactionSubsets">transactionSubsets (required).</param>
-        /// <param name="targetTypeId">targetTypeId (required).</param>
-        /// <param name="targetSubtypeId">targetSubtypeId.</param>
-        /// <param name="checkCompatibleProperties">checkCompatibleProperties.</param>
-        /// <param name="commit">commit (required).</param>
+        /// <param name="transactionSubsets">Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities. (required).</param>
+        /// <param name="targetTypeId">Gets or sets the type of the result transaction by ID. (required).</param>
+        /// <param name="targetSubtypeId">Gets or sets the subtype of the result transaction by ID..</param>
+        /// <param name="checkCompatibleProperties">Gets or sets the set of properties to check for each input transaction to ensure compatibility..</param>
+        /// <param name="commit">Gets or sets the commit flag. If raised, the convert operation will be committed (required).</param>
         public ConvertTransactionsRequest(Dictionary<string, Dictionary<string, double>> transactionSubsets = default(Dictionary<string, Dictionary<string, double>>), Guid targetTypeId = default(Guid), Guid? targetSubtypeId = default(Guid?), List<string> checkCompatibleProperties = default(List<string>), bool commit = default(bool))
         {
             // to ensure "transactionSubsets" is required (not null)
@@ -61,32 +61,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets TransactionSubsets
+        /// Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities.
         /// </summary>
+        /// <value>Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities.</value>
         [DataMember(Name = "transactionSubsets", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Dictionary<string, double>> TransactionSubsets { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetTypeId
+        /// Gets or sets the type of the result transaction by ID.
         /// </summary>
+        /// <value>Gets or sets the type of the result transaction by ID.</value>
         [DataMember(Name = "targetTypeId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TargetTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetSubtypeId
+        /// Gets or sets the subtype of the result transaction by ID.
         /// </summary>
+        /// <value>Gets or sets the subtype of the result transaction by ID.</value>
         [DataMember(Name = "targetSubtypeId", EmitDefaultValue = true)]
         public Guid? TargetSubtypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckCompatibleProperties
+        /// Gets or sets the set of properties to check for each input transaction to ensure compatibility.
         /// </summary>
+        /// <value>Gets or sets the set of properties to check for each input transaction to ensure compatibility.</value>
         [DataMember(Name = "checkCompatibleProperties", EmitDefaultValue = true)]
         public List<string> CheckCompatibleProperties { get; set; }
 
         /// <summary>
-        /// Gets or Sets Commit
+        /// Gets or sets the commit flag. If raised, the convert operation will be committed
         /// </summary>
+        /// <value>Gets or sets the commit flag. If raised, the convert operation will be committed</value>
         [DataMember(Name = "commit", IsRequired = true, EmitDefaultValue = true)]
         public bool Commit { get; set; }
 

@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines OperationItemCombinationMode
+    /// Represents a mode of applying multiple operation items to a transaction.
     /// </summary>
+    /// <value>Represents a mode of applying multiple operation items to a transaction.</value>
     public enum OperationItemCombinationMode
     {
         /// <summary>

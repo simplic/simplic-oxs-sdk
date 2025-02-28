@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines TransactionConvertState
+    /// Represents the degree to which a N:Simplic.OxS.ERP.Transaction has been converted.
     /// </summary>
+    /// <value>Represents the degree to which a N:Simplic.OxS.ERP.Transaction has been converted.</value>
     public enum TransactionConvertState
     {
         /// <summary>

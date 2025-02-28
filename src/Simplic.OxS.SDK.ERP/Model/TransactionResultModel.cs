@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionResultModel
+    /// Represents the shared model of the result of an operation performed on a transaction.
     /// </summary>
     [DataContract(Name = "TransactionResultModel")]
     public partial class TransactionResultModel : IEquatable<TransactionResultModel>, IValidatableObject
@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="TransactionResultModel" /> class.
         /// </summary>
         /// <param name="transaction">transaction.</param>
-        /// <param name="errors">errors.</param>
+        /// <param name="errors">Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects..</param>
         public TransactionResultModel(TransactionModel transaction = default(TransactionModel), List<ErrorInfoModel> errors = default(List<ErrorInfoModel>))
         {
             this.Transaction = transaction;
@@ -51,8 +51,9 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionModel Transaction { get; set; }
 
         /// <summary>
-        /// Gets or Sets Errors
+        /// Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects.
         /// </summary>
+        /// <value>Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects.</value>
         [DataMember(Name = "errors", EmitDefaultValue = true)]
         public List<ErrorInfoModel> Errors { get; set; }
 

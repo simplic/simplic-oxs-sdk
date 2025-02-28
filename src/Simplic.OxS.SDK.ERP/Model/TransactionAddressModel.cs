@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionAddressModel
+    /// Represents the shared model for an address in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionAddressModel")]
     public partial class TransactionAddressModel : IEquatable<TransactionAddressModel>, IValidatableObject
@@ -36,18 +36,18 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionAddressModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="street">street.</param>
-        /// <param name="zipcode">zipcode.</param>
-        /// <param name="district">district.</param>
-        /// <param name="federalState">federalState.</param>
-        /// <param name="country">country.</param>
-        /// <param name="countryIso">countryIso.</param>
-        /// <param name="city">city.</param>
-        /// <param name="latitude">latitude.</param>
-        /// <param name="longitude">longitude.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="street">Gets or sets the street..</param>
+        /// <param name="zipcode">Gets or sets the zipcode..</param>
+        /// <param name="district">Gets or sets the district..</param>
+        /// <param name="federalState">Gets or sets the land. E.g. lower saxony or bavaria..</param>
+        /// <param name="country">Gets or sets the country..</param>
+        /// <param name="countryIso">Gets or sets the country ISO..</param>
+        /// <param name="city">Gets or sets the city..</param>
+        /// <param name="latitude">Gets or sets the latitude..</param>
+        /// <param name="longitude">Gets or sets the longitude..</param>
         public TransactionAddressModel(Guid id = default(Guid), string number = default(string), string name = default(string), string street = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string), double? latitude = default(double?), double? longitude = default(double?))
         {
             this.Id = id;
@@ -65,74 +65,86 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Street
+        /// Gets or sets the street.
         /// </summary>
+        /// <value>Gets or sets the street.</value>
         [DataMember(Name = "street", EmitDefaultValue = true)]
         public string Street { get; set; }
 
         /// <summary>
-        /// Gets or Sets Zipcode
+        /// Gets or sets the zipcode.
         /// </summary>
+        /// <value>Gets or sets the zipcode.</value>
         [DataMember(Name = "zipcode", EmitDefaultValue = true)]
         public string Zipcode { get; set; }
 
         /// <summary>
-        /// Gets or Sets District
+        /// Gets or sets the district.
         /// </summary>
+        /// <value>Gets or sets the district.</value>
         [DataMember(Name = "district", EmitDefaultValue = true)]
         public string District { get; set; }
 
         /// <summary>
-        /// Gets or Sets FederalState
+        /// Gets or sets the land. E.g. lower saxony or bavaria.
         /// </summary>
+        /// <value>Gets or sets the land. E.g. lower saxony or bavaria.</value>
         [DataMember(Name = "federalState", EmitDefaultValue = true)]
         public string FederalState { get; set; }
 
         /// <summary>
-        /// Gets or Sets Country
+        /// Gets or sets the country.
         /// </summary>
+        /// <value>Gets or sets the country.</value>
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryIso
+        /// Gets or sets the country ISO.
         /// </summary>
+        /// <value>Gets or sets the country ISO.</value>
         [DataMember(Name = "countryIso", EmitDefaultValue = true)]
         public string CountryIso { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or sets the city.
         /// </summary>
+        /// <value>Gets or sets the city.</value>
         [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or Sets Latitude
+        /// Gets or sets the latitude.
         /// </summary>
+        /// <value>Gets or sets the latitude.</value>
         [DataMember(Name = "latitude", EmitDefaultValue = true)]
         public double? Latitude { get; set; }
 
         /// <summary>
-        /// Gets or Sets Longitude
+        /// Gets or sets the longitude.
         /// </summary>
+        /// <value>Gets or sets the longitude.</value>
         [DataMember(Name = "longitude", EmitDefaultValue = true)]
         public double? Longitude { get; set; }
 

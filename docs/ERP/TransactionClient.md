@@ -4,21 +4,21 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel |  |
-| [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionsput) | **PUT** /Transaction/convert-transactions |  |
-| [**GetByBarcode**](TransactionClient.md#transactiongetbybarcodeget) | **GET** /Transaction/get-by-barcode |  |
-| [**GetByDate**](TransactionClient.md#transactiongetbydateget) | **GET** /Transaction/get-by-date |  |
-| [**GetByNumber**](TransactionClient.md#transactiongetbynumberget) | **GET** /Transaction/get-by-number |  |
-| [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} |  |
-| [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} |  |
-| [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} |  |
-| [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction |  |
+| [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel | Cancels a transaction. |
+| [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionsput) | **PUT** /Transaction/convert-transactions | Converts a set of transactions. |
+| [**GetByBarcode**](TransactionClient.md#transactiongetbybarcodeget) | **GET** /Transaction/get-by-barcode | Gets a transaction by barcode. |
+| [**GetByDate**](TransactionClient.md#transactiongetbydateget) | **GET** /Transaction/get-by-date | Gets a set of transactions occuring between two points in time. |
+| [**GetByNumber**](TransactionClient.md#transactiongetbynumberget) | **GET** /Transaction/get-by-number | Gets a set of transactions by number. |
+| [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} | Deletes a transaction. |
+| [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} | Gets a transaction by ID. |
+| [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} | Patches a transaction. |
+| [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
 
 <a id="transactioncancelput"></a>
 # **Cancel**
 > TransactionResultModel Cancel (Guid? id = null)
 
-
+Cancels a transaction.
 
 ### Example
 ```csharp
@@ -45,6 +45,7 @@ namespace Example
 
             try
             {
+                // Cancels a transaction.
                 TransactionResultModel result = apiInstance.Cancel(id);
                 Debug.WriteLine(result);
             }
@@ -65,6 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Cancels a transaction.
     ApiResponse<TransactionResultModel> response = apiInstance.CancelWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -111,7 +113,7 @@ catch (ApiException e)
 # **ConvertTransactions**
 > ConvertResultModel ConvertTransactions (ConvertTransactionsRequest? convertTransactionsRequest = null)
 
-
+Converts a set of transactions.
 
 ### Example
 ```csharp
@@ -138,6 +140,7 @@ namespace Example
 
             try
             {
+                // Converts a set of transactions.
                 ConvertResultModel result = apiInstance.ConvertTransactions(convertTransactionsRequest);
                 Debug.WriteLine(result);
             }
@@ -158,6 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Converts a set of transactions.
     ApiResponse<ConvertResultModel> response = apiInstance.ConvertTransactionsWithHttpInfo(convertTransactionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -204,7 +208,7 @@ catch (ApiException e)
 # **GetByBarcode**
 > TransactionModel GetByBarcode (string? barcode = null)
 
-
+Gets a transaction by barcode.
 
 ### Example
 ```csharp
@@ -231,6 +235,7 @@ namespace Example
 
             try
             {
+                // Gets a transaction by barcode.
                 TransactionModel result = apiInstance.GetByBarcode(barcode);
                 Debug.WriteLine(result);
             }
@@ -251,6 +256,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a transaction by barcode.
     ApiResponse<TransactionModel> response = apiInstance.GetByBarcodeWithHttpInfo(barcode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -297,7 +303,7 @@ catch (ApiException e)
 # **GetByDate**
 > List&lt;TransactionModel&gt; GetByDate (DateTime? from = null, DateTime? to = null)
 
-
+Gets a set of transactions occuring between two points in time.
 
 ### Example
 ```csharp
@@ -320,11 +326,12 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionClient(config);
-            var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | The first point in time (optional) 
+            var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | The second point in time (optional) 
 
             try
             {
+                // Gets a set of transactions occuring between two points in time.
                 List<TransactionModel> result = apiInstance.GetByDate(from, to);
                 Debug.WriteLine(result);
             }
@@ -345,6 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a set of transactions occuring between two points in time.
     ApiResponse<List<TransactionModel>> response = apiInstance.GetByDateWithHttpInfo(from, to);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -362,8 +370,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **from** | **DateTime?** |  | [optional]  |
-| **to** | **DateTime?** |  | [optional]  |
+| **from** | **DateTime?** | The first point in time | [optional]  |
+| **to** | **DateTime?** | The second point in time | [optional]  |
 
 ### Return type
 
@@ -392,7 +400,7 @@ catch (ApiException e)
 # **GetByNumber**
 > List&lt;TransactionModel&gt; GetByNumber (string? number = null)
 
-
+Gets a set of transactions by number.
 
 ### Example
 ```csharp
@@ -419,6 +427,7 @@ namespace Example
 
             try
             {
+                // Gets a set of transactions by number.
                 List<TransactionModel> result = apiInstance.GetByNumber(number);
                 Debug.WriteLine(result);
             }
@@ -439,6 +448,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a set of transactions by number.
     ApiResponse<List<TransactionModel>> response = apiInstance.GetByNumberWithHttpInfo(number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -485,7 +495,7 @@ catch (ApiException e)
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a transaction.
 
 ### Example
 ```csharp
@@ -512,6 +522,7 @@ namespace Example
 
             try
             {
+                // Deletes a transaction.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -531,6 +542,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a transaction.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -574,7 +586,7 @@ void (empty response body)
 # **Get**
 > TransactionModel Get (Guid id, bool? lockResource = null)
 
-
+Gets a transaction by ID.
 
 ### Example
 ```csharp
@@ -602,6 +614,7 @@ namespace Example
 
             try
             {
+                // Gets a transaction by ID.
                 TransactionModel result = apiInstance.Get(id, lockResource);
                 Debug.WriteLine(result);
             }
@@ -622,6 +635,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a transaction by ID.
     ApiResponse<TransactionModel> response = apiInstance.GetWithHttpInfo(id, lockResource);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -669,7 +683,7 @@ catch (ApiException e)
 # **Patch**
 > TransactionResultModel Patch (Guid id, UpdateTransactionRequest? updateTransactionRequest = null)
 
-
+Patches a transaction.
 
 ### Example
 ```csharp
@@ -697,6 +711,7 @@ namespace Example
 
             try
             {
+                // Patches a transaction.
                 TransactionResultModel result = apiInstance.Patch(id, updateTransactionRequest);
                 Debug.WriteLine(result);
             }
@@ -717,6 +732,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a transaction.
     ApiResponse<TransactionResultModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -764,7 +780,7 @@ catch (ApiException e)
 # **Post**
 > TransactionResultModel Post (CreateTransactionRequest? createTransactionRequest = null)
 
-
+Creates a new transaction.
 
 ### Example
 ```csharp
@@ -791,6 +807,7 @@ namespace Example
 
             try
             {
+                // Creates a new transaction.
                 TransactionResultModel result = apiInstance.Post(createTransactionRequest);
                 Debug.WriteLine(result);
             }
@@ -811,6 +828,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new transaction.
     ApiResponse<TransactionResultModel> response = apiInstance.PostWithHttpInfo(createTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionSubtypeRequest
+    /// Represents a request to create a Simplic.OxS.ERP.Transaction.TransactionSubtype.
     /// </summary>
     [DataContract(Name = "TransactionSubtypeRequest")]
     public partial class TransactionSubtypeRequest : IEquatable<TransactionSubtypeRequest>, IValidatableObject
@@ -65,21 +65,21 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionSubtypeRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="reportId">reportId (required).</param>
-        /// <param name="sequenceId">sequenceId (required).</param>
-        /// <param name="outputConfigurationId">outputConfigurationId (required).</param>
-        /// <param name="number">number (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="documentTitleTemplate">documentTitleTemplate.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="reportId">Gets or sets an optional report for this subtype given by ID. (required).</param>
+        /// <param name="sequenceId">Gets or sets an optional sequence for this subtype given by ID. (required).</param>
+        /// <param name="outputConfigurationId">Gets or sets the output configuration given by ID.. (required).</param>
+        /// <param name="number">Gets or sets a unique id (required).</param>
+        /// <param name="name">Gets or sets the subtype name (required).</param>
+        /// <param name="documentTitleTemplate">Gets or sets the document title template..</param>
         /// <param name="archiveMode">archiveMode.</param>
-        /// <param name="barcodeTemplate">barcodeTemplate.</param>
-        /// <param name="useNumberReservation">useNumberReservation.</param>
-        /// <param name="customField2Template">customField2Template.</param>
-        /// <param name="customField1Template">customField1Template.</param>
-        /// <param name="bookingTextTemplate">bookingTextTemplate.</param>
-        /// <param name="summarizeBookings">summarizeBookings.</param>
-        /// <param name="accountingExportGroup">accountingExportGroup.</param>
+        /// <param name="barcodeTemplate">Gets or sets the barcode template.</param>
+        /// <param name="useNumberReservation">Gets or sets whether to use transaction number generation or not.</param>
+        /// <param name="customField2Template">Gets or sets the template for the custom field 2 in a financial export.</param>
+        /// <param name="customField1Template">Gets or sets the template for the custom field 1 in a financial export.</param>
+        /// <param name="bookingTextTemplate">Gets or sets the template for the booking text.</param>
+        /// <param name="summarizeBookings">Gets or sets whether to summarize datev bookings.</param>
+        /// <param name="accountingExportGroup">Gets or sets the accounting export group.</param>
         /// <param name="dueDateMode">dueDateMode.</param>
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
@@ -111,86 +111,100 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReportId
+        /// Gets or sets an optional report for this subtype given by ID.
         /// </summary>
+        /// <value>Gets or sets an optional report for this subtype given by ID.</value>
         [DataMember(Name = "reportId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ReportId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SequenceId
+        /// Gets or sets an optional sequence for this subtype given by ID.
         /// </summary>
+        /// <value>Gets or sets an optional sequence for this subtype given by ID.</value>
         [DataMember(Name = "sequenceId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SequenceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OutputConfigurationId
+        /// Gets or sets the output configuration given by ID..
         /// </summary>
+        /// <value>Gets or sets the output configuration given by ID..</value>
         [DataMember(Name = "outputConfigurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid OutputConfigurationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets a unique id
         /// </summary>
+        /// <value>Gets or sets a unique id</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the subtype name
         /// </summary>
+        /// <value>Gets or sets the subtype name</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentTitleTemplate
+        /// Gets or sets the document title template.
         /// </summary>
+        /// <value>Gets or sets the document title template.</value>
         [DataMember(Name = "documentTitleTemplate", EmitDefaultValue = true)]
         public string DocumentTitleTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets BarcodeTemplate
+        /// Gets or sets the barcode template
         /// </summary>
+        /// <value>Gets or sets the barcode template</value>
         [DataMember(Name = "barcodeTemplate", EmitDefaultValue = true)]
         public string BarcodeTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets UseNumberReservation
+        /// Gets or sets whether to use transaction number generation or not
         /// </summary>
+        /// <value>Gets or sets whether to use transaction number generation or not</value>
         [DataMember(Name = "useNumberReservation", EmitDefaultValue = true)]
         public bool? UseNumberReservation { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomField2Template
+        /// Gets or sets the template for the custom field 2 in a financial export
         /// </summary>
+        /// <value>Gets or sets the template for the custom field 2 in a financial export</value>
         [DataMember(Name = "customField2Template", EmitDefaultValue = true)]
         public string CustomField2Template { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomField1Template
+        /// Gets or sets the template for the custom field 1 in a financial export
         /// </summary>
+        /// <value>Gets or sets the template for the custom field 1 in a financial export</value>
         [DataMember(Name = "customField1Template", EmitDefaultValue = true)]
         public string CustomField1Template { get; set; }
 
         /// <summary>
-        /// Gets or Sets BookingTextTemplate
+        /// Gets or sets the template for the booking text
         /// </summary>
+        /// <value>Gets or sets the template for the booking text</value>
         [DataMember(Name = "bookingTextTemplate", EmitDefaultValue = true)]
         public string BookingTextTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets SummarizeBookings
+        /// Gets or sets whether to summarize datev bookings
         /// </summary>
+        /// <value>Gets or sets whether to summarize datev bookings</value>
         [DataMember(Name = "summarizeBookings", EmitDefaultValue = true)]
         public bool? SummarizeBookings { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountingExportGroup
+        /// Gets or sets the accounting export group
         /// </summary>
+        /// <value>Gets or sets the accounting export group</value>
         [DataMember(Name = "accountingExportGroup", EmitDefaultValue = true)]
         public string AccountingExportGroup { get; set; }
 

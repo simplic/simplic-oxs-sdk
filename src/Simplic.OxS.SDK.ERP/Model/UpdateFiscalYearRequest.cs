@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// UpdateFiscalYearRequest
+    /// Represents a request to update a Simplic.OxS.ERP.FiscalYear.
     /// </summary>
     [DataContract(Name = "UpdateFiscalYearRequest")]
     public partial class UpdateFiscalYearRequest : IEquatable<UpdateFiscalYearRequest>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFiscalYearRequest" /> class.
         /// </summary>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="from">from.</param>
-        /// <param name="to">to.</param>
-        /// <param name="periods">periods.</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="from">Gets or sets the point in time the fiscal year begins..</param>
+        /// <param name="to">Gets or sets the point in time the fiscal year ends..</param>
+        /// <param name="periods">Gets or sets the contained periods..</param>
         public UpdateFiscalYearRequest(int? number = default(int?), string name = default(string), DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), List<PeriodRequest> periods = default(List<PeriodRequest>))
         {
             this.Number = number;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets From
+        /// Gets or sets the point in time the fiscal year begins.
         /// </summary>
+        /// <value>Gets or sets the point in time the fiscal year begins.</value>
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public DateTime? From { get; set; }
 
         /// <summary>
-        /// Gets or Sets To
+        /// Gets or sets the point in time the fiscal year ends.
         /// </summary>
+        /// <value>Gets or sets the point in time the fiscal year ends.</value>
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public DateTime? To { get; set; }
 
         /// <summary>
-        /// Gets or Sets Periods
+        /// Gets or sets the contained periods.
         /// </summary>
+        /// <value>Gets or sets the contained periods.</value>
         [DataMember(Name = "periods", EmitDefaultValue = true)]
         public List<PeriodRequest> Periods { get; set; }
 

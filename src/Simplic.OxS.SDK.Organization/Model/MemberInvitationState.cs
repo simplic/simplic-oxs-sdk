@@ -45,7 +45,12 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Enum NUMBER_2 for value: 2
         /// </summary>
-        NUMBER_2 = 2
+        NUMBER_2 = 2,
+
+        /// <summary>
+        /// Enum NUMBER_3 for value: 3
+        /// </summary>
+        NUMBER_3 = 3
     }
 
 }

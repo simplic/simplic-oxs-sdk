@@ -40,7 +40,7 @@ public interface IInternalPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -48,7 +48,7 @@ public interface IInternalPersonalAccountClient
     PersonalAccountModel GetById(Guid? id = default(Guid?));
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -56,7 +56,7 @@ public interface IInternalPersonalAccountClient
     ApiResponse<PersonalAccountModel> GetByIdWithHttpInfo(Guid? id = default(Guid?));
         
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -65,7 +65,7 @@ public interface IInternalPersonalAccountClient
     Task<PersonalAccountModel> GetByIdAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -149,7 +149,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -167,7 +167,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -185,7 +185,7 @@ public interface IInternalPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -204,7 +204,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -235,7 +235,7 @@ public interface IInternalPersonalAccountClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -244,7 +244,7 @@ public interface IInternalPersonalAccountClient
         PersonalAccountModel GetById(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -264,7 +264,7 @@ public interface IInternalPersonalAccountClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -277,7 +277,7 @@ public interface IInternalPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -411,7 +411,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -424,7 +424,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -485,7 +485,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -499,7 +499,7 @@ public interface IInternalPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>

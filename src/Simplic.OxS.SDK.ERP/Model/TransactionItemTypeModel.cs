@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionItemTypeModel
+    /// Represents the shared model for a transaction item type.
     /// </summary>
     [DataContract(Name = "TransactionItemTypeModel")]
     public partial class TransactionItemTypeModel : IEquatable<TransactionItemTypeModel>, IValidatableObject
@@ -39,19 +39,19 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="hasPositionNumber">hasPositionNumber.</param>
-        /// <param name="isSelectable">isSelectable.</param>
-        /// <param name="detailHtml">detailHtml.</param>
-        /// <param name="dataTemplate">dataTemplate.</param>
-        /// <param name="articleGLAResolver">articleGLAResolver.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="hasPositionNumber">Gets or sets the has position number flag..</param>
+        /// <param name="isSelectable">Gets or sets the is selectable flag..</param>
+        /// <param name="detailHtml">Gets or sets the detail HTML..</param>
+        /// <param name="dataTemplate">Gets or sets the data template..</param>
+        /// <param name="articleGLAResolver">Gets or sets the article GLA resolver..</param>
+        /// <param name="createDateTime">Gets or sets the date and time the transaction item type is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the transaction item type..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the transaction item type..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the transaction item type is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction item type..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction item type..</param>
         public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -91,80 +91,93 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasPositionNumber
+        /// Gets or sets the has position number flag.
         /// </summary>
+        /// <value>Gets or sets the has position number flag.</value>
         [DataMember(Name = "hasPositionNumber", EmitDefaultValue = true)]
         public bool HasPositionNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsSelectable
+        /// Gets or sets the is selectable flag.
         /// </summary>
+        /// <value>Gets or sets the is selectable flag.</value>
         [DataMember(Name = "isSelectable", EmitDefaultValue = true)]
         public bool IsSelectable { get; set; }
 
         /// <summary>
-        /// Gets or Sets DetailHtml
+        /// Gets or sets the detail HTML.
         /// </summary>
+        /// <value>Gets or sets the detail HTML.</value>
         [DataMember(Name = "detailHtml", EmitDefaultValue = true)]
         public string DetailHtml { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataTemplate
+        /// Gets or sets the data template.
         /// </summary>
+        /// <value>Gets or sets the data template.</value>
         [DataMember(Name = "dataTemplate", EmitDefaultValue = true)]
         public string DataTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleGLAResolver
+        /// Gets or sets the article GLA resolver.
         /// </summary>
+        /// <value>Gets or sets the article GLA resolver.</value>
         [DataMember(Name = "articleGLAResolver", EmitDefaultValue = true)]
         public string ArticleGLAResolver { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the date and time the transaction item type is created.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction item type is created.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the id of the user that created the transaction item type.
         /// </summary>
+        /// <value>Gets or sets the id of the user that created the transaction item type.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the name of the user that created the transaction item type.
         /// </summary>
+        /// <value>Gets or sets the name of the user that created the transaction item type.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the date and time the transaction item type is updated.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction item type is updated.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the id of the user that updated the transaction item type.
         /// </summary>
+        /// <value>Gets or sets the id of the user that updated the transaction item type.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the name of the user that updated the transaction item type.
         /// </summary>
+        /// <value>Gets or sets the name of the user that updated the transaction item type.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

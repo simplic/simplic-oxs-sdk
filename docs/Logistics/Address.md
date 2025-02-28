@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **City** | **string** |  | [optional] 
 **Latitude** | **double?** |  | [optional] 
 **Longitude** | **double?** |  | [optional] 
-**Geofences** | [**List&lt;Geofence&gt;**](Geofence.md) |  | [optional] 
 **MatchCode** | **string** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 

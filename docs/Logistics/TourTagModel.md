@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Gets or sets the unique identifier of the tour tag. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
+**InternalName** | **string** | Gets or sets an internal tag name | [optional] 
 **GroupName** | **string** | Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.   | [optional] 
 **HexColor** | **string** | Gets or sets the hex color of the string. | [optional] 
 **OrganizationId** | **Guid** | Gets or sets the organization id. | [optional] 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TaxRateModel
+    /// Represents the shared model for Simplic.OxS.ERP.TaxRate.
     /// </summary>
     [DataContract(Name = "TaxRateModel")]
     public partial class TaxRateModel : IEquatable<TaxRateModel>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRateModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
         /// <param name="type">type.</param>
-        /// <param name="value">value.</param>
-        /// <param name="validFrom">validFrom.</param>
+        /// <param name="value">Gets or sets the tax rate value given in percent..</param>
+        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
         public TaxRateModel(Guid id = default(Guid), string name = default(string), TaxRateTypeModel type = default(TaxRateTypeModel), double value = default(double), DateTime validFrom = default(DateTime))
         {
             this.Id = id;
@@ -51,14 +51,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -69,14 +71,16 @@ namespace Simplic.OxS.SDK.ERP
         public TaxRateTypeModel Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the tax rate value given in percent.
         /// </summary>
+        /// <value>Gets or sets the tax rate value given in percent.</value>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public double Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFrom
+        /// Gets or sets the point in time this tax rate is valid from.
         /// </summary>
+        /// <value>Gets or sets the point in time this tax rate is valid from.</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
 

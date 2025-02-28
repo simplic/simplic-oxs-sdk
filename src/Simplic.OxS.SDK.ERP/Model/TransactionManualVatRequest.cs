@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionManualVatRequest
+    /// Represents a request to create or update a manual VAT setting in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionManualVatRequest")]
     public partial class TransactionManualVatRequest : IEquatable<TransactionManualVatRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionManualVatRequest" /> class.
         /// </summary>
-        /// <param name="value">value.</param>
-        /// <param name="date">date.</param>
+        /// <param name="value">Gets or sets the value..</param>
+        /// <param name="date">Gets or sets the date..</param>
         public TransactionManualVatRequest(double value = default(double), DateTime date = default(DateTime))
         {
             this.Value = value;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the value.
         /// </summary>
+        /// <value>Gets or sets the value.</value>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public double Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or sets the date.
         /// </summary>
+        /// <value>Gets or sets the date.</value>
         [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime Date { get; set; }
 

@@ -40,7 +40,7 @@ public interface ITermsOfPaymentClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -48,7 +48,7 @@ public interface ITermsOfPaymentClient
     void Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -56,7 +56,7 @@ public interface ITermsOfPaymentClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -65,7 +65,7 @@ public interface ITermsOfPaymentClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -75,7 +75,7 @@ public interface ITermsOfPaymentClient
 
 
     /// <summary>
-    ///  
+    /// Gets a terms of payment configuration by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -83,7 +83,7 @@ public interface ITermsOfPaymentClient
     TermsOfPaymentModel Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a terms of payment configuration by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -91,7 +91,7 @@ public interface ITermsOfPaymentClient
     ApiResponse<TermsOfPaymentModel> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a terms of payment configuration by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -100,7 +100,7 @@ public interface ITermsOfPaymentClient
     Task<TermsOfPaymentModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a terms of payment configuration by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -110,7 +110,7 @@ public interface ITermsOfPaymentClient
 
 
     /// <summary>
-    ///  
+    /// Patches a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -119,7 +119,7 @@ public interface ITermsOfPaymentClient
     TermsOfPaymentModel Patch(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -128,7 +128,7 @@ public interface ITermsOfPaymentClient
     ApiResponse<TermsOfPaymentModel> PatchWithHttpInfo(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -138,7 +138,7 @@ public interface ITermsOfPaymentClient
     Task<TermsOfPaymentModel> PatchAsync(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -149,7 +149,7 @@ public interface ITermsOfPaymentClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -157,7 +157,7 @@ public interface ITermsOfPaymentClient
     TermsOfPaymentModel Post(TermsOfPaymentRequest? termsOfPaymentRequest = default(TermsOfPaymentRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -165,7 +165,7 @@ public interface ITermsOfPaymentClient
     ApiResponse<TermsOfPaymentModel> PostWithHttpInfo(TermsOfPaymentRequest? termsOfPaymentRequest = default(TermsOfPaymentRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -174,7 +174,7 @@ public interface ITermsOfPaymentClient
     Task<TermsOfPaymentModel> PostAsync(TermsOfPaymentRequest? termsOfPaymentRequest = default(TermsOfPaymentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new terms of payment configuration. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -258,7 +258,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -276,7 +276,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -294,7 +294,7 @@ public interface ITermsOfPaymentClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -313,7 +313,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -331,7 +331,7 @@ public interface ITermsOfPaymentClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -349,7 +349,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -367,7 +367,7 @@ public interface ITermsOfPaymentClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -386,7 +386,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -404,7 +404,7 @@ public interface ITermsOfPaymentClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -423,7 +423,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -442,7 +442,7 @@ public interface ITermsOfPaymentClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -462,7 +462,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -481,7 +481,7 @@ public interface ITermsOfPaymentClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -499,7 +499,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -517,7 +517,7 @@ public interface ITermsOfPaymentClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -536,7 +536,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -567,7 +567,7 @@ public interface ITermsOfPaymentClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a terms of payment configuration.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -576,7 +576,7 @@ public interface ITermsOfPaymentClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -587,7 +587,7 @@ public interface ITermsOfPaymentClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a terms of payment configuration by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -596,7 +596,7 @@ public interface ITermsOfPaymentClient
         TermsOfPaymentModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a terms of payment configuration by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -607,7 +607,7 @@ public interface ITermsOfPaymentClient
         /// <returns>ApiResponse of TermsOfPaymentModel</returns>
         ApiResponse<TermsOfPaymentModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a terms of payment configuration.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -617,7 +617,7 @@ public interface ITermsOfPaymentClient
         TermsOfPaymentModel Patch(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -629,7 +629,7 @@ public interface ITermsOfPaymentClient
         /// <returns>ApiResponse of TermsOfPaymentModel</returns>
         ApiResponse<TermsOfPaymentModel> PatchWithHttpInfo(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new terms of payment configuration.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -638,7 +638,7 @@ public interface ITermsOfPaymentClient
         TermsOfPaymentModel Post(TermsOfPaymentRequest? termsOfPaymentRequest = default(TermsOfPaymentRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -658,7 +658,7 @@ public interface ITermsOfPaymentClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -671,7 +671,7 @@ public interface ITermsOfPaymentClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -683,7 +683,7 @@ public interface ITermsOfPaymentClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a terms of payment configuration by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -696,7 +696,7 @@ public interface ITermsOfPaymentClient
         System.Threading.Tasks.Task<TermsOfPaymentModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a terms of payment configuration by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -708,7 +708,7 @@ public interface ITermsOfPaymentClient
         /// <returns>Task of ApiResponse (TermsOfPaymentModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TermsOfPaymentModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -722,7 +722,7 @@ public interface ITermsOfPaymentClient
         System.Threading.Tasks.Task<TermsOfPaymentModel> PatchAsync(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -735,7 +735,7 @@ public interface ITermsOfPaymentClient
         /// <returns>Task of ApiResponse (TermsOfPaymentModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TermsOfPaymentModel>> PatchWithHttpInfoAsync(Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = default(UpdateTermsOfPaymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -748,7 +748,7 @@ public interface ITermsOfPaymentClient
         System.Threading.Tasks.Task<TermsOfPaymentModel> PostAsync(TermsOfPaymentRequest? termsOfPaymentRequest = default(TermsOfPaymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new terms of payment configuration.
         /// </summary>
         /// <remarks>
         /// 
@@ -882,7 +882,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -894,7 +894,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -952,7 +952,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -965,7 +965,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1026,7 +1026,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1039,7 +1039,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1097,7 +1097,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1111,7 +1111,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a terms of payment configuration by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1172,7 +1172,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1186,7 +1186,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1249,7 +1249,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1264,7 +1264,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1330,7 +1330,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -1343,7 +1343,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -1404,7 +1404,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>
@@ -1418,7 +1418,7 @@ public interface ITermsOfPaymentClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new terms of payment configuration. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="termsOfPaymentRequest"> (optional)</param>

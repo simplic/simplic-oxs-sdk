@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.DueDateMode
+Represents the mode of handling due dates.
 
 ## Properties
 

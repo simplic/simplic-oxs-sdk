@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionModel
+    /// Represents the shared model for Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
     [DataContract(Name = "TransactionModel")]
     public partial class TransactionModel : IEquatable<TransactionModel>, IValidatableObject
@@ -51,15 +51,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="number">number.</param>
-        /// <param name="reference">reference.</param>
+        /// <param name="number">Gets or sets the transaction number..</param>
+        /// <param name="reference">Gets or sets the reference..</param>
         /// <param name="type">type.</param>
-        /// <param name="date">date.</param>
-        /// <param name="deliveryDate">deliveryDate.</param>
+        /// <param name="date">Gets or sets the time of the underlying transaction..</param>
+        /// <param name="deliveryDate">Gets or sets the time of delivery..</param>
         /// <param name="termsOfPayment">termsOfPayment.</param>
         /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="currency">currency.</param>
-        /// <param name="description">description.</param>
+        /// <param name="description">Gets or sets the description..</param>
         /// <param name="financialPartner">financialPartner.</param>
         /// <param name="deliveryAddress">deliveryAddress.</param>
         /// <param name="invoiceRecipient">invoiceRecipient.</param>
@@ -67,41 +67,41 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="creator">creator.</param>
         /// <param name="responsible">responsible.</param>
         /// <param name="representative">representative.</param>
-        /// <param name="items">items.</param>
+        /// <param name="items">Gets or sets the items of this transaction..</param>
         /// <param name="convertState">convertState.</param>
-        /// <param name="alternativePaymentDeadline">alternativePaymentDeadline.</param>
-        /// <param name="balance">balance.</param>
-        /// <param name="barcode">barcode.</param>
-        /// <param name="billToText">billToText.</param>
-        /// <param name="cashDiscountPercentValue">cashDiscountPercentValue.</param>
-        /// <param name="cashDiscountTotal">cashDiscountTotal.</param>
+        /// <param name="alternativePaymentDeadline">Gets or sets an alternative payment deadline to the one defined in the terms of payment..</param>
+        /// <param name="balance">Gets or sets the balance..</param>
+        /// <param name="barcode">Gets or sets the barcode..</param>
+        /// <param name="billToText">Gets or sets the bill as a text..</param>
+        /// <param name="cashDiscountPercentValue">Gets or sets the relative cash discount..</param>
+        /// <param name="cashDiscountTotal">Gets or sets the total cash discount..</param>
         /// <param name="document">document.</param>
         /// <param name="financialAccountingPeriod">financialAccountingPeriod.</param>
         /// <param name="period">period.</param>
-        /// <param name="states">states.</param>
+        /// <param name="states">Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  .</param>
         /// <param name="manualVat">manualVat.</param>
-        /// <param name="notes">notes.</param>
-        /// <param name="dueDate">dueDate.</param>
-        /// <param name="referenceNr">referenceNr.</param>
+        /// <param name="notes">Gets or sets notes..</param>
+        /// <param name="dueDate">Gets or sets the due date..</param>
+        /// <param name="referenceNr">Gets or sets the reference number..</param>
         /// <param name="taxGroup">taxGroup.</param>
-        /// <param name="totalPrice">totalPrice.</param>
-        /// <param name="totalPriceGross">totalPriceGross.</param>
-        /// <param name="totalPriceNet">totalPriceNet.</param>
-        /// <param name="totalPriceTax">totalPriceTax.</param>
-        /// <param name="transactionYear">transactionYear.</param>
+        /// <param name="totalPrice">Gets or sets the total price..</param>
+        /// <param name="totalPriceGross">Gets or sets the gross total price..</param>
+        /// <param name="totalPriceNet">Gets or sets the net total price..</param>
+        /// <param name="totalPriceTax">Gets or sets the total price tax..</param>
+        /// <param name="transactionYear">Gets or sets the transaction year..</param>
         /// <param name="updateUser">updateUser.</param>
-        /// <param name="signedTotalPriceNet">signedTotalPriceNet.</param>
-        /// <param name="signedTotalPriceGross">signedTotalPriceGross.</param>
-        /// <param name="signedTotalPrice">signedTotalPrice.</param>
-        /// <param name="signedTotalPriceTax">signedTotalPriceTax.</param>
-        /// <param name="sign">sign.</param>
+        /// <param name="signedTotalPriceNet">Gets or sets the net signed total price..</param>
+        /// <param name="signedTotalPriceGross">Gets or sets the gross signed total price..</param>
+        /// <param name="signedTotalPrice">Gets or sets the signed total price..</param>
+        /// <param name="signedTotalPriceTax">Gets or sets the signed total price tax..</param>
+        /// <param name="sign">Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  .</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="createDateTime">Gets or sets the date and time the transaction is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the transaction..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the transaction..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the transaction is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction..</param>
         public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double balance = default(double), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -179,14 +179,16 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the transaction number.
         /// </summary>
+        /// <value>Gets or sets the transaction number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the reference.
         /// </summary>
+        /// <value>Gets or sets the reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
@@ -197,14 +199,16 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionTransactionTypeModel Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or sets the time of the underlying transaction.
         /// </summary>
+        /// <value>Gets or sets the time of the underlying transaction.</value>
         [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryDate
+        /// Gets or sets the time of delivery.
         /// </summary>
+        /// <value>Gets or sets the time of delivery.</value>
         [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
         public DateTime? DeliveryDate { get; set; }
 
@@ -227,8 +231,9 @@ namespace Simplic.OxS.SDK.ERP
         public CurrencyModel Currency { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -275,44 +280,51 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionContactModel Representative { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the items of this transaction.
         /// </summary>
+        /// <value>Gets or sets the items of this transaction.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<TransactionItemModel> Items { get; set; }
 
         /// <summary>
-        /// Gets or Sets AlternativePaymentDeadline
+        /// Gets or sets an alternative payment deadline to the one defined in the terms of payment.
         /// </summary>
+        /// <value>Gets or sets an alternative payment deadline to the one defined in the terms of payment.</value>
         [DataMember(Name = "alternativePaymentDeadline", EmitDefaultValue = true)]
         public DateTime? AlternativePaymentDeadline { get; set; }
 
         /// <summary>
-        /// Gets or Sets Balance
+        /// Gets or sets the balance.
         /// </summary>
+        /// <value>Gets or sets the balance.</value>
         [DataMember(Name = "balance", EmitDefaultValue = false)]
         public double Balance { get; set; }
 
         /// <summary>
-        /// Gets or Sets Barcode
+        /// Gets or sets the barcode.
         /// </summary>
+        /// <value>Gets or sets the barcode.</value>
         [DataMember(Name = "barcode", EmitDefaultValue = true)]
         public string Barcode { get; set; }
 
         /// <summary>
-        /// Gets or Sets BillToText
+        /// Gets or sets the bill as a text.
         /// </summary>
+        /// <value>Gets or sets the bill as a text.</value>
         [DataMember(Name = "billToText", EmitDefaultValue = true)]
         public string BillToText { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscountPercentValue
+        /// Gets or sets the relative cash discount.
         /// </summary>
+        /// <value>Gets or sets the relative cash discount.</value>
         [DataMember(Name = "cashDiscountPercentValue", EmitDefaultValue = false)]
         public double CashDiscountPercentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscountTotal
+        /// Gets or sets the total cash discount.
         /// </summary>
+        /// <value>Gets or sets the total cash discount.</value>
         [DataMember(Name = "cashDiscountTotal", EmitDefaultValue = false)]
         public double CashDiscountTotal { get; set; }
 
@@ -335,8 +347,9 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionPeriodModel Period { get; set; }
 
         /// <summary>
-        /// Gets or Sets States
+        /// Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  
         /// </summary>
+        /// <value>Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  </value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
         public List<string> States { get; set; }
 
@@ -347,20 +360,23 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionManualVatModel ManualVat { get; set; }
 
         /// <summary>
-        /// Gets or Sets Notes
+        /// Gets or sets notes.
         /// </summary>
+        /// <value>Gets or sets notes.</value>
         [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 
         /// <summary>
-        /// Gets or Sets DueDate
+        /// Gets or sets the due date.
         /// </summary>
+        /// <value>Gets or sets the due date.</value>
         [DataMember(Name = "dueDate", EmitDefaultValue = true)]
         public DateTime? DueDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceNr
+        /// Gets or sets the reference number.
         /// </summary>
+        /// <value>Gets or sets the reference number.</value>
         [DataMember(Name = "referenceNr", EmitDefaultValue = true)]
         public string ReferenceNr { get; set; }
 
@@ -371,32 +387,37 @@ namespace Simplic.OxS.SDK.ERP
         public TaxGroupModel TaxGroup { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPrice
+        /// Gets or sets the total price.
         /// </summary>
+        /// <value>Gets or sets the total price.</value>
         [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
         public double TotalPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceGross
+        /// Gets or sets the gross total price.
         /// </summary>
+        /// <value>Gets or sets the gross total price.</value>
         [DataMember(Name = "totalPriceGross", EmitDefaultValue = false)]
         public double TotalPriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceNet
+        /// Gets or sets the net total price.
         /// </summary>
+        /// <value>Gets or sets the net total price.</value>
         [DataMember(Name = "totalPriceNet", EmitDefaultValue = false)]
         public double TotalPriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceTax
+        /// Gets or sets the total price tax.
         /// </summary>
+        /// <value>Gets or sets the total price tax.</value>
         [DataMember(Name = "totalPriceTax", EmitDefaultValue = false)]
         public double TotalPriceTax { get; set; }
 
         /// <summary>
-        /// Gets or Sets TransactionYear
+        /// Gets or sets the transaction year.
         /// </summary>
+        /// <value>Gets or sets the transaction year.</value>
         [DataMember(Name = "transactionYear", EmitDefaultValue = false)]
         public int TransactionYear { get; set; }
 
@@ -407,68 +428,79 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionUserModel UpdateUser { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedTotalPriceNet
+        /// Gets or sets the net signed total price.
         /// </summary>
+        /// <value>Gets or sets the net signed total price.</value>
         [DataMember(Name = "signedTotalPriceNet", EmitDefaultValue = false)]
         public double SignedTotalPriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedTotalPriceGross
+        /// Gets or sets the gross signed total price.
         /// </summary>
+        /// <value>Gets or sets the gross signed total price.</value>
         [DataMember(Name = "signedTotalPriceGross", EmitDefaultValue = false)]
         public double SignedTotalPriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedTotalPrice
+        /// Gets or sets the signed total price.
         /// </summary>
+        /// <value>Gets or sets the signed total price.</value>
         [DataMember(Name = "signedTotalPrice", EmitDefaultValue = false)]
         public double SignedTotalPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedTotalPriceTax
+        /// Gets or sets the signed total price tax.
         /// </summary>
+        /// <value>Gets or sets the signed total price tax.</value>
         [DataMember(Name = "signedTotalPriceTax", EmitDefaultValue = false)]
         public double SignedTotalPriceTax { get; set; }
 
         /// <summary>
-        /// Gets or Sets Sign
+        /// Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  
         /// </summary>
+        /// <value>Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  </value>
         [DataMember(Name = "sign", EmitDefaultValue = false)]
         public int Sign { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the date and time the transaction is created.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction is created.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the id of the user that created the transaction.
         /// </summary>
+        /// <value>Gets or sets the id of the user that created the transaction.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the name of the user that created the transaction.
         /// </summary>
+        /// <value>Gets or sets the name of the user that created the transaction.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the date and time the transaction is updated.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction is updated.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the id of the user that updated the transaction.
         /// </summary>
+        /// <value>Gets or sets the id of the user that updated the transaction.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the name of the user that updated the transaction.
         /// </summary>
+        /// <value>Gets or sets the name of the user that updated the transaction.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TermsOfPaymentRequest
+    /// Represents a request to create a Simplic.OxS.ERP.TermsOfPayment configuration.
     /// </summary>
     [DataContract(Name = "TermsOfPaymentRequest")]
     public partial class TermsOfPaymentRequest : IEquatable<TermsOfPaymentRequest>, IValidatableObject
@@ -41,13 +41,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsOfPaymentRequest" /> class.
         /// </summary>
-        /// <param name="number">number (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="cashDiscount">cashDiscount.</param>
-        /// <param name="cashDiscountDays">cashDiscountDays.</param>
-        /// <param name="paymentDeadlineDays">paymentDeadlineDays (required).</param>
-        /// <param name="states">states.</param>
-        /// <param name="formattedText">formattedText.</param>
+        /// <param name="number">Gets or sets the number. (required).</param>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="cashDiscount">Gets or sets the cash discount quantity..</param>
+        /// <param name="cashDiscountDays">Gets or sets the number of days the cash discount applies for..</param>
+        /// <param name="paymentDeadlineDays">Gets or sets the number of days until payment deadline. (required).</param>
+        /// <param name="states">Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  .</param>
+        /// <param name="formattedText">Gets or sets the formatted text..</param>
         public TermsOfPaymentRequest(int number = default(int), string name = default(string), double cashDiscount = default(double), int cashDiscountDays = default(int), int paymentDeadlineDays = default(int), List<string> states = default(List<string>), string formattedText = default(string))
         {
             this.Number = number;
@@ -65,44 +65,51 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscount
+        /// Gets or sets the cash discount quantity.
         /// </summary>
+        /// <value>Gets or sets the cash discount quantity.</value>
         [DataMember(Name = "cashDiscount", EmitDefaultValue = false)]
         public double CashDiscount { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscountDays
+        /// Gets or sets the number of days the cash discount applies for.
         /// </summary>
+        /// <value>Gets or sets the number of days the cash discount applies for.</value>
         [DataMember(Name = "cashDiscountDays", EmitDefaultValue = false)]
         public int CashDiscountDays { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentDeadlineDays
+        /// Gets or sets the number of days until payment deadline.
         /// </summary>
+        /// <value>Gets or sets the number of days until payment deadline.</value>
         [DataMember(Name = "paymentDeadlineDays", IsRequired = true, EmitDefaultValue = true)]
         public int PaymentDeadlineDays { get; set; }
 
         /// <summary>
-        /// Gets or Sets States
+        /// Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  
         /// </summary>
+        /// <value>Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  </value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
         public List<string> States { get; set; }
 
         /// <summary>
-        /// Gets or Sets FormattedText
+        /// Gets or sets the formatted text.
         /// </summary>
+        /// <value>Gets or sets the formatted text.</value>
         [DataMember(Name = "formattedText", EmitDefaultValue = true)]
         public string FormattedText { get; set; }
 

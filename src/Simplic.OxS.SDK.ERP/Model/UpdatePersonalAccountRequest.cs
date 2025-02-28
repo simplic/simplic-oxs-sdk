@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// UpdatePersonalAccountRequest
+    /// Represents a request to update a personal account.
     /// </summary>
     [DataContract(Name = "UpdatePersonalAccountRequest")]
     public partial class UpdatePersonalAccountRequest : IEquatable<UpdatePersonalAccountRequest>, IValidatableObject
@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdatePersonalAccountRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="vatId">vatId.</param>
-        /// <param name="type">type.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">gets or sets the number..</param>
+        /// <param name="vatId">Gets or sets the vat id..</param>
+        /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
-        /// <param name="saleTermsOfPaymentId">saleTermsOfPaymentId.</param>
-        /// <param name="purchaseTermsOfPaymentId">purchaseTermsOfPaymentId.</param>
-        /// <param name="taxGroupId">taxGroupId.</param>
+        /// <param name="saleTermsOfPaymentId">Gets or sets the id of the sale terms of payment..</param>
+        /// <param name="purchaseTermsOfPaymentId">Gets or sets the id of the purchase terms of payment..</param>
+        /// <param name="taxGroupId">Gets or sets the id of the tax group..</param>
         public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
         {
             this.Id = id;
@@ -57,26 +57,30 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// gets or sets the number.
         /// </summary>
+        /// <value>gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets VatId
+        /// Gets or sets the vat id.
         /// </summary>
+        /// <value>Gets or sets the vat id.</value>
         [DataMember(Name = "vatId", EmitDefaultValue = true)]
         public string VatId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the personal account type. (creditor / debitor)
         /// </summary>
+        /// <value>Gets or sets the personal account type. (creditor / debitor)</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -87,20 +91,23 @@ namespace Simplic.OxS.SDK.ERP
         public CreditLimitModel CreditLimit { get; set; }
 
         /// <summary>
-        /// Gets or Sets SaleTermsOfPaymentId
+        /// Gets or sets the id of the sale terms of payment.
         /// </summary>
+        /// <value>Gets or sets the id of the sale terms of payment.</value>
         [DataMember(Name = "saleTermsOfPaymentId", EmitDefaultValue = true)]
         public Guid? SaleTermsOfPaymentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PurchaseTermsOfPaymentId
+        /// Gets or sets the id of the purchase terms of payment.
         /// </summary>
+        /// <value>Gets or sets the id of the purchase terms of payment.</value>
         [DataMember(Name = "purchaseTermsOfPaymentId", EmitDefaultValue = true)]
         public Guid? PurchaseTermsOfPaymentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxGroupId
+        /// Gets or sets the id of the tax group.
         /// </summary>
+        /// <value>Gets or sets the id of the tax group.</value>
         [DataMember(Name = "taxGroupId", EmitDefaultValue = true)]
         public Guid? TaxGroupId { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// BehaviorDefinitionModel
+    /// Represents the shared model for a behavior definition. A behavior definition is a pair of an expression and a target that is modified by the expression result.  &lt;br&gt;  Using behavior definitions the operation performed by applying an operation item can depend on the set of items assigned to it. For example if a discount only applies if the price of all assigned items is above a minimum threshold.  A target can be a property whose value is set as the expression result.  The set of items the operation item applies to can be filtered. If the assigned items are targeted, the expression is interpreted as a condition to filter the items by.  
     /// </summary>
     [DataContract(Name = "BehaviorDefinitionModel")]
     public partial class BehaviorDefinitionModel : IEquatable<BehaviorDefinitionModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="BehaviorDefinitionModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="target">target.</param>
-        /// <param name="expression">expression.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="target">Gets or sets the targeted variable..</param>
+        /// <param name="expression">Gets or sets the behavior defining expression..</param>
         public BehaviorDefinitionModel(Guid id = default(Guid), string target = default(string), string expression = default(string))
         {
             this.Id = id;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Target
+        /// Gets or sets the targeted variable.
         /// </summary>
+        /// <value>Gets or sets the targeted variable.</value>
         [DataMember(Name = "target", EmitDefaultValue = true)]
         public string Target { get; set; }
 
         /// <summary>
-        /// Gets or Sets Expression
+        /// Gets or sets the behavior defining expression.
         /// </summary>
+        /// <value>Gets or sets the behavior defining expression.</value>
         [DataMember(Name = "expression", EmitDefaultValue = true)]
         public string Expression { get; set; }
 

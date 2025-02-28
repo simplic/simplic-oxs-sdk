@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionPriceObjectModel
+    /// Represents the shared model for the set of all price values for a transaction item at a specific point in time.
     /// </summary>
     [DataContract(Name = "TransactionPriceObjectModel")]
     public partial class TransactionPriceObjectModel : IEquatable<TransactionPriceObjectModel>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionPriceObjectModel" /> class.
         /// </summary>
-        /// <param name="description">description.</param>
-        /// <param name="singlePriceNet">singlePriceNet.</param>
-        /// <param name="totalPriceNet">totalPriceNet.</param>
-        /// <param name="singlePriceGross">singlePriceGross.</param>
-        /// <param name="totalPriceGross">totalPriceGross.</param>
-        /// <param name="singlePriceVat">singlePriceVat.</param>
-        /// <param name="totalPriceVat">totalPriceVat.</param>
+        /// <param name="description">Gets or sets the description of the operation resulting in the price values..</param>
+        /// <param name="singlePriceNet">Gets or sets the net single price..</param>
+        /// <param name="totalPriceNet">Gets or sets the net total price..</param>
+        /// <param name="singlePriceGross">Gets or sets the gross single price..</param>
+        /// <param name="totalPriceGross">Gets or sets the gross total price..</param>
+        /// <param name="singlePriceVat">Gets or sets the VAT contained in the net single price..</param>
+        /// <param name="totalPriceVat">Gets or sets the VAT contained in the net total price..</param>
         public TransactionPriceObjectModel(string description = default(string), double singlePriceNet = default(double), double totalPriceNet = default(double), double singlePriceGross = default(double), double totalPriceGross = default(double), double singlePriceVat = default(double), double totalPriceVat = default(double))
         {
             this.Description = description;
@@ -55,44 +55,51 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description of the operation resulting in the price values.
         /// </summary>
+        /// <value>Gets or sets the description of the operation resulting in the price values.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceNet
+        /// Gets or sets the net single price.
         /// </summary>
+        /// <value>Gets or sets the net single price.</value>
         [DataMember(Name = "singlePriceNet", EmitDefaultValue = false)]
         public double SinglePriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceNet
+        /// Gets or sets the net total price.
         /// </summary>
+        /// <value>Gets or sets the net total price.</value>
         [DataMember(Name = "totalPriceNet", EmitDefaultValue = false)]
         public double TotalPriceNet { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceGross
+        /// Gets or sets the gross single price.
         /// </summary>
+        /// <value>Gets or sets the gross single price.</value>
         [DataMember(Name = "singlePriceGross", EmitDefaultValue = false)]
         public double SinglePriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceGross
+        /// Gets or sets the gross total price.
         /// </summary>
+        /// <value>Gets or sets the gross total price.</value>
         [DataMember(Name = "totalPriceGross", EmitDefaultValue = false)]
         public double TotalPriceGross { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePriceVat
+        /// Gets or sets the VAT contained in the net single price.
         /// </summary>
+        /// <value>Gets or sets the VAT contained in the net single price.</value>
         [DataMember(Name = "singlePriceVat", EmitDefaultValue = false)]
         public double SinglePriceVat { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPriceVat
+        /// Gets or sets the VAT contained in the net total price.
         /// </summary>
+        /// <value>Gets or sets the VAT contained in the net total price.</value>
         [DataMember(Name = "totalPriceVat", EmitDefaultValue = false)]
         public double TotalPriceVat { get; set; }
 

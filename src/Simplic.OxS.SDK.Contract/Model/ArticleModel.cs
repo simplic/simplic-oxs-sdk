@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="shortName">shortName.</param>
         /// <param name="fullName">fullName.</param>
         /// <param name="articleGroup">articleGroup.</param>
-        public ArticleModel(Guid id = default(Guid), string description = default(string), int number = default(int), int uniqueNumber = default(int), string shortName = default(string), string fullName = default(string), ArticleGroupModel articleGroup = default(ArticleGroupModel))
+        public ArticleModel(Guid id = default(Guid), string description = default(string), string number = default(string), int uniqueNumber = default(int), string shortName = default(string), string fullName = default(string), ArticleGroupModel articleGroup = default(ArticleGroupModel))
         {
             this.Id = id;
             this.Description = description;
@@ -69,8 +69,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Gets or Sets Number
         /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = false)]
-        public int Number { get; set; }
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
 
         /// <summary>
         /// Gets or Sets UniqueNumber
@@ -158,7 +158,8 @@ namespace Simplic.OxS.SDK.Contract
                 ) && 
                 (
                     this.Number == input.Number ||
-                    this.Number.Equals(input.Number)
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
                 ) && 
                 (
                     this.UniqueNumber == input.UniqueNumber ||
@@ -198,7 +199,10 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.UniqueNumber.GetHashCode();
                 if (this.ShortName != null)
                 {

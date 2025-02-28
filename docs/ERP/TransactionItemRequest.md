@@ -1,25 +1,26 @@
 # Simplic.OxS.SDK.ERP.TransactionItemRequest
+Represents a request to create or update a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**Text** | **string** |  | [optional] 
-**TypeId** | **Guid?** |  | [optional] 
-**SortNumber** | **int?** |  | [optional] 
-**DeserializationType** | **string** |  | [optional] 
+**Id** | **Guid** | Gets or sets the ID. | [optional] 
+**Text** | **string** | Gets or sets the text. | [optional] 
+**TypeId** | **Guid?** | Gets or sets the item type by ID. | [optional] 
+**SortNumber** | **int?** | Gets or sets the sort number. | [optional] 
+**DeserializationType** | **string** | Gets or sets an identifier for the type of the item for correct deserialization. | [optional] 
 **ValueOperator** | **ValueOperator** |  | [optional] 
 **AssignmentMode** | **AssignmentMode** |  | [optional] 
-**Amount** | **double?** |  | [optional] 
-**BehaviorDefinitions** | [**List&lt;BehaviorDefinitionRequest&gt;**](BehaviorDefinitionRequest.md) |  | [optional] 
-**InputPrice** | **double?** |  | [optional] 
+**Amount** | **double?** | Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.   | [optional] 
+**BehaviorDefinitions** | [**List&lt;BehaviorDefinitionRequest&gt;**](BehaviorDefinitionRequest.md) | Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest. | [optional] 
+**InputPrice** | **double?** | Gets or sets the price user input. | [optional] 
 **InputPriceType** | **InputPriceType** |  | [optional] 
-**Quantity** | **double?** |  | [optional] 
-**UnitId** | **Guid?** |  | [optional] 
-**ArticleId** | **Guid?** |  | [optional] 
-**DeltaValue** | **double?** |  | [optional] 
-**Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) |  | [optional] 
+**Quantity** | **double?** | Gets or sets the quantity. | [optional] 
+**UnitId** | **Guid?** | Gets or sets the unit the quantity is measured in by ID. | [optional] 
+**ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 
+**DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
+**Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

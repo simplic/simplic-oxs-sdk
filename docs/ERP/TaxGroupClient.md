@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](TaxGroupClient.md#taxgroupiddelete) | **DELETE** /TaxGroup/{id} |  |
-| [**Get**](TaxGroupClient.md#taxgroupidget) | **GET** /TaxGroup/{id} |  |
-| [**Patch**](TaxGroupClient.md#taxgroupidpatch) | **PATCH** /TaxGroup/{id} |  |
-| [**Post**](TaxGroupClient.md#taxgrouppost) | **POST** /TaxGroup |  |
+| [**Delete**](TaxGroupClient.md#taxgroupiddelete) | **DELETE** /TaxGroup/{id} | Deletes a tax group. |
+| [**Get**](TaxGroupClient.md#taxgroupidget) | **GET** /TaxGroup/{id} | Gets a tax group by ID. |
+| [**Patch**](TaxGroupClient.md#taxgroupidpatch) | **PATCH** /TaxGroup/{id} | Patches a tax group. |
+| [**Post**](TaxGroupClient.md#taxgrouppost) | **POST** /TaxGroup | Creates a new tax group. |
 
 <a id="taxgroupiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a tax group.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a tax group.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a tax group.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > TaxGroupModel Get (Guid id)
 
-
+Gets a tax group by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a tax group by ID.
                 TaxGroupModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a tax group by ID.
     ApiResponse<TaxGroupModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > TaxGroupModel Patch (Guid id, UpdateTaxGroupRequest? updateTaxGroupRequest = null)
 
-
+Patches a tax group.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a tax group.
                 TaxGroupModel result = apiInstance.Patch(id, updateTaxGroupRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a tax group.
     ApiResponse<TaxGroupModel> response = apiInstance.PatchWithHttpInfo(id, updateTaxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > TaxGroupModel Post (TaxGroupRequest? taxGroupRequest = null)
 
-
+Creates a new tax group.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new tax group.
                 TaxGroupModel result = apiInstance.Post(taxGroupRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new tax group.
     ApiResponse<TaxGroupModel> response = apiInstance.PostWithHttpInfo(taxGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

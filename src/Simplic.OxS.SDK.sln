@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Vehicle", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Vehicle.Temperature", "Simplic.OxS.SDK.Vehicle.Temperature\Simplic.OxS.SDK.Vehicle.Temperature.csproj", "{E5550B05-9185-47FC-B326-4C624D14BA2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Construction.Site", "Simplic.OxS.SDK.Construction.Site\Simplic.OxS.SDK.Construction.Site.csproj", "{F04486D6-E3BC-4262-9915-A9925131D7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Flow", "Simplic.OxS.SDK.Flow\Simplic.OxS.SDK.Flow.csproj", "{FB5CC7D8-F397-4067-9577-3B6CB04C80F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,5 +106,13 @@ Global
 		{E5550B05-9185-47FC-B326-4C624D14BA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5550B05-9185-47FC-B326-4C624D14BA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5550B05-9185-47FC-B326-4C624D14BA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04486D6-E3BC-4262-9915-A9925131D7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04486D6-E3BC-4262-9915-A9925131D7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04486D6-E3BC-4262-9915-A9925131D7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04486D6-E3BC-4262-9915-A9925131D7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5CC7D8-F397-4067-9577-3B6CB04C80F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5CC7D8-F397-4067-9577-3B6CB04C80F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5CC7D8-F397-4067-9577-3B6CB04C80F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5CC7D8-F397-4067-9577-3B6CB04C80F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

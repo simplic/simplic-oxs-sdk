@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines TransactionSubtypeArchiveMode
+    /// Mode for archiving transaction documents
     /// </summary>
+    /// <value>Mode for archiving transaction documents</value>
     public enum TransactionSubtypeArchiveMode
     {
         /// <summary>

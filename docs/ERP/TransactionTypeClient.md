@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](TransactionTypeClient.md#transactiontypeiddelete) | **DELETE** /TransactionType/{id} |  |
-| [**Get**](TransactionTypeClient.md#transactiontypeidget) | **GET** /TransactionType/{id} |  |
-| [**Patch**](TransactionTypeClient.md#transactiontypeidpatch) | **PATCH** /TransactionType/{id} |  |
-| [**Post**](TransactionTypeClient.md#transactiontypepost) | **POST** /TransactionType |  |
+| [**Delete**](TransactionTypeClient.md#transactiontypeiddelete) | **DELETE** /TransactionType/{id} | Deletes a transaction type. |
+| [**Get**](TransactionTypeClient.md#transactiontypeidget) | **GET** /TransactionType/{id} | Gets a transaction type by ID. |
+| [**Patch**](TransactionTypeClient.md#transactiontypeidpatch) | **PATCH** /TransactionType/{id} | Patches a transaction type. |
+| [**Post**](TransactionTypeClient.md#transactiontypepost) | **POST** /TransactionType | Creates a new transaction type. |
 
 <a id="transactiontypeiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a transaction type.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a transaction type.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a transaction type.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > TransactionTypeModel Get (Guid id)
 
-
+Gets a transaction type by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a transaction type by ID.
                 TransactionTypeModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a transaction type by ID.
     ApiResponse<TransactionTypeModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > TransactionTypeModel Patch (Guid id, UpdateTransactionTypeRequest? updateTransactionTypeRequest = null)
 
-
+Patches a transaction type.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a transaction type.
                 TransactionTypeModel result = apiInstance.Patch(id, updateTransactionTypeRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a transaction type.
     ApiResponse<TransactionTypeModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > TransactionTypeModel Post (TransactionTypeRequest? transactionTypeRequest = null)
 
-
+Creates a new transaction type.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new transaction type.
                 TransactionTypeModel result = apiInstance.Post(transactionTypeRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new transaction type.
     ApiResponse<TransactionTypeModel> response = apiInstance.PostWithHttpInfo(transactionTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

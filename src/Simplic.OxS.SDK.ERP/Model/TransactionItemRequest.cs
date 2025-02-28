@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionItemRequest
+    /// Represents a request to create or update a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
     [DataContract(Name = "TransactionItemRequest")]
     public partial class TransactionItemRequest : IEquatable<TransactionItemRequest>, IValidatableObject
@@ -54,22 +54,22 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionItemRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="text">text.</param>
-        /// <param name="typeId">typeId.</param>
-        /// <param name="sortNumber">sortNumber.</param>
-        /// <param name="deserializationType">deserializationType.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="text">Gets or sets the text..</param>
+        /// <param name="typeId">Gets or sets the item type by ID..</param>
+        /// <param name="sortNumber">Gets or sets the sort number..</param>
+        /// <param name="deserializationType">Gets or sets an identifier for the type of the item for correct deserialization..</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">amount.</param>
-        /// <param name="behaviorDefinitions">behaviorDefinitions.</param>
-        /// <param name="inputPrice">inputPrice.</param>
+        /// <param name="amount">Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
+        /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
-        /// <param name="quantity">quantity.</param>
-        /// <param name="unitId">unitId.</param>
-        /// <param name="articleId">articleId.</param>
-        /// <param name="deltaValue">deltaValue.</param>
-        /// <param name="items">items.</param>
+        /// <param name="quantity">Gets or sets the quantity..</param>
+        /// <param name="unitId">Gets or sets the unit the quantity is measured in by ID..</param>
+        /// <param name="articleId">Gets or sets the article by ID..</param>
+        /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
+        /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
         public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), double? quantity = default(double?), Guid? unitId = default(Guid?), Guid? articleId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
         {
             this.Id = id;
@@ -91,80 +91,93 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text.
         /// </summary>
+        /// <value>Gets or sets the text.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeId
+        /// Gets or sets the item type by ID.
         /// </summary>
+        /// <value>Gets or sets the item type by ID.</value>
         [DataMember(Name = "typeId", EmitDefaultValue = true)]
         public Guid? TypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SortNumber
+        /// Gets or sets the sort number.
         /// </summary>
+        /// <value>Gets or sets the sort number.</value>
         [DataMember(Name = "sortNumber", EmitDefaultValue = true)]
         public int? SortNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeserializationType
+        /// Gets or sets an identifier for the type of the item for correct deserialization.
         /// </summary>
+        /// <value>Gets or sets an identifier for the type of the item for correct deserialization.</value>
         [DataMember(Name = "deserializationType", EmitDefaultValue = true)]
         public string DeserializationType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  
         /// </summary>
+        /// <value>Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  </value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets BehaviorDefinitions
+        /// Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest.
         /// </summary>
+        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest.</value>
         [DataMember(Name = "behaviorDefinitions", EmitDefaultValue = true)]
         public List<BehaviorDefinitionRequest> BehaviorDefinitions { get; set; }
 
         /// <summary>
-        /// Gets or Sets InputPrice
+        /// Gets or sets the price user input.
         /// </summary>
+        /// <value>Gets or sets the price user input.</value>
         [DataMember(Name = "inputPrice", EmitDefaultValue = true)]
         public double? InputPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the quantity.
         /// </summary>
+        /// <value>Gets or sets the quantity.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = true)]
         public double? Quantity { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnitId
+        /// Gets or sets the unit the quantity is measured in by ID.
         /// </summary>
+        /// <value>Gets or sets the unit the quantity is measured in by ID.</value>
         [DataMember(Name = "unitId", EmitDefaultValue = true)]
         public Guid? UnitId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleId
+        /// Gets or sets the article by ID.
         /// </summary>
+        /// <value>Gets or sets the article by ID.</value>
         [DataMember(Name = "articleId", EmitDefaultValue = true)]
         public Guid? ArticleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeltaValue
+        /// Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.
         /// </summary>
+        /// <value>Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.</value>
         [DataMember(Name = "deltaValue", EmitDefaultValue = true)]
         public double? DeltaValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets a set of transaction items that are part of the group.
         /// </summary>
+        /// <value>Gets or sets a set of transaction items that are part of the group.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<TransactionItemRequest> Items { get; set; }
 

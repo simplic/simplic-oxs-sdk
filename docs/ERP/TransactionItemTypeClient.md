@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](TransactionItemTypeClient.md#transactionitemtypeiddelete) | **DELETE** /TransactionItemType/{id} |  |
-| [**Get**](TransactionItemTypeClient.md#transactionitemtypeidget) | **GET** /TransactionItemType/{id} |  |
-| [**Patch**](TransactionItemTypeClient.md#transactionitemtypeidpatch) | **PATCH** /TransactionItemType/{id} |  |
-| [**Post**](TransactionItemTypeClient.md#transactionitemtypepost) | **POST** /TransactionItemType |  |
+| [**Delete**](TransactionItemTypeClient.md#transactionitemtypeiddelete) | **DELETE** /TransactionItemType/{id} | Deletes a transaction item type. |
+| [**Get**](TransactionItemTypeClient.md#transactionitemtypeidget) | **GET** /TransactionItemType/{id} | Gets a transaction item type by ID. |
+| [**Patch**](TransactionItemTypeClient.md#transactionitemtypeidpatch) | **PATCH** /TransactionItemType/{id} | Patches a transaction item type. |
+| [**Post**](TransactionItemTypeClient.md#transactionitemtypepost) | **POST** /TransactionItemType | Creates a new transaction item type. |
 
 <a id="transactionitemtypeiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a transaction item type.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a transaction item type.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a transaction item type.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > TransactionItemTypeModel Get (Guid id)
 
-
+Gets a transaction item type by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a transaction item type by ID.
                 TransactionItemTypeModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a transaction item type by ID.
     ApiResponse<TransactionItemTypeModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > TransactionItemTypeModel Patch (Guid id, UpdateTransactionItemTypeRequest? updateTransactionItemTypeRequest = null)
 
-
+Patches a transaction item type.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a transaction item type.
                 TransactionItemTypeModel result = apiInstance.Patch(id, updateTransactionItemTypeRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a transaction item type.
     ApiResponse<TransactionItemTypeModel> response = apiInstance.PatchWithHttpInfo(id, updateTransactionItemTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > TransactionItemTypeModel Post (TransactionItemTypeRequest? transactionItemTypeRequest = null)
 
-
+Creates a new transaction item type.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new transaction item type.
                 TransactionItemTypeModel result = apiInstance.Post(transactionItemTypeRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new transaction item type.
     ApiResponse<TransactionItemTypeModel> response = apiInstance.PostWithHttpInfo(transactionItemTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

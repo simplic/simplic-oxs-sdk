@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// PeriodRequest
+    /// Represents a request to create or update a Simplic.OxS.ERP.Period.
     /// </summary>
     [DataContract(Name = "PeriodRequest")]
     public partial class PeriodRequest : IEquatable<PeriodRequest>, IValidatableObject
@@ -42,13 +42,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PeriodRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="from">from.</param>
-        /// <param name="to">to.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">Gets or sets a number representing the chronological location of this period..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="from">Gets or sets the point in time the period begins..</param>
+        /// <param name="to">Gets or sets the point in time the period ends..</param>
         /// <param name="status">status.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="isDeleted">Gets or sets the deleted flag..</param>
         public PeriodRequest(Guid id = default(Guid), int? number = default(int?), string name = default(string), DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), PeriodStatus? status = default(PeriodStatus?), bool? isDeleted = default(bool?))
         {
             this.Id = id;
@@ -61,38 +61,44 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets a number representing the chronological location of this period.
         /// </summary>
+        /// <value>Gets or sets a number representing the chronological location of this period.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets From
+        /// Gets or sets the point in time the period begins.
         /// </summary>
+        /// <value>Gets or sets the point in time the period begins.</value>
         [DataMember(Name = "from", EmitDefaultValue = true)]
         public DateTime? From { get; set; }
 
         /// <summary>
-        /// Gets or Sets To
+        /// Gets or sets the point in time the period ends.
         /// </summary>
+        /// <value>Gets or sets the point in time the period ends.</value>
         [DataMember(Name = "to", EmitDefaultValue = true)]
         public DateTime? To { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Gets or sets the deleted flag.
         /// </summary>
+        /// <value>Gets or sets the deleted flag.</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool? IsDeleted { get; set; }
 

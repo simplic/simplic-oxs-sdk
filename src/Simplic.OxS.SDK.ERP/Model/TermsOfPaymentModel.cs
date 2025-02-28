@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TermsOfPaymentModel
+    /// Represents the shared model for Simplic.OxS.ERP.TermsOfPayment.
     /// </summary>
     [DataContract(Name = "TermsOfPaymentModel")]
     public partial class TermsOfPaymentModel : IEquatable<TermsOfPaymentModel>, IValidatableObject
@@ -39,12 +39,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="createDateTime">Gets or sets the create date time..</param>
+        /// <param name="createUserId">Gets or sets the create user id..</param>
+        /// <param name="createUserName">Gets or sets the create user name..</param>
+        /// <param name="updateDateTime">Gets or sets the update date time..</param>
+        /// <param name="updateUserId">Gets or sets the update user id..</param>
+        /// <param name="updateUserName">Gets or sets the update user name..</param>
         public TermsOfPaymentModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -77,38 +77,44 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the create date time.
         /// </summary>
+        /// <value>Gets or sets the create date time.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the create user id.
         /// </summary>
+        /// <value>Gets or sets the create user id.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the create user name.
         /// </summary>
+        /// <value>Gets or sets the create user name.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the update date time.
         /// </summary>
+        /// <value>Gets or sets the update date time.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the update user id.
         /// </summary>
+        /// <value>Gets or sets the update user id.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the update user name.
         /// </summary>
+        /// <value>Gets or sets the update user name.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](TermsOfPaymentClient.md#termsofpaymentiddelete) | **DELETE** /TermsOfPayment/{id} |  |
-| [**Get**](TermsOfPaymentClient.md#termsofpaymentidget) | **GET** /TermsOfPayment/{id} |  |
-| [**Patch**](TermsOfPaymentClient.md#termsofpaymentidpatch) | **PATCH** /TermsOfPayment/{id} |  |
-| [**Post**](TermsOfPaymentClient.md#termsofpaymentpost) | **POST** /TermsOfPayment |  |
+| [**Delete**](TermsOfPaymentClient.md#termsofpaymentiddelete) | **DELETE** /TermsOfPayment/{id} | Deletes a terms of payment configuration. |
+| [**Get**](TermsOfPaymentClient.md#termsofpaymentidget) | **GET** /TermsOfPayment/{id} | Gets a terms of payment configuration by ID. |
+| [**Patch**](TermsOfPaymentClient.md#termsofpaymentidpatch) | **PATCH** /TermsOfPayment/{id} | Patches a terms of payment configuration. |
+| [**Post**](TermsOfPaymentClient.md#termsofpaymentpost) | **POST** /TermsOfPayment | Creates a new terms of payment configuration. |
 
 <a id="termsofpaymentiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a terms of payment configuration.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a terms of payment configuration.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a terms of payment configuration.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > TermsOfPaymentModel Get (Guid id)
 
-
+Gets a terms of payment configuration by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a terms of payment configuration by ID.
                 TermsOfPaymentModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a terms of payment configuration by ID.
     ApiResponse<TermsOfPaymentModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > TermsOfPaymentModel Patch (Guid id, UpdateTermsOfPaymentRequest? updateTermsOfPaymentRequest = null)
 
-
+Patches a terms of payment configuration.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a terms of payment configuration.
                 TermsOfPaymentModel result = apiInstance.Patch(id, updateTermsOfPaymentRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a terms of payment configuration.
     ApiResponse<TermsOfPaymentModel> response = apiInstance.PatchWithHttpInfo(id, updateTermsOfPaymentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > TermsOfPaymentModel Post (TermsOfPaymentRequest? termsOfPaymentRequest = null)
 
-
+Creates a new terms of payment configuration.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new terms of payment configuration.
                 TermsOfPaymentModel result = apiInstance.Post(termsOfPaymentRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new terms of payment configuration.
     ApiResponse<TermsOfPaymentModel> response = apiInstance.PostWithHttpInfo(termsOfPaymentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

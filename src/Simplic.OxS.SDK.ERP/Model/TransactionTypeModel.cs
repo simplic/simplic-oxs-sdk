@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionTypeModel
+    /// Represents the shared model for a transaction type.
     /// </summary>
     [DataContract(Name = "TransactionTypeModel")]
     public partial class TransactionTypeModel : IEquatable<TransactionTypeModel>, IValidatableObject
@@ -39,18 +39,18 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="reportName">reportName.</param>
-        /// <param name="shortName">shortName.</param>
-        /// <param name="functions">functions.</param>
-        /// <param name="subtypes">subtypes.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="reportName">Gets or sets the report title..</param>
+        /// <param name="shortName">Gets or sets the short name..</param>
+        /// <param name="functions">Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
+        /// <param name="subtypes">Gets or sets the set of subtypes..</param>
+        /// <param name="createDateTime">Gets or sets the date and time the transaction type is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the transaction type..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the transaction type..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the transaction type is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction type..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction type..</param>
         public TransactionTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeModel> subtypes = default(List<TransactionSubtypeModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -89,74 +89,86 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReportName
+        /// Gets or sets the report title.
         /// </summary>
+        /// <value>Gets or sets the report title.</value>
         [DataMember(Name = "reportName", EmitDefaultValue = true)]
         public string ReportName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortName
+        /// Gets or sets the short name.
         /// </summary>
+        /// <value>Gets or sets the short name.</value>
         [DataMember(Name = "shortName", EmitDefaultValue = true)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Functions
+        /// Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
         /// </summary>
+        /// <value>Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 
         /// <summary>
-        /// Gets or Sets Subtypes
+        /// Gets or sets the set of subtypes.
         /// </summary>
+        /// <value>Gets or sets the set of subtypes.</value>
         [DataMember(Name = "subtypes", EmitDefaultValue = true)]
         public List<TransactionSubtypeModel> Subtypes { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the date and time the transaction type is created.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction type is created.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the id of the user that created the transaction type.
         /// </summary>
+        /// <value>Gets or sets the id of the user that created the transaction type.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the name of the user that created the transaction type.
         /// </summary>
+        /// <value>Gets or sets the name of the user that created the transaction type.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the date and time the transaction type is updated.
         /// </summary>
+        /// <value>Gets or sets the date and time the transaction type is updated.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the id of the user that updated the transaction type.
         /// </summary>
+        /// <value>Gets or sets the id of the user that updated the transaction type.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the name of the user that updated the transaction type.
         /// </summary>
+        /// <value>Gets or sets the name of the user that updated the transaction type.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

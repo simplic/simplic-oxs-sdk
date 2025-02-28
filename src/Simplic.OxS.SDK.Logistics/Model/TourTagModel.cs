@@ -38,15 +38,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="id">Gets or sets the unique identifier of the tour tag..</param>
         /// <param name="name">Gets or sets the name..</param>
+        /// <param name="internalName">Gets or sets an internal tag name.</param>
         /// <param name="groupName">Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  .</param>
         /// <param name="hexColor">Gets or sets the hex color of the string..</param>
         /// <param name="organizationId">Gets or sets the organization id..</param>
         /// <param name="isDeleted">Gets or sets whether the tour tag is deleted..</param>
         /// <param name="functions">Gets or sets the functions of the tour tag.     Functions are used to add additional functionalities to a tour tag.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit: Disables editing the tour or action the tag is attached to.&lt;/item&gt;&lt;/list&gt;.</param>
-        public TourTagModel(Guid id = default(Guid), string name = default(string), string groupName = default(string), string hexColor = default(string), Guid organizationId = default(Guid), bool isDeleted = default(bool), List<string> functions = default(List<string>))
+        public TourTagModel(Guid id = default(Guid), string name = default(string), string internalName = default(string), string groupName = default(string), string hexColor = default(string), Guid organizationId = default(Guid), bool isDeleted = default(bool), List<string> functions = default(List<string>))
         {
             this.Id = id;
             this.Name = name;
+            this.InternalName = internalName;
             this.GroupName = groupName;
             this.HexColor = hexColor;
             this.OrganizationId = organizationId;
@@ -67,6 +69,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets an internal tag name
+        /// </summary>
+        /// <value>Gets or sets an internal tag name</value>
+        [DataMember(Name = "internalName", EmitDefaultValue = true)]
+        public string InternalName { get; set; }
 
         /// <summary>
         /// Gets or sets the group name.     Group names are a possibillity to group tags.   E.g. when just a single tag from a certain pool should be used.  
@@ -113,6 +122,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("class TourTagModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  InternalName: ").Append(InternalName).Append("\n");
             sb.Append("  GroupName: ").Append(GroupName).Append("\n");
             sb.Append("  HexColor: ").Append(HexColor).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -164,6 +174,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.InternalName == input.InternalName ||
+                    (this.InternalName != null &&
+                    this.InternalName.Equals(input.InternalName))
+                ) && 
+                (
                     this.GroupName == input.GroupName ||
                     (this.GroupName != null &&
                     this.GroupName.Equals(input.GroupName))
@@ -206,6 +221,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.InternalName != null)
+                {
+                    hashCode = (hashCode * 59) + this.InternalName.GetHashCode();
                 }
                 if (this.GroupName != null)
                 {

@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines DueDateMode
+    /// Represents the mode of handling due dates.
     /// </summary>
+    /// <value>Represents the mode of handling due dates.</value>
     public enum DueDateMode
     {
         /// <summary>

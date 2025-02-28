@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// CreateCostCenterRequest
+    /// Represents a create cost center request.
     /// </summary>
     [DataContract(Name = "CreateCostCenterRequest")]
     public partial class CreateCostCenterRequest : IEquatable<CreateCostCenterRequest>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCostCenterRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="validFrom">validFrom.</param>
-        /// <param name="validTo">validTo.</param>
+        /// <param name="name">Gets or sets the name of the cost center..</param>
+        /// <param name="number">Gets or sets the unique number of the cost center..</param>
+        /// <param name="validFrom">Gets or sets the valid from date.</param>
+        /// <param name="validTo">Gets or sets the valid to date.</param>
         public CreateCostCenterRequest(string name = default(string), int number = default(int), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?))
         {
             this.Name = name;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the cost center.
         /// </summary>
+        /// <value>Gets or sets the name of the cost center.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the unique number of the cost center.
         /// </summary>
+        /// <value>Gets or sets the unique number of the cost center.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFrom
+        /// Gets or sets the valid from date
         /// </summary>
+        /// <value>Gets or sets the valid from date</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = true)]
         public DateTime? ValidFrom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidTo
+        /// Gets or sets the valid to date
         /// </summary>
+        /// <value>Gets or sets the valid to date</value>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
         public DateTime? ValidTo { get; set; }
 

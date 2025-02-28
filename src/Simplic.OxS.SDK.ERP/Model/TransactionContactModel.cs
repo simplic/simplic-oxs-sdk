@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionContactModel
+    /// Represents the shared model for a contact in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionContactModel")]
     public partial class TransactionContactModel : IEquatable<TransactionContactModel>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionContactModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="accountNumber">accountNumber.</param>
-        /// <param name="companyName">companyName.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="accountNumber">Gets or sets the account number..</param>
+        /// <param name="companyName">Gets or sets the company name..</param>
+        /// <param name="firstName">Gets or sets the first name..</param>
+        /// <param name="lastName">Gets or sets the last name..</param>
         /// <param name="address">address.</param>
         public TransactionContactModel(Guid id = default(Guid), string accountNumber = default(string), string companyName = default(string), string firstName = default(string), string lastName = default(string), TransactionAddressModel address = default(TransactionAddressModel))
         {
@@ -53,32 +53,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountNumber
+        /// Gets or sets the account number.
         /// </summary>
+        /// <value>Gets or sets the account number.</value>
         [DataMember(Name = "accountNumber", EmitDefaultValue = true)]
         public string AccountNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyName
+        /// Gets or sets the company name.
         /// </summary>
+        /// <value>Gets or sets the company name.</value>
         [DataMember(Name = "companyName", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// Gets or sets the first name.
         /// </summary>
+        /// <value>Gets or sets the first name.</value>
         [DataMember(Name = "firstName", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// Gets or sets the last name.
         /// </summary>
+        /// <value>Gets or sets the last name.</value>
         [DataMember(Name = "lastName", EmitDefaultValue = true)]
         public string LastName { get; set; }
 

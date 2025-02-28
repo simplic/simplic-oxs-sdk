@@ -5,6 +5,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**GetAll**](PlanningRegionClient.md#planningregiongetallget) | **GET** /PlanningRegion/get-all | Retrieves all planning region. |
+| [**Delete**](PlanningRegionClient.md#planningregioniddelete) | **DELETE** /PlanningRegion/{id} | Deletes a planning region. |
 | [**Get**](PlanningRegionClient.md#planningregionidget) | **GET** /PlanningRegion/{id} | Retrives the planning region with the given id. |
 | [**Patch**](PlanningRegionClient.md#planningregionidpatch) | **PATCH** /PlanningRegion/{id} | Updates/saves the given planning region. |
 | [**Post**](PlanningRegionClient.md#planningregionpost) | **POST** /PlanningRegion | Creates a new planning region. |
@@ -94,6 +95,97 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="planningregioniddelete"></a>
+# **Delete**
+> void Delete (Guid id)
+
+Deletes a planning region.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Logistics;
+
+namespace Example
+{
+    public class DeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PlanningRegionClient(config);
+            var id = "id_example";  // Guid | The id of the planning region.
+
+            try
+            {
+                // Deletes a planning region.
+                apiInstance.Delete(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PlanningRegionClient.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Deletes a planning region.
+    apiInstance.DeleteWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PlanningRegionClient.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | The id of the planning region. |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

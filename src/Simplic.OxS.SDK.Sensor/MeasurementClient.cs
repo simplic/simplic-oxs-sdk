@@ -43,6 +43,41 @@ public interface IMeasurementClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="postAnonMeasurementRequest"> (optional)</param>
+    /// <returns>PostAnonMeasurementResponse</returns>
+    PostAnonMeasurementResponse Anon(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="postAnonMeasurementRequest"> (optional)</param>
+    /// <returns>ApiResponse of PostAnonMeasurementResponse</returns>
+    ApiResponse<PostAnonMeasurementResponse> AnonWithHttpInfo(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="postAnonMeasurementRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of PostAnonMeasurementResponse</returns>
+    Task<PostAnonMeasurementResponse> AnonAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="postAnonMeasurementRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (PostAnonMeasurementResponse)</returns>
+    Task<ApiResponse<PostAnonMeasurementResponse>> AnonWithHttpInfoAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
     /// <returns>GetMeasurementResponse</returns>
     GetMeasurementResponse Get(Guid? id = default(Guid?));
@@ -78,39 +113,35 @@ public interface IMeasurementClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId"></param>
-    /// <param name="sensorId"> (optional)</param>
+    /// <param name="sensorId"></param>
     /// <returns>List&lt;GetMeasurementResponse&gt;</returns>
-    List<GetMeasurementResponse> GetAllForSensor(string tagId, Guid? sensorId = default(Guid?));
+    List<GetMeasurementResponse> GetAllForSensor(Guid sensorId);
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId"></param>
-    /// <param name="sensorId"> (optional)</param>
+    /// <param name="sensorId"></param>
     /// <returns>ApiResponse of List&lt;GetMeasurementResponse&gt;</returns>
-    ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(string tagId, Guid? sensorId = default(Guid?));
+    ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(Guid sensorId);
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId"></param>
-    /// <param name="sensorId"> (optional)</param>
+    /// <param name="sensorId"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;GetMeasurementResponse&gt;</returns>
-    Task<List<GetMeasurementResponse>> GetAllForSensorAsync(string tagId, Guid? sensorId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<List<GetMeasurementResponse>> GetAllForSensorAsync(Guid sensorId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId"></param>
-    /// <param name="sensorId"> (optional)</param>
+    /// <param name="sensorId"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;GetMeasurementResponse&gt;)</returns>
-    Task<ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(string tagId, Guid? sensorId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(Guid sensorId, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -230,6 +261,79 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <returns>PostAnonMeasurementResponse</returns>
+        public PostAnonMeasurementResponse Anon(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?))
+        {
+            try
+            {
+                return _internalClient.Anon(postAnonMeasurementRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <returns>ApiResponse of PostAnonMeasurementResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse> AnonWithHttpInfo(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?))
+        {
+            try
+            {
+                return _internalClient.AnonWithHttpInfo(postAnonMeasurementRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PostAnonMeasurementResponse</returns>
+        public System.Threading.Tasks.Task<PostAnonMeasurementResponse> AnonAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AnonAsync(postAnonMeasurementRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PostAnonMeasurementResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse>> AnonWithHttpInfoAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AnonWithHttpInfoAsync(postAnonMeasurementRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <returns>GetMeasurementResponse</returns>
         public GetMeasurementResponse Get(Guid? id = default(Guid?))
@@ -303,14 +407,13 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <returns>List&lt;GetMeasurementResponse&gt;</returns>
-        public List<GetMeasurementResponse> GetAllForSensor(string tagId, Guid? sensorId = default(Guid?))
+        public List<GetMeasurementResponse> GetAllForSensor(Guid sensorId)
         {
             try
             {
-                return _internalClient.GetAllForSensor(tagId, sensorId);
+                return _internalClient.GetAllForSensor(sensorId);
             }
             catch (ApiException e)
             {
@@ -322,14 +425,13 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <returns>ApiResponse of List&lt;GetMeasurementResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(string tagId, Guid? sensorId = default(Guid?))
+        public Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(Guid sensorId)
         {
             try
             {
-                return _internalClient.GetAllForSensorWithHttpInfo(tagId, sensorId);
+                return _internalClient.GetAllForSensorWithHttpInfo(sensorId);
             }
             catch (ApiException e)
             {
@@ -341,15 +443,14 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GetMeasurementResponse&gt;</returns>
-        public System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(string tagId, Guid? sensorId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(Guid sensorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllForSensorAsync(tagId, sensorId, cancellationToken: cancellationToken);
+                return _internalClient.GetAllForSensorAsync(sensorId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -361,15 +462,14 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GetMeasurementResponse&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(string tagId, Guid? sensorId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(Guid sensorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllForSensorWithHttpInfoAsync(tagId, sensorId, cancellationToken: cancellationToken);
+                return _internalClient.GetAllForSensorWithHttpInfoAsync(sensorId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -470,6 +570,26 @@ public interface IMeasurementClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PostAnonMeasurementResponse</returns>
+        PostAnonMeasurementResponse Anon(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PostAnonMeasurementResponse</returns>
+        ApiResponse<PostAnonMeasurementResponse> AnonWithHttpInfo(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetMeasurementResponse</returns>
@@ -490,11 +610,10 @@ public interface IMeasurementClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;GetMeasurementResponse&gt;</returns>
-        List<GetMeasurementResponse> GetAllForSensor(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0);
+        List<GetMeasurementResponse> GetAllForSensor(Guid sensorId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -503,11 +622,10 @@ public interface IMeasurementClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;GetMeasurementResponse&gt;</returns>
-        ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0);
+        ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(Guid sensorId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -546,6 +664,31 @@ public interface IMeasurementClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PostAnonMeasurementResponse</returns>
+        System.Threading.Tasks.Task<PostAnonMeasurementResponse> AnonAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PostAnonMeasurementResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PostAnonMeasurementResponse>> AnonWithHttpInfoAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -571,12 +714,11 @@ public interface IMeasurementClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GetMeasurementResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(Guid sensorId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -585,12 +727,11 @@ public interface IMeasurementClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GetMeasurementResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(Guid sensorId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -738,6 +879,158 @@ public interface IMeasurementClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PostAnonMeasurementResponse</returns>
+        public PostAnonMeasurementResponse Anon(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse> localVarResponse = AnonWithHttpInfo(postAnonMeasurementRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PostAnonMeasurementResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse> AnonWithHttpInfo(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = postAnonMeasurementRequest;
+
+            localVarRequestOptions.Operation = "MeasurementClient.MeasurementAnonPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<PostAnonMeasurementResponse>("/Measurement/anon", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("MeasurementAnonPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PostAnonMeasurementResponse</returns>
+        public async System.Threading.Tasks.Task<PostAnonMeasurementResponse> AnonAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse> localVarResponse = await AnonWithHttpInfoAsync(postAnonMeasurementRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAnonMeasurementRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PostAnonMeasurementResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PostAnonMeasurementResponse>> AnonWithHttpInfoAsync(PostAnonMeasurementRequest? postAnonMeasurementRequest = default(PostAnonMeasurementRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = postAnonMeasurementRequest;
+
+            localVarRequestOptions.Operation = "MeasurementClient.MeasurementAnonPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PostAnonMeasurementResponse>("/Measurement/anon", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("MeasurementAnonPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -896,13 +1189,12 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;GetMeasurementResponse&gt;</returns>
-        public List<GetMeasurementResponse> GetAllForSensor(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0)
+        public List<GetMeasurementResponse> GetAllForSensor(Guid sensorId, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> localVarResponse = GetAllForSensorWithHttpInfo(tagId, sensorId);
+            Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> localVarResponse = GetAllForSensorWithHttpInfo(sensorId);
             return localVarResponse.Data;
         }
 
@@ -910,18 +1202,11 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;GetMeasurementResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> GetAllForSensorWithHttpInfo(Guid sensorId, int operationIndex = 0)
         {
-            // verify the required parameter 'tagId' is set
-            if (tagId == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'tagId' when calling MeasurementClient->MeasurementGetAllForSensorTagIdGet");
-            }
-
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -946,13 +1231,9 @@ public interface IMeasurementClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("tagId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tagId)); // path parameter
-            if (sensorId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "sensorId", sensorId));
-            }
+            localVarRequestOptions.PathParameters.Add("sensorId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sensorId)); // path parameter
 
-            localVarRequestOptions.Operation = "MeasurementClient.MeasurementGetAllForSensorTagIdGet";
+            localVarRequestOptions.Operation = "MeasurementClient.MeasurementGetAllForSensorSensorIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -962,10 +1243,10 @@ public interface IMeasurementClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<GetMeasurementResponse>>("/Measurement/get-all-for-sensor/{tagId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<GetMeasurementResponse>>("/Measurement/get-all-for-sensor/{sensorId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MeasurementGetAllForSensorTagIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MeasurementGetAllForSensorSensorIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -979,14 +1260,13 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GetMeasurementResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<GetMeasurementResponse>> GetAllForSensorAsync(Guid sensorId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> localVarResponse = await GetAllForSensorWithHttpInfoAsync(tagId, sensorId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>> localVarResponse = await GetAllForSensorWithHttpInfoAsync(sensorId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -994,19 +1274,12 @@ public interface IMeasurementClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tagId"></param>
-        /// <param name="sensorId"> (optional)</param>
+        /// <param name="sensorId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GetMeasurementResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(string tagId, Guid? sensorId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GetMeasurementResponse>>> GetAllForSensorWithHttpInfoAsync(Guid sensorId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'tagId' is set
-            if (tagId == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'tagId' when calling MeasurementClient->MeasurementGetAllForSensorTagIdGet");
-            }
-
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1032,13 +1305,9 @@ public interface IMeasurementClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("tagId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tagId)); // path parameter
-            if (sensorId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "sensorId", sensorId));
-            }
+            localVarRequestOptions.PathParameters.Add("sensorId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sensorId)); // path parameter
 
-            localVarRequestOptions.Operation = "MeasurementClient.MeasurementGetAllForSensorTagIdGet";
+            localVarRequestOptions.Operation = "MeasurementClient.MeasurementGetAllForSensorSensorIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -1048,11 +1317,11 @@ public interface IMeasurementClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMeasurementResponse>>("/Measurement/get-all-for-sensor/{tagId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMeasurementResponse>>("/Measurement/get-all-for-sensor/{sensorId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MeasurementGetAllForSensorTagIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("MeasurementGetAllForSensorSensorIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

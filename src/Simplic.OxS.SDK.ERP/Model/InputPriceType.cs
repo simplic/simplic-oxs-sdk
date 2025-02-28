@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines InputPriceType
+    /// Represents a mode of interpretation for the user price input for price transaction items.
     /// </summary>
+    /// <value>Represents a mode of interpretation for the user price input for price transaction items.</value>
     public enum InputPriceType
     {
         /// <summary>

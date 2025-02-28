@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TaxGroupCountryModel
+    /// Represents the shared model for Simplic.OxS.ERP.TaxGroupCountry.
     /// </summary>
     [DataContract(Name = "TaxGroupCountryModel")]
     public partial class TaxGroupCountryModel : IEquatable<TaxGroupCountryModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxGroupCountryModel" /> class.
         /// </summary>
-        /// <param name="isoCode">isoCode.</param>
+        /// <param name="isoCode">Gets or sets the ISO code..</param>
         public TaxGroupCountryModel(string isoCode = default(string))
         {
             this.IsoCode = isoCode;
         }
 
         /// <summary>
-        /// Gets or Sets IsoCode
+        /// Gets or sets the ISO code.
         /// </summary>
+        /// <value>Gets or sets the ISO code.</value>
         [DataMember(Name = "isoCode", EmitDefaultValue = true)]
         public string IsoCode { get; set; }
 

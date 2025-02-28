@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionTypeRequest
+    /// Represents a request to create a Simplic.OxS.ERP.Transaction.TransactionType.
     /// </summary>
     [DataContract(Name = "TransactionTypeRequest")]
     public partial class TransactionTypeRequest : IEquatable<TransactionTypeRequest>, IValidatableObject
@@ -41,12 +41,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionTypeRequest" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
-        /// <param name="number">number (required).</param>
-        /// <param name="reportName">reportName.</param>
-        /// <param name="shortName">shortName.</param>
-        /// <param name="functions">functions.</param>
-        /// <param name="subtypes">subtypes (required).</param>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="number">Gets or sets the number. (required).</param>
+        /// <param name="reportName">Gets or sets the report title..</param>
+        /// <param name="shortName">Gets or sets the short name..</param>
+        /// <param name="functions">Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
+        /// <param name="subtypes">Gets or sets the set of subtypes. (required).</param>
         public TransactionTypeRequest(string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeRequest> subtypes = default(List<TransactionSubtypeRequest>))
         {
             // to ensure "name" is required (not null)
@@ -68,38 +68,44 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReportName
+        /// Gets or sets the report title.
         /// </summary>
+        /// <value>Gets or sets the report title.</value>
         [DataMember(Name = "reportName", EmitDefaultValue = true)]
         public string ReportName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortName
+        /// Gets or sets the short name.
         /// </summary>
+        /// <value>Gets or sets the short name.</value>
         [DataMember(Name = "shortName", EmitDefaultValue = true)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Functions
+        /// Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
         /// </summary>
+        /// <value>Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 
         /// <summary>
-        /// Gets or Sets Subtypes
+        /// Gets or sets the set of subtypes.
         /// </summary>
+        /// <value>Gets or sets the set of subtypes.</value>
         [DataMember(Name = "subtypes", IsRequired = true, EmitDefaultValue = true)]
         public List<TransactionSubtypeRequest> Subtypes { get; set; }
 

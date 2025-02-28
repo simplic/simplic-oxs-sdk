@@ -4,20 +4,20 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddAddressContactId**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} |  |
-| [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} |  |
-| [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} |  |
-| [**Patch**](PersonalAccountClient.md#personalaccountidpatch) | **PATCH** /PersonalAccount/{id} |  |
-| [**Put**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} |  |
-| [**Post**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount |  |
-| [**RemoveAddressContactId**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} |  |
-| [**Search**](PersonalAccountClient.md#personalaccountsearchget) | **GET** /PersonalAccount/search |  |
+| [**AddAddressContactId**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} | Adds an address given by ID to a personal account. |
+| [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} | Deletes a personal account. |
+| [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} | Gets a personal account by ID. |
+| [**Patch**](PersonalAccountClient.md#personalaccountidpatch) | **PATCH** /PersonalAccount/{id} | Patches a personal account. |
+| [**Put**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} | Patches a personal account. |
+| [**Post**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount | Creates a new personal account. |
+| [**RemoveAddressContactId**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} | Removes an address given by ID from a personal account. |
+| [**Search**](PersonalAccountClient.md#personalaccountsearchget) | **GET** /PersonalAccount/search | Retrieves a data page of personal accounts for comboboxes. |
 
 <a id="personalaccountaddaddressidcontactidput"></a>
 # **AddAddressContactId**
 > PersonalAccountModel AddAddressContactId (Guid id, Guid contactId)
 
-
+Adds an address given by ID to a personal account.
 
 ### Example
 ```csharp
@@ -45,6 +45,7 @@ namespace Example
 
             try
             {
+                // Adds an address given by ID to a personal account.
                 PersonalAccountModel result = apiInstance.AddAddressContactId(id, contactId);
                 Debug.WriteLine(result);
             }
@@ -65,6 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Adds an address given by ID to a personal account.
     ApiResponse<PersonalAccountModel> response = apiInstance.AddAddressContactIdWithHttpInfo(id, contactId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -112,7 +114,7 @@ catch (ApiException e)
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a personal account.
 
 ### Example
 ```csharp
@@ -139,6 +141,7 @@ namespace Example
 
             try
             {
+                // Deletes a personal account.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -158,6 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a personal account.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -200,7 +204,7 @@ void (empty response body)
 # **Get**
 > PersonalAccountModel Get (Guid id)
 
-
+Gets a personal account by ID.
 
 ### Example
 ```csharp
@@ -227,6 +231,7 @@ namespace Example
 
             try
             {
+                // Gets a personal account by ID.
                 PersonalAccountModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -247,6 +252,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a personal account by ID.
     ApiResponse<PersonalAccountModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -293,7 +299,7 @@ catch (ApiException e)
 # **Patch**
 > PersonalAccountModel Patch (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
 
-
+Patches a personal account.
 
 ### Example
 ```csharp
@@ -321,6 +327,7 @@ namespace Example
 
             try
             {
+                // Patches a personal account.
                 PersonalAccountModel result = apiInstance.Patch(id, updatePersonalAccountRequest);
                 Debug.WriteLine(result);
             }
@@ -341,6 +348,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a personal account.
     ApiResponse<PersonalAccountModel> response = apiInstance.PatchWithHttpInfo(id, updatePersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -388,7 +396,7 @@ catch (ApiException e)
 # **Put**
 > PersonalAccountModel Put (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
 
-
+Patches a personal account.
 
 ### Example
 ```csharp
@@ -416,6 +424,7 @@ namespace Example
 
             try
             {
+                // Patches a personal account.
                 PersonalAccountModel result = apiInstance.Put(id, updatePersonalAccountRequest);
                 Debug.WriteLine(result);
             }
@@ -436,6 +445,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a personal account.
     ApiResponse<PersonalAccountModel> response = apiInstance.PutWithHttpInfo(id, updatePersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -483,7 +493,7 @@ catch (ApiException e)
 # **Post**
 > PersonalAccountModel Post (CreatePersonalAccountRequest? createPersonalAccountRequest = null)
 
-
+Creates a new personal account.
 
 ### Example
 ```csharp
@@ -510,6 +520,7 @@ namespace Example
 
             try
             {
+                // Creates a new personal account.
                 PersonalAccountModel result = apiInstance.Post(createPersonalAccountRequest);
                 Debug.WriteLine(result);
             }
@@ -530,6 +541,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new personal account.
     ApiResponse<PersonalAccountModel> response = apiInstance.PostWithHttpInfo(createPersonalAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -576,7 +588,7 @@ catch (ApiException e)
 # **RemoveAddressContactId**
 > PersonalAccountModel RemoveAddressContactId (Guid id, Guid contactId)
 
-
+Removes an address given by ID from a personal account.
 
 ### Example
 ```csharp
@@ -604,6 +616,7 @@ namespace Example
 
             try
             {
+                // Removes an address given by ID from a personal account.
                 PersonalAccountModel result = apiInstance.RemoveAddressContactId(id, contactId);
                 Debug.WriteLine(result);
             }
@@ -624,6 +637,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Removes an address given by ID from a personal account.
     ApiResponse<PersonalAccountModel> response = apiInstance.RemoveAddressContactIdWithHttpInfo(id, contactId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -671,7 +685,7 @@ catch (ApiException e)
 # **Search**
 > List&lt;PersonalAccountModel&gt; Search (string? text = null, int? skip = null, int? limit = null)
 
-
+Retrieves a data page of personal accounts for comboboxes.
 
 ### Example
 ```csharp
@@ -700,6 +714,7 @@ namespace Example
 
             try
             {
+                // Retrieves a data page of personal accounts for comboboxes.
                 List<PersonalAccountModel> result = apiInstance.Search(text, skip, limit);
                 Debug.WriteLine(result);
             }
@@ -720,6 +735,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Retrieves a data page of personal accounts for comboboxes.
     ApiResponse<List<PersonalAccountModel>> response = apiInstance.SearchWithHttpInfo(text, skip, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.ExportCostQuantityType
+Represents the export cost quantity type.  <list type=\"bullet\"><item>  No = 0  </item><item>  ExactValue = 1  </item><item>  AbsoluteValue = 2  </item></list>
 
 ## Properties
 

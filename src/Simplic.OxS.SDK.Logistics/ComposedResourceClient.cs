@@ -248,6 +248,41 @@ public interface IComposedResourceClient
     /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
     Task<ApiResponse<GetComposedResourceResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="composedResourceId"></param>
+    /// <returns>GetComposedResourceResponse</returns>
+    GetComposedResourceResponse SetMessageRecognized(Guid composedResourceId);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="composedResourceId"></param>
+    /// <returns>ApiResponse of GetComposedResourceResponse</returns>
+    ApiResponse<GetComposedResourceResponse> SetMessageRecognizedWithHttpInfo(Guid composedResourceId);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="composedResourceId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of GetComposedResourceResponse</returns>
+    Task<GetComposedResourceResponse> SetMessageRecognizedAsync(Guid composedResourceId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="composedResourceId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
+    Task<ApiResponse<GetComposedResourceResponse>> SetMessageRecognizedWithHttpInfoAsync(Guid composedResourceId, CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -761,6 +796,79 @@ public interface IComposedResourceClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <returns>GetComposedResourceResponse</returns>
+        public GetComposedResourceResponse SetMessageRecognized(Guid composedResourceId)
+        {
+            try
+            {
+                return _internalClient.SetMessageRecognized(composedResourceId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <returns>ApiResponse of GetComposedResourceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse> SetMessageRecognizedWithHttpInfo(Guid composedResourceId)
+        {
+            try
+            {
+                return _internalClient.SetMessageRecognizedWithHttpInfo(composedResourceId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetComposedResourceResponse</returns>
+        public System.Threading.Tasks.Task<GetComposedResourceResponse> SetMessageRecognizedAsync(Guid composedResourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SetMessageRecognizedAsync(composedResourceId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse>> SetMessageRecognizedWithHttpInfoAsync(Guid composedResourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.SetMessageRecognizedWithHttpInfoAsync(composedResourceId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -894,6 +1002,26 @@ public interface IComposedResourceClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetComposedResourceResponse</returns>
         ApiResponse<GetComposedResourceResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetComposedResourceResponse</returns>
+        GetComposedResourceResponse SetMessageRecognized(Guid composedResourceId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetComposedResourceResponse</returns>
+        ApiResponse<GetComposedResourceResponse> SetMessageRecognizedWithHttpInfo(Guid composedResourceId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1053,6 +1181,31 @@ public interface IComposedResourceClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetComposedResourceResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetComposedResourceResponse</returns>
+        System.Threading.Tasks.Task<GetComposedResourceResponse> SetMessageRecognizedAsync(Guid composedResourceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetComposedResourceResponse>> SetMessageRecognizedWithHttpInfoAsync(Guid composedResourceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2064,6 +2217,152 @@ public interface IComposedResourceClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ComposedResourceIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetComposedResourceResponse</returns>
+        public GetComposedResourceResponse SetMessageRecognized(Guid composedResourceId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse> localVarResponse = SetMessageRecognizedWithHttpInfo(composedResourceId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetComposedResourceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse> SetMessageRecognizedWithHttpInfo(Guid composedResourceId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("composedResourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(composedResourceId)); // path parameter
+
+            localVarRequestOptions.Operation = "ComposedResourceClient.ComposedResourceSetMessageRecognizedComposedResourceIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<GetComposedResourceResponse>("/ComposedResource/set-message-recognized/{composedResourceId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ComposedResourceSetMessageRecognizedComposedResourceIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetComposedResourceResponse</returns>
+        public async System.Threading.Tasks.Task<GetComposedResourceResponse> SetMessageRecognizedAsync(Guid composedResourceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse> localVarResponse = await SetMessageRecognizedWithHttpInfoAsync(composedResourceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="composedResourceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetComposedResourceResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetComposedResourceResponse>> SetMessageRecognizedWithHttpInfoAsync(Guid composedResourceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("composedResourceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(composedResourceId)); // path parameter
+
+            localVarRequestOptions.Operation = "ComposedResourceClient.ComposedResourceSetMessageRecognizedComposedResourceIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<GetComposedResourceResponse>("/ComposedResource/set-message-recognized/{composedResourceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ComposedResourceSetMessageRecognizedComposedResourceIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

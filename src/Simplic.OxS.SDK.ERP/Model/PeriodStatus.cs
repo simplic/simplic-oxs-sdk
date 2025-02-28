@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines PeriodStatus
+    /// Represents the state of a Simplic.OxS.ERP.Server.PeriodModel.
     /// </summary>
+    /// <value>Represents the state of a Simplic.OxS.ERP.Server.PeriodModel.</value>
     public enum PeriodStatus
     {
         /// <summary>

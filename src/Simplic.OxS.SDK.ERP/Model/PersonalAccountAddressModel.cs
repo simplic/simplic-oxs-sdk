@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// PersonalAccountAddressModel
+    /// Represents the model for a personal account address.
     /// </summary>
     [DataContract(Name = "PersonalAccountAddressModel")]
     public partial class PersonalAccountAddressModel : IEquatable<PersonalAccountAddressModel>, IValidatableObject
@@ -36,21 +36,21 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonalAccountAddressModel" /> class.
         /// </summary>
-        /// <param name="contactId">contactId.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="companyName">companyName.</param>
-        /// <param name="additional01">additional01.</param>
-        /// <param name="additional02">additional02.</param>
-        /// <param name="street">street.</param>
-        /// <param name="houseNumber">houseNumber.</param>
-        /// <param name="zipcode">zipcode.</param>
-        /// <param name="city">city.</param>
-        /// <param name="district">district.</param>
-        /// <param name="federalState">federalState.</param>
-        /// <param name="countryIso">countryIso.</param>
-        /// <param name="latitude">latitude.</param>
-        /// <param name="longitude">longitude.</param>
+        /// <param name="contactId">Gets or sets the contact id for the contact the address is based on..</param>
+        /// <param name="firstName">Gets or sets the first name..</param>
+        /// <param name="lastName">Gets or sets the last name..</param>
+        /// <param name="companyName">Gets or sets the company name..</param>
+        /// <param name="additional01">Gets or sets the first additional data..</param>
+        /// <param name="additional02">Gets or sets the second additional data..</param>
+        /// <param name="street">Gets or sets the street..</param>
+        /// <param name="houseNumber">Gets or sets the house number..</param>
+        /// <param name="zipcode">Gets or sets the zipcode..</param>
+        /// <param name="city">Gets or sets the city..</param>
+        /// <param name="district">Gets or sets the district..</param>
+        /// <param name="federalState">Gets or sets the federal state of the address..</param>
+        /// <param name="countryIso">Gets or sets the country iso..</param>
+        /// <param name="latitude">Gets or sets the latitude..</param>
+        /// <param name="longitude">Gets or sets the longitude..</param>
         public PersonalAccountAddressModel(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), double latitude = default(double), double longitude = default(double))
         {
             this.ContactId = contactId;
@@ -71,92 +71,107 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets ContactId
+        /// Gets or sets the contact id for the contact the address is based on.
         /// </summary>
+        /// <value>Gets or sets the contact id for the contact the address is based on.</value>
         [DataMember(Name = "contactId", EmitDefaultValue = false)]
         public Guid ContactId { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// Gets or sets the first name.
         /// </summary>
+        /// <value>Gets or sets the first name.</value>
         [DataMember(Name = "firstName", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// Gets or sets the last name.
         /// </summary>
+        /// <value>Gets or sets the last name.</value>
         [DataMember(Name = "lastName", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyName
+        /// Gets or sets the company name.
         /// </summary>
+        /// <value>Gets or sets the company name.</value>
         [DataMember(Name = "companyName", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Additional01
+        /// Gets or sets the first additional data.
         /// </summary>
+        /// <value>Gets or sets the first additional data.</value>
         [DataMember(Name = "additional01", EmitDefaultValue = true)]
         public string Additional01 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Additional02
+        /// Gets or sets the second additional data.
         /// </summary>
+        /// <value>Gets or sets the second additional data.</value>
         [DataMember(Name = "additional02", EmitDefaultValue = true)]
         public string Additional02 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Street
+        /// Gets or sets the street.
         /// </summary>
+        /// <value>Gets or sets the street.</value>
         [DataMember(Name = "street", EmitDefaultValue = true)]
         public string Street { get; set; }
 
         /// <summary>
-        /// Gets or Sets HouseNumber
+        /// Gets or sets the house number.
         /// </summary>
+        /// <value>Gets or sets the house number.</value>
         [DataMember(Name = "houseNumber", EmitDefaultValue = true)]
         public string HouseNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Zipcode
+        /// Gets or sets the zipcode.
         /// </summary>
+        /// <value>Gets or sets the zipcode.</value>
         [DataMember(Name = "zipcode", EmitDefaultValue = true)]
         public string Zipcode { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or sets the city.
         /// </summary>
+        /// <value>Gets or sets the city.</value>
         [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or Sets District
+        /// Gets or sets the district.
         /// </summary>
+        /// <value>Gets or sets the district.</value>
         [DataMember(Name = "district", EmitDefaultValue = true)]
         public string District { get; set; }
 
         /// <summary>
-        /// Gets or Sets FederalState
+        /// Gets or sets the federal state of the address.
         /// </summary>
+        /// <value>Gets or sets the federal state of the address.</value>
         [DataMember(Name = "federalState", EmitDefaultValue = true)]
         public string FederalState { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryIso
+        /// Gets or sets the country iso.
         /// </summary>
+        /// <value>Gets or sets the country iso.</value>
         [DataMember(Name = "countryIso", EmitDefaultValue = true)]
         public string CountryIso { get; set; }
 
         /// <summary>
-        /// Gets or Sets Latitude
+        /// Gets or sets the latitude.
         /// </summary>
+        /// <value>Gets or sets the latitude.</value>
         [DataMember(Name = "latitude", EmitDefaultValue = false)]
         public double Latitude { get; set; }
 
         /// <summary>
-        /// Gets or Sets Longitude
+        /// Gets or sets the longitude.
         /// </summary>
+        /// <value>Gets or sets the longitude.</value>
         [DataMember(Name = "longitude", EmitDefaultValue = false)]
         public double Longitude { get; set; }
 

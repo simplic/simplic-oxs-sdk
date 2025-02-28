@@ -42,11 +42,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PeriodModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="from">from.</param>
-        /// <param name="to">to.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">Gets or sets a number representing the chronological location of this PeriodModel..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="from">Gets or sets the point in time the PeriodModel begins..</param>
+        /// <param name="to">Gets or sets the point in time the PeriodModel ends..</param>
         /// <param name="status">status.</param>
         public PeriodModel(Guid id = default(Guid), int number = default(int), string name = default(string), DateTime from = default(DateTime), DateTime to = default(DateTime), PeriodStatus? status = default(PeriodStatus?))
         {
@@ -59,32 +59,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets a number representing the chronological location of this PeriodModel.
         /// </summary>
+        /// <value>Gets or sets a number representing the chronological location of this PeriodModel.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets From
+        /// Gets or sets the point in time the PeriodModel begins.
         /// </summary>
+        /// <value>Gets or sets the point in time the PeriodModel begins.</value>
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public DateTime From { get; set; }
 
         /// <summary>
-        /// Gets or Sets To
+        /// Gets or sets the point in time the PeriodModel ends.
         /// </summary>
+        /// <value>Gets or sets the point in time the PeriodModel ends.</value>
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public DateTime To { get; set; }
 

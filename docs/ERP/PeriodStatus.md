@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.PeriodStatus
+Represents the state of a Simplic.OxS.ERP.Server.PeriodModel.
 
 ## Properties
 

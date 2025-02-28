@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetById**](InternalPersonalAccountClient.md#internalinternalpersonalaccountgetbyidget) | **GET** /internal/InternalPersonalAccount/get-by-id |  |
+| [**GetById**](InternalPersonalAccountClient.md#internalinternalpersonalaccountgetbyidget) | **GET** /internal/InternalPersonalAccount/get-by-id | Gets a personal account by ID. |
 
 <a id="internalinternalpersonalaccountgetbyidget"></a>
 # **GetById**
 > PersonalAccountModel GetById (Guid? id = null)
 
-
+Gets a personal account by ID.
 
 ### Example
 ```csharp
@@ -37,6 +37,7 @@ namespace Example
 
             try
             {
+                // Gets a personal account by ID.
                 PersonalAccountModel result = apiInstance.GetById(id);
                 Debug.WriteLine(result);
             }
@@ -57,6 +58,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a personal account by ID.
     ApiResponse<PersonalAccountModel> response = apiInstance.GetByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

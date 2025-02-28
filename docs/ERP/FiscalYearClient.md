@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](FiscalYearClient.md#fiscalyeariddelete) | **DELETE** /FiscalYear/{id} |  |
-| [**Get**](FiscalYearClient.md#fiscalyearidget) | **GET** /FiscalYear/{id} |  |
-| [**Patch**](FiscalYearClient.md#fiscalyearidpatch) | **PATCH** /FiscalYear/{id} |  |
-| [**Post**](FiscalYearClient.md#fiscalyearpost) | **POST** /FiscalYear |  |
+| [**Delete**](FiscalYearClient.md#fiscalyeariddelete) | **DELETE** /FiscalYear/{id} | Deletes a fiscal year. |
+| [**Get**](FiscalYearClient.md#fiscalyearidget) | **GET** /FiscalYear/{id} | Gets a fiscal year by ID. |
+| [**Patch**](FiscalYearClient.md#fiscalyearidpatch) | **PATCH** /FiscalYear/{id} | Patches a fiscal year. |
+| [**Post**](FiscalYearClient.md#fiscalyearpost) | **POST** /FiscalYear | Creates a new fiscal year. |
 
 <a id="fiscalyeariddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a fiscal year.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a fiscal year.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a fiscal year.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > FiscalYearModel Get (Guid id)
 
-
+Gets a fiscal year by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a fiscal year by ID.
                 FiscalYearModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a fiscal year by ID.
     ApiResponse<FiscalYearModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > FiscalYearModel Patch (Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = null)
 
-
+Patches a fiscal year.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a fiscal year.
                 FiscalYearModel result = apiInstance.Patch(id, updateFiscalYearRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a fiscal year.
     ApiResponse<FiscalYearModel> response = apiInstance.PatchWithHttpInfo(id, updateFiscalYearRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > FiscalYearModel Post (FiscalYearRequest? fiscalYearRequest = null)
 
-
+Creates a new fiscal year.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new fiscal year.
                 FiscalYearModel result = apiInstance.Post(fiscalYearRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new fiscal year.
     ApiResponse<FiscalYearModel> response = apiInstance.PostWithHttpInfo(fiscalYearRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

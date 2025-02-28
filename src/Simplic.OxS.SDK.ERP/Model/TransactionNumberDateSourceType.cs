@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Defines TransactionNumberDateSourceType
+    /// Represents the transaction number data source type.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;  TransactionDate &#x3D; 0  &lt;/item&gt;&lt;item&gt;  DeliveryDate &#x3D; 1  &lt;/item&gt;&lt;/list&gt;
     /// </summary>
+    /// <value>Represents the transaction number data source type.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;  TransactionDate &#x3D; 0  &lt;/item&gt;&lt;item&gt;  DeliveryDate &#x3D; 1  &lt;/item&gt;&lt;/list&gt;</value>
     public enum TransactionNumberDateSourceType
     {
         /// <summary>

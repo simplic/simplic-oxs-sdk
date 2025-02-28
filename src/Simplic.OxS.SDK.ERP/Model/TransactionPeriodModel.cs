@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionPeriodModel
+    /// Represents the shared model for a period of a fiscal year in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionPeriodModel")]
     public partial class TransactionPeriodModel : IEquatable<TransactionPeriodModel>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionPeriodModel" /> class.
         /// </summary>
-        /// <param name="fiscalYearId">fiscalYearId.</param>
-        /// <param name="periodId">periodId.</param>
-        /// <param name="periodNumber">periodNumber.</param>
-        /// <param name="from">from.</param>
-        /// <param name="to">to.</param>
+        /// <param name="fiscalYearId">Gets or sets the fiscal year ID..</param>
+        /// <param name="periodId">Gets or sets the period ID..</param>
+        /// <param name="periodNumber">Gets or sets the period number..</param>
+        /// <param name="from">Gets or sets the point in time the period begins..</param>
+        /// <param name="to">Gets or sets the point in time the period ends..</param>
         public TransactionPeriodModel(Guid fiscalYearId = default(Guid), Guid periodId = default(Guid), int periodNumber = default(int), DateTime from = default(DateTime), DateTime to = default(DateTime))
         {
             this.FiscalYearId = fiscalYearId;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets FiscalYearId
+        /// Gets or sets the fiscal year ID.
         /// </summary>
+        /// <value>Gets or sets the fiscal year ID.</value>
         [DataMember(Name = "fiscalYearId", EmitDefaultValue = false)]
         public Guid FiscalYearId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PeriodId
+        /// Gets or sets the period ID.
         /// </summary>
+        /// <value>Gets or sets the period ID.</value>
         [DataMember(Name = "periodId", EmitDefaultValue = false)]
         public Guid PeriodId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PeriodNumber
+        /// Gets or sets the period number.
         /// </summary>
+        /// <value>Gets or sets the period number.</value>
         [DataMember(Name = "periodNumber", EmitDefaultValue = false)]
         public int PeriodNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets From
+        /// Gets or sets the point in time the period begins.
         /// </summary>
+        /// <value>Gets or sets the point in time the period begins.</value>
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public DateTime From { get; set; }
 
         /// <summary>
-        /// Gets or Sets To
+        /// Gets or sets the point in time the period ends.
         /// </summary>
+        /// <value>Gets or sets the point in time the period ends.</value>
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public DateTime To { get; set; }
 

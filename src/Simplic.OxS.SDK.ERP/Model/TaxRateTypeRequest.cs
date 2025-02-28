@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TaxRateTypeRequest
+    /// Represents a request to create a Simplic.OxS.ERP.TaxRateType.
     /// </summary>
     [DataContract(Name = "TaxRateTypeRequest")]
     public partial class TaxRateTypeRequest : IEquatable<TaxRateTypeRequest>, IValidatableObject
@@ -41,8 +41,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRateTypeRequest" /> class.
         /// </summary>
-        /// <param name="number">number (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="number">Gets or sets the number. (required).</param>
+        /// <param name="name">Gets or sets the name. (required).</param>
         public TaxRateTypeRequest(int number = default(int), string name = default(string))
         {
             this.Number = number;
@@ -55,14 +55,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// ConvertErrorInfoModel
+    /// Represents the shared model for convert error infos.
     /// </summary>
     [DataContract(Name = "ConvertErrorInfoModel")]
     public partial class ConvertErrorInfoModel : IEquatable<ConvertErrorInfoModel>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="ConvertErrorInfoModel" /> class.
         /// </summary>
-        /// <param name="message">message.</param>
-        /// <param name="invalidPropertyName">invalidPropertyName.</param>
-        /// <param name="itemId">itemId.</param>
-        /// <param name="bookedQuantity">bookedQuantity.</param>
-        /// <param name="remainingQuantity">remainingQuantity.</param>
+        /// <param name="message">Gets or sets the message..</param>
+        /// <param name="invalidPropertyName">Gets or sets the name of the invalid property causing the error..</param>
+        /// <param name="itemId">Gets or sets the item ID that was not found..</param>
+        /// <param name="bookedQuantity">Gets or sets the booked quantity..</param>
+        /// <param name="remainingQuantity">Gets or sets the remaining quantity..</param>
         public ConvertErrorInfoModel(string message = default(string), string invalidPropertyName = default(string), Guid? itemId = default(Guid?), double? bookedQuantity = default(double?), double? remainingQuantity = default(double?))
         {
             this.Message = message;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or sets the message.
         /// </summary>
+        /// <value>Gets or sets the message.</value>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
-        /// Gets or Sets InvalidPropertyName
+        /// Gets or sets the name of the invalid property causing the error.
         /// </summary>
+        /// <value>Gets or sets the name of the invalid property causing the error.</value>
         [DataMember(Name = "invalidPropertyName", EmitDefaultValue = true)]
         public string InvalidPropertyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ItemId
+        /// Gets or sets the item ID that was not found.
         /// </summary>
+        /// <value>Gets or sets the item ID that was not found.</value>
         [DataMember(Name = "itemId", EmitDefaultValue = true)]
         public Guid? ItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets BookedQuantity
+        /// Gets or sets the booked quantity.
         /// </summary>
+        /// <value>Gets or sets the booked quantity.</value>
         [DataMember(Name = "bookedQuantity", EmitDefaultValue = true)]
         public double? BookedQuantity { get; set; }
 
         /// <summary>
-        /// Gets or Sets RemainingQuantity
+        /// Gets or sets the remaining quantity.
         /// </summary>
+        /// <value>Gets or sets the remaining quantity.</value>
         [DataMember(Name = "remainingQuantity", EmitDefaultValue = true)]
         public double? RemainingQuantity { get; set; }
 

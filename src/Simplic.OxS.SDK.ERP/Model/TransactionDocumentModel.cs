@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionDocumentModel
+    /// Represents the shared model for a document in a transaction.
     /// </summary>
     [DataContract(Name = "TransactionDocumentModel")]
     public partial class TransactionDocumentModel : IEquatable<TransactionDocumentModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionDocumentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
         public TransactionDocumentModel(Guid id = default(Guid), int number = default(int), string name = default(string))
         {
             this.Id = id;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

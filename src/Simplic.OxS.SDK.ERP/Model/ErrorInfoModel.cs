@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// ErrorInfoModel
+    /// Represents the shared model for information concerning an error that occured while performing an operation.
     /// </summary>
     [DataContract(Name = "ErrorInfoModel")]
     public partial class ErrorInfoModel : IEquatable<ErrorInfoModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorInfoModel" /> class.
         /// </summary>
-        /// <param name="message">message.</param>
+        /// <param name="message">Gets or sets the error information represented by a text..</param>
         public ErrorInfoModel(string message = default(string))
         {
             this.Message = message;
         }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or sets the error information represented by a text.
         /// </summary>
+        /// <value>Gets or sets the error information represented by a text.</value>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 

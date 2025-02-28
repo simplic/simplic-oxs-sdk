@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](CurrencyClient.md#currencyiddelete) | **DELETE** /Currency/{id} |  |
-| [**Get**](CurrencyClient.md#currencyidget) | **GET** /Currency/{id} |  |
-| [**Patch**](CurrencyClient.md#currencyidpatch) | **PATCH** /Currency/{id} |  |
-| [**Post**](CurrencyClient.md#currencypost) | **POST** /Currency |  |
+| [**Delete**](CurrencyClient.md#currencyiddelete) | **DELETE** /Currency/{id} | Deletes a currency. |
+| [**Get**](CurrencyClient.md#currencyidget) | **GET** /Currency/{id} | Gets a currency by ID. |
+| [**Patch**](CurrencyClient.md#currencyidpatch) | **PATCH** /Currency/{id} | Patches a currency. |
+| [**Post**](CurrencyClient.md#currencypost) | **POST** /Currency | Creates a new currency. |
 
 <a id="currencyiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a currency.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a currency.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a currency.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > CurrencyModel Get (Guid id)
 
-
+Gets a currency by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a currency by ID.
                 CurrencyModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a currency by ID.
     ApiResponse<CurrencyModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > CurrencyModel Patch (Guid id, UpdateCurrencyRequest? updateCurrencyRequest = null)
 
-
+Patches a currency.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a currency.
                 CurrencyModel result = apiInstance.Patch(id, updateCurrencyRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a currency.
     ApiResponse<CurrencyModel> response = apiInstance.PatchWithHttpInfo(id, updateCurrencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > CurrencyModel Post (CurrencyRequest? currencyRequest = null)
 
-
+Creates a new currency.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new currency.
                 CurrencyModel result = apiInstance.Post(currencyRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new currency.
     ApiResponse<CurrencyModel> response = apiInstance.PostWithHttpInfo(currencyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

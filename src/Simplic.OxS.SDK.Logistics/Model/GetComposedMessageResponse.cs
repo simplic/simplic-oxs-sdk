@@ -38,10 +38,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         /// <param name="dateTime">Gets or sets the date and time the message is received..</param>
         /// <param name="message">Gets or sets the message..</param>
-        public GetComposedMessageResponse(DateTime dateTime = default(DateTime), string message = default(string))
+        /// <param name="unrecognized">Gets or sets whether the message is not \&quot;recognized\&quot;.</param>
+        /// <param name="notificationId">Gets or sets the notification id, which created the message.</param>
+        public GetComposedMessageResponse(DateTime dateTime = default(DateTime), string message = default(string), bool unrecognized = default(bool), Guid? notificationId = default(Guid?))
         {
             this.DateTime = dateTime;
             this.Message = message;
+            this.Unrecognized = unrecognized;
+            this.NotificationId = notificationId;
         }
 
         /// <summary>
@@ -59,6 +63,20 @@ namespace Simplic.OxS.SDK.Logistics
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or sets whether the message is not \&quot;recognized\&quot;
+        /// </summary>
+        /// <value>Gets or sets whether the message is not \&quot;recognized\&quot;</value>
+        [DataMember(Name = "unrecognized", EmitDefaultValue = true)]
+        public bool Unrecognized { get; set; }
+
+        /// <summary>
+        /// Gets or sets the notification id, which created the message
+        /// </summary>
+        /// <value>Gets or sets the notification id, which created the message</value>
+        [DataMember(Name = "notificationId", EmitDefaultValue = true)]
+        public Guid? NotificationId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,6 +86,8 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("class GetComposedMessageResponse {\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Unrecognized: ").Append(Unrecognized).Append("\n");
+            sb.Append("  NotificationId: ").Append(NotificationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +132,15 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Unrecognized == input.Unrecognized ||
+                    this.Unrecognized.Equals(input.Unrecognized)
+                ) && 
+                (
+                    this.NotificationId == input.NotificationId ||
+                    (this.NotificationId != null &&
+                    this.NotificationId.Equals(input.NotificationId))
                 );
         }
 
@@ -131,6 +160,11 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Message != null)
                 {
                     hashCode = (hashCode * 59) + this.Message.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Unrecognized.GetHashCode();
+                if (this.NotificationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotificationId.GetHashCode();
                 }
                 return hashCode;
             }

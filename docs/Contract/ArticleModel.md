@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Number** | **int** |  | [optional] 
+**Number** | **string** |  | [optional] 
 **UniqueNumber** | **int** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
 **FullName** | **string** |  | [optional] 

@@ -36,14 +36,16 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="GetComposedResourceResponse" /> class.
         /// </summary>
+        /// <param name="id">Gets or setsthe id of the composed resource..</param>
         /// <param name="tractorUnit">tractorUnit.</param>
         /// <param name="trailer">Gets or sets the trailer of a composed resource.     Usually only a single trailer will be added, but when attaching a trailer it should have an option to add   another one.  .</param>
         /// <param name="mainDriver">mainDriver.</param>
         /// <param name="coDriver">coDriver.</param>
         /// <param name="location">location.</param>
         /// <param name="latestMessage">latestMessage.</param>
-        public GetComposedResourceResponse(GetComposedTractorUnitResponse tractorUnit = default(GetComposedTractorUnitResponse), List<GetComposedTrailerResponse> trailer = default(List<GetComposedTrailerResponse>), GetComposedDriverResponse mainDriver = default(GetComposedDriverResponse), GetComposedDriverResponse coDriver = default(GetComposedDriverResponse), GetComposedLocationResponse location = default(GetComposedLocationResponse), GetComposedMessageResponse latestMessage = default(GetComposedMessageResponse))
+        public GetComposedResourceResponse(Guid id = default(Guid), GetComposedTractorUnitResponse tractorUnit = default(GetComposedTractorUnitResponse), List<GetComposedTrailerResponse> trailer = default(List<GetComposedTrailerResponse>), GetComposedDriverResponse mainDriver = default(GetComposedDriverResponse), GetComposedDriverResponse coDriver = default(GetComposedDriverResponse), GetComposedLocationResponse location = default(GetComposedLocationResponse), GetComposedMessageResponse latestMessage = default(GetComposedMessageResponse))
         {
+            this.Id = id;
             this.TractorUnit = tractorUnit;
             this.Trailer = trailer;
             this.MainDriver = mainDriver;
@@ -51,6 +53,13 @@ namespace Simplic.OxS.SDK.Logistics
             this.Location = location;
             this.LatestMessage = latestMessage;
         }
+
+        /// <summary>
+        /// Gets or setsthe id of the composed resource.
+        /// </summary>
+        /// <value>Gets or setsthe id of the composed resource.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets TractorUnit
@@ -97,6 +106,7 @@ namespace Simplic.OxS.SDK.Logistics
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetComposedResourceResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TractorUnit: ").Append(TractorUnit).Append("\n");
             sb.Append("  Trailer: ").Append(Trailer).Append("\n");
             sb.Append("  MainDriver: ").Append(MainDriver).Append("\n");
@@ -139,6 +149,11 @@ namespace Simplic.OxS.SDK.Logistics
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.TractorUnit == input.TractorUnit ||
                     (this.TractorUnit != null &&
                     this.TractorUnit.Equals(input.TractorUnit))
@@ -180,6 +195,10 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.TractorUnit != null)
                 {
                     hashCode = (hashCode * 59) + this.TractorUnit.GetHashCode();

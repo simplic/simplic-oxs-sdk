@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](PaymentMethodClient.md#paymentmethodiddelete) | **DELETE** /PaymentMethod/{id} |  |
-| [**Get**](PaymentMethodClient.md#paymentmethodidget) | **GET** /PaymentMethod/{id} |  |
-| [**Patch**](PaymentMethodClient.md#paymentmethodidpatch) | **PATCH** /PaymentMethod/{id} |  |
-| [**Post**](PaymentMethodClient.md#paymentmethodpost) | **POST** /PaymentMethod |  |
+| [**Delete**](PaymentMethodClient.md#paymentmethodiddelete) | **DELETE** /PaymentMethod/{id} | Deletes a payment method. |
+| [**Get**](PaymentMethodClient.md#paymentmethodidget) | **GET** /PaymentMethod/{id} | Gets a payment method by ID. |
+| [**Patch**](PaymentMethodClient.md#paymentmethodidpatch) | **PATCH** /PaymentMethod/{id} | Patches a payment method. |
+| [**Post**](PaymentMethodClient.md#paymentmethodpost) | **POST** /PaymentMethod | Creates a new payment method. |
 
 <a id="paymentmethodiddelete"></a>
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a payment method.
 
 ### Example
 ```csharp
@@ -40,6 +40,7 @@ namespace Example
 
             try
             {
+                // Deletes a payment method.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a payment method.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -101,7 +103,7 @@ void (empty response body)
 # **Get**
 > PaymentMethodModel Get (Guid id)
 
-
+Gets a payment method by ID.
 
 ### Example
 ```csharp
@@ -128,6 +130,7 @@ namespace Example
 
             try
             {
+                // Gets a payment method by ID.
                 PaymentMethodModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -148,6 +151,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a payment method by ID.
     ApiResponse<PaymentMethodModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -194,7 +198,7 @@ catch (ApiException e)
 # **Patch**
 > PaymentMethodModel Patch (Guid id, UpdatePaymentMethodRequest? updatePaymentMethodRequest = null)
 
-
+Patches a payment method.
 
 ### Example
 ```csharp
@@ -222,6 +226,7 @@ namespace Example
 
             try
             {
+                // Patches a payment method.
                 PaymentMethodModel result = apiInstance.Patch(id, updatePaymentMethodRequest);
                 Debug.WriteLine(result);
             }
@@ -242,6 +247,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a payment method.
     ApiResponse<PaymentMethodModel> response = apiInstance.PatchWithHttpInfo(id, updatePaymentMethodRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -289,7 +295,7 @@ catch (ApiException e)
 # **Post**
 > PaymentMethodModel Post (PaymentMethodRequest? paymentMethodRequest = null)
 
-
+Creates a new payment method.
 
 ### Example
 ```csharp
@@ -316,6 +322,7 @@ namespace Example
 
             try
             {
+                // Creates a new payment method.
                 PaymentMethodModel result = apiInstance.Post(paymentMethodRequest);
                 Debug.WriteLine(result);
             }
@@ -336,6 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new payment method.
     ApiResponse<PaymentMethodModel> response = apiInstance.PostWithHttpInfo(paymentMethodRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

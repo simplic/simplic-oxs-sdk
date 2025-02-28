@@ -4,9 +4,103 @@ All URIs are relative to *https://dev-oxs.simplic.io/sensor-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**Anon**](MeasurementClient.md#measurementanonpost) | **POST** /Measurement/anon |  |
 | [**Get**](MeasurementClient.md#measurementget) | **GET** /Measurement |  |
-| [**GetAllForSensorTagIdGet**](MeasurementClient.md#measurementgetallforsensortagidget) | **GET** /Measurement/get-all-for-sensor/{tagId} |  |
+| [**GetAllForSensorSensorIdGet**](MeasurementClient.md#measurementgetallforsensorsensoridget) | **GET** /Measurement/get-all-for-sensor/{sensorId} |  |
 | [**Post**](MeasurementClient.md#measurementorganizationidpost) | **POST** /Measurement/{organizationId} |  |
+
+<a id="measurementanonpost"></a>
+# **Anon**
+> PostAnonMeasurementResponse Anon (PostAnonMeasurementRequest? postAnonMeasurementRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Sensor;
+
+namespace Example
+{
+    public class AnonExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/sensor-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MeasurementClient(config);
+            var postAnonMeasurementRequest = new PostAnonMeasurementRequest?(); // PostAnonMeasurementRequest? |  (optional) 
+
+            try
+            {
+                PostAnonMeasurementResponse result = apiInstance.Anon(postAnonMeasurementRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MeasurementClient.Anon: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AnonWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PostAnonMeasurementResponse> response = apiInstance.AnonWithHttpInfo(postAnonMeasurementRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MeasurementClient.AnonWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **postAnonMeasurementRequest** | [**PostAnonMeasurementRequest?**](PostAnonMeasurementRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**PostAnonMeasurementResponse**](PostAnonMeasurementResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="measurementget"></a>
 # **Get**
@@ -95,15 +189,15 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="measurementgetallforsensortagidget"></a>
-# **GetAllForSensorTagIdGet**
-> List&lt;GetMeasurementResponse&gt; GetAllForSensorTagIdGet (string tagId, Guid? sensorId = null)
+<a id="measurementgetallforsensorsensoridget"></a>
+# **GetAllForSensorSensorIdGet**
+> List&lt;GetMeasurementResponse&gt; GetAllForSensorSensorIdGet (Guid sensorId)
 
 
 
@@ -116,7 +210,7 @@ using Simplic.OxS.SDK.Sensor;
 
 namespace Example
 {
-    public class GetAllForSensorTagIdGetExample
+    public class GetAllForSensorSensorIdGetExample
     {
         public static void Main()
         {
@@ -128,17 +222,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MeasurementClient(config);
-            var tagId = "tagId_example";  // string | 
-            var sensorId = "sensorId_example";  // Guid? |  (optional) 
+            var sensorId = "sensorId_example";  // Guid | 
 
             try
             {
-                List<GetMeasurementResponse> result = apiInstance.GetAllForSensorTagIdGet(tagId, sensorId);
+                List<GetMeasurementResponse> result = apiInstance.GetAllForSensorSensorIdGet(sensorId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MeasurementClient.GetAllForSensorTagIdGet: " + e.Message);
+                Debug.Print("Exception when calling MeasurementClient.GetAllForSensorSensorIdGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -147,20 +240,20 @@ namespace Example
 }
 ```
 
-#### Using the GetAllForSensorTagIdGetWithHttpInfo variant
+#### Using the GetAllForSensorSensorIdGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<GetMeasurementResponse>> response = apiInstance.GetAllForSensorTagIdGetWithHttpInfo(tagId, sensorId);
+    ApiResponse<List<GetMeasurementResponse>> response = apiInstance.GetAllForSensorSensorIdGetWithHttpInfo(sensorId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MeasurementClient.GetAllForSensorTagIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MeasurementClient.GetAllForSensorSensorIdGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -170,8 +263,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tagId** | **string** |  |  |
-| **sensorId** | **Guid?** |  | [optional]  |
+| **sensorId** | **Guid** |  |  |
 
 ### Return type
 
@@ -190,7 +282,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -285,7 +377,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TaxGroupModel
+    /// Represents the shared model for Simplic.OxS.ERP.TaxGroup.
     /// </summary>
     [DataContract(Name = "TaxGroupModel")]
     public partial class TaxGroupModel : IEquatable<TaxGroupModel>, IValidatableObject
@@ -39,16 +39,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="countries">countries.</param>
-        /// <param name="taxRates">taxRates.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="countries">Gets or sets the set of countries..</param>
+        /// <param name="taxRates">Gets or sets the tax rates for this tax group..</param>
+        /// <param name="createDateTime">Gets or sets the date and time the tax group is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the tax group..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the tax group..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the tax group is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the tax group..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the tax group..</param>
         public TaxGroupModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), List<TaxGroupCountryModel> countries = default(List<TaxGroupCountryModel>), List<TaxRateModel> taxRates = default(List<TaxRateModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -85,62 +85,72 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Countries
+        /// Gets or sets the set of countries.
         /// </summary>
+        /// <value>Gets or sets the set of countries.</value>
         [DataMember(Name = "countries", EmitDefaultValue = true)]
         public List<TaxGroupCountryModel> Countries { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRates
+        /// Gets or sets the tax rates for this tax group.
         /// </summary>
+        /// <value>Gets or sets the tax rates for this tax group.</value>
         [DataMember(Name = "taxRates", EmitDefaultValue = true)]
         public List<TaxRateModel> TaxRates { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the date and time the tax group is created.
         /// </summary>
+        /// <value>Gets or sets the date and time the tax group is created.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the id of the user that created the tax group.
         /// </summary>
+        /// <value>Gets or sets the id of the user that created the tax group.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the name of the user that created the tax group.
         /// </summary>
+        /// <value>Gets or sets the name of the user that created the tax group.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the date and time the tax group is updated.
         /// </summary>
+        /// <value>Gets or sets the date and time the tax group is updated.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the id of the user that updated the tax group.
         /// </summary>
+        /// <value>Gets or sets the id of the user that updated the tax group.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the name of the user that updated the tax group.
         /// </summary>
+        /// <value>Gets or sets the name of the user that updated the tax group.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

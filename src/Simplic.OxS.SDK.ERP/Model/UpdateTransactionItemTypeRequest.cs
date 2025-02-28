@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// UpdateTransactionItemTypeRequest
+    /// Represents a request to create a transaction item type.
     /// </summary>
     [DataContract(Name = "UpdateTransactionItemTypeRequest")]
     public partial class UpdateTransactionItemTypeRequest : IEquatable<UpdateTransactionItemTypeRequest>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTransactionItemTypeRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="hasPositionNumber">hasPositionNumber.</param>
-        /// <param name="isSelectable">isSelectable.</param>
-        /// <param name="detailHtml">detailHtml.</param>
-        /// <param name="dataTemplate">dataTemplate.</param>
-        /// <param name="articleGLAResolver">articleGLAResolver.</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="hasPositionNumber">Gets or sets the has position number flag..</param>
+        /// <param name="isSelectable">Gets or sets the is selectable flag..</param>
+        /// <param name="detailHtml">Gets or sets the detail HTML..</param>
+        /// <param name="dataTemplate">Gets or sets the data template..</param>
+        /// <param name="articleGLAResolver">Gets or sets the article GLA resolver..</param>
         public UpdateTransactionItemTypeRequest(string name = default(string), int? number = default(int?), bool? hasPositionNumber = default(bool?), bool? isSelectable = default(bool?), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string))
         {
             this.Name = name;
@@ -55,44 +55,51 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasPositionNumber
+        /// Gets or sets the has position number flag.
         /// </summary>
+        /// <value>Gets or sets the has position number flag.</value>
         [DataMember(Name = "hasPositionNumber", EmitDefaultValue = true)]
         public bool? HasPositionNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsSelectable
+        /// Gets or sets the is selectable flag.
         /// </summary>
+        /// <value>Gets or sets the is selectable flag.</value>
         [DataMember(Name = "isSelectable", EmitDefaultValue = true)]
         public bool? IsSelectable { get; set; }
 
         /// <summary>
-        /// Gets or Sets DetailHtml
+        /// Gets or sets the detail HTML.
         /// </summary>
+        /// <value>Gets or sets the detail HTML.</value>
         [DataMember(Name = "detailHtml", EmitDefaultValue = true)]
         public string DetailHtml { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataTemplate
+        /// Gets or sets the data template.
         /// </summary>
+        /// <value>Gets or sets the data template.</value>
         [DataMember(Name = "dataTemplate", EmitDefaultValue = true)]
         public string DataTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleGLAResolver
+        /// Gets or sets the article GLA resolver.
         /// </summary>
+        /// <value>Gets or sets the article GLA resolver.</value>
         [DataMember(Name = "articleGLAResolver", EmitDefaultValue = true)]
         public string ArticleGLAResolver { get; set; }
 

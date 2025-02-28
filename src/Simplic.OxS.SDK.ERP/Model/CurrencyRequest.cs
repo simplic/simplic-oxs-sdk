@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// CurrencyRequest
+    /// Represents a request to create a Simplic.OxS.ERP.Currency.
     /// </summary>
     [DataContract(Name = "CurrencyRequest")]
     public partial class CurrencyRequest : IEquatable<CurrencyRequest>, IValidatableObject
@@ -41,10 +41,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyRequest" /> class.
         /// </summary>
-        /// <param name="number">number (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="shortName">shortName (required).</param>
-        /// <param name="symbol">symbol (required).</param>
+        /// <param name="number">Gets or sets the number. (required).</param>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="shortName">Gets or sets the short name. (required).</param>
+        /// <param name="symbol">Gets or sets the symbol representing the currency. (required).</param>
         public CurrencyRequest(int number = default(int), string name = default(string), string shortName = default(string), string symbol = default(string))
         {
             this.Number = number;
@@ -69,26 +69,30 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortName
+        /// Gets or sets the short name.
         /// </summary>
+        /// <value>Gets or sets the short name.</value>
         [DataMember(Name = "shortName", IsRequired = true, EmitDefaultValue = true)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Symbol
+        /// Gets or sets the symbol representing the currency.
         /// </summary>
+        /// <value>Gets or sets the symbol representing the currency.</value>
         [DataMember(Name = "symbol", IsRequired = true, EmitDefaultValue = true)]
         public string Symbol { get; set; }
 

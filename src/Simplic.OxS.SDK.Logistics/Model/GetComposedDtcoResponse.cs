@@ -36,15 +36,35 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="GetComposedDtcoResponse" /> class.
         /// </summary>
+        /// <param name="activity">Gets or sets the current activity of the driver..</param>
+        /// <param name="remainingDailyWorkTime">Gets or sets the remaining work time for the day..</param>
         /// <param name="remainingDailyDrivingTime">Gets or sets the remaining driving time for the day..</param>
+        /// <param name="remainingWeeklyWorkTime">Gets or sets the remaining work time for the week..</param>
         /// <param name="remainingWeeklyDrivingTime">Gets or sets the remaining driving time for the week..</param>
         /// <param name="remainingDoubleWeeklyDrivingTime">Gets or sets the remaining driving time for the bi weekly cycle..</param>
-        public GetComposedDtcoResponse(string remainingDailyDrivingTime = default(string), string remainingWeeklyDrivingTime = default(string), string remainingDoubleWeeklyDrivingTime = default(string))
+        public GetComposedDtcoResponse(string activity = default(string), string remainingDailyWorkTime = default(string), string remainingDailyDrivingTime = default(string), string remainingWeeklyWorkTime = default(string), string remainingWeeklyDrivingTime = default(string), string remainingDoubleWeeklyDrivingTime = default(string))
         {
+            this.Activity = activity;
+            this.RemainingDailyWorkTime = remainingDailyWorkTime;
             this.RemainingDailyDrivingTime = remainingDailyDrivingTime;
+            this.RemainingWeeklyWorkTime = remainingWeeklyWorkTime;
             this.RemainingWeeklyDrivingTime = remainingWeeklyDrivingTime;
             this.RemainingDoubleWeeklyDrivingTime = remainingDoubleWeeklyDrivingTime;
         }
+
+        /// <summary>
+        /// Gets or sets the current activity of the driver.
+        /// </summary>
+        /// <value>Gets or sets the current activity of the driver.</value>
+        [DataMember(Name = "activity", EmitDefaultValue = true)]
+        public string Activity { get; set; }
+
+        /// <summary>
+        /// Gets or sets the remaining work time for the day.
+        /// </summary>
+        /// <value>Gets or sets the remaining work time for the day.</value>
+        [DataMember(Name = "remainingDailyWorkTime", EmitDefaultValue = false)]
+        public string RemainingDailyWorkTime { get; set; }
 
         /// <summary>
         /// Gets or sets the remaining driving time for the day.
@@ -52,6 +72,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <value>Gets or sets the remaining driving time for the day.</value>
         [DataMember(Name = "remainingDailyDrivingTime", EmitDefaultValue = false)]
         public string RemainingDailyDrivingTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the remaining work time for the week.
+        /// </summary>
+        /// <value>Gets or sets the remaining work time for the week.</value>
+        [DataMember(Name = "remainingWeeklyWorkTime", EmitDefaultValue = false)]
+        public string RemainingWeeklyWorkTime { get; set; }
 
         /// <summary>
         /// Gets or sets the remaining driving time for the week.
@@ -75,7 +102,10 @@ namespace Simplic.OxS.SDK.Logistics
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetComposedDtcoResponse {\n");
+            sb.Append("  Activity: ").Append(Activity).Append("\n");
+            sb.Append("  RemainingDailyWorkTime: ").Append(RemainingDailyWorkTime).Append("\n");
             sb.Append("  RemainingDailyDrivingTime: ").Append(RemainingDailyDrivingTime).Append("\n");
+            sb.Append("  RemainingWeeklyWorkTime: ").Append(RemainingWeeklyWorkTime).Append("\n");
             sb.Append("  RemainingWeeklyDrivingTime: ").Append(RemainingWeeklyDrivingTime).Append("\n");
             sb.Append("  RemainingDoubleWeeklyDrivingTime: ").Append(RemainingDoubleWeeklyDrivingTime).Append("\n");
             sb.Append("}\n");
@@ -114,9 +144,24 @@ namespace Simplic.OxS.SDK.Logistics
             }
             return 
                 (
+                    this.Activity == input.Activity ||
+                    (this.Activity != null &&
+                    this.Activity.Equals(input.Activity))
+                ) && 
+                (
+                    this.RemainingDailyWorkTime == input.RemainingDailyWorkTime ||
+                    (this.RemainingDailyWorkTime != null &&
+                    this.RemainingDailyWorkTime.Equals(input.RemainingDailyWorkTime))
+                ) && 
+                (
                     this.RemainingDailyDrivingTime == input.RemainingDailyDrivingTime ||
                     (this.RemainingDailyDrivingTime != null &&
                     this.RemainingDailyDrivingTime.Equals(input.RemainingDailyDrivingTime))
+                ) && 
+                (
+                    this.RemainingWeeklyWorkTime == input.RemainingWeeklyWorkTime ||
+                    (this.RemainingWeeklyWorkTime != null &&
+                    this.RemainingWeeklyWorkTime.Equals(input.RemainingWeeklyWorkTime))
                 ) && 
                 (
                     this.RemainingWeeklyDrivingTime == input.RemainingWeeklyDrivingTime ||
@@ -139,9 +184,21 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Activity != null)
+                {
+                    hashCode = (hashCode * 59) + this.Activity.GetHashCode();
+                }
+                if (this.RemainingDailyWorkTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.RemainingDailyWorkTime.GetHashCode();
+                }
                 if (this.RemainingDailyDrivingTime != null)
                 {
                     hashCode = (hashCode * 59) + this.RemainingDailyDrivingTime.GetHashCode();
+                }
+                if (this.RemainingWeeklyWorkTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.RemainingWeeklyWorkTime.GetHashCode();
                 }
                 if (this.RemainingWeeklyDrivingTime != null)
                 {

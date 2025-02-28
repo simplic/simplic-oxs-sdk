@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionSubtypeReportModel
+    /// Represents the shared model for a transaction subtype report.
     /// </summary>
     [DataContract(Name = "TransactionSubtypeReportModel")]
     public partial class TransactionSubtypeReportModel : IEquatable<TransactionSubtypeReportModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionSubtypeReportModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
         public TransactionSubtypeReportModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

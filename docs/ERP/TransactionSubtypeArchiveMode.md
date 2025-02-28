@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.TransactionSubtypeArchiveMode
+Mode for archiving transaction documents
 
 ## Properties
 

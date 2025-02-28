@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.InputPriceType
+Represents a mode of interpretation for the user price input for price transaction items.
 
 ## Properties
 

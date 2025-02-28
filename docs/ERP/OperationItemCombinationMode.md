@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.OperationItemCombinationMode
+Represents a mode of applying multiple operation items to a transaction.
 
 ## Properties
 

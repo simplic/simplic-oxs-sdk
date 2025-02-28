@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.ERP.TransactionConvertState
+Represents the degree to which a N:Simplic.OxS.ERP.Transaction has been converted.
 
 ## Properties
 

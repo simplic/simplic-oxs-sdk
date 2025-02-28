@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// PersonalAccountModel
+    /// Represents the shared model for Simplic.OxS.ERP.PersonalAccount.
     /// </summary>
     [DataContract(Name = "PersonalAccountModel")]
     public partial class PersonalAccountModel : IEquatable<PersonalAccountModel>, IValidatableObject
@@ -36,21 +36,21 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonalAccountModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="vatId">vatId.</param>
-        /// <param name="type">type.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="number">gets or sets the number..</param>
+        /// <param name="vatId">Gets or sets the vat id..</param>
+        /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
         /// <param name="saleTermsOfPayment">saleTermsOfPayment.</param>
         /// <param name="purchaseTermsOfPayment">purchaseTermsOfPayment.</param>
         /// <param name="taxGroup">taxGroup.</param>
-        /// <param name="addresses">addresses.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
+        /// <param name="addresses">Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  .</param>
+        /// <param name="createDateTime">Gets or sets the create date time..</param>
+        /// <param name="createUserId">Gets or sets the create user id..</param>
+        /// <param name="createUserName">Gets or sets the create user name..</param>
+        /// <param name="updateDateTime">Gets or sets the update date time..</param>
+        /// <param name="updateUserId">Gets or sets the update user id..</param>
+        /// <param name="updateUserName">Gets or sets the udate user name..</param>
         public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
@@ -71,26 +71,30 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// gets or sets the number.
         /// </summary>
+        /// <value>gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets VatId
+        /// Gets or sets the vat id.
         /// </summary>
+        /// <value>Gets or sets the vat id.</value>
         [DataMember(Name = "vatId", EmitDefaultValue = true)]
         public string VatId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the personal account type. (creditor / debitor)
         /// </summary>
+        /// <value>Gets or sets the personal account type. (creditor / debitor)</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
@@ -119,44 +123,51 @@ namespace Simplic.OxS.SDK.ERP
         public TaxGroupModel TaxGroup { get; set; }
 
         /// <summary>
-        /// Gets or Sets Addresses
+        /// Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  
         /// </summary>
+        /// <value>Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  </value>
         [DataMember(Name = "addresses", EmitDefaultValue = true)]
         public List<PersonalAccountAddressModel> Addresses { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the create date time.
         /// </summary>
+        /// <value>Gets or sets the create date time.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the create user id.
         /// </summary>
+        /// <value>Gets or sets the create user id.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the create user name.
         /// </summary>
+        /// <value>Gets or sets the create user name.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the update date time.
         /// </summary>
+        /// <value>Gets or sets the update date time.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the update user id.
         /// </summary>
+        /// <value>Gets or sets the update user id.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the udate user name.
         /// </summary>
+        /// <value>Gets or sets the udate user name.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 

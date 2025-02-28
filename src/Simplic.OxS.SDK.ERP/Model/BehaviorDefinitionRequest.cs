@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// BehaviorDefinitionRequest
+    /// Represents a request to create or update a Simplic.OxS.ERP.Transaction.BehaviorDefinition
     /// </summary>
     [DataContract(Name = "BehaviorDefinitionRequest")]
     public partial class BehaviorDefinitionRequest : IEquatable<BehaviorDefinitionRequest>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="BehaviorDefinitionRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="target">target.</param>
-        /// <param name="expression">expression.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="target">Gets or sets the targeted variable..</param>
+        /// <param name="expression">Gets or sets the behavior defining expression..</param>
         public BehaviorDefinitionRequest(Guid id = default(Guid), string target = default(string), string expression = default(string))
         {
             this.Id = id;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Target
+        /// Gets or sets the targeted variable.
         /// </summary>
+        /// <value>Gets or sets the targeted variable.</value>
         [DataMember(Name = "target", EmitDefaultValue = true)]
         public string Target { get; set; }
 
         /// <summary>
-        /// Gets or Sets Expression
+        /// Gets or sets the behavior defining expression.
         /// </summary>
+        /// <value>Gets or sets the behavior defining expression.</value>
         [DataMember(Name = "expression", EmitDefaultValue = true)]
         public string Expression { get; set; }
 

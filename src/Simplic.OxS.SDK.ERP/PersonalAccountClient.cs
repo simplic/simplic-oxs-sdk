@@ -40,7 +40,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Adds an address given by ID to a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -49,7 +49,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel AddAddressContactId(Guid id, Guid contactId);
 
     /// <summary>
-    ///  
+    /// Adds an address given by ID to a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -58,7 +58,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> AddAddressContactIdWithHttpInfo(Guid id, Guid contactId);
         
     /// <summary>
-    ///  
+    /// Adds an address given by ID to a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -68,7 +68,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> AddAddressContactIdAsync(Guid id, Guid contactId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Adds an address given by ID to a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -79,7 +79,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -87,7 +87,7 @@ public interface IPersonalAccountClient
     void Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -95,7 +95,7 @@ public interface IPersonalAccountClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -104,7 +104,7 @@ public interface IPersonalAccountClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -114,7 +114,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -122,7 +122,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -130,7 +130,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -139,7 +139,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a personal account by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -149,7 +149,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -158,7 +158,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel Patch(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -167,7 +167,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> PatchWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -177,7 +177,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> PatchAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -188,7 +188,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -197,7 +197,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -206,7 +206,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -216,7 +216,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -227,7 +227,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -235,7 +235,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel Post(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -243,7 +243,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> PostWithHttpInfo(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -252,7 +252,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> PostAsync(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -262,7 +262,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Removes an address given by ID from a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -271,7 +271,7 @@ public interface IPersonalAccountClient
     PersonalAccountModel RemoveAddressContactId(Guid id, Guid contactId);
 
     /// <summary>
-    ///  
+    /// Removes an address given by ID from a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -280,7 +280,7 @@ public interface IPersonalAccountClient
     ApiResponse<PersonalAccountModel> RemoveAddressContactIdWithHttpInfo(Guid id, Guid contactId);
         
     /// <summary>
-    ///  
+    /// Removes an address given by ID from a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -290,7 +290,7 @@ public interface IPersonalAccountClient
     Task<PersonalAccountModel> RemoveAddressContactIdAsync(Guid id, Guid contactId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Removes an address given by ID from a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -301,7 +301,7 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
-    ///  
+    /// Retrieves a data page of personal accounts for comboboxes. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="text"> (optional)</param>
@@ -311,7 +311,7 @@ public interface IPersonalAccountClient
     List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?));
 
     /// <summary>
-    ///  
+    /// Retrieves a data page of personal accounts for comboboxes. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="text"> (optional)</param>
@@ -321,7 +321,7 @@ public interface IPersonalAccountClient
     ApiResponse<List<PersonalAccountModel>> SearchWithHttpInfo(string? text = default(string?), int? skip = default(int?), int? limit = default(int?));
         
     /// <summary>
-    ///  
+    /// Retrieves a data page of personal accounts for comboboxes. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="text"> (optional)</param>
@@ -332,7 +332,7 @@ public interface IPersonalAccountClient
     Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Retrieves a data page of personal accounts for comboboxes. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="text"> (optional)</param>
@@ -418,7 +418,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -437,7 +437,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -456,7 +456,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -476,7 +476,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -495,7 +495,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -513,7 +513,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -531,7 +531,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -550,7 +550,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -568,7 +568,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -586,7 +586,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -604,7 +604,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -623,7 +623,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -641,7 +641,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -660,7 +660,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -679,7 +679,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -699,7 +699,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -718,7 +718,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -737,7 +737,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -756,7 +756,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -776,7 +776,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -795,7 +795,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -813,7 +813,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -831,7 +831,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -850,7 +850,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -868,7 +868,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -887,7 +887,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -906,7 +906,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -926,7 +926,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -945,7 +945,7 @@ public interface IPersonalAccountClient
             }
         }    
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -965,7 +965,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -985,7 +985,7 @@ public interface IPersonalAccountClient
         } 
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -1006,7 +1006,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -1039,7 +1039,7 @@ public interface IPersonalAccountClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Adds an address given by ID to a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1049,7 +1049,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel AddAddressContactId(Guid id, Guid contactId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Adds an address given by ID to a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1061,7 +1061,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> AddAddressContactIdWithHttpInfo(Guid id, Guid contactId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1070,7 +1070,7 @@ public interface IPersonalAccountClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1081,7 +1081,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1090,7 +1090,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1101,7 +1101,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1111,7 +1111,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel Patch(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1123,7 +1123,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> PatchWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1133,7 +1133,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel Put(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1145,7 +1145,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> PutWithHttpInfo(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -1154,7 +1154,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel Post(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1165,7 +1165,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> PostWithHttpInfo(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Removes an address given by ID from a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1175,7 +1175,7 @@ public interface IPersonalAccountClient
         PersonalAccountModel RemoveAddressContactId(Guid id, Guid contactId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Removes an address given by ID from a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1187,7 +1187,7 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> RemoveAddressContactIdWithHttpInfo(Guid id, Guid contactId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Retrieves a data page of personal accounts for comboboxes.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -1198,7 +1198,7 @@ public interface IPersonalAccountClient
         List<PersonalAccountModel> Search(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Retrieves a data page of personal accounts for comboboxes.
         /// </summary>
         /// <remarks>
         /// 
@@ -1220,7 +1220,7 @@ public interface IPersonalAccountClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Adds an address given by ID to a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1234,7 +1234,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> AddAddressContactIdAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Adds an address given by ID to a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1247,7 +1247,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> AddAddressContactIdWithHttpInfoAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1260,7 +1260,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1272,7 +1272,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1285,7 +1285,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a personal account by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1297,7 +1297,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1311,7 +1311,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> PatchAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1324,7 +1324,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PatchWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1338,7 +1338,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> PutAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1351,7 +1351,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PutWithHttpInfoAsync(Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = default(UpdatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1364,7 +1364,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> PostAsync(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1376,7 +1376,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> PostWithHttpInfoAsync(CreatePersonalAccountRequest? createPersonalAccountRequest = default(CreatePersonalAccountRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Removes an address given by ID from a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1390,7 +1390,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<PersonalAccountModel> RemoveAddressContactIdAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Removes an address given by ID from a personal account.
         /// </summary>
         /// <remarks>
         /// 
@@ -1403,7 +1403,7 @@ public interface IPersonalAccountClient
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> RemoveAddressContactIdWithHttpInfoAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Retrieves a data page of personal accounts for comboboxes.
         /// </summary>
         /// <remarks>
         /// 
@@ -1418,7 +1418,7 @@ public interface IPersonalAccountClient
         System.Threading.Tasks.Task<List<PersonalAccountModel>> SearchAsync(string? text = default(string?), int? skip = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Retrieves a data page of personal accounts for comboboxes.
         /// </summary>
         /// <remarks>
         /// 
@@ -1554,7 +1554,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1568,7 +1568,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1628,7 +1628,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1643,7 +1643,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Adds an address given by ID to a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1706,7 +1706,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1718,7 +1718,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1776,7 +1776,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1789,7 +1789,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1850,7 +1850,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1863,7 +1863,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1921,7 +1921,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1935,7 +1935,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a personal account by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1996,7 +1996,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2010,7 +2010,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2073,7 +2073,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2088,7 +2088,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2154,7 +2154,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2168,7 +2168,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2231,7 +2231,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2246,7 +2246,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2312,7 +2312,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -2325,7 +2325,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -2386,7 +2386,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -2400,7 +2400,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPersonalAccountRequest"> (optional)</param>
@@ -2464,7 +2464,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2478,7 +2478,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2538,7 +2538,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2553,7 +2553,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an address given by ID from a personal account. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2616,7 +2616,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -2631,7 +2631,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -2702,7 +2702,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>
@@ -2718,7 +2718,7 @@ public interface IPersonalAccountClient
         }
 
         /// <summary>
-        ///  
+        /// Retrieves a data page of personal accounts for comboboxes. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="text"> (optional)</param>

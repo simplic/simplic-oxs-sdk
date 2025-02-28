@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// CreditLimitModel
+    /// Represents the model of a credit limit.
     /// </summary>
     [DataContract(Name = "CreditLimitModel")]
     public partial class CreditLimitModel : IEquatable<CreditLimitModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreditLimitModel" /> class.
         /// </summary>
-        /// <param name="insurance">insurance.</param>
-        /// <param name="creditworthiness">creditworthiness.</param>
-        /// <param name="limit">limit.</param>
+        /// <param name="insurance">Gets the insurance amount..</param>
+        /// <param name="creditworthiness">Gets the creditworthiness of the customer..</param>
+        /// <param name="limit">Gets the credit limit..</param>
         public CreditLimitModel(double insurance = default(double), string creditworthiness = default(string), string limit = default(string))
         {
             this.Insurance = insurance;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Insurance
+        /// Gets the insurance amount.
         /// </summary>
+        /// <value>Gets the insurance amount.</value>
         [DataMember(Name = "insurance", EmitDefaultValue = false)]
         public double Insurance { get; set; }
 
         /// <summary>
-        /// Gets or Sets Creditworthiness
+        /// Gets the creditworthiness of the customer.
         /// </summary>
+        /// <value>Gets the creditworthiness of the customer.</value>
         [DataMember(Name = "creditworthiness", EmitDefaultValue = true)]
         public string Creditworthiness { get; set; }
 
         /// <summary>
-        /// Gets or Sets Limit
+        /// Gets the credit limit.
         /// </summary>
+        /// <value>Gets the credit limit.</value>
         [DataMember(Name = "limit", EmitDefaultValue = true)]
         public string Limit { get; set; }
 

@@ -218,6 +218,41 @@ public interface ISensorClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestBody"> (optional)</param>
+    /// <returns>GetLastMeasurementResponse</returns>
+    GetLastMeasurementResponse GetWithLastMeasurementArray(List<Guid>? requestBody = default(List<Guid>?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestBody"> (optional)</param>
+    /// <returns>ApiResponse of GetLastMeasurementResponse</returns>
+    ApiResponse<GetLastMeasurementResponse> GetWithLastMeasurementArrayWithHttpInfo(List<Guid>? requestBody = default(List<Guid>?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestBody"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of GetLastMeasurementResponse</returns>
+    Task<GetLastMeasurementResponse> GetWithLastMeasurementArrayAsync(List<Guid>? requestBody = default(List<Guid>?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="requestBody"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (GetLastMeasurementResponse)</returns>
+    Task<ApiResponse<GetLastMeasurementResponse>> GetWithLastMeasurementArrayWithHttpInfoAsync(List<Guid>? requestBody = default(List<Guid>?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="sensorId"> (optional)</param>
     /// <returns>GetLastMeasurementResponse</returns>
     GetLastMeasurementResponse GetWithLastMeasurement(Guid? sensorId = default(Guid?));
@@ -766,6 +801,79 @@ public interface ISensorClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <returns>GetLastMeasurementResponse</returns>
+        public GetLastMeasurementResponse GetWithLastMeasurementArray(List<Guid>? requestBody = default(List<Guid>?))
+        {
+            try
+            {
+                return _internalClient.GetWithLastMeasurementArray(requestBody);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <returns>ApiResponse of GetLastMeasurementResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse> GetWithLastMeasurementArrayWithHttpInfo(List<Guid>? requestBody = default(List<Guid>?))
+        {
+            try
+            {
+                return _internalClient.GetWithLastMeasurementArrayWithHttpInfo(requestBody);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetLastMeasurementResponse</returns>
+        public System.Threading.Tasks.Task<GetLastMeasurementResponse> GetWithLastMeasurementArrayAsync(List<Guid>? requestBody = default(List<Guid>?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithLastMeasurementArrayAsync(requestBody, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetLastMeasurementResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse>> GetWithLastMeasurementArrayWithHttpInfoAsync(List<Guid>? requestBody = default(List<Guid>?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetWithLastMeasurementArrayWithHttpInfoAsync(requestBody, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sensorId"> (optional)</param>
         /// <returns>GetLastMeasurementResponse</returns>
         public GetLastMeasurementResponse GetWithLastMeasurement(Guid? sensorId = default(Guid?))
@@ -1102,6 +1210,26 @@ public interface ISensorClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetLastMeasurementResponse</returns>
+        GetLastMeasurementResponse GetWithLastMeasurementArray(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetLastMeasurementResponse</returns>
+        ApiResponse<GetLastMeasurementResponse> GetWithLastMeasurementArrayWithHttpInfo(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sensorId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetLastMeasurementResponse</returns>
@@ -1294,6 +1422,31 @@ public interface ISensorClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSensorResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetSensorResponse>> GetByTagWithHttpInfoAsync(string? tagId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetLastMeasurementResponse</returns>
+        System.Threading.Tasks.Task<GetLastMeasurementResponse> GetWithLastMeasurementArrayAsync(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetLastMeasurementResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetLastMeasurementResponse>> GetWithLastMeasurementArrayWithHttpInfoAsync(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -2244,6 +2397,158 @@ public interface ISensorClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SensorGetByTagGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetLastMeasurementResponse</returns>
+        public GetLastMeasurementResponse GetWithLastMeasurementArray(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse> localVarResponse = GetWithLastMeasurementArrayWithHttpInfo(requestBody);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetLastMeasurementResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse> GetWithLastMeasurementArrayWithHttpInfo(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = requestBody;
+
+            localVarRequestOptions.Operation = "SensorClient.SensorGetWithLastMeasurementArrayGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetLastMeasurementResponse>("/Sensor/get-with-last-measurement-array", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SensorGetWithLastMeasurementArrayGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetLastMeasurementResponse</returns>
+        public async System.Threading.Tasks.Task<GetLastMeasurementResponse> GetWithLastMeasurementArrayAsync(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse> localVarResponse = await GetWithLastMeasurementArrayWithHttpInfoAsync(requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestBody"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetLastMeasurementResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetLastMeasurementResponse>> GetWithLastMeasurementArrayWithHttpInfoAsync(List<Guid>? requestBody = default(List<Guid>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = requestBody;
+
+            localVarRequestOptions.Operation = "SensorClient.SensorGetWithLastMeasurementArrayGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetLastMeasurementResponse>("/Sensor/get-with-last-measurement-array", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SensorGetWithLastMeasurementArrayGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

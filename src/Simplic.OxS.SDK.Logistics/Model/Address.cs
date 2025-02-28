@@ -52,11 +52,10 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="city">city.</param>
         /// <param name="latitude">latitude.</param>
         /// <param name="longitude">longitude.</param>
-        /// <param name="geofences">geofences.</param>
         /// <param name="matchCode">matchCode.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="organizationId">organizationId.</param>
-        public Address(Guid contactId = default(Guid), string companyName = default(string), string firstName = default(string), string lastName = default(string), string street = default(string), string houseNumber = default(string), string additional01 = default(string), string additional02 = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string), double? latitude = default(double?), double? longitude = default(double?), List<Geofence> geofences = default(List<Geofence>), string matchCode = default(string), bool isDeleted = default(bool), Guid organizationId = default(Guid))
+        public Address(Guid contactId = default(Guid), string companyName = default(string), string firstName = default(string), string lastName = default(string), string street = default(string), string houseNumber = default(string), string additional01 = default(string), string additional02 = default(string), string zipcode = default(string), string district = default(string), string federalState = default(string), string country = default(string), string countryIso = default(string), string city = default(string), double? latitude = default(double?), double? longitude = default(double?), string matchCode = default(string), bool isDeleted = default(bool), Guid organizationId = default(Guid))
         {
             this.ContactId = contactId;
             this.CompanyName = companyName;
@@ -74,7 +73,6 @@ namespace Simplic.OxS.SDK.Logistics
             this.City = city;
             this.Latitude = latitude;
             this.Longitude = longitude;
-            this.Geofences = geofences;
             this.MatchCode = matchCode;
             this.IsDeleted = isDeleted;
             this.OrganizationId = organizationId;
@@ -177,12 +175,6 @@ namespace Simplic.OxS.SDK.Logistics
         public double? Longitude { get; set; }
 
         /// <summary>
-        /// Gets or Sets Geofences
-        /// </summary>
-        [DataMember(Name = "geofences", EmitDefaultValue = true)]
-        public List<Geofence> Geofences { get; set; }
-
-        /// <summary>
         /// Gets or Sets MatchCode
         /// </summary>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
@@ -224,7 +216,6 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
-            sb.Append("  Geofences: ").Append(Geofences).Append("\n");
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -344,12 +335,6 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Longitude.Equals(input.Longitude))
                 ) && 
                 (
-                    this.Geofences == input.Geofences ||
-                    this.Geofences != null &&
-                    input.Geofences != null &&
-                    this.Geofences.SequenceEqual(input.Geofences)
-                ) && 
-                (
                     this.MatchCode == input.MatchCode ||
                     (this.MatchCode != null &&
                     this.MatchCode.Equals(input.MatchCode))
@@ -437,10 +422,6 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Longitude != null)
                 {
                     hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
-                }
-                if (this.Geofences != null)
-                {
-                    hashCode = (hashCode * 59) + this.Geofences.GetHashCode();
                 }
                 if (this.MatchCode != null)
                 {

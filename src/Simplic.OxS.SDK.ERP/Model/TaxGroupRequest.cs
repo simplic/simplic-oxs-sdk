@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TaxGroupRequest
+    /// Represents a request to create a Simplic.OxS.ERP.TaxGroup.
     /// </summary>
     [DataContract(Name = "TaxGroupRequest")]
     public partial class TaxGroupRequest : IEquatable<TaxGroupRequest>, IValidatableObject
@@ -41,10 +41,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxGroupRequest" /> class.
         /// </summary>
-        /// <param name="number">number (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="countryIsoCodes">countryIsoCodes (required).</param>
-        /// <param name="taxRates">taxRates (required).</param>
+        /// <param name="number">Gets or sets the number. (required).</param>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="countryIsoCodes">Gets or sets the set of countries given by ISO code. (required).</param>
+        /// <param name="taxRates">Gets or sets the tax rates for this tax group. (required).</param>
         public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>), List<TaxRateRequest> taxRates = default(List<TaxRateRequest>))
         {
             this.Number = number;
@@ -69,26 +69,30 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryIsoCodes
+        /// Gets or sets the set of countries given by ISO code.
         /// </summary>
+        /// <value>Gets or sets the set of countries given by ISO code.</value>
         [DataMember(Name = "countryIsoCodes", IsRequired = true, EmitDefaultValue = true)]
         public List<string> CountryIsoCodes { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRates
+        /// Gets or sets the tax rates for this tax group.
         /// </summary>
+        /// <value>Gets or sets the tax rates for this tax group.</value>
         [DataMember(Name = "taxRates", IsRequired = true, EmitDefaultValue = true)]
         public List<TaxRateRequest> TaxRates { get; set; }
 
