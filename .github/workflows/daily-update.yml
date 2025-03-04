@@ -15,7 +15,7 @@ jobs:
 
       - name: Write timestamp
         run: |
-          echo "$(date --utc +'%Y-%m-%dT%H:%M:%S') | daily update" >> update
+          echo "$(date --utc +'%Y-%m-%dT%H:%M:%S') | daily" >> update
 
       - name: Commit and push changes
         run: |
