@@ -515,16 +515,16 @@ public interface ITourClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
-    /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    List<UsedLoadingSlotAggregationModel> SendToTelematic(Guid? tourId = default(Guid?));
+    /// <returns></returns>
+    void SendToTelematic(Guid? tourId = default(Guid?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
-    /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    ApiResponse<List<UsedLoadingSlotAggregationModel>> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?));
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?));
         
     /// <summary>
     ///  
@@ -532,8 +532,8 @@ public interface ITourClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    Task<List<UsedLoadingSlotAggregationModel>> SendToTelematicAsync(Guid? tourId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of void</returns>
+    Task SendToTelematicAsync(Guid? tourId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -541,8 +541,8 @@ public interface ITourClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-    Task<ApiResponse<List<UsedLoadingSlotAggregationModel>>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -551,8 +551,8 @@ public interface ITourClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
     /// <param name="statudId"> (optional)</param>
-    /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    List<UsedLoadingSlotAggregationModel> SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?));
+    /// <returns></returns>
+    void SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?));
 
     /// <summary>
     ///  
@@ -560,8 +560,8 @@ public interface ITourClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"> (optional)</param>
     /// <param name="statudId"> (optional)</param>
-    /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    ApiResponse<List<UsedLoadingSlotAggregationModel>> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?));
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?));
         
     /// <summary>
     ///  
@@ -570,8 +570,8 @@ public interface ITourClient
     /// <param name="tourId"> (optional)</param>
     /// <param name="statudId"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-    Task<List<UsedLoadingSlotAggregationModel>> SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of void</returns>
+    Task SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -580,8 +580,8 @@ public interface ITourClient
     /// <param name="tourId"> (optional)</param>
     /// <param name="statudId"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-    Task<ApiResponse<List<UsedLoadingSlotAggregationModel>>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -1663,12 +1663,12 @@ public interface ITourClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public List<UsedLoadingSlotAggregationModel> SendToTelematic(Guid? tourId = default(Guid?))
+        /// <returns></returns>
+        public void SendToTelematic(Guid? tourId = default(Guid?))
         {
             try
             {
-                return _internalClient.SendToTelematic(tourId);
+                _internalClient.SendToTelematic(tourId);
             }
             catch (ApiException e)
             {
@@ -1681,8 +1681,8 @@ public interface ITourClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?))
         {
             try
             {
@@ -1700,8 +1700,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SendToTelematicAsync(Guid? tourId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task SendToTelematicAsync(Guid? tourId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1719,8 +1719,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1737,12 +1737,12 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public List<UsedLoadingSlotAggregationModel> SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?))
+        /// <returns></returns>
+        public void SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?))
         {
             try
             {
-                return _internalClient.SetStatus(tourId, statudId);
+                _internalClient.SetStatus(tourId, statudId);
             }
             catch (ApiException e)
             {
@@ -1756,8 +1756,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?))
         {
             try
             {
@@ -1776,8 +1776,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1796,8 +1796,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -2168,8 +2168,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        List<UsedLoadingSlotAggregationModel> SendToTelematic(Guid? tourId = default(Guid?), int operationIndex = 0);
+        /// <returns></returns>
+        void SendToTelematic(Guid? tourId = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -2180,8 +2180,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        ApiResponse<List<UsedLoadingSlotAggregationModel>> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?), int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -2189,8 +2189,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        List<UsedLoadingSlotAggregationModel> SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0);
+        /// <returns></returns>
+        void SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -2202,8 +2202,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        ApiResponse<List<UsedLoadingSlotAggregationModel>> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0);
         /// <summary>
         /// Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started.
         /// </summary>
@@ -2576,8 +2576,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SendToTelematicAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SendToTelematicAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -2589,8 +2589,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<UsedLoadingSlotAggregationModel>>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -2602,8 +2602,8 @@ public interface ITourClient
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -2616,8 +2616,8 @@ public interface ITourClient
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<UsedLoadingSlotAggregationModel>>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Sets the actual times of a tour. Also gives the option to change the tour status, e.g to started.
         /// </summary>
@@ -2818,6 +2818,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourAddTagToTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2894,6 +2899,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourAddTagToTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2969,6 +2979,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourConvertShipmentToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3046,6 +3061,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourConvertShipmentToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3121,6 +3141,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourConvertShipmentsToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3198,6 +3223,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourConvertShipmentsToTourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3285,6 +3315,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetAggregatedLoadingSlotsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3374,6 +3409,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetAggregatedLoadingSlotsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3455,6 +3495,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetAllByDatesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3538,6 +3583,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetAllByDatesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3613,6 +3663,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetByGlobalTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3690,6 +3745,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetByGlobalTourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3765,6 +3825,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetByShipmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3842,6 +3907,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourGetByShipmentIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3914,6 +3984,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -3988,6 +4063,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4060,6 +4140,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4134,6 +4219,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4212,6 +4302,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4292,6 +4387,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4367,6 +4467,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourManipulatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4444,6 +4549,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourManipulatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4519,6 +4629,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4596,6 +4711,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4670,6 +4790,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourRemoveTagFromTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4746,6 +4871,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourRemoveTagFromTourPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4773,11 +4903,10 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public List<UsedLoadingSlotAggregationModel> SendToTelematic(Guid? tourId = default(Guid?), int operationIndex = 0)
+        /// <returns></returns>
+        public void SendToTelematic(Guid? tourId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> localVarResponse = SendToTelematicWithHttpInfo(tourId);
-            return localVarResponse.Data;
+            SendToTelematicWithHttpInfo(tourId);
         }
 
         /// <summary>
@@ -4786,8 +4915,8 @@ public interface ITourClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?), int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> SendToTelematicWithHttpInfo(Guid? tourId = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -4821,6 +4950,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSendToTelematicPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4828,7 +4962,7 @@ public interface ITourClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<List<UsedLoadingSlotAggregationModel>>("/Tour/send-to-telematic", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/Tour/send-to-telematic", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TourSendToTelematicPut", localVarResponse);
@@ -4848,11 +4982,10 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SendToTelematicAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SendToTelematicAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> localVarResponse = await SendToTelematicWithHttpInfoAsync(tourId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await SendToTelematicWithHttpInfoAsync(tourId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4862,8 +4995,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SendToTelematicWithHttpInfoAsync(Guid? tourId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -4898,6 +5031,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSendToTelematicPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4905,7 +5043,7 @@ public interface ITourClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<List<UsedLoadingSlotAggregationModel>>("/Tour/send-to-telematic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/Tour/send-to-telematic", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -4926,11 +5064,10 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public List<UsedLoadingSlotAggregationModel> SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0)
+        /// <returns></returns>
+        public void SetStatus(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> localVarResponse = SetStatusWithHttpInfo(tourId, statudId);
-            return localVarResponse.Data;
+            SetStatusWithHttpInfo(tourId, statudId);
         }
 
         /// <summary>
@@ -4940,8 +5077,8 @@ public interface ITourClient
         /// <param name="tourId"> (optional)</param>
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> SetStatusWithHttpInfo(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -4979,6 +5116,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSetStatusPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -4986,7 +5128,7 @@ public interface ITourClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<List<UsedLoadingSlotAggregationModel>>("/Tour/set-status", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/Tour/set-status", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TourSetStatusPut", localVarResponse);
@@ -5007,11 +5149,10 @@ public interface ITourClient
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;UsedLoadingSlotAggregationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<UsedLoadingSlotAggregationModel>> SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SetStatusAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>> localVarResponse = await SetStatusWithHttpInfoAsync(tourId, statudId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await SetStatusWithHttpInfoAsync(tourId, statudId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5022,8 +5163,8 @@ public interface ITourClient
         /// <param name="statudId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;UsedLoadingSlotAggregationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<UsedLoadingSlotAggregationModel>>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> SetStatusWithHttpInfoAsync(Guid? tourId = default(Guid?), Guid? statudId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -5062,6 +5203,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSetStatusPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -5069,7 +5215,7 @@ public interface ITourClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<List<UsedLoadingSlotAggregationModel>>("/Tour/set-status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/Tour/set-status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -5136,6 +5282,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSetTourActualTimesPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -5212,6 +5363,11 @@ public interface ITourClient
             localVarRequestOptions.Operation = "TourClient.TourSetTourActualTimesPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {

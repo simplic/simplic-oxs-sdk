@@ -36,7 +36,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceAssignmentRequest" /> class.
         /// </summary>
-        /// <param name="departmentId">Gets or sets the department id..</param>
+        [JsonConstructorAttribute]
+        protected ResourceAssignmentRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourceAssignmentRequest" /> class.
+        /// </summary>
+        /// <param name="departmentId">Gets or sets the department id. (required).</param>
         /// <param name="resourceIds">Gets or sets the resource ids..</param>
         public ResourceAssignmentRequest(Guid departmentId = default(Guid), List<Guid> resourceIds = default(List<Guid>))
         {
@@ -48,7 +53,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the department id.
         /// </summary>
         /// <value>Gets or sets the department id.</value>
-        [DataMember(Name = "departmentId", EmitDefaultValue = false)]
+        [DataMember(Name = "departmentId", IsRequired = true, EmitDefaultValue = true)]
         public Guid DepartmentId { get; set; }
 
         /// <summary>

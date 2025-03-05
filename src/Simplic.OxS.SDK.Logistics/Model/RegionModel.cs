@@ -36,11 +36,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="RegionModel" /> class.
         /// </summary>
-        /// <param name="countryIso">Represents the country iso for a region..</param>
-        /// <param name="zipCode">Represents the zipcode, or the start of a zipcode for a region..</param>
+        [JsonConstructorAttribute]
+        protected RegionModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegionModel" /> class.
+        /// </summary>
+        /// <param name="countryIso">Represents the country iso for a region. (required).</param>
+        /// <param name="zipCode">Represents the zipcode, or the start of a zipcode for a region. (required).</param>
         public RegionModel(string countryIso = default(string), string zipCode = default(string))
         {
+            // to ensure "countryIso" is required (not null)
+            if (countryIso == null)
+            {
+                throw new ArgumentNullException("countryIso is a required property for RegionModel and cannot be null");
+            }
             this.CountryIso = countryIso;
+            // to ensure "zipCode" is required (not null)
+            if (zipCode == null)
+            {
+                throw new ArgumentNullException("zipCode is a required property for RegionModel and cannot be null");
+            }
             this.ZipCode = zipCode;
         }
 
@@ -48,14 +63,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// Represents the country iso for a region.
         /// </summary>
         /// <value>Represents the country iso for a region.</value>
-        [DataMember(Name = "countryIso", EmitDefaultValue = true)]
+        [DataMember(Name = "countryIso", IsRequired = true, EmitDefaultValue = true)]
         public string CountryIso { get; set; }
 
         /// <summary>
         /// Represents the zipcode, or the start of a zipcode for a region.
         /// </summary>
         /// <value>Represents the zipcode, or the start of a zipcode for a region.</value>
-        [DataMember(Name = "zipCode", EmitDefaultValue = true)]
+        [DataMember(Name = "zipCode", IsRequired = true, EmitDefaultValue = true)]
         public string ZipCode { get; set; }
 
         /// <summary>
@@ -143,6 +158,18 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // CountryIso (string) minLength
+            if (this.CountryIso != null && this.CountryIso.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CountryIso, length must be greater than 1.", new [] { "CountryIso" });
+            }
+
+            // ZipCode (string) minLength
+            if (this.ZipCode != null && this.ZipCode.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ZipCode, length must be greater than 1.", new [] { "ZipCode" });
+            }
+
             yield break;
         }
     }

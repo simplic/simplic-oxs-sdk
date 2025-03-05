@@ -36,13 +36,33 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="PostShiftRequest" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the name..</param>
-        /// <param name="startTime">Gets or sets the start time..</param>
-        /// <param name="endTime">Gets or sets the end time..</param>
+        [JsonConstructorAttribute]
+        protected PostShiftRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostShiftRequest" /> class.
+        /// </summary>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="startTime">Gets or sets the start time. (required).</param>
+        /// <param name="endTime">Gets or sets the end time. (required).</param>
         public PostShiftRequest(string name = default(string), string startTime = default(string), string endTime = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for PostShiftRequest and cannot be null");
+            }
             this.Name = name;
+            // to ensure "startTime" is required (not null)
+            if (startTime == null)
+            {
+                throw new ArgumentNullException("startTime is a required property for PostShiftRequest and cannot be null");
+            }
             this.StartTime = startTime;
+            // to ensure "endTime" is required (not null)
+            if (endTime == null)
+            {
+                throw new ArgumentNullException("endTime is a required property for PostShiftRequest and cannot be null");
+            }
             this.EndTime = endTime;
         }
 
@@ -50,21 +70,21 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the name.
         /// </summary>
         /// <value>Gets or sets the name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the start time.
         /// </summary>
         /// <value>Gets or sets the start time.</value>
-        [DataMember(Name = "startTime", EmitDefaultValue = true)]
+        [DataMember(Name = "startTime", IsRequired = true, EmitDefaultValue = true)]
         public string StartTime { get; set; }
 
         /// <summary>
         /// Gets or sets the end time.
         /// </summary>
         /// <value>Gets or sets the end time.</value>
-        [DataMember(Name = "endTime", EmitDefaultValue = true)]
+        [DataMember(Name = "endTime", IsRequired = true, EmitDefaultValue = true)]
         public string EndTime { get; set; }
 
         /// <summary>
@@ -162,6 +182,24 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
+            // StartTime (string) minLength
+            if (this.StartTime != null && this.StartTime.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StartTime, length must be greater than 1.", new [] { "StartTime" });
+            }
+
+            // EndTime (string) minLength
+            if (this.EndTime != null && this.EndTime.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EndTime, length must be greater than 1.", new [] { "EndTime" });
+            }
+
             yield break;
         }
     }

@@ -36,11 +36,21 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="PostDepartmentRequest" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the name..</param>
-        /// <param name="orderId">Gets or sets the order id..</param>
+        [JsonConstructorAttribute]
+        protected PostDepartmentRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostDepartmentRequest" /> class.
+        /// </summary>
+        /// <param name="name">Gets or sets the name. (required).</param>
+        /// <param name="orderId">Gets or sets the order id. (required).</param>
         /// <param name="hexColor">Gets or sets the hex color..</param>
         public PostDepartmentRequest(string name = default(string), int orderId = default(int), string hexColor = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for PostDepartmentRequest and cannot be null");
+            }
             this.Name = name;
             this.OrderId = orderId;
             this.HexColor = hexColor;
@@ -50,14 +60,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the name.
         /// </summary>
         /// <value>Gets or sets the name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the order id.
         /// </summary>
         /// <value>Gets or sets the order id.</value>
-        [DataMember(Name = "orderId", EmitDefaultValue = false)]
+        [DataMember(Name = "orderId", IsRequired = true, EmitDefaultValue = true)]
         public int OrderId { get; set; }
 
         /// <summary>
@@ -158,6 +168,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             if (this.HexColor != null) {
                 // HexColor (string) pattern
                 Regex regexHexColor = new Regex(@"#[0-9a-fA-F]{6}", RegexOptions.CultureInvariant);

@@ -36,14 +36,19 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="PostScheduledPlanningRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected PostScheduledPlanningRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostScheduledPlanningRequest" /> class.
+        /// </summary>
         /// <param name="assignments">Gets or sets the assignments..</param>
-        /// <param name="shiftId">Gets or sets the shift id..</param>
-        /// <param name="startDate">Gets or sets the start date..</param>
+        /// <param name="shiftId">Gets or sets the shift id. (required).</param>
+        /// <param name="startDate">Gets or sets the start date. (required).</param>
         public PostScheduledPlanningRequest(List<ResourceAssignmentRequest> assignments = default(List<ResourceAssignmentRequest>), Guid shiftId = default(Guid), DateTime startDate = default(DateTime))
         {
-            this.Assignments = assignments;
             this.ShiftId = shiftId;
             this.StartDate = startDate;
+            this.Assignments = assignments;
         }
 
         /// <summary>
@@ -57,14 +62,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the shift id.
         /// </summary>
         /// <value>Gets or sets the shift id.</value>
-        [DataMember(Name = "shiftId", EmitDefaultValue = false)]
+        [DataMember(Name = "shiftId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ShiftId { get; set; }
 
         /// <summary>
         /// Gets or sets the start date.
         /// </summary>
         /// <value>Gets or sets the start date.</value>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
+        [DataMember(Name = "startDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime StartDate { get; set; }
 
         /// <summary>

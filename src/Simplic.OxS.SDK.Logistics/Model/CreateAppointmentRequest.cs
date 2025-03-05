@@ -36,23 +36,33 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAppointmentRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CreateAppointmentRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAppointmentRequest" /> class.
+        /// </summary>
         /// <param name="startAddressId">Gets or sets the id of the start address..</param>
         /// <param name="endAddressId">Gets or sets the id of the end address..</param>
         /// <param name="resources">Gets or sets the resources for the appointment..</param>
         /// <param name="functions">Gets or sets a list of functinos for an appointment.     A function can change the behaviour of some methdos with the function added as string.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;\&quot;blocking\&quot; : Will determine whether the appointment block other appointments or tours to be   scheduled at the same time for the contained resources.&lt;/item&gt;&lt;/list&gt;.</param>
-        /// <param name="title">Gets or sets the title of the appointment..</param>
-        /// <param name="startDateTime">Gets or sets the start date and time of the appointment..</param>
-        /// <param name="endDateTime">Gets or sets the end date and time of the appointment..</param>
+        /// <param name="title">Gets or sets the title of the appointment. (required).</param>
+        /// <param name="startDateTime">Gets or sets the start date and time of the appointment. (required).</param>
+        /// <param name="endDateTime">Gets or sets the end date and time of the appointment. (required).</param>
         /// <param name="hexColor">Gets or sets the hex color for the appointment.     Default color is light red.  .</param>
         public CreateAppointmentRequest(Guid? startAddressId = default(Guid?), Guid? endAddressId = default(Guid?), List<Guid> resources = default(List<Guid>), List<string> functions = default(List<string>), string title = default(string), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), string hexColor = default(string))
         {
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for CreateAppointmentRequest and cannot be null");
+            }
+            this.Title = title;
+            this.StartDateTime = startDateTime;
+            this.EndDateTime = endDateTime;
             this.StartAddressId = startAddressId;
             this.EndAddressId = endAddressId;
             this.Resources = resources;
             this.Functions = functions;
-            this.Title = title;
-            this.StartDateTime = startDateTime;
-            this.EndDateTime = endDateTime;
             this.HexColor = hexColor;
         }
 
@@ -88,21 +98,21 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the title of the appointment.
         /// </summary>
         /// <value>Gets or sets the title of the appointment.</value>
-        [DataMember(Name = "title", EmitDefaultValue = true)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the start date and time of the appointment.
         /// </summary>
         /// <value>Gets or sets the start date and time of the appointment.</value>
-        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
+        [DataMember(Name = "startDateTime", IsRequired = true, EmitDefaultValue = true)]
         public DateTime StartDateTime { get; set; }
 
         /// <summary>
         /// Gets or sets the end date and time of the appointment.
         /// </summary>
         /// <value>Gets or sets the end date and time of the appointment.</value>
-        [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
+        [DataMember(Name = "endDateTime", IsRequired = true, EmitDefaultValue = true)]
         public DateTime EndDateTime { get; set; }
 
         /// <summary>
@@ -259,6 +269,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Title (string) minLength
+            if (this.Title != null && this.Title.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Title, length must be greater than 1.", new [] { "Title" });
+            }
+
             yield break;
         }
     }

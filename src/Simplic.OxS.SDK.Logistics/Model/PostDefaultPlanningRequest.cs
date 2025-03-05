@@ -36,7 +36,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="PostDefaultPlanningRequest" /> class.
         /// </summary>
-        /// <param name="shiftId">Gets or sets the shift id..</param>
+        [JsonConstructorAttribute]
+        protected PostDefaultPlanningRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostDefaultPlanningRequest" /> class.
+        /// </summary>
+        /// <param name="shiftId">Gets or sets the shift id. (required).</param>
         /// <param name="assignments">Gets or sets the assignments..</param>
         public PostDefaultPlanningRequest(Guid shiftId = default(Guid), List<ResourceAssignmentRequest> assignments = default(List<ResourceAssignmentRequest>))
         {
@@ -48,7 +53,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the shift id.
         /// </summary>
         /// <value>Gets or sets the shift id.</value>
-        [DataMember(Name = "shiftId", EmitDefaultValue = false)]
+        [DataMember(Name = "shiftId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ShiftId { get; set; }
 
         /// <summary>

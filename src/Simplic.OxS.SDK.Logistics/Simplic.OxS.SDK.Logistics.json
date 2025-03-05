@@ -8042,33 +8042,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            }
-                        }
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -8138,33 +8112,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UsedLoadingSlotAggregationModel"
-                                    }
-                                }
-                            }
-                        }
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -10140,6 +10088,11 @@
                 "description": "Represents a construction site type from the construction site api."
             },
             "CreateAppointmentRequest": {
+                "required": [
+                    "endDateTime",
+                    "startDateTime",
+                    "title"
+                ],
                 "type": "object",
                 "properties": {
                     "startAddressId": {
@@ -10172,9 +10125,9 @@
                         "nullable": true
                     },
                     "title": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the title of the appointment.",
-                        "nullable": true
+                        "description": "Gets or sets the title of the appointment."
                     },
                     "startDateTime": {
                         "type": "string",
@@ -10227,6 +10180,9 @@
                 "description": "Shared model of geofence."
             },
             "CreateLoadingAidTypeRequest": {
+                "required": [
+                    "number"
+                ],
                 "type": "object",
                 "properties": {
                     "number": {
@@ -10269,12 +10225,15 @@
                 "description": ""
             },
             "CreatePlanningRegionRequest": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the name of the plannig region.",
-                        "nullable": true
+                        "description": "Gets or sets the name of the plannig region."
                     },
                     "hexColor": {
                         "type": "string",
@@ -10310,12 +10269,16 @@
                 "description": "Request to create a planning region."
             },
             "CreateResourceGroupRequest": {
+                "required": [
+                    "name",
+                    "resourceIds"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "The name of the resource group.",
-                        "nullable": true
+                        "description": "The name of the resource group."
                     },
                     "resourceIds": {
                         "type": "array",
@@ -10323,24 +10286,27 @@
                             "type": "string",
                             "format": "uuid"
                         },
-                        "description": "The resources in the resource group.",
-                        "nullable": true
+                        "description": "The resources in the resource group."
                     }
                 },
                 "additionalProperties": false
             },
             "CreateResourceRequest": {
+                "required": [
+                    "matchCode",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "type": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n",
-                        "nullable": true
+                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n"
                     },
                     "matchCode": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n",
-                        "nullable": true
+                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n"
                     },
                     "displayName": {
                         "type": "string",
@@ -11645,6 +11611,10 @@
                 "format": "int32"
             },
             "LoadingSlotModel": {
+                "required": [
+                    "name",
+                    "resourceId"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -11653,9 +11623,9 @@
                         "format": "uuid"
                     },
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the name of the loading slot.\r\n\n\r\nThis should be used as a short human readable identifier for the loading slot.\r\n",
-                        "nullable": true
+                        "description": "Gets or sets the name of the loading slot.\r\n\n\r\nThis should be used as a short human readable identifier for the loading slot.\r\n"
                     },
                     "description": {
                         "type": "string",
@@ -11790,7 +11760,8 @@
                     "orderId": {
                         "type": "integer",
                         "description": "Gets or sets the order id.",
-                        "format": "int32"
+                        "format": "int32",
+                        "nullable": true
                     },
                     "hexColor": {
                         "type": "string",
@@ -11879,6 +11850,10 @@
                 "additionalProperties": false
             },
             "PatchLoadingSlotRequest": {
+                "required": [
+                    "name",
+                    "resourceId"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -11887,9 +11862,9 @@
                         "format": "uuid"
                     },
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the name of the loading slot.\r\n\n\r\nThis should be used as a short human readable identifier for the loading slot.\r\n",
-                        "nullable": true
+                        "description": "Gets or sets the name of the loading slot.\r\n\n\r\nThis should be used as a short human readable identifier for the loading slot.\r\n"
                     },
                     "description": {
                         "type": "string",
@@ -12679,6 +12654,9 @@
                 "description": "Response model for Simplic.OxS.Logistics.PlanningResource"
             },
             "PostDefaultPlanningRequest": {
+                "required": [
+                    "shiftId"
+                ],
                 "type": "object",
                 "properties": {
                     "shiftId": {
@@ -12699,12 +12677,16 @@
                 "description": "Request model for posting new default planning assignments."
             },
             "PostDepartmentRequest": {
+                "required": [
+                    "name",
+                    "orderId"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the name.",
-                        "nullable": true
+                        "description": "Gets or sets the name."
                     },
                     "orderId": {
                         "type": "integer",
@@ -12722,6 +12704,10 @@
                 "description": "Request model for posting departments."
             },
             "PostScheduledPlanningRequest": {
+                "required": [
+                    "shiftId",
+                    "startDate"
+                ],
                 "type": "object",
                 "properties": {
                     "assignments": {
@@ -12747,22 +12733,27 @@
                 "description": "Request model for posting new shifted planning assignments."
             },
             "PostShiftRequest": {
+                "required": [
+                    "endTime",
+                    "name",
+                    "startTime"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the name.",
-                        "nullable": true
+                        "description": "Gets or sets the name."
                     },
                     "startTime": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the start time.",
-                        "nullable": true
+                        "description": "Gets or sets the start time."
                     },
                     "endTime": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the end time.",
-                        "nullable": true
+                        "description": "Gets or sets the end time."
                     }
                 },
                 "additionalProperties": false,
@@ -12839,17 +12830,21 @@
                 "description": "Shared model of a quanittiy unit."
             },
             "RegionModel": {
+                "required": [
+                    "countryIso",
+                    "zipCode"
+                ],
                 "type": "object",
                 "properties": {
                     "countryIso": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Represents the country iso for a region.",
-                        "nullable": true
+                        "description": "Represents the country iso for a region."
                     },
                     "zipCode": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Represents the zipcode, or the start of a zipcode for a region.",
-                        "nullable": true
+                        "description": "Represents the zipcode, or the start of a zipcode for a region."
                     }
                 },
                 "additionalProperties": false,
@@ -12930,6 +12925,9 @@
                 "description": "Patch model for resource assignments."
             },
             "ResourceAssignmentRequest": {
+                "required": [
+                    "departmentId"
+                ],
                 "type": "object",
                 "properties": {
                     "departmentId": {
@@ -13075,17 +13073,21 @@
                 "description": "Represents a resource response for a map."
             },
             "ResourceModel": {
+                "required": [
+                    "matchCode",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "type": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n",
-                        "nullable": true
+                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n"
                     },
                     "matchCode": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n",
-                        "nullable": true
+                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n"
                     },
                     "displayName": {
                         "type": "string",
@@ -14553,12 +14555,16 @@
                 "description": "Shared model of transport order status."
             },
             "UpdateResourceGroupRequest": {
+                "required": [
+                    "name",
+                    "resourceIds"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "The name of the resource group.",
-                        "nullable": true
+                        "description": "The name of the resource group."
                     },
                     "resourceIds": {
                         "type": "array",
@@ -14566,24 +14572,27 @@
                             "type": "string",
                             "format": "uuid"
                         },
-                        "description": "The resources in the resource group.",
-                        "nullable": true
+                        "description": "The resources in the resource group."
                     }
                 },
                 "additionalProperties": false
             },
             "UpdateResourceRequest": {
+                "required": [
+                    "matchCode",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "type": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n",
-                        "nullable": true
+                        "description": "Gets the type of the resource.\r\n\n\r\nE.g. \"Driver\" or \"Tractor Unit\"\r\n"
                     },
                     "matchCode": {
+                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n",
-                        "nullable": true
+                        "description": "Gets or sets the match code.\r\n\n\r\nThis will be a non unique human readable number for the resource.\r\n"
                     },
                     "displayName": {
                         "type": "string",
@@ -14775,12 +14784,19 @@
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
                 "name": "Authorization",
                 "in": "header"
+            },
+            "ApiKey": {
+                "type": "apiKey",
+                "description": "API Key authentication. Example: 'x-api-key: {your-api-key}'",
+                "name": "x-api-key",
+                "in": "header"
             }
         }
     },
     "security": [
         {
-            "Bearer": []
+            "Bearer": [],
+            "ApiKey": []
         }
     ]
 }

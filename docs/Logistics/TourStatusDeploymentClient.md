@@ -28,6 +28,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -85,7 +89,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -123,6 +127,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -178,7 +186,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

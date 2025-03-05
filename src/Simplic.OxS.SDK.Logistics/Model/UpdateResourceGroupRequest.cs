@@ -36,11 +36,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateResourceGroupRequest" /> class.
         /// </summary>
-        /// <param name="name">The name of the resource group..</param>
-        /// <param name="resourceIds">The resources in the resource group..</param>
+        [JsonConstructorAttribute]
+        protected UpdateResourceGroupRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateResourceGroupRequest" /> class.
+        /// </summary>
+        /// <param name="name">The name of the resource group. (required).</param>
+        /// <param name="resourceIds">The resources in the resource group. (required).</param>
         public UpdateResourceGroupRequest(string name = default(string), List<Guid> resourceIds = default(List<Guid>))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for UpdateResourceGroupRequest and cannot be null");
+            }
             this.Name = name;
+            // to ensure "resourceIds" is required (not null)
+            if (resourceIds == null)
+            {
+                throw new ArgumentNullException("resourceIds is a required property for UpdateResourceGroupRequest and cannot be null");
+            }
             this.ResourceIds = resourceIds;
         }
 
@@ -48,14 +63,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// The name of the resource group.
         /// </summary>
         /// <value>The name of the resource group.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// The resources in the resource group.
         /// </summary>
         /// <value>The resources in the resource group.</value>
-        [DataMember(Name = "resourceIds", EmitDefaultValue = true)]
+        [DataMember(Name = "resourceIds", IsRequired = true, EmitDefaultValue = true)]
         public List<Guid> ResourceIds { get; set; }
 
         /// <summary>
@@ -144,6 +159,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

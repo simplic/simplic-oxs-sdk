@@ -36,16 +36,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadingSlotModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected LoadingSlotModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoadingSlotModel" /> class.
+        /// </summary>
         /// <param name="id">Gets or sets the id of the loading slot..</param>
-        /// <param name="name">Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  .</param>
+        /// <param name="name">Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.   (required).</param>
         /// <param name="description">Gets or sets the description.     This could be used to notate the size or exact location of the loading slot.  .</param>
-        /// <param name="resourceId">Gets or sets the id of the resource this loading slot is assigned to..</param>
+        /// <param name="resourceId">Gets or sets the id of the resource this loading slot is assigned to. (required).</param>
         public LoadingSlotModel(Guid id = default(Guid), string name = default(string), string description = default(string), Guid resourceId = default(Guid))
         {
-            this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for LoadingSlotModel and cannot be null");
+            }
             this.Name = name;
-            this.Description = description;
             this.ResourceId = resourceId;
+            this.Id = id;
+            this.Description = description;
         }
 
         /// <summary>
@@ -59,7 +69,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  
         /// </summary>
         /// <value>Gets or sets the name of the loading slot.     This should be used as a short human readable identifier for the loading slot.  </value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -73,7 +83,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the id of the resource this loading slot is assigned to.
         /// </summary>
         /// <value>Gets or sets the id of the resource this loading slot is assigned to.</value>
-        [DataMember(Name = "resourceId", EmitDefaultValue = false)]
+        [DataMember(Name = "resourceId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ResourceId { get; set; }
 
         /// <summary>
@@ -181,6 +191,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

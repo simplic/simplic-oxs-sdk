@@ -5,7 +5,7 @@ Request to create a planning region.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Gets or sets the name of the plannig region. | [optional] 
+**Name** | **string** | Gets or sets the name of the plannig region. | 
 **HexColor** | **string** | Gets or sets the hex color of the planning region. | [optional] 
 **Include** | [**List&lt;RegionModel&gt;**](RegionModel.md) | Gets or sets a list of country iso / zipcode tuples which are included from the plannig region. | [optional] 
 **Exclude** | [**List&lt;RegionModel&gt;**](RegionModel.md) | Gets or sets a list of country iso / zipcode tuples which are excluded from the planning region. | [optional] 

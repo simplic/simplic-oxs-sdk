@@ -36,13 +36,23 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="CreatePlanningRegionRequest" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the name of the plannig region..</param>
+        [JsonConstructorAttribute]
+        protected CreatePlanningRegionRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePlanningRegionRequest" /> class.
+        /// </summary>
+        /// <param name="name">Gets or sets the name of the plannig region. (required).</param>
         /// <param name="hexColor">Gets or sets the hex color of the planning region..</param>
         /// <param name="include">Gets or sets a list of country iso / zipcode tuples which are included from the plannig region..</param>
         /// <param name="exclude">Gets or sets a list of country iso / zipcode tuples which are excluded from the planning region..</param>
         /// <param name="functions">Gets or sets a list of functions for the region.     Currently planned are:  show_loadings,  show_unloading,  show_transits  .</param>
         public CreatePlanningRegionRequest(string name = default(string), string hexColor = default(string), List<RegionModel> include = default(List<RegionModel>), List<RegionModel> exclude = default(List<RegionModel>), List<string> functions = default(List<string>))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for CreatePlanningRegionRequest and cannot be null");
+            }
             this.Name = name;
             this.HexColor = hexColor;
             this.Include = include;
@@ -54,7 +64,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the name of the plannig region.
         /// </summary>
         /// <value>Gets or sets the name of the plannig region.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -203,6 +213,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

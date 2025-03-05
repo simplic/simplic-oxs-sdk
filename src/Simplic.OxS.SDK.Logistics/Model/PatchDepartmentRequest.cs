@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="orderId">Gets or sets the order id..</param>
         /// <param name="hexColor">Gets or sets the hex color..</param>
-        public PatchDepartmentRequest(string name = default(string), int orderId = default(int), string hexColor = default(string))
+        public PatchDepartmentRequest(string name = default(string), int? orderId = default(int?), string hexColor = default(string))
         {
             this.Name = name;
             this.OrderId = orderId;
@@ -57,8 +57,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the order id.
         /// </summary>
         /// <value>Gets or sets the order id.</value>
-        [DataMember(Name = "orderId", EmitDefaultValue = false)]
-        public int OrderId { get; set; }
+        [DataMember(Name = "orderId", EmitDefaultValue = true)]
+        public int? OrderId { get; set; }
 
         /// <summary>
         /// Gets or sets the hex color.
@@ -120,7 +120,8 @@ namespace Simplic.OxS.SDK.Logistics
                 ) && 
                 (
                     this.OrderId == input.OrderId ||
-                    this.OrderId.Equals(input.OrderId)
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
                     this.HexColor == input.HexColor ||
@@ -142,7 +143,10 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.OrderId.GetHashCode();
+                if (this.OrderId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrderId.GetHashCode();
+                }
                 if (this.HexColor != null)
                 {
                     hashCode = (hashCode * 59) + this.HexColor.GetHashCode();

@@ -36,7 +36,12 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateLoadingAidTypeRequest" /> class.
         /// </summary>
-        /// <param name="number">Gets or sets the number.     Represents a human readable identifier.  .</param>
+        [JsonConstructorAttribute]
+        protected CreateLoadingAidTypeRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateLoadingAidTypeRequest" /> class.
+        /// </summary>
+        /// <param name="number">Gets or sets the number.     Represents a human readable identifier.   (required).</param>
         /// <param name="displayName">Gets or sets the display name..</param>
         /// <param name="weight">Gets or sets the weight..</param>
         /// <param name="shortText">Gets or sets the short text..</param>
@@ -58,7 +63,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets or sets the number.     Represents a human readable identifier.  
         /// </summary>
         /// <value>Gets or sets the number.     Represents a human readable identifier.  </value>
-        [DataMember(Name = "number", EmitDefaultValue = false)]
+        [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
         public int Number { get; set; }
 
         /// <summary>

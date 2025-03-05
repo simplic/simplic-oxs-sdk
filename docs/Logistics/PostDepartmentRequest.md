@@ -5,8 +5,8 @@ Request model for posting departments.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Gets or sets the name. | [optional] 
-**OrderId** | **int** | Gets or sets the order id. | [optional] 
+**Name** | **string** | Gets or sets the name. | 
+**OrderId** | **int** | Gets or sets the order id. | 
 **HexColor** | **string** | Gets or sets the hex color. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

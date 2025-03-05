@@ -1,0 +1,990 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Simplic.OxS.Auth",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://dev-oxs.simplic.io/auth-api/v1"
+        }
+    ],
+    "paths": {
+        "/Auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login using username and password. Will return a JWT when logging in was successful.",
+                "requestBody": {
+                    "description": "Login model containing credentials.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login was successful. A jwt-token will only be returned for users with verified mail addresses.\r\n            If a mail address is not verified, the response object property ErrorState will be `mail_not_verified`.",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Credentials are incorrect.",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Http body/login model is incorrect.",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/select-organization": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SelectOrganizationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SelectOrganizationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SelectOrganizationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RegisterResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RegisterResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RegisterResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/send-verification-code": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SendVerificationCodeRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SendVerificationCodeRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SendVerificationCodeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/Auth/verify-mail": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyMailRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyMailRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyMailRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/restore-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResetPasswordRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResetPasswordRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResetPasswordRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResetPasswordResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResetPasswordResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResetPasswordResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/change-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangePasswordRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangePasswordRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangePasswordRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChangePasswordResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChangePasswordResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChangePasswordResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Auth/verify-two-factor": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TwoFactorRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TwoFactorRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TwoFactorRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TwoFactorResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TwoFactorResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TwoFactorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/HookDefinition": {
+            "get": {
+                "tags": [
+                    "HookDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HookDefinitionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HookDefinitionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HookDefinitionResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/internal/InternalUser/get-by-email": {
+            "get": {
+                "tags": [
+                    "InternalUser"
+                ],
+                "summary": "Get a user by its e-mail address",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "502": {
+                        "description": "Bad Gateway"
+                    }
+                }
+            }
+        },
+        "/internal/InternalUser/get-by-id": {
+            "get": {
+                "tags": [
+                    "InternalUser"
+                ],
+                "summary": "Get a user by its id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RequestUserResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "502": {
+                        "description": "Bad Gateway"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ChangePasswordRequest": {
+                "required": [
+                    "newPassword"
+                ],
+                "type": "object",
+                "properties": {
+                    "newPassword": {
+                        "maxLength": 100,
+                        "minLength": 8,
+                        "type": "string",
+                        "description": "Gets or sets the new password",
+                        "format": "password"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Model for requesting a password change. When requesting a password change,\r\na verification code is required"
+            },
+            "ChangePasswordResponse": {
+                "type": "object",
+                "properties": {
+                    "tokenId": {
+                        "type": "string",
+                        "description": "Gets or sets the token to verify",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "HookDefinitionModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "operation": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dataType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "payload": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "HookDefinitionResponse": {
+                "type": "object",
+                "properties": {
+                    "definitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/HookDefinitionModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoginRequest": {
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "maxLength": 255,
+                        "minLength": 5,
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "password": {
+                        "minLength": 1,
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "string",
+                        "description": "Gets or sets the produced token (e.g. jwt token or two-factor token)",
+                        "nullable": true
+                    },
+                    "errorState": {
+                        "type": "string",
+                        "description": "Gets or sets the actual error state. Will be set to `mail_not_verified` if the login\r\nwas successful, but the mail address is not verified.",
+                        "nullable": true
+                    },
+                    "tokenType": {
+                        "type": "string",
+                        "description": "Gets or sets the produced token.\r\n<list type=\"bullet\">\r\n`jwt`: Login completed, no two-factor required\r\n`two-factor`: A second two-factor auth is required\r\nEmpty when mail address is not verified.\r\n</list>",
+                        "nullable": true
+                    },
+                    "userId": {
+                        "type": "string",
+                        "description": "Gets or sets the user-id.",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Response from the simplic /auth/login endpoint"
+            },
+            "ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "RegisterRequest": {
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "maxLength": 255,
+                        "minLength": 5,
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "password": {
+                        "maxLength": 100,
+                        "minLength": 8,
+                        "type": "string",
+                        "format": "password"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RegisterResponse": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RequestUserResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the requested user",
+                        "format": "uuid"
+                    },
+                    "eMail": {
+                        "type": "string",
+                        "description": "Gets or sets the mail address for the request user",
+                        "nullable": true
+                    },
+                    "userName": {
+                        "type": "string",
+                        "description": "Gets or sets the name for the requested user.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Result of a successfully requested user"
+            },
+            "ResetPasswordRequest": {
+                "required": [
+                    "email",
+                    "newPassword"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "maxLength": 255,
+                        "minLength": 5,
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "newPassword": {
+                        "maxLength": 100,
+                        "minLength": 8,
+                        "type": "string",
+                        "format": "password"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ResetPasswordResponse": {
+                "type": "object",
+                "properties": {
+                    "tokenId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SelectOrganizationRequest": {
+                "required": [
+                    "organizationId"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string",
+                        "description": "Gets or sets the organization id to generate a jwt for",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request for changing/selecting a specific organization"
+            },
+            "SendVerificationCodeRequest": {
+                "required": [
+                    "email"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the mail-address to verify"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TwoFactorRequest": {
+                "type": "object",
+                "properties": {
+                    "tokenId": {
+                        "type": "string",
+                        "description": "Gets or sets the token to verify",
+                        "format": "uuid"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets the verification code",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TwoFactorResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "VerifyMailRequest": {
+                "required": [
+                    "code",
+                    "email"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the mail-address to verify"
+                    },
+                    "code": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the verification code"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                "name": "Authorization",
+                "in": "header"
+            },
+            "ApiKey": {
+                "type": "apiKey",
+                "description": "API Key authentication. Example: 'x-api-key: {your-api-key}'",
+                "name": "x-api-key",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": [],
+            "ApiKey": []
+        }
+    ]
+}

@@ -36,8 +36,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResourceRequest" /> class.
         /// </summary>
-        /// <param name="type">Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  .</param>
-        /// <param name="matchCode">Gets or sets the match code.     This will be a non unique human readable number for the resource.  .</param>
+        [JsonConstructorAttribute]
+        protected CreateResourceRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateResourceRequest" /> class.
+        /// </summary>
+        /// <param name="type">Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;   (required).</param>
+        /// <param name="matchCode">Gets or sets the match code.     This will be a non unique human readable number for the resource.   (required).</param>
         /// <param name="displayName">Gets or sets the user-friendly display name     This will be the display-name of the resource. E.g. for drivers  this might be the first- and lastname. For vehicles this might be   the registration plate.  .</param>
         /// <param name="loadingSlots">Gets or sets the loading slots of the resource..</param>
         /// <param name="location">location.</param>
@@ -47,7 +52,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="notes">Gets or sets resource notes.</param>
         public CreateResourceRequest(string type = default(string), string matchCode = default(string), string displayName = default(string), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), ResourceLocationModel location = default(ResourceLocationModel), bool isLoadable = default(bool), string planningOrderKey = default(string), DateTime? usableUntil = default(DateTime?), string notes = default(string))
         {
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for CreateResourceRequest and cannot be null");
+            }
             this.Type = type;
+            // to ensure "matchCode" is required (not null)
+            if (matchCode == null)
+            {
+                throw new ArgumentNullException("matchCode is a required property for CreateResourceRequest and cannot be null");
+            }
             this.MatchCode = matchCode;
             this.DisplayName = displayName;
             this.LoadingSlots = loadingSlots;
@@ -62,14 +77,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  
         /// </summary>
         /// <value>Gets the type of the resource.     E.g. \&quot;Driver\&quot; or \&quot;Tractor Unit\&quot;  </value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the match code.     This will be a non unique human readable number for the resource.  
         /// </summary>
         /// <value>Gets or sets the match code.     This will be a non unique human readable number for the resource.  </value>
-        [DataMember(Name = "matchCode", EmitDefaultValue = true)]
+        [DataMember(Name = "matchCode", IsRequired = true, EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 
         /// <summary>
@@ -272,6 +287,18 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Type (string) minLength
+            if (this.Type != null && this.Type.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
+            }
+
+            // MatchCode (string) minLength
+            if (this.MatchCode != null && this.MatchCode.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MatchCode, length must be greater than 1.", new [] { "MatchCode" });
+            }
+
             yield break;
         }
     }
