@@ -1,11 +1,11 @@
-schedules:
-  - cron: "1 0 * * *"
-    always: true
-    displayName: Daily midnight build
-    branches:
-      include:
-        - master
-        - production
+#schedules:
+#  - cron: "1 0 * * *"
+#    always: true
+#    displayName: Daily midnight build
+#    branches:
+#      include:
+#        - master
+#        - production
  
 trigger:
   branches:
@@ -19,10 +19,10 @@ trigger:
       - k8s/*
       - azure-pipelines.yml
 
-# pr:
-#   branches:
-#     include:
-#       - "*"
+pr:
+   branches:
+     include:
+       - "*"
 
 pool:
   vmImage: "ubuntu-latest"
