@@ -18,6 +18,7 @@ trigger:
       - test/*
       - k8s/*
       - azure-pipelines.yml
+      - .last-update
 
 pr:
    branches:
