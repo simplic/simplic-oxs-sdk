@@ -5,6 +5,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AddAddressContactId**](PersonalAccountClient.md#personalaccountaddaddressidcontactidput) | **PUT** /PersonalAccount/add-address/{id}/{contactId} | Adds an address given by ID to a personal account. |
+| [**GetByContactId**](PersonalAccountClient.md#personalaccountgetbycontactidcontactidget) | **GET** /PersonalAccount/get-by-contact-id/{contactId} | Get all personal accounts, attached to a contact |
 | [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} | Deletes a personal account. |
 | [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} | Gets a personal account by ID. |
 | [**Patch**](PersonalAccountClient.md#personalaccountidpatch) | **PATCH** /PersonalAccount/{id} | Patches a personal account. |
@@ -90,6 +91,101 @@ catch (ApiException e)
 ### Return type
 
 [**PersonalAccountModel**](PersonalAccountModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="personalaccountgetbycontactidcontactidget"></a>
+# **GetByContactId**
+> List&lt;PersonalAccountModel&gt; GetByContactId (Guid contactId)
+
+Get all personal accounts, attached to a contact
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class GetByContactIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PersonalAccountClient(config);
+            var contactId = "contactId_example";  // Guid | Unique contact id
+
+            try
+            {
+                // Get all personal accounts, attached to a contact
+                List<PersonalAccountModel> result = apiInstance.GetByContactId(contactId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PersonalAccountClient.GetByContactId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetByContactIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all personal accounts, attached to a contact
+    ApiResponse<List<PersonalAccountModel>> response = apiInstance.GetByContactIdWithHttpInfo(contactId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PersonalAccountClient.GetByContactIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **contactId** | **Guid** | Unique contact id |  |
+
+### Return type
+
+[**List&lt;PersonalAccountModel&gt;**](PersonalAccountModel.md)
 
 ### Authorization
 

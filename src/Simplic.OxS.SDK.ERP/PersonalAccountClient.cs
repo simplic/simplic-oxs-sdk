@@ -79,6 +79,41 @@ public interface IPersonalAccountClient
 
 
     /// <summary>
+    /// Get all personal accounts, attached to a contact 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="contactId">Unique contact id</param>
+    /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+    List<PersonalAccountModel> GetByContactId(Guid contactId);
+
+    /// <summary>
+    /// Get all personal accounts, attached to a contact 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="contactId">Unique contact id</param>
+    /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+    ApiResponse<List<PersonalAccountModel>> GetByContactIdWithHttpInfo(Guid contactId);
+        
+    /// <summary>
+    /// Get all personal accounts, attached to a contact 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="contactId">Unique contact id</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+    Task<List<PersonalAccountModel>> GetByContactIdAsync(Guid contactId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Get all personal accounts, attached to a contact 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="contactId">Unique contact id</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+    Task<ApiResponse<List<PersonalAccountModel>>> GetByContactIdWithHttpInfoAsync(Guid contactId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Deletes a personal account. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -488,6 +523,79 @@ public interface IPersonalAccountClient
             try
             {
                 return _internalClient.AddAddressContactIdWithHttpInfoAsync(id, contactId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        public List<PersonalAccountModel> GetByContactId(Guid contactId)
+        {
+            try
+            {
+                return _internalClient.GetByContactId(contactId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> GetByContactIdWithHttpInfo(Guid contactId)
+        {
+            try
+            {
+                return _internalClient.GetByContactIdWithHttpInfo(contactId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<PersonalAccountModel>> GetByContactIdAsync(Guid contactId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByContactIdAsync(contactId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>>> GetByContactIdWithHttpInfoAsync(Guid contactId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByContactIdWithHttpInfoAsync(contactId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1061,6 +1169,26 @@ public interface IPersonalAccountClient
         /// <returns>ApiResponse of PersonalAccountModel</returns>
         ApiResponse<PersonalAccountModel> AddAddressContactIdWithHttpInfo(Guid id, Guid contactId, int operationIndex = 0);
         /// <summary>
+        /// Get all personal accounts, attached to a contact
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        List<PersonalAccountModel> GetByContactId(Guid contactId, int operationIndex = 0);
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        ApiResponse<List<PersonalAccountModel>> GetByContactIdWithHttpInfo(Guid contactId, int operationIndex = 0);
+        /// <summary>
         /// Deletes a personal account.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1246,6 +1374,31 @@ public interface IPersonalAccountClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PersonalAccountModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PersonalAccountModel>> AddAddressContactIdWithHttpInfoAsync(Guid id, Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get all personal accounts, attached to a contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        System.Threading.Tasks.Task<List<PersonalAccountModel>> GetByContactIdAsync(Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PersonalAccountModel>>> GetByContactIdWithHttpInfoAsync(Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a personal account.
         /// </summary>
@@ -1696,6 +1849,152 @@ public interface IPersonalAccountClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PersonalAccountAddAddressIdContactIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PersonalAccountModel&gt;</returns>
+        public List<PersonalAccountModel> GetByContactId(Guid contactId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> localVarResponse = GetByContactIdWithHttpInfo(contactId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PersonalAccountModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> GetByContactIdWithHttpInfo(Guid contactId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountGetByContactIdContactIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<PersonalAccountModel>>("/PersonalAccount/get-by-contact-id/{contactId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountGetByContactIdContactIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PersonalAccountModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PersonalAccountModel>> GetByContactIdAsync(Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>> localVarResponse = await GetByContactIdWithHttpInfoAsync(contactId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all personal accounts, attached to a contact 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contactId">Unique contact id</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PersonalAccountModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PersonalAccountModel>>> GetByContactIdWithHttpInfoAsync(Guid contactId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("contactId", Simplic.OxS.SDK.ClientUtils.ParameterToString(contactId)); // path parameter
+
+            localVarRequestOptions.Operation = "PersonalAccountClient.PersonalAccountGetByContactIdContactIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<PersonalAccountModel>>("/PersonalAccount/get-by-contact-id/{contactId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PersonalAccountGetByContactIdContactIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
