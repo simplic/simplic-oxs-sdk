@@ -32,6 +32,7 @@ variables:
   - group: simplic-deployment
   - group: simplic-deployment-docker
   - group: simplic-deployment-dev02
+  - group: simplic-oxs-sdk
   - name: buildConfiguration
     value: "Release"
   - name: dotNetVersion
@@ -164,6 +165,16 @@ stages:
               nuGetFeedType: "internal"
               publishVstsFeed: "f7087ef5-bf6f-48b2-8b8b-5e513f4a7a9e"
               allowPackageConflicts: true
+
+          - task: NuGetCommand@2
+            displayName: 'Publish nuget packages to nuget.org'
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+            inputs:
+              command: 'push'
+              packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+              nuGetFeedType: 'external'
+              publishFeedCredentials: 'https://api.nuget.org/v3/index.json'
+              externalFeedCredentials: $(NUGET_API_KEY)
 
           # Write security file for restoring nuget packages. This file will be mounted as
           # secure file when building the docker container
