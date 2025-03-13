@@ -173,8 +173,7 @@ stages:
               command: 'push'
               packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
               nuGetFeedType: 'external'
-              publishFeedCredentials: 'https://api.nuget.org/v3/index.json'
-              externalFeedCredentials: $(NUGET_API_KEY)
+              publishFeedCredentials: 'ox-nuget'
 
           # Write security file for restoring nuget packages. This file will be mounted as
           # secure file when building the docker container
