@@ -41,19 +41,21 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="reference">Gets or sets the external reference..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="weight">weight.</param>
+        /// <param name="orderNumber">Gets or sets the number to order the shipment items within the shipment..</param>
         /// <param name="id">Gets or sets the id.     Represents the id of a shipment-item, this id must be unique  .</param>
         /// <param name="status">status.</param>
         /// <param name="billingLines">Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.  .</param>
         /// <param name="article">article.</param>
         /// <param name="weightNotes">Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.  .</param>
         /// <param name="loadingAidType">loadingAidType.</param>
-        public ShipmentItemModel(string text = default(string), double loadingMeters = default(double), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), Guid id = default(Guid), ShipmentItemStatusModel status = default(ShipmentItemStatusModel), List<BillingLineModel> billingLines = default(List<BillingLineModel>), ShipmentArticleModel article = default(ShipmentArticleModel), List<WeightNoteModel> weightNotes = default(List<WeightNoteModel>), ShipmentLoadingAidTypeModel loadingAidType = default(ShipmentLoadingAidTypeModel))
+        public ShipmentItemModel(string text = default(string), double loadingMeters = default(double), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), int? orderNumber = default(int?), Guid id = default(Guid), ShipmentItemStatusModel status = default(ShipmentItemStatusModel), List<BillingLineModel> billingLines = default(List<BillingLineModel>), ShipmentArticleModel article = default(ShipmentArticleModel), List<WeightNoteModel> weightNotes = default(List<WeightNoteModel>), ShipmentLoadingAidTypeModel loadingAidType = default(ShipmentLoadingAidTypeModel))
         {
             this.Text = text;
             this.LoadingMeters = loadingMeters;
             this.Reference = reference;
             this.Quantity = quantity;
             this.Weight = weight;
+            this.OrderNumber = orderNumber;
             this.Id = id;
             this.Status = status;
             this.BillingLines = billingLines;
@@ -94,6 +96,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// </summary>
         [DataMember(Name = "weight", EmitDefaultValue = false)]
         public QuantityModel Weight { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number to order the shipment items within the shipment.
+        /// </summary>
+        /// <value>Gets or sets the number to order the shipment items within the shipment.</value>
+        [DataMember(Name = "orderNumber", EmitDefaultValue = true)]
+        public int? OrderNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the id.     Represents the id of a shipment-item, this id must be unique  
@@ -147,6 +156,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Weight: ").Append(Weight).Append("\n");
+            sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  BillingLines: ").Append(BillingLines).Append("\n");
@@ -213,6 +223,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Weight.Equals(input.Weight))
                 ) && 
                 (
+                    this.OrderNumber == input.OrderNumber ||
+                    (this.OrderNumber != null &&
+                    this.OrderNumber.Equals(input.OrderNumber))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -271,6 +286,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Weight != null)
                 {
                     hashCode = (hashCode * 59) + this.Weight.GetHashCode();
+                }
+                if (this.OrderNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrderNumber.GetHashCode();
                 }
                 if (this.Id != null)
                 {

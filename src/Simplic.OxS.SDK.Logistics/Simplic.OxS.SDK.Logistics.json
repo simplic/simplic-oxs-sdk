@@ -10398,6 +10398,12 @@
                         "description": "Gets or sets the id of the loading aid.",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "orderNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the number to order the shipment items within the shipment.",
+                        "format": "int32",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -12032,6 +12038,12 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "orderNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the number to order the shipment items within the shipment.",
+                        "format": "int32",
+                        "nullable": true
+                    },
                     "id": {
                         "type": "string",
                         "description": "Gets or sets the unique identifier of the shipmen item.",
@@ -13350,6 +13362,12 @@
                     },
                     "weight": {
                         "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "orderNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the number to order the shipment items within the shipment.",
+                        "format": "int32",
+                        "nullable": true
                     },
                     "id": {
                         "type": "string",

@@ -46,7 +46,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="weightNotes">Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.  .</param>
         /// <param name="status">status.</param>
         /// <param name="loadigAidId">Gets or sets the id of the loading aid..</param>
-        public CreateShipmentItemRequest(string text = default(string), double loadingMeters = default(double), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), List<BillingLineModel> billingLines = default(List<BillingLineModel>), ShipmentArticleModel article = default(ShipmentArticleModel), List<WeightNoteModel> weightNotes = default(List<WeightNoteModel>), ShipmentItemStatusModel status = default(ShipmentItemStatusModel), Guid? loadigAidId = default(Guid?))
+        /// <param name="orderNumber">Gets or sets the number to order the shipment items within the shipment..</param>
+        public CreateShipmentItemRequest(string text = default(string), double loadingMeters = default(double), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), List<BillingLineModel> billingLines = default(List<BillingLineModel>), ShipmentArticleModel article = default(ShipmentArticleModel), List<WeightNoteModel> weightNotes = default(List<WeightNoteModel>), ShipmentItemStatusModel status = default(ShipmentItemStatusModel), Guid? loadigAidId = default(Guid?), int? orderNumber = default(int?))
         {
             this.Text = text;
             this.LoadingMeters = loadingMeters;
@@ -58,6 +59,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.WeightNotes = weightNotes;
             this.Status = status;
             this.LoadigAidId = loadigAidId;
+            this.OrderNumber = orderNumber;
         }
 
         /// <summary>
@@ -127,6 +129,13 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid? LoadigAidId { get; set; }
 
         /// <summary>
+        /// Gets or sets the number to order the shipment items within the shipment.
+        /// </summary>
+        /// <value>Gets or sets the number to order the shipment items within the shipment.</value>
+        [DataMember(Name = "orderNumber", EmitDefaultValue = true)]
+        public int? OrderNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -144,6 +153,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  WeightNotes: ").Append(WeightNotes).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  LoadigAidId: ").Append(LoadigAidId).Append("\n");
+            sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +239,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.LoadigAidId == input.LoadigAidId ||
                     (this.LoadigAidId != null &&
                     this.LoadigAidId.Equals(input.LoadigAidId))
+                ) && 
+                (
+                    this.OrderNumber == input.OrderNumber ||
+                    (this.OrderNumber != null &&
+                    this.OrderNumber.Equals(input.OrderNumber))
                 );
         }
 
@@ -277,6 +292,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.LoadigAidId != null)
                 {
                     hashCode = (hashCode * 59) + this.LoadigAidId.GetHashCode();
+                }
+                if (this.OrderNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrderNumber.GetHashCode();
                 }
                 return hashCode;
             }

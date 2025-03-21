@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Reference** | **string** | Gets or sets the external reference. | [optional] 
 **Quantity** | [**QuantityModel**](QuantityModel.md) |  | [optional] 
 **Weight** | [**QuantityModel**](QuantityModel.md) |  | [optional] 
+**OrderNumber** | **int?** | Gets or sets the number to order the shipment items within the shipment. | [optional] 
 **Id** | **Guid** | Gets or sets the id.     Represents the id of a shipment-item, this id must be unique   | [optional] 
 **Status** | [**ShipmentItemStatusModel**](ShipmentItemStatusModel.md) |  | [optional] 
 **BillingLines** | [**List&lt;BillingLineModel&gt;**](BillingLineModel.md) | Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.   | [optional] 
