@@ -4,9 +4,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Get**](InternalWorkflowClient.md#intenralinternalworkflowidget) | **GET** /intenral/InternalWorkflow/{id} |  |
+| [**Get**](InternalWorkflowClient.md#internalinternalworkflowidget) | **GET** /internal/InternalWorkflow/{id} |  |
 
-<a id="intenralinternalworkflowidget"></a>
+<a id="internalinternalworkflowidget"></a>
 # **Get**
 > WorkflowResponse Get (Guid id)
 

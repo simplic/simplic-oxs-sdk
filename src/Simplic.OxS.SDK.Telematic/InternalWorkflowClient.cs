@@ -458,7 +458,7 @@ public interface IInternalWorkflowClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "InternalWorkflowClient.IntenralInternalWorkflowIdGet";
+            localVarRequestOptions.Operation = "InternalWorkflowClient.InternalInternalWorkflowIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -468,10 +468,10 @@ public interface IInternalWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<WorkflowResponse>("/intenral/InternalWorkflow/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<WorkflowResponse>("/internal/InternalWorkflow/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IntenralInternalWorkflowIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalWorkflowIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -532,7 +532,7 @@ public interface IInternalWorkflowClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "InternalWorkflowClient.IntenralInternalWorkflowIdGet";
+            localVarRequestOptions.Operation = "InternalWorkflowClient.InternalInternalWorkflowIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -542,11 +542,11 @@ public interface IInternalWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkflowResponse>("/intenral/InternalWorkflow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkflowResponse>("/internal/InternalWorkflow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IntenralInternalWorkflowIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("InternalInternalWorkflowIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
