@@ -179,6 +179,41 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="importVehiclesRequest"> (optional)</param>
+    /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
+    List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="importVehiclesRequest"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;ImportVehicleResponse&gt;</returns>
+    ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="importVehiclesRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;ImportVehicleResponse&gt;</returns>
+    Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="importVehiclesRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
+    Task<ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="sendTextMessageRequest"> (optional)</param>
     /// <returns></returns>
     void SendTextMessage(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?));
@@ -576,6 +611,79 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
+        public List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?))
+        {
+            try
+            {
+                return _internalClient.GetImportVehicle(importVehiclesRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;ImportVehicleResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?))
+        {
+            try
+            {
+                return _internalClient.GetImportVehicleWithHttpInfo(importVehiclesRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ImportVehicleResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetImportVehicleAsync(importVehiclesRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetImportVehicleWithHttpInfoAsync(importVehiclesRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <returns></returns>
         public void SendTextMessage(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?))
@@ -740,6 +848,26 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
+        List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ImportVehicleResponse&gt;</returns>
+        ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -863,6 +991,31 @@ public interface ITelematicClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AvailableServices)</returns>
         System.Threading.Tasks.Task<ApiResponse<AvailableServices>> GetAvailableServicesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ImportVehicleResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1593,6 +1746,158 @@ public interface ITelematicClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicGetAvailableServicesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
+        public List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>> localVarResponse = GetImportVehicleWithHttpInfo(importVehiclesRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ImportVehicleResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = importVehiclesRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetImportVehiclePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<ImportVehicleResponse>>("/Telematic/get-import-vehicle", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetImportVehiclePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ImportVehicleResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>> localVarResponse = await GetImportVehicleWithHttpInfoAsync(importVehiclesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="importVehiclesRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = importVehiclesRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetImportVehiclePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ImportVehicleResponse>>("/Telematic/get-import-vehicle", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetImportVehiclePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
