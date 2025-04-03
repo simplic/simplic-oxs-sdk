@@ -2509,6 +2509,33 @@
                         "nullable": true
                     },
                     "type": {
+                        "$ref": "#/components/schemas/ImportVehicleTypeResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ImportVehicleTypeResponse": {
+                "type": "object",
+                "properties": {
+                    "vehicleTypeId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "vehicleSubTypeId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "vehicleTypeName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "vehicleSubTypeName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalTypeName": {
                         "type": "string",
                         "nullable": true
                     }

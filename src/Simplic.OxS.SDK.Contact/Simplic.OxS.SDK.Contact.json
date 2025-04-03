@@ -1017,6 +1017,26 @@
                     "address": {
                         "$ref": "#/components/schemas/AddressModel"
                     },
+                    "primaryEmailAddress": {
+                        "$ref": "#/components/schemas/EmailAddress"
+                    },
+                    "primaryPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumber"
+                    },
+                    "emailAddresses": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EmailAddressModel"
+                        },
+                        "nullable": true
+                    },
+                    "phoneNumbers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PhoneNumberModel"
+                        },
+                        "nullable": true
+                    },
                     "matchCode": {
                         "type": "string",
                         "nullable": true
@@ -1074,6 +1094,26 @@
                     "address": {
                         "$ref": "#/components/schemas/AddressModel"
                     },
+                    "primaryEmailAddress": {
+                        "$ref": "#/components/schemas/EmailAddress"
+                    },
+                    "primaryPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumber"
+                    },
+                    "emailAddresses": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EmailAddressModel"
+                        },
+                        "nullable": true
+                    },
+                    "phoneNumbers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PhoneNumberModel"
+                        },
+                        "nullable": true
+                    },
                     "matchCode": {
                         "type": "string",
                         "nullable": true
@@ -1083,6 +1123,62 @@
                         "items": {
                             "type": "string"
                         },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EmailAddress": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EmailAddressModel": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PhoneNumber": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PhoneNumberModel": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
                         "nullable": true
                     }
                 },
@@ -1120,6 +1216,26 @@
                 "properties": {
                     "address": {
                         "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "primaryEmailAddress": {
+                        "$ref": "#/components/schemas/EmailAddress"
+                    },
+                    "primaryPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumber"
+                    },
+                    "emailAddresses": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EmailAddressModel"
+                        },
+                        "nullable": true
+                    },
+                    "phoneNumbers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PhoneNumberModel"
+                        },
+                        "nullable": true
                     },
                     "matchCode": {
                         "type": "string",

@@ -37,11 +37,19 @@ namespace Simplic.OxS.SDK.Contact
         /// Initializes a new instance of the <see cref="UpdateContactRequest" /> class.
         /// </summary>
         /// <param name="address">address.</param>
+        /// <param name="primaryEmailAddress">primaryEmailAddress.</param>
+        /// <param name="primaryPhoneNumber">primaryPhoneNumber.</param>
+        /// <param name="emailAddresses">emailAddresses.</param>
+        /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="matchCode">matchCode.</param>
         /// <param name="functions">functions.</param>
-        public UpdateContactRequest(AddressModel address = default(AddressModel), string matchCode = default(string), List<string> functions = default(List<string>))
+        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddress primaryEmailAddress = default(EmailAddress), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>))
         {
             this.Address = address;
+            this.PrimaryEmailAddress = primaryEmailAddress;
+            this.PrimaryPhoneNumber = primaryPhoneNumber;
+            this.EmailAddresses = emailAddresses;
+            this.PhoneNumbers = phoneNumbers;
             this.MatchCode = matchCode;
             this.Functions = functions;
         }
@@ -51,6 +59,30 @@ namespace Simplic.OxS.SDK.Contact
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
         public AddressModel Address { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PrimaryEmailAddress
+        /// </summary>
+        [DataMember(Name = "primaryEmailAddress", EmitDefaultValue = false)]
+        public EmailAddress PrimaryEmailAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PrimaryPhoneNumber
+        /// </summary>
+        [DataMember(Name = "primaryPhoneNumber", EmitDefaultValue = false)]
+        public PhoneNumber PrimaryPhoneNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EmailAddresses
+        /// </summary>
+        [DataMember(Name = "emailAddresses", EmitDefaultValue = true)]
+        public List<EmailAddressModel> EmailAddresses { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhoneNumbers
+        /// </summary>
+        [DataMember(Name = "phoneNumbers", EmitDefaultValue = true)]
+        public List<PhoneNumberModel> PhoneNumbers { get; set; }
 
         /// <summary>
         /// Gets or Sets MatchCode
@@ -73,6 +105,10 @@ namespace Simplic.OxS.SDK.Contact
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdateContactRequest {\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  PrimaryEmailAddress: ").Append(PrimaryEmailAddress).Append("\n");
+            sb.Append("  PrimaryPhoneNumber: ").Append(PrimaryPhoneNumber).Append("\n");
+            sb.Append("  EmailAddresses: ").Append(EmailAddresses).Append("\n");
+            sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("}\n");
@@ -116,6 +152,28 @@ namespace Simplic.OxS.SDK.Contact
                     this.Address.Equals(input.Address))
                 ) && 
                 (
+                    this.PrimaryEmailAddress == input.PrimaryEmailAddress ||
+                    (this.PrimaryEmailAddress != null &&
+                    this.PrimaryEmailAddress.Equals(input.PrimaryEmailAddress))
+                ) && 
+                (
+                    this.PrimaryPhoneNumber == input.PrimaryPhoneNumber ||
+                    (this.PrimaryPhoneNumber != null &&
+                    this.PrimaryPhoneNumber.Equals(input.PrimaryPhoneNumber))
+                ) && 
+                (
+                    this.EmailAddresses == input.EmailAddresses ||
+                    this.EmailAddresses != null &&
+                    input.EmailAddresses != null &&
+                    this.EmailAddresses.SequenceEqual(input.EmailAddresses)
+                ) && 
+                (
+                    this.PhoneNumbers == input.PhoneNumbers ||
+                    this.PhoneNumbers != null &&
+                    input.PhoneNumbers != null &&
+                    this.PhoneNumbers.SequenceEqual(input.PhoneNumbers)
+                ) && 
+                (
                     this.MatchCode == input.MatchCode ||
                     (this.MatchCode != null &&
                     this.MatchCode.Equals(input.MatchCode))
@@ -140,6 +198,22 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.Address != null)
                 {
                     hashCode = (hashCode * 59) + this.Address.GetHashCode();
+                }
+                if (this.PrimaryEmailAddress != null)
+                {
+                    hashCode = (hashCode * 59) + this.PrimaryEmailAddress.GetHashCode();
+                }
+                if (this.PrimaryPhoneNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PrimaryPhoneNumber.GetHashCode();
+                }
+                if (this.EmailAddresses != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmailAddresses.GetHashCode();
+                }
+                if (this.PhoneNumbers != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumbers.GetHashCode();
                 }
                 if (this.MatchCode != null)
                 {
