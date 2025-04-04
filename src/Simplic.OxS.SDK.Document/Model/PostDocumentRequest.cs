@@ -49,7 +49,8 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="primaryClassificationId">primaryClassificationId.</param>
         /// <param name="rawDataUrl">rawDataUrl.</param>
         /// <param name="rawDataProvider">rawDataProvider.</param>
-        public PostDocumentRequest(string name = default(string), DateTime dateTime = default(DateTime), PostDocumentVersionRequest varVersion = default(PostDocumentVersionRequest), string reference = default(string), string barcode = default(string), Guid? primaryClassificationId = default(Guid?), string rawDataUrl = default(string), string rawDataProvider = default(string))
+        /// <param name="paths">paths.</param>
+        public PostDocumentRequest(string name = default(string), DateTime dateTime = default(DateTime), PostDocumentVersionRequest varVersion = default(PostDocumentVersionRequest), string reference = default(string), string barcode = default(string), Guid? primaryClassificationId = default(Guid?), string rawDataUrl = default(string), string rawDataProvider = default(string), List<AddDocumentPathRequest> paths = default(List<AddDocumentPathRequest>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -69,6 +70,7 @@ namespace Simplic.OxS.SDK.Document
             this.PrimaryClassificationId = primaryClassificationId;
             this.RawDataUrl = rawDataUrl;
             this.RawDataProvider = rawDataProvider;
+            this.Paths = paths;
         }
 
         /// <summary>
@@ -120,6 +122,12 @@ namespace Simplic.OxS.SDK.Document
         public string RawDataProvider { get; set; }
 
         /// <summary>
+        /// Gets or Sets Paths
+        /// </summary>
+        [DataMember(Name = "paths", EmitDefaultValue = true)]
+        public List<AddDocumentPathRequest> Paths { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,6 +143,7 @@ namespace Simplic.OxS.SDK.Document
             sb.Append("  PrimaryClassificationId: ").Append(PrimaryClassificationId).Append("\n");
             sb.Append("  RawDataUrl: ").Append(RawDataUrl).Append("\n");
             sb.Append("  RawDataProvider: ").Append(RawDataProvider).Append("\n");
+            sb.Append("  Paths: ").Append(Paths).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -209,6 +218,12 @@ namespace Simplic.OxS.SDK.Document
                     this.RawDataProvider == input.RawDataProvider ||
                     (this.RawDataProvider != null &&
                     this.RawDataProvider.Equals(input.RawDataProvider))
+                ) && 
+                (
+                    this.Paths == input.Paths ||
+                    this.Paths != null &&
+                    input.Paths != null &&
+                    this.Paths.SequenceEqual(input.Paths)
                 );
         }
 
@@ -252,6 +267,10 @@ namespace Simplic.OxS.SDK.Document
                 if (this.RawDataProvider != null)
                 {
                     hashCode = (hashCode * 59) + this.RawDataProvider.GetHashCode();
+                }
+                if (this.Paths != null)
+                {
+                    hashCode = (hashCode * 59) + this.Paths.GetHashCode();
                 }
                 return hashCode;
             }

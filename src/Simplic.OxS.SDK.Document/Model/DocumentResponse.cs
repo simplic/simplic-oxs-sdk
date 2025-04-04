@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Document
         /// <param name="reference">reference.</param>
         /// <param name="barcode">barcode.</param>
         /// <param name="primaryClassification">primaryClassification.</param>
-        public DocumentResponse(Guid id = default(Guid), string name = default(string), DateTime dateTime = default(DateTime), List<DocumentVersionResponse> versions = default(List<DocumentVersionResponse>), DocumentVersionResponse currentVersion = default(DocumentVersionResponse), string reference = default(string), string barcode = default(string), ClassificationResponse primaryClassification = default(ClassificationResponse))
+        /// <param name="paths">paths.</param>
+        public DocumentResponse(Guid id = default(Guid), string name = default(string), DateTime dateTime = default(DateTime), List<DocumentVersionResponse> versions = default(List<DocumentVersionResponse>), DocumentVersionResponse currentVersion = default(DocumentVersionResponse), string reference = default(string), string barcode = default(string), ClassificationResponse primaryClassification = default(ClassificationResponse), List<DocumentPathResponse> paths = default(List<DocumentPathResponse>))
         {
             this.Id = id;
             this.Name = name;
@@ -54,6 +55,7 @@ namespace Simplic.OxS.SDK.Document
             this.Reference = reference;
             this.Barcode = barcode;
             this.PrimaryClassification = primaryClassification;
+            this.Paths = paths;
         }
 
         /// <summary>
@@ -105,6 +107,12 @@ namespace Simplic.OxS.SDK.Document
         public ClassificationResponse PrimaryClassification { get; set; }
 
         /// <summary>
+        /// Gets or Sets Paths
+        /// </summary>
+        [DataMember(Name = "paths", EmitDefaultValue = true)]
+        public List<DocumentPathResponse> Paths { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +128,7 @@ namespace Simplic.OxS.SDK.Document
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Barcode: ").Append(Barcode).Append("\n");
             sb.Append("  PrimaryClassification: ").Append(PrimaryClassification).Append("\n");
+            sb.Append("  Paths: ").Append(Paths).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +204,12 @@ namespace Simplic.OxS.SDK.Document
                     this.PrimaryClassification == input.PrimaryClassification ||
                     (this.PrimaryClassification != null &&
                     this.PrimaryClassification.Equals(input.PrimaryClassification))
+                ) && 
+                (
+                    this.Paths == input.Paths ||
+                    this.Paths != null &&
+                    input.Paths != null &&
+                    this.Paths.SequenceEqual(input.Paths)
                 );
         }
 
@@ -238,6 +253,10 @@ namespace Simplic.OxS.SDK.Document
                 if (this.PrimaryClassification != null)
                 {
                     hashCode = (hashCode * 59) + this.PrimaryClassification.GetHashCode();
+                }
+                if (this.Paths != null)
+                {
+                    hashCode = (hashCode * 59) + this.Paths.GetHashCode();
                 }
                 return hashCode;
             }

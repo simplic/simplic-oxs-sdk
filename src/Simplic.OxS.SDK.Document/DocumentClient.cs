@@ -44,6 +44,45 @@ public interface IDocumentClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="documentId"></param>
+    /// <param name="addDocumentPathRequest"> (optional)</param>
+    /// <returns>DocumentResponse</returns>
+    DocumentResponse AddPath(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="addDocumentPathRequest"> (optional)</param>
+    /// <returns>ApiResponse of DocumentResponse</returns>
+    ApiResponse<DocumentResponse> AddPathWithHttpInfo(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="addDocumentPathRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DocumentResponse</returns>
+    Task<DocumentResponse> AddPathAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="addDocumentPathRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+    Task<ApiResponse<DocumentResponse>> AddPathWithHttpInfoAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
     /// <returns>DocumentResponse</returns>
     DocumentResponse Get(Guid documentId);
 
@@ -72,6 +111,41 @@ public interface IDocumentClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (DocumentResponse)</returns>
     Task<ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="targetId"></param>
+    /// <returns>List&lt;DocumentResponse&gt;</returns>
+    List<DocumentResponse> GetByPathId(Guid targetId);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="targetId"></param>
+    /// <returns>ApiResponse of List&lt;DocumentResponse&gt;</returns>
+    ApiResponse<List<DocumentResponse>> GetByPathIdWithHttpInfo(Guid targetId);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="targetId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;DocumentResponse&gt;</returns>
+    Task<List<DocumentResponse>> GetByPathIdAsync(Guid targetId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="targetId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;DocumentResponse&gt;)</returns>
+    Task<ApiResponse<List<DocumentResponse>>> GetByPathIdWithHttpInfoAsync(Guid targetId, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -256,6 +330,45 @@ public interface IDocumentClient
     /// <returns>Task of ApiResponse (DocumentResponse)</returns>
     Task<ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="targetId"></param>
+    /// <returns>DocumentResponse</returns>
+    DocumentResponse RemovePathTargetId(Guid documentId, Guid targetId);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="targetId"></param>
+    /// <returns>ApiResponse of DocumentResponse</returns>
+    ApiResponse<DocumentResponse> RemovePathTargetIdWithHttpInfo(Guid documentId, Guid targetId);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="targetId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DocumentResponse</returns>
+    Task<DocumentResponse> RemovePathTargetIdAsync(Guid documentId, Guid targetId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId"></param>
+    /// <param name="targetId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+    Task<ApiResponse<DocumentResponse>> RemovePathTargetIdWithHttpInfoAsync(Guid documentId, Guid targetId, CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -336,6 +449,83 @@ public interface IDocumentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse AddPath(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?))
+        {
+            try
+            {
+                return _internalClient.AddPath(documentId, addDocumentPathRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> AddPathWithHttpInfo(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?))
+        {
+            try
+            {
+                return _internalClient.AddPathWithHttpInfo(documentId, addDocumentPathRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public System.Threading.Tasks.Task<DocumentResponse> AddPathAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AddPathAsync(documentId, addDocumentPathRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> AddPathWithHttpInfoAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AddPathWithHttpInfoAsync(documentId, addDocumentPathRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
         /// <returns>DocumentResponse</returns>
         public DocumentResponse Get(Guid documentId)
         {
@@ -398,6 +588,79 @@ public interface IDocumentClient
             try
             {
                 return _internalClient.GetWithHttpInfoAsync(documentId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <returns>List&lt;DocumentResponse&gt;</returns>
+        public List<DocumentResponse> GetByPathId(Guid targetId)
+        {
+            try
+            {
+                return _internalClient.GetByPathId(targetId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <returns>ApiResponse of List&lt;DocumentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>> GetByPathIdWithHttpInfo(Guid targetId)
+        {
+            try
+            {
+                return _internalClient.GetByPathIdWithHttpInfo(targetId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DocumentResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<DocumentResponse>> GetByPathIdAsync(Guid targetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByPathIdAsync(targetId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DocumentResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>>> GetByPathIdWithHttpInfoAsync(Guid targetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByPathIdWithHttpInfoAsync(targetId, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -777,6 +1040,83 @@ public interface IDocumentClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse RemovePathTargetId(Guid documentId, Guid targetId)
+        {
+            try
+            {
+                return _internalClient.RemovePathTargetId(documentId, targetId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> RemovePathTargetIdWithHttpInfo(Guid documentId, Guid targetId)
+        {
+            try
+            {
+                return _internalClient.RemovePathTargetIdWithHttpInfo(documentId, targetId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public System.Threading.Tasks.Task<DocumentResponse> RemovePathTargetIdAsync(Guid documentId, Guid targetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemovePathTargetIdAsync(documentId, targetId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> RemovePathTargetIdWithHttpInfoAsync(Guid documentId, Guid targetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemovePathTargetIdWithHttpInfoAsync(documentId, targetId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -790,6 +1130,28 @@ public interface IDocumentClient
     internal interface __IDocumentClientSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        DocumentResponse AddPath(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        ApiResponse<DocumentResponse> AddPathWithHttpInfo(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -810,6 +1172,26 @@ public interface IDocumentClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
         ApiResponse<DocumentResponse> GetWithHttpInfo(Guid documentId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DocumentResponse&gt;</returns>
+        List<DocumentResponse> GetByPathId(Guid targetId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DocumentResponse&gt;</returns>
+        ApiResponse<List<DocumentResponse>> GetByPathIdWithHttpInfo(Guid targetId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -914,6 +1296,28 @@ public interface IDocumentClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DocumentResponse</returns>
         ApiResponse<DocumentResponse> PostWithHttpInfo(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        DocumentResponse RemovePathTargetId(Guid documentId, Guid targetId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        ApiResponse<DocumentResponse> RemovePathTargetIdWithHttpInfo(Guid documentId, Guid targetId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -923,6 +1327,33 @@ public interface IDocumentClient
     internal interface __IDocumentClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        System.Threading.Tasks.Task<DocumentResponse> AddPathAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> AddPathWithHttpInfoAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -948,6 +1379,31 @@ public interface IDocumentClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> GetWithHttpInfoAsync(Guid documentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DocumentResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<DocumentResponse>> GetByPathIdAsync(Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DocumentResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DocumentResponse>>> GetByPathIdWithHttpInfoAsync(Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1077,6 +1533,33 @@ public interface IDocumentClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> PostWithHttpInfoAsync(PostDocumentRequest? postDocumentRequest = default(PostDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        System.Threading.Tasks.Task<DocumentResponse> RemovePathTargetIdAsync(Guid documentId, Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentResponse>> RemovePathTargetIdWithHttpInfoAsync(Guid documentId, Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1197,6 +1680,164 @@ public interface IDocumentClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse AddPath(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = AddPathWithHttpInfo(documentId, addDocumentPathRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> AddPathWithHttpInfo(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.Data = addDocumentPathRequest;
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentAddPathDocumentIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<DocumentResponse>("/Document/add-path/{documentId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentAddPathDocumentIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public async System.Threading.Tasks.Task<DocumentResponse> AddPathAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await AddPathWithHttpInfoAsync(documentId, addDocumentPathRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="addDocumentPathRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> AddPathWithHttpInfoAsync(Guid documentId, AddDocumentPathRequest? addDocumentPathRequest = default(AddDocumentPathRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.Data = addDocumentPathRequest;
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentAddPathDocumentIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<DocumentResponse>("/Document/add-path/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentAddPathDocumentIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1336,6 +1977,152 @@ public interface IDocumentClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DocumentDocumentIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DocumentResponse&gt;</returns>
+        public List<DocumentResponse> GetByPathId(Guid targetId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>> localVarResponse = GetByPathIdWithHttpInfo(targetId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DocumentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>> GetByPathIdWithHttpInfo(Guid targetId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("targetId", Simplic.OxS.SDK.ClientUtils.ParameterToString(targetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetByPathIdTargetIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DocumentResponse>>("/Document/get-by-path-id/{targetId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentGetByPathIdTargetIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DocumentResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DocumentResponse>> GetByPathIdAsync(Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>> localVarResponse = await GetByPathIdWithHttpInfoAsync(targetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DocumentResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DocumentResponse>>> GetByPathIdWithHttpInfoAsync(Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("targetId", Simplic.OxS.SDK.ClientUtils.ParameterToString(targetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentGetByPathIdTargetIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DocumentResponse>>("/Document/get-by-path-id/{targetId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentGetByPathIdTargetIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2096,6 +2883,158 @@ public interface IDocumentClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DocumentPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DocumentResponse</returns>
+        public DocumentResponse RemovePathTargetId(Guid documentId, Guid targetId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = RemovePathTargetIdWithHttpInfo(documentId, targetId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<DocumentResponse> RemovePathTargetIdWithHttpInfo(Guid documentId, Guid targetId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("targetId", Simplic.OxS.SDK.ClientUtils.ParameterToString(targetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentRemovePathDocumentIdTargetIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<DocumentResponse>("/Document/remove-path/{documentId}/{targetId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentRemovePathDocumentIdTargetIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentResponse</returns>
+        public async System.Threading.Tasks.Task<DocumentResponse> RemovePathTargetIdAsync(Guid documentId, Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DocumentResponse> localVarResponse = await RemovePathTargetIdWithHttpInfoAsync(documentId, targetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId"></param>
+        /// <param name="targetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DocumentResponse>> RemovePathTargetIdWithHttpInfoAsync(Guid documentId, Guid targetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("documentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(documentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("targetId", Simplic.OxS.SDK.ClientUtils.ParameterToString(targetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DocumentClient.DocumentRemovePathDocumentIdTargetIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DocumentResponse>("/Document/remove-path/{documentId}/{targetId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DocumentRemovePathDocumentIdTargetIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
