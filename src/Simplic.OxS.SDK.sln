@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Flow", "Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Auth", "Simplic.OxS.SDK.Auth\Simplic.OxS.SDK.Auth.csproj", "{13C53D5D-9D56-4286-B974-B77229C70298}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplic.OxS.SDK.Article", "Simplic.OxS.SDK.Article\Simplic.OxS.SDK.Article.csproj", "{5A82E817-A1C3-4063-9283-B34654EFA992}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,5 +122,9 @@ Global
 		{13C53D5D-9D56-4286-B974-B77229C70298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13C53D5D-9D56-4286-B974-B77229C70298}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13C53D5D-9D56-4286-B974-B77229C70298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A82E817-A1C3-4063-9283-B34654EFA992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A82E817-A1C3-4063-9283-B34654EFA992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A82E817-A1C3-4063-9283-B34654EFA992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A82E817-A1C3-4063-9283-B34654EFA992}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

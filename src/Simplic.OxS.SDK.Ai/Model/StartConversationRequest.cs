@@ -43,8 +43,9 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="model">model (required).</param>
         /// <param name="context">context.</param>
+        /// <param name="embedding">embedding.</param>
         /// <param name="message">message (required).</param>
-        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), string message = default(string))
+        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), string message = default(string))
         {
             // to ensure "model" is required (not null)
             if (model == null)
@@ -59,6 +60,7 @@ namespace Simplic.OxS.SDK.Ai
             }
             this.Message = message;
             this.Context = context;
+            this.Embedding = embedding;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "context", EmitDefaultValue = false)]
         public ConversationContextModel Context { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Embedding
+        /// </summary>
+        [DataMember(Name = "embedding", EmitDefaultValue = false)]
+        public EmbeddingModel Embedding { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
@@ -89,6 +97,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class StartConversationRequest {\n");
             sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
+            sb.Append("  Embedding: ").Append(Embedding).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -136,6 +145,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Context.Equals(input.Context))
                 ) && 
                 (
+                    this.Embedding == input.Embedding ||
+                    (this.Embedding != null &&
+                    this.Embedding.Equals(input.Embedding))
+                ) && 
+                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
@@ -158,6 +172,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Context != null)
                 {
                     hashCode = (hashCode * 59) + this.Context.GetHashCode();
+                }
+                if (this.Embedding != null)
+                {
+                    hashCode = (hashCode * 59) + this.Embedding.GetHashCode();
                 }
                 if (this.Message != null)
                 {
