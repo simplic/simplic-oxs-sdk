@@ -57,6 +57,20 @@ namespace Simplic.OxS.SDK.Flow
         public Guid? Source { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsNull
+        /// </summary>
+        [DataMember(Name = "isNull", EmitDefaultValue = true)]
+        public bool IsNull { get; private set; }
+
+        /// <summary>
+        /// Returns false as IsNull should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeIsNull()
+        {
+            return false;
+        }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +80,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("class ValueInstance {\n");
             sb.Append("  VarStatic: ").Append(VarStatic).Append("\n");
             sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  IsNull: ").Append(IsNull).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +125,10 @@ namespace Simplic.OxS.SDK.Flow
                     this.Source == input.Source ||
                     (this.Source != null &&
                     this.Source.Equals(input.Source))
+                ) && 
+                (
+                    this.IsNull == input.IsNull ||
+                    this.IsNull.Equals(input.IsNull)
                 );
         }
 
@@ -130,6 +149,7 @@ namespace Simplic.OxS.SDK.Flow
                 {
                     hashCode = (hashCode * 59) + this.Source.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsNull.GetHashCode();
                 return hashCode;
             }
         }

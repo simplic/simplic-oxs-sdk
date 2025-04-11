@@ -39,12 +39,14 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
         /// <param name="required">required.</param>
+        /// <param name="canBeNull">canBeNull.</param>
         /// <param name="defaultValue">defaultValue.</param>
-        public DataInPinDefinition(string name = default(string), string type = default(string), bool required = default(bool), Object defaultValue = default(Object))
+        public DataInPinDefinition(string name = default(string), string type = default(string), bool required = default(bool), bool canBeNull = default(bool), Object defaultValue = default(Object))
         {
             this.Name = name;
             this.Type = type;
             this.Required = required;
+            this.CanBeNull = canBeNull;
             this.DefaultValue = defaultValue;
         }
 
@@ -67,6 +69,12 @@ namespace Simplic.OxS.SDK.Flow
         public bool Required { get; set; }
 
         /// <summary>
+        /// Gets or Sets CanBeNull
+        /// </summary>
+        [DataMember(Name = "canBeNull", EmitDefaultValue = true)]
+        public bool CanBeNull { get; set; }
+
+        /// <summary>
         /// Gets or Sets DefaultValue
         /// </summary>
         [DataMember(Name = "defaultValue", EmitDefaultValue = true)]
@@ -83,6 +91,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  CanBeNull: ").Append(CanBeNull).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -134,6 +143,10 @@ namespace Simplic.OxS.SDK.Flow
                     this.Required.Equals(input.Required)
                 ) && 
                 (
+                    this.CanBeNull == input.CanBeNull ||
+                    this.CanBeNull.Equals(input.CanBeNull)
+                ) && 
+                (
                     this.DefaultValue == input.DefaultValue ||
                     (this.DefaultValue != null &&
                     this.DefaultValue.Equals(input.DefaultValue))
@@ -158,6 +171,7 @@ namespace Simplic.OxS.SDK.Flow
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Required.GetHashCode();
+                hashCode = (hashCode * 59) + this.CanBeNull.GetHashCode();
                 if (this.DefaultValue != null)
                 {
                     hashCode = (hashCode * 59) + this.DefaultValue.GetHashCode();

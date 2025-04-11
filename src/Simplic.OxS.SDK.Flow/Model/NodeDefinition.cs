@@ -38,6 +38,7 @@ namespace Simplic.OxS.SDK.Flow
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="type">type.</param>
+        /// <param name="eventName">eventName.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="target">target.</param>
@@ -46,10 +47,11 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataInPins">dataInPins.</param>
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
-        public NodeDefinition(string id = default(string), string type = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>))
+        public NodeDefinition(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>))
         {
             this.Id = id;
             this.Type = type;
+            this.EventName = eventName;
             this.Name = name;
             this.Description = description;
             this.Target = target;
@@ -71,6 +73,12 @@ namespace Simplic.OxS.SDK.Flow
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EventName
+        /// </summary>
+        [DataMember(Name = "eventName", EmitDefaultValue = true)]
+        public string EventName { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -130,6 +138,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("class NodeDefinition {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Target: ").Append(Target).Append("\n");
@@ -182,6 +191,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.EventName == input.EventName ||
+                    (this.EventName != null &&
+                    this.EventName.Equals(input.EventName))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -244,6 +258,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
+                if (this.EventName != null)
+                {
+                    hashCode = (hashCode * 59) + this.EventName.GetHashCode();
                 }
                 if (this.Name != null)
                 {

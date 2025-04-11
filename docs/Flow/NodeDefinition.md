@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
+**EventName** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Target** | **string** |  | [optional] 
