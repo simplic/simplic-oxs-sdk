@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="contact">contact.</param>
         /// <param name="values">values.</param>
         /// <param name="lastBooking">lastBooking.</param>
-        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), List<Object> values = default(List<Object>), DateTime lastBooking = default(DateTime))
+        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), List<LoadingAidValueResponse> values = default(List<LoadingAidValueResponse>), DateTime lastBooking = default(DateTime))
         {
             this.Id = id;
             this.Name = name;
@@ -80,7 +80,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Gets or Sets Values
         /// </summary>
         [DataMember(Name = "values", EmitDefaultValue = true)]
-        public List<Object> Values { get; set; }
+        public List<LoadingAidValueResponse> Values { get; set; }
 
         /// <summary>
         /// Gets or Sets LastBooking

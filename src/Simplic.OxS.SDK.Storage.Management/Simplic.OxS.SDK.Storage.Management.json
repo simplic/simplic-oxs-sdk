@@ -2386,6 +2386,15 @@
             },
             "LoadingAidValueResponse": {
                 "type": "object",
+                "properties": {
+                    "loadingAidType": {
+                        "$ref": "#/components/schemas/LoadingAidTypeModel"
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
                 "additionalProperties": false
             },
             "MovementType": {

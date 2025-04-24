@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
 **Contact** | [**AddressModel**](AddressModel.md) |  | [optional] 
-**Values** | **List&lt;Object&gt;** |  | [optional] 
+**Values** | [**List&lt;LoadingAidValueResponse&gt;**](LoadingAidValueResponse.md) |  | [optional] 
 **LastBooking** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
