@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="matchCode">matchCode.</param>
         /// <param name="functions">functions.</param>
-        public CreateContactRequest(AddressModel address = default(AddressModel), EmailAddress primaryEmailAddress = default(EmailAddress), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>))
+        public CreateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.Contact
         /// Gets or Sets PrimaryEmailAddress
         /// </summary>
         [DataMember(Name = "primaryEmailAddress", EmitDefaultValue = false)]
-        public EmailAddress PrimaryEmailAddress { get; set; }
+        public EmailAddressModel PrimaryEmailAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets PrimaryPhoneNumber

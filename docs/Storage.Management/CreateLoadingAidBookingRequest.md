@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceAccountId** | **Guid** |  | [optional] 
 **DestinationAccountId** | **Guid** |  | [optional] 
-**Quantity** | **int** |  | [optional] 
+**Quantity** | **double** |  | [optional] 
 **LoadingAidTypeId** | **Guid** |  | [optional] 
 **Note** | **string** |  | [optional] 
 **Reason** | **string** |  | [optional] 

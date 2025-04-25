@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         /// <param name="loadingAidType">loadingAidType.</param>
         /// <param name="quantity">quantity.</param>
-        public LoadingAidValueResponse(LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), int quantity = default(int))
+        public LoadingAidValueResponse(LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), double quantity = default(double))
         {
             this.LoadingAidType = loadingAidType;
             this.Quantity = quantity;
@@ -54,7 +54,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

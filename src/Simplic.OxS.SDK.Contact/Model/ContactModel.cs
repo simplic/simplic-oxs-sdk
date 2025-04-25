@@ -52,7 +52,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="organizationId">organizationId.</param>
-        public ContactModel(AddressModel address = default(AddressModel), EmailAddress primaryEmailAddress = default(EmailAddress), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -82,7 +82,7 @@ namespace Simplic.OxS.SDK.Contact
         /// Gets or Sets PrimaryEmailAddress
         /// </summary>
         [DataMember(Name = "primaryEmailAddress", EmitDefaultValue = false)]
-        public EmailAddress PrimaryEmailAddress { get; set; }
+        public EmailAddressModel PrimaryEmailAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets PrimaryPhoneNumber

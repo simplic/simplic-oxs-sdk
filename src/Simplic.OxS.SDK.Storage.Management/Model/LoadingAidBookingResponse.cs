@@ -49,7 +49,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="status">status.</param>
         /// <param name="dateTime">dateTime.</param>
         /// <param name="fault">fault.</param>
-        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), int quantity = default(int), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), string status = default(string), DateTime dateTime = default(DateTime), string fault = default(string))
+        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), string status = default(string), DateTime dateTime = default(DateTime), string fault = default(string))
         {
             this.Id = id;
             this.SourceAccount = sourceAccount;
@@ -88,7 +88,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets LoadingAidType

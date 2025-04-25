@@ -2141,10 +2141,9 @@
                         "format": "uuid"
                     },
                     "quantity": {
-                        "maximum": 2147483647,
-                        "minimum": 1,
-                        "type": "integer",
-                        "format": "int32"
+                        "minimum": 0,
+                        "type": "number",
+                        "format": "double"
                     },
                     "loadingAidTypeId": {
                         "type": "string",
@@ -2296,8 +2295,8 @@
                         "$ref": "#/components/schemas/LoadingAidBookingBookingAccountResponse"
                     },
                     "quantity": {
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "number",
+                        "format": "double"
                     },
                     "loadingAidType": {
                         "$ref": "#/components/schemas/LoadingAidTypeModel"
@@ -2391,8 +2390,8 @@
                         "$ref": "#/components/schemas/LoadingAidTypeModel"
                     },
                     "quantity": {
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "number",
+                        "format": "double"
                     }
                 },
                 "additionalProperties": false

@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
         /// <param name="referenceType">referenceType.</param>
-        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), int quantity = default(int), Guid loadingAidTypeId = default(Guid), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string))
+        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -74,7 +74,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets LoadingAidTypeId
@@ -263,16 +263,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Quantity (int) maximum
-            if (this.Quantity > (int)2147483647)
+            // Quantity (double) minimum
+            if (this.Quantity < (double)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 2147483647.", new [] { "Quantity" });
-            }
-
-            // Quantity (int) minimum
-            if (this.Quantity < (int)1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 1.", new [] { "Quantity" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
             }
 
             yield break;

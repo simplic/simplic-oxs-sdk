@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** |  | [optional] 
 **SourceAccount** | [**LoadingAidBookingBookingAccountResponse**](LoadingAidBookingBookingAccountResponse.md) |  | [optional] 
 **DestinationAccount** | [**LoadingAidBookingBookingAccountResponse**](LoadingAidBookingBookingAccountResponse.md) |  | [optional] 
-**Quantity** | **int** |  | [optional] 
+**Quantity** | **double** |  | [optional] 
 **LoadingAidType** | [**LoadingAidTypeModel**](LoadingAidTypeModel.md) |  | [optional] 
 **Note** | **string** |  | [optional] 
 **Reason** | **string** |  | [optional] 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | [**AddressModel**](AddressModel.md) |  | [optional] 
-**PrimaryEmailAddress** | [**EmailAddress**](EmailAddress.md) |  | [optional] 
+**PrimaryEmailAddress** | [**EmailAddressModel**](EmailAddressModel.md) |  | [optional] 
 **PrimaryPhoneNumber** | [**PhoneNumber**](PhoneNumber.md) |  | [optional] 
 **EmailAddresses** | [**List&lt;EmailAddressModel&gt;**](EmailAddressModel.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumberModel&gt;**](PhoneNumberModel.md) |  | [optional] 
