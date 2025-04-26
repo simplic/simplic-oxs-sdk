@@ -56,6 +56,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="totals">totals.</param>
         /// <param name="businessProcess">businessProcess.</param>
         /// <param name="referenceNumber">referenceNumber.</param>
+        /// <param name="buyerReference">buyerReference.</param>
         /// <param name="buyer">buyer.</param>
         /// <param name="seller">seller.</param>
         /// <param name="debitorBankAccounts">debitorBankAccounts.</param>
@@ -68,7 +69,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="textItems">textItems.</param>
         /// <param name="billableItems">billableItems.</param>
         /// <param name="discountsSurcharges">discountsSurcharges.</param>
-        public ImportedInvoiceData(string number = default(string), DateTime? invoiceDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), ImportedBillingPeriod billingPeriod = default(ImportedBillingPeriod), CurrencyCode? currency = default(CurrencyCode?), ImportedTotals totals = default(ImportedTotals), string businessProcess = default(string), string referenceNumber = default(string), ImportedParty buyer = default(ImportedParty), ImportedParty seller = default(ImportedParty), List<BankAccount> debitorBankAccounts = default(List<BankAccount>), List<BankAccount> creditorBankAccounts = default(List<BankAccount>), List<string> notes = default(List<string>), PaymentMethod paymentMethod = default(PaymentMethod), TermsOfPayment termsOfPayment = default(TermsOfPayment), List<ImportedTax> taxes = default(List<ImportedTax>), InvoiceType? type = default(InvoiceType?), List<ImportedInvoiceItemText> textItems = default(List<ImportedInvoiceItemText>), List<ImportedInvoiceItemBillable> billableItems = default(List<ImportedInvoiceItemBillable>), List<ImportedInvoiceDiscountSurcharge> discountsSurcharges = default(List<ImportedInvoiceDiscountSurcharge>))
+        public ImportedInvoiceData(string number = default(string), DateTime? invoiceDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), ImportedBillingPeriod billingPeriod = default(ImportedBillingPeriod), CurrencyCode? currency = default(CurrencyCode?), ImportedTotals totals = default(ImportedTotals), string businessProcess = default(string), string referenceNumber = default(string), string buyerReference = default(string), ImportedParty buyer = default(ImportedParty), ImportedParty seller = default(ImportedParty), List<BankAccount> debitorBankAccounts = default(List<BankAccount>), List<BankAccount> creditorBankAccounts = default(List<BankAccount>), List<string> notes = default(List<string>), PaymentMethod paymentMethod = default(PaymentMethod), TermsOfPayment termsOfPayment = default(TermsOfPayment), List<ImportedTax> taxes = default(List<ImportedTax>), InvoiceType? type = default(InvoiceType?), List<ImportedInvoiceItemText> textItems = default(List<ImportedInvoiceItemText>), List<ImportedInvoiceItemBillable> billableItems = default(List<ImportedInvoiceItemBillable>), List<ImportedInvoiceDiscountSurcharge> discountsSurcharges = default(List<ImportedInvoiceDiscountSurcharge>))
         {
             this.Number = number;
             this.InvoiceDate = invoiceDate;
@@ -78,6 +79,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Totals = totals;
             this.BusinessProcess = businessProcess;
             this.ReferenceNumber = referenceNumber;
+            this.BuyerReference = buyerReference;
             this.Buyer = buyer;
             this.Seller = seller;
             this.DebitorBankAccounts = debitorBankAccounts;
@@ -133,6 +135,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BuyerReference
+        /// </summary>
+        [DataMember(Name = "buyerReference", EmitDefaultValue = true)]
+        public string BuyerReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Buyer
@@ -216,6 +224,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Totals: ").Append(Totals).Append("\n");
             sb.Append("  BusinessProcess: ").Append(BusinessProcess).Append("\n");
             sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
+            sb.Append("  BuyerReference: ").Append(BuyerReference).Append("\n");
             sb.Append("  Buyer: ").Append(Buyer).Append("\n");
             sb.Append("  Seller: ").Append(Seller).Append("\n");
             sb.Append("  DebitorBankAccounts: ").Append(DebitorBankAccounts).Append("\n");
@@ -301,6 +310,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ReferenceNumber == input.ReferenceNumber ||
                     (this.ReferenceNumber != null &&
                     this.ReferenceNumber.Equals(input.ReferenceNumber))
+                ) && 
+                (
+                    this.BuyerReference == input.BuyerReference ||
+                    (this.BuyerReference != null &&
+                    this.BuyerReference.Equals(input.BuyerReference))
                 ) && 
                 (
                     this.Buyer == input.Buyer ||
@@ -407,6 +421,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ReferenceNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ReferenceNumber.GetHashCode();
+                }
+                if (this.BuyerReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.BuyerReference.GetHashCode();
                 }
                 if (this.Buyer != null)
                 {

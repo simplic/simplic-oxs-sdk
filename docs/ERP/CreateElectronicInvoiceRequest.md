@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **RoundingMode** | **RoundingMode** |  | [optional] 
 **ElectronicInvoiceType** | **ElectronicInvoiceType** |  | [optional] 
 **AddPeppolAddress** | **bool** | Gets or sets whether to add a PEPPOL address for buyer and seller. | [optional] 
+**LeitwegIdRequired** | **bool** | Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   | [optional] 
 **InvoiceData** | [**InvoiceDataRequest**](InvoiceDataRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

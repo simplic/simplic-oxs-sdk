@@ -55,6 +55,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="currency">currency.</param>
         /// <param name="businessProcess">Gets or sets the business process..</param>
         /// <param name="referenceNumber">Gets or sets the reference number..</param>
+        /// <param name="buyerReference">Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  .</param>
         /// <param name="buyer">buyer.</param>
         /// <param name="seller">seller.</param>
         /// <param name="debitorBankAccounts">Gets or sets the debitor bank accounts..</param>
@@ -65,7 +66,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="taxes">Gets or sets the taxes..</param>
         /// <param name="type">type.</param>
         /// <param name="items">Gets or sets the set of invoice items..</param>
-        public InvoiceDataRequest(string number = default(string), DateTime invoiceDate = default(DateTime), DateTime deliveryDate = default(DateTime), BillingPeriodRequest billingPeriod = default(BillingPeriodRequest), CurrencyCode? currency = default(CurrencyCode?), string businessProcess = default(string), string referenceNumber = default(string), PartyRequest buyer = default(PartyRequest), PartyRequest seller = default(PartyRequest), List<BankAccountRequest> debitorBankAccounts = default(List<BankAccountRequest>), List<BankAccountRequest> creditorBankAccounts = default(List<BankAccountRequest>), List<string> notes = default(List<string>), ElectronicInvoicingPaymentMethodRequest paymentMethod = default(ElectronicInvoicingPaymentMethodRequest), ElectronicInvoicingTermsOfPaymentRequest termsOfPayment = default(ElectronicInvoicingTermsOfPaymentRequest), List<TaxRequest> taxes = default(List<TaxRequest>), InvoiceType? type = default(InvoiceType?), List<InvoiceItemRequest> items = default(List<InvoiceItemRequest>))
+        public InvoiceDataRequest(string number = default(string), DateTime invoiceDate = default(DateTime), DateTime deliveryDate = default(DateTime), BillingPeriodRequest billingPeriod = default(BillingPeriodRequest), CurrencyCode? currency = default(CurrencyCode?), string businessProcess = default(string), string referenceNumber = default(string), string buyerReference = default(string), PartyRequest buyer = default(PartyRequest), PartyRequest seller = default(PartyRequest), List<BankAccountRequest> debitorBankAccounts = default(List<BankAccountRequest>), List<BankAccountRequest> creditorBankAccounts = default(List<BankAccountRequest>), List<string> notes = default(List<string>), ElectronicInvoicingPaymentMethodRequest paymentMethod = default(ElectronicInvoicingPaymentMethodRequest), ElectronicInvoicingTermsOfPaymentRequest termsOfPayment = default(ElectronicInvoicingTermsOfPaymentRequest), List<TaxRequest> taxes = default(List<TaxRequest>), InvoiceType? type = default(InvoiceType?), List<InvoiceItemRequest> items = default(List<InvoiceItemRequest>))
         {
             this.Number = number;
             this.InvoiceDate = invoiceDate;
@@ -74,6 +75,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Currency = currency;
             this.BusinessProcess = businessProcess;
             this.ReferenceNumber = referenceNumber;
+            this.BuyerReference = buyerReference;
             this.Buyer = buyer;
             this.Seller = seller;
             this.DebitorBankAccounts = debitorBankAccounts;
@@ -126,6 +128,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the reference number.</value>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
+        /// </summary>
+        /// <value>Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
+        [DataMember(Name = "buyerReference", EmitDefaultValue = true)]
+        public string BuyerReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Buyer
@@ -201,6 +210,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  BusinessProcess: ").Append(BusinessProcess).Append("\n");
             sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
+            sb.Append("  BuyerReference: ").Append(BuyerReference).Append("\n");
             sb.Append("  Buyer: ").Append(Buyer).Append("\n");
             sb.Append("  Seller: ").Append(Seller).Append("\n");
             sb.Append("  DebitorBankAccounts: ").Append(DebitorBankAccounts).Append("\n");
@@ -279,6 +289,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ReferenceNumber == input.ReferenceNumber ||
                     (this.ReferenceNumber != null &&
                     this.ReferenceNumber.Equals(input.ReferenceNumber))
+                ) && 
+                (
+                    this.BuyerReference == input.BuyerReference ||
+                    (this.BuyerReference != null &&
+                    this.BuyerReference.Equals(input.BuyerReference))
                 ) && 
                 (
                     this.Buyer == input.Buyer ||
@@ -369,6 +384,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ReferenceNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ReferenceNumber.GetHashCode();
+                }
+                if (this.BuyerReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.BuyerReference.GetHashCode();
                 }
                 if (this.Buyer != null)
                 {

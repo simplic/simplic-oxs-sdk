@@ -66,8 +66,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="roundingMode">roundingMode.</param>
         /// <param name="electronicInvoiceType">electronicInvoiceType.</param>
         /// <param name="addPeppolAddress">Gets or sets whether to add a PEPPOL address for buyer and seller..</param>
+        /// <param name="leitwegIdRequired">Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  .</param>
         /// <param name="invoiceData">invoiceData.</param>
-        public CreateElectronicInvoiceRequest(byte[] pdf = default(byte[]), Profile? profile = default(Profile?), ZUGFeRDVersion? varVersion = default(ZUGFeRDVersion?), RoundingMode? roundingMode = default(RoundingMode?), ElectronicInvoiceType? electronicInvoiceType = default(ElectronicInvoiceType?), bool addPeppolAddress = default(bool), InvoiceDataRequest invoiceData = default(InvoiceDataRequest))
+        public CreateElectronicInvoiceRequest(byte[] pdf = default(byte[]), Profile? profile = default(Profile?), ZUGFeRDVersion? varVersion = default(ZUGFeRDVersion?), RoundingMode? roundingMode = default(RoundingMode?), ElectronicInvoiceType? electronicInvoiceType = default(ElectronicInvoiceType?), bool addPeppolAddress = default(bool), bool leitwegIdRequired = default(bool), InvoiceDataRequest invoiceData = default(InvoiceDataRequest))
         {
             this.Pdf = pdf;
             this.Profile = profile;
@@ -75,6 +76,7 @@ namespace Simplic.OxS.SDK.ERP
             this.RoundingMode = roundingMode;
             this.ElectronicInvoiceType = electronicInvoiceType;
             this.AddPeppolAddress = addPeppolAddress;
+            this.LeitwegIdRequired = leitwegIdRequired;
             this.InvoiceData = invoiceData;
         }
 
@@ -91,6 +93,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets whether to add a PEPPOL address for buyer and seller.</value>
         [DataMember(Name = "addPeppolAddress", EmitDefaultValue = true)]
         public bool AddPeppolAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
+        /// </summary>
+        /// <value>Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
+        [DataMember(Name = "leitwegIdRequired", EmitDefaultValue = true)]
+        public bool LeitwegIdRequired { get; set; }
 
         /// <summary>
         /// Gets or Sets InvoiceData
@@ -112,6 +121,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  RoundingMode: ").Append(RoundingMode).Append("\n");
             sb.Append("  ElectronicInvoiceType: ").Append(ElectronicInvoiceType).Append("\n");
             sb.Append("  AddPeppolAddress: ").Append(AddPeppolAddress).Append("\n");
+            sb.Append("  LeitwegIdRequired: ").Append(LeitwegIdRequired).Append("\n");
             sb.Append("  InvoiceData: ").Append(InvoiceData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -174,6 +184,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.AddPeppolAddress.Equals(input.AddPeppolAddress)
                 ) && 
                 (
+                    this.LeitwegIdRequired == input.LeitwegIdRequired ||
+                    this.LeitwegIdRequired.Equals(input.LeitwegIdRequired)
+                ) && 
+                (
                     this.InvoiceData == input.InvoiceData ||
                     (this.InvoiceData != null &&
                     this.InvoiceData.Equals(input.InvoiceData))
@@ -198,6 +212,7 @@ namespace Simplic.OxS.SDK.ERP
                 hashCode = (hashCode * 59) + this.RoundingMode.GetHashCode();
                 hashCode = (hashCode * 59) + this.ElectronicInvoiceType.GetHashCode();
                 hashCode = (hashCode * 59) + this.AddPeppolAddress.GetHashCode();
+                hashCode = (hashCode * 59) + this.LeitwegIdRequired.GetHashCode();
                 if (this.InvoiceData != null)
                 {
                     hashCode = (hashCode * 59) + this.InvoiceData.GetHashCode();

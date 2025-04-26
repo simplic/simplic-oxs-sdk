@@ -5496,6 +5496,10 @@
                         "type": "boolean",
                         "description": "Gets or sets whether to add a PEPPOL address for buyer and seller."
                     },
+                    "leitwegIdRequired": {
+                        "type": "boolean",
+                        "description": "Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.\r\n<br>\r\nIf true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n"
+                    },
                     "invoiceData": {
                         "$ref": "#/components/schemas/InvoiceDataRequest"
                     }
@@ -6549,6 +6553,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "buyerReference": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "buyer": {
                         "$ref": "#/components/schemas/ImportedParty"
                     },
@@ -6875,6 +6883,11 @@
                     "referenceNumber": {
                         "type": "string",
                         "description": "Gets or sets the reference number.",
+                        "nullable": true
+                    },
+                    "buyerReference": {
+                        "type": "string",
+                        "description": "Gets or sets the buyer reference.\r\n<br>\r\nThis is where the Leitweg-ID for German public institution invoices needs to be passed. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
                         "nullable": true
                     },
                     "buyer": {

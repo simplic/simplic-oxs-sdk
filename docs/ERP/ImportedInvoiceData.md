@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Totals** | [**ImportedTotals**](ImportedTotals.md) |  | [optional] 
 **BusinessProcess** | **string** |  | [optional] 
 **ReferenceNumber** | **string** |  | [optional] 
+**BuyerReference** | **string** |  | [optional] 
 **Buyer** | [**ImportedParty**](ImportedParty.md) |  | [optional] 
 **Seller** | [**ImportedParty**](ImportedParty.md) |  | [optional] 
 **DebitorBankAccounts** | [**List&lt;BankAccount&gt;**](BankAccount.md) |  | [optional] 
