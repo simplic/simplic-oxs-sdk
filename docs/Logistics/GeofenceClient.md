@@ -106,7 +106,7 @@ void (empty response body)
 
 <a id="geofenceidget"></a>
 # **Get**
-> GeofenceModel Get (Guid id)
+> GeofenceResponse Get (Guid id)
 
 Gets geofence matching given id.
 
@@ -140,7 +140,7 @@ namespace Example
             try
             {
                 // Gets geofence matching given id.
-                GeofenceModel result = apiInstance.Get(id);
+                GeofenceResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -161,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Gets geofence matching given id.
-    ApiResponse<GeofenceModel> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<GeofenceResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,7 +182,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GeofenceModel**](GeofenceModel.md)
+[**GeofenceResponse**](GeofenceResponse.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ catch (ApiException e)
 
 <a id="geofenceidpatch"></a>
 # **Patch**
-> GeofenceModel Patch (Guid id, PatchGeofenceRequest? patchGeofenceRequest = null)
+> GeofenceResponse Patch (Guid id, PatchGeofenceRequest? patchGeofenceRequest = null)
 
 Patches geofence matching given id.
 
@@ -240,7 +240,7 @@ namespace Example
             try
             {
                 // Patches geofence matching given id.
-                GeofenceModel result = apiInstance.Patch(id, patchGeofenceRequest);
+                GeofenceResponse result = apiInstance.Patch(id, patchGeofenceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -261,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Patches geofence matching given id.
-    ApiResponse<GeofenceModel> response = apiInstance.PatchWithHttpInfo(id, patchGeofenceRequest);
+    ApiResponse<GeofenceResponse> response = apiInstance.PatchWithHttpInfo(id, patchGeofenceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -283,7 +283,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GeofenceModel**](GeofenceModel.md)
+[**GeofenceResponse**](GeofenceResponse.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ catch (ApiException e)
 
 <a id="geofencepost"></a>
 # **Post**
-> GeofenceModel Post (CreateGeofenceRequest? createGeofenceRequest = null)
+> GeofenceResponse Post (CreateGeofenceRequest? createGeofenceRequest = null)
 
 Creates a new geofence.
 
@@ -341,7 +341,7 @@ namespace Example
             try
             {
                 // Creates a new geofence.
-                GeofenceModel result = apiInstance.Post(createGeofenceRequest);
+                GeofenceResponse result = apiInstance.Post(createGeofenceRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -362,7 +362,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates a new geofence.
-    ApiResponse<GeofenceModel> response = apiInstance.PostWithHttpInfo(createGeofenceRequest);
+    ApiResponse<GeofenceResponse> response = apiInstance.PostWithHttpInfo(createGeofenceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -383,7 +383,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GeofenceModel**](GeofenceModel.md)
+[**GeofenceResponse**](GeofenceResponse.md)
 
 ### Authorization
 

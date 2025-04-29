@@ -165,6 +165,41 @@ public interface IResourceClient
 
 
     /// <summary>
+    /// Retrieves resources in a geofence. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="geofenceId"></param>
+    /// <returns>List&lt;ResourceModel&gt;</returns>
+    List<ResourceModel> GetInGeofence(Guid geofenceId);
+
+    /// <summary>
+    /// Retrieves resources in a geofence. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="geofenceId"></param>
+    /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+    ApiResponse<List<ResourceModel>> GetInGeofenceWithHttpInfo(Guid geofenceId);
+        
+    /// <summary>
+    /// Retrieves resources in a geofence. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="geofenceId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+    Task<List<ResourceModel>> GetInGeofenceAsync(Guid geofenceId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Retrieves resources in a geofence. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="geofenceId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+    Task<ApiResponse<List<ResourceModel>>> GetInGeofenceWithHttpInfoAsync(Guid geofenceId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Retrieves a data page of resources. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -634,6 +669,79 @@ public interface IResourceClient
             }
         }    
         /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        public List<ResourceModel> GetInGeofence(Guid geofenceId)
+        {
+            try
+            {
+                return _internalClient.GetInGeofence(geofenceId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetInGeofenceWithHttpInfo(Guid geofenceId)
+        {
+            try
+            {
+                return _internalClient.GetInGeofenceWithHttpInfo(geofenceId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<ResourceModel>> GetInGeofenceAsync(Guid geofenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetInGeofenceAsync(geofenceId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetInGeofenceWithHttpInfoAsync(Guid geofenceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetInGeofenceWithHttpInfoAsync(geofenceId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Retrieves a data page of resources. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1025,6 +1133,26 @@ public interface IResourceClient
         /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
         ApiResponse<List<ResourceModel>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0);
         /// <summary>
+        /// Retrieves resources in a geofence.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        List<ResourceModel> GetInGeofence(Guid geofenceId, int operationIndex = 0);
+
+        /// <summary>
+        /// Retrieves resources in a geofence.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        ApiResponse<List<ResourceModel>> GetInGeofenceWithHttpInfo(Guid geofenceId, int operationIndex = 0);
+        /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1206,6 +1334,31 @@ public interface IResourceClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? maxDistanceMeter = default(double?), double? minDistanceMeter = default(double?), string? group = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieves resources in a geofence.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        System.Threading.Tasks.Task<List<ResourceModel>> GetInGeofenceAsync(Guid geofenceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieves resources in a geofence.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ResourceModel>>> GetInGeofenceWithHttpInfoAsync(Guid geofenceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieves a data page of resources.
         /// </summary>
@@ -1973,6 +2126,162 @@ public interface IResourceClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ResourceGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ResourceModel&gt;</returns>
+        public List<ResourceModel> GetInGeofence(Guid geofenceId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = GetInGeofenceWithHttpInfo(geofenceId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ResourceModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> GetInGeofenceWithHttpInfo(Guid geofenceId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("geofenceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(geofenceId)); // path parameter
+
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetInGeofenceGeofenceIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ResourceModel>>("/Resource/get-in-geofence/{geofenceId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResourceGetInGeofenceGeofenceIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ResourceModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ResourceModel>> GetInGeofenceAsync(Guid geofenceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<ResourceModel>> localVarResponse = await GetInGeofenceWithHttpInfoAsync(geofenceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources in a geofence. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="geofenceId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ResourceModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ResourceModel>>> GetInGeofenceWithHttpInfoAsync(Guid geofenceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("geofenceId", Simplic.OxS.SDK.ClientUtils.ParameterToString(geofenceId)); // path parameter
+
+            localVarRequestOptions.Operation = "ResourceClient.ResourceGetInGeofenceGeofenceIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ResourceModel>>("/Resource/get-in-geofence/{geofenceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ResourceGetInGeofenceGeofenceIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

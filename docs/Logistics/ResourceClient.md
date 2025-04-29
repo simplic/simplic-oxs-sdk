@@ -7,6 +7,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 | [**GetAllByGroup**](ResourceClient.md#resourcegetallbygroupget) | **GET** /Resource/get-all-by-group | Retrieves all resources. |
 | [**GetAll**](ResourceClient.md#resourcegetallget) | **GET** /Resource/get-all | Retrieves all resources. |
 | [**GetByLocation**](ResourceClient.md#resourcegetbylocationget) | **GET** /Resource/get-by-location | Retrieves resources from a specific group and location. |
+| [**GetInGeofence**](ResourceClient.md#resourcegetingeofencegeofenceidget) | **GET** /Resource/get-in-geofence/{geofenceId} | Retrieves resources in a geofence. |
 | [**GetPageData**](ResourceClient.md#resourcegetpagedataget) | **GET** /Resource/get-page-data | Retrieves a data page of resources. |
 | [**Get**](ResourceClient.md#resourceidget) | **GET** /Resource/{id} | Retrives the resource with the given id. |
 | [**Put**](ResourceClient.md#resourceidput) | **PUT** /Resource/{id} |  |
@@ -293,6 +294,104 @@ catch (ApiException e)
 | **maxDistanceMeter** | **double?** |  | [optional]  |
 | **minDistanceMeter** | **double?** |  | [optional]  |
 | **group** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;ResourceModel&gt;**](ResourceModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="resourcegetingeofencegeofenceidget"></a>
+# **GetInGeofence**
+> List&lt;ResourceModel&gt; GetInGeofence (Guid geofenceId)
+
+Retrieves resources in a geofence.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Logistics;
+
+namespace Example
+{
+    public class GetInGeofenceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ResourceClient(config);
+            var geofenceId = "geofenceId_example";  // Guid | 
+
+            try
+            {
+                // Retrieves resources in a geofence.
+                List<ResourceModel> result = apiInstance.GetInGeofence(geofenceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ResourceClient.GetInGeofence: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetInGeofenceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves resources in a geofence.
+    ApiResponse<List<ResourceModel>> response = apiInstance.GetInGeofenceWithHttpInfo(geofenceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ResourceClient.GetInGeofenceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **geofenceId** | **Guid** |  |  |
 
 ### Return type
 

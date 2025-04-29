@@ -79,16 +79,16 @@ public interface IGeofenceClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>GeofenceModel</returns>
-    GeofenceModel Get(Guid id);
+    /// <returns>GeofenceResponse</returns>
+    GeofenceResponse Get(Guid id);
 
     /// <summary>
     /// Gets geofence matching given id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>ApiResponse of GeofenceModel</returns>
-    ApiResponse<GeofenceModel> GetWithHttpInfo(Guid id);
+    /// <returns>ApiResponse of GeofenceResponse</returns>
+    ApiResponse<GeofenceResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
     /// Gets geofence matching given id. 
@@ -96,8 +96,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of GeofenceModel</returns>
-    Task<GeofenceModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of GeofenceResponse</returns>
+    Task<GeofenceResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Gets geofence matching given id. 
@@ -105,8 +105,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-    Task<ApiResponse<GeofenceModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+    Task<ApiResponse<GeofenceResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -115,8 +115,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="patchGeofenceRequest"> (optional)</param>
-    /// <returns>GeofenceModel</returns>
-    GeofenceModel Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?));
+    /// <returns>GeofenceResponse</returns>
+    GeofenceResponse Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?));
 
     /// <summary>
     /// Patches geofence matching given id. 
@@ -124,8 +124,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="patchGeofenceRequest"> (optional)</param>
-    /// <returns>ApiResponse of GeofenceModel</returns>
-    ApiResponse<GeofenceModel> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?));
+    /// <returns>ApiResponse of GeofenceResponse</returns>
+    ApiResponse<GeofenceResponse> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?));
         
     /// <summary>
     /// Patches geofence matching given id. 
@@ -134,8 +134,8 @@ public interface IGeofenceClient
     /// <param name="id"></param>
     /// <param name="patchGeofenceRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of GeofenceModel</returns>
-    Task<GeofenceModel> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of GeofenceResponse</returns>
+    Task<GeofenceResponse> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Patches geofence matching given id. 
@@ -144,8 +144,8 @@ public interface IGeofenceClient
     /// <param name="id"></param>
     /// <param name="patchGeofenceRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-    Task<ApiResponse<GeofenceModel>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+    Task<ApiResponse<GeofenceResponse>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -153,16 +153,16 @@ public interface IGeofenceClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createGeofenceRequest"> (optional)</param>
-    /// <returns>GeofenceModel</returns>
-    GeofenceModel Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?));
+    /// <returns>GeofenceResponse</returns>
+    GeofenceResponse Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?));
 
     /// <summary>
     /// Creates a new geofence. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createGeofenceRequest"> (optional)</param>
-    /// <returns>ApiResponse of GeofenceModel</returns>
-    ApiResponse<GeofenceModel> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?));
+    /// <returns>ApiResponse of GeofenceResponse</returns>
+    ApiResponse<GeofenceResponse> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?));
         
     /// <summary>
     /// Creates a new geofence. 
@@ -170,8 +170,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createGeofenceRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of GeofenceModel</returns>
-    Task<GeofenceModel> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of GeofenceResponse</returns>
+    Task<GeofenceResponse> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Creates a new geofence. 
@@ -179,8 +179,8 @@ public interface IGeofenceClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createGeofenceRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-    Task<ApiResponse<GeofenceModel>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+    Task<ApiResponse<GeofenceResponse>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -335,8 +335,8 @@ public interface IGeofenceClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Get(Guid id)
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Get(Guid id)
         {
             try
             {
@@ -353,8 +353,8 @@ public interface IGeofenceClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> GetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> GetWithHttpInfo(Guid id)
         {
             try
             {
@@ -372,8 +372,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public System.Threading.Tasks.Task<GeofenceModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public System.Threading.Tasks.Task<GeofenceResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -391,8 +391,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -409,8 +409,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?))
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?))
         {
             try
             {
@@ -428,8 +428,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?))
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?))
         {
             try
             {
@@ -448,8 +448,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public System.Threading.Tasks.Task<GeofenceModel> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public System.Threading.Tasks.Task<GeofenceResponse> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -468,8 +468,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -485,8 +485,8 @@ public interface IGeofenceClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?))
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?))
         {
             try
             {
@@ -503,8 +503,8 @@ public interface IGeofenceClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?))
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?))
         {
             try
             {
@@ -522,8 +522,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public System.Threading.Tasks.Task<GeofenceModel> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public System.Threading.Tasks.Task<GeofenceResponse> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -541,8 +541,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -592,8 +592,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        GeofenceModel Get(Guid id, int operationIndex = 0);
+        /// <returns>GeofenceResponse</returns>
+        GeofenceResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Gets geofence matching given id.
@@ -604,8 +604,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        ApiResponse<GeofenceModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        ApiResponse<GeofenceResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Patches geofence matching given id.
         /// </summary>
@@ -613,8 +613,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        GeofenceModel Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0);
+        /// <returns>GeofenceResponse</returns>
+        GeofenceResponse Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Patches geofence matching given id.
@@ -626,16 +626,16 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        ApiResponse<GeofenceModel> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        ApiResponse<GeofenceResponse> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new geofence.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        GeofenceModel Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0);
+        /// <returns>GeofenceResponse</returns>
+        GeofenceResponse Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new geofence.
@@ -646,8 +646,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        ApiResponse<GeofenceModel> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        ApiResponse<GeofenceResponse> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -692,8 +692,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        System.Threading.Tasks.Task<GeofenceModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GeofenceResponse</returns>
+        System.Threading.Tasks.Task<GeofenceResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets geofence matching given id.
@@ -705,8 +705,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GeofenceModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GeofenceResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patches geofence matching given id.
         /// </summary>
@@ -718,8 +718,8 @@ public interface IGeofenceClient
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        System.Threading.Tasks.Task<GeofenceModel> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GeofenceResponse</returns>
+        System.Threading.Tasks.Task<GeofenceResponse> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Patches geofence matching given id.
@@ -732,8 +732,8 @@ public interface IGeofenceClient
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GeofenceModel>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GeofenceResponse>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new geofence.
         /// </summary>
@@ -744,8 +744,8 @@ public interface IGeofenceClient
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        System.Threading.Tasks.Task<GeofenceModel> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GeofenceResponse</returns>
+        System.Threading.Tasks.Task<GeofenceResponse> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new geofence.
@@ -757,8 +757,8 @@ public interface IGeofenceClient
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GeofenceModel>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GeofenceResponse>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1041,10 +1041,10 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Get(Guid id, int operationIndex = 0)
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1054,8 +1054,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1098,7 +1098,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GeofenceModel>("/Geofence/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GeofenceResponse>("/Geofence/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GeofenceIdGet", localVarResponse);
@@ -1118,10 +1118,10 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public async System.Threading.Tasks.Task<GeofenceModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public async System.Threading.Tasks.Task<GeofenceResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1132,8 +1132,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1177,7 +1177,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GeofenceModel>("/Geofence/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GeofenceResponse>("/Geofence/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1198,10 +1198,10 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0)
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Patch(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = PatchWithHttpInfo(id, patchGeofenceRequest);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = PatchWithHttpInfo(id, patchGeofenceRequest);
             return localVarResponse.Data;
         }
 
@@ -1212,8 +1212,8 @@ public interface IGeofenceClient
         /// <param name="id"></param>
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> PatchWithHttpInfo(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1260,7 +1260,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<GeofenceModel>("/Geofence/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<GeofenceResponse>("/Geofence/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GeofenceIdPatch", localVarResponse);
@@ -1281,10 +1281,10 @@ public interface IGeofenceClient
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public async System.Threading.Tasks.Task<GeofenceModel> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public async System.Threading.Tasks.Task<GeofenceResponse> PatchAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchGeofenceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchGeofenceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1296,8 +1296,8 @@ public interface IGeofenceClient
         /// <param name="patchGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> PatchWithHttpInfoAsync(Guid id, PatchGeofenceRequest? patchGeofenceRequest = default(PatchGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1345,7 +1345,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<GeofenceModel>("/Geofence/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<GeofenceResponse>("/Geofence/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1365,10 +1365,10 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GeofenceModel</returns>
-        public GeofenceModel Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0)
+        /// <returns>GeofenceResponse</returns>
+        public GeofenceResponse Post(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = PostWithHttpInfo(createGeofenceRequest);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = PostWithHttpInfo(createGeofenceRequest);
             return localVarResponse.Data;
         }
 
@@ -1378,8 +1378,8 @@ public interface IGeofenceClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GeofenceModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<GeofenceModel> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of GeofenceResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GeofenceResponse> PostWithHttpInfo(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1425,7 +1425,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<GeofenceModel>("/Geofence", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<GeofenceResponse>("/Geofence", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GeofencePost", localVarResponse);
@@ -1445,10 +1445,10 @@ public interface IGeofenceClient
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GeofenceModel</returns>
-        public async System.Threading.Tasks.Task<GeofenceModel> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GeofenceResponse</returns>
+        public async System.Threading.Tasks.Task<GeofenceResponse> PostAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GeofenceModel> localVarResponse = await PostWithHttpInfoAsync(createGeofenceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<GeofenceResponse> localVarResponse = await PostWithHttpInfoAsync(createGeofenceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1459,8 +1459,8 @@ public interface IGeofenceClient
         /// <param name="createGeofenceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GeofenceModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceModel>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GeofenceResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GeofenceResponse>> PostWithHttpInfoAsync(CreateGeofenceRequest? createGeofenceRequest = default(CreateGeofenceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1507,7 +1507,7 @@ public interface IGeofenceClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<GeofenceModel>("/Geofence", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<GeofenceResponse>("/Geofence", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Flow
 /// <summary>
 /// Client to interact with the API endpoints of the flow service.
 /// </summary>
-public interface IMachineClient
+public interface IDaemonClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -112,16 +112,16 @@ public interface IMachineClient
     /// <summary>
     /// Client to interact with the API endpoints of the flow service.
     /// </summary>
-    public class MachineClient : IMachineClient
+    public class DaemonClient : IDaemonClient
     {
-        private __MachineClient _internalClient;
+        private __DaemonClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public MachineClient(string host, string? authorization = null)
+        public DaemonClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __MachineClient(new Configuration
+                _internalClient = new __DaemonClient(new Configuration
                 {
                     BasePath = $"{host}/flow-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -129,14 +129,14 @@ public interface IMachineClient
             }
             else
             {
-                _internalClient = new __MachineClient(new Configuration
+                _internalClient = new __DaemonClient(new Configuration
                 {
                     BasePath = $"{host}/flow-api/v1",
                 });
             }
         }
 
-        public MachineClient(Environment env, string? authorization = null)
+        public DaemonClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -331,7 +331,7 @@ public interface IMachineClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IMachineClientSync : IApiAccessor
+    internal interface __IDaemonClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -378,7 +378,7 @@ public interface IMachineClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IMachineClientAsync : IApiAccessor
+    internal interface __IDaemonClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -435,7 +435,7 @@ public interface IMachineClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IMachineClient : __IMachineClientSync, __IMachineClientAsync
+    internal interface __IDaemonClient : __IDaemonClientSync, __IDaemonClientAsync
     {
 
     }
@@ -443,24 +443,24 @@ public interface IMachineClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __MachineClient : __IMachineClient
+    internal /*partial*/ class __DaemonClient : __IDaemonClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__MachineClient"/> class.
+        /// Initializes a new instance of the <see cref="__DaemonClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __MachineClient() : this((string)null)
+        public __DaemonClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__MachineClient"/> class.
+        /// Initializes a new instance of the <see cref="__DaemonClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __MachineClient(string basePath)
+        public __DaemonClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -473,12 +473,12 @@ public interface IMachineClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__MachineClient"/> class
+        /// Initializes a new instance of the <see cref="__DaemonClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __MachineClient(Simplic.OxS.SDK.Configuration configuration)
+        public __DaemonClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -492,13 +492,13 @@ public interface IMachineClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__MachineClient"/> class
+        /// Initializes a new instance of the <see cref="__DaemonClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __MachineClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __DaemonClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -596,7 +596,7 @@ public interface IMachineClient
             }
 
 
-            localVarRequestOptions.Operation = "MachineClient.MachineGet";
+            localVarRequestOptions.Operation = "DaemonClient.DaemonGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -606,10 +606,10 @@ public interface IMachineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetAllMachinesResponse>("/Machine", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetAllMachinesResponse>("/Daemon", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MachineGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DaemonGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -667,7 +667,7 @@ public interface IMachineClient
             }
 
 
-            localVarRequestOptions.Operation = "MachineClient.MachineGet";
+            localVarRequestOptions.Operation = "DaemonClient.DaemonGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -677,11 +677,11 @@ public interface IMachineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAllMachinesResponse>("/Machine", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAllMachinesResponse>("/Daemon", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MachineGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DaemonGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -739,7 +739,7 @@ public interface IMachineClient
 
             localVarRequestOptions.PathParameters.Add("userId", Simplic.OxS.SDK.ClientUtils.ParameterToString(userId)); // path parameter
 
-            localVarRequestOptions.Operation = "MachineClient.MachineUserIdGet";
+            localVarRequestOptions.Operation = "DaemonClient.DaemonUserIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -749,10 +749,10 @@ public interface IMachineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetAllMachinesForUserResponse>("/Machine/{userId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetAllMachinesForUserResponse>("/Daemon/{userId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MachineUserIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DaemonUserIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -813,7 +813,7 @@ public interface IMachineClient
 
             localVarRequestOptions.PathParameters.Add("userId", Simplic.OxS.SDK.ClientUtils.ParameterToString(userId)); // path parameter
 
-            localVarRequestOptions.Operation = "MachineClient.MachineUserIdGet";
+            localVarRequestOptions.Operation = "DaemonClient.DaemonUserIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (Bearer) required
@@ -823,11 +823,11 @@ public interface IMachineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAllMachinesForUserResponse>("/Machine/{userId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAllMachinesForUserResponse>("/Daemon/{userId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("MachineUserIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DaemonUserIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

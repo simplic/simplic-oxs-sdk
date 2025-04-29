@@ -2263,17 +2263,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             }
                         }
@@ -2426,17 +2426,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             }
                         }
@@ -2536,17 +2536,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GeofenceModel"
+                                    "$ref": "#/components/schemas/GeofenceResponse"
                                 }
                             }
                         }
@@ -3972,6 +3972,76 @@
                         "in": "query",
                         "schema": {
                             "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ResourceModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ResourceModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ResourceModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Resource/get-in-geofence/{geofenceId}": {
+            "get": {
+                "tags": [
+                    "Resource"
+                ],
+                "summary": "Retrieves resources in a geofence.",
+                "parameters": [
+                    {
+                        "name": "geofenceId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
                         }
                     }
                 ],
@@ -11175,7 +11245,7 @@
                 "additionalProperties": false,
                 "description": "Shared model of geo location."
             },
-            "GeofenceModel": {
+            "GeofenceResponse": {
                 "type": "object",
                 "properties": {
                     "id": {

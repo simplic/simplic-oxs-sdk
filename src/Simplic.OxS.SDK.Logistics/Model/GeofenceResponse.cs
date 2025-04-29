@@ -30,18 +30,18 @@ namespace Simplic.OxS.SDK.Logistics
     /// <summary>
     /// Shared model of geofence.
     /// </summary>
-    [DataContract(Name = "GeofenceModel")]
-    public partial class GeofenceModel : IEquatable<GeofenceModel>, IValidatableObject
+    [DataContract(Name = "GeofenceResponse")]
+    public partial class GeofenceResponse : IEquatable<GeofenceResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GeofenceModel" /> class.
+        /// Initializes a new instance of the <see cref="GeofenceResponse" /> class.
         /// </summary>
         /// <param name="id">Get or sets the id.     Represents the primary identifier of a geofence.  .</param>
         /// <param name="name">Gets or sets the name of a geofence..</param>
         /// <param name="color">Gets or sets the geofence color.</param>
         /// <param name="address">address.</param>
         /// <param name="location">Gets or sets a list of geo locations.     Geo locations are points which will be used to generate a geofence.  .</param>
-        public GeofenceModel(Guid id = default(Guid), string name = default(string), string color = default(string), AddressModel address = default(AddressModel), List<GeoLocationModel> location = default(List<GeoLocationModel>))
+        public GeofenceResponse(Guid id = default(Guid), string name = default(string), string color = default(string), AddressModel address = default(AddressModel), List<GeoLocationModel> location = default(List<GeoLocationModel>))
         {
             this.Id = id;
             this.Name = name;
@@ -91,7 +91,7 @@ namespace Simplic.OxS.SDK.Logistics
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GeofenceModel {\n");
+            sb.Append("class GeofenceResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Color: ").Append(Color).Append("\n");
@@ -117,15 +117,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GeofenceModel);
+            return this.Equals(input as GeofenceResponse);
         }
 
         /// <summary>
-        /// Returns true if GeofenceModel instances are equal
+        /// Returns true if GeofenceResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of GeofenceModel to be compared</param>
+        /// <param name="input">Instance of GeofenceResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GeofenceModel input)
+        public bool Equals(GeofenceResponse input)
         {
             if (input == null)
             {
