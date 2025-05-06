@@ -1,13 +1,12 @@
-# Simplic.OxS.SDK.Storage.Management.CreateLoadingAidBookingAccountRequest
+# Simplic.OxS.SDK.Storage.Management.PersonalAccountResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContactId** | **Guid** |  | 
-**PersonalAccountId** | **Guid?** |  | [optional] 
-**Name** | **string** |  | [optional] 
+**Id** | **Guid** |  | [optional] 
 **Number** | **string** |  | [optional] 
+**Type** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

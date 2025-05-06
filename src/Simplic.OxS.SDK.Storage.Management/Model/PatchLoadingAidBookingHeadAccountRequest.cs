@@ -37,12 +37,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Initializes a new instance of the <see cref="PatchLoadingAidBookingHeadAccountRequest" /> class.
         /// </summary>
         /// <param name="contactId">contactId.</param>
+        /// <param name="personalAccountId">personalAccountId.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
         /// <param name="loadingAidBookingAccountIds">loadingAidBookingAccountIds.</param>
-        public PatchLoadingAidBookingHeadAccountRequest(Guid? contactId = default(Guid?), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccountIds = default(List<Guid>))
+        public PatchLoadingAidBookingHeadAccountRequest(Guid? contactId = default(Guid?), Guid? personalAccountId = default(Guid?), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccountIds = default(List<Guid>))
         {
             this.ContactId = contactId;
+            this.PersonalAccountId = personalAccountId;
             this.Name = name;
             this.Number = number;
             this.LoadingAidBookingAccountIds = loadingAidBookingAccountIds;
@@ -53,6 +55,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         [DataMember(Name = "contactId", EmitDefaultValue = true)]
         public Guid? ContactId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PersonalAccountId
+        /// </summary>
+        [DataMember(Name = "personalAccountId", EmitDefaultValue = true)]
+        public Guid? PersonalAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -81,6 +89,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             StringBuilder sb = new StringBuilder();
             sb.Append("class PatchLoadingAidBookingHeadAccountRequest {\n");
             sb.Append("  ContactId: ").Append(ContactId).Append("\n");
+            sb.Append("  PersonalAccountId: ").Append(PersonalAccountId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  LoadingAidBookingAccountIds: ").Append(LoadingAidBookingAccountIds).Append("\n");
@@ -125,6 +134,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.ContactId.Equals(input.ContactId))
                 ) && 
                 (
+                    this.PersonalAccountId == input.PersonalAccountId ||
+                    (this.PersonalAccountId != null &&
+                    this.PersonalAccountId.Equals(input.PersonalAccountId))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -154,6 +168,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.ContactId != null)
                 {
                     hashCode = (hashCode * 59) + this.ContactId.GetHashCode();
+                }
+                if (this.PersonalAccountId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccountId.GetHashCode();
                 }
                 if (this.Name != null)
                 {

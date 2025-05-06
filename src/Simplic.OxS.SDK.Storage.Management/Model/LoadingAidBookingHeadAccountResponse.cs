@@ -41,13 +41,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="number">number.</param>
         /// <param name="accounts">accounts.</param>
         /// <param name="contact">contact.</param>
-        public LoadingAidBookingHeadAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), List<Guid> accounts = default(List<Guid>), AddressModel contact = default(AddressModel))
+        /// <param name="personalAccount">personalAccount.</param>
+        public LoadingAidBookingHeadAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), List<Guid> accounts = default(List<Guid>), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
             this.Accounts = accounts;
             this.Contact = contact;
+            this.PersonalAccount = personalAccount;
         }
 
         /// <summary>
@@ -81,6 +83,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public AddressModel Contact { get; set; }
 
         /// <summary>
+        /// Gets or Sets PersonalAccount
+        /// </summary>
+        [DataMember(Name = "personalAccount", EmitDefaultValue = false)]
+        public PersonalAccountResponse PersonalAccount { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Accounts: ").Append(Accounts).Append("\n");
             sb.Append("  Contact: ").Append(Contact).Append("\n");
+            sb.Append("  PersonalAccount: ").Append(PersonalAccount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +162,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Contact == input.Contact ||
                     (this.Contact != null &&
                     this.Contact.Equals(input.Contact))
+                ) && 
+                (
+                    this.PersonalAccount == input.PersonalAccount ||
+                    (this.PersonalAccount != null &&
+                    this.PersonalAccount.Equals(input.PersonalAccount))
                 );
         }
 
@@ -184,6 +198,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Contact != null)
                 {
                     hashCode = (hashCode * 59) + this.Contact.GetHashCode();
+                }
+                if (this.PersonalAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccount.GetHashCode();
                 }
                 return hashCode;
             }

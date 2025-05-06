@@ -40,14 +40,16 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
         /// <param name="contact">contact.</param>
+        /// <param name="personalAccount">personalAccount.</param>
         /// <param name="values">values.</param>
         /// <param name="lastBooking">lastBooking.</param>
-        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), List<LoadingAidValueResponse> values = default(List<LoadingAidValueResponse>), DateTime lastBooking = default(DateTime))
+        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse), List<LoadingAidValueResponse> values = default(List<LoadingAidValueResponse>), DateTime lastBooking = default(DateTime))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
             this.Contact = contact;
+            this.PersonalAccount = personalAccount;
             this.Values = values;
             this.LastBooking = lastBooking;
         }
@@ -77,6 +79,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public AddressModel Contact { get; set; }
 
         /// <summary>
+        /// Gets or Sets PersonalAccount
+        /// </summary>
+        [DataMember(Name = "personalAccount", EmitDefaultValue = false)]
+        public PersonalAccountResponse PersonalAccount { get; set; }
+
+        /// <summary>
         /// Gets or Sets Values
         /// </summary>
         [DataMember(Name = "values", EmitDefaultValue = true)]
@@ -100,6 +108,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Contact: ").Append(Contact).Append("\n");
+            sb.Append("  PersonalAccount: ").Append(PersonalAccount).Append("\n");
             sb.Append("  Values: ").Append(Values).Append("\n");
             sb.Append("  LastBooking: ").Append(LastBooking).Append("\n");
             sb.Append("}\n");
@@ -158,6 +167,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Contact.Equals(input.Contact))
                 ) && 
                 (
+                    this.PersonalAccount == input.PersonalAccount ||
+                    (this.PersonalAccount != null &&
+                    this.PersonalAccount.Equals(input.PersonalAccount))
+                ) && 
+                (
                     this.Values == input.Values ||
                     this.Values != null &&
                     input.Values != null &&
@@ -194,6 +208,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Contact != null)
                 {
                     hashCode = (hashCode * 59) + this.Contact.GetHashCode();
+                }
+                if (this.PersonalAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccount.GetHashCode();
                 }
                 if (this.Values != null)
                 {

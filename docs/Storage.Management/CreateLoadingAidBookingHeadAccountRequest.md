@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContactId** | **Guid** |  | 
+**PersonalAccountId** | **Guid?** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
 **LoadingAidBookingAccountIds** | **List&lt;Guid&gt;** |  | 

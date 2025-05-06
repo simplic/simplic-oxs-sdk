@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
 **Contact** | [**AddressModel**](AddressModel.md) |  | [optional] 
+**PersonalAccount** | [**PersonalAccountResponse**](PersonalAccountResponse.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
 

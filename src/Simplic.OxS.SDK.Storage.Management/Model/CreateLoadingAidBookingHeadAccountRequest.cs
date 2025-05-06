@@ -42,10 +42,11 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// Initializes a new instance of the <see cref="CreateLoadingAidBookingHeadAccountRequest" /> class.
         /// </summary>
         /// <param name="contactId">contactId (required).</param>
+        /// <param name="personalAccountId">personalAccountId.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
         /// <param name="loadingAidBookingAccountIds">loadingAidBookingAccountIds (required).</param>
-        public CreateLoadingAidBookingHeadAccountRequest(Guid contactId = default(Guid), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccountIds = default(List<Guid>))
+        public CreateLoadingAidBookingHeadAccountRequest(Guid contactId = default(Guid), Guid? personalAccountId = default(Guid?), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccountIds = default(List<Guid>))
         {
             this.ContactId = contactId;
             // to ensure "loadingAidBookingAccountIds" is required (not null)
@@ -54,6 +55,7 @@ namespace Simplic.OxS.SDK.Storage.Management
                 throw new ArgumentNullException("loadingAidBookingAccountIds is a required property for CreateLoadingAidBookingHeadAccountRequest and cannot be null");
             }
             this.LoadingAidBookingAccountIds = loadingAidBookingAccountIds;
+            this.PersonalAccountId = personalAccountId;
             this.Name = name;
             this.Number = number;
         }
@@ -63,6 +65,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         [DataMember(Name = "contactId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ContactId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PersonalAccountId
+        /// </summary>
+        [DataMember(Name = "personalAccountId", EmitDefaultValue = true)]
+        public Guid? PersonalAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -91,6 +99,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateLoadingAidBookingHeadAccountRequest {\n");
             sb.Append("  ContactId: ").Append(ContactId).Append("\n");
+            sb.Append("  PersonalAccountId: ").Append(PersonalAccountId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  LoadingAidBookingAccountIds: ").Append(LoadingAidBookingAccountIds).Append("\n");
@@ -135,6 +144,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.ContactId.Equals(input.ContactId))
                 ) && 
                 (
+                    this.PersonalAccountId == input.PersonalAccountId ||
+                    (this.PersonalAccountId != null &&
+                    this.PersonalAccountId.Equals(input.PersonalAccountId))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -164,6 +178,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.ContactId != null)
                 {
                     hashCode = (hashCode * 59) + this.ContactId.GetHashCode();
+                }
+                if (this.PersonalAccountId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccountId.GetHashCode();
                 }
                 if (this.Name != null)
                 {

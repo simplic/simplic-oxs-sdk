@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
 **Contact** | [**AddressModel**](AddressModel.md) |  | [optional] 
+**PersonalAccount** | [**PersonalAccountResponse**](PersonalAccountResponse.md) |  | [optional] 
 **Values** | [**List&lt;LoadingAidValueResponse&gt;**](LoadingAidValueResponse.md) |  | [optional] 
 **LastBooking** | **DateTime** |  | [optional] 
 
