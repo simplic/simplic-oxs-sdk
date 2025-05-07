@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **CoDriver** | [**GetComposedDriverResponse**](GetComposedDriverResponse.md) |  | [optional] 
 **Location** | [**GetComposedLocationResponse**](GetComposedLocationResponse.md) |  | [optional] 
 **LatestMessage** | [**GetComposedMessageResponse**](GetComposedMessageResponse.md) |  | [optional] 
+**HashValue** | **int** | Gets or sets the last calculated hash value. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

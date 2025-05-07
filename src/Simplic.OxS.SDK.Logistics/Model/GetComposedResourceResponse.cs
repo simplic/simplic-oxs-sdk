@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="coDriver">coDriver.</param>
         /// <param name="location">location.</param>
         /// <param name="latestMessage">latestMessage.</param>
-        public GetComposedResourceResponse(Guid id = default(Guid), GetComposedTractorUnitResponse tractorUnit = default(GetComposedTractorUnitResponse), List<GetComposedTrailerResponse> trailer = default(List<GetComposedTrailerResponse>), GetComposedDriverResponse mainDriver = default(GetComposedDriverResponse), GetComposedDriverResponse coDriver = default(GetComposedDriverResponse), GetComposedLocationResponse location = default(GetComposedLocationResponse), GetComposedMessageResponse latestMessage = default(GetComposedMessageResponse))
+        /// <param name="hashValue">Gets or sets the last calculated hash value..</param>
+        public GetComposedResourceResponse(Guid id = default(Guid), GetComposedTractorUnitResponse tractorUnit = default(GetComposedTractorUnitResponse), List<GetComposedTrailerResponse> trailer = default(List<GetComposedTrailerResponse>), GetComposedDriverResponse mainDriver = default(GetComposedDriverResponse), GetComposedDriverResponse coDriver = default(GetComposedDriverResponse), GetComposedLocationResponse location = default(GetComposedLocationResponse), GetComposedMessageResponse latestMessage = default(GetComposedMessageResponse), int hashValue = default(int))
         {
             this.Id = id;
             this.TractorUnit = tractorUnit;
@@ -52,6 +53,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.CoDriver = coDriver;
             this.Location = location;
             this.LatestMessage = latestMessage;
+            this.HashValue = hashValue;
         }
 
         /// <summary>
@@ -99,6 +101,13 @@ namespace Simplic.OxS.SDK.Logistics
         public GetComposedMessageResponse LatestMessage { get; set; }
 
         /// <summary>
+        /// Gets or sets the last calculated hash value.
+        /// </summary>
+        /// <value>Gets or sets the last calculated hash value.</value>
+        [DataMember(Name = "hashValue", EmitDefaultValue = false)]
+        public int HashValue { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -113,6 +122,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  CoDriver: ").Append(CoDriver).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  LatestMessage: ").Append(LatestMessage).Append("\n");
+            sb.Append("  HashValue: ").Append(HashValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +193,10 @@ namespace Simplic.OxS.SDK.Logistics
                     this.LatestMessage == input.LatestMessage ||
                     (this.LatestMessage != null &&
                     this.LatestMessage.Equals(input.LatestMessage))
+                ) && 
+                (
+                    this.HashValue == input.HashValue ||
+                    this.HashValue.Equals(input.HashValue)
                 );
         }
 
@@ -223,6 +237,7 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.LatestMessage.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.HashValue.GetHashCode();
                 return hashCode;
             }
         }
