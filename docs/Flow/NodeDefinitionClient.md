@@ -8,6 +8,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | [**GetAll**](NodeDefinitionClient.md#nodedefinitiongetallget) | **GET** /NodeDefinition/get-all |  |
 | [**Get**](NodeDefinitionClient.md#nodedefinitionidget) | **GET** /NodeDefinition/{id} |  |
 | [**Post**](NodeDefinitionClient.md#nodedefinitionpost) | **POST** /NodeDefinition |  |
+| [**Restore**](NodeDefinitionClient.md#nodedefinitionrestorepost) | **POST** /NodeDefinition/restore |  |
 
 <a id="nodedefinitiondelete"></a>
 # **Delete**
@@ -360,6 +361,95 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="nodedefinitionrestorepost"></a>
+# **Restore**
+> void Restore (string? type = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class RestoreExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new NodeDefinitionClient(config);
+            var type = "type_example";  // string? |  (optional) 
+
+            try
+            {
+                apiInstance.Restore(type);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NodeDefinitionClient.Restore: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RestoreWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.RestoreWithHttpInfo(type);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NodeDefinitionClient.RestoreWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **type** | **string?** |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 

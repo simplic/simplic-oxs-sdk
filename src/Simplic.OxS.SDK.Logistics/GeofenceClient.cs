@@ -40,6 +40,49 @@ public interface IGeofenceClient
 
 
     /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="radiusInMeters"> (optional)</param>
+    /// <returns>List&lt;GeofenceResponse&gt;</returns>
+    List<GeofenceResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?));
+
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="radiusInMeters"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;GeofenceResponse&gt;</returns>
+    ApiResponse<List<GeofenceResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?));
+        
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="radiusInMeters"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;GeofenceResponse&gt;</returns>
+    Task<List<GeofenceResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Retrieves resources from a specific group and location. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="longitude"> (optional)</param>
+    /// <param name="latitude"> (optional)</param>
+    /// <param name="radiusInMeters"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;GeofenceResponse&gt;)</returns>
+    Task<ApiResponse<List<GeofenceResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Deletes geofence matching given id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -257,6 +300,87 @@ public interface IGeofenceClient
             set { _exceptionFactory = value; }
         }
 
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <returns>List&lt;GeofenceResponse&gt;</returns>
+        public List<GeofenceResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?))
+        {
+            try
+            {
+                return _internalClient.GetByLocation(longitude, latitude, radiusInMeters);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;GeofenceResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?))
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfo(longitude, latitude, radiusInMeters);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;GeofenceResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<GeofenceResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationAsync(longitude, latitude, radiusInMeters, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;GeofenceResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByLocationWithHttpInfoAsync(longitude, latitude, radiusInMeters, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
         /// <summary>
         /// Deletes geofence matching given id. 
         /// </summary>
@@ -567,6 +691,30 @@ public interface IGeofenceClient
     {
         #region Synchronous Operations
         /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;GeofenceResponse&gt;</returns>
+        List<GeofenceResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0);
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;GeofenceResponse&gt;</returns>
+        ApiResponse<List<GeofenceResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0);
+        /// <summary>
         /// Deletes geofence matching given id.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -657,6 +805,35 @@ public interface IGeofenceClient
     internal interface __IGeofenceClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;GeofenceResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<GeofenceResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;GeofenceResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<GeofenceResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes geofence matching given id.
         /// </summary>
@@ -879,6 +1056,192 @@ public interface IGeofenceClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;GeofenceResponse&gt;</returns>
+        public List<GeofenceResponse> GetByLocation(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>> localVarResponse = GetByLocationWithHttpInfo(longitude, latitude, radiusInMeters);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;GeofenceResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>> GetByLocationWithHttpInfo(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (radiusInMeters != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "radiusInMeters", radiusInMeters));
+            }
+
+            localVarRequestOptions.Operation = "GeofenceClient.GeofenceGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<GeofenceResponse>>("/Geofence/get-by-location", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GeofenceGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;GeofenceResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<GeofenceResponse>> GetByLocationAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>> localVarResponse = await GetByLocationWithHttpInfoAsync(longitude, latitude, radiusInMeters, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves resources from a specific group and location. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="longitude"> (optional)</param>
+        /// <param name="latitude"> (optional)</param>
+        /// <param name="radiusInMeters"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;GeofenceResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<GeofenceResponse>>> GetByLocationWithHttpInfoAsync(double? longitude = default(double?), double? latitude = default(double?), double? radiusInMeters = default(double?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (longitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "longitude", longitude));
+            }
+            if (latitude != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "latitude", latitude));
+            }
+            if (radiusInMeters != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "radiusInMeters", radiusInMeters));
+            }
+
+            localVarRequestOptions.Operation = "GeofenceClient.GeofenceGetByLocationGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GeofenceResponse>>("/Geofence/get-by-location", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GeofenceGetByLocationGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
