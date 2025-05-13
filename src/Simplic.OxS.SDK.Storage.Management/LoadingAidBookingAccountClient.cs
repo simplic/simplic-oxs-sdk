@@ -779,6 +779,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -853,6 +858,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -931,6 +941,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1011,6 +1026,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1086,6 +1106,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1163,6 +1188,11 @@ public interface ILoadingAidBookingAccountClient
             localVarRequestOptions.Operation = "LoadingAidBookingAccountClient.LoadingAidBookingAccountPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {

@@ -66,9 +66,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="roundingMode">roundingMode.</param>
         /// <param name="electronicInvoiceType">electronicInvoiceType.</param>
         /// <param name="addPeppolAddress">Gets or sets whether to add a PEPPOL address for buyer and seller..</param>
-        /// <param name="leitwegIdRequired">Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  .</param>
+        /// <param name="leitwegIdRequired">Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   (default to false).</param>
         /// <param name="invoiceData">invoiceData.</param>
-        public CreateElectronicInvoiceRequest(byte[] pdf = default(byte[]), Profile? profile = default(Profile?), ZUGFeRDVersion? varVersion = default(ZUGFeRDVersion?), RoundingMode? roundingMode = default(RoundingMode?), ElectronicInvoiceType? electronicInvoiceType = default(ElectronicInvoiceType?), bool addPeppolAddress = default(bool), bool leitwegIdRequired = default(bool), InvoiceDataRequest invoiceData = default(InvoiceDataRequest))
+        public CreateElectronicInvoiceRequest(byte[] pdf = default(byte[]), Profile? profile = default(Profile?), ZUGFeRDVersion? varVersion = default(ZUGFeRDVersion?), RoundingMode? roundingMode = default(RoundingMode?), ElectronicInvoiceType? electronicInvoiceType = default(ElectronicInvoiceType?), bool addPeppolAddress = default(bool), bool leitwegIdRequired = false, InvoiceDataRequest invoiceData = default(InvoiceDataRequest))
         {
             this.Pdf = pdf;
             this.Profile = profile;

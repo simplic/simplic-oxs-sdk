@@ -1223,6 +1223,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1294,6 +1299,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1369,6 +1379,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationGetConfigurationForCustomerGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1446,6 +1461,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationGetConfigurationForCustomerGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1517,6 +1537,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1590,6 +1615,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1662,6 +1692,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1736,6 +1771,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1814,6 +1854,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1894,6 +1939,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1969,6 +2019,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2046,6 +2101,11 @@ public interface IBarcodeConfigurationClient
             localVarRequestOptions.Operation = "BarcodeConfigurationClient.BarcodeConfigurationPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
