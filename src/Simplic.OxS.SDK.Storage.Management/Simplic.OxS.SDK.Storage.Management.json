@@ -955,6 +955,111 @@
                         }
                     }
                 }
+            },
+            "post": {
+                "tags": [
+                    "LoadingAidBooking"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoadingAidBookingFromShipmentRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoadingAidBookingFromShipmentRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoadingAidBookingFromShipmentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/LoadingAidBooking": {
@@ -2268,6 +2373,69 @@
                 },
                 "additionalProperties": false
             },
+            "LoadingAidBookingFromShipmentRequest": {
+                "required": [
+                    "deliveryAddressContactId",
+                    "items",
+                    "loadAddressContactId",
+                    "organizationContactId"
+                ],
+                "type": "object",
+                "properties": {
+                    "referenceId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "referenceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "globalBookingId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "loadAddressContactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "deliveryAddressContactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "carrierContactId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierPickedUp": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "broughtToLoadAddress": {
+                        "type": "boolean"
+                    },
+                    "tookFromDeliveryAddress": {
+                        "type": "boolean"
+                    },
+                    "carrierDelivered": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "organizationContactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidItemRequest"
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
             "LoadingAidBookingHeadAccountResponse": {
                 "type": "object",
                 "properties": {
@@ -2353,6 +2521,20 @@
                     "fault": {
                         "type": "string",
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LoadingAidItemRequest": {
+                "type": "object",
+                "properties": {
+                    "loadingAidTypeId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "format": "double"
                     }
                 },
                 "additionalProperties": false
