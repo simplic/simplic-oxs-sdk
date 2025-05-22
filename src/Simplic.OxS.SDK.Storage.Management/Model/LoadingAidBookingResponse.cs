@@ -42,14 +42,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="quantity">quantity.</param>
         /// <param name="loadingAidType">loadingAidType.</param>
         /// <param name="note">note.</param>
-        /// <param name="reason">reason.</param>
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
         /// <param name="referenceType">referenceType.</param>
         /// <param name="status">status.</param>
         /// <param name="dateTime">dateTime.</param>
         /// <param name="fault">fault.</param>
-        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), string status = default(string), DateTime dateTime = default(DateTime), string fault = default(string))
+        /// <param name="tags">tags.</param>
+        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>))
         {
             this.Id = id;
             this.SourceAccount = sourceAccount;
@@ -57,13 +57,13 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.Quantity = quantity;
             this.LoadingAidType = loadingAidType;
             this.Note = note;
-            this.Reason = reason;
             this.GlobalBookingId = globalBookingId;
             this.ReferenceId = referenceId;
             this.ReferenceType = referenceType;
             this.Status = status;
             this.DateTime = dateTime;
             this.Fault = fault;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -103,12 +103,6 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string Note { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reason
-        /// </summary>
-        [DataMember(Name = "reason", EmitDefaultValue = true)]
-        public string Reason { get; set; }
-
-        /// <summary>
         /// Gets or Sets GlobalBookingId
         /// </summary>
         [DataMember(Name = "globalBookingId", EmitDefaultValue = true)]
@@ -129,8 +123,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
-        public string Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public LoadingAidBookingStatusResponse Status { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTime
@@ -143,6 +137,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// </summary>
         [DataMember(Name = "fault", EmitDefaultValue = true)]
         public string Fault { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<LoadingAidBookingTagSubsetResponse> Tags { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -158,13 +158,13 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  LoadingAidType: ").Append(LoadingAidType).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
-            sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  GlobalBookingId: ").Append(GlobalBookingId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  Fault: ").Append(Fault).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -230,11 +230,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Note.Equals(input.Note))
                 ) && 
                 (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
                     this.GlobalBookingId == input.GlobalBookingId ||
                     (this.GlobalBookingId != null &&
                     this.GlobalBookingId.Equals(input.GlobalBookingId))
@@ -263,6 +258,12 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Fault == input.Fault ||
                     (this.Fault != null &&
                     this.Fault.Equals(input.Fault))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -296,10 +297,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.Note.GetHashCode();
                 }
-                if (this.Reason != null)
-                {
-                    hashCode = (hashCode * 59) + this.Reason.GetHashCode();
-                }
                 if (this.GlobalBookingId != null)
                 {
                     hashCode = (hashCode * 59) + this.GlobalBookingId.GetHashCode();
@@ -323,6 +320,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Fault != null)
                 {
                     hashCode = (hashCode * 59) + this.Fault.GetHashCode();
+                }
+                if (this.Tags != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 return hashCode;
             }

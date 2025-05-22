@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Quantity** | **double** |  | [optional] 
 **LoadingAidTypeId** | **Guid** |  | [optional] 
 **Note** | **string** |  | [optional] 
-**Reason** | **string** |  | [optional] 
 **GlobalBookingId** | **Guid?** |  | [optional] 
 **ReferenceId** | **Guid?** |  | [optional] 
 **ReferenceType** | **string** |  | [optional] 

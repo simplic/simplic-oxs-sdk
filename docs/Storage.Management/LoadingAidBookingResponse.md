@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Quantity** | **double** |  | [optional] 
 **LoadingAidType** | [**LoadingAidTypeModel**](LoadingAidTypeModel.md) |  | [optional] 
 **Note** | **string** |  | [optional] 
-**Reason** | **string** |  | [optional] 
 **GlobalBookingId** | **Guid?** |  | [optional] 
 **ReferenceId** | **Guid?** |  | [optional] 
 **ReferenceType** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+**Status** | [**LoadingAidBookingStatusResponse**](LoadingAidBookingStatusResponse.md) |  | [optional] 
 **DateTime** | **DateTime** |  | [optional] 
 **Fault** | **string** |  | [optional] 
+**Tags** | [**List&lt;LoadingAidBookingTagSubsetResponse&gt;**](LoadingAidBookingTagSubsetResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

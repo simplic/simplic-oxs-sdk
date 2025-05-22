@@ -28,28 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Storage.Management
 {
     /// <summary>
-    /// LoadingAidBookingHeadAccountResponse
+    /// LoadingAidBookingAccountSubsetResponse
     /// </summary>
-    [DataContract(Name = "LoadingAidBookingHeadAccountResponse")]
-    public partial class LoadingAidBookingHeadAccountResponse : IEquatable<LoadingAidBookingHeadAccountResponse>, IValidatableObject
+    [DataContract(Name = "LoadingAidBookingAccountSubsetResponse")]
+    public partial class LoadingAidBookingAccountSubsetResponse : IEquatable<LoadingAidBookingAccountSubsetResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoadingAidBookingHeadAccountResponse" /> class.
+        /// Initializes a new instance of the <see cref="LoadingAidBookingAccountSubsetResponse" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
-        /// <param name="accounts">accounts.</param>
-        /// <param name="contact">contact.</param>
-        /// <param name="personalAccount">personalAccount.</param>
-        public LoadingAidBookingHeadAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), List<LoadingAidBookingAccountSubsetResponse> accounts = default(List<LoadingAidBookingAccountSubsetResponse>), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse))
+        public LoadingAidBookingAccountSubsetResponse(Guid id = default(Guid), string name = default(string), string number = default(string))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
-            this.Accounts = accounts;
-            this.Contact = contact;
-            this.PersonalAccount = personalAccount;
         }
 
         /// <summary>
@@ -71,37 +65,16 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Accounts
-        /// </summary>
-        [DataMember(Name = "accounts", EmitDefaultValue = true)]
-        public List<LoadingAidBookingAccountSubsetResponse> Accounts { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Contact
-        /// </summary>
-        [DataMember(Name = "contact", EmitDefaultValue = false)]
-        public AddressModel Contact { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PersonalAccount
-        /// </summary>
-        [DataMember(Name = "personalAccount", EmitDefaultValue = false)]
-        public PersonalAccountResponse PersonalAccount { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LoadingAidBookingHeadAccountResponse {\n");
+            sb.Append("class LoadingAidBookingAccountSubsetResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  Accounts: ").Append(Accounts).Append("\n");
-            sb.Append("  Contact: ").Append(Contact).Append("\n");
-            sb.Append("  PersonalAccount: ").Append(PersonalAccount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,15 +95,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LoadingAidBookingHeadAccountResponse);
+            return this.Equals(input as LoadingAidBookingAccountSubsetResponse);
         }
 
         /// <summary>
-        /// Returns true if LoadingAidBookingHeadAccountResponse instances are equal
+        /// Returns true if LoadingAidBookingAccountSubsetResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of LoadingAidBookingHeadAccountResponse to be compared</param>
+        /// <param name="input">Instance of LoadingAidBookingAccountSubsetResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LoadingAidBookingHeadAccountResponse input)
+        public bool Equals(LoadingAidBookingAccountSubsetResponse input)
         {
             if (input == null)
             {
@@ -151,22 +124,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Number == input.Number ||
                     (this.Number != null &&
                     this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Accounts == input.Accounts ||
-                    this.Accounts != null &&
-                    input.Accounts != null &&
-                    this.Accounts.SequenceEqual(input.Accounts)
-                ) && 
-                (
-                    this.Contact == input.Contact ||
-                    (this.Contact != null &&
-                    this.Contact.Equals(input.Contact))
-                ) && 
-                (
-                    this.PersonalAccount == input.PersonalAccount ||
-                    (this.PersonalAccount != null &&
-                    this.PersonalAccount.Equals(input.PersonalAccount))
                 );
         }
 
@@ -190,18 +147,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
-                if (this.Accounts != null)
-                {
-                    hashCode = (hashCode * 59) + this.Accounts.GetHashCode();
-                }
-                if (this.Contact != null)
-                {
-                    hashCode = (hashCode * 59) + this.Contact.GetHashCode();
-                }
-                if (this.PersonalAccount != null)
-                {
-                    hashCode = (hashCode * 59) + this.PersonalAccount.GetHashCode();
                 }
                 return hashCode;
             }

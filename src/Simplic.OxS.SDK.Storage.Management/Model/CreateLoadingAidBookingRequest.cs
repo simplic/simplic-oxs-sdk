@@ -41,18 +41,16 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="quantity">quantity.</param>
         /// <param name="loadingAidTypeId">loadingAidTypeId.</param>
         /// <param name="note">note.</param>
-        /// <param name="reason">reason.</param>
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
         /// <param name="referenceType">referenceType.</param>
-        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), string reason = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string))
+        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
             this.Quantity = quantity;
             this.LoadingAidTypeId = loadingAidTypeId;
             this.Note = note;
-            this.Reason = reason;
             this.GlobalBookingId = globalBookingId;
             this.ReferenceId = referenceId;
             this.ReferenceType = referenceType;
@@ -89,12 +87,6 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string Note { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reason
-        /// </summary>
-        [DataMember(Name = "reason", EmitDefaultValue = true)]
-        public string Reason { get; set; }
-
-        /// <summary>
         /// Gets or Sets GlobalBookingId
         /// </summary>
         [DataMember(Name = "globalBookingId", EmitDefaultValue = true)]
@@ -125,7 +117,6 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  LoadingAidTypeId: ").Append(LoadingAidTypeId).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
-            sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  GlobalBookingId: ").Append(GlobalBookingId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
@@ -189,11 +180,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Note.Equals(input.Note))
                 ) && 
                 (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
                     this.GlobalBookingId == input.GlobalBookingId ||
                     (this.GlobalBookingId != null &&
                     this.GlobalBookingId.Equals(input.GlobalBookingId))
@@ -235,10 +221,6 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Note != null)
                 {
                     hashCode = (hashCode * 59) + this.Note.GetHashCode();
-                }
-                if (this.Reason != null)
-                {
-                    hashCode = (hashCode * 59) + this.Reason.GetHashCode();
                 }
                 if (this.GlobalBookingId != null)
                 {
