@@ -39,15 +39,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
-        /// <param name="accounts">accounts.</param>
+        /// <param name="loadingAidBookingAccounts">loadingAidBookingAccounts.</param>
         /// <param name="contact">contact.</param>
         /// <param name="personalAccount">personalAccount.</param>
-        public LoadingAidBookingHeadAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), List<LoadingAidBookingAccountSubsetResponse> accounts = default(List<LoadingAidBookingAccountSubsetResponse>), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse))
+        public LoadingAidBookingHeadAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), List<LoadingAidBookingAccountSubsetResponse> loadingAidBookingAccounts = default(List<LoadingAidBookingAccountSubsetResponse>), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
-            this.Accounts = accounts;
+            this.LoadingAidBookingAccounts = loadingAidBookingAccounts;
             this.Contact = contact;
             this.PersonalAccount = personalAccount;
         }
@@ -71,10 +71,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Accounts
+        /// Gets or Sets LoadingAidBookingAccounts
         /// </summary>
-        [DataMember(Name = "accounts", EmitDefaultValue = true)]
-        public List<LoadingAidBookingAccountSubsetResponse> Accounts { get; set; }
+        [DataMember(Name = "loadingAidBookingAccounts", EmitDefaultValue = true)]
+        public List<LoadingAidBookingAccountSubsetResponse> LoadingAidBookingAccounts { get; set; }
 
         /// <summary>
         /// Gets or Sets Contact
@@ -99,7 +99,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  Accounts: ").Append(Accounts).Append("\n");
+            sb.Append("  LoadingAidBookingAccounts: ").Append(LoadingAidBookingAccounts).Append("\n");
             sb.Append("  Contact: ").Append(Contact).Append("\n");
             sb.Append("  PersonalAccount: ").Append(PersonalAccount).Append("\n");
             sb.Append("}\n");
@@ -153,10 +153,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Number.Equals(input.Number))
                 ) && 
                 (
-                    this.Accounts == input.Accounts ||
-                    this.Accounts != null &&
-                    input.Accounts != null &&
-                    this.Accounts.SequenceEqual(input.Accounts)
+                    this.LoadingAidBookingAccounts == input.LoadingAidBookingAccounts ||
+                    this.LoadingAidBookingAccounts != null &&
+                    input.LoadingAidBookingAccounts != null &&
+                    this.LoadingAidBookingAccounts.SequenceEqual(input.LoadingAidBookingAccounts)
                 ) && 
                 (
                     this.Contact == input.Contact ||
@@ -191,9 +191,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
-                if (this.Accounts != null)
+                if (this.LoadingAidBookingAccounts != null)
                 {
-                    hashCode = (hashCode * 59) + this.Accounts.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LoadingAidBookingAccounts.GetHashCode();
                 }
                 if (this.Contact != null)
                 {

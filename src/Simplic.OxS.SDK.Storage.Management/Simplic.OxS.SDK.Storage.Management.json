@@ -3065,7 +3065,7 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "accounts": {
+                    "loadingAidBookingAccounts": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/LoadingAidBookingAccountSubsetResponse"

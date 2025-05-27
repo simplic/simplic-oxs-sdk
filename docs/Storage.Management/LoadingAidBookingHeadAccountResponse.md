@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
-**Accounts** | [**List&lt;LoadingAidBookingAccountSubsetResponse&gt;**](LoadingAidBookingAccountSubsetResponse.md) |  | [optional] 
+**LoadingAidBookingAccounts** | [**List&lt;LoadingAidBookingAccountSubsetResponse&gt;**](LoadingAidBookingAccountSubsetResponse.md) |  | [optional] 
 **Contact** | [**AddressModel**](AddressModel.md) |  | [optional] 
 **PersonalAccount** | [**PersonalAccountResponse**](PersonalAccountResponse.md) |  | [optional] 
 
