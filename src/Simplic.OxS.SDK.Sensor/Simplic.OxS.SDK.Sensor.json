@@ -89,7 +89,7 @@
                 }
             }
         },
-        "/Measurement/get-all-for-sensor/{sensorId}": {
+        "/Measurement/get-all-for-sensor": {
             "get": {
                 "tags": [
                     "Measurement"
@@ -97,8 +97,7 @@
                 "parameters": [
                     {
                         "name": "sensorId",
-                        "in": "path",
-                        "required": true,
+                        "in": "query",
                         "schema": {
                             "type": "string",
                             "format": "uuid"
@@ -178,19 +177,26 @@
                 }
             }
         },
-        "/Measurement/{organizationId}": {
+        "/Measurement/{sensorType}/{tagId}": {
             "post": {
                 "tags": [
                     "Measurement"
                 ],
                 "parameters": [
                     {
-                        "name": "organizationId",
+                        "name": "sensorType",
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "format": "uuid"
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tagId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
@@ -230,94 +236,6 @@
                             "text/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PostMeasurementResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Measurement/anon": {
-            "post": {
-                "tags": [
-                    "Measurement"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PostAnonMeasurementRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PostAnonMeasurementRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PostAnonMeasurementRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostAnonMeasurementResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostAnonMeasurementResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostAnonMeasurementResponse"
                                 }
                             }
                         }
@@ -1618,6 +1536,11 @@
                     "notes": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -1753,6 +1676,11 @@
                     "notes": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -1864,6 +1792,8 @@
                         "nullable": true
                     },
                     "value": {
+                        "type": "number",
+                        "format": "double",
                         "nullable": true
                     }
                 },
@@ -1924,6 +1854,11 @@
                     "notes": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -1969,6 +1904,11 @@
                     "notes": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2011,72 +1951,13 @@
                 },
                 "additionalProperties": false
             },
-            "PostAnonMeasurementRequest": {
-                "required": [
-                    "dateTime",
-                    "sensorId",
-                    "values"
-                ],
-                "type": "object",
-                "properties": {
-                    "sensorId": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "dateTime": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "values": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/MeasurementValue"
-                        }
-                    }
-                },
-                "additionalProperties": false
-            },
-            "PostAnonMeasurementResponse": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "sensorId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "dateTime": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "values": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/MeasurementValue"
-                        },
-                        "nullable": true
-                    },
-                    "organizationId": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                },
-                "additionalProperties": false
-            },
             "PostMeasurementRequest": {
                 "required": [
                     "dateTime",
-                    "sensorId",
                     "values"
                 ],
                 "type": "object",
                 "properties": {
-                    "sensorId": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
                     "dateTime": {
                         "type": "string",
                         "format": "date-time"
@@ -2160,6 +2041,11 @@
                     "notes": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2204,6 +2090,11 @@
                     },
                     "notes": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },
@@ -2289,6 +2180,14 @@
                         "nullable": true
                     },
                     "format": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "symbol": {
                         "type": "string",
                         "nullable": true
                     },

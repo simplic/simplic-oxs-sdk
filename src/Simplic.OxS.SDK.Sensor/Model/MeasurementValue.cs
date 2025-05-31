@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.Sensor
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="value">value.</param>
-        public MeasurementValue(string name = default(string), Object value = default(Object))
+        public MeasurementValue(string name = default(string), double? value = default(double?))
         {
             this.Name = name;
             this.Value = value;
@@ -54,7 +54,7 @@ namespace Simplic.OxS.SDK.Sensor
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
-        public Object Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -52,7 +52,8 @@ namespace Simplic.OxS.SDK.Sensor
         /// <param name="properties">properties.</param>
         /// <param name="manufacturer">manufacturer.</param>
         /// <param name="notes">notes.</param>
-        public PatchSensorResponse(Guid id = default(Guid), string name = default(string), SensorTypeReference type = default(SensorTypeReference), string tagId = default(string), OrganizationSite organizationSite = default(OrganizationSite), Location location = default(Location), State? state = default(State?), List<Property> properties = default(List<Property>), string manufacturer = default(string), string notes = default(string))
+        /// <param name="notificationTeamId">notificationTeamId.</param>
+        public PatchSensorResponse(Guid id = default(Guid), string name = default(string), SensorTypeReference type = default(SensorTypeReference), string tagId = default(string), OrganizationSite organizationSite = default(OrganizationSite), Location location = default(Location), State? state = default(State?), List<Property> properties = default(List<Property>), string manufacturer = default(string), string notes = default(string), Guid? notificationTeamId = default(Guid?))
         {
             this.Id = id;
             this.Name = name;
@@ -64,6 +65,7 @@ namespace Simplic.OxS.SDK.Sensor
             this.Properties = properties;
             this.Manufacturer = manufacturer;
             this.Notes = notes;
+            this.NotificationTeamId = notificationTeamId;
         }
 
         /// <summary>
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.Sensor
         public string Notes { get; set; }
 
         /// <summary>
+        /// Gets or Sets NotificationTeamId
+        /// </summary>
+        [DataMember(Name = "notificationTeamId", EmitDefaultValue = true)]
+        public Guid? NotificationTeamId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +146,7 @@ namespace Simplic.OxS.SDK.Sensor
             sb.Append("  Properties: ").Append(Properties).Append("\n");
             sb.Append("  Manufacturer: ").Append(Manufacturer).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
+            sb.Append("  NotificationTeamId: ").Append(NotificationTeamId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -222,6 +231,11 @@ namespace Simplic.OxS.SDK.Sensor
                     this.Notes == input.Notes ||
                     (this.Notes != null &&
                     this.Notes.Equals(input.Notes))
+                ) && 
+                (
+                    this.NotificationTeamId == input.NotificationTeamId ||
+                    (this.NotificationTeamId != null &&
+                    this.NotificationTeamId.Equals(input.NotificationTeamId))
                 );
         }
 
@@ -270,6 +284,10 @@ namespace Simplic.OxS.SDK.Sensor
                 if (this.Notes != null)
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
+                }
+                if (this.NotificationTeamId != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotificationTeamId.GetHashCode();
                 }
                 return hashCode;
             }

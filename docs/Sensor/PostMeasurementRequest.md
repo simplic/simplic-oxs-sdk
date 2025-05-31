@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SensorId** | **string** |  | 
 **DateTime** | **DateTime** |  | 
 **Values** | [**List&lt;MeasurementValue&gt;**](MeasurementValue.md) |  | 
 

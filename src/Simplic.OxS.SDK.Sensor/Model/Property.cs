@@ -39,12 +39,16 @@ namespace Simplic.OxS.SDK.Sensor
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
         /// <param name="format">format.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="symbol">symbol.</param>
         /// <param name="alert">alert.</param>
-        public Property(string name = default(string), string type = default(string), string format = default(string), List<Alert> alert = default(List<Alert>))
+        public Property(string name = default(string), string type = default(string), string format = default(string), string displayName = default(string), string symbol = default(string), List<Alert> alert = default(List<Alert>))
         {
             this.Name = name;
             this.Type = type;
             this.Format = format;
+            this.DisplayName = displayName;
+            this.Symbol = symbol;
             this.Alert = alert;
         }
 
@@ -67,6 +71,18 @@ namespace Simplic.OxS.SDK.Sensor
         public string Format { get; set; }
 
         /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Symbol
+        /// </summary>
+        [DataMember(Name = "symbol", EmitDefaultValue = true)]
+        public string Symbol { get; set; }
+
+        /// <summary>
         /// Gets or Sets Alert
         /// </summary>
         [DataMember(Name = "alert", EmitDefaultValue = true)]
@@ -83,6 +99,8 @@ namespace Simplic.OxS.SDK.Sensor
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Alert: ").Append(Alert).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -135,6 +153,16 @@ namespace Simplic.OxS.SDK.Sensor
                     this.Format.Equals(input.Format))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
+                ) && 
+                (
                     this.Alert == input.Alert ||
                     this.Alert != null &&
                     input.Alert != null &&
@@ -162,6 +190,14 @@ namespace Simplic.OxS.SDK.Sensor
                 if (this.Format != null)
                 {
                     hashCode = (hashCode * 59) + this.Format.GetHashCode();
+                }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.Symbol != null)
+                {
+                    hashCode = (hashCode * 59) + this.Symbol.GetHashCode();
                 }
                 if (this.Alert != null)
                 {

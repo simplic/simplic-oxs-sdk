@@ -41,17 +41,10 @@ namespace Simplic.OxS.SDK.Sensor
         /// <summary>
         /// Initializes a new instance of the <see cref="PostMeasurementRequest" /> class.
         /// </summary>
-        /// <param name="sensorId">sensorId (required).</param>
         /// <param name="dateTime">dateTime (required).</param>
         /// <param name="values">values (required).</param>
-        public PostMeasurementRequest(string sensorId = default(string), DateTime dateTime = default(DateTime), List<MeasurementValue> values = default(List<MeasurementValue>))
+        public PostMeasurementRequest(DateTime dateTime = default(DateTime), List<MeasurementValue> values = default(List<MeasurementValue>))
         {
-            // to ensure "sensorId" is required (not null)
-            if (sensorId == null)
-            {
-                throw new ArgumentNullException("sensorId is a required property for PostMeasurementRequest and cannot be null");
-            }
-            this.SensorId = sensorId;
             this.DateTime = dateTime;
             // to ensure "values" is required (not null)
             if (values == null)
@@ -60,12 +53,6 @@ namespace Simplic.OxS.SDK.Sensor
             }
             this.Values = values;
         }
-
-        /// <summary>
-        /// Gets or Sets SensorId
-        /// </summary>
-        [DataMember(Name = "sensorId", IsRequired = true, EmitDefaultValue = true)]
-        public string SensorId { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTime
@@ -87,7 +74,6 @@ namespace Simplic.OxS.SDK.Sensor
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PostMeasurementRequest {\n");
-            sb.Append("  SensorId: ").Append(SensorId).Append("\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  Values: ").Append(Values).Append("\n");
             sb.Append("}\n");
@@ -126,11 +112,6 @@ namespace Simplic.OxS.SDK.Sensor
             }
             return 
                 (
-                    this.SensorId == input.SensorId ||
-                    (this.SensorId != null &&
-                    this.SensorId.Equals(input.SensorId))
-                ) && 
-                (
                     this.DateTime == input.DateTime ||
                     (this.DateTime != null &&
                     this.DateTime.Equals(input.DateTime))
@@ -152,10 +133,6 @@ namespace Simplic.OxS.SDK.Sensor
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SensorId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SensorId.GetHashCode();
-                }
                 if (this.DateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
@@ -175,12 +152,6 @@ namespace Simplic.OxS.SDK.Sensor
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // SensorId (string) minLength
-            if (this.SensorId != null && this.SensorId.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SensorId, length must be greater than 1.", new [] { "SensorId" });
-            }
-
             yield break;
         }
     }

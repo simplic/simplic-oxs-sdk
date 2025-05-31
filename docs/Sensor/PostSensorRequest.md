@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Properties** | [**List&lt;Property&gt;**](Property.md) |  | [optional] 
 **Manufacturer** | **string** |  | [optional] 
 **Notes** | **string** |  | [optional] 
+**NotificationTeamId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
