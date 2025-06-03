@@ -40,14 +40,14 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="personalAccountId">personalAccountId.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
-        /// <param name="loadingAidBookingAccountIds">loadingAidBookingAccountIds.</param>
-        public PatchLoadingAidBookingHeadAccountRequest(Guid? contactId = default(Guid?), Guid? personalAccountId = default(Guid?), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccountIds = default(List<Guid>))
+        /// <param name="loadingAidBookingAccounts">loadingAidBookingAccounts.</param>
+        public PatchLoadingAidBookingHeadAccountRequest(Guid? contactId = default(Guid?), Guid? personalAccountId = default(Guid?), string name = default(string), string number = default(string), List<Guid> loadingAidBookingAccounts = default(List<Guid>))
         {
             this.ContactId = contactId;
             this.PersonalAccountId = personalAccountId;
             this.Name = name;
             this.Number = number;
-            this.LoadingAidBookingAccountIds = loadingAidBookingAccountIds;
+            this.LoadingAidBookingAccounts = loadingAidBookingAccounts;
         }
 
         /// <summary>
@@ -75,10 +75,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadingAidBookingAccountIds
+        /// Gets or Sets LoadingAidBookingAccounts
         /// </summary>
-        [DataMember(Name = "loadingAidBookingAccountIds", EmitDefaultValue = true)]
-        public List<Guid> LoadingAidBookingAccountIds { get; set; }
+        [DataMember(Name = "loadingAidBookingAccounts", EmitDefaultValue = true)]
+        public List<Guid> LoadingAidBookingAccounts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -92,7 +92,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  PersonalAccountId: ").Append(PersonalAccountId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  LoadingAidBookingAccountIds: ").Append(LoadingAidBookingAccountIds).Append("\n");
+            sb.Append("  LoadingAidBookingAccounts: ").Append(LoadingAidBookingAccounts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,10 +149,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Number.Equals(input.Number))
                 ) && 
                 (
-                    this.LoadingAidBookingAccountIds == input.LoadingAidBookingAccountIds ||
-                    this.LoadingAidBookingAccountIds != null &&
-                    input.LoadingAidBookingAccountIds != null &&
-                    this.LoadingAidBookingAccountIds.SequenceEqual(input.LoadingAidBookingAccountIds)
+                    this.LoadingAidBookingAccounts == input.LoadingAidBookingAccounts ||
+                    this.LoadingAidBookingAccounts != null &&
+                    input.LoadingAidBookingAccounts != null &&
+                    this.LoadingAidBookingAccounts.SequenceEqual(input.LoadingAidBookingAccounts)
                 );
         }
 
@@ -181,9 +181,9 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
-                if (this.LoadingAidBookingAccountIds != null)
+                if (this.LoadingAidBookingAccounts != null)
                 {
-                    hashCode = (hashCode * 59) + this.LoadingAidBookingAccountIds.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LoadingAidBookingAccounts.GetHashCode();
                 }
                 return hashCode;
             }

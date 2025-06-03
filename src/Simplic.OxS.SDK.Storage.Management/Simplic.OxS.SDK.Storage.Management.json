@@ -2784,7 +2784,7 @@
             "CreateLoadingAidBookingHeadAccountRequest": {
                 "required": [
                     "contactId",
-                    "loadingAidBookingAccountIds"
+                    "loadingAidBookingAccounts"
                 ],
                 "type": "object",
                 "properties": {
@@ -2805,7 +2805,7 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "loadingAidBookingAccountIds": {
+                    "loadingAidBookingAccounts": {
                         "type": "array",
                         "items": {
                             "type": "string",
@@ -3445,7 +3445,7 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "loadingAidBookingAccountIds": {
+                    "loadingAidBookingAccounts": {
                         "type": "array",
                         "items": {
                             "type": "string",
