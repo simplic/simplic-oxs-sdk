@@ -300,7 +300,7 @@ catch (ApiException e)
 
 <a id="loadingaidbookingpost"></a>
 # **Post**
-> void Post (CreateLoadingAidBookingRequest? createLoadingAidBookingRequest = null)
+> LoadingAidBookingResponse Post (CreateLoadingAidBookingRequest? createLoadingAidBookingRequest = null)
 
 
 
@@ -333,7 +333,8 @@ namespace Example
 
             try
             {
-                apiInstance.Post(createLoadingAidBookingRequest);
+                LoadingAidBookingResponse result = apiInstance.Post(createLoadingAidBookingRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -352,7 +353,10 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.PostWithHttpInfo(createLoadingAidBookingRequest);
+    ApiResponse<LoadingAidBookingResponse> response = apiInstance.PostWithHttpInfo(createLoadingAidBookingRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -370,7 +374,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**LoadingAidBookingResponse**](LoadingAidBookingResponse.md)
 
 ### Authorization
 
