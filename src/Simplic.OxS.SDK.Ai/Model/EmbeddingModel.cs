@@ -36,13 +36,14 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingModel" /> class.
         /// </summary>
-        /// <param name="disable">disable.</param>
-        /// <param name="dataType">dataType.</param>
-        /// <param name="count">count.</param>
-        public EmbeddingModel(bool disable = default(bool), string dataType = default(string), int count = default(int))
+        /// <param name="disable">disable (default to false).</param>
+        /// <param name="dataType">dataType (default to &quot;&quot;).</param>
+        /// <param name="count">count (default to 5).</param>
+        public EmbeddingModel(bool disable = false, string dataType = @"", int count = 5)
         {
             this.Disable = disable;
-            this.DataType = dataType;
+            // use default value if no "dataType" provided
+            this.DataType = dataType ?? @"";
             this.Count = count;
         }
 

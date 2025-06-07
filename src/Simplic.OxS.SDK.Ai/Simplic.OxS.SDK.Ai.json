@@ -2625,15 +2625,18 @@
                 "type": "object",
                 "properties": {
                     "disable": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                     },
                     "dataType": {
                         "type": "string",
+                        "default": "",
                         "nullable": true
                     },
                     "count": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int32",
+                        "default": 5
                     }
                 },
                 "additionalProperties": false
