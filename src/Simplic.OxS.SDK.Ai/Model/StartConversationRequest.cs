@@ -44,8 +44,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="model">model (required).</param>
         /// <param name="context">context.</param>
         /// <param name="embedding">embedding.</param>
+        /// <param name="connector">connector.</param>
         /// <param name="message">message (required).</param>
-        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), string message = default(string))
+        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), LLMConnectorModel connector = default(LLMConnectorModel), string message = default(string))
         {
             // to ensure "model" is required (not null)
             if (model == null)
@@ -61,6 +62,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Message = message;
             this.Context = context;
             this.Embedding = embedding;
+            this.Connector = connector;
         }
 
         /// <summary>
@@ -82,6 +84,12 @@ namespace Simplic.OxS.SDK.Ai
         public EmbeddingModel Embedding { get; set; }
 
         /// <summary>
+        /// Gets or Sets Connector
+        /// </summary>
+        [DataMember(Name = "connector", EmitDefaultValue = false)]
+        public LLMConnectorModel Connector { get; set; }
+
+        /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
@@ -98,6 +106,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
             sb.Append("  Embedding: ").Append(Embedding).Append("\n");
+            sb.Append("  Connector: ").Append(Connector).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -150,6 +159,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Embedding.Equals(input.Embedding))
                 ) && 
                 (
+                    this.Connector == input.Connector ||
+                    (this.Connector != null &&
+                    this.Connector.Equals(input.Connector))
+                ) && 
+                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
@@ -176,6 +190,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Embedding != null)
                 {
                     hashCode = (hashCode * 59) + this.Embedding.GetHashCode();
+                }
+                if (this.Connector != null)
+                {
+                    hashCode = (hashCode * 59) + this.Connector.GetHashCode();
                 }
                 if (this.Message != null)
                 {

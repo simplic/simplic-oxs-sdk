@@ -2651,6 +2651,16 @@
                 },
                 "additionalProperties": false
             },
+            "LLMConnectorModel": {
+                "type": "object",
+                "properties": {
+                    "disable": {
+                        "type": "boolean",
+                        "default": false
+                    }
+                },
+                "additionalProperties": false
+            },
             "LLMTypeModel": {
                 "type": "object",
                 "properties": {
@@ -2789,6 +2799,9 @@
                     },
                     "embedding": {
                         "$ref": "#/components/schemas/EmbeddingModel"
+                    },
+                    "connector": {
+                        "$ref": "#/components/schemas/LLMConnectorModel"
                     },
                     "message": {
                         "minLength": 1,
