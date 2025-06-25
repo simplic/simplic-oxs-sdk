@@ -47,7 +47,8 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataInPins">dataInPins.</param>
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
-        public PostNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>))
+        /// <param name="package">package.</param>
+        public PostNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), Package package = default(Package))
         {
             this.Id = id;
             this.Type = type;
@@ -60,6 +61,7 @@ namespace Simplic.OxS.SDK.Flow
             this.DataInPins = dataInPins;
             this.DataOutPins = dataOutPins;
             this.FlowOutPins = flowOutPins;
+            this.Package = package;
         }
 
         /// <summary>
@@ -129,6 +131,12 @@ namespace Simplic.OxS.SDK.Flow
         public List<FlowOutPinDefinition> FlowOutPins { get; set; }
 
         /// <summary>
+        /// Gets or Sets Package
+        /// </summary>
+        [DataMember(Name = "package", EmitDefaultValue = false)]
+        public Package Package { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +155,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  DataInPins: ").Append(DataInPins).Append("\n");
             sb.Append("  DataOutPins: ").Append(DataOutPins).Append("\n");
             sb.Append("  FlowOutPins: ").Append(FlowOutPins).Append("\n");
+            sb.Append("  Package: ").Append(Package).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -239,6 +248,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.FlowOutPins != null &&
                     input.FlowOutPins != null &&
                     this.FlowOutPins.SequenceEqual(input.FlowOutPins)
+                ) && 
+                (
+                    this.Package == input.Package ||
+                    (this.Package != null &&
+                    this.Package.Equals(input.Package))
                 );
         }
 
@@ -294,6 +308,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.FlowOutPins != null)
                 {
                     hashCode = (hashCode * 59) + this.FlowOutPins.GetHashCode();
+                }
+                if (this.Package != null)
+                {
+                    hashCode = (hashCode * 59) + this.Package.GetHashCode();
                 }
                 return hashCode;
             }

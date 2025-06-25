@@ -28,26 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// LLMConnectorModel
+    /// LLMTaskDefinitionDto
     /// </summary>
-    [DataContract(Name = "LLMConnectorModel")]
-    public partial class LLMConnectorModel : IEquatable<LLMConnectorModel>, IValidatableObject
+    [DataContract(Name = "LLMTaskDefinitionDto")]
+    public partial class LLMTaskDefinitionDto : IEquatable<LLMTaskDefinitionDto>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LLMConnectorModel" /> class.
+        /// Initializes a new instance of the <see cref="LLMTaskDefinitionDto" /> class.
         /// </summary>
-        /// <param name="disable">disable (default to true).</param>
-        public LLMConnectorModel(bool disable = true)
+        [JsonConstructorAttribute]
+        public LLMTaskDefinitionDto()
         {
-            this.Disable = disable;
         }
 
         /// <summary>
-        /// Gets or Sets Disable
+        /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "disable", EmitDefaultValue = true)]
-        public bool Disable { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; private set; }
 
+        /// <summary>
+        /// Returns false as Type should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeType()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -55,8 +62,8 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LLMConnectorModel {\n");
-            sb.Append("  Disable: ").Append(Disable).Append("\n");
+            sb.Append("class LLMTaskDefinitionDto {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +84,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LLMConnectorModel);
+            return this.Equals(input as LLMTaskDefinitionDto);
         }
 
         /// <summary>
-        /// Returns true if LLMConnectorModel instances are equal
+        /// Returns true if LLMTaskDefinitionDto instances are equal
         /// </summary>
-        /// <param name="input">Instance of LLMConnectorModel to be compared</param>
+        /// <param name="input">Instance of LLMTaskDefinitionDto to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LLMConnectorModel input)
+        public bool Equals(LLMTaskDefinitionDto input)
         {
             if (input == null)
             {
@@ -93,8 +100,9 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
-                    this.Disable == input.Disable ||
-                    this.Disable.Equals(input.Disable)
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -107,7 +115,10 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Disable.GetHashCode();
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
                 return hashCode;
             }
         }

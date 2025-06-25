@@ -36,7 +36,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -124,7 +124,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -204,7 +204,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -282,7 +282,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -334,7 +334,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -431,7 +431,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -519,7 +519,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -599,7 +599,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -698,7 +698,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -776,7 +776,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -875,7 +875,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     }
                 }
             }
@@ -917,7 +917,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1013,7 +1013,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     }
                 }
             }
@@ -1025,7 +1025,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1122,7 +1122,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1193,7 +1193,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1272,7 +1272,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1335,7 +1335,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1412,7 +1412,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1490,7 +1490,104 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/LLMTask": {
+            "post": {
+                "tags": [
+                    "LLMTask"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1587,7 +1684,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1667,7 +1764,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1755,7 +1852,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1841,7 +1938,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1940,7 +2037,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2018,7 +2115,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -2101,7 +2198,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2181,7 +2278,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2261,7 +2358,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2330,7 +2427,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2535,6 +2632,34 @@
                 },
                 "additionalProperties": false
             },
+            "CreateLLMTaskRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reason": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "requires": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/LLMTaskDefinitionDto"
+                    },
+                    "optionalSubtask": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "CreateTextClassificationModelRequest": {
                 "type": "object",
                 "properties": {
@@ -2727,7 +2852,18 @@
                 "properties": {
                     "disable": {
                         "type": "boolean",
-                        "default": false
+                        "default": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LLMTaskDefinitionDto": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
                     }
                 },
                 "additionalProperties": false
@@ -2981,12 +3117,19 @@
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
                 "name": "Authorization",
                 "in": "header"
+            },
+            "ApiKey": {
+                "type": "apiKey",
+                "description": "API Key authentication. Example: 'x-api-key: {your-api-key}'",
+                "name": "x-api-key",
+                "in": "header"
             }
         }
     },
     "security": [
         {
-            "Bearer": []
+            "Bearer": [],
+            "ApiKey": []
         }
     ]
 }

@@ -632,95 +632,6 @@
                 }
             }
         },
-        "/Flow/get-dependencies/{id}": {
-            "get": {
-                "tags": [
-                    "Flow"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/GetFlowResponse"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/GetFlowResponse"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/GetFlowResponse"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Flow/get-all": {
             "get": {
                 "tags": [
@@ -1664,6 +1575,9 @@
                             "$ref": "#/components/schemas/FlowOutPinDefinition"
                         },
                         "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/Package"
                     }
                 },
                 "additionalProperties": false
@@ -1728,6 +1642,24 @@
                         },
                         "nullable": true,
                         "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Package": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assemblyName": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -1863,6 +1795,9 @@
                             "$ref": "#/components/schemas/FlowOutPinDefinition"
                         },
                         "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/Package"
                     }
                 },
                 "additionalProperties": false
@@ -1920,6 +1855,9 @@
                             "$ref": "#/components/schemas/FlowOutPinDefinition"
                         },
                         "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/Package"
                     }
                 },
                 "additionalProperties": false

@@ -1,14 +1,14 @@
-# Simplic.OxS.SDK.Ai.DocumentClient
+# Simplic.OxS.SDK.Ai.LLMTaskClient
 
 All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Process**](DocumentClient.md#documentprocesspost) | **POST** /Document/process |  |
+| [**Post**](LLMTaskClient.md#llmtaskpost) | **POST** /LLMTask |  |
 
-<a id="documentprocesspost"></a>
-# **Process**
-> void Process (ProcessDocumentRequest? processDocumentRequest = null)
+<a id="llmtaskpost"></a>
+# **Post**
+> List&lt;LLMTypeModel&gt; Post (CreateLLMTaskRequest? createLLMTaskRequest = null)
 
 
 
@@ -21,7 +21,7 @@ using Simplic.OxS.SDK.Ai;
 
 namespace Example
 {
-    public class ProcessExample
+    public class PostExample
     {
         public static void Main()
         {
@@ -36,16 +36,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DocumentClient(config);
-            var processDocumentRequest = new ProcessDocumentRequest?(); // ProcessDocumentRequest? |  (optional) 
+            var apiInstance = new LLMTaskClient(config);
+            var createLLMTaskRequest = new CreateLLMTaskRequest?(); // CreateLLMTaskRequest? |  (optional) 
 
             try
             {
-                apiInstance.Process(processDocumentRequest);
+                List<LLMTypeModel> result = apiInstance.Post(createLLMTaskRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.Process: " + e.Message);
+                Debug.Print("Exception when calling LLMTaskClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -54,17 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the ProcessWithHttpInfo variant
+#### Using the PostWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ProcessWithHttpInfo(processDocumentRequest);
+    ApiResponse<List<LLMTypeModel>> response = apiInstance.PostWithHttpInfo(createLLMTaskRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.ProcessWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LLMTaskClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -74,11 +78,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **processDocumentRequest** | [**ProcessDocumentRequest?**](ProcessDocumentRequest?.md) |  | [optional]  |
+| **createLLMTaskRequest** | [**CreateLLMTaskRequest?**](CreateLLMTaskRequest?.md) |  | [optional]  |
 
 ### Return type
 
-void (empty response body)
+[**List&lt;LLMTypeModel&gt;**](LLMTypeModel.md)
 
 ### Authorization
 

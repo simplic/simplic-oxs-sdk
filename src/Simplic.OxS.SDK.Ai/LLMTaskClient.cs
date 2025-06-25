@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Ai
 /// <summary>
 /// Client to interact with the API endpoints of the ai service.
 /// </summary>
-public interface IDocumentClient
+public interface ILLMTaskClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -43,35 +43,35 @@ public interface IDocumentClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="processDocumentRequest"> (optional)</param>
-    /// <returns></returns>
-    void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?));
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>List&lt;LLMTypeModel&gt;</returns>
+    List<LLMTypeModel> Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="processDocumentRequest"> (optional)</param>
-    /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> ProcessWithHttpInfo(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?));
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+    ApiResponse<List<LLMTypeModel>> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="processDocumentRequest"> (optional)</param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of void</returns>
-    Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+    Task<List<LLMTypeModel>> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="processDocumentRequest"> (optional)</param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> ProcessWithHttpInfoAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+    Task<ApiResponse<List<LLMTypeModel>>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -81,16 +81,16 @@ public interface IDocumentClient
     /// <summary>
     /// Client to interact with the API endpoints of the ai service.
     /// </summary>
-    public class DocumentClient : IDocumentClient
+    public class LLMTaskClient : ILLMTaskClient
     {
-        private __DocumentClient _internalClient;
+        private __LLMTaskClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public DocumentClient(string host, string? authorization = null)
+        public LLMTaskClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __DocumentClient(new Configuration
+                _internalClient = new __LLMTaskClient(new Configuration
                 {
                     BasePath = $"{host}/ai-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -98,14 +98,14 @@ public interface IDocumentClient
             }
             else
             {
-                _internalClient = new __DocumentClient(new Configuration
+                _internalClient = new __LLMTaskClient(new Configuration
                 {
                     BasePath = $"{host}/ai-api/v1",
                 });
             }
         }
 
-        public DocumentClient(Environment env, string? authorization = null)
+        public LLMTaskClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -152,13 +152,13 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
-        /// <returns></returns>
-        public void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?))
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        public List<LLMTypeModel> Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
         {
             try
             {
-                _internalClient.Process(processDocumentRequest);
+                return _internalClient.Post(createLLMTaskRequest);
             }
             catch (ApiException e)
             {
@@ -170,13 +170,13 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> ProcessWithHttpInfo(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?))
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
         {
             try
             {
-                return _internalClient.ProcessWithHttpInfo(processDocumentRequest);
+                return _internalClient.PostWithHttpInfo(createLLMTaskRequest);
             }
             catch (ApiException e)
             {
@@ -188,14 +188,14 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<LLMTypeModel>> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ProcessAsync(processDocumentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PostAsync(createLLMTaskRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -207,14 +207,14 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ProcessWithHttpInfoAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ProcessWithHttpInfoAsync(processDocumentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(createLLMTaskRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -231,17 +231,17 @@ public interface IDocumentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IDocumentClientSync : IApiAccessor
+    internal interface __ILLMTaskClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0);
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        List<LLMTypeModel> Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -250,17 +250,17 @@ public interface IDocumentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ProcessWithHttpInfo(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        ApiResponse<List<LLMTypeModel>> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IDocumentClientAsync : IApiAccessor
+    internal interface __ILLMTaskClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -270,11 +270,11 @@ public interface IDocumentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        System.Threading.Tasks.Task<List<LLMTypeModel>> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -283,18 +283,18 @@ public interface IDocumentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ProcessWithHttpInfoAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IDocumentClient : __IDocumentClientSync, __IDocumentClientAsync
+    internal interface __ILLMTaskClient : __ILLMTaskClientSync, __ILLMTaskClientAsync
     {
 
     }
@@ -302,24 +302,24 @@ public interface IDocumentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __DocumentClient : __IDocumentClient
+    internal /*partial*/ class __LLMTaskClient : __ILLMTaskClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__DocumentClient"/> class.
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __DocumentClient() : this((string)null)
+        public __LLMTaskClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__DocumentClient"/> class.
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __DocumentClient(string basePath)
+        public __LLMTaskClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -332,12 +332,12 @@ public interface IDocumentClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__DocumentClient"/> class
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __DocumentClient(Simplic.OxS.SDK.Configuration configuration)
+        public __LLMTaskClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -351,13 +351,13 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__DocumentClient"/> class
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __DocumentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __LLMTaskClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -414,22 +414,23 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0)
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        public List<LLMTypeModel> Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
         {
-            ProcessWithHttpInfo(processDocumentRequest);
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = PostWithHttpInfo(createLLMTaskRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> ProcessWithHttpInfo(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -458,9 +459,9 @@ public interface IDocumentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = processDocumentRequest;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.DocumentProcessPost";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -475,10 +476,10 @@ public interface IDocumentClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/Document/process", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<LLMTypeModel>>("/LLMTask", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentProcessPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -492,24 +493,25 @@ public interface IDocumentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LLMTypeModel>> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await ProcessWithHttpInfoAsync(processDocumentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = await PostWithHttpInfoAsync(createLLMTaskRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="processDocumentRequest"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ProcessWithHttpInfoAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -539,9 +541,9 @@ public interface IDocumentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = processDocumentRequest;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "DocumentClient.DocumentProcessPost";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -556,11 +558,11 @@ public interface IDocumentClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Document/process", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<LLMTypeModel>>("/LLMTask", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DocumentProcessPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
