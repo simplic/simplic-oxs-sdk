@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="content">content (required).</param>
         /// <param name="dataType">dataType (required).</param>
-        public EmbeddedDocumentModel(string content = default(string), string dataType = default(string))
+        /// <param name="addToSearchIndex">addToSearchIndex (default to false).</param>
+        public EmbeddedDocumentModel(string content = default(string), string dataType = default(string), bool addToSearchIndex = false)
         {
             // to ensure "content" is required (not null)
             if (content == null)
@@ -57,6 +58,7 @@ namespace Simplic.OxS.SDK.Ai
                 throw new ArgumentNullException("dataType is a required property for EmbeddedDocumentModel and cannot be null");
             }
             this.DataType = dataType;
+            this.AddToSearchIndex = addToSearchIndex;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace Simplic.OxS.SDK.Ai
         public string DataType { get; set; }
 
         /// <summary>
+        /// Gets or Sets AddToSearchIndex
+        /// </summary>
+        [DataMember(Name = "addToSearchIndex", EmitDefaultValue = true)]
+        public bool AddToSearchIndex { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -81,6 +89,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class EmbeddedDocumentModel {\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
+            sb.Append("  AddToSearchIndex: ").Append(AddToSearchIndex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,6 +134,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
+                ) && 
+                (
+                    this.AddToSearchIndex == input.AddToSearchIndex ||
+                    this.AddToSearchIndex.Equals(input.AddToSearchIndex)
                 );
         }
 
@@ -145,6 +158,7 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.DataType.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AddToSearchIndex.GetHashCode();
                 return hashCode;
             }
         }

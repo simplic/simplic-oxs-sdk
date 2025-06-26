@@ -1,9 +1,10 @@
-# Simplic.OxS.SDK.Ai.CreateLLMTaskRequest
+# Simplic.OxS.SDK.Ai.LLMTaskResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Reason** | **string** |  | [optional] 
 **Requires** | **string** |  | [optional] 

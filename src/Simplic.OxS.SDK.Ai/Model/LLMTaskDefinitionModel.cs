@@ -28,16 +28,16 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// LLMTaskDefinitionDto
+    /// LLMTaskDefinitionModel
     /// </summary>
-    [DataContract(Name = "LLMTaskDefinitionDto")]
-    public partial class LLMTaskDefinitionDto : IEquatable<LLMTaskDefinitionDto>, IValidatableObject
+    [DataContract(Name = "LLMTaskDefinitionModel")]
+    public partial class LLMTaskDefinitionModel : IEquatable<LLMTaskDefinitionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LLMTaskDefinitionDto" /> class.
+        /// Initializes a new instance of the <see cref="LLMTaskDefinitionModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        public LLMTaskDefinitionDto()
+        public LLMTaskDefinitionModel()
         {
         }
 
@@ -62,7 +62,7 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LLMTaskDefinitionDto {\n");
+            sb.Append("class LLMTaskDefinitionModel {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -84,15 +84,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LLMTaskDefinitionDto);
+            return this.Equals(input as LLMTaskDefinitionModel);
         }
 
         /// <summary>
-        /// Returns true if LLMTaskDefinitionDto instances are equal
+        /// Returns true if LLMTaskDefinitionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of LLMTaskDefinitionDto to be compared</param>
+        /// <param name="input">Instance of LLMTaskDefinitionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LLMTaskDefinitionDto input)
+        public bool Equals(LLMTaskDefinitionModel input)
         {
             if (input == null)
             {

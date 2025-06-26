@@ -1,12 +1,10 @@
-# Simplic.OxS.SDK.Ai.EmbeddedDocumentModel
+# Simplic.OxS.SDK.Ai.LLMTaskDefinitionModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | **string** |  | 
-**DataType** | **string** |  | 
-**AddToSearchIndex** | **bool** |  | [optional] [default to false]
+**Type** | **string** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

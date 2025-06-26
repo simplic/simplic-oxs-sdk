@@ -28,27 +28,35 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// CreateLLMTaskRequest
+    /// LLMTaskResponse
     /// </summary>
-    [DataContract(Name = "CreateLLMTaskRequest")]
-    public partial class CreateLLMTaskRequest : IEquatable<CreateLLMTaskRequest>, IValidatableObject
+    [DataContract(Name = "LLMTaskResponse")]
+    public partial class LLMTaskResponse : IEquatable<LLMTaskResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateLLMTaskRequest" /> class.
+        /// Initializes a new instance of the <see cref="LLMTaskResponse" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="reason">reason.</param>
         /// <param name="requires">requires.</param>
         /// <param name="definition">definition.</param>
         /// <param name="optionalSubtask">optionalSubtask.</param>
-        public CreateLLMTaskRequest(string name = default(string), string reason = default(string), string requires = default(string), LLMTaskDefinitionModel definition = default(LLMTaskDefinitionModel), List<string> optionalSubtask = default(List<string>))
+        public LLMTaskResponse(Guid id = default(Guid), string name = default(string), string reason = default(string), string requires = default(string), LLMTaskDefinitionModel definition = default(LLMTaskDefinitionModel), List<string> optionalSubtask = default(List<string>))
         {
+            this.Id = id;
             this.Name = name;
             this.Reason = reason;
             this.Requires = requires;
             this.Definition = definition;
             this.OptionalSubtask = optionalSubtask;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -87,7 +95,8 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateLLMTaskRequest {\n");
+            sb.Append("class LLMTaskResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  Requires: ").Append(Requires).Append("\n");
@@ -113,21 +122,26 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateLLMTaskRequest);
+            return this.Equals(input as LLMTaskResponse);
         }
 
         /// <summary>
-        /// Returns true if CreateLLMTaskRequest instances are equal
+        /// Returns true if LLMTaskResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateLLMTaskRequest to be compared</param>
+        /// <param name="input">Instance of LLMTaskResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateLLMTaskRequest input)
+        public bool Equals(LLMTaskResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -165,6 +179,10 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
