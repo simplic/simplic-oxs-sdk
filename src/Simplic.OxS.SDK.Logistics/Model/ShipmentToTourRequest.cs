@@ -45,12 +45,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="resourceId">resourceId.</param>
         /// <param name="startDateTime">startDateTime.</param>
         /// <param name="endDateTime">endDateTime.</param>
-        public ShipmentToTourRequest(Guid shipmentId = default(Guid), Guid? resourceId = default(Guid?), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime))
+        /// <param name="autoAssignResourceModes">autoAssignResourceModes.</param>
+        public ShipmentToTourRequest(Guid shipmentId = default(Guid), Guid? resourceId = default(Guid?), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), List<string> autoAssignResourceModes = default(List<string>))
         {
             this.ShipmentId = shipmentId;
             this.ResourceId = resourceId;
             this.StartDateTime = startDateTime;
             this.EndDateTime = endDateTime;
+            this.AutoAssignResourceModes = autoAssignResourceModes;
         }
 
         /// <summary>
@@ -78,6 +80,12 @@ namespace Simplic.OxS.SDK.Logistics
         public DateTime EndDateTime { get; set; }
 
         /// <summary>
+        /// Gets or Sets AutoAssignResourceModes
+        /// </summary>
+        [DataMember(Name = "autoAssignResourceModes", EmitDefaultValue = true)]
+        public List<string> AutoAssignResourceModes { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +97,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  ResourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
             sb.Append("  EndDateTime: ").Append(EndDateTime).Append("\n");
+            sb.Append("  AutoAssignResourceModes: ").Append(AutoAssignResourceModes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -143,6 +152,12 @@ namespace Simplic.OxS.SDK.Logistics
                     this.EndDateTime == input.EndDateTime ||
                     (this.EndDateTime != null &&
                     this.EndDateTime.Equals(input.EndDateTime))
+                ) && 
+                (
+                    this.AutoAssignResourceModes == input.AutoAssignResourceModes ||
+                    this.AutoAssignResourceModes != null &&
+                    input.AutoAssignResourceModes != null &&
+                    this.AutoAssignResourceModes.SequenceEqual(input.AutoAssignResourceModes)
                 );
         }
 
@@ -170,6 +185,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.EndDateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.EndDateTime.GetHashCode();
+                }
+                if (this.AutoAssignResourceModes != null)
+                {
+                    hashCode = (hashCode * 59) + this.AutoAssignResourceModes.GetHashCode();
                 }
                 return hashCode;
             }

@@ -14022,6 +14022,13 @@
                     "endDateTime": {
                         "type": "string",
                         "format": "date-time"
+                    },
+                    "autoAssignResourceModes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -14168,6 +14175,13 @@
                     "endDateTime": {
                         "type": "string",
                         "format": "date-time"
+                    },
+                    "autoAssignResourceModes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
