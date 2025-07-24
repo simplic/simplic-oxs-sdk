@@ -10,6 +10,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/logistics-api/v1*
 | [**GetAggregatedLoadingSlots**](TourClient.md#tourgetaggregatedloadingslotsget) | **GET** /Tour/get-aggregated-loading-slots | Get all used loading slots for a specific resource |
 | [**GetAllByDates**](TourClient.md#tourgetallbydatesget) | **GET** /Tour/get-all-by-dates | Retrieves all tours between two dates. |
 | [**GetByGlobalTourId**](TourClient.md#tourgetbyglobaltouridget) | **GET** /Tour/get-by-global-tour-id | Retrieves all tours with the given global tour id. |
+| [**GetByResourceId**](TourClient.md#tourgetbyresourceidget) | **GET** /Tour/get-by-resource-id | Retrieves all tours that contains the resource id. |
 | [**GetByShipmentId**](TourClient.md#tourgetbyshipmentidget) | **GET** /Tour/get-by-shipment-id | Retrieves all tours that contains actions with the given shipment id. |
 | [**Delete**](TourClient.md#touriddelete) | **DELETE** /Tour/{id} | Deletes the given tour. |
 | [**Get**](TourClient.md#touridget) | **GET** /Tour/{id} | Retrieves the tour with the given id. |
@@ -586,6 +587,108 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;TourModel&gt;**](TourModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="tourgetbyresourceidget"></a>
+# **GetByResourceId**
+> List&lt;TourModel&gt; GetByResourceId (Guid? resourceId = null, int? skip = null, int? limit = null)
+
+Retrieves all tours that contains the resource id.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Logistics;
+
+namespace Example
+{
+    public class GetByResourceIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/logistics-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new TourClient(config);
+            var resourceId = "resourceId_example";  // Guid? |  (optional) 
+            var skip = 0;  // int? |  (optional)  (default to 0)
+            var limit = 50;  // int? |  (optional)  (default to 50)
+
+            try
+            {
+                // Retrieves all tours that contains the resource id.
+                List<TourModel> result = apiInstance.GetByResourceId(resourceId, skip, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TourClient.GetByResourceId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetByResourceIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves all tours that contains the resource id.
+    ApiResponse<List<TourModel>> response = apiInstance.GetByResourceIdWithHttpInfo(resourceId, skip, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TourClient.GetByResourceIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **resourceId** | **Guid?** |  | [optional]  |
+| **skip** | **int?** |  | [optional] [default to 0] |
+| **limit** | **int?** |  | [optional] [default to 50] |
 
 ### Return type
 
