@@ -36,44 +36,69 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="PostNodeDefinitionRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="type">type.</param>
+        [JsonConstructorAttribute]
+        protected PostNodeDefinitionRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostNodeDefinitionRequest" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="type">type (required).</param>
         /// <param name="eventName">eventName.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
-        /// <param name="target">target.</param>
+        /// <param name="target">target (required).</param>
         /// <param name="customDataInPinTemplate">customDataInPinTemplate.</param>
         /// <param name="customFlowOutPinTemplate">customFlowOutPinTemplate.</param>
         /// <param name="dataInPins">dataInPins.</param>
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
-        /// <param name="package">package.</param>
-        public PostNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), Package package = default(Package))
+        /// <param name="package">package (required).</param>
+        public PostNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PostPackageRequest package = default(PostPackageRequest))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for PostNodeDefinitionRequest and cannot be null");
+            }
             this.Id = id;
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for PostNodeDefinitionRequest and cannot be null");
+            }
             this.Type = type;
+            // to ensure "target" is required (not null)
+            if (target == null)
+            {
+                throw new ArgumentNullException("target is a required property for PostNodeDefinitionRequest and cannot be null");
+            }
+            this.Target = target;
+            // to ensure "package" is required (not null)
+            if (package == null)
+            {
+                throw new ArgumentNullException("package is a required property for PostNodeDefinitionRequest and cannot be null");
+            }
+            this.Package = package;
             this.EventName = eventName;
             this.Name = name;
             this.Description = description;
-            this.Target = target;
             this.CustomDataInPinTemplate = customDataInPinTemplate;
             this.CustomFlowOutPinTemplate = customFlowOutPinTemplate;
             this.DataInPins = dataInPins;
             this.DataOutPins = dataOutPins;
             this.FlowOutPins = flowOutPins;
-            this.Package = package;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
@@ -97,7 +122,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Target
         /// </summary>
-        [DataMember(Name = "target", EmitDefaultValue = true)]
+        [DataMember(Name = "target", IsRequired = true, EmitDefaultValue = true)]
         public string Target { get; set; }
 
         /// <summary>
@@ -133,8 +158,8 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Package
         /// </summary>
-        [DataMember(Name = "package", EmitDefaultValue = false)]
-        public Package Package { get; set; }
+        [DataMember(Name = "package", IsRequired = true, EmitDefaultValue = true)]
+        public PostPackageRequest Package { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -324,6 +349,24 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Id (string) minLength
+            if (this.Id != null && this.Id.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
+            }
+
+            // Type (string) minLength
+            if (this.Type != null && this.Type.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
+            }
+
+            // Target (string) minLength
+            if (this.Target != null && this.Target.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Target, length must be greater than 1.", new [] { "Target" });
+            }
+
             yield break;
         }
     }

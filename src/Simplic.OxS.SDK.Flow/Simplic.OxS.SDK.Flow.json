@@ -316,7 +316,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/DebugContext"
+                                        "$ref": "#/components/schemas/DebugInfo"
                                     }
                                 }
                             },
@@ -324,7 +324,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/DebugContext"
+                                        "$ref": "#/components/schemas/DebugInfo"
                                     }
                                 }
                             },
@@ -332,7 +332,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/DebugContext"
+                                        "$ref": "#/components/schemas/DebugInfo"
                                     }
                                 }
                             }
@@ -1297,7 +1297,7 @@
                 },
                 "additionalProperties": false
             },
-            "DebugContext": {
+            "DebugInfo": {
                 "type": "object",
                 "additionalProperties": false
             },
@@ -1743,15 +1743,21 @@
                 "additionalProperties": false
             },
             "PostNodeDefinitionRequest": {
+                "required": [
+                    "id",
+                    "package",
+                    "target",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
-                        "type": "string",
-                        "nullable": true
+                        "minLength": 1,
+                        "type": "string"
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "minLength": 1,
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -1766,8 +1772,8 @@
                         "nullable": true
                     },
                     "target": {
-                        "type": "string",
-                        "nullable": true
+                        "minLength": 1,
+                        "type": "string"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -1797,7 +1803,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/Package"
+                        "$ref": "#/components/schemas/PostPackageRequest"
                     }
                 },
                 "additionalProperties": false
@@ -1858,6 +1864,28 @@
                     },
                     "package": {
                         "$ref": "#/components/schemas/Package"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PostPackageRequest": {
+                "required": [
+                    "assemblyName",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assemblyName": {
+                        "minLength": 1,
+                        "type": "string"
                     }
                 },
                 "additionalProperties": false
