@@ -47,7 +47,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="globalEndActionId">Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.  .</param>
         /// <param name="distance">Gets or sets the distance in meter.</param>
         /// <param name="tollDistance">Gets or sets the toll distance in meter.</param>
-        public TransitModel(Guid id = default(Guid), AddressModel startAddress = default(AddressModel), DateTime startDateTime = default(DateTime), AddressModel endAddress = default(AddressModel), DateTime endDateTime = default(DateTime), Guid? startActionId = default(Guid?), Guid? globalStartActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? globalEndActionId = default(Guid?), int distance = default(int), int tollDistance = default(int))
+        /// <param name="tollCosts">Gets or sets the toll cost in EUR.  If the value is -1, one of the addresses has no geo-coordinates  If the value is -2, Calculating the route throws an exception.</param>
+        /// <param name="drivingTime">Gets or sets the estimated driving time..</param>
+        public TransitModel(Guid id = default(Guid), AddressModel startAddress = default(AddressModel), DateTime startDateTime = default(DateTime), AddressModel endAddress = default(AddressModel), DateTime endDateTime = default(DateTime), Guid? startActionId = default(Guid?), Guid? globalStartActionId = default(Guid?), Guid? endActionId = default(Guid?), Guid? globalEndActionId = default(Guid?), int distance = default(int), int tollDistance = default(int), double tollCosts = default(double), string drivingTime = default(string))
         {
             this.Id = id;
             this.StartAddress = startAddress;
@@ -60,6 +62,8 @@ namespace Simplic.OxS.SDK.Logistics
             this.GlobalEndActionId = globalEndActionId;
             this.Distance = distance;
             this.TollDistance = tollDistance;
+            this.TollCosts = tollCosts;
+            this.DrivingTime = drivingTime;
         }
 
         /// <summary>
@@ -138,6 +142,20 @@ namespace Simplic.OxS.SDK.Logistics
         public int TollDistance { get; set; }
 
         /// <summary>
+        /// Gets or sets the toll cost in EUR.  If the value is -1, one of the addresses has no geo-coordinates  If the value is -2, Calculating the route throws an exception
+        /// </summary>
+        /// <value>Gets or sets the toll cost in EUR.  If the value is -1, one of the addresses has no geo-coordinates  If the value is -2, Calculating the route throws an exception</value>
+        [DataMember(Name = "tollCosts", EmitDefaultValue = false)]
+        public double TollCosts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the estimated driving time.
+        /// </summary>
+        /// <value>Gets or sets the estimated driving time.</value>
+        [DataMember(Name = "drivingTime", EmitDefaultValue = false)]
+        public string DrivingTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +174,8 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  GlobalEndActionId: ").Append(GlobalEndActionId).Append("\n");
             sb.Append("  Distance: ").Append(Distance).Append("\n");
             sb.Append("  TollDistance: ").Append(TollDistance).Append("\n");
+            sb.Append("  TollCosts: ").Append(TollCosts).Append("\n");
+            sb.Append("  DrivingTime: ").Append(DrivingTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +263,15 @@ namespace Simplic.OxS.SDK.Logistics
                 (
                     this.TollDistance == input.TollDistance ||
                     this.TollDistance.Equals(input.TollDistance)
+                ) && 
+                (
+                    this.TollCosts == input.TollCosts ||
+                    this.TollCosts.Equals(input.TollCosts)
+                ) && 
+                (
+                    this.DrivingTime == input.DrivingTime ||
+                    (this.DrivingTime != null &&
+                    this.DrivingTime.Equals(input.DrivingTime))
                 );
         }
 
@@ -293,6 +322,11 @@ namespace Simplic.OxS.SDK.Logistics
                 }
                 hashCode = (hashCode * 59) + this.Distance.GetHashCode();
                 hashCode = (hashCode * 59) + this.TollDistance.GetHashCode();
+                hashCode = (hashCode * 59) + this.TollCosts.GetHashCode();
+                if (this.DrivingTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.DrivingTime.GetHashCode();
+                }
                 return hashCode;
             }
         }

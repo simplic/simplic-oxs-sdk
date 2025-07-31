@@ -14779,6 +14779,16 @@
                         "type": "integer",
                         "description": "Gets or sets the toll distance in meter",
                         "format": "int32"
+                    },
+                    "tollCosts": {
+                        "type": "number",
+                        "description": "Gets or sets the toll cost in EUR.\r\nIf the value is -1, one of the addresses has no geo-coordinates\r\nIf the value is -2, Calculating the route throws an exception",
+                        "format": "double"
+                    },
+                    "drivingTime": {
+                        "type": "string",
+                        "description": "Gets or sets the estimated driving time.",
+                        "format": "date-span"
                     }
                 },
                 "additionalProperties": false,

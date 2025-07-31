@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **GlobalEndActionId** | **Guid?** | Gets or sets the global id of the end action.     Will contain the tour id in case of the end of the tour.   | [optional] 
 **Distance** | **int** | Gets or sets the distance in meter | [optional] 
 **TollDistance** | **int** | Gets or sets the toll distance in meter | [optional] 
+**TollCosts** | **double** | Gets or sets the toll cost in EUR.  If the value is -1, one of the addresses has no geo-coordinates  If the value is -2, Calculating the route throws an exception | [optional] 
+**DrivingTime** | **string** | Gets or sets the estimated driving time. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
