@@ -55,12 +55,13 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="tags">Gets or sets tour tags.     Tags are shorts additional information that can be added to a tour.  .</param>
         /// <param name="transits">Gets or sets transits.     A transit is a trip/movement of the primary resource from one place to another.  .</param>
         /// <param name="status">status.</param>
+        /// <param name="metrics">metrics.</param>
         /// <param name="isMirroredTour">Gets or sets whether the tour is mirrored..</param>
         /// <param name="notes">Gets or sets a note to the tour..</param>
         /// <param name="isDeleted">Gets or sets werther the tour is deleted..</param>
         /// <param name="createDateTime">Gets or sets the tour create date time.</param>
         /// <param name="updateDateTime">Gets or sets the tour update date time.</param>
-        public TourModel(Guid id = default(Guid), Guid globalTourId = default(Guid), string number = default(string), string reference = default(string), ResourceModel resource = default(ResourceModel), AddressModel startAddress = default(AddressModel), AddressModel endAddress = default(AddressModel), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualEndDateTime = default(DateTime?), DateTime? calculatedStartDateTime = default(DateTime?), DateTime? calculatedEndDateTime = default(DateTime?), List<TourActionModel> actions = default(List<TourActionModel>), List<AttachedResourceModel> attachedResources = default(List<AttachedResourceModel>), List<AttachedEntityModel> attachedEntities = default(List<AttachedEntityModel>), List<TourTagModel> tags = default(List<TourTagModel>), List<TransitModel> transits = default(List<TransitModel>), TourStatusModel status = default(TourStatusModel), bool? isMirroredTour = default(bool?), string notes = default(string), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime))
+        public TourModel(Guid id = default(Guid), Guid globalTourId = default(Guid), string number = default(string), string reference = default(string), ResourceModel resource = default(ResourceModel), AddressModel startAddress = default(AddressModel), AddressModel endAddress = default(AddressModel), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualEndDateTime = default(DateTime?), DateTime? calculatedStartDateTime = default(DateTime?), DateTime? calculatedEndDateTime = default(DateTime?), List<TourActionModel> actions = default(List<TourActionModel>), List<AttachedResourceModel> attachedResources = default(List<AttachedResourceModel>), List<AttachedEntityModel> attachedEntities = default(List<AttachedEntityModel>), List<TourTagModel> tags = default(List<TourTagModel>), List<TransitModel> transits = default(List<TransitModel>), TourStatusModel status = default(TourStatusModel), TourMetricsResponse metrics = default(TourMetricsResponse), bool? isMirroredTour = default(bool?), string notes = default(string), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime))
         {
             this.Id = id;
             this.GlobalTourId = globalTourId;
@@ -81,6 +82,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.Tags = tags;
             this.Transits = transits;
             this.Status = status;
+            this.Metrics = metrics;
             this.IsMirroredTour = isMirroredTour;
             this.Notes = notes;
             this.IsDeleted = isDeleted;
@@ -218,6 +220,12 @@ namespace Simplic.OxS.SDK.Logistics
         public TourStatusModel Status { get; set; }
 
         /// <summary>
+        /// Gets or Sets Metrics
+        /// </summary>
+        [DataMember(Name = "metrics", EmitDefaultValue = false)]
+        public TourMetricsResponse Metrics { get; set; }
+
+        /// <summary>
         /// Gets or sets whether the tour is mirrored.
         /// </summary>
         /// <value>Gets or sets whether the tour is mirrored.</value>
@@ -279,6 +287,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Transits: ").Append(Transits).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Metrics: ").Append(Metrics).Append("\n");
             sb.Append("  IsMirroredTour: ").Append(IsMirroredTour).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -420,6 +429,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.Metrics == input.Metrics ||
+                    (this.Metrics != null &&
+                    this.Metrics.Equals(input.Metrics))
+                ) && 
+                (
                     this.IsMirroredTour == input.IsMirroredTour ||
                     (this.IsMirroredTour != null &&
                     this.IsMirroredTour.Equals(input.IsMirroredTour))
@@ -529,6 +543,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Status != null)
                 {
                     hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                }
+                if (this.Metrics != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metrics.GetHashCode();
                 }
                 if (this.IsMirroredTour != null)
                 {

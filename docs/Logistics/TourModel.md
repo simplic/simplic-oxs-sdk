@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Tags** | [**List&lt;TourTagModel&gt;**](TourTagModel.md) | Gets or sets tour tags.     Tags are shorts additional information that can be added to a tour.   | [optional] 
 **Transits** | [**List&lt;TransitModel&gt;**](TransitModel.md) | Gets or sets transits.     A transit is a trip/movement of the primary resource from one place to another.   | [optional] 
 **Status** | [**TourStatusModel**](TourStatusModel.md) |  | [optional] 
+**Metrics** | [**TourMetricsResponse**](TourMetricsResponse.md) |  | [optional] 
 **IsMirroredTour** | **bool?** | Gets or sets whether the tour is mirrored. | [optional] 
 **Notes** | **string** | Gets or sets a note to the tour. | [optional] 
 **IsDeleted** | **bool** | Gets or sets werther the tour is deleted. | [optional] 

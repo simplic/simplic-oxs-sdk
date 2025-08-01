@@ -78,6 +78,41 @@ public interface ITourClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createTourRequest"> (optional)</param>
+    /// <returns>TourModel</returns>
+    TourModel CalculatePreview(CreateTourRequest? createTourRequest = default(CreateTourRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createTourRequest"> (optional)</param>
+    /// <returns>ApiResponse of TourModel</returns>
+    ApiResponse<TourModel> CalculatePreviewWithHttpInfo(CreateTourRequest? createTourRequest = default(CreateTourRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createTourRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TourModel</returns>
+    Task<TourModel> CalculatePreviewAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createTourRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TourModel)</returns>
+    Task<ApiResponse<TourModel>> CalculatePreviewWithHttpInfoAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="shipmentToTourRequest"> (optional)</param>
     /// <returns>TourModel</returns>
     TourModel ConvertShipmentToTour(ShipmentToTourRequest? shipmentToTourRequest = default(ShipmentToTourRequest?));
@@ -803,6 +838,79 @@ public interface ITourClient
             try
             {
                 return _internalClient.AddTagToTourWithHttpInfoAsync(addTagToTourRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <returns>TourModel</returns>
+        public TourModel CalculatePreview(CreateTourRequest? createTourRequest = default(CreateTourRequest?))
+        {
+            try
+            {
+                return _internalClient.CalculatePreview(createTourRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <returns>ApiResponse of TourModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TourModel> CalculatePreviewWithHttpInfo(CreateTourRequest? createTourRequest = default(CreateTourRequest?))
+        {
+            try
+            {
+                return _internalClient.CalculatePreviewWithHttpInfo(createTourRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TourModel</returns>
+        public System.Threading.Tasks.Task<TourModel> CalculatePreviewAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CalculatePreviewAsync(createTourRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TourModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourModel>> CalculatePreviewWithHttpInfoAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CalculatePreviewWithHttpInfoAsync(createTourRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -2042,6 +2150,26 @@ public interface ITourClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TourModel</returns>
+        TourModel CalculatePreview(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TourModel</returns>
+        ApiResponse<TourModel> CalculatePreviewWithHttpInfo(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shipmentToTourRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TourModel</returns>
@@ -2406,6 +2534,31 @@ public interface ITourClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AddTagToTourWithHttpInfoAsync(AddTagToTourRequest? addTagToTourRequest = default(AddTagToTourRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TourModel</returns>
+        System.Threading.Tasks.Task<TourModel> CalculatePreviewAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TourModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TourModel>> CalculatePreviewWithHttpInfoAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -3093,6 +3246,168 @@ public interface ITourClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TourAddTagToTourPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TourModel</returns>
+        public TourModel CalculatePreview(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TourModel> localVarResponse = CalculatePreviewWithHttpInfo(createTourRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TourModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TourModel> CalculatePreviewWithHttpInfo(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createTourRequest;
+
+            localVarRequestOptions.Operation = "TourClient.TourCalculatePreviewPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<TourModel>("/Tour/calculate-preview", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TourCalculatePreviewPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TourModel</returns>
+        public async System.Threading.Tasks.Task<TourModel> CalculatePreviewAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TourModel> localVarResponse = await CalculatePreviewWithHttpInfoAsync(createTourRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTourRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TourModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TourModel>> CalculatePreviewWithHttpInfoAsync(CreateTourRequest? createTourRequest = default(CreateTourRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createTourRequest;
+
+            localVarRequestOptions.Operation = "TourClient.TourCalculatePreviewPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TourModel>("/Tour/calculate-preview", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TourCalculatePreviewPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
