@@ -9,7 +9,6 @@ All URIs are relative to *https://dev-oxs.simplic.io/organization-api/v1*
 | [**DeleteInvite**](MemberClient.md#memberdeleteinvitepost) | **POST** /Member/delete-invite | Deletes a member invite by id. |
 | [**GetAll**](MemberClient.md#membergetallget) | **GET** /Member/get-all | Returns all memberships |
 | [**GetPendingInvitations**](MemberClient.md#membergetpendinginvitationsget) | **GET** /Member/get-pending-invitations | Returns all memberships pending invitations |
-| [**InviteMultiple**](MemberClient.md#memberinvitemultiplepost) | **POST** /Member/invite-multiple | Invites a list of users by their mail address. |
 | [**Invite**](MemberClient.md#memberinvitepost) | **POST** /Member/invite | Invites a user by their mail address. |
 | [**Leave**](MemberClient.md#memberleavepost) | **POST** /Member/leave | Removes a member from an organization by the id of the membership. |
 | [**Remove**](MemberClient.md#memberremovepost) | **POST** /Member/remove | Removes a member from an organization by the id of the membership. |
@@ -488,104 +487,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="memberinvitemultiplepost"></a>
-# **InviteMultiple**
-> void InviteMultiple (InviteMemberRequest? inviteMemberRequest = null)
-
-Invites a list of users by their mail address.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Organization;
-
-namespace Example
-{
-    public class InviteMultipleExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/organization-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new MemberClient(config);
-            var inviteMemberRequest = new InviteMemberRequest?(); // InviteMemberRequest? | Invitation model, containing a list of mail addresses (optional) 
-
-            try
-            {
-                // Invites a list of users by their mail address.
-                apiInstance.InviteMultiple(inviteMemberRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MemberClient.InviteMultiple: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the InviteMultipleWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Invites a list of users by their mail address.
-    apiInstance.InviteMultipleWithHttpInfo(inviteMemberRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MemberClient.InviteMultipleWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **inviteMemberRequest** | [**InviteMemberRequest?**](InviteMemberRequest?.md) | Invitation model, containing a list of mail addresses | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="memberinvitepost"></a>
 # **Invite**
-> void Invite (string? email = null)
+> void Invite (InviteMemberRequest? inviteMemberRequest = null)
 
 Invites a user by their mail address.
 
@@ -614,12 +518,12 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MemberClient(config);
-            var email = "email_example";  // string? | Email to invite. (optional) 
+            var inviteMemberRequest = new InviteMemberRequest?(); // InviteMemberRequest? |  (optional) 
 
             try
             {
                 // Invites a user by their mail address.
-                apiInstance.Invite(email);
+                apiInstance.Invite(inviteMemberRequest);
             }
             catch (ApiException  e)
             {
@@ -639,7 +543,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Invites a user by their mail address.
-    apiInstance.InviteWithHttpInfo(email);
+    apiInstance.InviteWithHttpInfo(inviteMemberRequest);
 }
 catch (ApiException e)
 {
@@ -653,7 +557,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **email** | **string?** | Email to invite. | [optional]  |
+| **inviteMemberRequest** | [**InviteMemberRequest?**](InviteMemberRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -665,7 +569,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

@@ -1230,71 +1230,7 @@
                     "Member"
                 ],
                 "summary": "Invites a user by their mail address.",
-                "parameters": [
-                    {
-                        "name": "email",
-                        "in": "query",
-                        "description": "Email to invite.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Member/invite-multiple": {
-            "post": {
-                "tags": [
-                    "Member"
-                ],
-                "summary": "Invites a list of users by their mail address.",
                 "requestBody": {
-                    "description": "Invitation model, containing a list of mail addresses",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -4636,13 +4572,19 @@
                 "description": "Represents a certificate"
             },
             "InviteMemberRequest": {
+                "required": [
+                    "emailAddress"
+                ],
                 "type": "object",
                 "properties": {
-                    "eMails": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
+                    "emailAddress": {
+                        "minLength": 1,
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "customInvitationText": {
+                        "type": "string",
+                        "description": "Replaces the default text in the Invitation email with a custom text.\r\nCan be null or empty to show the default text.",
                         "nullable": true
                     }
                 },

@@ -207,73 +207,38 @@ public interface IMemberClient
 
 
     /// <summary>
-    /// Invites a list of users by their mail address. 
+    /// Invites a user by their mail address. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+    /// <param name="inviteMemberRequest"> (optional)</param>
     /// <returns></returns>
-    void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?));
-
-    /// <summary>
-    /// Invites a list of users by their mail address. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-    /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> InviteMultipleWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?));
-        
-    /// <summary>
-    /// Invites a list of users by their mail address. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of void</returns>
-    Task InviteMultipleAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    /// Invites a list of users by their mail address. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> InviteMultipleWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
+    void Invite(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?));
 
     /// <summary>
     /// Invites a user by their mail address. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email">Email to invite. (optional)</param>
-    /// <returns></returns>
-    void Invite(string? email = default(string?));
-
-    /// <summary>
-    /// Invites a user by their mail address. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email">Email to invite. (optional)</param>
+    /// <param name="inviteMemberRequest"> (optional)</param>
     /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> InviteWithHttpInfo(string? email = default(string?));
+    ApiResponse<Object> InviteWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?));
         
     /// <summary>
     /// Invites a user by their mail address. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email">Email to invite. (optional)</param>
+    /// <param name="inviteMemberRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of void</returns>
-    Task InviteAsync(string? email = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task InviteAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Invites a user by their mail address. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email">Email to invite. (optional)</param>
+    /// <param name="inviteMemberRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> InviteWithHttpInfoAsync(string? email = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<Object>> InviteWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -817,89 +782,16 @@ public interface IMemberClient
             }
         }    
         /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <returns></returns>
-        public void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?))
-        {
-            try
-            {
-                _internalClient.InviteMultiple(inviteMemberRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> InviteMultipleWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?))
-        {
-            try
-            {
-                return _internalClient.InviteMultipleWithHttpInfo(inviteMemberRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task InviteMultipleAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.InviteMultipleAsync(inviteMemberRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteMultipleWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.InviteMultipleWithHttpInfoAsync(inviteMemberRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <returns></returns>
-        public void Invite(string? email = default(string?))
+        public void Invite(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?))
         {
             try
             {
-                _internalClient.Invite(email);
+                _internalClient.Invite(inviteMemberRequest);
             }
             catch (ApiException e)
             {
@@ -911,13 +803,13 @@ public interface IMemberClient
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> InviteWithHttpInfo(string? email = default(string?))
+        public Simplic.OxS.SDK.ApiResponse<Object> InviteWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?))
         {
             try
             {
-                return _internalClient.InviteWithHttpInfo(email);
+                return _internalClient.InviteWithHttpInfo(inviteMemberRequest);
             }
             catch (ApiException e)
             {
@@ -929,14 +821,14 @@ public interface IMemberClient
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task InviteAsync(string? email = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task InviteAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.InviteAsync(email, cancellationToken: cancellationToken);
+                return _internalClient.InviteAsync(inviteMemberRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -948,14 +840,14 @@ public interface IMemberClient
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteWithHttpInfoAsync(string? email = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.InviteWithHttpInfoAsync(email, cancellationToken: cancellationToken);
+                return _internalClient.InviteWithHttpInfoAsync(inviteMemberRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1295,33 +1187,13 @@ public interface IMemberClient
         /// <returns>ApiResponse of List&lt;OrganizationMemberInvitationModel&gt;</returns>
         ApiResponse<List<OrganizationMemberInvitationModel>> GetPendingInvitationsWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// Invites a list of users by their mail address.
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
-
-        /// <summary>
-        /// Invites a list of users by their mail address.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> InviteMultipleWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
-        /// <summary>
         /// Invites a user by their mail address.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Invite(string? email = default(string?), int operationIndex = 0);
+        void Invite(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Invites a user by their mail address.
@@ -1330,10 +1202,10 @@ public interface IMemberClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> InviteWithHttpInfo(string? email = default(string?), int operationIndex = 0);
+        ApiResponse<Object> InviteWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0);
         /// <summary>
         /// Removes a member from an organization by the id of the membership.
         /// </summary>
@@ -1527,42 +1399,17 @@ public interface IMemberClient
         /// <returns>Task of ApiResponse (List&lt;OrganizationMemberInvitationModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<OrganizationMemberInvitationModel>>> GetPendingInvitationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Invites a list of users by their mail address.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task InviteMultipleAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Invites a list of users by their mail address.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> InviteMultipleWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
         /// Invites a user by their mail address.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task InviteAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task InviteAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Invites a user by their mail address.
@@ -1571,11 +1418,11 @@ public interface IMemberClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> InviteWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> InviteWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Removes a member from an organization by the id of the membership.
         /// </summary>
@@ -2556,25 +2403,25 @@ public interface IMemberClient
         }
 
         /// <summary>
-        /// Invites a list of users by their mail address. 
+        /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void InviteMultiple(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
+        public void Invite(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
         {
-            InviteMultipleWithHttpInfo(inviteMemberRequest);
+            InviteWithHttpInfo(inviteMemberRequest);
         }
 
         /// <summary>
-        /// Invites a list of users by their mail address. 
+        /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> InviteMultipleWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> InviteWithHttpInfo(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2604,166 +2451,6 @@ public interface IMemberClient
             }
 
             localVarRequestOptions.Data = inviteMemberRequest;
-
-            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/Member/invite-multiple", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task InviteMultipleAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await InviteMultipleWithHttpInfoAsync(inviteMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Invites a list of users by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inviteMemberRequest">Invitation model, containing a list of mail addresses (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteMultipleWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = inviteMemberRequest;
-
-            localVarRequestOptions.Operation = "MemberClient.MemberInviteMultiplePost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Member/invite-multiple", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("MemberInviteMultiplePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Invites a user by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Invite(string? email = default(string?), int operationIndex = 0)
-        {
-            InviteWithHttpInfo(email);
-        }
-
-        /// <summary>
-        /// Invites a user by their mail address. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> InviteWithHttpInfo(string? email = default(string?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (email != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
-            }
 
             localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2797,29 +2484,32 @@ public interface IMemberClient
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task InviteAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task InviteAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await InviteWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
+            await InviteWithHttpInfoAsync(inviteMemberRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Invites a user by their mail address. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Email to invite. (optional)</param>
+        /// <param name="inviteMemberRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> InviteWithHttpInfoAsync(InviteMemberRequest? inviteMemberRequest = default(InviteMemberRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2841,10 +2531,7 @@ public interface IMemberClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (email != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
-            }
+            localVarRequestOptions.Data = inviteMemberRequest;
 
             localVarRequestOptions.Operation = "MemberClient.MemberInvitePost";
             localVarRequestOptions.OperationIndex = operationIndex;

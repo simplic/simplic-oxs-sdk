@@ -36,17 +36,36 @@ namespace Simplic.OxS.SDK.Organization
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteMemberRequest" /> class.
         /// </summary>
-        /// <param name="eMails">eMails.</param>
-        public InviteMemberRequest(List<string> eMails = default(List<string>))
+        [JsonConstructorAttribute]
+        protected InviteMemberRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteMemberRequest" /> class.
+        /// </summary>
+        /// <param name="emailAddress">emailAddress (required).</param>
+        /// <param name="customInvitationText">Replaces the default text in the Invitation email with a custom text.  Can be null or empty to show the default text..</param>
+        public InviteMemberRequest(string emailAddress = default(string), string customInvitationText = default(string))
         {
-            this.EMails = eMails;
+            // to ensure "emailAddress" is required (not null)
+            if (emailAddress == null)
+            {
+                throw new ArgumentNullException("emailAddress is a required property for InviteMemberRequest and cannot be null");
+            }
+            this.EmailAddress = emailAddress;
+            this.CustomInvitationText = customInvitationText;
         }
 
         /// <summary>
-        /// Gets or Sets EMails
+        /// Gets or Sets EmailAddress
         /// </summary>
-        [DataMember(Name = "eMails", EmitDefaultValue = true)]
-        public List<string> EMails { get; set; }
+        [DataMember(Name = "emailAddress", IsRequired = true, EmitDefaultValue = true)]
+        public string EmailAddress { get; set; }
+
+        /// <summary>
+        /// Replaces the default text in the Invitation email with a custom text.  Can be null or empty to show the default text.
+        /// </summary>
+        /// <value>Replaces the default text in the Invitation email with a custom text.  Can be null or empty to show the default text.</value>
+        [DataMember(Name = "customInvitationText", EmitDefaultValue = true)]
+        public string CustomInvitationText { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,7 +75,8 @@ namespace Simplic.OxS.SDK.Organization
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class InviteMemberRequest {\n");
-            sb.Append("  EMails: ").Append(EMails).Append("\n");
+            sb.Append("  EmailAddress: ").Append(EmailAddress).Append("\n");
+            sb.Append("  CustomInvitationText: ").Append(CustomInvitationText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,10 +113,14 @@ namespace Simplic.OxS.SDK.Organization
             }
             return 
                 (
-                    this.EMails == input.EMails ||
-                    this.EMails != null &&
-                    input.EMails != null &&
-                    this.EMails.SequenceEqual(input.EMails)
+                    this.EmailAddress == input.EmailAddress ||
+                    (this.EmailAddress != null &&
+                    this.EmailAddress.Equals(input.EmailAddress))
+                ) && 
+                (
+                    this.CustomInvitationText == input.CustomInvitationText ||
+                    (this.CustomInvitationText != null &&
+                    this.CustomInvitationText.Equals(input.CustomInvitationText))
                 );
         }
 
@@ -109,9 +133,13 @@ namespace Simplic.OxS.SDK.Organization
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EMails != null)
+                if (this.EmailAddress != null)
                 {
-                    hashCode = (hashCode * 59) + this.EMails.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EmailAddress.GetHashCode();
+                }
+                if (this.CustomInvitationText != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomInvitationText.GetHashCode();
                 }
                 return hashCode;
             }
@@ -124,6 +152,12 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // EmailAddress (string) minLength
+            if (this.EmailAddress != null && this.EmailAddress.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EmailAddress, length must be greater than 1.", new [] { "EmailAddress" });
+            }
+
             yield break;
         }
     }

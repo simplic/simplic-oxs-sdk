@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EMails** | **List&lt;string&gt;** |  | [optional] 
+**EmailAddress** | **string** |  | 
+**CustomInvitationText** | **string** | Replaces the default text in the Invitation email with a custom text.  Can be null or empty to show the default text. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
