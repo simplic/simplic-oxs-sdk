@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ReportConfigurationDenmark** | [**ReportConfigurationDenmark**](ReportConfigurationDenmark.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
 **Notes** | **string** |  | [optional] 
+**GpsDataSource** | **GPSDataSource** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

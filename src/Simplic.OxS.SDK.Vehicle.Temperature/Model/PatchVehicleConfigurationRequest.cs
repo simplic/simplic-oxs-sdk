@@ -33,6 +33,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
     [DataContract(Name = "PatchVehicleConfigurationRequest")]
     public partial class PatchVehicleConfigurationRequest : IEquatable<PatchVehicleConfigurationRequest>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets GpsDataSource
+        /// </summary>
+        [DataMember(Name = "gpsDataSource", EmitDefaultValue = false)]
+        public GPSDataSource? GpsDataSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchVehicleConfigurationRequest" /> class.
         /// </summary>
@@ -41,13 +47,15 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="reportConfigurationDenmark">reportConfigurationDenmark.</param>
         /// <param name="tags">tags.</param>
         /// <param name="notes">notes.</param>
-        public PatchVehicleConfigurationRequest(List<Sensor> sensors = default(List<Sensor>), string imei = default(string), ReportConfigurationDenmark reportConfigurationDenmark = default(ReportConfigurationDenmark), List<string> tags = default(List<string>), string notes = default(string))
+        /// <param name="gpsDataSource">gpsDataSource.</param>
+        public PatchVehicleConfigurationRequest(List<Sensor> sensors = default(List<Sensor>), string imei = default(string), ReportConfigurationDenmark reportConfigurationDenmark = default(ReportConfigurationDenmark), List<string> tags = default(List<string>), string notes = default(string), GPSDataSource? gpsDataSource = default(GPSDataSource?))
         {
             this.Sensors = sensors;
             this.Imei = imei;
             this.ReportConfigurationDenmark = reportConfigurationDenmark;
             this.Tags = tags;
             this.Notes = notes;
+            this.GpsDataSource = gpsDataSource;
         }
 
         /// <summary>
@@ -93,6 +101,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             sb.Append("  ReportConfigurationDenmark: ").Append(ReportConfigurationDenmark).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
+            sb.Append("  GpsDataSource: ").Append(GpsDataSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,6 +163,10 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                     this.Notes == input.Notes ||
                     (this.Notes != null &&
                     this.Notes.Equals(input.Notes))
+                ) && 
+                (
+                    this.GpsDataSource == input.GpsDataSource ||
+                    this.GpsDataSource.Equals(input.GpsDataSource)
                 );
         }
 
@@ -186,6 +199,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.GpsDataSource.GetHashCode();
                 return hashCode;
             }
         }

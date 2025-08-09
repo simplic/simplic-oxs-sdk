@@ -11,7 +11,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="devdebugflowidget"></a>
 # **Debug**
-> List&lt;Object&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null)
+> List&lt;Object&gt; Debug (Guid flowId, string? authorization = null, List<Object>? args = null, List<Guid>? breakpoints = null)
 
 
 
@@ -37,12 +37,13 @@ namespace Example
 
             var apiInstance = new DevClient(config);
             var flowId = "flowId_example";  // Guid | 
+            var authorization = "authorization_example";  // string? |  (optional) 
             var args = new List<Object>?(); // List<Object>? |  (optional) 
             var breakpoints = new List<Guid>?(); // List<Guid>? |  (optional) 
 
             try
             {
-                List<Object> result = apiInstance.Debug(flowId, args, breakpoints);
+                List<Object> result = apiInstance.Debug(flowId, authorization, args, breakpoints);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Object>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints);
+    ApiResponse<List<Object>> response = apiInstance.DebugWithHttpInfo(flowId, authorization, args, breakpoints);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,6 +81,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **flowId** | **Guid** |  |  |
+| **authorization** | **string?** |  | [optional]  |
 | **args** | [**List&lt;Object&gt;?**](Object.md) |  | [optional]  |
 | **breakpoints** | [**List&lt;Guid&gt;?**](Guid.md) |  | [optional]  |
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 
 <a id="devexecuteflowidget"></a>
 # **Execute**
-> Object Execute (Guid flowId)
+> Object Execute (Guid flowId, string? authorization = null)
 
 
 
@@ -134,10 +136,11 @@ namespace Example
 
             var apiInstance = new DevClient(config);
             var flowId = "flowId_example";  // Guid | 
+            var authorization = "authorization_example";  // string? |  (optional) 
 
             try
             {
-                Object result = apiInstance.Execute(flowId);
+                Object result = apiInstance.Execute(flowId, authorization);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -157,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId);
+    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId, authorization);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -175,6 +178,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **flowId** | **Guid** |  |  |
+| **authorization** | **string?** |  | [optional]  |
 
 ### Return type
 
