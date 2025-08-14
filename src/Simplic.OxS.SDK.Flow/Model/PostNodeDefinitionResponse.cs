@@ -48,7 +48,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package.</param>
-        public PostNodeDefinitionResponse(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), Package package = default(Package))
+        public PostNodeDefinitionResponse(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PackageResponse package = default(PackageResponse))
         {
             this.Id = id;
             this.Type = type;
@@ -134,7 +134,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Package
         /// </summary>
         [DataMember(Name = "package", EmitDefaultValue = false)]
-        public Package Package { get; set; }
+        public PackageResponse Package { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

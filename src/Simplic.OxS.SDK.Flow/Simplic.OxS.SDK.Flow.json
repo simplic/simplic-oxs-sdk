@@ -839,17 +839,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "$ref": "#/components/schemas/GetNodeDefinitionResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "$ref": "#/components/schemas/GetNodeDefinitionResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "$ref": "#/components/schemas/GetNodeDefinitionResponse"
                                 }
                             }
                         }
@@ -1007,17 +1007,26 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeDefinitionResponse"
+                                    }
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeDefinitionResponse"
+                                    }
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllNodeDefinitionsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NodeDefinitionResponse"
+                                    }
                                 }
                             }
                         }
@@ -1199,7 +1208,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "type",
+                        "name": "id",
                         "in": "query",
                         "schema": {
                             "type": "string"
@@ -1541,19 +1550,6 @@
                 },
                 "additionalProperties": false
             },
-            "GetAllNodeDefinitionsResponse": {
-                "type": "object",
-                "properties": {
-                    "definitions": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/NodeDefinition"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "GetEncryptionResponse": {
                 "type": "object",
                 "properties": {
@@ -1600,25 +1596,7 @@
                 },
                 "additionalProperties": false
             },
-            "Machine": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "organizationId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "userId": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "NodeDefinition": {
+            "GetNodeDefinitionResponse": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1673,7 +1651,85 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/Package"
+                        "$ref": "#/components/schemas/PackageResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Machine": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NodeDefinitionResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eventName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "target": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customDataInPinTemplate": {
+                        "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
+                    },
+                    "customFlowOutPinTemplate": {
+                        "$ref": "#/components/schemas/CustomFlowOutPinTemplateDefinition"
+                    },
+                    "dataInPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataInPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "dataOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "flowOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FlowOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/PackageResponse"
                     }
                 },
                 "additionalProperties": false
@@ -1742,7 +1798,29 @@
                 },
                 "additionalProperties": false
             },
-            "Package": {
+            "PackageRequest": {
+                "required": [
+                    "assemblyName",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assemblyName": {
+                        "minLength": 1,
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PackageResponse": {
                 "type": "object",
                 "properties": {
                     "name": {
@@ -1899,7 +1977,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PostPackageRequest"
+                        "$ref": "#/components/schemas/PackageRequest"
                     }
                 },
                 "additionalProperties": false
@@ -1959,29 +2037,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/Package"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "PostPackageRequest": {
-                "required": [
-                    "assemblyName",
-                    "name"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "minLength": 1,
-                        "type": "string"
-                    },
-                    "version": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "assemblyName": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/components/schemas/PackageResponse"
                     }
                 },
                 "additionalProperties": false
@@ -2074,7 +2130,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PostPackageRequest"
+                        "$ref": "#/components/schemas/PackageRequest"
                     }
                 },
                 "additionalProperties": false
@@ -2134,7 +2190,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/Package"
+                        "$ref": "#/components/schemas/PackageResponse"
                     }
                 },
                 "additionalProperties": false

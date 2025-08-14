@@ -28,13 +28,13 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// NodeDefinition
+    /// NodeDefinitionResponse
     /// </summary>
-    [DataContract(Name = "NodeDefinition")]
-    public partial class NodeDefinition : IEquatable<NodeDefinition>, IValidatableObject
+    [DataContract(Name = "NodeDefinitionResponse")]
+    public partial class NodeDefinitionResponse : IEquatable<NodeDefinitionResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NodeDefinition" /> class.
+        /// Initializes a new instance of the <see cref="NodeDefinitionResponse" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="type">type.</param>
@@ -48,7 +48,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package.</param>
-        public NodeDefinition(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), Package package = default(Package))
+        public NodeDefinitionResponse(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PackageResponse package = default(PackageResponse))
         {
             this.Id = id;
             this.Type = type;
@@ -134,7 +134,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Package
         /// </summary>
         [DataMember(Name = "package", EmitDefaultValue = false)]
-        public Package Package { get; set; }
+        public PackageResponse Package { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -143,7 +143,7 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NodeDefinition {\n");
+            sb.Append("class NodeDefinitionResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
@@ -176,15 +176,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NodeDefinition);
+            return this.Equals(input as NodeDefinitionResponse);
         }
 
         /// <summary>
-        /// Returns true if NodeDefinition instances are equal
+        /// Returns true if NodeDefinitionResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of NodeDefinition to be compared</param>
+        /// <param name="input">Instance of NodeDefinitionResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NodeDefinition input)
+        public bool Equals(NodeDefinitionResponse input)
         {
             if (input == null)
             {

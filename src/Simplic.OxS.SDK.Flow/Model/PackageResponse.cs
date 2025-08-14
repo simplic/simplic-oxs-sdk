@@ -28,43 +28,28 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// PostPackageRequest
+    /// PackageResponse
     /// </summary>
-    [DataContract(Name = "PostPackageRequest")]
-    public partial class PostPackageRequest : IEquatable<PostPackageRequest>, IValidatableObject
+    [DataContract(Name = "PackageResponse")]
+    public partial class PackageResponse : IEquatable<PackageResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostPackageRequest" /> class.
+        /// Initializes a new instance of the <see cref="PackageResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PostPackageRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PostPackageRequest" /> class.
-        /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         /// <param name="varVersion">varVersion.</param>
-        /// <param name="assemblyName">assemblyName (required).</param>
-        public PostPackageRequest(string name = default(string), string varVersion = default(string), string assemblyName = default(string))
+        /// <param name="assemblyName">assemblyName.</param>
+        public PackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for PostPackageRequest and cannot be null");
-            }
             this.Name = name;
-            // to ensure "assemblyName" is required (not null)
-            if (assemblyName == null)
-            {
-                throw new ArgumentNullException("assemblyName is a required property for PostPackageRequest and cannot be null");
-            }
-            this.AssemblyName = assemblyName;
             this.VarVersion = varVersion;
+            this.AssemblyName = assemblyName;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -76,7 +61,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets AssemblyName
         /// </summary>
-        [DataMember(Name = "assemblyName", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "assemblyName", EmitDefaultValue = true)]
         public string AssemblyName { get; set; }
 
         /// <summary>
@@ -86,7 +71,7 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PostPackageRequest {\n");
+            sb.Append("class PackageResponse {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  AssemblyName: ").Append(AssemblyName).Append("\n");
@@ -110,15 +95,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PostPackageRequest);
+            return this.Equals(input as PackageResponse);
         }
 
         /// <summary>
-        /// Returns true if PostPackageRequest instances are equal
+        /// Returns true if PackageResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of PostPackageRequest to be compared</param>
+        /// <param name="input">Instance of PackageResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PostPackageRequest input)
+        public bool Equals(PackageResponse input)
         {
             if (input == null)
             {
@@ -174,18 +159,6 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
-            // AssemblyName (string) minLength
-            if (this.AssemblyName != null && this.AssemblyName.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssemblyName, length must be greater than 1.", new [] { "AssemblyName" });
-            }
-
             yield break;
         }
     }

@@ -102,7 +102,7 @@ void (empty response body)
 
 <a id="nodedefinitiongetallget"></a>
 # **GetAll**
-> GetAllNodeDefinitionsResponse GetAll ()
+> List&lt;NodeDefinitionResponse&gt; GetAll ()
 
 
 
@@ -130,7 +130,7 @@ namespace Example
 
             try
             {
-                GetAllNodeDefinitionsResponse result = apiInstance.GetAll();
+                List<NodeDefinitionResponse> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -150,7 +150,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<GetAllNodeDefinitionsResponse> response = apiInstance.GetAllWithHttpInfo();
+    ApiResponse<List<NodeDefinitionResponse>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -167,7 +167,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**GetAllNodeDefinitionsResponse**](GetAllNodeDefinitionsResponse.md)
+[**List&lt;NodeDefinitionResponse&gt;**](NodeDefinitionResponse.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ This endpoint does not need any parameter.
 
 <a id="nodedefinitionidget"></a>
 # **Get**
-> GetAllNodeDefinitionsResponse Get (string id)
+> GetNodeDefinitionResponse Get (string id)
 
 
 
@@ -218,7 +218,7 @@ namespace Example
 
             try
             {
-                GetAllNodeDefinitionsResponse result = apiInstance.Get(id);
+                GetNodeDefinitionResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -238,7 +238,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<GetAllNodeDefinitionsResponse> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<GetNodeDefinitionResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -259,7 +259,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GetAllNodeDefinitionsResponse**](GetAllNodeDefinitionsResponse.md)
+[**GetNodeDefinitionResponse**](GetNodeDefinitionResponse.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ catch (ApiException e)
 
 <a id="nodedefinitionrestorepost"></a>
 # **Restore**
-> void Restore (string? type = null)
+> void Restore (string? id = null)
 
 
 
@@ -496,11 +496,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new NodeDefinitionClient(config);
-            var type = "type_example";  // string? |  (optional) 
+            var id = "id_example";  // string? |  (optional) 
 
             try
             {
-                apiInstance.Restore(type);
+                apiInstance.Restore(id);
             }
             catch (ApiException  e)
             {
@@ -519,7 +519,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.RestoreWithHttpInfo(type);
+    apiInstance.RestoreWithHttpInfo(id);
 }
 catch (ApiException e)
 {
@@ -533,7 +533,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **type** | **string?** |  | [optional]  |
+| **id** | **string?** |  | [optional]  |
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Flow.PostNodeDefinitionResponse
+# Simplic.OxS.SDK.Flow.NodeDefinitionResponse
 
 ## Properties
 

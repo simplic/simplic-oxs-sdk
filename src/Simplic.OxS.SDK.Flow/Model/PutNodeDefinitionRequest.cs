@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public PutNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PostPackageRequest package = default(PostPackageRequest))
+        public PutNodeDefinitionRequest(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PackageRequest package = default(PackageRequest))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -159,7 +159,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Package
         /// </summary>
         [DataMember(Name = "package", IsRequired = true, EmitDefaultValue = true)]
-        public PostPackageRequest Package { get; set; }
+        public PackageRequest Package { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
