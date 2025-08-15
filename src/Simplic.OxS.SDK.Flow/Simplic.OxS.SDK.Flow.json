@@ -213,6 +213,14 @@
                             "type": "string",
                             "format": "uuid"
                         }
+                    },
+                    {
+                        "name": "castTo",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "object"
+                        }
                     }
                 ],
                 "responses": {

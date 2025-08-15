@@ -108,7 +108,7 @@ catch (ApiException e)
 
 <a id="devexecuteflowidget"></a>
 # **Execute**
-> Object Execute (Guid flowId)
+> Object Execute (Guid flowId, string? castTo = null)
 
 
 
@@ -134,10 +134,11 @@ namespace Example
 
             var apiInstance = new DevClient(config);
             var flowId = "flowId_example";  // Guid | 
+            var castTo = "\"object\"";  // string? |  (optional)  (default to "object")
 
             try
             {
-                Object result = apiInstance.Execute(flowId);
+                Object result = apiInstance.Execute(flowId, castTo);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -157,7 +158,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId);
+    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId, castTo);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -175,6 +176,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **flowId** | **Guid** |  |  |
+| **castTo** | **string?** |  | [optional] [default to &quot;object&quot;] |
 
 ### Return type
 
