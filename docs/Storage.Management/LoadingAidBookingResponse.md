@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **DateTime** | **DateTime** |  | [optional] 
 **Fault** | **string** |  | [optional] 
 **Tags** | [**List&lt;LoadingAidBookingTagSubsetResponse&gt;**](LoadingAidBookingTagSubsetResponse.md) |  | [optional] 
+**QualityType** | [**LoadingAidBookingQualityTypeSubsetResponse**](LoadingAidBookingQualityTypeSubsetResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

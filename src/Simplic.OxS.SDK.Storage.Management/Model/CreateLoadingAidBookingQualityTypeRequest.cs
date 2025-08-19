@@ -28,41 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Storage.Management
 {
     /// <summary>
-    /// LoadingAidItemRequest
+    /// CreateLoadingAidBookingQualityTypeRequest
     /// </summary>
-    [DataContract(Name = "LoadingAidItemRequest")]
-    public partial class LoadingAidItemRequest : IEquatable<LoadingAidItemRequest>, IValidatableObject
+    [DataContract(Name = "CreateLoadingAidBookingQualityTypeRequest")]
+    public partial class CreateLoadingAidBookingQualityTypeRequest : IEquatable<CreateLoadingAidBookingQualityTypeRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoadingAidItemRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateLoadingAidBookingQualityTypeRequest" /> class.
         /// </summary>
-        /// <param name="loadingAidTypeId">loadingAidTypeId.</param>
-        /// <param name="quantity">quantity.</param>
-        /// <param name="qualityTypeId">qualityTypeId.</param>
-        public LoadingAidItemRequest(Guid loadingAidTypeId = default(Guid), double quantity = default(double), Guid? qualityTypeId = default(Guid?))
+        /// <param name="name">name.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="displayKey">displayKey.</param>
+        public CreateLoadingAidBookingQualityTypeRequest(string name = default(string), string displayName = default(string), string displayKey = default(string))
         {
-            this.LoadingAidTypeId = loadingAidTypeId;
-            this.Quantity = quantity;
-            this.QualityTypeId = qualityTypeId;
+            this.Name = name;
+            this.DisplayName = displayName;
+            this.DisplayKey = displayKey;
         }
 
         /// <summary>
-        /// Gets or Sets LoadingAidTypeId
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "loadingAidTypeId", EmitDefaultValue = false)]
-        public Guid LoadingAidTypeId { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public double Quantity { get; set; }
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or Sets QualityTypeId
+        /// Gets or Sets DisplayKey
         /// </summary>
-        [DataMember(Name = "qualityTypeId", EmitDefaultValue = true)]
-        public Guid? QualityTypeId { get; set; }
+        [DataMember(Name = "displayKey", EmitDefaultValue = true)]
+        public string DisplayKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +71,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LoadingAidItemRequest {\n");
-            sb.Append("  LoadingAidTypeId: ").Append(LoadingAidTypeId).Append("\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  QualityTypeId: ").Append(QualityTypeId).Append("\n");
+            sb.Append("class CreateLoadingAidBookingQualityTypeRequest {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +95,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LoadingAidItemRequest);
+            return this.Equals(input as CreateLoadingAidBookingQualityTypeRequest);
         }
 
         /// <summary>
-        /// Returns true if LoadingAidItemRequest instances are equal
+        /// Returns true if CreateLoadingAidBookingQualityTypeRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of LoadingAidItemRequest to be compared</param>
+        /// <param name="input">Instance of CreateLoadingAidBookingQualityTypeRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LoadingAidItemRequest input)
+        public bool Equals(CreateLoadingAidBookingQualityTypeRequest input)
         {
             if (input == null)
             {
@@ -111,18 +111,19 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
             return 
                 (
-                    this.LoadingAidTypeId == input.LoadingAidTypeId ||
-                    (this.LoadingAidTypeId != null &&
-                    this.LoadingAidTypeId.Equals(input.LoadingAidTypeId))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
                 ) && 
                 (
-                    this.QualityTypeId == input.QualityTypeId ||
-                    (this.QualityTypeId != null &&
-                    this.QualityTypeId.Equals(input.QualityTypeId))
+                    this.DisplayKey == input.DisplayKey ||
+                    (this.DisplayKey != null &&
+                    this.DisplayKey.Equals(input.DisplayKey))
                 );
         }
 
@@ -135,14 +136,17 @@ namespace Simplic.OxS.SDK.Storage.Management
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.LoadingAidTypeId != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.LoadingAidTypeId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                if (this.QualityTypeId != null)
+                if (this.DisplayName != null)
                 {
-                    hashCode = (hashCode * 59) + this.QualityTypeId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.DisplayKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayKey.GetHashCode();
                 }
                 return hashCode;
             }

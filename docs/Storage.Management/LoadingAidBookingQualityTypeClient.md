@@ -1,17 +1,17 @@
-# Simplic.OxS.SDK.Storage.Management.LoadingAidBookingHeadAccountClient
+# Simplic.OxS.SDK.Storage.Management.LoadingAidBookingQualityTypeClient
 
 All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](LoadingAidBookingHeadAccountClient.md#loadingaidbookingheadaccountiddelete) | **DELETE** /LoadingAidBookingHeadAccount/{id} |  |
-| [**Get**](LoadingAidBookingHeadAccountClient.md#loadingaidbookingheadaccountidget) | **GET** /LoadingAidBookingHeadAccount/{id} |  |
-| [**Patch**](LoadingAidBookingHeadAccountClient.md#loadingaidbookingheadaccountidpatch) | **PATCH** /LoadingAidBookingHeadAccount/{id} |  |
-| [**Post**](LoadingAidBookingHeadAccountClient.md#loadingaidbookingheadaccountpost) | **POST** /LoadingAidBookingHeadAccount |  |
+| [**Delete**](LoadingAidBookingQualityTypeClient.md#loadingaidbookingqualitytypeiddelete) | **DELETE** /LoadingAidBookingQualityType/{id} |  |
+| [**Get**](LoadingAidBookingQualityTypeClient.md#loadingaidbookingqualitytypeidget) | **GET** /LoadingAidBookingQualityType/{id} |  |
+| [**Patch**](LoadingAidBookingQualityTypeClient.md#loadingaidbookingqualitytypeidpatch) | **PATCH** /LoadingAidBookingQualityType/{id} |  |
+| [**Post**](LoadingAidBookingQualityTypeClient.md#loadingaidbookingqualitytypepost) | **POST** /LoadingAidBookingQualityType |  |
 
-<a id="loadingaidbookingheadaccountiddelete"></a>
+<a id="loadingaidbookingqualitytypeiddelete"></a>
 # **Delete**
-> LoadingAidBookingHeadAccountResponse Delete (Guid id)
+> void Delete (Guid id)
 
 
 
@@ -39,17 +39,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new LoadingAidBookingHeadAccountClient(config);
+            var apiInstance = new LoadingAidBookingQualityTypeClient(config);
             var id = "id_example";  // Guid | 
 
             try
             {
-                LoadingAidBookingHeadAccountResponse result = apiInstance.Delete(id);
-                Debug.WriteLine(result);
+                apiInstance.Delete(id);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.Delete: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.Delete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -64,14 +63,11 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<LoadingAidBookingHeadAccountResponse> response = apiInstance.DeleteWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.DeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -85,7 +81,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LoadingAidBookingHeadAccountResponse**](LoadingAidBookingHeadAccountResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -101,14 +97,14 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="loadingaidbookingheadaccountidget"></a>
+<a id="loadingaidbookingqualitytypeidget"></a>
 # **Get**
-> LoadingAidBookingHeadAccountResponse Get (Guid id)
+> LoadingAidBookingQualityTypeResponse Get (Guid id)
 
 
 
@@ -136,17 +132,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new LoadingAidBookingHeadAccountClient(config);
+            var apiInstance = new LoadingAidBookingQualityTypeClient(config);
             var id = "id_example";  // Guid | 
 
             try
             {
-                LoadingAidBookingHeadAccountResponse result = apiInstance.Get(id);
+                LoadingAidBookingQualityTypeResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.Get: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -161,14 +157,14 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<LoadingAidBookingHeadAccountResponse> response = apiInstance.GetWithHttpInfo(id);
+    ApiResponse<LoadingAidBookingQualityTypeResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -182,7 +178,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LoadingAidBookingHeadAccountResponse**](LoadingAidBookingHeadAccountResponse.md)
+[**LoadingAidBookingQualityTypeResponse**](LoadingAidBookingQualityTypeResponse.md)
 
 ### Authorization
 
@@ -198,14 +194,14 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="loadingaidbookingheadaccountidpatch"></a>
+<a id="loadingaidbookingqualitytypeidpatch"></a>
 # **Patch**
-> LoadingAidBookingHeadAccountResponse Patch (Guid id, PatchLoadingAidBookingHeadAccountRequest? patchLoadingAidBookingHeadAccountRequest = null)
+> LoadingAidBookingQualityTypeResponse Patch (Guid id, PatchLoadingAidBookingQualityTypeRequest? patchLoadingAidBookingQualityTypeRequest = null)
 
 
 
@@ -233,18 +229,18 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new LoadingAidBookingHeadAccountClient(config);
+            var apiInstance = new LoadingAidBookingQualityTypeClient(config);
             var id = "id_example";  // Guid | 
-            var patchLoadingAidBookingHeadAccountRequest = new PatchLoadingAidBookingHeadAccountRequest?(); // PatchLoadingAidBookingHeadAccountRequest? |  (optional) 
+            var patchLoadingAidBookingQualityTypeRequest = new PatchLoadingAidBookingQualityTypeRequest?(); // PatchLoadingAidBookingQualityTypeRequest? |  (optional) 
 
             try
             {
-                LoadingAidBookingHeadAccountResponse result = apiInstance.Patch(id, patchLoadingAidBookingHeadAccountRequest);
+                LoadingAidBookingQualityTypeResponse result = apiInstance.Patch(id, patchLoadingAidBookingQualityTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.Patch: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.Patch: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -259,14 +255,14 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<LoadingAidBookingHeadAccountResponse> response = apiInstance.PatchWithHttpInfo(id, patchLoadingAidBookingHeadAccountRequest);
+    ApiResponse<LoadingAidBookingQualityTypeResponse> response = apiInstance.PatchWithHttpInfo(id, patchLoadingAidBookingQualityTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.PatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.PatchWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -277,11 +273,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **patchLoadingAidBookingHeadAccountRequest** | [**PatchLoadingAidBookingHeadAccountRequest?**](PatchLoadingAidBookingHeadAccountRequest?.md) |  | [optional]  |
+| **patchLoadingAidBookingQualityTypeRequest** | [**PatchLoadingAidBookingQualityTypeRequest?**](PatchLoadingAidBookingQualityTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**LoadingAidBookingHeadAccountResponse**](LoadingAidBookingHeadAccountResponse.md)
+[**LoadingAidBookingQualityTypeResponse**](LoadingAidBookingQualityTypeResponse.md)
 
 ### Authorization
 
@@ -297,15 +293,14 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="loadingaidbookingheadaccountpost"></a>
+<a id="loadingaidbookingqualitytypepost"></a>
 # **Post**
-> LoadingAidBookingHeadAccountResponse Post (CreateLoadingAidBookingHeadAccountRequest? createLoadingAidBookingHeadAccountRequest = null)
+> LoadingAidBookingQualityTypeResponse Post (CreateLoadingAidBookingQualityTypeRequest? createLoadingAidBookingQualityTypeRequest = null)
 
 
 
@@ -333,17 +328,17 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new LoadingAidBookingHeadAccountClient(config);
-            var createLoadingAidBookingHeadAccountRequest = new CreateLoadingAidBookingHeadAccountRequest?(); // CreateLoadingAidBookingHeadAccountRequest? |  (optional) 
+            var apiInstance = new LoadingAidBookingQualityTypeClient(config);
+            var createLoadingAidBookingQualityTypeRequest = new CreateLoadingAidBookingQualityTypeRequest?(); // CreateLoadingAidBookingQualityTypeRequest? |  (optional) 
 
             try
             {
-                LoadingAidBookingHeadAccountResponse result = apiInstance.Post(createLoadingAidBookingHeadAccountRequest);
+                LoadingAidBookingQualityTypeResponse result = apiInstance.Post(createLoadingAidBookingQualityTypeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.Post: " + e.Message);
+                Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.Post: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -358,14 +353,14 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<LoadingAidBookingHeadAccountResponse> response = apiInstance.PostWithHttpInfo(createLoadingAidBookingHeadAccountRequest);
+    ApiResponse<LoadingAidBookingQualityTypeResponse> response = apiInstance.PostWithHttpInfo(createLoadingAidBookingQualityTypeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadingAidBookingHeadAccountClient.PostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadingAidBookingQualityTypeClient.PostWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -375,11 +370,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createLoadingAidBookingHeadAccountRequest** | [**CreateLoadingAidBookingHeadAccountRequest?**](CreateLoadingAidBookingHeadAccountRequest?.md) |  | [optional]  |
+| **createLoadingAidBookingQualityTypeRequest** | [**CreateLoadingAidBookingQualityTypeRequest?**](CreateLoadingAidBookingQualityTypeRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**LoadingAidBookingHeadAccountResponse**](LoadingAidBookingHeadAccountResponse.md)
+[**LoadingAidBookingQualityTypeResponse**](LoadingAidBookingQualityTypeResponse.md)
 
 ### Authorization
 

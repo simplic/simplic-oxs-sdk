@@ -49,7 +49,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="dateTime">dateTime.</param>
         /// <param name="fault">fault.</param>
         /// <param name="tags">tags.</param>
-        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>))
+        /// <param name="qualityType">qualityType.</param>
+        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>), LoadingAidBookingQualityTypeSubsetResponse qualityType = default(LoadingAidBookingQualityTypeSubsetResponse))
         {
             this.Id = id;
             this.SourceAccount = sourceAccount;
@@ -64,6 +65,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.DateTime = dateTime;
             this.Fault = fault;
             this.Tags = tags;
+            this.QualityType = qualityType;
         }
 
         /// <summary>
@@ -145,6 +147,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public List<LoadingAidBookingTagSubsetResponse> Tags { get; set; }
 
         /// <summary>
+        /// Gets or Sets QualityType
+        /// </summary>
+        [DataMember(Name = "qualityType", EmitDefaultValue = false)]
+        public LoadingAidBookingQualityTypeSubsetResponse QualityType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -165,6 +173,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  Fault: ").Append(Fault).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  QualityType: ").Append(QualityType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -264,6 +273,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Tags != null &&
                     input.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.QualityType == input.QualityType ||
+                    (this.QualityType != null &&
+                    this.QualityType.Equals(input.QualityType))
                 );
         }
 
@@ -324,6 +338,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Tags != null)
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
+                if (this.QualityType != null)
+                {
+                    hashCode = (hashCode * 59) + this.QualityType.GetHashCode();
                 }
                 return hashCode;
             }

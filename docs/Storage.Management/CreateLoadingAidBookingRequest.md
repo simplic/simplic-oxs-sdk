@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **GlobalBookingId** | **Guid?** |  | [optional] 
 **ReferenceId** | **Guid?** |  | [optional] 
 **ReferenceType** | **string** |  | [optional] 
+**QualityTypeId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

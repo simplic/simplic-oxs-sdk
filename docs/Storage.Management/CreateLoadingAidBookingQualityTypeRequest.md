@@ -1,12 +1,12 @@
-# Simplic.OxS.SDK.Storage.Management.LoadingAidItemRequest
+# Simplic.OxS.SDK.Storage.Management.CreateLoadingAidBookingQualityTypeRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LoadingAidTypeId** | **Guid** |  | [optional] 
-**Quantity** | **double** |  | [optional] 
-**QualityTypeId** | **Guid?** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**DisplayName** | **string** |  | [optional] 
+**DisplayKey** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

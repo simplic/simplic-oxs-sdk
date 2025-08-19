@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
         /// <param name="referenceType">referenceType.</param>
-        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string))
+        /// <param name="qualityTypeId">qualityTypeId.</param>
+        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -54,6 +55,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.GlobalBookingId = globalBookingId;
             this.ReferenceId = referenceId;
             this.ReferenceType = referenceType;
+            this.QualityTypeId = qualityTypeId;
         }
 
         /// <summary>
@@ -105,6 +107,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string ReferenceType { get; set; }
 
         /// <summary>
+        /// Gets or Sets QualityTypeId
+        /// </summary>
+        [DataMember(Name = "qualityTypeId", EmitDefaultValue = true)]
+        public Guid? QualityTypeId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +128,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  GlobalBookingId: ").Append(GlobalBookingId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  QualityTypeId: ").Append(QualityTypeId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -193,6 +202,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.ReferenceType == input.ReferenceType ||
                     (this.ReferenceType != null &&
                     this.ReferenceType.Equals(input.ReferenceType))
+                ) && 
+                (
+                    this.QualityTypeId == input.QualityTypeId ||
+                    (this.QualityTypeId != null &&
+                    this.QualityTypeId.Equals(input.QualityTypeId))
                 );
         }
 
@@ -233,6 +247,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.ReferenceType != null)
                 {
                     hashCode = (hashCode * 59) + this.ReferenceType.GetHashCode();
+                }
+                if (this.QualityTypeId != null)
+                {
+                    hashCode = (hashCode * 59) + this.QualityTypeId.GetHashCode();
                 }
                 return hashCode;
             }
