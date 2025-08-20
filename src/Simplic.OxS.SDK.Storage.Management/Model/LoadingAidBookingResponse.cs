@@ -50,7 +50,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="fault">fault.</param>
         /// <param name="tags">tags.</param>
         /// <param name="qualityType">qualityType.</param>
-        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>), LoadingAidBookingQualityTypeSubsetResponse qualityType = default(LoadingAidBookingQualityTypeSubsetResponse))
+        /// <param name="voucher">voucher.</param>
+        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>), LoadingAidBookingQualityTypeSubsetResponse qualityType = default(LoadingAidBookingQualityTypeSubsetResponse), LoadingAidVoucherResponse voucher = default(LoadingAidVoucherResponse))
         {
             this.Id = id;
             this.SourceAccount = sourceAccount;
@@ -66,6 +67,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.Fault = fault;
             this.Tags = tags;
             this.QualityType = qualityType;
+            this.Voucher = voucher;
         }
 
         /// <summary>
@@ -153,6 +155,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public LoadingAidBookingQualityTypeSubsetResponse QualityType { get; set; }
 
         /// <summary>
+        /// Gets or Sets Voucher
+        /// </summary>
+        [DataMember(Name = "voucher", EmitDefaultValue = false)]
+        public LoadingAidVoucherResponse Voucher { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -174,6 +182,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Fault: ").Append(Fault).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  QualityType: ").Append(QualityType).Append("\n");
+            sb.Append("  Voucher: ").Append(Voucher).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -278,6 +287,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.QualityType == input.QualityType ||
                     (this.QualityType != null &&
                     this.QualityType.Equals(input.QualityType))
+                ) && 
+                (
+                    this.Voucher == input.Voucher ||
+                    (this.Voucher != null &&
+                    this.Voucher.Equals(input.Voucher))
                 );
         }
 
@@ -342,6 +356,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.QualityType != null)
                 {
                     hashCode = (hashCode * 59) + this.QualityType.GetHashCode();
+                }
+                if (this.Voucher != null)
+                {
+                    hashCode = (hashCode * 59) + this.Voucher.GetHashCode();
                 }
                 return hashCode;
             }

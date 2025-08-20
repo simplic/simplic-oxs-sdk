@@ -44,6 +44,41 @@ public interface ILoadingAidBookingClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
+    /// <returns>LoadingAidBookingResponse</returns>
+    LoadingAidBookingResponse Approve(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+    ApiResponse<LoadingAidBookingResponse> ApproveWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LoadingAidBookingResponse</returns>
+    Task<LoadingAidBookingResponse> ApproveAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+    Task<ApiResponse<LoadingAidBookingResponse>> ApproveWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
     /// <returns></returns>
     void Cancel(Guid id);
 
@@ -72,6 +107,41 @@ public interface ILoadingAidBookingClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
     Task<ApiResponse<Object>> CancelWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>LoadingAidBookingResponse</returns>
+    LoadingAidBookingResponse Delete(Guid id);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+    ApiResponse<LoadingAidBookingResponse> DeleteWithHttpInfo(Guid id);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LoadingAidBookingResponse</returns>
+    Task<LoadingAidBookingResponse> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+    Task<ApiResponse<LoadingAidBookingResponse>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -114,38 +184,38 @@ public interface ILoadingAidBookingClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
-    /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-    List<LoadingAidBookingAccountResponse> Post(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?));
+    /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
+    /// <returns>LoadingAidBookingResponse</returns>
+    LoadingAidBookingResponse Patch(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
-    /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-    ApiResponse<List<LoadingAidBookingAccountResponse>> PostWithHttpInfo(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?));
+    /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
+    /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+    ApiResponse<LoadingAidBookingResponse> PatchWithHttpInfo(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-    Task<List<LoadingAidBookingAccountResponse>> PostAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of LoadingAidBookingResponse</returns>
+    Task<LoadingAidBookingResponse> PatchAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
-    Task<ApiResponse<List<LoadingAidBookingAccountResponse>>> PostWithHttpInfoAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+    Task<ApiResponse<LoadingAidBookingResponse>> PatchWithHttpInfoAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -181,6 +251,80 @@ public interface ILoadingAidBookingClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
     Task<ApiResponse<LoadingAidBookingResponse>> PostWithHttpInfoAsync(CreateLoadingAidBookingRequest? createLoadingAidBookingRequest = default(CreateLoadingAidBookingRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+    /// <returns>LoadingAidBookingResponse</returns>
+    LoadingAidBookingResponse Reject(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+    /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+    ApiResponse<LoadingAidBookingResponse> RejectWithHttpInfo(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LoadingAidBookingResponse</returns>
+    Task<LoadingAidBookingResponse> RejectAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+    Task<ApiResponse<LoadingAidBookingResponse>> RejectWithHttpInfoAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+    List<LoadingAidBookingAccountResponse> Shipment(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+    ApiResponse<List<LoadingAidBookingAccountResponse>> ShipmentWithHttpInfo(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+    Task<List<LoadingAidBookingAccountResponse>> ShipmentAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
+    Task<ApiResponse<List<LoadingAidBookingAccountResponse>>> ShipmentWithHttpInfoAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -262,6 +406,79 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Approve(Guid id)
+        {
+            try
+            {
+                return _internalClient.Approve(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> ApproveWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.ApproveWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public System.Threading.Tasks.Task<LoadingAidBookingResponse> ApproveAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ApproveAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> ApproveWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ApproveWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
         /// <returns></returns>
         public void Cancel(Guid id)
         {
@@ -324,6 +541,79 @@ public interface ILoadingAidBookingClient
             try
             {
                 return _internalClient.CancelWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Delete(Guid id)
+        {
+            try
+            {
+                return _internalClient.Delete(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> DeleteWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public System.Threading.Tasks.Task<LoadingAidBookingResponse> DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -408,13 +698,13 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
-        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public List<LoadingAidBookingAccountResponse> Post(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?))
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Patch(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?))
         {
             try
             {
-                return _internalClient.Post(id, loadingAidBookingFromShipmentRequest);
+                return _internalClient.Patch(id, patchLoadingAidBookingRequest);
             }
             catch (ApiException e)
             {
@@ -427,13 +717,13 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> PostWithHttpInfo(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?))
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> PatchWithHttpInfo(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?))
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(id, loadingAidBookingFromShipmentRequest);
+                return _internalClient.PatchWithHttpInfo(id, patchLoadingAidBookingRequest);
             }
             catch (ApiException e)
             {
@@ -446,14 +736,14 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> PostAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public System.Threading.Tasks.Task<LoadingAidBookingResponse> PatchAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(id, loadingAidBookingFromShipmentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchAsync(id, patchLoadingAidBookingRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -466,14 +756,14 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>>> PostWithHttpInfoAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> PatchWithHttpInfoAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(id, loadingAidBookingFromShipmentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, patchLoadingAidBookingRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -553,6 +843,156 @@ public interface ILoadingAidBookingClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Reject(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?))
+        {
+            try
+            {
+                return _internalClient.Reject(id, rejectLoadingAidBookingRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> RejectWithHttpInfo(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?))
+        {
+            try
+            {
+                return _internalClient.RejectWithHttpInfo(id, rejectLoadingAidBookingRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public System.Threading.Tasks.Task<LoadingAidBookingResponse> RejectAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RejectAsync(id, rejectLoadingAidBookingRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> RejectWithHttpInfoAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RejectWithHttpInfoAsync(id, rejectLoadingAidBookingRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public List<LoadingAidBookingAccountResponse> Shipment(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?))
+        {
+            try
+            {
+                return _internalClient.Shipment(loadingAidBookingFromShipmentRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> ShipmentWithHttpInfo(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?))
+        {
+            try
+            {
+                return _internalClient.ShipmentWithHttpInfo(loadingAidBookingFromShipmentRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> ShipmentAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ShipmentAsync(loadingAidBookingFromShipmentRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>>> ShipmentWithHttpInfoAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ShipmentWithHttpInfoAsync(loadingAidBookingFromShipmentRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -566,6 +1006,26 @@ public interface ILoadingAidBookingClient
     internal interface __ILoadingAidBookingClientSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        LoadingAidBookingResponse Approve(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        ApiResponse<LoadingAidBookingResponse> ApproveWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -593,6 +1053,26 @@ public interface ILoadingAidBookingClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadingAidBookingResponse</returns>
+        LoadingAidBookingResponse Delete(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        ApiResponse<LoadingAidBookingResponse> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
         LoadingAidBookingResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
@@ -611,10 +1091,10 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        List<LoadingAidBookingAccountResponse> Post(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0);
+        /// <returns>LoadingAidBookingResponse</returns>
+        LoadingAidBookingResponse Patch(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -624,10 +1104,10 @@ public interface ILoadingAidBookingClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        ApiResponse<List<LoadingAidBookingAccountResponse>> PostWithHttpInfo(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        ApiResponse<LoadingAidBookingResponse> PatchWithHttpInfo(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -648,6 +1128,48 @@ public interface ILoadingAidBookingClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
         ApiResponse<LoadingAidBookingResponse> PostWithHttpInfo(CreateLoadingAidBookingRequest? createLoadingAidBookingRequest = default(CreateLoadingAidBookingRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        LoadingAidBookingResponse Reject(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        ApiResponse<LoadingAidBookingResponse> RejectWithHttpInfo(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        List<LoadingAidBookingAccountResponse> Shipment(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        ApiResponse<List<LoadingAidBookingAccountResponse>> ShipmentWithHttpInfo(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -657,6 +1179,31 @@ public interface ILoadingAidBookingClient
     internal interface __ILoadingAidBookingClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        System.Threading.Tasks.Task<LoadingAidBookingResponse> ApproveAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LoadingAidBookingResponse>> ApproveWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -693,6 +1240,31 @@ public interface ILoadingAidBookingClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadingAidBookingResponse</returns>
+        System.Threading.Tasks.Task<LoadingAidBookingResponse> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LoadingAidBookingResponse>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
         System.Threading.Tasks.Task<LoadingAidBookingResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -715,11 +1287,11 @@ public interface ILoadingAidBookingClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> PostAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        System.Threading.Tasks.Task<LoadingAidBookingResponse> PatchAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -729,11 +1301,11 @@ public interface ILoadingAidBookingClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<LoadingAidBookingAccountResponse>>> PostWithHttpInfoAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LoadingAidBookingResponse>> PatchWithHttpInfoAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -759,6 +1331,58 @@ public interface ILoadingAidBookingClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<LoadingAidBookingResponse>> PostWithHttpInfoAsync(CreateLoadingAidBookingRequest? createLoadingAidBookingRequest = default(CreateLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        System.Threading.Tasks.Task<LoadingAidBookingResponse> RejectAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LoadingAidBookingResponse>> RejectWithHttpInfoAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> ShipmentAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LoadingAidBookingAccountResponse>>> ShipmentWithHttpInfoAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -879,6 +1503,162 @@ public interface ILoadingAidBookingClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Approve(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = ApproveWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> ApproveWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingApproveIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<LoadingAidBookingResponse>("/LoadingAidBooking/approve/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingApproveIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public async System.Threading.Tasks.Task<LoadingAidBookingResponse> ApproveAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = await ApproveWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> ApproveWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingApproveIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<LoadingAidBookingResponse>("/LoadingAidBooking/approve/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingApproveIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1026,6 +1806,162 @@ public interface ILoadingAidBookingClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("LoadingAidBookingCancelIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Delete(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = DeleteWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<LoadingAidBookingResponse>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public async System.Threading.Tasks.Task<LoadingAidBookingResponse> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<LoadingAidBookingResponse>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1196,12 +2132,12 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public List<LoadingAidBookingAccountResponse> Post(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0)
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Patch(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> localVarResponse = PostWithHttpInfo(id, loadingAidBookingFromShipmentRequest);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = PatchWithHttpInfo(id, patchLoadingAidBookingRequest);
             return localVarResponse.Data;
         }
 
@@ -1210,17 +2146,11 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> PostWithHttpInfo(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> PatchWithHttpInfo(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0)
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling LoadingAidBookingClient->LoadingAidBookingIdPost");
-            }
-
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1249,9 +2179,9 @@ public interface ILoadingAidBookingClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = loadingAidBookingFromShipmentRequest;
+            localVarRequestOptions.Data = patchLoadingAidBookingRequest;
 
-            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdPost";
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1266,10 +2196,10 @@ public interface ILoadingAidBookingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<LoadingAidBookingAccountResponse>>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<LoadingAidBookingResponse>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1284,13 +2214,13 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> PostAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public async System.Threading.Tasks.Task<LoadingAidBookingResponse> PatchAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> localVarResponse = await PostWithHttpInfoAsync(id, loadingAidBookingFromShipmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchLoadingAidBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1299,18 +2229,12 @@ public interface ILoadingAidBookingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="patchLoadingAidBookingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>>> PostWithHttpInfoAsync(string id, LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> PatchWithHttpInfoAsync(Guid id, PatchLoadingAidBookingRequest? patchLoadingAidBookingRequest = default(PatchLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling LoadingAidBookingClient->LoadingAidBookingIdPost");
-            }
-
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1340,9 +2264,9 @@ public interface ILoadingAidBookingClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = loadingAidBookingFromShipmentRequest;
+            localVarRequestOptions.Data = patchLoadingAidBookingRequest;
 
-            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdPost";
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1357,11 +2281,11 @@ public interface ILoadingAidBookingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<LoadingAidBookingAccountResponse>>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<LoadingAidBookingResponse>("/LoadingAidBooking/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1524,6 +2448,336 @@ public interface ILoadingAidBookingClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("LoadingAidBookingPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LoadingAidBookingResponse</returns>
+        public LoadingAidBookingResponse Reject(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = RejectWithHttpInfo(id, rejectLoadingAidBookingRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LoadingAidBookingResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> RejectWithHttpInfo(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = rejectLoadingAidBookingRequest;
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingRejectIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<LoadingAidBookingResponse>("/LoadingAidBooking/reject/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingRejectIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LoadingAidBookingResponse</returns>
+        public async System.Threading.Tasks.Task<LoadingAidBookingResponse> RejectAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse> localVarResponse = await RejectWithHttpInfoAsync(id, rejectLoadingAidBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="rejectLoadingAidBookingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LoadingAidBookingResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LoadingAidBookingResponse>> RejectWithHttpInfoAsync(Guid id, RejectLoadingAidBookingRequest? rejectLoadingAidBookingRequest = default(RejectLoadingAidBookingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = rejectLoadingAidBookingRequest;
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingRejectIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<LoadingAidBookingResponse>("/LoadingAidBooking/reject/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingRejectIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public List<LoadingAidBookingAccountResponse> Shipment(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> localVarResponse = ShipmentWithHttpInfo(loadingAidBookingFromShipmentRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> ShipmentWithHttpInfo(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = loadingAidBookingFromShipmentRequest;
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingShipmentPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<LoadingAidBookingAccountResponse>>("/LoadingAidBooking/shipment", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingShipmentPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LoadingAidBookingAccountResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LoadingAidBookingAccountResponse>> ShipmentAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>> localVarResponse = await ShipmentWithHttpInfoAsync(loadingAidBookingFromShipmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="loadingAidBookingFromShipmentRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LoadingAidBookingAccountResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LoadingAidBookingAccountResponse>>> ShipmentWithHttpInfoAsync(LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = default(LoadingAidBookingFromShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = loadingAidBookingFromShipmentRequest;
+
+            localVarRequestOptions.Operation = "LoadingAidBookingClient.LoadingAidBookingShipmentPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<LoadingAidBookingAccountResponse>>("/LoadingAidBooking/shipment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LoadingAidBookingShipmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

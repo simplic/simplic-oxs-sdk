@@ -28,13 +28,13 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Storage.Management
 {
     /// <summary>
-    /// CreateLoadingAidBookingRequest
+    /// PatchLoadingAidBookingRequest
     /// </summary>
-    [DataContract(Name = "CreateLoadingAidBookingRequest")]
-    public partial class CreateLoadingAidBookingRequest : IEquatable<CreateLoadingAidBookingRequest>, IValidatableObject
+    [DataContract(Name = "PatchLoadingAidBookingRequest")]
+    public partial class PatchLoadingAidBookingRequest : IEquatable<PatchLoadingAidBookingRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateLoadingAidBookingRequest" /> class.
+        /// Initializes a new instance of the <see cref="PatchLoadingAidBookingRequest" /> class.
         /// </summary>
         /// <param name="sourceAccountId">sourceAccountId.</param>
         /// <param name="destinationAccountId">destinationAccountId.</param>
@@ -46,7 +46,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="referenceType">referenceType.</param>
         /// <param name="qualityTypeId">qualityTypeId.</param>
         /// <param name="voucher">voucher.</param>
-        public CreateLoadingAidBookingRequest(Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest))
+        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -63,26 +63,26 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets SourceAccountId
         /// </summary>
-        [DataMember(Name = "sourceAccountId", EmitDefaultValue = false)]
-        public Guid SourceAccountId { get; set; }
+        [DataMember(Name = "sourceAccountId", EmitDefaultValue = true)]
+        public Guid? SourceAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets DestinationAccountId
         /// </summary>
-        [DataMember(Name = "destinationAccountId", EmitDefaultValue = false)]
-        public Guid DestinationAccountId { get; set; }
+        [DataMember(Name = "destinationAccountId", EmitDefaultValue = true)]
+        public Guid? DestinationAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
-        [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public double Quantity { get; set; }
+        [DataMember(Name = "quantity", EmitDefaultValue = true)]
+        public double? Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets LoadingAidTypeId
         /// </summary>
-        [DataMember(Name = "loadingAidTypeId", EmitDefaultValue = false)]
-        public Guid LoadingAidTypeId { get; set; }
+        [DataMember(Name = "loadingAidTypeId", EmitDefaultValue = true)]
+        public Guid? LoadingAidTypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets Note
@@ -127,7 +127,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateLoadingAidBookingRequest {\n");
+            sb.Append("class PatchLoadingAidBookingRequest {\n");
             sb.Append("  SourceAccountId: ").Append(SourceAccountId).Append("\n");
             sb.Append("  DestinationAccountId: ").Append(DestinationAccountId).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
@@ -158,15 +158,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateLoadingAidBookingRequest);
+            return this.Equals(input as PatchLoadingAidBookingRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateLoadingAidBookingRequest instances are equal
+        /// Returns true if PatchLoadingAidBookingRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateLoadingAidBookingRequest to be compared</param>
+        /// <param name="input">Instance of PatchLoadingAidBookingRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateLoadingAidBookingRequest input)
+        public bool Equals(PatchLoadingAidBookingRequest input)
         {
             if (input == null)
             {
@@ -185,7 +185,8 @@ namespace Simplic.OxS.SDK.Storage.Management
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
                 ) && 
                 (
                     this.LoadingAidTypeId == input.LoadingAidTypeId ||
@@ -241,7 +242,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 {
                     hashCode = (hashCode * 59) + this.DestinationAccountId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                if (this.Quantity != null)
+                {
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                }
                 if (this.LoadingAidTypeId != null)
                 {
                     hashCode = (hashCode * 59) + this.LoadingAidTypeId.GetHashCode();
@@ -281,8 +285,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Quantity (double) minimum
-            if (this.Quantity < (double)0)
+            // Quantity (double?) minimum
+            if (this.Quantity < (double?)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
             }

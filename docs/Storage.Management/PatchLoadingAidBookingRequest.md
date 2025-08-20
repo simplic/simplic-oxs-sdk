@@ -1,13 +1,13 @@
-# Simplic.OxS.SDK.Storage.Management.CreateLoadingAidBookingRequest
+# Simplic.OxS.SDK.Storage.Management.PatchLoadingAidBookingRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceAccountId** | **Guid** |  | [optional] 
-**DestinationAccountId** | **Guid** |  | [optional] 
-**Quantity** | **double** |  | [optional] 
-**LoadingAidTypeId** | **Guid** |  | [optional] 
+**SourceAccountId** | **Guid?** |  | [optional] 
+**DestinationAccountId** | **Guid?** |  | [optional] 
+**Quantity** | **double?** |  | [optional] 
+**LoadingAidTypeId** | **Guid?** |  | [optional] 
 **Note** | **string** |  | [optional] 
 **GlobalBookingId** | **Guid?** |  | [optional] 
 **ReferenceId** | **Guid?** |  | [optional] 

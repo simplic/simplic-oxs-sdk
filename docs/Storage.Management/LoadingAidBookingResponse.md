@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Fault** | **string** |  | [optional] 
 **Tags** | [**List&lt;LoadingAidBookingTagSubsetResponse&gt;**](LoadingAidBookingTagSubsetResponse.md) |  | [optional] 
 **QualityType** | [**LoadingAidBookingQualityTypeSubsetResponse**](LoadingAidBookingQualityTypeSubsetResponse.md) |  | [optional] 
+**Voucher** | [**LoadingAidVoucherResponse**](LoadingAidVoucherResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
