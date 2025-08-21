@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="name">name (required).</param>
         /// <param name="varVersion">varVersion.</param>
         /// <param name="assemblyName">assemblyName (required).</param>
-        public PackageRequest(string name = default(string), string varVersion = default(string), string assemblyName = default(string))
+        /// <param name="className">className (required).</param>
+        public PackageRequest(string name = default(string), string varVersion = default(string), string assemblyName = default(string), string className = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -58,6 +59,12 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("assemblyName is a required property for PackageRequest and cannot be null");
             }
             this.AssemblyName = assemblyName;
+            // to ensure "className" is required (not null)
+            if (className == null)
+            {
+                throw new ArgumentNullException("className is a required property for PackageRequest and cannot be null");
+            }
+            this.ClassName = className;
             this.VarVersion = varVersion;
         }
 
@@ -80,6 +87,12 @@ namespace Simplic.OxS.SDK.Flow
         public string AssemblyName { get; set; }
 
         /// <summary>
+        /// Gets or Sets ClassName
+        /// </summary>
+        [DataMember(Name = "className", IsRequired = true, EmitDefaultValue = true)]
+        public string ClassName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,6 +103,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  AssemblyName: ").Append(AssemblyName).Append("\n");
+            sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.AssemblyName == input.AssemblyName ||
                     (this.AssemblyName != null &&
                     this.AssemblyName.Equals(input.AssemblyName))
+                ) && 
+                (
+                    this.ClassName == input.ClassName ||
+                    (this.ClassName != null &&
+                    this.ClassName.Equals(input.ClassName))
                 );
         }
 
@@ -163,6 +182,10 @@ namespace Simplic.OxS.SDK.Flow
                 {
                     hashCode = (hashCode * 59) + this.AssemblyName.GetHashCode();
                 }
+                if (this.ClassName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -184,6 +207,12 @@ namespace Simplic.OxS.SDK.Flow
             if (this.AssemblyName != null && this.AssemblyName.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssemblyName, length must be greater than 1.", new [] { "AssemblyName" });
+            }
+
+            // ClassName (string) minLength
+            if (this.ClassName != null && this.ClassName.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassName, length must be greater than 1.", new [] { "ClassName" });
             }
 
             yield break;

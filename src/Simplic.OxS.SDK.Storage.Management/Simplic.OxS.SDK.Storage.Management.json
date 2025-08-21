@@ -1319,6 +1319,26 @@
                                 }
                             }
                         }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1574,7 +1594,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                        "$ref": "#/components/schemas/LoadingAidBookingResponse"
                                     }
                                 }
                             },
@@ -1582,7 +1602,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                        "$ref": "#/components/schemas/LoadingAidBookingResponse"
                                     }
                                 }
                             },
@@ -1590,7 +1610,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LoadingAidBookingAccountResponse"
+                                        "$ref": "#/components/schemas/LoadingAidBookingResponse"
                                     }
                                 }
                             }
@@ -4467,6 +4487,31 @@
                     },
                     "voucher": {
                         "$ref": "#/components/schemas/CreateLoadingAidVoucherRequest"
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateLoadingAidBookingResourceRequest": {
+                "required": [
+                    "id",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "minLength": 1,
+                        "type": "string"
                     }
                 },
                 "additionalProperties": false
@@ -4689,6 +4734,13 @@
                         "items": {
                             "$ref": "#/components/schemas/LoadingAidItemRequest"
                         }
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4776,6 +4828,20 @@
                 },
                 "additionalProperties": false
             },
+            "LoadingAidBookingResourceResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "LoadingAidBookingResponse": {
                 "type": "object",
                 "properties": {
@@ -4837,6 +4903,13 @@
                     },
                     "voucher": {
                         "$ref": "#/components/schemas/LoadingAidVoucherResponse"
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidBookingResourceResponse"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -5298,6 +5371,13 @@
                     },
                     "voucher": {
                         "$ref": "#/components/schemas/CreateLoadingAidVoucherRequest"
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

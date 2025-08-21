@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ReferenceType** | **string** |  | [optional] 
 **QualityTypeId** | **Guid?** |  | [optional] 
 **Voucher** | [**CreateLoadingAidVoucherRequest**](CreateLoadingAidVoucherRequest.md) |  | [optional] 
+**Resources** | [**List&lt;CreateLoadingAidBookingResourceRequest&gt;**](CreateLoadingAidBookingResourceRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1809,6 +1809,7 @@
             "PackageRequest": {
                 "required": [
                     "assemblyName",
+                    "className",
                     "name"
                 ],
                 "type": "object",
@@ -1822,6 +1823,10 @@
                         "nullable": true
                     },
                     "assemblyName": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "className": {
                         "minLength": 1,
                         "type": "string"
                     }
@@ -1840,6 +1845,10 @@
                         "nullable": true
                     },
                     "assemblyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "className": {
                         "type": "string",
                         "nullable": true
                     }

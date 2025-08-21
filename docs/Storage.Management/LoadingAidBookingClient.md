@@ -201,6 +201,7 @@ void (empty response body)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -698,7 +699,7 @@ catch (ApiException e)
 
 <a id="loadingaidbookingshipmentpost"></a>
 # **Shipment**
-> List&lt;LoadingAidBookingAccountResponse&gt; Shipment (LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = null)
+> List&lt;LoadingAidBookingResponse&gt; Shipment (LoadingAidBookingFromShipmentRequest? loadingAidBookingFromShipmentRequest = null)
 
 
 
@@ -731,7 +732,7 @@ namespace Example
 
             try
             {
-                List<LoadingAidBookingAccountResponse> result = apiInstance.Shipment(loadingAidBookingFromShipmentRequest);
+                List<LoadingAidBookingResponse> result = apiInstance.Shipment(loadingAidBookingFromShipmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -751,7 +752,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<LoadingAidBookingAccountResponse>> response = apiInstance.ShipmentWithHttpInfo(loadingAidBookingFromShipmentRequest);
+    ApiResponse<List<LoadingAidBookingResponse>> response = apiInstance.ShipmentWithHttpInfo(loadingAidBookingFromShipmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -772,7 +773,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;LoadingAidBookingAccountResponse&gt;**](LoadingAidBookingAccountResponse.md)
+[**List&lt;LoadingAidBookingResponse&gt;**](LoadingAidBookingResponse.md)
 
 ### Authorization
 

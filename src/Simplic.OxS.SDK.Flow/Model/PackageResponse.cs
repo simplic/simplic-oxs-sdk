@@ -39,11 +39,13 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="name">name.</param>
         /// <param name="varVersion">varVersion.</param>
         /// <param name="assemblyName">assemblyName.</param>
-        public PackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string))
+        /// <param name="className">className.</param>
+        public PackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string), string className = default(string))
         {
             this.Name = name;
             this.VarVersion = varVersion;
             this.AssemblyName = assemblyName;
+            this.ClassName = className;
         }
 
         /// <summary>
@@ -65,6 +67,12 @@ namespace Simplic.OxS.SDK.Flow
         public string AssemblyName { get; set; }
 
         /// <summary>
+        /// Gets or Sets ClassName
+        /// </summary>
+        [DataMember(Name = "className", EmitDefaultValue = true)]
+        public string ClassName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -75,6 +83,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  AssemblyName: ").Append(AssemblyName).Append("\n");
+            sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +133,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.AssemblyName == input.AssemblyName ||
                     (this.AssemblyName != null &&
                     this.AssemblyName.Equals(input.AssemblyName))
+                ) && 
+                (
+                    this.ClassName == input.ClassName ||
+                    (this.ClassName != null &&
+                    this.ClassName.Equals(input.ClassName))
                 );
         }
 
@@ -147,6 +161,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.AssemblyName != null)
                 {
                     hashCode = (hashCode * 59) + this.AssemblyName.GetHashCode();
+                }
+                if (this.ClassName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
                 }
                 return hashCode;
             }

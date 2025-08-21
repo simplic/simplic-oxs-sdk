@@ -46,7 +46,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="referenceType">referenceType.</param>
         /// <param name="qualityTypeId">qualityTypeId.</param>
         /// <param name="voucher">voucher.</param>
-        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest))
+        /// <param name="resources">resources.</param>
+        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -58,6 +59,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.ReferenceType = referenceType;
             this.QualityTypeId = qualityTypeId;
             this.Voucher = voucher;
+            this.Resources = resources;
         }
 
         /// <summary>
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public CreateLoadingAidVoucherRequest Voucher { get; set; }
 
         /// <summary>
+        /// Gets or Sets Resources
+        /// </summary>
+        [DataMember(Name = "resources", EmitDefaultValue = true)]
+        public List<CreateLoadingAidBookingResourceRequest> Resources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +146,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
             sb.Append("  QualityTypeId: ").Append(QualityTypeId).Append("\n");
             sb.Append("  Voucher: ").Append(Voucher).Append("\n");
+            sb.Append("  Resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -222,6 +231,12 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Voucher == input.Voucher ||
                     (this.Voucher != null &&
                     this.Voucher.Equals(input.Voucher))
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    this.Resources != null &&
+                    input.Resources != null &&
+                    this.Resources.SequenceEqual(input.Resources)
                 );
         }
 
@@ -273,6 +288,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Voucher != null)
                 {
                     hashCode = (hashCode * 59) + this.Voucher.GetHashCode();
+                }
+                if (this.Resources != null)
+                {
+                    hashCode = (hashCode * 59) + this.Resources.GetHashCode();
                 }
                 return hashCode;
             }

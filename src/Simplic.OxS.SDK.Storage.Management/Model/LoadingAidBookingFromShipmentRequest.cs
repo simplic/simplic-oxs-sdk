@@ -53,7 +53,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="carrierDelivered">carrierDelivered.</param>
         /// <param name="organizationContactId">organizationContactId (required).</param>
         /// <param name="items">items (required).</param>
-        public LoadingAidBookingFromShipmentRequest(Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? globalBookingId = default(Guid?), Guid loadAddressContactId = default(Guid), Guid deliveryAddressContactId = default(Guid), Guid? carrierContactId = default(Guid?), bool? carrierPickedUp = default(bool?), bool broughtToLoadAddress = default(bool), bool tookFromDeliveryAddress = default(bool), bool? carrierDelivered = default(bool?), Guid organizationContactId = default(Guid), List<LoadingAidItemRequest> items = default(List<LoadingAidItemRequest>))
+        /// <param name="resources">resources.</param>
+        public LoadingAidBookingFromShipmentRequest(Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? globalBookingId = default(Guid?), Guid loadAddressContactId = default(Guid), Guid deliveryAddressContactId = default(Guid), Guid? carrierContactId = default(Guid?), bool? carrierPickedUp = default(bool?), bool broughtToLoadAddress = default(bool), bool tookFromDeliveryAddress = default(bool), bool? carrierDelivered = default(bool?), Guid organizationContactId = default(Guid), List<LoadingAidItemRequest> items = default(List<LoadingAidItemRequest>), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
         {
             this.LoadAddressContactId = loadAddressContactId;
             this.DeliveryAddressContactId = deliveryAddressContactId;
@@ -72,6 +73,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.BroughtToLoadAddress = broughtToLoadAddress;
             this.TookFromDeliveryAddress = tookFromDeliveryAddress;
             this.CarrierDelivered = carrierDelivered;
+            this.Resources = resources;
         }
 
         /// <summary>
@@ -147,6 +149,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public List<LoadingAidItemRequest> Items { get; set; }
 
         /// <summary>
+        /// Gets or Sets Resources
+        /// </summary>
+        [DataMember(Name = "resources", EmitDefaultValue = true)]
+        public List<CreateLoadingAidBookingResourceRequest> Resources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -166,6 +174,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  CarrierDelivered: ").Append(CarrierDelivered).Append("\n");
             sb.Append("  OrganizationContactId: ").Append(OrganizationContactId).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  Resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +268,12 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    this.Resources != null &&
+                    input.Resources != null &&
+                    this.Resources.SequenceEqual(input.Resources)
                 );
         }
 
@@ -312,6 +327,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Items != null)
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
+                }
+                if (this.Resources != null)
+                {
+                    hashCode = (hashCode * 59) + this.Resources.GetHashCode();
                 }
                 return hashCode;
             }

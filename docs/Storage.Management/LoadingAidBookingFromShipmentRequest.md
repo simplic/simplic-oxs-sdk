@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **CarrierDelivered** | **bool?** |  | [optional] 
 **OrganizationContactId** | **Guid** |  | 
 **Items** | [**List&lt;LoadingAidItemRequest&gt;**](LoadingAidItemRequest.md) |  | 
+**Resources** | [**List&lt;CreateLoadingAidBookingResourceRequest&gt;**](CreateLoadingAidBookingResourceRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -51,7 +51,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="tags">tags.</param>
         /// <param name="qualityType">qualityType.</param>
         /// <param name="voucher">voucher.</param>
-        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>), LoadingAidBookingQualityTypeSubsetResponse qualityType = default(LoadingAidBookingQualityTypeSubsetResponse), LoadingAidVoucherResponse voucher = default(LoadingAidVoucherResponse))
+        /// <param name="resources">resources.</param>
+        public LoadingAidBookingResponse(Guid id = default(Guid), LoadingAidBookingBookingAccountResponse sourceAccount = default(LoadingAidBookingBookingAccountResponse), LoadingAidBookingBookingAccountResponse destinationAccount = default(LoadingAidBookingBookingAccountResponse), double quantity = default(double), LoadingAidTypeModel loadingAidType = default(LoadingAidTypeModel), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), LoadingAidBookingStatusResponse status = default(LoadingAidBookingStatusResponse), DateTime dateTime = default(DateTime), string fault = default(string), List<LoadingAidBookingTagSubsetResponse> tags = default(List<LoadingAidBookingTagSubsetResponse>), LoadingAidBookingQualityTypeSubsetResponse qualityType = default(LoadingAidBookingQualityTypeSubsetResponse), LoadingAidVoucherResponse voucher = default(LoadingAidVoucherResponse), List<LoadingAidBookingResourceResponse> resources = default(List<LoadingAidBookingResourceResponse>))
         {
             this.Id = id;
             this.SourceAccount = sourceAccount;
@@ -68,6 +69,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.Tags = tags;
             this.QualityType = qualityType;
             this.Voucher = voucher;
+            this.Resources = resources;
         }
 
         /// <summary>
@@ -161,6 +163,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public LoadingAidVoucherResponse Voucher { get; set; }
 
         /// <summary>
+        /// Gets or Sets Resources
+        /// </summary>
+        [DataMember(Name = "resources", EmitDefaultValue = true)]
+        public List<LoadingAidBookingResourceResponse> Resources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -183,6 +191,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  QualityType: ").Append(QualityType).Append("\n");
             sb.Append("  Voucher: ").Append(Voucher).Append("\n");
+            sb.Append("  Resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -292,6 +301,12 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Voucher == input.Voucher ||
                     (this.Voucher != null &&
                     this.Voucher.Equals(input.Voucher))
+                ) && 
+                (
+                    this.Resources == input.Resources ||
+                    this.Resources != null &&
+                    input.Resources != null &&
+                    this.Resources.SequenceEqual(input.Resources)
                 );
         }
 
@@ -360,6 +375,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Voucher != null)
                 {
                     hashCode = (hashCode * 59) + this.Voucher.GetHashCode();
+                }
+                if (this.Resources != null)
+                {
+                    hashCode = (hashCode * 59) + this.Resources.GetHashCode();
                 }
                 return hashCode;
             }
