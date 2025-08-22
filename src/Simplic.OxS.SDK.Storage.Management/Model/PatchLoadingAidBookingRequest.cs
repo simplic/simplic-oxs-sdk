@@ -44,10 +44,11 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
         /// <param name="referenceType">referenceType.</param>
+        /// <param name="dateTime">dateTime.</param>
         /// <param name="qualityTypeId">qualityTypeId.</param>
         /// <param name="voucher">voucher.</param>
         /// <param name="resources">resources.</param>
-        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
+        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), DateTime? dateTime = default(DateTime?), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -57,6 +58,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.GlobalBookingId = globalBookingId;
             this.ReferenceId = referenceId;
             this.ReferenceType = referenceType;
+            this.DateTime = dateTime;
             this.QualityTypeId = qualityTypeId;
             this.Voucher = voucher;
             this.Resources = resources;
@@ -111,6 +113,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public string ReferenceType { get; set; }
 
         /// <summary>
+        /// Gets or Sets DateTime
+        /// </summary>
+        [DataMember(Name = "dateTime", EmitDefaultValue = true)]
+        public DateTime? DateTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets QualityTypeId
         /// </summary>
         [DataMember(Name = "qualityTypeId", EmitDefaultValue = true)]
@@ -144,6 +152,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  GlobalBookingId: ").Append(GlobalBookingId).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  QualityTypeId: ").Append(QualityTypeId).Append("\n");
             sb.Append("  Voucher: ").Append(Voucher).Append("\n");
             sb.Append("  Resources: ").Append(Resources).Append("\n");
@@ -223,6 +232,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.ReferenceType.Equals(input.ReferenceType))
                 ) && 
                 (
+                    this.DateTime == input.DateTime ||
+                    (this.DateTime != null &&
+                    this.DateTime.Equals(input.DateTime))
+                ) && 
+                (
                     this.QualityTypeId == input.QualityTypeId ||
                     (this.QualityTypeId != null &&
                     this.QualityTypeId.Equals(input.QualityTypeId))
@@ -280,6 +294,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.ReferenceType != null)
                 {
                     hashCode = (hashCode * 59) + this.ReferenceType.GetHashCode();
+                }
+                if (this.DateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
                 }
                 if (this.QualityTypeId != null)
                 {

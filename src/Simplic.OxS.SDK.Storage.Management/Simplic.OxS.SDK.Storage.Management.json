@@ -4480,6 +4480,11 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "qualityTypeId": {
                         "type": "string",
                         "format": "uuid",
@@ -4494,6 +4499,9 @@
                             "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
                         },
                         "nullable": true
+                    },
+                    "approvalRequired": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -4512,6 +4520,10 @@
                     "type": {
                         "minLength": 1,
                         "type": "string"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4836,6 +4848,10 @@
                         "format": "uuid"
                     },
                     "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
                         "type": "string",
                         "nullable": true
                     }
@@ -5362,6 +5378,11 @@
                     },
                     "referenceType": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time",
                         "nullable": true
                     },
                     "qualityTypeId": {
