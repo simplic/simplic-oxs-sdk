@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceAccountId** | **Guid** |  | [optional] 
-**DestinationAccountId** | **Guid** |  | [optional] 
+**SourceAccountId** | **Guid** |  | 
+**DestinationAccountId** | **Guid** |  | 
 **Quantity** | **double** |  | [optional] 
-**LoadingAidTypeId** | **Guid** |  | [optional] 
+**LoadingAidTypeId** | **Guid** |  | 
 **Note** | **string** |  | [optional] 
 **GlobalBookingId** | **Guid?** |  | [optional] 
 **ReferenceId** | **Guid?** |  | [optional] 

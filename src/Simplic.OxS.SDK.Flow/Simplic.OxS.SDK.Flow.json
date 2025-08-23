@@ -215,6 +215,14 @@
                         }
                     },
                     {
+                        "name": "args",
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    {
                         "name": "castTo",
                         "in": "query",
                         "schema": {
@@ -313,6 +321,14 @@
                                 "type": "string",
                                 "format": "uuid"
                             }
+                        }
+                    },
+                    {
+                        "name": "castTo",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "object"
                         }
                     }
                 ],

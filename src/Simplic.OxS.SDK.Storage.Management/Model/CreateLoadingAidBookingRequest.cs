@@ -36,10 +36,15 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateLoadingAidBookingRequest" /> class.
         /// </summary>
-        /// <param name="sourceAccountId">sourceAccountId.</param>
-        /// <param name="destinationAccountId">destinationAccountId.</param>
+        [JsonConstructorAttribute]
+        protected CreateLoadingAidBookingRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateLoadingAidBookingRequest" /> class.
+        /// </summary>
+        /// <param name="sourceAccountId">sourceAccountId (required).</param>
+        /// <param name="destinationAccountId">destinationAccountId (required).</param>
         /// <param name="quantity">quantity.</param>
-        /// <param name="loadingAidTypeId">loadingAidTypeId.</param>
+        /// <param name="loadingAidTypeId">loadingAidTypeId (required).</param>
         /// <param name="note">note.</param>
         /// <param name="globalBookingId">globalBookingId.</param>
         /// <param name="referenceId">referenceId.</param>
@@ -53,8 +58,8 @@ namespace Simplic.OxS.SDK.Storage.Management
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
-            this.Quantity = quantity;
             this.LoadingAidTypeId = loadingAidTypeId;
+            this.Quantity = quantity;
             this.Note = note;
             this.GlobalBookingId = globalBookingId;
             this.ReferenceId = referenceId;
@@ -69,13 +74,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets SourceAccountId
         /// </summary>
-        [DataMember(Name = "sourceAccountId", EmitDefaultValue = false)]
+        [DataMember(Name = "sourceAccountId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SourceAccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets DestinationAccountId
         /// </summary>
-        [DataMember(Name = "destinationAccountId", EmitDefaultValue = false)]
+        [DataMember(Name = "destinationAccountId", IsRequired = true, EmitDefaultValue = true)]
         public Guid DestinationAccountId { get; set; }
 
         /// <summary>
@@ -87,7 +92,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Gets or Sets LoadingAidTypeId
         /// </summary>
-        [DataMember(Name = "loadingAidTypeId", EmitDefaultValue = false)]
+        [DataMember(Name = "loadingAidTypeId", IsRequired = true, EmitDefaultValue = true)]
         public Guid LoadingAidTypeId { get; set; }
 
         /// <summary>

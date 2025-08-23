@@ -11,7 +11,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="devdebugflowidget"></a>
 # **Debug**
-> List&lt;Object&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null)
+> List&lt;Object&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null, string? castTo = null)
 
 
 
@@ -39,10 +39,11 @@ namespace Example
             var flowId = "flowId_example";  // Guid | 
             var args = new List<Object>?(); // List<Object>? |  (optional) 
             var breakpoints = new List<Guid>?(); // List<Guid>? |  (optional) 
+            var castTo = "\"object\"";  // string? |  (optional)  (default to "object")
 
             try
             {
-                List<Object> result = apiInstance.Debug(flowId, args, breakpoints);
+                List<Object> result = apiInstance.Debug(flowId, args, breakpoints, castTo);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Object>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints);
+    ApiResponse<List<Object>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints, castTo);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -82,6 +83,7 @@ catch (ApiException e)
 | **flowId** | **Guid** |  |  |
 | **args** | [**List&lt;Object&gt;?**](Object.md) |  | [optional]  |
 | **breakpoints** | [**List&lt;Guid&gt;?**](Guid.md) |  | [optional]  |
+| **castTo** | **string?** |  | [optional] [default to &quot;object&quot;] |
 
 ### Return type
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 
 <a id="devexecuteflowidget"></a>
 # **Execute**
-> Object Execute (Guid flowId, string? castTo = null)
+> Object Execute (Guid flowId, List<Object>? args = null, string? castTo = null)
 
 
 
@@ -134,11 +136,12 @@ namespace Example
 
             var apiInstance = new DevClient(config);
             var flowId = "flowId_example";  // Guid | 
+            var args = new List<Object>?(); // List<Object>? |  (optional) 
             var castTo = "\"object\"";  // string? |  (optional)  (default to "object")
 
             try
             {
-                Object result = apiInstance.Execute(flowId, castTo);
+                Object result = apiInstance.Execute(flowId, args, castTo);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -158,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId, castTo);
+    ApiResponse<Object> response = apiInstance.ExecuteWithHttpInfo(flowId, args, castTo);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -176,6 +179,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **flowId** | **Guid** |  |  |
+| **args** | [**List&lt;Object&gt;?**](Object.md) |  | [optional]  |
 | **castTo** | **string?** |  | [optional] [default to &quot;object&quot;] |
 
 ### Return type
