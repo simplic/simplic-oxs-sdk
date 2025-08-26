@@ -1428,6 +1428,22 @@
             },
             "DebugInfo": {
                 "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "node": {
+                        "$ref": "#/components/schemas/NodeScope"
+                    },
+                    "stackTrace": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeScope"
+                        },
+                        "nullable": true
+                    }
+                },
                 "additionalProperties": false
             },
             "FlowInstance": {
@@ -1818,6 +1834,24 @@
                         },
                         "nullable": true,
                         "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NodeScope": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

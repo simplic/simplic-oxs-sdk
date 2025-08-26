@@ -11,7 +11,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="devdebugflowidget"></a>
 # **Debug**
-> List&lt;Object&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null, string? castTo = null)
+> List&lt;DebugInfo&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null, string? castTo = null)
 
 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                List<Object> result = apiInstance.Debug(flowId, args, breakpoints, castTo);
+                List<DebugInfo> result = apiInstance.Debug(flowId, args, breakpoints, castTo);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Object>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints, castTo);
+    ApiResponse<List<DebugInfo>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints, castTo);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -87,7 +87,7 @@ catch (ApiException e)
 
 ### Return type
 
-**List<Object>**
+[**List&lt;DebugInfo&gt;**](DebugInfo.md)
 
 ### Authorization
 

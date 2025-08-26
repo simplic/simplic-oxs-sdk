@@ -47,8 +47,8 @@ public interface IDevClient
     /// <param name="args"> (optional)</param>
     /// <param name="breakpoints"> (optional)</param>
     /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
-    /// <returns>List&lt;Object&gt;</returns>
-    List<Object> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?));
+    /// <returns>List&lt;DebugInfo&gt;</returns>
+    List<DebugInfo> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?));
 
     /// <summary>
     ///  
@@ -58,8 +58,8 @@ public interface IDevClient
     /// <param name="args"> (optional)</param>
     /// <param name="breakpoints"> (optional)</param>
     /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
-    /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-    ApiResponse<List<Object>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?));
+    /// <returns>ApiResponse of List&lt;DebugInfo&gt;</returns>
+    ApiResponse<List<DebugInfo>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?));
         
     /// <summary>
     ///  
@@ -70,8 +70,8 @@ public interface IDevClient
     /// <param name="breakpoints"> (optional)</param>
     /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;Object&gt;</returns>
-    Task<List<Object>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;DebugInfo&gt;</returns>
+    Task<List<DebugInfo>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -82,8 +82,8 @@ public interface IDevClient
     /// <param name="breakpoints"> (optional)</param>
     /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-    Task<ApiResponse<List<Object>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;DebugInfo&gt;)</returns>
+    Task<ApiResponse<List<DebugInfo>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -281,8 +281,8 @@ public interface IDevClient
         /// <param name="args"> (optional)</param>
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?))
+        /// <returns>List&lt;DebugInfo&gt;</returns>
+        public List<DebugInfo> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?))
         {
             try
             {
@@ -302,8 +302,8 @@ public interface IDevClient
         /// <param name="args"> (optional)</param>
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<Object>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?))
+        /// <returns>ApiResponse of List&lt;DebugInfo&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DebugInfo>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?))
         {
             try
             {
@@ -324,8 +324,8 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public System.Threading.Tasks.Task<List<Object>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;DebugInfo&gt;</returns>
+        public System.Threading.Tasks.Task<List<DebugInfo>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -346,8 +346,8 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<Object>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;DebugInfo&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DebugInfo>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -607,8 +607,8 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        List<Object> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0);
+        /// <returns>List&lt;DebugInfo&gt;</returns>
+        List<DebugInfo> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -622,8 +622,8 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;DebugInfo&gt;</returns>
+        ApiResponse<List<DebugInfo>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -710,8 +710,8 @@ public interface IDevClient
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        System.Threading.Tasks.Task<List<Object>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;DebugInfo&gt;</returns>
+        System.Threading.Tasks.Task<List<DebugInfo>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -726,8 +726,8 @@ public interface IDevClient
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Object>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;DebugInfo&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DebugInfo>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -938,10 +938,10 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0)
+        /// <returns>List&lt;DebugInfo&gt;</returns>
+        public List<DebugInfo> Debug(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<Object>> localVarResponse = DebugWithHttpInfo(flowId, args, breakpoints, castTo);
+            Simplic.OxS.SDK.ApiResponse<List<DebugInfo>> localVarResponse = DebugWithHttpInfo(flowId, args, breakpoints, castTo);
             return localVarResponse.Data;
         }
 
@@ -954,8 +954,8 @@ public interface IDevClient
         /// <param name="breakpoints"> (optional)</param>
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<Object>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;DebugInfo&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DebugInfo>> DebugWithHttpInfo(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1005,7 +1005,7 @@ public interface IDevClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Object>>("/Dev/debug/{flowId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<DebugInfo>>("/Dev/debug/{flowId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DevDebugFlowIdGet", localVarResponse);
@@ -1028,10 +1028,10 @@ public interface IDevClient
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Object>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;DebugInfo&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DebugInfo>> DebugAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<Object>> localVarResponse = await DebugWithHttpInfoAsync(flowId, args, breakpoints, castTo, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<DebugInfo>> localVarResponse = await DebugWithHttpInfoAsync(flowId, args, breakpoints, castTo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1045,8 +1045,8 @@ public interface IDevClient
         /// <param name="castTo"> (optional, default to &quot;object&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<Object>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;DebugInfo&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DebugInfo>>> DebugWithHttpInfoAsync(Guid flowId, List<Object>? args = default(List<Object>?), List<Guid>? breakpoints = default(List<Guid>?), string? castTo = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1097,7 +1097,7 @@ public interface IDevClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Object>>("/Dev/debug/{flowId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DebugInfo>>("/Dev/debug/{flowId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
