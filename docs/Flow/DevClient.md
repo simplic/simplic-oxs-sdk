@@ -11,7 +11,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="devdebugflowidget"></a>
 # **Debug**
-> List&lt;DebugInfo&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null, string? castTo = null)
+> List&lt;DebugInfo&gt; Debug (Guid flowId, List<Object>? args = null, List<Guid>? breakpoints = null, string? castTo = null, int? timeoutSeconds = null)
 
 
 
@@ -40,10 +40,11 @@ namespace Example
             var args = new List<Object>?(); // List<Object>? |  (optional) 
             var breakpoints = new List<Guid>?(); // List<Guid>? |  (optional) 
             var castTo = "\"object\"";  // string? |  (optional)  (default to "object")
+            var timeoutSeconds = 5;  // int? |  (optional)  (default to 5)
 
             try
             {
-                List<DebugInfo> result = apiInstance.Debug(flowId, args, breakpoints, castTo);
+                List<DebugInfo> result = apiInstance.Debug(flowId, args, breakpoints, castTo, timeoutSeconds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<DebugInfo>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints, castTo);
+    ApiResponse<List<DebugInfo>> response = apiInstance.DebugWithHttpInfo(flowId, args, breakpoints, castTo, timeoutSeconds);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **args** | [**List&lt;Object&gt;?**](Object.md) |  | [optional]  |
 | **breakpoints** | [**List&lt;Guid&gt;?**](Guid.md) |  | [optional]  |
 | **castTo** | **string?** |  | [optional] [default to &quot;object&quot;] |
+| **timeoutSeconds** | **int?** |  | [optional] [default to 5] |
 
 ### Return type
 

@@ -330,6 +330,15 @@
                             "type": "string",
                             "default": "object"
                         }
+                    },
+                    {
+                        "name": "timeoutSeconds",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 5
+                        }
                     }
                 ],
                 "responses": {
