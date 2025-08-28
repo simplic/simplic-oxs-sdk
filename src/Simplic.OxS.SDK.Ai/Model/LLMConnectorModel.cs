@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="LLMConnectorModel" /> class.
         /// </summary>
-        /// <param name="disable">disable (default to true).</param>
-        public LLMConnectorModel(bool disable = true)
+        /// <param name="disable">disable (default to false).</param>
+        public LLMConnectorModel(bool disable = false)
         {
             this.Disable = disable;
         }

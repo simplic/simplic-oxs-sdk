@@ -1544,11 +1544,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelCancelTrainingModelIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1623,11 +1618,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelCancelTrainingModelIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1700,11 +1690,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelCheckTrainingStatusModelIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1779,11 +1764,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelCheckTrainingStatusModelIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1859,11 +1839,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1941,11 +1916,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2015,11 +1985,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelGetTypesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2091,11 +2056,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelGetTypesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2167,11 +2127,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2245,11 +2200,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2328,11 +2278,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2413,11 +2358,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2493,11 +2433,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2575,11 +2510,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2659,11 +2589,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelStartTrainingModelIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2745,11 +2670,6 @@ public interface ITextClassificationModelClient
             localVarRequestOptions.Operation = "TextClassificationModelClient.TextClassificationModelStartTrainingModelIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {

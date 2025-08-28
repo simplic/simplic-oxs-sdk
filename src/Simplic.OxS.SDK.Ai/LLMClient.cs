@@ -446,11 +446,6 @@ public interface ILLMClient
             localVarRequestOptions.Operation = "LLMClient.LLMGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -522,11 +517,6 @@ public interface ILLMClient
             localVarRequestOptions.Operation = "LLMClient.LLMGetAllGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {

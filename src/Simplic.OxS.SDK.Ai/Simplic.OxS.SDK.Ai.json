@@ -36,7 +36,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -124,7 +124,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -204,7 +204,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -282,7 +282,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -334,7 +334,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -431,7 +431,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -519,7 +519,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -599,7 +599,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -698,7 +698,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -776,7 +776,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -875,7 +875,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     }
                 }
             }
@@ -917,7 +917,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1013,7 +1013,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     }
                 }
             }
@@ -1025,7 +1025,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1122,7 +1122,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1193,106 +1193,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Embedding/{id}": {
-            "put": {
-                "tags": [
-                    "Embedding"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1371,7 +1272,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1434,7 +1335,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1511,7 +1412,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1589,7 +1490,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1613,332 +1514,6 @@
                                     "items": {
                                         "$ref": "#/components/schemas/LLMTypeModel"
                                     }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/LLMTask/{id}": {
-            "get": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/LLMTask": {
-            "post": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
                                 }
                             }
                         }
@@ -2012,7 +1587,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2092,7 +1667,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2180,7 +1755,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2266,7 +1841,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2365,7 +1940,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2443,7 +2018,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -2526,7 +2101,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2606,7 +2181,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2686,7 +2261,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2755,7 +2330,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Success",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2960,34 +2535,6 @@
                 },
                 "additionalProperties": false
             },
-            "CreateLLMTaskRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "reason": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "requires": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "definition": {
-                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
-                    },
-                    "optionalSubtask": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "CreateTextClassificationModelRequest": {
                 "type": "object",
                 "properties": {
@@ -3141,10 +2688,6 @@
                     "dataType": {
                         "minLength": 3,
                         "type": "string"
-                    },
-                    "addToSearchIndex": {
-                        "type": "boolean",
-                        "default": false
                     }
                 },
                 "additionalProperties": false
@@ -3184,50 +2727,7 @@
                 "properties": {
                     "disable": {
                         "type": "boolean",
-                        "default": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "LLMTaskDefinitionModel": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "LLMTaskResponse": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "reason": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "requires": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "definition": {
-                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
-                    },
-                    "optionalSubtask": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
+                        "default": false
                     }
                 },
                 "additionalProperties": false
@@ -3481,19 +2981,12 @@
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
                 "name": "Authorization",
                 "in": "header"
-            },
-            "ApiKey": {
-                "type": "apiKey",
-                "description": "API Key authentication. Example: 'x-api-key: {your-api-key}'",
-                "name": "x-api-key",
-                "in": "header"
             }
         }
     },
     "security": [
         {
-            "Bearer": [],
-            "ApiKey": []
+            "Bearer": []
         }
     ]
 }

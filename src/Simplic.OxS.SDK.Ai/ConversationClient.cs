@@ -1058,11 +1058,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationGetContextsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1134,11 +1129,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationGetContextsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1210,11 +1200,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1288,11 +1273,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1365,11 +1345,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1444,11 +1419,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1524,11 +1494,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationReplyPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1606,11 +1571,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationReplyPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1686,11 +1646,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationStartPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1768,11 +1723,6 @@ public interface IConversationClient
             localVarRequestOptions.Operation = "ConversationClient.ConversationStartPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
