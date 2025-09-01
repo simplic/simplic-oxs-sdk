@@ -1255,6 +1255,105 @@
                 }
             }
         },
+        "/Embedding/{id}": {
+            "put": {
+                "tags": [
+                    "Embedding"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EmbeddedDocumentModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Embedding/remove-by-type/{dataType}": {
             "delete": {
                 "tags": [
@@ -1483,6 +1582,94 @@
                 }
             }
         },
+        "/IInternalConversation/start": {
+            "post": {
+                "tags": [
+                    "IInternalConversation"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConversationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConversationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConversationModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/LLM/get-all": {
             "get": {
                 "tags": [
@@ -1514,6 +1701,332 @@
                                     "items": {
                                         "$ref": "#/components/schemas/LLMTypeModel"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/LLMTask/{id}": {
+            "get": {
+                "tags": [
+                    "LLMTask"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "LLMTask"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "LLMTask"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/LLMTask": {
+            "post": {
+                "tags": [
+                    "LLMTask"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LLMTaskResponse"
                                 }
                             }
                         }
@@ -2422,28 +2935,34 @@
                 "properties": {
                     "modelId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the model, which will be used.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text to classify",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an request to classify a text async."
             },
             "ClassifyTextAsyncResponse": {
                 "type": "object",
                 "properties": {
                     "jobId": {
                         "type": "string",
+                        "description": "Gets or sets the job id.\r\nIts the id to check the aws query.",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
+                        "description": "Gets or sets the state of the job.\r\ne.g. processing, complete or failed.",
                         "nullable": true
                     },
                     "stateText": {
                         "type": "string",
+                        "description": "Gets or sets a state text with more informations about the state.",
                         "nullable": true
                     },
                     "results": {
@@ -2451,24 +2970,29 @@
                         "items": {
                             "$ref": "#/components/schemas/TextClassificationResultResponse"
                         },
+                        "description": "Gets or sets a list of the results.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an response of a text classification action."
             },
             "CompareResultModel": {
                 "type": "object",
                 "properties": {
                     "key": {
                         "type": "string",
+                        "description": "Gets or sets the key.",
                         "nullable": true
                     },
                     "similarity": {
                         "type": "number",
+                        "description": "Gets or sets the similarity.",
                         "format": "double"
                     },
                     "predictedLabel": {
                         "type": "string",
+                        "description": "Gets or sets the predicted label.",
                         "nullable": true
                     }
                 },
@@ -2479,43 +3003,52 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the context",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a conversation context type"
             },
             "ConversationContextModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the referenced context.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the context system",
                         "nullable": true
                     },
                     "contextMessage": {
                         "type": "string",
+                        "description": "Gets or sets a message, that represents a manual context.\r\nIf this is set, togehter with Name and Id, both will be passed to the AI",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a conversation context"
             },
             "ConversationModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the conversation id",
                         "format": "uuid"
                     },
                     "userId": {
                         "type": "string",
+                        "description": "Gets or sets the user the llm conversation is attached to",
                         "format": "uuid",
                         "nullable": true
                     },
                     "model": {
                         "type": "string",
+                        "description": "Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4",
                         "nullable": true
                     },
                     "context": {
@@ -2526,44 +3059,87 @@
                         "items": {
                             "$ref": "#/components/schemas/MessageModel"
                         },
+                        "description": "Gets or sets the messages inside the conversation",
                         "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the creation date time",
                         "format": "date-time"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a LLM conversation"
+            },
+            "CreateLLMTaskRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the task",
+                        "nullable": true
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Gets or sets the reason that will be used from a llm, to use this task",
+                        "nullable": true
+                    },
+                    "requires": {
+                        "type": "string",
+                        "description": "Gets or sets the required information, to use this task",
+                        "nullable": true
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
+                    },
+                    "optionalSubtask": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets subtask, which should be included automatically",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request object for creating an llm task"
             },
             "CreateTextClassificationModelRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the model base.",
                         "nullable": true
                     },
                     "type": {
                         "type": "string",
+                        "description": "Gets or sets the type of the model base.\r\nas example. aws-comprehend-multi-classification",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
+                        "description": "Gets or sets the state of the base model.\r\nnew, training, completed and failed.s",
                         "nullable": true
                     },
                     "trainingFormatData": {
                         "type": "string",
+                        "description": "Gets or sets the format of the training data.\r\ne.g. csv.",
                         "nullable": true
                     },
                     "delimiter": {
                         "type": "string",
+                        "description": "Gets or sets the delimiter for the data.",
                         "nullable": true
                     },
                     "labelDelimiter": {
                         "type": "string",
+                        "description": "Gets or sets the delimiter for the labels.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an request to create a new model to text classification."
             },
             "DataSetCsvUploadRequest": {
                 "required": [
@@ -2683,34 +3259,46 @@
                 "properties": {
                     "content": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the document content"
                     },
                     "dataType": {
                         "minLength": 3,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the data type"
+                    },
+                    "addToSearchIndex": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether to add the embedding to a search index",
+                        "default": false
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Document model"
             },
             "EmbeddingModel": {
                 "type": "object",
                 "properties": {
                     "disable": {
                         "type": "boolean",
+                        "description": "Gets or sets whether disabling the embedding model",
                         "default": false
                     },
                     "dataType": {
                         "type": "string",
+                        "description": "Gets or sets the data type (null/empty string will search everywhere)",
                         "default": "",
                         "nullable": true
                     },
                     "count": {
                         "type": "integer",
+                        "description": "Gets or sets the used documents (count)",
                         "format": "int32",
                         "default": 5
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Contains embedding settings"
             },
             "HashAlgorithmModel": {
                 "type": "object",
@@ -2727,10 +3315,63 @@
                 "properties": {
                     "disable": {
                         "type": "boolean",
-                        "default": false
+                        "description": "Gets or sets whether disabling the embedding model",
+                        "default": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Contains the settings for the llm connector"
+            },
+            "LLMTaskDefinitionModel": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Gets the type to deserialize",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents an abstract version of a llm task"
+            },
+            "LLMTaskResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the task",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the task",
+                        "nullable": true
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Gets or sets the reason that will be used from a llm, to use this task",
+                        "nullable": true
+                    },
+                    "requires": {
+                        "type": "string",
+                        "description": "Gets or sets the required information, to use this task",
+                        "nullable": true
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
+                    },
+                    "optionalSubtask": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets subtask, which should be included automatically",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents an llm task"
             },
             "LLMTypeModel": {
                 "type": "object",
@@ -2747,30 +3388,36 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the message id",
                         "format": "uuid"
                     },
                     "senderId": {
                         "type": "string",
+                        "description": "Gets or sets the sender. Ox user id, null for llm model",
                         "format": "uuid",
                         "nullable": true
                     },
                     "dateTime": {
                         "type": "string",
+                        "description": "Gets or sets the datetime the message was created",
                         "format": "date-time"
                     },
                     "body": {
                         "type": "string",
+                        "description": "Gets or sets the message body",
                         "nullable": true
                     },
                     "modelReference": {
                         "type": "string",
+                        "description": "Gets or sets an optional model reference for the message",
                         "nullable": true
                     },
                     "type": {
                         "$ref": "#/components/schemas/MessageType"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a conversation message"
             },
             "MessageType": {
                 "enum": [
@@ -2779,6 +3426,7 @@
                     2
                 ],
                 "type": "integer",
+                "description": "Represents a message type",
                 "format": "int32"
             },
             "ProblemDetails": {
@@ -2830,14 +3478,17 @@
                 "properties": {
                     "conversationId": {
                         "type": "string",
+                        "description": "Gets or sets the conversation id",
                         "format": "uuid"
                     },
                     "message": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the initial message"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model for interacting with a conversation"
             },
             "SearchRequest": {
                 "required": [
@@ -2876,7 +3527,8 @@
                 "properties": {
                     "model": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4"
                     },
                     "context": {
                         "$ref": "#/components/schemas/ConversationContextModel"
@@ -2889,20 +3541,24 @@
                     },
                     "message": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the initial message"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model for starting conversation"
             },
             "StateResponse": {
                 "type": "object",
                 "properties": {
                     "state": {
                         "type": "string",
+                        "description": "Gets or sets the status value",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Check training status result"
             },
             "TextClassificationModelDefinition": {
                 "type": "object",
@@ -2919,42 +3575,52 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the text classification model.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the model base.",
                         "nullable": true
                     },
                     "type": {
                         "type": "string",
+                        "description": "Gets or sets the type of the model base.\r\nas example. aws-comprehend-multi-classification",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
+                        "description": "Gets or sets the state of the base model.\r\nnew, training, completed and failed.s",
                         "nullable": true
                     },
                     "stateText": {
                         "type": "string",
+                        "description": "Gets or sets the current state text.\r\nIts a text with more information about the state.",
                         "nullable": true
                     },
                     "trainingFormatData": {
                         "type": "string",
+                        "description": "Gets or sets the format of the training data.\r\ne.g. csv.",
                         "nullable": true
                     },
                     "delimiter": {
                         "type": "string",
+                        "description": "Gets or sets the delimiter for the data.",
                         "nullable": true
                     },
                     "labelDelimiter": {
                         "type": "string",
+                        "description": "Gets or sets the delimiter for the labels.",
                         "nullable": true
                     },
                     "trainingDataPath": {
                         "type": "string",
+                        "description": "Gets or sets the actually trainings data.\r\nIts a path to a csv file in a aws bucket.",
                         "nullable": true
                     },
                     "version": {
                         "type": "integer",
+                        "description": "Gets or sets the current model version",
                         "format": "int32"
                     }
                 },
@@ -2965,14 +3631,17 @@
                 "properties": {
                     "label": {
                         "type": "string",
+                        "description": "Gets or sets the matched label.",
                         "nullable": true
                     },
                     "confidence": {
                         "type": "number",
+                        "description": "Gets or sets the confidence, how good the label matches the text.",
                         "format": "double"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a text classification result."
             }
         },
         "securitySchemes": {

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ContextModel
+    /// Represents a conversation context type
     /// </summary>
     [DataContract(Name = "ContextModel")]
     public partial class ContextModel : IEquatable<ContextModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ContextModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the name of the context.</param>
         public ContextModel(string name = default(string))
         {
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the context
         /// </summary>
+        /// <value>Gets or sets the name of the context</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

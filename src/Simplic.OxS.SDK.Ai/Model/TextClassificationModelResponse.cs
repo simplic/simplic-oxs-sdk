@@ -36,16 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="TextClassificationModelResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="type">type.</param>
-        /// <param name="state">state.</param>
-        /// <param name="stateText">stateText.</param>
-        /// <param name="trainingFormatData">trainingFormatData.</param>
-        /// <param name="delimiter">delimiter.</param>
-        /// <param name="labelDelimiter">labelDelimiter.</param>
-        /// <param name="trainingDataPath">trainingDataPath.</param>
-        /// <param name="varVersion">varVersion.</param>
+        /// <param name="id">Gets or sets the id of the text classification model..</param>
+        /// <param name="name">Gets or sets the name of the model base..</param>
+        /// <param name="type">Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification.</param>
+        /// <param name="state">Gets or sets the state of the base model.  new, training, completed and failed.s.</param>
+        /// <param name="stateText">Gets or sets the current state text.  Its a text with more information about the state..</param>
+        /// <param name="trainingFormatData">Gets or sets the format of the training data.  e.g. csv..</param>
+        /// <param name="delimiter">Gets or sets the delimiter for the data..</param>
+        /// <param name="labelDelimiter">Gets or sets the delimiter for the labels..</param>
+        /// <param name="trainingDataPath">Gets or sets the actually trainings data.  Its a path to a csv file in a aws bucket..</param>
+        /// <param name="varVersion">Gets or sets the current model version.</param>
         public TextClassificationModelResponse(Guid id = default(Guid), string name = default(string), string type = default(string), string state = default(string), string stateText = default(string), string trainingFormatData = default(string), string delimiter = default(string), string labelDelimiter = default(string), string trainingDataPath = default(string), int varVersion = default(int))
         {
             this.Id = id;
@@ -61,62 +61,72 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the text classification model.
         /// </summary>
+        /// <value>Gets or sets the id of the text classification model.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the model base.
         /// </summary>
+        /// <value>Gets or sets the name of the model base.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification
         /// </summary>
+        /// <value>Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets State
+        /// Gets or sets the state of the base model.  new, training, completed and failed.s
         /// </summary>
+        /// <value>Gets or sets the state of the base model.  new, training, completed and failed.s</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
-        /// Gets or Sets StateText
+        /// Gets or sets the current state text.  Its a text with more information about the state.
         /// </summary>
+        /// <value>Gets or sets the current state text.  Its a text with more information about the state.</value>
         [DataMember(Name = "stateText", EmitDefaultValue = true)]
         public string StateText { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrainingFormatData
+        /// Gets or sets the format of the training data.  e.g. csv.
         /// </summary>
+        /// <value>Gets or sets the format of the training data.  e.g. csv.</value>
         [DataMember(Name = "trainingFormatData", EmitDefaultValue = true)]
         public string TrainingFormatData { get; set; }
 
         /// <summary>
-        /// Gets or Sets Delimiter
+        /// Gets or sets the delimiter for the data.
         /// </summary>
+        /// <value>Gets or sets the delimiter for the data.</value>
         [DataMember(Name = "delimiter", EmitDefaultValue = true)]
         public string Delimiter { get; set; }
 
         /// <summary>
-        /// Gets or Sets LabelDelimiter
+        /// Gets or sets the delimiter for the labels.
         /// </summary>
+        /// <value>Gets or sets the delimiter for the labels.</value>
         [DataMember(Name = "labelDelimiter", EmitDefaultValue = true)]
         public string LabelDelimiter { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrainingDataPath
+        /// Gets or sets the actually trainings data.  Its a path to a csv file in a aws bucket.
         /// </summary>
+        /// <value>Gets or sets the actually trainings data.  Its a path to a csv file in a aws bucket.</value>
         [DataMember(Name = "trainingDataPath", EmitDefaultValue = true)]
         public string TrainingDataPath { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarVersion
+        /// Gets or sets the current model version
         /// </summary>
+        /// <value>Gets or sets the current model version</value>
         [DataMember(Name = "version", EmitDefaultValue = false)]
         public int VarVersion { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// EmbeddingModel
+    /// Contains embedding settings
     /// </summary>
     [DataContract(Name = "EmbeddingModel")]
     public partial class EmbeddingModel : IEquatable<EmbeddingModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingModel" /> class.
         /// </summary>
-        /// <param name="disable">disable (default to false).</param>
-        /// <param name="dataType">dataType (default to &quot;&quot;).</param>
-        /// <param name="count">count (default to 5).</param>
+        /// <param name="disable">Gets or sets whether disabling the embedding model (default to false).</param>
+        /// <param name="dataType">Gets or sets the data type (null/empty string will search everywhere) (default to &quot;&quot;).</param>
+        /// <param name="count">Gets or sets the used documents (count) (default to 5).</param>
         public EmbeddingModel(bool disable = false, string dataType = @"", int count = 5)
         {
             this.Disable = disable;
@@ -48,20 +48,23 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Disable
+        /// Gets or sets whether disabling the embedding model
         /// </summary>
+        /// <value>Gets or sets whether disabling the embedding model</value>
         [DataMember(Name = "disable", EmitDefaultValue = true)]
         public bool Disable { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataType
+        /// Gets or sets the data type (null/empty string will search everywhere)
         /// </summary>
+        /// <value>Gets or sets the data type (null/empty string will search everywhere)</value>
         [DataMember(Name = "dataType", EmitDefaultValue = true)]
         public string DataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Count
+        /// Gets or sets the used documents (count)
         /// </summary>
+        /// <value>Gets or sets the used documents (count)</value>
         [DataMember(Name = "count", EmitDefaultValue = false)]
         public int Count { get; set; }
 

@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Ai.MessageType
+Represents a message type
 
 ## Properties
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// StateResponse
+    /// Check training status result
     /// </summary>
     [DataContract(Name = "StateResponse")]
     public partial class StateResponse : IEquatable<StateResponse>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="StateResponse" /> class.
         /// </summary>
-        /// <param name="state">state.</param>
+        /// <param name="state">Gets or sets the status value.</param>
         public StateResponse(string state = default(string))
         {
             this.State = state;
         }
 
         /// <summary>
-        /// Gets or Sets State
+        /// Gets or sets the status value
         /// </summary>
+        /// <value>Gets or sets the status value</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 

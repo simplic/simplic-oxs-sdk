@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// EmbeddedDocumentModel
+    /// Document model
     /// </summary>
     [DataContract(Name = "EmbeddedDocumentModel")]
     public partial class EmbeddedDocumentModel : IEquatable<EmbeddedDocumentModel>, IValidatableObject
@@ -41,9 +41,10 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddedDocumentModel" /> class.
         /// </summary>
-        /// <param name="content">content (required).</param>
-        /// <param name="dataType">dataType (required).</param>
-        public EmbeddedDocumentModel(string content = default(string), string dataType = default(string))
+        /// <param name="content">Gets or sets the document content (required).</param>
+        /// <param name="dataType">Gets or sets the data type (required).</param>
+        /// <param name="addToSearchIndex">Gets or sets whether to add the embedding to a search index (default to false).</param>
+        public EmbeddedDocumentModel(string content = default(string), string dataType = default(string), bool addToSearchIndex = false)
         {
             // to ensure "content" is required (not null)
             if (content == null)
@@ -57,19 +58,29 @@ namespace Simplic.OxS.SDK.Ai
                 throw new ArgumentNullException("dataType is a required property for EmbeddedDocumentModel and cannot be null");
             }
             this.DataType = dataType;
+            this.AddToSearchIndex = addToSearchIndex;
         }
 
         /// <summary>
-        /// Gets or Sets Content
+        /// Gets or sets the document content
         /// </summary>
+        /// <value>Gets or sets the document content</value>
         [DataMember(Name = "content", IsRequired = true, EmitDefaultValue = true)]
         public string Content { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataType
+        /// Gets or sets the data type
         /// </summary>
+        /// <value>Gets or sets the data type</value>
         [DataMember(Name = "dataType", IsRequired = true, EmitDefaultValue = true)]
         public string DataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether to add the embedding to a search index
+        /// </summary>
+        /// <value>Gets or sets whether to add the embedding to a search index</value>
+        [DataMember(Name = "addToSearchIndex", EmitDefaultValue = true)]
+        public bool AddToSearchIndex { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -81,6 +92,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class EmbeddedDocumentModel {\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
+            sb.Append("  AddToSearchIndex: ").Append(AddToSearchIndex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,6 +137,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
+                ) && 
+                (
+                    this.AddToSearchIndex == input.AddToSearchIndex ||
+                    this.AddToSearchIndex.Equals(input.AddToSearchIndex)
                 );
         }
 
@@ -145,6 +161,7 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.DataType.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AddToSearchIndex.GetHashCode();
                 return hashCode;
             }
         }

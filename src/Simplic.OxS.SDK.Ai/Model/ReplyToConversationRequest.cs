@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ReplyToConversationRequest
+    /// Model for interacting with a conversation
     /// </summary>
     [DataContract(Name = "ReplyToConversationRequest")]
     public partial class ReplyToConversationRequest : IEquatable<ReplyToConversationRequest>, IValidatableObject
@@ -41,8 +41,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplyToConversationRequest" /> class.
         /// </summary>
-        /// <param name="conversationId">conversationId (required).</param>
-        /// <param name="message">message (required).</param>
+        /// <param name="conversationId">Gets or sets the conversation id (required).</param>
+        /// <param name="message">Gets or sets the initial message (required).</param>
         public ReplyToConversationRequest(Guid conversationId = default(Guid), string message = default(string))
         {
             this.ConversationId = conversationId;
@@ -55,14 +55,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets ConversationId
+        /// Gets or sets the conversation id
         /// </summary>
+        /// <value>Gets or sets the conversation id</value>
         [DataMember(Name = "conversationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConversationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or sets the initial message
         /// </summary>
+        /// <value>Gets or sets the initial message</value>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
         public string Message { get; set; }
 

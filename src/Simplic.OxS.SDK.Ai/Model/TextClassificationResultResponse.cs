@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// TextClassificationResultResponse
+    /// Represents a text classification result.
     /// </summary>
     [DataContract(Name = "TextClassificationResultResponse")]
     public partial class TextClassificationResultResponse : IEquatable<TextClassificationResultResponse>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="TextClassificationResultResponse" /> class.
         /// </summary>
-        /// <param name="label">label.</param>
-        /// <param name="confidence">confidence.</param>
+        /// <param name="label">Gets or sets the matched label..</param>
+        /// <param name="confidence">Gets or sets the confidence, how good the label matches the text..</param>
         public TextClassificationResultResponse(string label = default(string), double confidence = default(double))
         {
             this.Label = label;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Label
+        /// Gets or sets the matched label.
         /// </summary>
+        /// <value>Gets or sets the matched label.</value>
         [DataMember(Name = "label", EmitDefaultValue = true)]
         public string Label { get; set; }
 
         /// <summary>
-        /// Gets or Sets Confidence
+        /// Gets or sets the confidence, how good the label matches the text.
         /// </summary>
+        /// <value>Gets or sets the confidence, how good the label matches the text.</value>
         [DataMember(Name = "confidence", EmitDefaultValue = false)]
         public double Confidence { get; set; }
 

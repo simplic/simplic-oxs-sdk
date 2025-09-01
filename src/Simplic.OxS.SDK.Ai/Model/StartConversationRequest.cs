@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// StartConversationRequest
+    /// Model for starting conversation
     /// </summary>
     [DataContract(Name = "StartConversationRequest")]
     public partial class StartConversationRequest : IEquatable<StartConversationRequest>, IValidatableObject
@@ -41,11 +41,11 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="StartConversationRequest" /> class.
         /// </summary>
-        /// <param name="model">model (required).</param>
+        /// <param name="model">Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4 (required).</param>
         /// <param name="context">context.</param>
         /// <param name="embedding">embedding.</param>
         /// <param name="connector">connector.</param>
-        /// <param name="message">message (required).</param>
+        /// <param name="message">Gets or sets the initial message (required).</param>
         public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), LLMConnectorModel connector = default(LLMConnectorModel), string message = default(string))
         {
             // to ensure "model" is required (not null)
@@ -66,8 +66,9 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Model
+        /// Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4
         /// </summary>
+        /// <value>Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4</value>
         [DataMember(Name = "model", IsRequired = true, EmitDefaultValue = true)]
         public string Model { get; set; }
 
@@ -90,8 +91,9 @@ namespace Simplic.OxS.SDK.Ai
         public LLMConnectorModel Connector { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or sets the initial message
         /// </summary>
+        /// <value>Gets or sets the initial message</value>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
         public string Message { get; set; }
 

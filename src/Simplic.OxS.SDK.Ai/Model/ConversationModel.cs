@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ConversationModel
+    /// Represents a LLM conversation
     /// </summary>
     [DataContract(Name = "ConversationModel")]
     public partial class ConversationModel : IEquatable<ConversationModel>, IValidatableObject
@@ -36,12 +36,12 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="userId">userId.</param>
-        /// <param name="model">model.</param>
+        /// <param name="id">Gets or sets the conversation id.</param>
+        /// <param name="userId">Gets or sets the user the llm conversation is attached to.</param>
+        /// <param name="model">Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4.</param>
         /// <param name="context">context.</param>
-        /// <param name="messages">messages.</param>
-        /// <param name="createDateTime">createDateTime.</param>
+        /// <param name="messages">Gets or sets the messages inside the conversation.</param>
+        /// <param name="createDateTime">Gets or sets the creation date time.</param>
         public ConversationModel(Guid id = default(Guid), Guid? userId = default(Guid?), string model = default(string), ConversationContextModel context = default(ConversationContextModel), List<MessageModel> messages = default(List<MessageModel>), DateTime createDateTime = default(DateTime))
         {
             this.Id = id;
@@ -53,20 +53,23 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the conversation id
         /// </summary>
+        /// <value>Gets or sets the conversation id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserId
+        /// Gets or sets the user the llm conversation is attached to
         /// </summary>
+        /// <value>Gets or sets the user the llm conversation is attached to</value>
         [DataMember(Name = "userId", EmitDefaultValue = true)]
         public Guid? UserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Model
+        /// Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4
         /// </summary>
+        /// <value>Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4</value>
         [DataMember(Name = "model", EmitDefaultValue = true)]
         public string Model { get; set; }
 
@@ -77,14 +80,16 @@ namespace Simplic.OxS.SDK.Ai
         public ConversationContextModel Context { get; set; }
 
         /// <summary>
-        /// Gets or Sets Messages
+        /// Gets or sets the messages inside the conversation
         /// </summary>
+        /// <value>Gets or sets the messages inside the conversation</value>
         [DataMember(Name = "messages", EmitDefaultValue = true)]
         public List<MessageModel> Messages { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the creation date time
         /// </summary>
+        /// <value>Gets or sets the creation date time</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 

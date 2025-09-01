@@ -28,45 +28,34 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// CompareResultModel
+    /// Represents an abstract version of a llm task
     /// </summary>
-    [DataContract(Name = "CompareResultModel")]
-    public partial class CompareResultModel : IEquatable<CompareResultModel>, IValidatableObject
+    [DataContract(Name = "LLMTaskDefinitionModel")]
+    public partial class LLMTaskDefinitionModel : IEquatable<LLMTaskDefinitionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
+        /// Initializes a new instance of the <see cref="LLMTaskDefinitionModel" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the key..</param>
-        /// <param name="similarity">Gets or sets the similarity..</param>
-        /// <param name="predictedLabel">Gets or sets the predicted label..</param>
-        public CompareResultModel(string key = default(string), double similarity = default(double), string predictedLabel = default(string))
+        [JsonConstructorAttribute]
+        public LLMTaskDefinitionModel()
         {
-            this.Key = key;
-            this.Similarity = similarity;
-            this.PredictedLabel = predictedLabel;
         }
 
         /// <summary>
-        /// Gets or sets the key.
+        /// Gets the type to deserialize
         /// </summary>
-        /// <value>Gets or sets the key.</value>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string Key { get; set; }
+        /// <value>Gets the type to deserialize</value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; private set; }
 
         /// <summary>
-        /// Gets or sets the similarity.
+        /// Returns false as Type should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>Gets or sets the similarity.</value>
-        [DataMember(Name = "similarity", EmitDefaultValue = false)]
-        public double Similarity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the predicted label.
-        /// </summary>
-        /// <value>Gets or sets the predicted label.</value>
-        [DataMember(Name = "predictedLabel", EmitDefaultValue = true)]
-        public string PredictedLabel { get; set; }
-
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeType()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -74,10 +63,8 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CompareResultModel {\n");
-            sb.Append("  Key: ").Append(Key).Append("\n");
-            sb.Append("  Similarity: ").Append(Similarity).Append("\n");
-            sb.Append("  PredictedLabel: ").Append(PredictedLabel).Append("\n");
+            sb.Append("class LLMTaskDefinitionModel {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +85,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompareResultModel);
+            return this.Equals(input as LLMTaskDefinitionModel);
         }
 
         /// <summary>
-        /// Returns true if CompareResultModel instances are equal
+        /// Returns true if LLMTaskDefinitionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of CompareResultModel to be compared</param>
+        /// <param name="input">Instance of LLMTaskDefinitionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CompareResultModel input)
+        public bool Equals(LLMTaskDefinitionModel input)
         {
             if (input == null)
             {
@@ -114,18 +101,9 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Similarity == input.Similarity ||
-                    this.Similarity.Equals(input.Similarity)
-                ) && 
-                (
-                    this.PredictedLabel == input.PredictedLabel ||
-                    (this.PredictedLabel != null &&
-                    this.PredictedLabel.Equals(input.PredictedLabel))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -138,14 +116,9 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
+                if (this.Type != null)
                 {
-                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Similarity.GetHashCode();
-                if (this.PredictedLabel != null)
-                {
-                    hashCode = (hashCode * 59) + this.PredictedLabel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
                 return hashCode;
             }

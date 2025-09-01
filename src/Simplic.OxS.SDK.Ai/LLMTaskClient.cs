@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Ai
 /// <summary>
 /// Client to interact with the API endpoints of the ai service.
 /// </summary>
-public interface IEmbeddingClient
+public interface ILLMTaskClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -44,82 +44,8 @@ public interface IEmbeddingClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>EmbeddedDocument</returns>
-    EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>ApiResponse of EmbeddedDocument</returns>
-    ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
-        
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of EmbeddedDocument</returns>
-    Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-    Task<ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
-
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>EmbeddedDocument</returns>
-    EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>ApiResponse of EmbeddedDocument</returns>
-    ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
-        
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of EmbeddedDocument</returns>
-    Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-    Task<ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
-
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
     /// <returns></returns>
-    void RemoveById(Guid id);
+    void Delete(Guid id);
 
     /// <summary>
     ///  
@@ -127,7 +53,7 @@ public interface IEmbeddingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id);
+    ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
     ///  
@@ -136,7 +62,7 @@ public interface IEmbeddingClient
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of void</returns>
-    Task RemoveByIdAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -145,85 +71,116 @@ public interface IEmbeddingClient
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> RemoveByIdWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="dataType"></param>
-    /// <returns></returns>
-    void RemoveByType(string dataType);
+    /// <param name="id"></param>
+    /// <returns>LLMTaskResponse</returns>
+    LLMTaskResponse Get(Guid id);
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="dataType"></param>
-    /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType);
+    /// <param name="id"></param>
+    /// <returns>ApiResponse of LLMTaskResponse</returns>
+    ApiResponse<LLMTaskResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="dataType"></param>
+    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of void</returns>
-    Task RemoveByTypeAsync(string dataType, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of LLMTaskResponse</returns>
+    Task<LLMTaskResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="dataType"></param>
+    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> RemoveByTypeWithHttpInfoAsync(string dataType, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+    Task<ApiResponse<LLMTaskResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="query"> (optional)</param>
-    /// <param name="dataType"> (optional)</param>
-    /// <param name="size"> (optional, default to 1)</param>
-    /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-    List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
+    /// <param name="id"></param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>LLMTaskResponse</returns>
+    LLMTaskResponse Put(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="query"> (optional)</param>
-    /// <param name="dataType"> (optional)</param>
-    /// <param name="size"> (optional, default to 1)</param>
-    /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-    ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
+    /// <param name="id"></param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>ApiResponse of LLMTaskResponse</returns>
+    ApiResponse<LLMTaskResponse> PutWithHttpInfo(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="query"> (optional)</param>
-    /// <param name="dataType"> (optional)</param>
-    /// <param name="size"> (optional, default to 1)</param>
+    /// <param name="id"></param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-    Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of LLMTaskResponse</returns>
+    Task<LLMTaskResponse> PutAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="query"> (optional)</param>
-    /// <param name="dataType"> (optional)</param>
-    /// <param name="size"> (optional, default to 1)</param>
+    /// <param name="id"></param>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-    Task<ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+    Task<ApiResponse<LLMTaskResponse>> PutWithHttpInfoAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>LLMTaskResponse</returns>
+    LLMTaskResponse Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <returns>ApiResponse of LLMTaskResponse</returns>
+    ApiResponse<LLMTaskResponse> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of LLMTaskResponse</returns>
+    Task<LLMTaskResponse> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createLLMTaskRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+    Task<ApiResponse<LLMTaskResponse>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -233,16 +190,16 @@ public interface IEmbeddingClient
     /// <summary>
     /// Client to interact with the API endpoints of the ai service.
     /// </summary>
-    public class EmbeddingClient : IEmbeddingClient
+    public class LLMTaskClient : ILLMTaskClient
     {
-        private __EmbeddingClient _internalClient;
+        private __LLMTaskClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public EmbeddingClient(string host, string? authorization = null)
+        public LLMTaskClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __EmbeddingClient(new Configuration
+                _internalClient = new __LLMTaskClient(new Configuration
                 {
                     BasePath = $"{host}/ai-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -250,14 +207,14 @@ public interface IEmbeddingClient
             }
             else
             {
-                _internalClient = new __EmbeddingClient(new Configuration
+                _internalClient = new __LLMTaskClient(new Configuration
                 {
                     BasePath = $"{host}/ai-api/v1",
                 });
             }
         }
 
-        public EmbeddingClient(Environment env, string? authorization = null)
+        public LLMTaskClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -305,162 +262,12 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
-        {
-            try
-            {
-                return _internalClient.Put(id, embeddedDocumentModel);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
-        {
-            try
-            {
-                return _internalClient.PutWithHttpInfo(id, embeddedDocumentModel);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PutAsync(id, embeddedDocumentModel, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PutWithHttpInfoAsync(id, embeddedDocumentModel, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
-        {
-            try
-            {
-                return _internalClient.Post(embeddedDocumentModel);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
-        {
-            try
-            {
-                return _internalClient.PostWithHttpInfo(embeddedDocumentModel);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PostAsync(embeddedDocumentModel, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PostWithHttpInfoAsync(embeddedDocumentModel, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <returns></returns>
-        public void RemoveById(Guid id)
+        public void Delete(Guid id)
         {
             try
             {
-                _internalClient.RemoveById(id);
+                _internalClient.Delete(id);
             }
             catch (ApiException e)
             {
@@ -474,11 +281,11 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id)
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.RemoveByIdWithHttpInfo(id);
+                return _internalClient.DeleteWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -493,11 +300,11 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task RemoveByIdAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.RemoveByIdAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -512,11 +319,11 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RemoveByIdWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.RemoveByIdWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -527,13 +334,13 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <returns></returns>
-        public void RemoveByType(string dataType)
+        /// <param name="id"></param>
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Get(Guid id)
         {
             try
             {
-                _internalClient.RemoveByType(dataType);
+                return _internalClient.Get(id);
             }
             catch (ApiException e)
             {
@@ -545,13 +352,13 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType)
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> GetWithHttpInfo(Guid id)
         {
             try
             {
-                return _internalClient.RemoveByTypeWithHttpInfo(dataType);
+                return _internalClient.GetWithHttpInfo(id);
             }
             catch (ApiException e)
             {
@@ -563,14 +370,14 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task RemoveByTypeAsync(string dataType, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LLMTaskResponse</returns>
+        public System.Threading.Tasks.Task<LLMTaskResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.RemoveByTypeAsync(dataType, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -582,14 +389,14 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RemoveByTypeWithHttpInfoAsync(string dataType, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.RemoveByTypeWithHttpInfoAsync(dataType, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -600,15 +407,14 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        public List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Put(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
         {
             try
             {
-                return _internalClient.Search(query, dataType, size);
+                return _internalClient.Put(id, createLLMTaskRequest);
             }
             catch (ApiException e)
             {
@@ -620,15 +426,14 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> PutWithHttpInfo(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
         {
             try
             {
-                return _internalClient.SearchWithHttpInfo(query, dataType, size);
+                return _internalClient.PutWithHttpInfo(id, createLLMTaskRequest);
             }
             catch (ApiException e)
             {
@@ -640,16 +445,15 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        public System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LLMTaskResponse</returns>
+        public System.Threading.Tasks.Task<LLMTaskResponse> PutAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.SearchAsync(query, dataType, size, cancellationToken: cancellationToken);
+                return _internalClient.PutAsync(id, createLLMTaskRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -661,16 +465,88 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> PutWithHttpInfoAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.SearchWithHttpInfoAsync(query, dataType, size, cancellationToken: cancellationToken);
+                return _internalClient.PutWithHttpInfoAsync(id, createLLMTaskRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
+        {
+            try
+            {
+                return _internalClient.Post(createLLMTaskRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfo(createLLMTaskRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LLMTaskResponse</returns>
+        public System.Threading.Tasks.Task<LLMTaskResponse> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostAsync(createLLMTaskRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PostWithHttpInfoAsync(createLLMTaskRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -687,7 +563,7 @@ public interface IEmbeddingClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IEmbeddingClientSync : IApiAccessor
+    internal interface __ILLMTaskClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -695,51 +571,9 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveById(Guid id, int operationIndex = 0);
+        void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -751,15 +585,15 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void RemoveByType(string dataType, int operationIndex = 0);
+        /// <returns>LLMTaskResponse</returns>
+        LLMTaskResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -768,20 +602,19 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType, int operationIndex = 0);
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        ApiResponse<LLMTaskResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
+        /// <returns>LLMTaskResponse</returns>
+        LLMTaskResponse Put(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -790,19 +623,38 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        ApiResponse<LLMTaskResponse> PutWithHttpInfo(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LLMTaskResponse</returns>
+        LLMTaskResponse Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        ApiResponse<LLMTaskResponse> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IEmbeddingClientAsync : IApiAccessor
+    internal interface __ILLMTaskClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -813,62 +665,10 @@ public interface IEmbeddingClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveByIdAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -881,7 +681,7 @@ public interface IEmbeddingClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveByIdWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -889,11 +689,11 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveByTypeAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of LLMTaskResponse</returns>
+        System.Threading.Tasks.Task<LLMTaskResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -902,11 +702,11 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveByTypeWithHttpInfoAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LLMTaskResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -914,13 +714,12 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of LLMTaskResponse</returns>
+        System.Threading.Tasks.Task<LLMTaskResponse> PutAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -929,20 +728,44 @@ public interface IEmbeddingClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LLMTaskResponse>> PutWithHttpInfoAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LLMTaskResponse</returns>
+        System.Threading.Tasks.Task<LLMTaskResponse> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LLMTaskResponse>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IEmbeddingClient : __IEmbeddingClientSync, __IEmbeddingClientAsync
+    internal interface __ILLMTaskClient : __ILLMTaskClientSync, __ILLMTaskClientAsync
     {
 
     }
@@ -950,24 +773,24 @@ public interface IEmbeddingClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __EmbeddingClient : __IEmbeddingClient
+    internal /*partial*/ class __LLMTaskClient : __ILLMTaskClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__EmbeddingClient"/> class.
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __EmbeddingClient() : this((string)null)
+        public __LLMTaskClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__EmbeddingClient"/> class.
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __EmbeddingClient(string basePath)
+        public __LLMTaskClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -980,12 +803,12 @@ public interface IEmbeddingClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__EmbeddingClient"/> class
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __EmbeddingClient(Simplic.OxS.SDK.Configuration configuration)
+        public __LLMTaskClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -999,13 +822,13 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__EmbeddingClient"/> class
+        /// Initializes a new instance of the <see cref="__LLMTaskClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __EmbeddingClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __LLMTaskClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -1063,12 +886,165 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns></returns>
+        public void Delete(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = PutWithHttpInfo(id, embeddedDocumentModel);
+            DeleteWithHttpInfo(id);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/LLMTask/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMTaskIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/LLMTask/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMTaskIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Get(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1077,10 +1053,167 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<LLMTaskResponse>("/LLMTask/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMTaskIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of LLMTaskResponse</returns>
+        public async System.Threading.Tasks.Task<LLMTaskResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<LLMTaskResponse>("/LLMTask/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMTaskIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Put(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = PutWithHttpInfo(id, createLLMTaskRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> PutWithHttpInfo(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1110,9 +1243,9 @@ public interface IEmbeddingClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = embeddedDocumentModel;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingIdPut";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1127,10 +1260,10 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<EmbeddedDocument>("/Embedding/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<LLMTaskResponse>("/LLMTask/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmbeddingIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1145,13 +1278,13 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public async System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LLMTaskResponse</returns>
+        public async System.Threading.Tasks.Task<LLMTaskResponse> PutAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = await PutWithHttpInfoAsync(id, embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = await PutWithHttpInfoAsync(id, createLLMTaskRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1160,11 +1293,11 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> PutWithHttpInfoAsync(Guid id, CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1195,9 +1328,9 @@ public interface IEmbeddingClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = embeddedDocumentModel;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingIdPut";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1212,11 +1345,11 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<EmbeddedDocument>("/Embedding/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<LLMTaskResponse>("/LLMTask/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmbeddingIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskIdPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1230,12 +1363,12 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>LLMTaskResponse</returns>
+        public LLMTaskResponse Post(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = PostWithHttpInfo(embeddedDocumentModel);
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = PostWithHttpInfo(createLLMTaskRequest);
             return localVarResponse.Data;
         }
 
@@ -1243,10 +1376,10 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>ApiResponse of LLMTaskResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> PostWithHttpInfo(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1275,9 +1408,9 @@ public interface IEmbeddingClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = embeddedDocumentModel;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingPost";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1292,10 +1425,10 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<EmbeddedDocument>("/Embedding", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<LLMTaskResponse>("/LLMTask", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmbeddingPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1309,13 +1442,13 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public async System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LLMTaskResponse</returns>
+        public async System.Threading.Tasks.Task<LLMTaskResponse> PostAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = await PostWithHttpInfoAsync(embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LLMTaskResponse> localVarResponse = await PostWithHttpInfoAsync(createLLMTaskRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1323,11 +1456,11 @@ public interface IEmbeddingClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="embeddedDocumentModel"> (optional)</param>
+        /// <param name="createLLMTaskRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LLMTaskResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LLMTaskResponse>> PostWithHttpInfoAsync(CreateLLMTaskRequest? createLLMTaskRequest = default(CreateLLMTaskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1357,9 +1490,9 @@ public interface IEmbeddingClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = embeddedDocumentModel;
+            localVarRequestOptions.Data = createLLMTaskRequest;
 
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingPost";
+            localVarRequestOptions.Operation = "LLMTaskClient.LLMTaskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1374,517 +1507,11 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<EmbeddedDocument>("/Embedding", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<LLMTaskResponse>("/LLMTask", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmbeddingPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void RemoveById(Guid id, int operationIndex = 0)
-        {
-            RemoveByIdWithHttpInfo(id);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id, int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingRemoveByIdIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/Embedding/remove-by-id/{id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingRemoveByIdIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveByIdAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await RemoveByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RemoveByIdWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingRemoveByIdIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/Embedding/remove-by-id/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingRemoveByIdIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void RemoveByType(string dataType, int operationIndex = 0)
-        {
-            RemoveByTypeWithHttpInfo(dataType);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType, int operationIndex = 0)
-        {
-            // verify the required parameter 'dataType' is set
-            if (dataType == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'dataType' when calling EmbeddingClient->EmbeddingRemoveByTypeDataTypeDelete");
-            }
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("dataType", Simplic.OxS.SDK.ClientUtils.ParameterToString(dataType)); // path parameter
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingRemoveByTypeDataTypeDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/Embedding/remove-by-type/{dataType}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingRemoveByTypeDataTypeDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveByTypeAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await RemoveByTypeWithHttpInfoAsync(dataType, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataType"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RemoveByTypeWithHttpInfoAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'dataType' is set
-            if (dataType == null)
-            {
-                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'dataType' when calling EmbeddingClient->EmbeddingRemoveByTypeDataTypeDelete");
-            }
-
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("dataType", Simplic.OxS.SDK.ClientUtils.ParameterToString(dataType)); // path parameter
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingRemoveByTypeDataTypeDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/Embedding/remove-by-type/{dataType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingRemoveByTypeDataTypeDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        public List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> localVarResponse = SearchWithHttpInfo(query, dataType, size);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (query != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "query", query));
-            }
-            if (dataType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dataType", dataType));
-            }
-            if (size != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "size", size));
-            }
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingSearchGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<EmbeddedDocument>>("/Embedding/search", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingSearchGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> localVarResponse = await SearchWithHttpInfoAsync(query, dataType, size, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="query"> (optional)</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="size"> (optional, default to 1)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (query != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "query", query));
-            }
-            if (dataType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "dataType", dataType));
-            }
-            if (size != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "size", size));
-            }
-
-            localVarRequestOptions.Operation = "EmbeddingClient.EmbeddingSearchGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmbeddedDocument>>("/Embedding/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmbeddingSearchGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMTaskPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

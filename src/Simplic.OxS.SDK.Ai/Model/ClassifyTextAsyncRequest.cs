@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ClassifyTextAsyncRequest
+    /// Represents an request to classify a text async.
     /// </summary>
     [DataContract(Name = "ClassifyTextAsyncRequest")]
     public partial class ClassifyTextAsyncRequest : IEquatable<ClassifyTextAsyncRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyTextAsyncRequest" /> class.
         /// </summary>
-        /// <param name="modelId">modelId.</param>
-        /// <param name="text">text.</param>
+        /// <param name="modelId">Gets or sets the id of the model, which will be used..</param>
+        /// <param name="text">Gets or sets the text to classify.</param>
         public ClassifyTextAsyncRequest(Guid modelId = default(Guid), string text = default(string))
         {
             this.ModelId = modelId;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets ModelId
+        /// Gets or sets the id of the model, which will be used.
         /// </summary>
+        /// <value>Gets or sets the id of the model, which will be used.</value>
         [DataMember(Name = "modelId", EmitDefaultValue = false)]
         public Guid ModelId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text to classify
         /// </summary>
+        /// <value>Gets or sets the text to classify</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 

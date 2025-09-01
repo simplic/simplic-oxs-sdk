@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// Defines MessageType
+    /// Represents a message type
     /// </summary>
+    /// <value>Represents a message type</value>
     public enum MessageType
     {
         /// <summary>

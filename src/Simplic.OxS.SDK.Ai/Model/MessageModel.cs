@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// MessageModel
+    /// Represents a conversation message
     /// </summary>
     [DataContract(Name = "MessageModel")]
     public partial class MessageModel : IEquatable<MessageModel>, IValidatableObject
@@ -42,11 +42,11 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="senderId">senderId.</param>
-        /// <param name="dateTime">dateTime.</param>
-        /// <param name="body">body.</param>
-        /// <param name="modelReference">modelReference.</param>
+        /// <param name="id">Gets or sets the message id.</param>
+        /// <param name="senderId">Gets or sets the sender. Ox user id, null for llm model.</param>
+        /// <param name="dateTime">Gets or sets the datetime the message was created.</param>
+        /// <param name="body">Gets or sets the message body.</param>
+        /// <param name="modelReference">Gets or sets an optional model reference for the message.</param>
         /// <param name="type">type.</param>
         public MessageModel(Guid id = default(Guid), Guid? senderId = default(Guid?), DateTime dateTime = default(DateTime), string body = default(string), string modelReference = default(string), MessageType? type = default(MessageType?))
         {
@@ -59,32 +59,37 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the message id
         /// </summary>
+        /// <value>Gets or sets the message id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets SenderId
+        /// Gets or sets the sender. Ox user id, null for llm model
         /// </summary>
+        /// <value>Gets or sets the sender. Ox user id, null for llm model</value>
         [DataMember(Name = "senderId", EmitDefaultValue = true)]
         public Guid? SenderId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DateTime
+        /// Gets or sets the datetime the message was created
         /// </summary>
+        /// <value>Gets or sets the datetime the message was created</value>
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
         public DateTime DateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets Body
+        /// Gets or sets the message body
         /// </summary>
+        /// <value>Gets or sets the message body</value>
         [DataMember(Name = "body", EmitDefaultValue = true)]
         public string Body { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModelReference
+        /// Gets or sets an optional model reference for the message
         /// </summary>
+        /// <value>Gets or sets an optional model reference for the message</value>
         [DataMember(Name = "modelReference", EmitDefaultValue = true)]
         public string ModelReference { get; set; }
 

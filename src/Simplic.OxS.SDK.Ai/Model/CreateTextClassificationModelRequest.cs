@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// CreateTextClassificationModelRequest
+    /// Represents an request to create a new model to text classification.
     /// </summary>
     [DataContract(Name = "CreateTextClassificationModelRequest")]
     public partial class CreateTextClassificationModelRequest : IEquatable<CreateTextClassificationModelRequest>, IValidatableObject
@@ -36,12 +36,12 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTextClassificationModelRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="type">type.</param>
-        /// <param name="state">state.</param>
-        /// <param name="trainingFormatData">trainingFormatData.</param>
-        /// <param name="delimiter">delimiter.</param>
-        /// <param name="labelDelimiter">labelDelimiter.</param>
+        /// <param name="name">Gets or sets the name of the model base..</param>
+        /// <param name="type">Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification.</param>
+        /// <param name="state">Gets or sets the state of the base model.  new, training, completed and failed.s.</param>
+        /// <param name="trainingFormatData">Gets or sets the format of the training data.  e.g. csv..</param>
+        /// <param name="delimiter">Gets or sets the delimiter for the data..</param>
+        /// <param name="labelDelimiter">Gets or sets the delimiter for the labels..</param>
         public CreateTextClassificationModelRequest(string name = default(string), string type = default(string), string state = default(string), string trainingFormatData = default(string), string delimiter = default(string), string labelDelimiter = default(string))
         {
             this.Name = name;
@@ -53,38 +53,44 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the model base.
         /// </summary>
+        /// <value>Gets or sets the name of the model base.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification
         /// </summary>
+        /// <value>Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets State
+        /// Gets or sets the state of the base model.  new, training, completed and failed.s
         /// </summary>
+        /// <value>Gets or sets the state of the base model.  new, training, completed and failed.s</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
-        /// Gets or Sets TrainingFormatData
+        /// Gets or sets the format of the training data.  e.g. csv.
         /// </summary>
+        /// <value>Gets or sets the format of the training data.  e.g. csv.</value>
         [DataMember(Name = "trainingFormatData", EmitDefaultValue = true)]
         public string TrainingFormatData { get; set; }
 
         /// <summary>
-        /// Gets or Sets Delimiter
+        /// Gets or sets the delimiter for the data.
         /// </summary>
+        /// <value>Gets or sets the delimiter for the data.</value>
         [DataMember(Name = "delimiter", EmitDefaultValue = true)]
         public string Delimiter { get; set; }
 
         /// <summary>
-        /// Gets or Sets LabelDelimiter
+        /// Gets or sets the delimiter for the labels.
         /// </summary>
+        /// <value>Gets or sets the delimiter for the labels.</value>
         [DataMember(Name = "labelDelimiter", EmitDefaultValue = true)]
         public string LabelDelimiter { get; set; }
 

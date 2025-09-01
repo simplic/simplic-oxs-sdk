@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ClassifyTextAsyncResponse
+    /// Represents an response of a text classification action.
     /// </summary>
     [DataContract(Name = "ClassifyTextAsyncResponse")]
     public partial class ClassifyTextAsyncResponse : IEquatable<ClassifyTextAsyncResponse>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyTextAsyncResponse" /> class.
         /// </summary>
-        /// <param name="jobId">jobId.</param>
-        /// <param name="state">state.</param>
-        /// <param name="stateText">stateText.</param>
-        /// <param name="results">results.</param>
+        /// <param name="jobId">Gets or sets the job id.  Its the id to check the aws query..</param>
+        /// <param name="state">Gets or sets the state of the job.  e.g. processing, complete or failed..</param>
+        /// <param name="stateText">Gets or sets a state text with more informations about the state..</param>
+        /// <param name="results">Gets or sets a list of the results..</param>
         public ClassifyTextAsyncResponse(string jobId = default(string), string state = default(string), string stateText = default(string), List<TextClassificationResultResponse> results = default(List<TextClassificationResultResponse>))
         {
             this.JobId = jobId;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets JobId
+        /// Gets or sets the job id.  Its the id to check the aws query.
         /// </summary>
+        /// <value>Gets or sets the job id.  Its the id to check the aws query.</value>
         [DataMember(Name = "jobId", EmitDefaultValue = true)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// Gets or Sets State
+        /// Gets or sets the state of the job.  e.g. processing, complete or failed.
         /// </summary>
+        /// <value>Gets or sets the state of the job.  e.g. processing, complete or failed.</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
-        /// Gets or Sets StateText
+        /// Gets or sets a state text with more informations about the state.
         /// </summary>
+        /// <value>Gets or sets a state text with more informations about the state.</value>
         [DataMember(Name = "stateText", EmitDefaultValue = true)]
         public string StateText { get; set; }
 
         /// <summary>
-        /// Gets or Sets Results
+        /// Gets or sets a list of the results.
         /// </summary>
+        /// <value>Gets or sets a list of the results.</value>
         [DataMember(Name = "results", EmitDefaultValue = true)]
         public List<TextClassificationResultResponse> Results { get; set; }
 

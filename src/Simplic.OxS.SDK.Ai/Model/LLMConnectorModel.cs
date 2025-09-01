@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// LLMConnectorModel
+    /// Contains the settings for the llm connector
     /// </summary>
     [DataContract(Name = "LLMConnectorModel")]
     public partial class LLMConnectorModel : IEquatable<LLMConnectorModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="LLMConnectorModel" /> class.
         /// </summary>
-        /// <param name="disable">disable (default to false).</param>
-        public LLMConnectorModel(bool disable = false)
+        /// <param name="disable">Gets or sets whether disabling the embedding model (default to true).</param>
+        public LLMConnectorModel(bool disable = true)
         {
             this.Disable = disable;
         }
 
         /// <summary>
-        /// Gets or Sets Disable
+        /// Gets or sets whether disabling the embedding model
         /// </summary>
+        /// <value>Gets or sets whether disabling the embedding model</value>
         [DataMember(Name = "disable", EmitDefaultValue = true)]
         public bool Disable { get; set; }
 

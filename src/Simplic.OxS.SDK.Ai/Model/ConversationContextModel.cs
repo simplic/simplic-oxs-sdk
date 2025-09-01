@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ConversationContextModel
+    /// Represents a conversation context
     /// </summary>
     [DataContract(Name = "ConversationContextModel")]
     public partial class ConversationContextModel : IEquatable<ConversationContextModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationContextModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="contextMessage">contextMessage.</param>
+        /// <param name="id">Gets or sets the id of the referenced context..</param>
+        /// <param name="name">Gets or sets the name of the context system.</param>
+        /// <param name="contextMessage">Gets or sets a message, that represents a manual context.  If this is set, togehter with Name and Id, both will be passed to the AI.</param>
         public ConversationContextModel(Guid id = default(Guid), string name = default(string), string contextMessage = default(string))
         {
             this.Id = id;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the referenced context.
         /// </summary>
+        /// <value>Gets or sets the id of the referenced context.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the context system
         /// </summary>
+        /// <value>Gets or sets the name of the context system</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContextMessage
+        /// Gets or sets a message, that represents a manual context.  If this is set, togehter with Name and Id, both will be passed to the AI
         /// </summary>
+        /// <value>Gets or sets a message, that represents a manual context.  If this is set, togehter with Name and Id, both will be passed to the AI</value>
         [DataMember(Name = "contextMessage", EmitDefaultValue = true)]
         public string ContextMessage { get; set; }
 
