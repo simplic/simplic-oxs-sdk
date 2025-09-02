@@ -36,19 +36,27 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadingAidBookingTagResponse" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="displayName">displayName.</param>
         /// <param name="displayKey">displayKey.</param>
         /// <param name="internalName">internalName.</param>
         /// <param name="hexColor">hexColor.</param>
         /// <param name="functions">functions.</param>
-        public LoadingAidBookingTagResponse(string displayName = default(string), string displayKey = default(string), string internalName = default(string), string hexColor = default(string), List<string> functions = default(List<string>))
+        public LoadingAidBookingTagResponse(Guid id = default(Guid), string displayName = default(string), string displayKey = default(string), string internalName = default(string), string hexColor = default(string), List<string> functions = default(List<string>))
         {
+            this.Id = id;
             this.DisplayName = displayName;
             this.DisplayKey = displayKey;
             this.InternalName = internalName;
             this.HexColor = hexColor;
             this.Functions = functions;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
@@ -88,6 +96,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class LoadingAidBookingTagResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("  InternalName: ").Append(InternalName).Append("\n");
@@ -129,6 +138,11 @@ namespace Simplic.OxS.SDK.Storage.Management
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
@@ -165,6 +179,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.DisplayName != null)
                 {
                     hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();

@@ -9,6 +9,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/storage-management-api/v1*
 | [**Delete**](LoadingAidBookingClient.md#loadingaidbookingiddelete) | **DELETE** /LoadingAidBooking/{id} |  |
 | [**Get**](LoadingAidBookingClient.md#loadingaidbookingidget) | **GET** /LoadingAidBooking/{id} |  |
 | [**Patch**](LoadingAidBookingClient.md#loadingaidbookingidpatch) | **PATCH** /LoadingAidBooking/{id} |  |
+| [**TagsTagId**](LoadingAidBookingClient.md#loadingaidbookingidtagstagiddelete) | **DELETE** /LoadingAidBooking/{id}/tags/{tagId} |  |
+| [**TagsTagId**](LoadingAidBookingClient.md#loadingaidbookingidtagstagidput) | **PUT** /LoadingAidBooking/{id}/tags/{tagId} |  |
 | [**Post**](LoadingAidBookingClient.md#loadingaidbookingpost) | **POST** /LoadingAidBooking |  |
 | [**Reject**](LoadingAidBookingClient.md#loadingaidbookingrejectidpost) | **POST** /LoadingAidBooking/reject/{id} |  |
 | [**Shipment**](LoadingAidBookingClient.md#loadingaidbookingshipmentpost) | **POST** /LoadingAidBooking/shipment |  |
@@ -495,6 +497,200 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="loadingaidbookingidtagstagiddelete"></a>
+# **TagsTagId**
+> void TagsTagId (Guid id, Guid tagId)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Storage.Management;
+
+namespace Example
+{
+    public class TagsTagIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/storage-management-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new LoadingAidBookingClient(config);
+            var id = "id_example";  // Guid | 
+            var tagId = "tagId_example";  // Guid | 
+
+            try
+            {
+                apiInstance.TagsTagId(id, tagId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling LoadingAidBookingClient.TagsTagId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TagsTagIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.TagsTagIdWithHttpInfo(id, tagId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling LoadingAidBookingClient.TagsTagIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+| **tagId** | **Guid** |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="loadingaidbookingidtagstagidput"></a>
+# **TagsTagId**
+> void TagsTagId (Guid id, Guid tagId)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Storage.Management;
+
+namespace Example
+{
+    public class TagsTagIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/storage-management-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new LoadingAidBookingClient(config);
+            var id = "id_example";  // Guid | 
+            var tagId = "tagId_example";  // Guid | 
+
+            try
+            {
+                apiInstance.TagsTagId(id, tagId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling LoadingAidBookingClient.TagsTagId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TagsTagIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.TagsTagIdWithHttpInfo(id, tagId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling LoadingAidBookingClient.TagsTagIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+| **tagId** | **Guid** |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **DisplayKey** | **string** |  | [optional] 
 **InternalName** | **string** |  | [optional] 
