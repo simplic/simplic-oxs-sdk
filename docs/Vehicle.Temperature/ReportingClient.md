@@ -4,7 +4,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-temperature-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DownloadReport**](ReportingClient.md#reportingdownloadreportpost) | **POST** /Reporting/download-report |  |
+| [**ReportingDownloadReportPost**](ReportingClient.md#reportingdownloadreportpost) | **POST** /Reporting/download-report |  |
 | [**GenerateRouteReport**](ReportingClient.md#reportinggenerateroutereportvehicleidget) | **GET** /Reporting/generate-route-report/{vehicleId} |  |
 | [**GenerateTemperatureReport**](ReportingClient.md#reportinggeneratetemperaturereportvehicleidget) | **GET** /Reporting/generate-temperature-report/{vehicleId} |  |
 | [**GetMap**](ReportingClient.md#reportinggetmapreportinstanceidget) | **GET** /Reporting/get-map/{reportInstanceId} |  |
@@ -12,8 +12,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/vehicle-temperature-api/v1*
 | [**SendReport**](ReportingClient.md#reportingsendreportpost) | **POST** /Reporting/send-report |  |
 
 <a id="reportingdownloadreportpost"></a>
-# **DownloadReport**
-> void DownloadReport (DownloadReportRequest? downloadReportRequest = null)
+# **ReportingDownloadReportPost**
+> byte[] ReportingDownloadReportPost (DownloadReportRequest? downloadReportRequest = null)
 
 
 
@@ -26,12 +26,16 @@ using Simplic.OxS.SDK.Vehicle.Temperature;
 
 namespace Example
 {
-    public class DownloadReportExample
+    public class ReportingDownloadReportPostExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -42,11 +46,12 @@ namespace Example
 
             try
             {
-                apiInstance.DownloadReport(downloadReportRequest);
+                byte[] result = apiInstance.ReportingDownloadReportPost(downloadReportRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ReportingClient.DownloadReport: " + e.Message);
+                Debug.Print("Exception when calling ReportingClient.ReportingDownloadReportPost: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -61,7 +66,10 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.DownloadReportWithHttpInfo(downloadReportRequest);
+    ApiResponse<byte[]> response = apiInstance.DownloadReportWithHttpInfo(downloadReportRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -79,22 +87,22 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+**byte[]**
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/pdf, text/plain, application/json, text/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -121,6 +129,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -180,7 +192,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -191,7 +203,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -218,6 +230,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -279,7 +295,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -290,7 +306,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -317,6 +333,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -374,7 +394,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -385,7 +405,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -412,6 +432,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -458,7 +482,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -469,7 +493,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -496,6 +520,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/vehicle-temperature-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
             // Configure API key authorization: Bearer
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -547,7 +575,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -558,7 +586,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 

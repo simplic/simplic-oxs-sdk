@@ -44,16 +44,16 @@ public interface IReportingClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="downloadReportRequest"> (optional)</param>
-    /// <returns></returns>
-    void DownloadReport(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?));
+    /// <returns>byte[]</returns>
+    byte[] ReportingDownloadReportPost(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="downloadReportRequest"> (optional)</param>
-    /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?));
+    /// <returns>ApiResponse of byte[]</returns>
+    ApiResponse<byte[]> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?));
         
     /// <summary>
     ///  
@@ -61,8 +61,8 @@ public interface IReportingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="downloadReportRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of void</returns>
-    Task DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of byte[]</returns>
+    Task<byte[]> DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -70,8 +70,8 @@ public interface IReportingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="downloadReportRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (byte[])</returns>
+    Task<ApiResponse<byte[]>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -356,12 +356,12 @@ public interface IReportingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
-        /// <returns></returns>
-        public void DownloadReport(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?))
+        /// <returns>byte[]</returns>
+        public byte[] ReportingDownloadReportPost(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?))
         {
             try
             {
-                _internalClient.DownloadReport(downloadReportRequest);
+                return _internalClient.ReportingDownloadReportPost(downloadReportRequest);
             }
             catch (ApiException e)
             {
@@ -374,8 +374,8 @@ public interface IReportingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?))
+        /// <returns>ApiResponse of byte[]</returns>
+        public Simplic.OxS.SDK.ApiResponse<byte[]> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?))
         {
             try
             {
@@ -393,8 +393,8 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of byte[]</returns>
+        public System.Threading.Tasks.Task<byte[]> DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -412,8 +412,8 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<byte[]>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -836,8 +836,8 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DownloadReport(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0);
+        /// <returns>byte[]</returns>
+        byte[] ReportingDownloadReportPost(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -848,8 +848,8 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -983,8 +983,8 @@ public interface IReportingClient
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -996,8 +996,8 @@ public interface IReportingClient
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1265,10 +1265,11 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DownloadReport(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0)
+        /// <returns>byte[]</returns>
+        public byte[] ReportingDownloadReportPost(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0)
         {
-            DownloadReportWithHttpInfo(downloadReportRequest);
+            Simplic.OxS.SDK.ApiResponse<byte[]> localVarResponse = DownloadReportWithHttpInfo(downloadReportRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1277,8 +1278,8 @@ public interface IReportingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of byte[]</returns>
+        public Simplic.OxS.SDK.ApiResponse<byte[]> DownloadReportWithHttpInfo(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1290,6 +1291,7 @@ public interface IReportingClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/pdf",
                 "text/plain",
                 "application/json",
                 "text/json"
@@ -1312,6 +1314,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingDownloadReportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1319,7 +1326,7 @@ public interface IReportingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/Reporting/download-report", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<byte[]>("/Reporting/download-report", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ReportingDownloadReportPost", localVarResponse);
@@ -1339,10 +1346,11 @@ public interface IReportingClient
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> DownloadReportAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DownloadReportWithHttpInfoAsync(downloadReportRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<byte[]> localVarResponse = await DownloadReportWithHttpInfoAsync(downloadReportRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1352,8 +1360,8 @@ public interface IReportingClient
         /// <param name="downloadReportRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<byte[]>> DownloadReportWithHttpInfoAsync(DownloadReportRequest? downloadReportRequest = default(DownloadReportRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1366,6 +1374,7 @@ public interface IReportingClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/pdf",
                 "text/plain",
                 "application/json",
                 "text/json"
@@ -1388,6 +1397,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingDownloadReportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1395,7 +1409,7 @@ public interface IReportingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Reporting/download-report", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<byte[]>("/Reporting/download-report", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1472,6 +1486,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGenerateRouteReportVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1558,6 +1577,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGenerateRouteReportVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1648,6 +1672,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGenerateTemperatureReportVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1740,6 +1769,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGenerateTemperatureReportVehicleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1829,6 +1863,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGetMapReportInstanceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1920,6 +1959,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGetMapReportInstanceIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -1988,6 +2032,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGetRecipientsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2058,6 +2107,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingGetRecipientsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2132,6 +2186,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingSendReportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
@@ -2208,6 +2267,11 @@ public interface IReportingClient
             localVarRequestOptions.Operation = "ReportingClient.ReportingSendReportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
             // authentication (Bearer) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
