@@ -28,9 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a mode of assigning transaction items to operation transaction items.  &lt;br&gt;  This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  
+    /// Represents a mode of assigning transaction items to operation transaction items.     This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  
     /// </summary>
-    /// <value>Represents a mode of assigning transaction items to operation transaction items.  &lt;br&gt;  This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  </value>
+    /// <value>Represents a mode of assigning transaction items to operation transaction items.     This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  </value>
     public enum ModelAssignmentMode
     {
         /// <summary>

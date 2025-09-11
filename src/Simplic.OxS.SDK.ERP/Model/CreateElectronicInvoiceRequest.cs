@@ -60,13 +60,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateElectronicInvoiceRequest" /> class.
         /// </summary>
-        /// <param name="pdf">Gets or sets the input PDF invoice file.  &lt;br&gt;  This is only required if ElectronicInvoiceType is set to ZUGFeRD.  .</param>
+        /// <param name="pdf">Gets or sets the input PDF invoice file.     This is only required if ElectronicInvoiceType is set to ZUGFeRD.  .</param>
         /// <param name="profile">profile.</param>
         /// <param name="varVersion">varVersion.</param>
         /// <param name="roundingMode">roundingMode.</param>
         /// <param name="electronicInvoiceType">electronicInvoiceType.</param>
         /// <param name="addPeppolAddress">Gets or sets whether to add a PEPPOL address for buyer and seller..</param>
-        /// <param name="leitwegIdRequired">Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   (default to false).</param>
+        /// <param name="leitwegIdRequired">Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.     If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   (default to false).</param>
         /// <param name="invoiceData">invoiceData.</param>
         public CreateElectronicInvoiceRequest(byte[] pdf = default(byte[]), Profile? profile = default(Profile?), ZUGFeRDVersion? varVersion = default(ZUGFeRDVersion?), RoundingMode? roundingMode = default(RoundingMode?), ElectronicInvoiceType? electronicInvoiceType = default(ElectronicInvoiceType?), bool addPeppolAddress = default(bool), bool leitwegIdRequired = false, InvoiceDataRequest invoiceData = default(InvoiceDataRequest))
         {
@@ -81,9 +81,9 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets the input PDF invoice file.  &lt;br&gt;  This is only required if ElectronicInvoiceType is set to ZUGFeRD.  
+        /// Gets or sets the input PDF invoice file.     This is only required if ElectronicInvoiceType is set to ZUGFeRD.  
         /// </summary>
-        /// <value>Gets or sets the input PDF invoice file.  &lt;br&gt;  This is only required if ElectronicInvoiceType is set to ZUGFeRD.  </value>
+        /// <value>Gets or sets the input PDF invoice file.     This is only required if ElectronicInvoiceType is set to ZUGFeRD.  </value>
         [DataMember(Name = "pdf", EmitDefaultValue = true)]
         public byte[] Pdf { get; set; }
 
@@ -95,9 +95,9 @@ namespace Simplic.OxS.SDK.ERP
         public bool AddPeppolAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
+        /// Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.     If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
         /// </summary>
-        /// <value>Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.  &lt;br&gt;  If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
+        /// <value>Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.     If true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
         [DataMember(Name = "leitwegIdRequired", EmitDefaultValue = true)]
         public bool LeitwegIdRequired { get; set; }
 

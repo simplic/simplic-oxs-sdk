@@ -44,7 +44,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="saleTermsOfPayment">saleTermsOfPayment.</param>
         /// <param name="purchaseTermsOfPayment">purchaseTermsOfPayment.</param>
         /// <param name="taxGroup">taxGroup.</param>
-        /// <param name="addresses">Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  .</param>
+        /// <param name="addresses">Gets or sets the addresses.     A personal account can contain multiple addresses.  .</param>
         /// <param name="createDateTime">Gets or sets the create date time..</param>
         /// <param name="createUserId">Gets or sets the create user id..</param>
         /// <param name="createUserName">Gets or sets the create user name..</param>
@@ -123,9 +123,9 @@ namespace Simplic.OxS.SDK.ERP
         public TaxGroupModel TaxGroup { get; set; }
 
         /// <summary>
-        /// Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  
+        /// Gets or sets the addresses.     A personal account can contain multiple addresses.  
         /// </summary>
-        /// <value>Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.  </value>
+        /// <value>Gets or sets the addresses.     A personal account can contain multiple addresses.  </value>
         [DataMember(Name = "addresses", EmitDefaultValue = true)]
         public List<PersonalAccountAddressModel> Addresses { get; set; }
 

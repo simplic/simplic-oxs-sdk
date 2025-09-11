@@ -36,15 +36,39 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="DebugInfo" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected DebugInfo() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebugInfo" /> class.
+        /// </summary>
+        /// <param name="time">time.</param>
+        /// <param name="node">node (required).</param>
         /// <param name="error">error.</param>
-        /// <param name="node">node.</param>
         /// <param name="stackTrace">stackTrace.</param>
-        public DebugInfo(string error = default(string), NodeScope node = default(NodeScope), List<NodeScope> stackTrace = default(List<NodeScope>))
+        public DebugInfo(DateTime time = default(DateTime), NodeScope node = default(NodeScope), string error = default(string), Dictionary<string, NodeScope> stackTrace = default(Dictionary<string, NodeScope>))
         {
-            this.Error = error;
+            // to ensure "node" is required (not null)
+            if (node == null)
+            {
+                throw new ArgumentNullException("node is a required property for DebugInfo and cannot be null");
+            }
             this.Node = node;
+            this.Time = time;
+            this.Error = error;
             this.StackTrace = stackTrace;
         }
+
+        /// <summary>
+        /// Gets or Sets Time
+        /// </summary>
+        [DataMember(Name = "time", EmitDefaultValue = false)]
+        public DateTime Time { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Node
+        /// </summary>
+        [DataMember(Name = "node", IsRequired = true, EmitDefaultValue = true)]
+        public NodeScope Node { get; set; }
 
         /// <summary>
         /// Gets or Sets Error
@@ -53,16 +77,10 @@ namespace Simplic.OxS.SDK.Flow
         public string Error { get; set; }
 
         /// <summary>
-        /// Gets or Sets Node
-        /// </summary>
-        [DataMember(Name = "node", EmitDefaultValue = false)]
-        public NodeScope Node { get; set; }
-
-        /// <summary>
         /// Gets or Sets StackTrace
         /// </summary>
         [DataMember(Name = "stackTrace", EmitDefaultValue = true)]
-        public List<NodeScope> StackTrace { get; set; }
+        public Dictionary<string, NodeScope> StackTrace { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,8 +90,9 @@ namespace Simplic.OxS.SDK.Flow
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DebugInfo {\n");
-            sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
             sb.Append("  Node: ").Append(Node).Append("\n");
+            sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("  StackTrace: ").Append(StackTrace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -111,14 +130,19 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 ) && 
                 (
                     this.Node == input.Node ||
                     (this.Node != null &&
                     this.Node.Equals(input.Node))
+                ) && 
+                (
+                    this.Error == input.Error ||
+                    (this.Error != null &&
+                    this.Error.Equals(input.Error))
                 ) && 
                 (
                     this.StackTrace == input.StackTrace ||
@@ -137,13 +161,17 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Error != null)
+                if (this.Time != null)
                 {
-                    hashCode = (hashCode * 59) + this.Error.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Time.GetHashCode();
                 }
                 if (this.Node != null)
                 {
                     hashCode = (hashCode * 59) + this.Node.GetHashCode();
+                }
+                if (this.Error != null)
+                {
+                    hashCode = (hashCode * 59) + this.Error.GetHashCode();
                 }
                 if (this.StackTrace != null)
                 {

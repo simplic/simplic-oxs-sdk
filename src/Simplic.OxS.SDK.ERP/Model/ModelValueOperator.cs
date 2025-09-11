@@ -28,9 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a mode of applying operation transaction items to their assigned transaction items.  &lt;br&gt;  This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \&quot;Failed to load API definition\&quot; error.  
+    /// Represents a mode of applying operation transaction items to their assigned transaction items.     This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \&quot;Failed to load API definition\&quot; error.  
     /// </summary>
-    /// <value>Represents a mode of applying operation transaction items to their assigned transaction items.  &lt;br&gt;  This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \&quot;Failed to load API definition\&quot; error.  </value>
+    /// <value>Represents a mode of applying operation transaction items to their assigned transaction items.     This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \&quot;Failed to load API definition\&quot; error.  </value>
     public enum ModelValueOperator
     {
         /// <summary>

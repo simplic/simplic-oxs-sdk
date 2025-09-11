@@ -28,7 +28,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -125,7 +125,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -203,7 +203,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -274,7 +274,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -364,7 +364,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -466,7 +466,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -546,7 +546,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -589,7 +589,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -679,7 +679,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -769,7 +769,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -859,7 +859,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -961,7 +961,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1041,7 +1041,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -1084,7 +1084,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1163,7 +1163,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1243,7 +1243,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1344,7 +1344,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1434,7 +1434,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1536,7 +1536,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1616,7 +1616,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -1659,7 +1659,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1749,7 +1749,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1851,7 +1851,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1951,7 +1951,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2031,7 +2031,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -2074,7 +2074,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2156,7 +2156,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2257,7 +2257,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2349,7 +2349,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2444,7 +2444,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2523,7 +2523,7 @@
                 "summary": "Retrieves a data page of personal accounts for comboboxes.",
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2622,7 +2622,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2724,7 +2724,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2804,7 +2804,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -2847,7 +2847,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2937,7 +2937,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3039,7 +3039,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3119,7 +3119,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -3162,7 +3162,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3252,7 +3252,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3354,7 +3354,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3434,7 +3434,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -3477,7 +3477,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3567,7 +3567,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3669,7 +3669,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3749,7 +3749,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -3820,7 +3820,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3910,7 +3910,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -3991,7 +3991,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4071,7 +4071,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4161,7 +4161,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4250,7 +4250,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4349,7 +4349,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4451,7 +4451,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4531,7 +4531,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -4574,7 +4574,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4664,7 +4664,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4766,7 +4766,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -4846,7 +4846,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "OK"
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -4889,7 +4889,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -5060,7 +5060,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for a behavior definition. A behavior definition is a pair of an expression and a target that is modified by the expression result.\r\n<br>\r\nUsing behavior definitions the operation performed by applying an operation item can depend on the set of items assigned to it. For example if a discount only applies if the price of all assigned items is above a minimum threshold.\r\nA target can be a property whose value is set as the expression result.\r\nThe set of items the operation item applies to can be filtered. If the assigned items are targeted, the expression is interpreted as a condition to filter the items by.\r\n"
+                "description": "Represents the shared model for a behavior definition. A behavior definition is a pair of an expression and a target that is modified by the expression result.\r\n\n\r\nUsing behavior definitions the operation performed by applying an operation item can depend on the set of items assigned to it. For example if a discount only applies if the price of all assigned items is above a minimum threshold.\r\nA target can be a property whose value is set as the expression result.\r\nThe set of items the operation item applies to can be filtered. If the assigned items are targeted, the expression is interpreted as a condition to filter the items by.\r\n"
             },
             "BehaviorDefinitionRequest": {
                 "type": "object",
@@ -5576,7 +5576,7 @@
                 "properties": {
                     "pdf": {
                         "type": "string",
-                        "description": "Gets or sets the input PDF invoice file.\r\n<br>\r\nThis is only required if ElectronicInvoiceType is set to ZUGFeRD.\r\n",
+                        "description": "Gets or sets the input PDF invoice file.\r\n\n\r\nThis is only required if ElectronicInvoiceType is set to ZUGFeRD.\r\n",
                         "format": "byte",
                         "nullable": true
                     },
@@ -5598,7 +5598,7 @@
                     },
                     "leitwegIdRequired": {
                         "type": "boolean",
-                        "description": "Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.\r\n<br>\r\nIf true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
+                        "description": "Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.\r\n\n\r\nIf true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
                         "default": false
                     },
                     "invoiceData": {
@@ -5717,7 +5717,7 @@
                     },
                     "termsOfPaymentId": {
                         "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n<br>\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
                         "format": "uuid"
                     },
                     "paymentMethodId": {
@@ -6988,7 +6988,7 @@
                     },
                     "buyerReference": {
                         "type": "string",
-                        "description": "Gets or sets the buyer reference.\r\n<br>\r\nThis is where the Leitweg-ID for German public institution invoices needs to be passed. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
+                        "description": "Gets or sets the buyer reference.\r\n\n\r\nThis is where the Leitweg-ID for German public institution invoices needs to be passed. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
                         "nullable": true
                     },
                     "buyer": {
@@ -7079,7 +7079,7 @@
                     },
                     "totalPriceNetBase": {
                         "type": "number",
-                        "description": "Gets or sets the total price excluding discounts and surcharges.\r\n<br>\r\nTotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.\r\n",
+                        "description": "Gets or sets the total price excluding discounts and surcharges.\r\n\n\r\nTotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.\r\n",
                         "format": "double",
                         "nullable": true
                     },
@@ -7152,7 +7152,7 @@
                     2
                 ],
                 "type": "integer",
-                "description": "Represents a mode of assigning transaction items to operation transaction items.\r\n<br>\r\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.\r\n",
+                "description": "Represents a mode of assigning transaction items to operation transaction items.\r\n\n\r\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.\r\n",
                 "format": "int32"
             },
             "ModelValueOperator": {
@@ -7161,7 +7161,7 @@
                     1
                 ],
                 "type": "integer",
-                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\r\n<br>\r\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.\r\n",
+                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\r\n\n\r\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.\r\n",
                 "format": "int32"
             },
             "OperationItemCombinationMode": {
@@ -7572,7 +7572,7 @@
                         "items": {
                             "$ref": "#/components/schemas/PersonalAccountAddressModel"
                         },
-                        "description": "Gets or sets the addresses.\r\n<br>\r\nA personal account can contain multiple addresses.\r\n",
+                        "description": "Gets or sets the addresses.\r\n\n\r\nA personal account can contain multiple addresses.\r\n",
                         "nullable": true
                     },
                     "createDateTime": {
@@ -8277,7 +8277,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n<br>\r\nExamples for states are: outgoing, incoming\r\n",
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
                         "nullable": true
                     },
                     "formattedText": {
@@ -8500,7 +8500,7 @@
                     },
                     "amount": {
                         "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n<br>\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
                         "format": "double",
                         "nullable": true
                     },
@@ -8577,7 +8577,7 @@
                         "items": {
                             "$ref": "#/components/schemas/StringTransactionPriceObjectModelKeyValuePair"
                         },
-                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.\r\n<br>\r\nEach tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.\r\n",
+                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.\r\n\n\r\nEach tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.\r\n",
                         "nullable": true
                     },
                     "quantity": {
@@ -8651,7 +8651,7 @@
                     },
                     "amount": {
                         "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n<br>\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
                         "format": "double",
                         "nullable": true
                     },
@@ -9008,7 +9008,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states the transaction is in.\r\n<br>\r\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting\r\n",
+                        "description": "Gets or sets a set of states the transaction is in.\r\n\n\r\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting\r\n",
                         "nullable": true
                     },
                     "manualVat": {
@@ -9083,7 +9083,7 @@
                     },
                     "sign": {
                         "type": "integer",
-                        "description": "Gets or sets the total price value sign.\r\n<br>\r\nThe sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.\r\n",
+                        "description": "Gets or sets the total price value sign.\r\n\n\r\nThe sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.\r\n",
                         "format": "int32"
                     },
                     "operationItemCombinationMode": {
@@ -9512,7 +9512,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n<br>\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
                         "nullable": true
                     },
                     "subtype": {
@@ -9561,7 +9561,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n<br>\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
                         "nullable": true
                     },
                     "subtypes": {
@@ -9646,7 +9646,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n<br>\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
                         "nullable": true
                     },
                     "subtypes": {
@@ -9927,7 +9927,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n<br>\r\nExamples for states are: outgoing, incoming\r\n",
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
                         "nullable": true
                     },
                     "formattedText": {
@@ -10021,7 +10021,7 @@
                     },
                     "termsOfPaymentId": {
                         "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n<br>\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -10179,7 +10179,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n<br>\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
                         "nullable": true
                     },
                     "subtypes": {
@@ -10218,12 +10218,19 @@
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
                 "name": "Authorization",
                 "in": "header"
+            },
+            "ApiKey": {
+                "type": "apiKey",
+                "description": "API Key authentication. Example: 'x-api-key: {your-api-key}'",
+                "name": "x-api-key",
+                "in": "header"
             }
         }
     },
     "security": [
         {
-            "Bearer": []
+            "Bearer": [],
+            "ApiKey": []
         }
     ]
 }

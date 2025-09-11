@@ -61,7 +61,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="deserializationType">Gets or sets an identifier for the type of the item for correct deserialization..</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="amount">Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  .</param>
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
@@ -126,9 +126,9 @@ namespace Simplic.OxS.SDK.ERP
         public string DeserializationType { get; set; }
 
         /// <summary>
-        /// Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  
+        /// Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  
         /// </summary>
-        /// <value>Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  </value>
+        /// <value>Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  </value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 

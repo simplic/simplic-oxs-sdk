@@ -36,22 +36,42 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageResponse" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        [JsonConstructorAttribute]
+        protected PackageResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackageResponse" /> class.
+        /// </summary>
+        /// <param name="name">name (required).</param>
         /// <param name="varVersion">varVersion.</param>
-        /// <param name="assemblyName">assemblyName.</param>
-        /// <param name="className">className.</param>
+        /// <param name="assemblyName">assemblyName (required).</param>
+        /// <param name="className">className (required).</param>
         public PackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string), string className = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for PackageResponse and cannot be null");
+            }
             this.Name = name;
-            this.VarVersion = varVersion;
+            // to ensure "assemblyName" is required (not null)
+            if (assemblyName == null)
+            {
+                throw new ArgumentNullException("assemblyName is a required property for PackageResponse and cannot be null");
+            }
             this.AssemblyName = assemblyName;
+            // to ensure "className" is required (not null)
+            if (className == null)
+            {
+                throw new ArgumentNullException("className is a required property for PackageResponse and cannot be null");
+            }
             this.ClassName = className;
+            this.VarVersion = varVersion;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -63,13 +83,13 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets AssemblyName
         /// </summary>
-        [DataMember(Name = "assemblyName", EmitDefaultValue = true)]
+        [DataMember(Name = "assemblyName", IsRequired = true, EmitDefaultValue = true)]
         public string AssemblyName { get; set; }
 
         /// <summary>
         /// Gets or Sets ClassName
         /// </summary>
-        [DataMember(Name = "className", EmitDefaultValue = true)]
+        [DataMember(Name = "className", IsRequired = true, EmitDefaultValue = true)]
         public string ClassName { get; set; }
 
         /// <summary>

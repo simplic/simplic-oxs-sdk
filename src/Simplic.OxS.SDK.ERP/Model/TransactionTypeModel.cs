@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="reportName">Gets or sets the report title..</param>
         /// <param name="shortName">Gets or sets the short name..</param>
-        /// <param name="functions">Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
+        /// <param name="functions">Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
         /// <param name="subtypes">Gets or sets the set of subtypes..</param>
         /// <param name="createDateTime">Gets or sets the date and time the transaction type is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the transaction type..</param>
@@ -117,9 +117,9 @@ namespace Simplic.OxS.SDK.ERP
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
+        /// Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
         /// </summary>
-        /// <value>Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
+        /// <value>Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 

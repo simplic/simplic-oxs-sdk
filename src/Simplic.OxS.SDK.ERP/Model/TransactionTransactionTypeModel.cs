@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="reportName">Gets or sets the report title..</param>
         /// <param name="shortName">Gets or sets the short name..</param>
-        /// <param name="functions">Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
+        /// <param name="functions">Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
         /// <param name="subtype">subtype.</param>
         public TransactionTransactionTypeModel(Guid id = default(Guid), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), TransactionSubtypeModel subtype = default(TransactionSubtypeModel))
         {
@@ -90,9 +90,9 @@ namespace Simplic.OxS.SDK.ERP
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
+        /// Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  
         /// </summary>
-        /// <value>Gets or sets a set of functions the transaction type has.  &lt;br&gt;  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
+        /// <value>Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
 

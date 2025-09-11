@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SubtypeId** | **Guid** | Gets or sets the subtype by ID. | 
 **Date** | **DateTime** | Gets or sets the time of the underlying transaction. | 
 **DeliveryDate** | **DateTime?** | Gets or sets the time of delivery. | [optional] 
-**TermsOfPaymentId** | **Guid** | Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   | 
+**TermsOfPaymentId** | **Guid** | Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   | 
 **PaymentMethodId** | **Guid** | Gets or sets the payment method for this transaction given by ID. | 
 **CurrencyId** | **Guid** | Gets or sets the currency used to quantify this transaction by ID. | 
 **Description** | **string** | Gets or sets the description. | [optional] 

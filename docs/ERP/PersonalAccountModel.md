@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **SaleTermsOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **PurchaseTermsOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **TaxGroup** | [**TaxGroupModel**](TaxGroupModel.md) |  | [optional] 
-**Addresses** | [**List&lt;PersonalAccountAddressModel&gt;**](PersonalAccountAddressModel.md) | Gets or sets the addresses.  &lt;br&gt;  A personal account can contain multiple addresses.   | [optional] 
+**Addresses** | [**List&lt;PersonalAccountAddressModel&gt;**](PersonalAccountAddressModel.md) | Gets or sets the addresses.     A personal account can contain multiple addresses.   | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the create date time. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the create user id. | [optional] 
 **CreateUserName** | **string** | Gets or sets the create user name. | [optional] 

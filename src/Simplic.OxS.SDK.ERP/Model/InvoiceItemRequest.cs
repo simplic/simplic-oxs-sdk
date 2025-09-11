@@ -59,7 +59,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="quantityUnit">quantityUnit.</param>
         /// <param name="articleName">Gets or sets the article name..</param>
         /// <param name="singlePriceNetBase">Gets or sets the single price excluding discounts and surcharges..</param>
-        /// <param name="totalPriceNetBase">Gets or sets the total price excluding discounts and surcharges.  &lt;br&gt;  TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  .</param>
+        /// <param name="totalPriceNetBase">Gets or sets the total price excluding discounts and surcharges.     TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  .</param>
         /// <param name="quantity">Gets or sets the quantity..</param>
         /// <param name="taxType">taxType.</param>
         /// <param name="taxCategory">taxCategory.</param>
@@ -107,9 +107,9 @@ namespace Simplic.OxS.SDK.ERP
         public double? SinglePriceNetBase { get; set; }
 
         /// <summary>
-        /// Gets or sets the total price excluding discounts and surcharges.  &lt;br&gt;  TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  
+        /// Gets or sets the total price excluding discounts and surcharges.     TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  
         /// </summary>
-        /// <value>Gets or sets the total price excluding discounts and surcharges.  &lt;br&gt;  TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  </value>
+        /// <value>Gets or sets the total price excluding discounts and surcharges.     TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.  </value>
         [DataMember(Name = "totalPriceNetBase", EmitDefaultValue = true)]
         public double? TotalPriceNetBase { get; set; }
 

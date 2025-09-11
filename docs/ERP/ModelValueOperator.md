@@ -1,5 +1,5 @@
 # Simplic.OxS.SDK.ERP.ModelValueOperator
-Represents a mode of applying operation transaction items to their assigned transaction items.  <br>  This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.  
+Represents a mode of applying operation transaction items to their assigned transaction items.     This type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.  
 
 ## Properties
 

@@ -78,7 +78,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="document">document.</param>
         /// <param name="financialAccountingPeriod">financialAccountingPeriod.</param>
         /// <param name="period">period.</param>
-        /// <param name="states">Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  .</param>
+        /// <param name="states">Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  .</param>
         /// <param name="manualVat">manualVat.</param>
         /// <param name="notes">Gets or sets notes..</param>
         /// <param name="dueDate">Gets or sets the due date..</param>
@@ -94,7 +94,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="signedTotalPriceGross">Gets or sets the gross signed total price..</param>
         /// <param name="signedTotalPrice">Gets or sets the signed total price..</param>
         /// <param name="signedTotalPriceTax">Gets or sets the signed total price tax..</param>
-        /// <param name="sign">Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  .</param>
+        /// <param name="sign">Gets or sets the total price value sign.     The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  .</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
         /// <param name="createDateTime">Gets or sets the date and time the transaction is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the transaction..</param>
@@ -347,9 +347,9 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionPeriodModel Period { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  
+        /// Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  
         /// </summary>
-        /// <value>Gets or sets a set of states the transaction is in.  &lt;br&gt;  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  </value>
+        /// <value>Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  </value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
         public List<string> States { get; set; }
 
@@ -456,9 +456,9 @@ namespace Simplic.OxS.SDK.ERP
         public double SignedTotalPriceTax { get; set; }
 
         /// <summary>
-        /// Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  
+        /// Gets or sets the total price value sign.     The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  
         /// </summary>
-        /// <value>Gets or sets the total price value sign.  &lt;br&gt;  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  </value>
+        /// <value>Gets or sets the total price value sign.     The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  </value>
         [DataMember(Name = "sign", EmitDefaultValue = false)]
         public int Sign { get; set; }
 

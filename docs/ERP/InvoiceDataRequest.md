@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Currency** | **CurrencyCode** |  | [optional] 
 **BusinessProcess** | **string** | Gets or sets the business process. | [optional] 
 **ReferenceNumber** | **string** | Gets or sets the reference number. | [optional] 
-**BuyerReference** | **string** | Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   | [optional] 
+**BuyerReference** | **string** | Gets or sets the buyer reference.     This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference   | [optional] 
 **Buyer** | [**PartyRequest**](PartyRequest.md) |  | [optional] 
 **Seller** | [**PartyRequest**](PartyRequest.md) |  | [optional] 
 **DebitorBankAccounts** | [**List&lt;BankAccountRequest&gt;**](BankAccountRequest.md) | Gets or sets the debitor bank accounts. | [optional] 

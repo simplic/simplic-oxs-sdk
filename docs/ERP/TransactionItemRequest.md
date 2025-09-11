@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DeserializationType** | **string** | Gets or sets an identifier for the type of the item for correct deserialization. | [optional] 
 **ValueOperator** | **ValueOperator** |  | [optional] 
 **AssignmentMode** | **AssignmentMode** |  | [optional] 
-**Amount** | **double?** | Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.   | [optional] 
+**Amount** | **double?** | Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.   | [optional] 
 **BehaviorDefinitions** | [**List&lt;BehaviorDefinitionRequest&gt;**](BehaviorDefinitionRequest.md) | Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest. | [optional] 
 **InputPrice** | **double?** | Gets or sets the price user input. | [optional] 
 **InputPriceType** | **InputPriceType** |  | [optional] 

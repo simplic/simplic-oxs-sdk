@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="cashDiscount">Gets or sets the cash discount quantity..</param>
         /// <param name="cashDiscountDays">Gets or sets the number of days the cash discount applies for..</param>
         /// <param name="paymentDeadlineDays">Gets or sets the number of days until payment deadline..</param>
-        /// <param name="states">Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  .</param>
+        /// <param name="states">Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  .</param>
         /// <param name="formattedText">Gets or sets the formatted text..</param>
         public UpdateTermsOfPaymentRequest(int? number = default(int?), string name = default(string), double? cashDiscount = default(double?), int? cashDiscountDays = default(int?), int? paymentDeadlineDays = default(int?), List<string> states = default(List<string>), string formattedText = default(string))
         {
@@ -90,9 +90,9 @@ namespace Simplic.OxS.SDK.ERP
         public int? PaymentDeadlineDays { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  
+        /// Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  
         /// </summary>
-        /// <value>Gets or sets a set of states that apply to the terms of payment.  &lt;br&gt;  Examples for states are: outgoing, incoming  </value>
+        /// <value>Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  </value>
         [DataMember(Name = "states", EmitDefaultValue = true)]
         public List<string> States { get; set; }
 

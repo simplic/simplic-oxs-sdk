@@ -48,7 +48,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="subtypeId">Gets or sets the subtype by ID..</param>
         /// <param name="date">Gets or sets the time of the underlying transaction..</param>
         /// <param name="deliveryDate">Gets or sets the time of delivery..</param>
-        /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  .</param>
+        /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  .</param>
         /// <param name="paymentMethodId">Gets or sets the payment method for this transaction given by ID..</param>
         /// <param name="currencyId">Gets or sets the currency used to quantify this transaction by ID..</param>
         /// <param name="description">Gets or sets the description..</param>
@@ -151,9 +151,9 @@ namespace Simplic.OxS.SDK.ERP
         public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  
+        /// Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  
         /// </summary>
-        /// <value>Gets or sets the terms of payment by ID.  &lt;br&gt;  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  </value>
+        /// <value>Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  </value>
         [DataMember(Name = "termsOfPaymentId", EmitDefaultValue = true)]
         public Guid? TermsOfPaymentId { get; set; }
 

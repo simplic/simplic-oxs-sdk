@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="assignedTransactionItems">assignedTransactionItems.</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="amount">Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  .</param>
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionModel.</param>
         /// <param name="originalOperationItem">originalOperationItem.</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
@@ -77,7 +77,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="totalPriceGross">Gets or sets the gross total price..</param>
         /// <param name="singlePriceVat">Gets or sets the VAT contained in the net single price..</param>
         /// <param name="totalPriceVat">Gets or sets the VAT contained in the net total price..</param>
-        /// <param name="pricing">Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  .</param>
+        /// <param name="pricing">Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.     Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  .</param>
         /// <param name="quantity">Gets or sets the quantity..</param>
         /// <param name="unit">unit.</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
@@ -171,9 +171,9 @@ namespace Simplic.OxS.SDK.ERP
         public List<TransactionItemModel> AssignedTransactionItems { get; set; }
 
         /// <summary>
-        /// Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  
+        /// Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  
         /// </summary>
-        /// <value>Gets the amount the operation item results in.  &lt;br&gt;  The amount can be positive or negative representing a surcharge or a discount.  </value>
+        /// <value>Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  </value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 
@@ -254,9 +254,9 @@ namespace Simplic.OxS.SDK.ERP
         public double? TotalPriceVat { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  
+        /// Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.     Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  
         /// </summary>
-        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.  &lt;br&gt;  Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  </value>
+        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.     Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  </value>
         [DataMember(Name = "pricing", EmitDefaultValue = true)]
         public List<StringTransactionPriceObjectModelKeyValuePair> Pricing { get; set; }
 

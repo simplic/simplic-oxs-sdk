@@ -36,32 +36,47 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="NodeScope" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="type">type.</param>
-        /// <param name="name">name.</param>
+        [JsonConstructorAttribute]
+        protected NodeScope() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodeScope" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="type">type (required).</param>
+        /// <param name="name">name (required).</param>
         public NodeScope(Guid id = default(Guid), string type = default(string), string name = default(string))
         {
             this.Id = id;
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for NodeScope and cannot be null");
+            }
             this.Type = type;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for NodeScope and cannot be null");
+            }
             this.Name = name;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

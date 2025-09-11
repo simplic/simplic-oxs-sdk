@@ -55,7 +55,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="currency">currency.</param>
         /// <param name="businessProcess">Gets or sets the business process..</param>
         /// <param name="referenceNumber">Gets or sets the reference number..</param>
-        /// <param name="buyerReference">Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  .</param>
+        /// <param name="buyerReference">Gets or sets the buyer reference.     This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  .</param>
         /// <param name="buyer">buyer.</param>
         /// <param name="seller">seller.</param>
         /// <param name="debitorBankAccounts">Gets or sets the debitor bank accounts..</param>
@@ -130,9 +130,9 @@ namespace Simplic.OxS.SDK.ERP
         public string ReferenceNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
+        /// Gets or sets the buyer reference.     This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  
         /// </summary>
-        /// <value>Gets or sets the buyer reference.  &lt;br&gt;  This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
+        /// <value>Gets or sets the buyer reference.     This is where the Leitweg-ID for German public institution invoices needs to be passed.   See https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference  </value>
         [DataMember(Name = "buyerReference", EmitDefaultValue = true)]
         public string BuyerReference { get; set; }
 

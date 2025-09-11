@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **QuantityUnit** | **QuantityCode** |  | [optional] 
 **ArticleName** | **string** | Gets or sets the article name. | [optional] 
 **SinglePriceNetBase** | **double?** | Gets or sets the single price excluding discounts and surcharges. | [optional] 
-**TotalPriceNetBase** | **double?** | Gets or sets the total price excluding discounts and surcharges.  &lt;br&gt;  TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.   | [optional] 
+**TotalPriceNetBase** | **double?** | Gets or sets the total price excluding discounts and surcharges.     TotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.   | [optional] 
 **Quantity** | **double?** | Gets or sets the quantity. | [optional] 
 **TaxType** | **TaxType** |  | [optional] 
 **TaxCategory** | **TaxCategory** |  | [optional] 
