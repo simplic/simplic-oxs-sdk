@@ -46,6 +46,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="eventName">eventName.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
+        /// <param name="markdown">markdown (required).</param>
         /// <param name="target">target (required).</param>
         /// <param name="customDataInPinTemplate">customDataInPinTemplate.</param>
         /// <param name="customFlowOutPinTemplate">customFlowOutPinTemplate.</param>
@@ -53,7 +54,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public PostNodeDefinitionResponse(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PackageResponse package = default(PackageResponse))
+        public PostNodeDefinitionResponse(string id = default(string), string type = default(string), string eventName = default(string), string name = default(string), string description = default(string), string markdown = default(string), string target = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), PackageResponse package = default(PackageResponse))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -67,6 +68,12 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("type is a required property for PostNodeDefinitionResponse and cannot be null");
             }
             this.Type = type;
+            // to ensure "markdown" is required (not null)
+            if (markdown == null)
+            {
+                throw new ArgumentNullException("markdown is a required property for PostNodeDefinitionResponse and cannot be null");
+            }
+            this.Markdown = markdown;
             // to ensure "target" is required (not null)
             if (target == null)
             {
@@ -118,6 +125,12 @@ namespace Simplic.OxS.SDK.Flow
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Markdown
+        /// </summary>
+        [DataMember(Name = "markdown", IsRequired = true, EmitDefaultValue = true)]
+        public string Markdown { get; set; }
 
         /// <summary>
         /// Gets or Sets Target
@@ -174,6 +187,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Markdown: ").Append(Markdown).Append("\n");
             sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("  CustomDataInPinTemplate: ").Append(CustomDataInPinTemplate).Append("\n");
             sb.Append("  CustomFlowOutPinTemplate: ").Append(CustomFlowOutPinTemplate).Append("\n");
@@ -240,6 +254,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Markdown == input.Markdown ||
+                    (this.Markdown != null &&
+                    this.Markdown.Equals(input.Markdown))
                 ) && 
                 (
                     this.Target == input.Target ||
@@ -309,6 +328,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Markdown != null)
+                {
+                    hashCode = (hashCode * 59) + this.Markdown.GetHashCode();
                 }
                 if (this.Target != null)
                 {

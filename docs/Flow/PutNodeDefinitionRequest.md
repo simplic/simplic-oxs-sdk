@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **EventName** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
+**Markdown** | **string** |  | 
 **Target** | **string** |  | 
 **CustomDataInPinTemplate** | [**CustomDataInPinTemplateDefinition**](CustomDataInPinTemplateDefinition.md) |  | [optional] 
 **CustomFlowOutPinTemplate** | [**CustomFlowOutPinTemplateDefinition**](CustomFlowOutPinTemplateDefinition.md) |  | [optional] 
