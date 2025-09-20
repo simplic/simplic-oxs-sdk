@@ -289,131 +289,6 @@
                 }
             }
         },
-        "/Dev/debug/{flowId}": {
-            "get": {
-                "tags": [
-                    "Dev"
-                ],
-                "parameters": [
-                    {
-                        "name": "flowId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "args",
-                        "in": "query",
-                        "schema": {
-                            "type": "array",
-                            "items": {}
-                        }
-                    },
-                    {
-                        "name": "breakpoints",
-                        "in": "query",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "uuid"
-                            }
-                        }
-                    },
-                    {
-                        "name": "castTo",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "default": "object"
-                        }
-                    },
-                    {
-                        "name": "timeoutSeconds",
-                        "in": "query",
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32",
-                            "default": 5
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/DebugInfo"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/DebugInfo"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/DebugInfo"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Dev/fwdlogs": {
             "post": {
                 "tags": [
@@ -1435,33 +1310,6 @@
                 },
                 "additionalProperties": false
             },
-            "DebugInfo": {
-                "required": [
-                    "node"
-                ],
-                "type": "object",
-                "properties": {
-                    "time": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "node": {
-                        "$ref": "#/components/schemas/NodeScope"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "stackTrace": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/NodeScope"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "FlowInstance": {
                 "type": "object",
                 "properties": {
@@ -1872,29 +1720,6 @@
                         },
                         "nullable": true,
                         "readOnly": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "NodeScope": {
-                "required": [
-                    "id",
-                    "name",
-                    "type"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
                     }
                 },
                 "additionalProperties": false
