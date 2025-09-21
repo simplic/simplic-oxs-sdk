@@ -1,11 +1,9 @@
-# Simplic.OxS.SDK.Flow.PostFlowResponse
+# Simplic.OxS.SDK.Flow.PackageVersionKind
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeploymentInfo** | [**DeploymentInfo**](DeploymentInfo.md) |  | 
-**Flow** | [**FlowInstance**](FlowInstance.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,48 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// PostFlowResponse
+    /// DeploymentInfo
     /// </summary>
-    [DataContract(Name = "PostFlowResponse")]
-    public partial class PostFlowResponse : IEquatable<PostFlowResponse>, IValidatableObject
+    [DataContract(Name = "DeploymentInfo")]
+    public partial class DeploymentInfo : IEquatable<DeploymentInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostFlowResponse" /> class.
+        /// Initializes a new instance of the <see cref="DeploymentInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PostFlowResponse() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PostFlowResponse" /> class.
-        /// </summary>
-        /// <param name="deploymentInfo">deploymentInfo (required).</param>
-        /// <param name="flow">flow (required).</param>
-        public PostFlowResponse(DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance))
+        /// <param name="packages">packages.</param>
+        /// <param name="totalSize">totalSize.</param>
+        public DeploymentInfo(List<Package> packages = default(List<Package>), long totalSize = default(long))
         {
-            // to ensure "deploymentInfo" is required (not null)
-            if (deploymentInfo == null)
-            {
-                throw new ArgumentNullException("deploymentInfo is a required property for PostFlowResponse and cannot be null");
-            }
-            this.DeploymentInfo = deploymentInfo;
-            // to ensure "flow" is required (not null)
-            if (flow == null)
-            {
-                throw new ArgumentNullException("flow is a required property for PostFlowResponse and cannot be null");
-            }
-            this.Flow = flow;
+            this.Packages = packages;
+            this.TotalSize = totalSize;
         }
 
         /// <summary>
-        /// Gets or Sets DeploymentInfo
+        /// Gets or Sets Packages
         /// </summary>
-        [DataMember(Name = "deploymentInfo", IsRequired = true, EmitDefaultValue = true)]
-        public DeploymentInfo DeploymentInfo { get; set; }
+        [DataMember(Name = "packages", EmitDefaultValue = true)]
+        public List<Package> Packages { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flow
+        /// Gets or Sets TotalSize
         /// </summary>
-        [DataMember(Name = "flow", IsRequired = true, EmitDefaultValue = true)]
-        public FlowInstance Flow { get; set; }
+        [DataMember(Name = "totalSize", EmitDefaultValue = false)]
+        public long TotalSize { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,9 +63,9 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PostFlowResponse {\n");
-            sb.Append("  DeploymentInfo: ").Append(DeploymentInfo).Append("\n");
-            sb.Append("  Flow: ").Append(Flow).Append("\n");
+            sb.Append("class DeploymentInfo {\n");
+            sb.Append("  Packages: ").Append(Packages).Append("\n");
+            sb.Append("  TotalSize: ").Append(TotalSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,15 +86,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PostFlowResponse);
+            return this.Equals(input as DeploymentInfo);
         }
 
         /// <summary>
-        /// Returns true if PostFlowResponse instances are equal
+        /// Returns true if DeploymentInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of PostFlowResponse to be compared</param>
+        /// <param name="input">Instance of DeploymentInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PostFlowResponse input)
+        public bool Equals(DeploymentInfo input)
         {
             if (input == null)
             {
@@ -117,14 +102,14 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
-                    this.DeploymentInfo == input.DeploymentInfo ||
-                    (this.DeploymentInfo != null &&
-                    this.DeploymentInfo.Equals(input.DeploymentInfo))
+                    this.Packages == input.Packages ||
+                    this.Packages != null &&
+                    input.Packages != null &&
+                    this.Packages.SequenceEqual(input.Packages)
                 ) && 
                 (
-                    this.Flow == input.Flow ||
-                    (this.Flow != null &&
-                    this.Flow.Equals(input.Flow))
+                    this.TotalSize == input.TotalSize ||
+                    this.TotalSize.Equals(input.TotalSize)
                 );
         }
 
@@ -137,14 +122,11 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DeploymentInfo != null)
+                if (this.Packages != null)
                 {
-                    hashCode = (hashCode * 59) + this.DeploymentInfo.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Packages.GetHashCode();
                 }
-                if (this.Flow != null)
-                {
-                    hashCode = (hashCode * 59) + this.Flow.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.TotalSize.GetHashCode();
                 return hashCode;
             }
         }

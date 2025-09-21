@@ -902,6 +902,66 @@
                         }
                     }
                 }
+            },
+            "delete": {
+                "tags": [
+                    "NodeDefinition"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/NodeDefinition/get-all": {
@@ -1006,65 +1066,6 @@
                                 }
                             }
                         }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "NodeDefinition"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1306,6 +1307,23 @@
                     },
                     "value": {
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DeploymentInfo": {
+                "type": "object",
+                "properties": {
+                    "packages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Package"
+                        },
+                        "nullable": true
+                    },
+                    "totalSize": {
+                        "type": "integer",
+                        "format": "int64"
                     }
                 },
                 "additionalProperties": false
@@ -1724,6 +1742,32 @@
                 },
                 "additionalProperties": false
             },
+            "Package": {
+                "required": [
+                    "assemblyName",
+                    "className",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "version": {
+                        "$ref": "#/components/schemas/PackageVersion"
+                    },
+                    "assemblyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "className": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "PackageRequest": {
                 "required": [
                     "assemblyName",
@@ -1778,6 +1822,56 @@
                 },
                 "additionalProperties": false
             },
+            "PackageVersion": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "$ref": "#/components/schemas/PackageVersionKind"
+                    },
+                    "isLatest": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "isExact": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "major": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "minor": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "patch": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "revision": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "normalized": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PackageVersionKind": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
             "Point": {
                 "type": "object",
                 "properties": {
@@ -1825,33 +1919,17 @@
                 "additionalProperties": false
             },
             "PostFlowResponse": {
+                "required": [
+                    "deploymentInfo",
+                    "flow"
+                ],
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
+                    "deploymentInfo": {
+                        "$ref": "#/components/schemas/DeploymentInfo"
                     },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "nodes": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/NodeInstance"
-                        },
-                        "nullable": true
-                    },
-                    "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
-                        },
-                        "nullable": true
+                    "flow": {
+                        "$ref": "#/components/schemas/FlowInstance"
                     }
                 },
                 "additionalProperties": false
