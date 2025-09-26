@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="address">address.</param>
         /// <param name="billingAddressModel">billingAddressModel.</param>
         /// <param name="isDummy">Whether this organization is used for testing purposes.  This allows for deleting it.</param>
-        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModel address = default(AddressModel), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool))
+        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool))
         {
             this.Id = id;
             this.Name = name;
@@ -68,7 +68,7 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public AddressModel Address { get; set; }
+        public AddressModelResponse Address { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingAddressModel

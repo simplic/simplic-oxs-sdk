@@ -1,12 +1,14 @@
-# Simplic.OxS.SDK.Organization.UpdateOrganizationRequest
-Contains all member for updating an organization
+# Simplic.OxS.SDK.Telematic.Address
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | [**AddressModelRequest**](AddressModelRequest.md) |  | 
-**Name** | **string** | Gets or sets the organization name | 
+**CountryCode** | **string** |  | [optional] 
+**City** | **string** |  | [optional] 
+**ZipCode** | **string** |  | [optional] 
+**Street** | **string** |  | [optional] 
+**HouseNumber** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

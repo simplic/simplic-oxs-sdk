@@ -5,7 +5,7 @@ Contains all information for creating an organization
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | [**AddressModel**](AddressModel.md) |  | 
+**Address** | [**AddressModelRequest**](AddressModelRequest.md) |  | 
 **Name** | **string** | Gets or sets the organization name | 
 **Dummy** | **bool** | Whether this organization is used for testing purposes.  This allows for deleting it later. | [optional] 
 

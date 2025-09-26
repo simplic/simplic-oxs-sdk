@@ -4199,7 +4199,7 @@
                 "additionalProperties": false,
                 "description": "Containing all properties for adds a user to a team."
             },
-            "AddressModel": {
+            "AddressModelRequest": {
                 "type": "object",
                 "properties": {
                     "additional01": {
@@ -4229,12 +4229,57 @@
                     },
                     "countryIso": {
                         "type": "string",
-                        "description": "Gets or sets the country iso code (e.g. de, fr, en, us, ...(",
+                        "description": "Gets or sets the country iso code (e.g. de, fr, en, us, ...)",
+                        "nullable": true
+                    },
+                    "federalStateIso": {
+                        "type": "string",
+                        "description": "Gets or sets the federal state iso",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents an organization address"
+                "description": "Represents an organization address for a request"
+            },
+            "AddressModelResponse": {
+                "type": "object",
+                "properties": {
+                    "additional01": {
+                        "type": "string",
+                        "description": "Gets or sets some additional address information.",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "description": "Gets or sets the street name",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the house number",
+                        "nullable": true
+                    },
+                    "zipCode": {
+                        "type": "string",
+                        "description": "Gets or sets the zipcode",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "Gets or sets the city",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "description": "Gets or sets the country iso code (e.g. DE, FR, EN, US, ...)",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "$ref": "#/components/schemas/FederalStateModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents an organization address for a response"
             },
             "BillingAddressModel": {
                 "type": "object",
@@ -4385,7 +4430,7 @@
                 "type": "object",
                 "properties": {
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelRequest"
                     },
                     "name": {
                         "maxLength": 100,
@@ -4410,7 +4455,7 @@
                         "nullable": true
                     },
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -4476,6 +4521,37 @@
                     "id": {
                         "type": "string",
                         "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "FederalStateModel": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "type": "string",
+                        "description": "Gets or sets the display name of the federal state",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "description": "Gets or sets the display key of the federal state",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the federal state",
+                        "nullable": true
+                    },
+                    "federalStateIso": {
+                        "type": "string",
+                        "description": "Gets or sets the ISO code of the federal state in ISO 3166-2 format (e.g., \"DE-BE\" for Berlin in Germany)",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "description": "Gets or sets the ISO 3166 code of the country the federal state belongs to (e.g., \"DE\" for Germany)",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -5021,7 +5097,7 @@
                         "nullable": true
                     },
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelResponse"
                     },
                     "billingAddressModel": {
                         "$ref": "#/components/schemas/BillingAddressModel"
@@ -5048,7 +5124,7 @@
                         "nullable": true
                     },
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelResponse"
                     },
                     "isDeleted": {
                         "type": "boolean",
@@ -5068,7 +5144,7 @@
                         "nullable": true
                     },
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -5193,7 +5269,7 @@
                 "type": "object",
                 "properties": {
                     "address": {
-                        "$ref": "#/components/schemas/AddressModel"
+                        "$ref": "#/components/schemas/AddressModelRequest"
                     },
                     "name": {
                         "maxLength": 30,

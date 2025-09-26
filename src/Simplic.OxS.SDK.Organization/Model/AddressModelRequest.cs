@@ -28,21 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Organization
 {
     /// <summary>
-    /// Represents an organization address
+    /// Represents an organization address for a request
     /// </summary>
-    [DataContract(Name = "AddressModel")]
-    public partial class AddressModel : IEquatable<AddressModel>, IValidatableObject
+    [DataContract(Name = "AddressModelRequest")]
+    public partial class AddressModelRequest : IEquatable<AddressModelRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddressModel" /> class.
+        /// Initializes a new instance of the <see cref="AddressModelRequest" /> class.
         /// </summary>
         /// <param name="additional01">Gets or sets some additional address information..</param>
         /// <param name="street">Gets or sets the street name.</param>
         /// <param name="houseNumber">Gets or sets the house number.</param>
         /// <param name="zipCode">Gets or sets the zipcode.</param>
         /// <param name="city">Gets or sets the city.</param>
-        /// <param name="countryIso">Gets or sets the country iso code (e.g. de, fr, en, us, ...(.</param>
-        public AddressModel(string additional01 = default(string), string street = default(string), string houseNumber = default(string), string zipCode = default(string), string city = default(string), string countryIso = default(string))
+        /// <param name="countryIso">Gets or sets the country iso code (e.g. de, fr, en, us, ...).</param>
+        /// <param name="federalStateIso">Gets or sets the federal state iso.</param>
+        public AddressModelRequest(string additional01 = default(string), string street = default(string), string houseNumber = default(string), string zipCode = default(string), string city = default(string), string countryIso = default(string), string federalStateIso = default(string))
         {
             this.Additional01 = additional01;
             this.Street = street;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Organization
             this.ZipCode = zipCode;
             this.City = city;
             this.CountryIso = countryIso;
+            this.FederalStateIso = federalStateIso;
         }
 
         /// <summary>
@@ -88,11 +90,18 @@ namespace Simplic.OxS.SDK.Organization
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or sets the country iso code (e.g. de, fr, en, us, ...(
+        /// Gets or sets the country iso code (e.g. de, fr, en, us, ...)
         /// </summary>
-        /// <value>Gets or sets the country iso code (e.g. de, fr, en, us, ...(</value>
+        /// <value>Gets or sets the country iso code (e.g. de, fr, en, us, ...)</value>
         [DataMember(Name = "countryIso", EmitDefaultValue = true)]
         public string CountryIso { get; set; }
+
+        /// <summary>
+        /// Gets or sets the federal state iso
+        /// </summary>
+        /// <value>Gets or sets the federal state iso</value>
+        [DataMember(Name = "federalStateIso", EmitDefaultValue = true)]
+        public string FederalStateIso { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -101,13 +110,14 @@ namespace Simplic.OxS.SDK.Organization
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AddressModel {\n");
+            sb.Append("class AddressModelRequest {\n");
             sb.Append("  Additional01: ").Append(Additional01).Append("\n");
             sb.Append("  Street: ").Append(Street).Append("\n");
             sb.Append("  HouseNumber: ").Append(HouseNumber).Append("\n");
             sb.Append("  ZipCode: ").Append(ZipCode).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  CountryIso: ").Append(CountryIso).Append("\n");
+            sb.Append("  FederalStateIso: ").Append(FederalStateIso).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,15 +138,15 @@ namespace Simplic.OxS.SDK.Organization
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddressModel);
+            return this.Equals(input as AddressModelRequest);
         }
 
         /// <summary>
-        /// Returns true if AddressModel instances are equal
+        /// Returns true if AddressModelRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddressModel to be compared</param>
+        /// <param name="input">Instance of AddressModelRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddressModel input)
+        public bool Equals(AddressModelRequest input)
         {
             if (input == null)
             {
@@ -172,6 +182,11 @@ namespace Simplic.OxS.SDK.Organization
                     this.CountryIso == input.CountryIso ||
                     (this.CountryIso != null &&
                     this.CountryIso.Equals(input.CountryIso))
+                ) && 
+                (
+                    this.FederalStateIso == input.FederalStateIso ||
+                    (this.FederalStateIso != null &&
+                    this.FederalStateIso.Equals(input.FederalStateIso))
                 );
         }
 
@@ -207,6 +222,10 @@ namespace Simplic.OxS.SDK.Organization
                 if (this.CountryIso != null)
                 {
                     hashCode = (hashCode * 59) + this.CountryIso.GetHashCode();
+                }
+                if (this.FederalStateIso != null)
+                {
+                    hashCode = (hashCode * 59) + this.FederalStateIso.GetHashCode();
                 }
                 return hashCode;
             }

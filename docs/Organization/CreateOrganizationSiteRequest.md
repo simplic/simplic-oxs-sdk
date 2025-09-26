@@ -6,7 +6,7 @@ Containing all information for creating an organization site
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Gets or sets the name of the organization site | [optional] 
-**Address** | [**AddressModel**](AddressModel.md) |  | [optional] 
+**Address** | [**AddressModelRequest**](AddressModelRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

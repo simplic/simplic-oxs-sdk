@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="address">address (required).</param>
         /// <param name="name">Gets or sets the organization name (required).</param>
-        public UpdateOrganizationRequest(AddressModel address = default(AddressModel), string name = default(string))
+        public UpdateOrganizationRequest(AddressModelRequest address = default(AddressModelRequest), string name = default(string))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public AddressModel Address { get; set; }
+        public AddressModelRequest Address { get; set; }
 
         /// <summary>
         /// Gets or sets the organization name

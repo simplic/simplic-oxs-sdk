@@ -522,6 +522,527 @@
                 }
             }
         },
+        "/MessageQueue/{id}": {
+            "get": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchMessageQueueRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchMessageQueueRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchMessageQueueRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MessageQueue": {
+            "post": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateMessageQueueRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateMessageQueueRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateMessageQueueRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageQueueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MessageQueue/{queueId}/read-messages": {
+            "get": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "parameters": [
+                    {
+                        "name": "queueId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MessageQueue/{messageId}/commit-message": {
+            "put": {
+                "tags": [
+                    "MessageQueue"
+                ],
+                "parameters": [
+                    {
+                        "name": "messageId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IncomingTelematicMessage"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/OutMessageLog/{id}": {
             "get": {
                 "tags": [
@@ -2248,6 +2769,32 @@
     },
     "components": {
         "schemas": {
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "countryCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "AutomaticVehicleConfigurationCreationSettings": {
                 "type": "object",
                 "properties": {
@@ -2336,6 +2883,23 @@
                         "type": "array",
                         "items": {
                             "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CreateMessageQueueRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeFilter": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingMessageType"
                         },
                         "nullable": true
                     }
@@ -2446,6 +3010,92 @@
                 },
                 "additionalProperties": false
             },
+            "Driver": {
+                "type": "object",
+                "properties": {
+                    "providerIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "internalIdentifier": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "driverCardId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EPoD": {
+                "type": "object",
+                "properties": {
+                    "driverComment": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EPodAttachment"
+                        },
+                        "nullable": true
+                    },
+                    "signatures": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EPodSignature"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EPodAttachment": {
+                "type": "object",
+                "properties": {
+                    "blobId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mediaType": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EPodSignature": {
+                "type": "object",
+                "properties": {
+                    "signature": {
+                        "$ref": "#/components/schemas/EPodAttachment"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "EmploymentConfigurationModel": {
                 "type": "object",
                 "properties": {
@@ -2485,6 +3135,40 @@
                             "type": "string"
                         },
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "FmsData": {
+                "type": "object",
+                "properties": {
+                    "speed": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totalFuel": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "odometer": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "fuelLevel": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "nextServiceStop": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "engineWorkTime": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "timestampUtc": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 },
                 "additionalProperties": false
@@ -2551,6 +3235,276 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "IncomingMessageType": {
+                "enum": [
+                    0,
+                    100,
+                    199,
+                    200,
+                    299,
+                    300,
+                    399,
+                    400
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "IncomingOrder": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "providerIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "articleName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderType": {
+                        "$ref": "#/components/schemas/OrderType"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "weight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loadingMeter": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ePoD": {
+                        "$ref": "#/components/schemas/EPoD"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "IncomingPlace": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "providerIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "orders": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingOrder"
+                        },
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "planStartDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "planEndDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "IncomingTelematicMessage": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "providerIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "providerVehicleIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "internalVehicleIdentifier": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "tour": {
+                        "$ref": "#/components/schemas/IncomingTour"
+                    },
+                    "place": {
+                        "$ref": "#/components/schemas/IncomingPlace"
+                    },
+                    "order": {
+                        "$ref": "#/components/schemas/IncomingOrder"
+                    },
+                    "fmsData": {
+                        "$ref": "#/components/schemas/FmsData"
+                    },
+                    "locationInformation": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "driver": {
+                        "$ref": "#/components/schemas/Driver"
+                    },
+                    "messageTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "messageType": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingMessageType"
+                        },
+                        "nullable": true
+                    },
+                    "queueId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "IncomingTour": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "providerIdentifier": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "places": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingPlace"
+                        },
+                        "nullable": true
+                    },
+                    "startDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "tourDateUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "MessageQueueResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeFilter": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingMessageType"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OrderType": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                ],
+                "type": "integer",
+                "format": "int32"
             },
             "OutMessageLogResponse": {
                 "type": "object",
@@ -2642,6 +3596,23 @@
                         "type": "array",
                         "items": {
                             "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchMessageQueueRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeFilter": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingMessageType"
                         },
                         "nullable": true
                     }

@@ -40,7 +40,7 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="name">Gets or sets the display name of the organization site.</param>
         /// <param name="address">address.</param>
         /// <param name="isDeleted">Gets or sets a is deleted flag..</param>
-        public OrganizationSiteModel(Guid id = default(Guid), string name = default(string), AddressModel address = default(AddressModel), bool? isDeleted = default(bool?))
+        public OrganizationSiteModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), bool? isDeleted = default(bool?))
         {
             this.Id = id;
             this.Name = name;
@@ -66,7 +66,7 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public AddressModel Address { get; set; }
+        public AddressModelResponse Address { get; set; }
 
         /// <summary>
         /// Gets or sets a is deleted flag.

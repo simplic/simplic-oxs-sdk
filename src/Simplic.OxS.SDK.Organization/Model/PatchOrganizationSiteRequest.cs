@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="name">Gets or sets the name of the organization site.</param>
         /// <param name="address">address.</param>
-        public PatchOrganizationSiteRequest(string name = default(string), AddressModel address = default(AddressModel))
+        public PatchOrganizationSiteRequest(string name = default(string), AddressModelRequest address = default(AddressModelRequest))
         {
             this.Name = name;
             this.Address = address;
@@ -55,7 +55,7 @@ namespace Simplic.OxS.SDK.Organization
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public AddressModel Address { get; set; }
+        public AddressModelRequest Address { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
