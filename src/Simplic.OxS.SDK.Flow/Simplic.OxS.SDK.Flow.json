@@ -1312,12 +1312,24 @@
                 "additionalProperties": false
             },
             "DeploymentInfo": {
+                "required": [
+                    "assemblies",
+                    "packages",
+                    "totalSize"
+                ],
                 "type": "object",
                 "properties": {
                     "packages": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/Package"
+                            "$ref": "#/components/schemas/NodePackage"
+                        },
+                        "nullable": true
+                    },
+                    "assemblies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
                         },
                         "nullable": true
                     },
@@ -1584,7 +1596,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageResponse"
+                        "$ref": "#/components/schemas/NodePackageResponse"
                     }
                 },
                 "additionalProperties": false
@@ -1673,7 +1685,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageResponse"
+                        "$ref": "#/components/schemas/NodePackageResponse"
                     }
                 },
                 "additionalProperties": false
@@ -1742,7 +1754,7 @@
                 },
                 "additionalProperties": false
             },
-            "Package": {
+            "NodePackage": {
                 "required": [
                     "assemblyName",
                     "className",
@@ -1768,7 +1780,7 @@
                 },
                 "additionalProperties": false
             },
-            "PackageRequest": {
+            "NodePackageRequest": {
                 "required": [
                     "assemblyName",
                     "className",
@@ -1795,7 +1807,7 @@
                 },
                 "additionalProperties": false
             },
-            "PackageResponse": {
+            "NodePackageResponse": {
                 "required": [
                     "assemblyName",
                     "className",
@@ -2000,7 +2012,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageRequest"
+                        "$ref": "#/components/schemas/NodePackageRequest"
                     }
                 },
                 "additionalProperties": false
@@ -2071,7 +2083,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageResponse"
+                        "$ref": "#/components/schemas/NodePackageResponse"
                     }
                 },
                 "additionalProperties": false
@@ -2169,7 +2181,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageRequest"
+                        "$ref": "#/components/schemas/NodePackageRequest"
                     }
                 },
                 "additionalProperties": false
@@ -2240,7 +2252,7 @@
                         "nullable": true
                     },
                     "package": {
-                        "$ref": "#/components/schemas/PackageResponse"
+                        "$ref": "#/components/schemas/NodePackageResponse"
                     }
                 },
                 "additionalProperties": false

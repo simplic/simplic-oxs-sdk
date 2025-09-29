@@ -36,24 +36,47 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentInfo" /> class.
         /// </summary>
-        /// <param name="packages">packages.</param>
-        /// <param name="totalSize">totalSize.</param>
-        public DeploymentInfo(List<Package> packages = default(List<Package>), long totalSize = default(long))
+        [JsonConstructorAttribute]
+        protected DeploymentInfo() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentInfo" /> class.
+        /// </summary>
+        /// <param name="packages">packages (required).</param>
+        /// <param name="assemblies">assemblies (required).</param>
+        /// <param name="totalSize">totalSize (required).</param>
+        public DeploymentInfo(List<NodePackage> packages = default(List<NodePackage>), List<string> assemblies = default(List<string>), long totalSize = default(long))
         {
+            // to ensure "packages" is required (not null)
+            if (packages == null)
+            {
+                throw new ArgumentNullException("packages is a required property for DeploymentInfo and cannot be null");
+            }
             this.Packages = packages;
+            // to ensure "assemblies" is required (not null)
+            if (assemblies == null)
+            {
+                throw new ArgumentNullException("assemblies is a required property for DeploymentInfo and cannot be null");
+            }
+            this.Assemblies = assemblies;
             this.TotalSize = totalSize;
         }
 
         /// <summary>
         /// Gets or Sets Packages
         /// </summary>
-        [DataMember(Name = "packages", EmitDefaultValue = true)]
-        public List<Package> Packages { get; set; }
+        [DataMember(Name = "packages", IsRequired = true, EmitDefaultValue = true)]
+        public List<NodePackage> Packages { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Assemblies
+        /// </summary>
+        [DataMember(Name = "assemblies", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Assemblies { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalSize
         /// </summary>
-        [DataMember(Name = "totalSize", EmitDefaultValue = false)]
+        [DataMember(Name = "totalSize", IsRequired = true, EmitDefaultValue = true)]
         public long TotalSize { get; set; }
 
         /// <summary>
@@ -65,6 +88,7 @@ namespace Simplic.OxS.SDK.Flow
             StringBuilder sb = new StringBuilder();
             sb.Append("class DeploymentInfo {\n");
             sb.Append("  Packages: ").Append(Packages).Append("\n");
+            sb.Append("  Assemblies: ").Append(Assemblies).Append("\n");
             sb.Append("  TotalSize: ").Append(TotalSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -108,6 +132,12 @@ namespace Simplic.OxS.SDK.Flow
                     this.Packages.SequenceEqual(input.Packages)
                 ) && 
                 (
+                    this.Assemblies == input.Assemblies ||
+                    this.Assemblies != null &&
+                    input.Assemblies != null &&
+                    this.Assemblies.SequenceEqual(input.Assemblies)
+                ) && 
+                (
                     this.TotalSize == input.TotalSize ||
                     this.TotalSize.Equals(input.TotalSize)
                 );
@@ -125,6 +155,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.Packages != null)
                 {
                     hashCode = (hashCode * 59) + this.Packages.GetHashCode();
+                }
+                if (this.Assemblies != null)
+                {
+                    hashCode = (hashCode * 59) + this.Assemblies.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.TotalSize.GetHashCode();
                 return hashCode;

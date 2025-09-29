@@ -28,41 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// Package
+    /// NodePackageResponse
     /// </summary>
-    [DataContract(Name = "Package")]
-    public partial class Package : IEquatable<Package>, IValidatableObject
+    [DataContract(Name = "NodePackageResponse")]
+    public partial class NodePackageResponse : IEquatable<NodePackageResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Package" /> class.
+        /// Initializes a new instance of the <see cref="NodePackageResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Package() { }
+        protected NodePackageResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Package" /> class.
+        /// Initializes a new instance of the <see cref="NodePackageResponse" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="varVersion">varVersion.</param>
         /// <param name="assemblyName">assemblyName (required).</param>
         /// <param name="className">className (required).</param>
-        public Package(string name = default(string), PackageVersion varVersion = default(PackageVersion), string assemblyName = default(string), string className = default(string))
+        public NodePackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string), string className = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for Package and cannot be null");
+                throw new ArgumentNullException("name is a required property for NodePackageResponse and cannot be null");
             }
             this.Name = name;
             // to ensure "assemblyName" is required (not null)
             if (assemblyName == null)
             {
-                throw new ArgumentNullException("assemblyName is a required property for Package and cannot be null");
+                throw new ArgumentNullException("assemblyName is a required property for NodePackageResponse and cannot be null");
             }
             this.AssemblyName = assemblyName;
             // to ensure "className" is required (not null)
             if (className == null)
             {
-                throw new ArgumentNullException("className is a required property for Package and cannot be null");
+                throw new ArgumentNullException("className is a required property for NodePackageResponse and cannot be null");
             }
             this.ClassName = className;
             this.VarVersion = varVersion;
@@ -77,8 +77,8 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets VarVersion
         /// </summary>
-        [DataMember(Name = "version", EmitDefaultValue = false)]
-        public PackageVersion VarVersion { get; set; }
+        [DataMember(Name = "version", EmitDefaultValue = true)]
+        public string VarVersion { get; set; }
 
         /// <summary>
         /// Gets or Sets AssemblyName
@@ -99,7 +99,7 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Package {\n");
+            sb.Append("class NodePackageResponse {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  AssemblyName: ").Append(AssemblyName).Append("\n");
@@ -124,15 +124,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Package);
+            return this.Equals(input as NodePackageResponse);
         }
 
         /// <summary>
-        /// Returns true if Package instances are equal
+        /// Returns true if NodePackageResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of Package to be compared</param>
+        /// <param name="input">Instance of NodePackageResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Package input)
+        public bool Equals(NodePackageResponse input)
         {
             if (input == null)
             {
