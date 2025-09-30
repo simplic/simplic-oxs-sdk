@@ -199,96 +199,6 @@
                 }
             }
         },
-        "/Dev/execute/{flowId}": {
-            "get": {
-                "tags": [
-                    "Dev"
-                ],
-                "parameters": [
-                    {
-                        "name": "flowId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "args",
-                        "in": "query",
-                        "schema": {
-                            "type": "array",
-                            "items": {}
-                        }
-                    },
-                    {
-                        "name": "castTo",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "default": "object"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {}
-                            },
-                            "application/json": {
-                                "schema": {}
-                            },
-                            "text/json": {
-                                "schema": {}
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Dev/fwdlogs": {
             "post": {
                 "tags": [
@@ -1545,14 +1455,17 @@
                         "nullable": true
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -1565,8 +1478,7 @@
                         "nullable": true
                     },
                     "target": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -1634,14 +1546,17 @@
                         "nullable": true
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -1654,8 +1569,7 @@
                         "nullable": true
                     },
                     "target": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -1689,6 +1603,23 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "NodeDefinitionTarget": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "NodeDefinitionType": {
+                "enum": [
+                    0,
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "format": "int32"
             },
             "NodeInstance": {
                 "type": "object",
@@ -1811,7 +1742,8 @@
                 "required": [
                     "assemblyName",
                     "className",
-                    "name"
+                    "name",
+                    "version"
                 ],
                 "type": "object",
                 "properties": {
@@ -1961,14 +1893,17 @@
                         "type": "string"
                     },
                     "type": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -1981,8 +1916,7 @@
                         "type": "string"
                     },
                     "target": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2032,14 +1966,17 @@
                         "nullable": true
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2052,8 +1989,7 @@
                         "nullable": true
                     },
                     "target": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2130,14 +2066,17 @@
                         "type": "string"
                     },
                     "type": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2150,8 +2089,7 @@
                         "type": "string"
                     },
                     "target": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2201,14 +2139,17 @@
                         "nullable": true
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionType"
                     },
                     "eventName": {
                         "type": "string",
                         "nullable": true
                     },
-                    "name": {
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2221,8 +2162,7 @@
                         "nullable": true
                     },
                     "target": {
-                        "type": "string",
-                        "nullable": true
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"

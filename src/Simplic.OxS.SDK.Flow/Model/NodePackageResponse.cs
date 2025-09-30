@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Initializes a new instance of the <see cref="NodePackageResponse" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
-        /// <param name="varVersion">varVersion.</param>
+        /// <param name="varVersion">varVersion (required).</param>
         /// <param name="assemblyName">assemblyName (required).</param>
         /// <param name="className">className (required).</param>
         public NodePackageResponse(string name = default(string), string varVersion = default(string), string assemblyName = default(string), string className = default(string))
@@ -53,6 +53,12 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("name is a required property for NodePackageResponse and cannot be null");
             }
             this.Name = name;
+            // to ensure "varVersion" is required (not null)
+            if (varVersion == null)
+            {
+                throw new ArgumentNullException("varVersion is a required property for NodePackageResponse and cannot be null");
+            }
+            this.VarVersion = varVersion;
             // to ensure "assemblyName" is required (not null)
             if (assemblyName == null)
             {
@@ -65,7 +71,6 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("className is a required property for NodePackageResponse and cannot be null");
             }
             this.ClassName = className;
-            this.VarVersion = varVersion;
         }
 
         /// <summary>
@@ -77,7 +82,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets VarVersion
         /// </summary>
-        [DataMember(Name = "version", EmitDefaultValue = true)]
+        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = true)]
         public string VarVersion { get; set; }
 
         /// <summary>

@@ -5,12 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Type** | **string** |  | 
+**Type** | **NodeDefinitionType** |  | 
 **EventName** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
+**DisplayName** | **string** |  | [optional] 
+**DisplayKey** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Markdown** | **string** |  | 
-**Target** | **string** |  | 
+**Target** | **NodeDefinitionTarget** |  | 
 **CustomDataInPinTemplate** | [**CustomDataInPinTemplateDefinition**](CustomDataInPinTemplateDefinition.md) |  | [optional] 
 **CustomFlowOutPinTemplate** | [**CustomFlowOutPinTemplateDefinition**](CustomFlowOutPinTemplateDefinition.md) |  | [optional] 
 **DataInPins** | [**List&lt;DataInPinDefinition&gt;**](DataInPinDefinition.md) |  | [optional] 

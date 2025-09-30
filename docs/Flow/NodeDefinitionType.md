@@ -1,13 +1,9 @@
-# Simplic.OxS.SDK.Flow.NodePackageResponse
+# Simplic.OxS.SDK.Flow.NodeDefinitionType
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**VarVersion** | **string** |  | 
-**AssemblyName** | **string** |  | 
-**ClassName** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
