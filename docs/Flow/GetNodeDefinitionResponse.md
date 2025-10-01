@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Type** | **NodeDefinitionType** |  | 
+**Type** | **string** |  | 
 **EventName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **DisplayKey** | **string** |  | [optional] 

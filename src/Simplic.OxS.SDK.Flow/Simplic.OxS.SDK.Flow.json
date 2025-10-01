@@ -1455,7 +1455,12 @@
                         "nullable": true
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -1546,7 +1551,12 @@
                         "nullable": true
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -1608,15 +1618,6 @@
                 "enum": [
                     0,
                     1
-                ],
-                "type": "integer",
-                "format": "int32"
-            },
-            "NodeDefinitionType": {
-                "enum": [
-                    0,
-                    1,
-                    2
                 ],
                 "type": "integer",
                 "format": "int32"
@@ -1893,7 +1894,12 @@
                         "type": "string"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -1966,7 +1972,12 @@
                         "nullable": true
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -2066,7 +2077,12 @@
                         "type": "string"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",
@@ -2139,7 +2155,12 @@
                         "nullable": true
                     },
                     "type": {
-                        "$ref": "#/components/schemas/NodeDefinitionType"
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow"
+                        ],
+                        "type": "string"
                     },
                     "eventName": {
                         "type": "string",

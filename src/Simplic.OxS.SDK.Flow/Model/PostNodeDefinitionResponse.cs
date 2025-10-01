@@ -33,12 +33,37 @@ namespace Simplic.OxS.SDK.Flow
     [DataContract(Name = "PostNodeDefinitionResponse")]
     public partial class PostNodeDefinitionResponse : IEquatable<PostNodeDefinitionResponse>, IValidatableObject
     {
+        /// <summary>
+        /// Defines Type
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            /// <summary>
+            /// Enum Action for value: action
+            /// </summary>
+            [EnumMember(Value = "action")]
+            Action,
+
+            /// <summary>
+            /// Enum OnEvent for value: onEvent
+            /// </summary>
+            [EnumMember(Value = "onEvent")]
+            OnEvent,
+
+            /// <summary>
+            /// Enum ControlFlow for value: controlFlow
+            /// </summary>
+            [EnumMember(Value = "controlFlow")]
+            ControlFlow
+        }
+
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public NodeDefinitionType Type { get; set; }
+        public TypeEnum Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Target
@@ -67,7 +92,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public PostNodeDefinitionResponse(string id = default(string), NodeDefinitionType type = default(NodeDefinitionType), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
+        public PostNodeDefinitionResponse(string id = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
         {
             // to ensure "id" is required (not null)
             if (id == null)
