@@ -12302,9 +12302,20 @@
                     "defaultValue": {
                         "nullable": true
                     },
-                    "valueType": {
+                    "valueTypeName": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "options": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SettingOption"
+                        },
+                        "nullable": true
+                    },
+                    "hasOptions": {
+                        "type": "boolean",
+                        "readOnly": true
                     }
                 },
                 "additionalProperties": false
@@ -13890,6 +13901,23 @@
                 },
                 "additionalProperties": false,
                 "description": "Request to set the actual times of a tour and a possible new status."
+            },
+            "SettingOption": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "ShiftResponse": {
                 "type": "object",

@@ -41,15 +41,17 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="displayKey">displayKey.</param>
         /// <param name="value">value.</param>
         /// <param name="defaultValue">defaultValue.</param>
-        /// <param name="valueType">valueType.</param>
-        public OrganizationSettingResult(string internalName = default(string), string displayName = default(string), string displayKey = default(string), Object value = default(Object), Object defaultValue = default(Object), string valueType = default(string))
+        /// <param name="valueTypeName">valueTypeName.</param>
+        /// <param name="options">options.</param>
+        public OrganizationSettingResult(string internalName = default(string), string displayName = default(string), string displayKey = default(string), Object value = default(Object), Object defaultValue = default(Object), string valueTypeName = default(string), List<SettingOption> options = default(List<SettingOption>))
         {
             this.InternalName = internalName;
             this.DisplayName = displayName;
             this.DisplayKey = displayKey;
             this.Value = value;
             this.DefaultValue = defaultValue;
-            this.ValueType = valueType;
+            this.ValueTypeName = valueTypeName;
+            this.Options = options;
         }
 
         /// <summary>
@@ -83,11 +85,31 @@ namespace Simplic.OxS.SDK.Logistics
         public Object DefaultValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValueType
+        /// Gets or Sets ValueTypeName
         /// </summary>
-        [DataMember(Name = "valueType", EmitDefaultValue = true)]
-        public string ValueType { get; set; }
+        [DataMember(Name = "valueTypeName", EmitDefaultValue = true)]
+        public string ValueTypeName { get; set; }
 
+        /// <summary>
+        /// Gets or Sets Options
+        /// </summary>
+        [DataMember(Name = "options", EmitDefaultValue = true)]
+        public List<SettingOption> Options { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HasOptions
+        /// </summary>
+        [DataMember(Name = "hasOptions", EmitDefaultValue = true)]
+        public bool HasOptions { get; private set; }
+
+        /// <summary>
+        /// Returns false as HasOptions should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeHasOptions()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -101,7 +123,9 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
-            sb.Append("  ValueType: ").Append(ValueType).Append("\n");
+            sb.Append("  ValueTypeName: ").Append(ValueTypeName).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  HasOptions: ").Append(HasOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,9 +187,19 @@ namespace Simplic.OxS.SDK.Logistics
                     this.DefaultValue.Equals(input.DefaultValue))
                 ) && 
                 (
-                    this.ValueType == input.ValueType ||
-                    (this.ValueType != null &&
-                    this.ValueType.Equals(input.ValueType))
+                    this.ValueTypeName == input.ValueTypeName ||
+                    (this.ValueTypeName != null &&
+                    this.ValueTypeName.Equals(input.ValueTypeName))
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    this.Options != null &&
+                    input.Options != null &&
+                    this.Options.SequenceEqual(input.Options)
+                ) && 
+                (
+                    this.HasOptions == input.HasOptions ||
+                    this.HasOptions.Equals(input.HasOptions)
                 );
         }
 
@@ -198,10 +232,15 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.DefaultValue.GetHashCode();
                 }
-                if (this.ValueType != null)
+                if (this.ValueTypeName != null)
                 {
-                    hashCode = (hashCode * 59) + this.ValueType.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ValueTypeName.GetHashCode();
                 }
+                if (this.Options != null)
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.HasOptions.GetHashCode();
                 return hashCode;
             }
         }
