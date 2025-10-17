@@ -12316,6 +12316,18 @@
                     "hasOptions": {
                         "type": "boolean",
                         "readOnly": true
+                    },
+                    "groupKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "groupDisplayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "groupDisplayName": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
