@@ -38,10 +38,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="endpoint">endpoint.</param>
-        public EndpointContractDefinition(string name = default(string), string endpoint = default(string))
+        /// <param name="schema">schema.</param>
+        public EndpointContractDefinition(string name = default(string), string endpoint = default(string), JsonSchema schema = default(JsonSchema))
         {
             this.Name = name;
             this.Endpoint = endpoint;
+            this.Schema = schema;
         }
 
         /// <summary>
@@ -57,6 +59,12 @@ namespace Simplic.OxS.SDK.Ai
         public string Endpoint { get; set; }
 
         /// <summary>
+        /// Gets or Sets Schema
+        /// </summary>
+        [DataMember(Name = "schema", EmitDefaultValue = false)]
+        public JsonSchema Schema { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +74,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class EndpointContractDefinition {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +119,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Endpoint == input.Endpoint ||
                     (this.Endpoint != null &&
                     this.Endpoint.Equals(input.Endpoint))
+                ) && 
+                (
+                    this.Schema == input.Schema ||
+                    (this.Schema != null &&
+                    this.Schema.Equals(input.Schema))
                 );
         }
 
@@ -129,6 +143,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Endpoint != null)
                 {
                     hashCode = (hashCode * 59) + this.Endpoint.GetHashCode();
+                }
+                if (this.Schema != null)
+                {
+                    hashCode = (hashCode * 59) + this.Schema.GetHashCode();
                 }
                 return hashCode;
             }
