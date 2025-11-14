@@ -28,29 +28,19 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to create a Simplic.OxS.ERP.TaxRateType.
+    /// Represents a request to update a Simplic.OxS.ERP.TaxRate.
     /// </summary>
-    [DataContract(Name = "TaxRateTypeRequest")]
-    public partial class TaxRateTypeRequest : IEquatable<TaxRateTypeRequest>, IValidatableObject
+    [DataContract(Name = "UpdateTaxRateRequest")]
+    public partial class UpdateTaxRateRequest : IEquatable<UpdateTaxRateRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TaxRateTypeRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateTaxRateRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TaxRateTypeRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TaxRateTypeRequest" /> class.
-        /// </summary>
-        /// <param name="number">Gets or sets the number. (required).</param>
-        /// <param name="name">Gets or sets the name. (required).</param>
-        public TaxRateTypeRequest(int number = default(int), string name = default(string))
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        public UpdateTaxRateRequest(int? number = default(int?), string name = default(string))
         {
             this.Number = number;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TaxRateTypeRequest and cannot be null");
-            }
             this.Name = name;
         }
 
@@ -58,14 +48,14 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the number.
         /// </summary>
         /// <value>Gets or sets the number.</value>
-        [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
-        public int Number { get; set; }
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public int? Number { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>Gets or sets the name.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -75,7 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TaxRateTypeRequest {\n");
+            sb.Append("class UpdateTaxRateRequest {\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -98,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TaxRateTypeRequest);
+            return this.Equals(input as UpdateTaxRateRequest);
         }
 
         /// <summary>
-        /// Returns true if TaxRateTypeRequest instances are equal
+        /// Returns true if UpdateTaxRateRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of TaxRateTypeRequest to be compared</param>
+        /// <param name="input">Instance of UpdateTaxRateRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TaxRateTypeRequest input)
+        public bool Equals(UpdateTaxRateRequest input)
         {
             if (input == null)
             {
@@ -115,7 +105,8 @@ namespace Simplic.OxS.SDK.ERP
             return 
                 (
                     this.Number == input.Number ||
-                    this.Number.Equals(input.Number)
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -133,7 +124,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -149,18 +143,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 2)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 2.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

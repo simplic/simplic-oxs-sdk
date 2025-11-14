@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Number** | **int** | Gets or sets the number. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
 **Countries** | [**List&lt;TaxGroupCountryModel&gt;**](TaxGroupCountryModel.md) | Gets or sets the set of countries. | [optional] 
-**TaxRates** | [**List&lt;TaxRateModel&gt;**](TaxRateModel.md) | Gets or sets the tax rates for this tax group. | [optional] 
+**TaxKeys** | [**List&lt;TaxKeyModel&gt;**](TaxKeyModel.md) | Gets or sets the tax keys for this tax group. | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the tax group is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the tax group. | [optional] 
 **CreateUserName** | **string** | Gets or sets the name of the user that created the tax group. | [optional] 

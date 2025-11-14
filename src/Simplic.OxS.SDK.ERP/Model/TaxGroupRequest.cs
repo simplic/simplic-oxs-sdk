@@ -44,8 +44,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number. (required).</param>
         /// <param name="name">Gets or sets the name. (required).</param>
         /// <param name="countryIsoCodes">Gets or sets the set of countries given by ISO code. (required).</param>
-        /// <param name="taxRates">Gets or sets the tax rates for this tax group. (required).</param>
-        public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>), List<TaxRateRequest> taxRates = default(List<TaxRateRequest>))
+        /// <param name="taxKeys">Gets or sets the tax keys for this tax group. (required).</param>
+        public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>), List<TaxKeyRequest> taxKeys = default(List<TaxKeyRequest>))
         {
             this.Number = number;
             // to ensure "name" is required (not null)
@@ -60,12 +60,12 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("countryIsoCodes is a required property for TaxGroupRequest and cannot be null");
             }
             this.CountryIsoCodes = countryIsoCodes;
-            // to ensure "taxRates" is required (not null)
-            if (taxRates == null)
+            // to ensure "taxKeys" is required (not null)
+            if (taxKeys == null)
             {
-                throw new ArgumentNullException("taxRates is a required property for TaxGroupRequest and cannot be null");
+                throw new ArgumentNullException("taxKeys is a required property for TaxGroupRequest and cannot be null");
             }
-            this.TaxRates = taxRates;
+            this.TaxKeys = taxKeys;
         }
 
         /// <summary>
@@ -90,11 +90,11 @@ namespace Simplic.OxS.SDK.ERP
         public List<string> CountryIsoCodes { get; set; }
 
         /// <summary>
-        /// Gets or sets the tax rates for this tax group.
+        /// Gets or sets the tax keys for this tax group.
         /// </summary>
-        /// <value>Gets or sets the tax rates for this tax group.</value>
-        [DataMember(Name = "taxRates", IsRequired = true, EmitDefaultValue = true)]
-        public List<TaxRateRequest> TaxRates { get; set; }
+        /// <value>Gets or sets the tax keys for this tax group.</value>
+        [DataMember(Name = "taxKeys", IsRequired = true, EmitDefaultValue = true)]
+        public List<TaxKeyRequest> TaxKeys { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,7 +107,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CountryIsoCodes: ").Append(CountryIsoCodes).Append("\n");
-            sb.Append("  TaxRates: ").Append(TaxRates).Append("\n");
+            sb.Append("  TaxKeys: ").Append(TaxKeys).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -159,10 +159,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.CountryIsoCodes.SequenceEqual(input.CountryIsoCodes)
                 ) && 
                 (
-                    this.TaxRates == input.TaxRates ||
-                    this.TaxRates != null &&
-                    input.TaxRates != null &&
-                    this.TaxRates.SequenceEqual(input.TaxRates)
+                    this.TaxKeys == input.TaxKeys ||
+                    this.TaxKeys != null &&
+                    input.TaxKeys != null &&
+                    this.TaxKeys.SequenceEqual(input.TaxKeys)
                 );
         }
 
@@ -184,9 +184,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.CountryIsoCodes.GetHashCode();
                 }
-                if (this.TaxRates != null)
+                if (this.TaxKeys != null)
                 {
-                    hashCode = (hashCode * 59) + this.TaxRates.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TaxKeys.GetHashCode();
                 }
                 return hashCode;
             }

@@ -3185,28 +3185,28 @@
                 }
             }
         },
-        "/TaxRateType": {
+        "/TaxRate": {
             "post": {
                 "tags": [
-                    "TaxRateType"
+                    "TaxRate"
                 ],
-                "summary": "Creates a new tax rate type.",
+                "summary": "Creates a new tax rate.",
                 "requestBody": {
                     "description": "",
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TaxRateTypeRequest"
+                                "$ref": "#/components/schemas/TaxRateRequest"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TaxRateTypeRequest"
+                                "$ref": "#/components/schemas/TaxRateRequest"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TaxRateTypeRequest"
+                                "$ref": "#/components/schemas/TaxRateRequest"
                             }
                         }
                     }
@@ -3217,17 +3217,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             }
                         }
@@ -3275,12 +3275,12 @@
                 }
             }
         },
-        "/TaxRateType/{id}": {
+        "/TaxRate/{id}": {
             "patch": {
                 "tags": [
-                    "TaxRateType"
+                    "TaxRate"
                 ],
-                "summary": "Patches a tax rate type.",
+                "summary": "Patches a tax rate.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3298,17 +3298,17 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateTaxRateTypeRequest"
+                                "$ref": "#/components/schemas/UpdateTaxRateRequest"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateTaxRateTypeRequest"
+                                "$ref": "#/components/schemas/UpdateTaxRateRequest"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateTaxRateTypeRequest"
+                                "$ref": "#/components/schemas/UpdateTaxRateRequest"
                             }
                         }
                     }
@@ -3319,17 +3319,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             }
                         }
@@ -3378,9 +3378,9 @@
             },
             "delete": {
                 "tags": [
-                    "TaxRateType"
+                    "TaxRate"
                 ],
-                "summary": "Deletes a tax rate type.",
+                "summary": "Deletes a tax rate.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3421,9 +3421,9 @@
             },
             "get": {
                 "tags": [
-                    "TaxRateType"
+                    "TaxRate"
                 ],
-                "summary": "Gets a tax rate type by ID.",
+                "summary": "Gets a tax rate by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3442,17 +3442,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TaxRateTypeModel"
+                                    "$ref": "#/components/schemas/TaxRateModel"
                                 }
                             }
                         }
@@ -5938,21 +5938,8 @@
             },
             "CreateTransactionRequest": {
                 "required": [
-                    "creator",
-                    "currencyId",
-                    "date",
-                    "financialAccountingPeriodId",
-                    "financialPartner",
-                    "invoiceRecipient",
                     "number",
-                    "payer",
-                    "paymentMethodId",
-                    "periodId",
-                    "representative",
-                    "responsible",
                     "subtypeId",
-                    "taxGroupId",
-                    "termsOfPaymentId",
                     "typeId"
                 ],
                 "type": "object",
@@ -5983,7 +5970,8 @@
                     "date": {
                         "type": "string",
                         "description": "Gets or sets the time of the underlying transaction.",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "deliveryDate": {
                         "type": "string",
@@ -5994,17 +5982,20 @@
                     "termsOfPaymentId": {
                         "type": "string",
                         "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "paymentMethodId": {
                         "type": "string",
                         "description": "Gets or sets the payment method for this transaction given by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "currencyId": {
                         "type": "string",
                         "description": "Gets or sets the currency used to quantify this transaction by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "description": {
                         "type": "string",
@@ -6073,12 +6064,14 @@
                     "financialAccountingPeriodId": {
                         "type": "string",
                         "description": "Gets or sets the financial year period of this transaction given by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "periodId": {
                         "type": "string",
                         "description": "Gets or sets the financial year period of this transaction for inventory management given by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "manualVAT": {
                         "$ref": "#/components/schemas/TransactionManualVatRequest"
@@ -6106,7 +6099,8 @@
                     "taxGroupId": {
                         "type": "string",
                         "description": "Gets or sets the tax group by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "operationItemCombinationMode": {
                         "$ref": "#/components/schemas/OperationItemCombinationMode"
@@ -8162,12 +8156,12 @@
                         "description": "Gets or sets the set of countries.",
                         "nullable": true
                     },
-                    "taxRates": {
+                    "taxKeys": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TaxRateModel"
+                            "$ref": "#/components/schemas/TaxKeyModel"
                         },
-                        "description": "Gets or sets the tax rates for this tax group.",
+                        "description": "Gets or sets the tax keys for this tax group.",
                         "nullable": true
                     },
                     "createDateTime": {
@@ -8211,7 +8205,7 @@
                     "countryIsoCodes",
                     "name",
                     "number",
-                    "taxRates"
+                    "taxKeys"
                 ],
                 "type": "object",
                 "properties": {
@@ -8233,18 +8227,18 @@
                         },
                         "description": "Gets or sets the set of countries given by ISO code."
                     },
-                    "taxRates": {
+                    "taxKeys": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TaxRateRequest"
+                            "$ref": "#/components/schemas/TaxKeyRequest"
                         },
-                        "description": "Gets or sets the tax rates for this tax group."
+                        "description": "Gets or sets the tax keys for this tax group."
                     }
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxGroup."
             },
-            "TaxRateModel": {
+            "TaxKeyModel": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -8258,7 +8252,7 @@
                         "nullable": true
                     },
                     "type": {
-                        "$ref": "#/components/schemas/TaxRateTypeModel"
+                        "$ref": "#/components/schemas/TaxKeyModel"
                     },
                     "value": {
                         "type": "number",
@@ -8272,9 +8266,9 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for Simplic.OxS.ERP.TaxRate."
+                "description": "Represents the shared model for Simplic.OxS.ERP.TaxKey."
             },
-            "TaxRateRequest": {
+            "TaxKeyRequest": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -8287,9 +8281,9 @@
                         "description": "Gets or sets the name.",
                         "nullable": true
                     },
-                    "typeId": {
+                    "taxRateId": {
                         "type": "string",
-                        "description": "Gets or sets the tax rate type given by ID.",
+                        "description": "Gets or sets the tax rate given by ID.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -8307,9 +8301,9 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to create or update a Simplic.OxS.ERP.TaxRate."
+                "description": "Represents a request to create or update a Simplic.OxS.ERP.TaxKey."
             },
-            "TaxRateTypeModel": {
+            "TaxRateModel": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -8335,41 +8329,41 @@
                     },
                     "createDateTime": {
                         "type": "string",
-                        "description": "Gets or sets the date and time the tax rate type is created.",
+                        "description": "Gets or sets the date and time the tax rate is created.",
                         "format": "date-time"
                     },
                     "createUserId": {
                         "type": "string",
-                        "description": "Gets or sets the id of the user that created the tax rate type.",
+                        "description": "Gets or sets the id of the user that created the tax rate.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "createUserName": {
                         "type": "string",
-                        "description": "Gets or sets the name of the user that created the tax rate type.",
+                        "description": "Gets or sets the name of the user that created the tax rate.",
                         "nullable": true
                     },
                     "updateDateTime": {
                         "type": "string",
-                        "description": "Gets or sets the date and time the tax rate type is updated.",
+                        "description": "Gets or sets the date and time the tax rate is updated.",
                         "format": "date-time"
                     },
                     "updateUserId": {
                         "type": "string",
-                        "description": "Gets or sets the id of the user that updated the tax rate type.",
+                        "description": "Gets or sets the id of the user that updated the tax rate.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "updateUserName": {
                         "type": "string",
-                        "description": "Gets or sets the name of the user that updated the tax rate type.",
+                        "description": "Gets or sets the name of the user that updated the tax rate.",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for Simplic.OxS.ERP.TaxRateType."
+                "description": "Represents the shared model for Simplic.OxS.ERP.TaxRate."
             },
-            "TaxRateTypeRequest": {
+            "TaxRateRequest": {
                 "required": [
                     "name",
                     "number"
@@ -8389,7 +8383,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to create a Simplic.OxS.ERP.TaxRateType."
+                "description": "Represents a request to create a Simplic.OxS.ERP.TaxRate."
             },
             "TaxRegistration": {
                 "type": "object",
@@ -8939,6 +8933,12 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "generalLedgerAccountId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "deltaValue": {
                         "type": "number",
                         "description": "Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.",
@@ -9032,6 +9032,12 @@
                     "articleId": {
                         "type": "string",
                         "description": "Gets or sets the article by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account by ID.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -9253,7 +9259,8 @@
                     "date": {
                         "type": "string",
                         "description": "Gets or sets the time of the underlying transaction.",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "deliveryDate": {
                         "type": "string",
@@ -10213,10 +10220,10 @@
                         "description": "Gets or sets the set of countries given by ISO code.",
                         "nullable": true
                     },
-                    "taxRates": {
+                    "taxKeys": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TaxRateRequest"
+                            "$ref": "#/components/schemas/TaxKeyRequest"
                         },
                         "description": "Gets or sets the tax rates for this tax group.",
                         "nullable": true
@@ -10225,7 +10232,7 @@
                 "additionalProperties": false,
                 "description": "Represents a request to update a Simplic.OxS.ERP.TaxGroup."
             },
-            "UpdateTaxRateTypeRequest": {
+            "UpdateTaxRateRequest": {
                 "type": "object",
                 "properties": {
                     "number": {
@@ -10241,7 +10248,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to update a Simplic.OxS.ERP.TaxRateType."
+                "description": "Represents a request to update a Simplic.OxS.ERP.TaxRate."
             },
             "UpdateTermsOfPaymentRequest": {
                 "type": "object",

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Number** | **string** | Gets or sets the transaction number. | [optional] 
 **Reference** | **string** | Gets or sets the reference. | [optional] 
 **Type** | [**TransactionTransactionTypeModel**](TransactionTransactionTypeModel.md) |  | [optional] 
-**Date** | **DateTime** | Gets or sets the time of the underlying transaction. | [optional] 
+**Date** | **DateTime?** | Gets or sets the time of the underlying transaction. | [optional] 
 **DeliveryDate** | **DateTime?** | Gets or sets the time of delivery. | [optional] 
 **TermsOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **PaymentMethod** | [**PaymentMethodModel**](PaymentMethodModel.md) |  | [optional] 

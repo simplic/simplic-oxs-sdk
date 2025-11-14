@@ -36,26 +36,56 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRateModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="id">id.</param>
+        /// <param name="organizationId">organizationId.</param>
+        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="type">type.</param>
-        /// <param name="value">Gets or sets the tax rate value given in percent..</param>
-        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
-        public TaxRateModel(Guid id = default(Guid), string name = default(string), TaxRateTypeModel type = default(TaxRateTypeModel), double value = default(double), DateTime validFrom = default(DateTime))
+        /// <param name="createDateTime">Gets or sets the date and time the tax rate is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the tax rate..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the tax rate..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the tax rate is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the tax rate..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the tax rate..</param>
+        public TaxRateModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
+            this.OrganizationId = organizationId;
+            this.IsDeleted = isDeleted;
+            this.Number = number;
             this.Name = name;
-            this.Type = type;
-            this.Value = value;
-            this.ValidFrom = validFrom;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
-        /// Gets or sets the ID.
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public Guid OrganizationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number.
+        /// </summary>
+        /// <value>Gets or sets the number.</value>
+        [DataMember(Name = "number", EmitDefaultValue = false)]
+        public int Number { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -65,24 +95,46 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the date and time the tax rate is created.
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TaxRateTypeModel Type { get; set; }
+        /// <value>Gets or sets the date and time the tax rate is created.</value>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the tax rate value given in percent.
+        /// Gets or sets the id of the user that created the tax rate.
         /// </summary>
-        /// <value>Gets or sets the tax rate value given in percent.</value>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
-        public double Value { get; set; }
+        /// <value>Gets or sets the id of the user that created the tax rate.</value>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or sets the point in time this tax rate is valid from.
+        /// Gets or sets the name of the user that created the tax rate.
         /// </summary>
-        /// <value>Gets or sets the point in time this tax rate is valid from.</value>
-        [DataMember(Name = "validFrom", EmitDefaultValue = false)]
-        public DateTime ValidFrom { get; set; }
+        /// <value>Gets or sets the name of the user that created the tax rate.</value>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time the tax rate is updated.
+        /// </summary>
+        /// <value>Gets or sets the date and time the tax rate is updated.</value>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the user that updated the tax rate.
+        /// </summary>
+        /// <value>Gets or sets the id of the user that updated the tax rate.</value>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the user that updated the tax rate.
+        /// </summary>
+        /// <value>Gets or sets the name of the user that updated the tax rate.</value>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,10 +145,16 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TaxRateModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,23 +196,52 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    this.IsDeleted.Equals(input.IsDeleted)
+                ) && 
+                (
+                    this.Number == input.Number ||
+                    this.Number.Equals(input.Number)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
                 ) && 
                 (
-                    this.ValidFrom == input.ValidFrom ||
-                    (this.ValidFrom != null &&
-                    this.ValidFrom.Equals(input.ValidFrom))
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -171,18 +258,39 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.OrganizationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
+                hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.CreateDateTime != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                if (this.ValidFrom != null)
+                if (this.CreateUserId != null)
                 {
-                    hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
                 return hashCode;
             }

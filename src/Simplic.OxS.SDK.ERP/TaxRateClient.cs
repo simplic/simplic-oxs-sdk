@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.ERP
 /// <summary>
 /// Client to interact with the API endpoints of the erp service.
 /// </summary>
-public interface ITaxRateTypeClient
+public interface ITaxRateClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -40,7 +40,7 @@ public interface ITaxRateTypeClient
 
 
     /// <summary>
-    /// Deletes a tax rate type. 
+    /// Deletes a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -48,7 +48,7 @@ public interface ITaxRateTypeClient
     void Delete(Guid id);
 
     /// <summary>
-    /// Deletes a tax rate type. 
+    /// Deletes a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -56,7 +56,7 @@ public interface ITaxRateTypeClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    /// Deletes a tax rate type. 
+    /// Deletes a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -65,7 +65,7 @@ public interface ITaxRateTypeClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Deletes a tax rate type. 
+    /// Deletes a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -75,112 +75,112 @@ public interface ITaxRateTypeClient
 
 
     /// <summary>
-    /// Gets a tax rate type by ID. 
+    /// Gets a tax rate by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>TaxRateTypeModel</returns>
-    TaxRateTypeModel Get(Guid id);
+    /// <returns>TaxRateModel</returns>
+    TaxRateModel Get(Guid id);
 
     /// <summary>
-    /// Gets a tax rate type by ID. 
+    /// Gets a tax rate by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>ApiResponse of TaxRateTypeModel</returns>
-    ApiResponse<TaxRateTypeModel> GetWithHttpInfo(Guid id);
+    /// <returns>ApiResponse of TaxRateModel</returns>
+    ApiResponse<TaxRateModel> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    /// Gets a tax rate type by ID. 
+    /// Gets a tax rate by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of TaxRateTypeModel</returns>
-    Task<TaxRateTypeModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of TaxRateModel</returns>
+    Task<TaxRateModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Gets a tax rate type by ID. 
+    /// Gets a tax rate by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-    Task<ApiResponse<TaxRateTypeModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+    Task<ApiResponse<TaxRateModel>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    /// Patches a tax rate type. 
+    /// Patches a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateTaxRateTypeRequest"> (optional)</param>
-    /// <returns>TaxRateTypeModel</returns>
-    TaxRateTypeModel Patch(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?));
+    /// <param name="updateTaxRateRequest"> (optional)</param>
+    /// <returns>TaxRateModel</returns>
+    TaxRateModel Patch(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?));
 
     /// <summary>
-    /// Patches a tax rate type. 
+    /// Patches a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateTaxRateTypeRequest"> (optional)</param>
-    /// <returns>ApiResponse of TaxRateTypeModel</returns>
-    ApiResponse<TaxRateTypeModel> PatchWithHttpInfo(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?));
+    /// <param name="updateTaxRateRequest"> (optional)</param>
+    /// <returns>ApiResponse of TaxRateModel</returns>
+    ApiResponse<TaxRateModel> PatchWithHttpInfo(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?));
         
     /// <summary>
-    /// Patches a tax rate type. 
+    /// Patches a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+    /// <param name="updateTaxRateRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of TaxRateTypeModel</returns>
-    Task<TaxRateTypeModel> PatchAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of TaxRateModel</returns>
+    Task<TaxRateModel> PatchAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Patches a tax rate type. 
+    /// Patches a tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+    /// <param name="updateTaxRateRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-    Task<ApiResponse<TaxRateTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+    Task<ApiResponse<TaxRateModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    /// Creates a new tax rate type. 
+    /// Creates a new tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="taxRateTypeRequest"> (optional)</param>
-    /// <returns>TaxRateTypeModel</returns>
-    TaxRateTypeModel Post(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?));
+    /// <param name="taxRateRequest"> (optional)</param>
+    /// <returns>TaxRateModel</returns>
+    TaxRateModel Post(TaxRateRequest? taxRateRequest = default(TaxRateRequest?));
 
     /// <summary>
-    /// Creates a new tax rate type. 
+    /// Creates a new tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="taxRateTypeRequest"> (optional)</param>
-    /// <returns>ApiResponse of TaxRateTypeModel</returns>
-    ApiResponse<TaxRateTypeModel> PostWithHttpInfo(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?));
+    /// <param name="taxRateRequest"> (optional)</param>
+    /// <returns>ApiResponse of TaxRateModel</returns>
+    ApiResponse<TaxRateModel> PostWithHttpInfo(TaxRateRequest? taxRateRequest = default(TaxRateRequest?));
         
     /// <summary>
-    /// Creates a new tax rate type. 
+    /// Creates a new tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="taxRateTypeRequest"> (optional)</param>
+    /// <param name="taxRateRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of TaxRateTypeModel</returns>
-    Task<TaxRateTypeModel> PostAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of TaxRateModel</returns>
+    Task<TaxRateModel> PostAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Creates a new tax rate type. 
+    /// Creates a new tax rate. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="taxRateTypeRequest"> (optional)</param>
+    /// <param name="taxRateRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-    Task<ApiResponse<TaxRateTypeModel>> PostWithHttpInfoAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+    Task<ApiResponse<TaxRateModel>> PostWithHttpInfoAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -190,16 +190,16 @@ public interface ITaxRateTypeClient
     /// <summary>
     /// Client to interact with the API endpoints of the erp service.
     /// </summary>
-    public class TaxRateTypeClient : ITaxRateTypeClient
+    public class TaxRateClient : ITaxRateClient
     {
-        private __TaxRateTypeClient _internalClient;
+        private __TaxRateClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public TaxRateTypeClient(string host, string? authorization = null)
+        public TaxRateClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __TaxRateTypeClient(new Configuration
+                _internalClient = new __TaxRateClient(new Configuration
                 {
                     BasePath = $"{host}/erp-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -207,14 +207,14 @@ public interface ITaxRateTypeClient
             }
             else
             {
-                _internalClient = new __TaxRateTypeClient(new Configuration
+                _internalClient = new __TaxRateClient(new Configuration
                 {
                     BasePath = $"{host}/erp-api/v1",
                 });
             }
         }
 
-        public TaxRateTypeClient(Environment env, string? authorization = null)
+        public TaxRateClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -258,7 +258,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -276,7 +276,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -294,7 +294,7 @@ public interface ITaxRateTypeClient
         } 
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -313,7 +313,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -331,12 +331,12 @@ public interface ITaxRateTypeClient
             }
         }    
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Get(Guid id)
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Get(Guid id)
         {
             try
             {
@@ -349,12 +349,12 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> GetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> GetWithHttpInfo(Guid id)
         {
             try
             {
@@ -367,13 +367,13 @@ public interface ITaxRateTypeClient
         } 
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public System.Threading.Tasks.Task<TaxRateTypeModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public System.Threading.Tasks.Task<TaxRateModel> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -386,13 +386,13 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -404,17 +404,17 @@ public interface ITaxRateTypeClient
             }
         }    
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Patch(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?))
+        /// <param name="updateTaxRateRequest"> (optional)</param>
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Patch(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, updateTaxRateTypeRequest);
+                return _internalClient.Patch(id, updateTaxRateRequest);
             }
             catch (ApiException e)
             {
@@ -423,17 +423,17 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> PatchWithHttpInfo(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?))
+        /// <param name="updateTaxRateRequest"> (optional)</param>
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> PatchWithHttpInfo(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, updateTaxRateTypeRequest);
+                return _internalClient.PatchWithHttpInfo(id, updateTaxRateRequest);
             }
             catch (ApiException e)
             {
@@ -442,18 +442,18 @@ public interface ITaxRateTypeClient
         } 
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public System.Threading.Tasks.Task<TaxRateTypeModel> PatchAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public System.Threading.Tasks.Task<TaxRateModel> PatchAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, updateTaxRateTypeRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchAsync(id, updateTaxRateRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -462,18 +462,18 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, updateTaxRateTypeRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, updateTaxRateRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -481,16 +481,16 @@ public interface ITaxRateTypeClient
             }
         }    
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Post(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?))
+        /// <param name="taxRateRequest"> (optional)</param>
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Post(TaxRateRequest? taxRateRequest = default(TaxRateRequest?))
         {
             try
             {
-                return _internalClient.Post(taxRateTypeRequest);
+                return _internalClient.Post(taxRateRequest);
             }
             catch (ApiException e)
             {
@@ -499,16 +499,16 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> PostWithHttpInfo(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?))
+        /// <param name="taxRateRequest"> (optional)</param>
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> PostWithHttpInfo(TaxRateRequest? taxRateRequest = default(TaxRateRequest?))
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(taxRateTypeRequest);
+                return _internalClient.PostWithHttpInfo(taxRateRequest);
             }
             catch (ApiException e)
             {
@@ -517,17 +517,17 @@ public interface ITaxRateTypeClient
         } 
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public System.Threading.Tasks.Task<TaxRateTypeModel> PostAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public System.Threading.Tasks.Task<TaxRateModel> PostAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(taxRateTypeRequest, cancellationToken: cancellationToken);
+                return _internalClient.PostAsync(taxRateRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -536,17 +536,17 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> PostWithHttpInfoAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> PostWithHttpInfoAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(taxRateTypeRequest, cancellationToken: cancellationToken);
+                return _internalClient.PostWithHttpInfoAsync(taxRateRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -563,11 +563,11 @@ public interface ITaxRateTypeClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __ITaxRateTypeClientSync : IApiAccessor
+    internal interface __ITaxRateClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Deletes a tax rate type.
+        /// Deletes a tax rate.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -576,7 +576,7 @@ public interface ITaxRateTypeClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// Deletes a tax rate type.
+        /// Deletes a tax rate.
         /// </summary>
         /// <remarks>
         /// 
@@ -587,16 +587,16 @@ public interface ITaxRateTypeClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// Gets a tax rate type by ID.
+        /// Gets a tax rate by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        TaxRateTypeModel Get(Guid id, int operationIndex = 0);
+        /// <returns>TaxRateModel</returns>
+        TaxRateModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// Gets a tax rate type by ID.
+        /// Gets a tax rate by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -604,61 +604,61 @@ public interface ITaxRateTypeClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        ApiResponse<TaxRateTypeModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        ApiResponse<TaxRateModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// Patches a tax rate type.
+        /// Patches a tax rate.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        TaxRateTypeModel Patch(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0);
+        /// <returns>TaxRateModel</returns>
+        TaxRateModel Patch(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Patches a tax rate type.
+        /// Patches a tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        ApiResponse<TaxRateTypeModel> PatchWithHttpInfo(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        ApiResponse<TaxRateModel> PatchWithHttpInfo(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0);
         /// <summary>
-        /// Creates a new tax rate type.
+        /// Creates a new tax rate.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        TaxRateTypeModel Post(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0);
+        /// <returns>TaxRateModel</returns>
+        TaxRateModel Post(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Creates a new tax rate type.
+        /// Creates a new tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        ApiResponse<TaxRateTypeModel> PostWithHttpInfo(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        ApiResponse<TaxRateModel> PostWithHttpInfo(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __ITaxRateTypeClientAsync : IApiAccessor
+    internal interface __ITaxRateClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Deletes a tax rate type.
+        /// Deletes a tax rate.
         /// </summary>
         /// <remarks>
         /// 
@@ -671,7 +671,7 @@ public interface ITaxRateTypeClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Deletes a tax rate type.
+        /// Deletes a tax rate.
         /// </summary>
         /// <remarks>
         /// 
@@ -683,7 +683,7 @@ public interface ITaxRateTypeClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Gets a tax rate type by ID.
+        /// Gets a tax rate by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -692,11 +692,11 @@ public interface ITaxRateTypeClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        System.Threading.Tasks.Task<TaxRateTypeModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxRateModel</returns>
+        System.Threading.Tasks.Task<TaxRateModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Gets a tax rate type by ID.
+        /// Gets a tax rate by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -705,67 +705,67 @@ public interface ITaxRateTypeClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TaxRateTypeModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxRateModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Patches a tax rate type.
+        /// Patches a tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        System.Threading.Tasks.Task<TaxRateTypeModel> PatchAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxRateModel</returns>
+        System.Threading.Tasks.Task<TaxRateModel> PatchAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Patches a tax rate type.
+        /// Patches a tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TaxRateTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxRateModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Creates a new tax rate type.
+        /// Creates a new tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        System.Threading.Tasks.Task<TaxRateTypeModel> PostAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TaxRateModel</returns>
+        System.Threading.Tasks.Task<TaxRateModel> PostAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Creates a new tax rate type.
+        /// Creates a new tax rate.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TaxRateTypeModel>> PostWithHttpInfoAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxRateModel>> PostWithHttpInfoAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __ITaxRateTypeClient : __ITaxRateTypeClientSync, __ITaxRateTypeClientAsync
+    internal interface __ITaxRateClient : __ITaxRateClientSync, __ITaxRateClientAsync
     {
 
     }
@@ -773,24 +773,24 @@ public interface ITaxRateTypeClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __TaxRateTypeClient : __ITaxRateTypeClient
+    internal /*partial*/ class __TaxRateClient : __ITaxRateClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__TaxRateTypeClient"/> class.
+        /// Initializes a new instance of the <see cref="__TaxRateClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __TaxRateTypeClient() : this((string)null)
+        public __TaxRateClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__TaxRateTypeClient"/> class.
+        /// Initializes a new instance of the <see cref="__TaxRateClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __TaxRateTypeClient(string basePath)
+        public __TaxRateClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -803,12 +803,12 @@ public interface ITaxRateTypeClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__TaxRateTypeClient"/> class
+        /// Initializes a new instance of the <see cref="__TaxRateClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __TaxRateTypeClient(Simplic.OxS.SDK.Configuration configuration)
+        public __TaxRateClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -822,13 +822,13 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__TaxRateTypeClient"/> class
+        /// Initializes a new instance of the <see cref="__TaxRateClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __TaxRateTypeClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __TaxRateClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -882,7 +882,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -894,7 +894,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -928,7 +928,7 @@ public interface ITaxRateTypeClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdDelete";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -943,10 +943,10 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/TaxRate/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -957,7 +957,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -970,7 +970,7 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Deletes a tax rate type. 
+        /// Deletes a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1006,7 +1006,7 @@ public interface ITaxRateTypeClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdDelete";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1021,11 +1021,11 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/TaxRate/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1036,26 +1036,26 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Get(Guid id, int operationIndex = 0)
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Get(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = GetWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> GetWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1083,7 +1083,7 @@ public interface ITaxRateTypeClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdGet";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1098,10 +1098,10 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TaxRateTypeModel>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TaxRateModel>("/TaxRate/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1112,28 +1112,28 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public async System.Threading.Tasks.Task<TaxRateTypeModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public async System.Threading.Tasks.Task<TaxRateModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets a tax rate type by ID. 
+        /// Gets a tax rate by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1162,7 +1162,7 @@ public interface ITaxRateTypeClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdGet";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1177,11 +1177,11 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxRateTypeModel>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxRateModel>("/TaxRate/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1192,28 +1192,28 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Patch(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0)
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Patch(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = PatchWithHttpInfo(id, updateTaxRateTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = PatchWithHttpInfo(id, updateTaxRateRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> PatchWithHttpInfo(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> PatchWithHttpInfo(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1243,9 +1243,9 @@ public interface ITaxRateTypeClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateTaxRateTypeRequest;
+            localVarRequestOptions.Data = updateTaxRateRequest;
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdPatch";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1260,10 +1260,10 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<TaxRateTypeModel>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TaxRateModel>("/TaxRate/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1274,30 +1274,30 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public async System.Threading.Tasks.Task<TaxRateTypeModel> PatchAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public async System.Threading.Tasks.Task<TaxRateModel> PatchAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateTaxRateTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateTaxRateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Patches a tax rate type. 
+        /// Patches a tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateTaxRateTypeRequest"> (optional)</param>
+        /// <param name="updateTaxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateTypeRequest? updateTaxRateTypeRequest = default(UpdateTaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> PatchWithHttpInfoAsync(Guid id, UpdateTaxRateRequest? updateTaxRateRequest = default(UpdateTaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1328,9 +1328,9 @@ public interface ITaxRateTypeClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateTaxRateTypeRequest;
+            localVarRequestOptions.Data = updateTaxRateRequest;
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypeIdPatch";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRateIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1345,11 +1345,11 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<TaxRateTypeModel>("/TaxRateType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TaxRateModel>("/TaxRate/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypeIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRateIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1360,26 +1360,26 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TaxRateTypeModel</returns>
-        public TaxRateTypeModel Post(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0)
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel Post(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = PostWithHttpInfo(taxRateTypeRequest);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = PostWithHttpInfo(taxRateRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TaxRateTypeModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> PostWithHttpInfo(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> PostWithHttpInfo(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1408,9 +1408,9 @@ public interface ITaxRateTypeClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = taxRateTypeRequest;
+            localVarRequestOptions.Data = taxRateRequest;
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypePost";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1425,10 +1425,10 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TaxRateTypeModel>("/TaxRateType", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TaxRateModel>("/TaxRate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1439,28 +1439,28 @@ public interface ITaxRateTypeClient
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TaxRateTypeModel</returns>
-        public async System.Threading.Tasks.Task<TaxRateTypeModel> PostAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TaxRateModel</returns>
+        public async System.Threading.Tasks.Task<TaxRateModel> PostAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel> localVarResponse = await PostWithHttpInfoAsync(taxRateTypeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = await PostWithHttpInfoAsync(taxRateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creates a new tax rate type. 
+        /// Creates a new tax rate. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="taxRateTypeRequest"> (optional)</param>
+        /// <param name="taxRateRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TaxRateTypeModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateTypeModel>> PostWithHttpInfoAsync(TaxRateTypeRequest? taxRateTypeRequest = default(TaxRateTypeRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> PostWithHttpInfoAsync(TaxRateRequest? taxRateRequest = default(TaxRateRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1490,9 +1490,9 @@ public interface ITaxRateTypeClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = taxRateTypeRequest;
+            localVarRequestOptions.Data = taxRateRequest;
 
-            localVarRequestOptions.Operation = "TaxRateTypeClient.TaxRateTypePost";
+            localVarRequestOptions.Operation = "TaxRateClient.TaxRatePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1507,11 +1507,11 @@ public interface ITaxRateTypeClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TaxRateTypeModel>("/TaxRateType", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TaxRateModel>("/TaxRate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TaxRateTypePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TaxRatePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

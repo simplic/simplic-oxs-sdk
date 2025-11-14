@@ -47,23 +47,23 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
         /// </summary>
-        /// <param name="creator">creator (required).</param>
+        /// <param name="creator">creator.</param>
         /// <param name="number">Gets or sets the transaction number. (required).</param>
         /// <param name="reference">Gets or sets the reference..</param>
         /// <param name="typeId">Gets or sets the type by ID. (required).</param>
         /// <param name="subtypeId">Gets or sets the subtype by ID. (required).</param>
-        /// <param name="date">Gets or sets the time of the underlying transaction. (required).</param>
+        /// <param name="date">Gets or sets the time of the underlying transaction..</param>
         /// <param name="deliveryDate">Gets or sets the time of delivery..</param>
-        /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   (required).</param>
-        /// <param name="paymentMethodId">Gets or sets the payment method for this transaction given by ID. (required).</param>
-        /// <param name="currencyId">Gets or sets the currency used to quantify this transaction by ID. (required).</param>
+        /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  .</param>
+        /// <param name="paymentMethodId">Gets or sets the payment method for this transaction given by ID..</param>
+        /// <param name="currencyId">Gets or sets the currency used to quantify this transaction by ID..</param>
         /// <param name="description">Gets or sets the description..</param>
-        /// <param name="financialPartner">financialPartner (required).</param>
+        /// <param name="financialPartner">financialPartner.</param>
         /// <param name="deliveryAddress">deliveryAddress.</param>
-        /// <param name="invoiceRecipient">invoiceRecipient (required).</param>
-        /// <param name="payer">payer (required).</param>
-        /// <param name="responsible">responsible (required).</param>
-        /// <param name="representative">representative (required).</param>
+        /// <param name="invoiceRecipient">invoiceRecipient.</param>
+        /// <param name="payer">payer.</param>
+        /// <param name="responsible">responsible.</param>
+        /// <param name="representative">representative.</param>
         /// <param name="items">Gets or sets the items of this transaction..</param>
         /// <param name="alternativePaymentDeadline">Gets or sets an alternative payment deadline to the one defined in the terms of payment..</param>
         /// <param name="balance">balance.</param>
@@ -71,22 +71,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="billToText">Gets or sets the bill as a text..</param>
         /// <param name="cashDiscountPercentValue">Gets or sets the relative cash discount..</param>
         /// <param name="cashDiscountTotal">Gets or sets the total cash discount..</param>
-        /// <param name="financialAccountingPeriodId">Gets or sets the financial year period of this transaction given by ID. (required).</param>
-        /// <param name="periodId">Gets or sets the financial year period of this transaction for inventory management given by ID. (required).</param>
+        /// <param name="financialAccountingPeriodId">Gets or sets the financial year period of this transaction given by ID..</param>
+        /// <param name="periodId">Gets or sets the financial year period of this transaction for inventory management given by ID..</param>
         /// <param name="manualVAT">manualVAT.</param>
         /// <param name="notes">Gets or sets notes..</param>
         /// <param name="dueDate">Gets or sets the due date..</param>
         /// <param name="referenceNr">Gets or sets the reference number..</param>
-        /// <param name="taxGroupId">Gets or sets the tax group by ID. (required).</param>
+        /// <param name="taxGroupId">Gets or sets the tax group by ID..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
-        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), Guid termsOfPaymentId = default(Guid), Guid paymentMethodId = default(Guid), Guid currencyId = default(Guid), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid financialAccountingPeriodId = default(Guid), Guid periodId = default(Guid), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid taxGroupId = default(Guid), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?))
+        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?))
         {
-            // to ensure "creator" is required (not null)
-            if (creator == null)
-            {
-                throw new ArgumentNullException("creator is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.Creator = creator;
             // to ensure "number" is required (not null)
             if (number == null)
             {
@@ -95,47 +89,20 @@ namespace Simplic.OxS.SDK.ERP
             this.Number = number;
             this.TypeId = typeId;
             this.SubtypeId = subtypeId;
+            this.Creator = creator;
+            this.Reference = reference;
             this.Date = date;
+            this.DeliveryDate = deliveryDate;
             this.TermsOfPaymentId = termsOfPaymentId;
             this.PaymentMethodId = paymentMethodId;
             this.CurrencyId = currencyId;
-            // to ensure "financialPartner" is required (not null)
-            if (financialPartner == null)
-            {
-                throw new ArgumentNullException("financialPartner is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.FinancialPartner = financialPartner;
-            // to ensure "invoiceRecipient" is required (not null)
-            if (invoiceRecipient == null)
-            {
-                throw new ArgumentNullException("invoiceRecipient is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.InvoiceRecipient = invoiceRecipient;
-            // to ensure "payer" is required (not null)
-            if (payer == null)
-            {
-                throw new ArgumentNullException("payer is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.Payer = payer;
-            // to ensure "responsible" is required (not null)
-            if (responsible == null)
-            {
-                throw new ArgumentNullException("responsible is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.Responsible = responsible;
-            // to ensure "representative" is required (not null)
-            if (representative == null)
-            {
-                throw new ArgumentNullException("representative is a required property for CreateTransactionRequest and cannot be null");
-            }
-            this.Representative = representative;
-            this.FinancialAccountingPeriodId = financialAccountingPeriodId;
-            this.PeriodId = periodId;
-            this.TaxGroupId = taxGroupId;
-            this.Reference = reference;
-            this.DeliveryDate = deliveryDate;
             this.Description = description;
+            this.FinancialPartner = financialPartner;
             this.DeliveryAddress = deliveryAddress;
+            this.InvoiceRecipient = invoiceRecipient;
+            this.Payer = payer;
+            this.Responsible = responsible;
+            this.Representative = representative;
             this.Items = items;
             this.AlternativePaymentDeadline = alternativePaymentDeadline;
             this.Balance = balance;
@@ -143,17 +110,20 @@ namespace Simplic.OxS.SDK.ERP
             this.BillToText = billToText;
             this.CashDiscountPercentValue = cashDiscountPercentValue;
             this.CashDiscountTotal = cashDiscountTotal;
+            this.FinancialAccountingPeriodId = financialAccountingPeriodId;
+            this.PeriodId = periodId;
             this.ManualVAT = manualVAT;
             this.Notes = notes;
             this.DueDate = dueDate;
             this.ReferenceNr = referenceNr;
+            this.TaxGroupId = taxGroupId;
             this.OperationItemCombinationMode = operationItemCombinationMode;
         }
 
         /// <summary>
         /// Gets or Sets Creator
         /// </summary>
-        [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "creator", EmitDefaultValue = false)]
         public TransactionContactRequest Creator { get; set; }
 
         /// <summary>
@@ -188,8 +158,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the time of the underlying transaction.
         /// </summary>
         /// <value>Gets or sets the time of the underlying transaction.</value>
-        [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime Date { get; set; }
+        [DataMember(Name = "date", EmitDefaultValue = true)]
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Gets or sets the time of delivery.
@@ -202,22 +172,22 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  
         /// </summary>
         /// <value>Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  </value>
-        [DataMember(Name = "termsOfPaymentId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid TermsOfPaymentId { get; set; }
+        [DataMember(Name = "termsOfPaymentId", EmitDefaultValue = true)]
+        public Guid? TermsOfPaymentId { get; set; }
 
         /// <summary>
         /// Gets or sets the payment method for this transaction given by ID.
         /// </summary>
         /// <value>Gets or sets the payment method for this transaction given by ID.</value>
-        [DataMember(Name = "paymentMethodId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid PaymentMethodId { get; set; }
+        [DataMember(Name = "paymentMethodId", EmitDefaultValue = true)]
+        public Guid? PaymentMethodId { get; set; }
 
         /// <summary>
         /// Gets or sets the currency used to quantify this transaction by ID.
         /// </summary>
         /// <value>Gets or sets the currency used to quantify this transaction by ID.</value>
-        [DataMember(Name = "currencyId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid CurrencyId { get; set; }
+        [DataMember(Name = "currencyId", EmitDefaultValue = true)]
+        public Guid? CurrencyId { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
@@ -229,7 +199,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets FinancialPartner
         /// </summary>
-        [DataMember(Name = "financialPartner", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "financialPartner", EmitDefaultValue = false)]
         public TransactionContactRequest FinancialPartner { get; set; }
 
         /// <summary>
@@ -241,25 +211,25 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets InvoiceRecipient
         /// </summary>
-        [DataMember(Name = "invoiceRecipient", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "invoiceRecipient", EmitDefaultValue = false)]
         public TransactionContactRequest InvoiceRecipient { get; set; }
 
         /// <summary>
         /// Gets or Sets Payer
         /// </summary>
-        [DataMember(Name = "payer", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "payer", EmitDefaultValue = false)]
         public TransactionContactRequest Payer { get; set; }
 
         /// <summary>
         /// Gets or Sets Responsible
         /// </summary>
-        [DataMember(Name = "responsible", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "responsible", EmitDefaultValue = false)]
         public TransactionContactRequest Responsible { get; set; }
 
         /// <summary>
         /// Gets or Sets Representative
         /// </summary>
-        [DataMember(Name = "representative", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "representative", EmitDefaultValue = false)]
         public TransactionContactRequest Representative { get; set; }
 
         /// <summary>
@@ -314,15 +284,15 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the financial year period of this transaction given by ID.
         /// </summary>
         /// <value>Gets or sets the financial year period of this transaction given by ID.</value>
-        [DataMember(Name = "financialAccountingPeriodId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid FinancialAccountingPeriodId { get; set; }
+        [DataMember(Name = "financialAccountingPeriodId", EmitDefaultValue = true)]
+        public Guid? FinancialAccountingPeriodId { get; set; }
 
         /// <summary>
         /// Gets or sets the financial year period of this transaction for inventory management given by ID.
         /// </summary>
         /// <value>Gets or sets the financial year period of this transaction for inventory management given by ID.</value>
-        [DataMember(Name = "periodId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid PeriodId { get; set; }
+        [DataMember(Name = "periodId", EmitDefaultValue = true)]
+        public Guid? PeriodId { get; set; }
 
         /// <summary>
         /// Gets or Sets ManualVAT
@@ -355,8 +325,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the tax group by ID.
         /// </summary>
         /// <value>Gets or sets the tax group by ID.</value>
-        [DataMember(Name = "taxGroupId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid TaxGroupId { get; set; }
+        [DataMember(Name = "taxGroupId", EmitDefaultValue = true)]
+        public Guid? TaxGroupId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

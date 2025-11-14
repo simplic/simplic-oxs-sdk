@@ -28,28 +28,34 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to update a Simplic.OxS.ERP.TaxRateType.
+    /// Represents the shared model for Simplic.OxS.ERP.TaxKey.
     /// </summary>
-    [DataContract(Name = "UpdateTaxRateTypeRequest")]
-    public partial class UpdateTaxRateTypeRequest : IEquatable<UpdateTaxRateTypeRequest>, IValidatableObject
+    [DataContract(Name = "TaxKeyModel")]
+    public partial class TaxKeyModel : IEquatable<TaxKeyModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateTaxRateTypeRequest" /> class.
+        /// Initializes a new instance of the <see cref="TaxKeyModel" /> class.
         /// </summary>
-        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="id">Gets or sets the ID..</param>
         /// <param name="name">Gets or sets the name..</param>
-        public UpdateTaxRateTypeRequest(int? number = default(int?), string name = default(string))
+        /// <param name="type">type.</param>
+        /// <param name="value">Gets or sets the tax rate value given in percent..</param>
+        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
+        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxKeyModel type = default(TaxKeyModel), double value = default(double), DateTime validFrom = default(DateTime))
         {
-            this.Number = number;
+            this.Id = id;
             this.Name = name;
+            this.Type = type;
+            this.Value = value;
+            this.ValidFrom = validFrom;
         }
 
         /// <summary>
-        /// Gets or sets the number.
+        /// Gets or sets the ID.
         /// </summary>
-        /// <value>Gets or sets the number.</value>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public int? Number { get; set; }
+        /// <value>Gets or sets the ID.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -59,15 +65,38 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = false)]
+        public TaxKeyModel Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tax rate value given in percent.
+        /// </summary>
+        /// <value>Gets or sets the tax rate value given in percent.</value>
+        [DataMember(Name = "value", EmitDefaultValue = false)]
+        public double Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets the point in time this tax rate is valid from.
+        /// </summary>
+        /// <value>Gets or sets the point in time this tax rate is valid from.</value>
+        [DataMember(Name = "validFrom", EmitDefaultValue = false)]
+        public DateTime ValidFrom { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateTaxRateTypeRequest {\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("class TaxKeyModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +117,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateTaxRateTypeRequest);
+            return this.Equals(input as TaxKeyModel);
         }
 
         /// <summary>
-        /// Returns true if UpdateTaxRateTypeRequest instances are equal
+        /// Returns true if TaxKeyModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateTaxRateTypeRequest to be compared</param>
+        /// <param name="input">Instance of TaxKeyModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateTaxRateTypeRequest input)
+        public bool Equals(TaxKeyModel input)
         {
             if (input == null)
             {
@@ -104,14 +133,28 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    this.Value.Equals(input.Value)
+                ) && 
+                (
+                    this.ValidFrom == input.ValidFrom ||
+                    (this.ValidFrom != null &&
+                    this.ValidFrom.Equals(input.ValidFrom))
                 );
         }
 
@@ -124,13 +167,22 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Number != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                if (this.ValidFrom != null)
+                {
+                    hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
                 }
                 return hashCode;
             }
