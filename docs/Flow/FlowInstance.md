@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
+**Id** | **Guid** |  | 
+**Name** | **string** |  | 
+**Description** | **string** |  | 
 **Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 
 **Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | [optional] 
 

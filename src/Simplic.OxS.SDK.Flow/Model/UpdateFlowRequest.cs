@@ -28,33 +28,25 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// PostFlowRequest
+    /// UpdateFlowRequest
     /// </summary>
-    [DataContract(Name = "PostFlowRequest")]
-    public partial class PostFlowRequest : IEquatable<PostFlowRequest>, IValidatableObject
+    [DataContract(Name = "UpdateFlowRequest")]
+    public partial class UpdateFlowRequest : IEquatable<UpdateFlowRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostFlowRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateFlowRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="nodes">nodes.</param>
         /// <param name="variables">variables.</param>
-        public PostFlowRequest(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>))
+        public UpdateFlowRequest(string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>))
         {
-            this.Id = id;
             this.Name = name;
             this.Description = description;
             this.Nodes = nodes;
             this.Variables = variables;
         }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -87,8 +79,7 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PostFlowRequest {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class UpdateFlowRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Nodes: ").Append(Nodes).Append("\n");
@@ -113,26 +104,21 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PostFlowRequest);
+            return this.Equals(input as UpdateFlowRequest);
         }
 
         /// <summary>
-        /// Returns true if PostFlowRequest instances are equal
+        /// Returns true if UpdateFlowRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of PostFlowRequest to be compared</param>
+        /// <param name="input">Instance of UpdateFlowRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PostFlowRequest input)
+        public bool Equals(UpdateFlowRequest input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -166,10 +152,6 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

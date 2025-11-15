@@ -388,6 +388,103 @@
                     }
                 }
             },
+            "put": {
+                "tags": [
+                    "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateFlowRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateFlowRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateFlowRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "delete": {
                 "tags": [
                     "Flow"
@@ -548,6 +645,146 @@
                 }
             }
         },
+        "/Flow/get-by-event/{eventName}": {
+            "get": {
+                "tags": [
+                    "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "eventName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Flow/get-events/{id}": {
+            "get": {
+                "tags": [
+                    "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Flow": {
             "post": {
                 "tags": [
@@ -557,21 +794,101 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PostFlowRequest"
+                                "$ref": "#/components/schemas/FlowInstance"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PostFlowRequest"
+                                "$ref": "#/components/schemas/FlowInstance"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PostFlowRequest"
+                                "$ref": "#/components/schemas/FlowInstance"
                             }
                         }
                     }
                 },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Flow/deploy/{id}": {
+            "post": {
+                "tags": [
+                    "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1251,6 +1568,11 @@
                 "additionalProperties": false
             },
             "FlowInstance": {
+                "required": [
+                    "description",
+                    "id",
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1409,6 +1731,11 @@
                 "additionalProperties": false
             },
             "GetFlowResponse": {
+                "required": [
+                    "description",
+                    "id",
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -1831,38 +2158,6 @@
                 },
                 "additionalProperties": false
             },
-            "PostFlowRequest": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "nodes": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/NodeInstance"
-                        },
-                        "nullable": true
-                    },
-                    "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "PostFlowResponse": {
                 "required": [
                     "deploymentInfo",
@@ -2214,6 +2509,34 @@
                     },
                     "package": {
                         "$ref": "#/components/schemas/NodePackageResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateFlowRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "nodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeInstance"
+                        },
+                        "nullable": true
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FlowVariableInstance"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

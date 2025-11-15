@@ -4,11 +4,112 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**Deploy**](FlowClient.md#flowdeployidpost) | **POST** /Flow/deploy/{id} |  |
 | [**GetAll**](FlowClient.md#flowgetallget) | **GET** /Flow/get-all |  |
 | [**GetAllRefs**](FlowClient.md#flowgetallrefsget) | **GET** /Flow/get-all-refs |  |
+| [**GetByEvent**](FlowClient.md#flowgetbyeventeventnameget) | **GET** /Flow/get-by-event/{eventName} |  |
+| [**GetEvents**](FlowClient.md#flowgeteventsidget) | **GET** /Flow/get-events/{id} |  |
 | [**Delete**](FlowClient.md#flowiddelete) | **DELETE** /Flow/{id} |  |
 | [**Get**](FlowClient.md#flowidget) | **GET** /Flow/{id} |  |
+| [**Put**](FlowClient.md#flowidput) | **PUT** /Flow/{id} |  |
 | [**Post**](FlowClient.md#flowpost) | **POST** /Flow |  |
+
+<a id="flowdeployidpost"></a>
+# **Deploy**
+> PostFlowResponse Deploy (Guid id)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class DeployExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var id = "id_example";  // Guid | 
+
+            try
+            {
+                PostFlowResponse result = apiInstance.Deploy(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.Deploy: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeployWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PostFlowResponse> response = apiInstance.DeployWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.DeployWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+
+### Return type
+
+[**PostFlowResponse**](PostFlowResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="flowgetallget"></a>
 # **GetAll**
@@ -173,6 +274,198 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**GetAllFlowReferencesResponse**](GetAllFlowReferencesResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="flowgetbyeventeventnameget"></a>
+# **GetByEvent**
+> List&lt;Guid&gt; GetByEvent (string eventName)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class GetByEventExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var eventName = "eventName_example";  // string | 
+
+            try
+            {
+                List<Guid> result = apiInstance.GetByEvent(eventName);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.GetByEvent: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetByEventWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<Guid>> response = apiInstance.GetByEventWithHttpInfo(eventName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.GetByEventWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **eventName** | **string** |  |  |
+
+### Return type
+
+**List<Guid>**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="flowgeteventsidget"></a>
+# **GetEvents**
+> List&lt;string&gt; GetEvents (Guid id)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class GetEventsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var id = "id_example";  // Guid | 
+
+            try
+            {
+                List<string> result = apiInstance.GetEvents(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.GetEvents: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetEventsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<string>> response = apiInstance.GetEventsWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.GetEventsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+
+### Return type
+
+**List<string>**
 
 ### Authorization
 
@@ -382,9 +675,108 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="flowidput"></a>
+# **Put**
+> PostFlowResponse Put (Guid id, UpdateFlowRequest? updateFlowRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class PutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var id = "id_example";  // Guid | 
+            var updateFlowRequest = new UpdateFlowRequest?(); // UpdateFlowRequest? |  (optional) 
+
+            try
+            {
+                PostFlowResponse result = apiInstance.Put(id, updateFlowRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.Put: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PostFlowResponse> response = apiInstance.PutWithHttpInfo(id, updateFlowRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** |  |  |
+| **updateFlowRequest** | [**UpdateFlowRequest?**](UpdateFlowRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**PostFlowResponse**](PostFlowResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="flowpost"></a>
 # **Post**
-> PostFlowResponse Post (PostFlowRequest? postFlowRequest = null)
+> PostFlowResponse Post (FlowInstance? flowInstance = null)
 
 
 
@@ -413,11 +805,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
-            var postFlowRequest = new PostFlowRequest?(); // PostFlowRequest? |  (optional) 
+            var flowInstance = new FlowInstance?(); // FlowInstance? |  (optional) 
 
             try
             {
-                PostFlowResponse result = apiInstance.Post(postFlowRequest);
+                PostFlowResponse result = apiInstance.Post(flowInstance);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -437,7 +829,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<PostFlowResponse> response = apiInstance.PostWithHttpInfo(postFlowRequest);
+    ApiResponse<PostFlowResponse> response = apiInstance.PostWithHttpInfo(flowInstance);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -454,7 +846,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postFlowRequest** | [**PostFlowRequest?**](PostFlowRequest?.md) |  | [optional]  |
+| **flowInstance** | [**FlowInstance?**](FlowInstance?.md) |  | [optional]  |
 
 ### Return type
 

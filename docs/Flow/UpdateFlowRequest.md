@@ -1,12 +1,11 @@
-# Simplic.OxS.SDK.Flow.GetFlowResponse
+# Simplic.OxS.SDK.Flow.UpdateFlowRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | 
-**Name** | **string** |  | 
-**Description** | **string** |  | 
+**Name** | **string** |  | [optional] 
+**Description** | **string** |  | [optional] 
 **Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 
 **Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | [optional] 
 

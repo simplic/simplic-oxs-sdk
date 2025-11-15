@@ -36,15 +36,30 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFlowResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="description">description.</param>
+        [JsonConstructorAttribute]
+        protected GetFlowResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetFlowResponse" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="description">description (required).</param>
         /// <param name="nodes">nodes.</param>
         /// <param name="variables">variables.</param>
         public GetFlowResponse(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>))
         {
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for GetFlowResponse and cannot be null");
+            }
             this.Name = name;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for GetFlowResponse and cannot be null");
+            }
             this.Description = description;
             this.Nodes = nodes;
             this.Variables = variables;
@@ -53,19 +68,19 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
