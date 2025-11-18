@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DateTime** | **DateTime** |  | [optional] 
 **Packages** | [**List&lt;NodePackage&gt;**](NodePackage.md) |  | 
 **Assemblies** | **List&lt;string&gt;** |  | 
 **TotalSize** | **long** |  | 

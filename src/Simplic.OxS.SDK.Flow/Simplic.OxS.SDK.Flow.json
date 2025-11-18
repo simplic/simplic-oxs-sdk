@@ -309,19 +309,18 @@
                 }
             }
         },
-        "/Flow/{id}": {
+        "/Flow/{name}/name": {
             "get": {
                 "tags": [
                     "Flow"
                 ],
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "name",
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "format": "uuid"
+                            "type": "string"
                         }
                     }
                 ],
@@ -387,8 +386,10 @@
                         }
                     }
                 }
-            },
-            "put": {
+            }
+        },
+        "/Flow/{id}": {
+            "get": {
                 "tags": [
                     "Flow"
                 ],
@@ -403,42 +404,23 @@
                         }
                     }
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateFlowRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateFlowRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateFlowRequest"
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
                         "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                    "$ref": "#/components/schemas/GetFlowResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                    "$ref": "#/components/schemas/GetFlowResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                    "$ref": "#/components/schemas/GetFlowResponse"
                                 }
                             }
                         }
@@ -547,10 +529,19 @@
                 }
             }
         },
-        "/Flow/get-all": {
+        "/Flow": {
             "get": {
                 "tags": [
                     "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -558,17 +549,112 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllFlowsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FlowInstance"
+                                    }
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllFlowsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FlowInstance"
+                                    }
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/GetAllFlowsResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FlowInstance"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Flow"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FlowInstance"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FlowInstance"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FlowInstance"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostFlowResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
                                 }
                             }
                         }
@@ -716,19 +802,18 @@
                 }
             }
         },
-        "/Flow/get-events/{id}": {
+        "/Flow/get-events/{flowName}": {
             "get": {
                 "tags": [
                     "Flow"
                 ],
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "flowName",
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "format": "uuid"
+                            "type": "string"
                         }
                     }
                 ],
@@ -758,94 +843,6 @@
                                     "items": {
                                         "type": "string"
                                     }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Flow": {
-            "post": {
-                "tags": [
-                    "Flow"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PostFlowResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
                                 }
                             }
                         }
@@ -1546,6 +1543,10 @@
                 ],
                 "type": "object",
                 "properties": {
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
                     "packages": {
                         "type": "array",
                         "items": {
@@ -1570,15 +1571,10 @@
             "FlowInstance": {
                 "required": [
                     "description",
-                    "id",
                     "name"
                 ],
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "nullable": true
@@ -1677,19 +1673,6 @@
                 },
                 "additionalProperties": false
             },
-            "GetAllFlowsResponse": {
-                "type": "object",
-                "properties": {
-                    "flows": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowInstance"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "GetAllMachinesForUserResponse": {
                 "type": "object",
                 "properties": {
@@ -1733,15 +1716,10 @@
             "GetFlowResponse": {
                 "required": [
                     "description",
-                    "id",
                     "name"
                 ],
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "nullable": true
@@ -2161,10 +2139,15 @@
             "PostFlowResponse": {
                 "required": [
                     "deploymentInfo",
-                    "flow"
+                    "flow",
+                    "id"
                 ],
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
                     "deploymentInfo": {
                         "$ref": "#/components/schemas/DeploymentInfo"
                     },
@@ -2509,34 +2492,6 @@
                     },
                     "package": {
                         "$ref": "#/components/schemas/NodePackageResponse"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "UpdateFlowRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "nodes": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/NodeInstance"
-                        },
-                        "nullable": true
-                    },
-                    "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
-                        },
-                        "nullable": true
                     }
                 },
                 "additionalProperties": false

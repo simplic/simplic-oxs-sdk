@@ -41,10 +41,12 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="PostFlowResponse" /> class.
         /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="deploymentInfo">deploymentInfo (required).</param>
         /// <param name="flow">flow (required).</param>
-        public PostFlowResponse(DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance))
+        public PostFlowResponse(Guid id = default(Guid), DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance))
         {
+            this.Id = id;
             // to ensure "deploymentInfo" is required (not null)
             if (deploymentInfo == null)
             {
@@ -58,6 +60,12 @@ namespace Simplic.OxS.SDK.Flow
             }
             this.Flow = flow;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DeploymentInfo
@@ -79,6 +87,7 @@ namespace Simplic.OxS.SDK.Flow
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PostFlowResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeploymentInfo: ").Append(DeploymentInfo).Append("\n");
             sb.Append("  Flow: ").Append(Flow).Append("\n");
             sb.Append("}\n");
@@ -117,6 +126,11 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.DeploymentInfo == input.DeploymentInfo ||
                     (this.DeploymentInfo != null &&
                     this.DeploymentInfo.Equals(input.DeploymentInfo))
@@ -137,6 +151,10 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.DeploymentInfo != null)
                 {
                     hashCode = (hashCode * 59) + this.DeploymentInfo.GetHashCode();

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | 
 **Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 

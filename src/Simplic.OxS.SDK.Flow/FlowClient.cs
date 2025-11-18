@@ -78,31 +78,35 @@ public interface IFlowClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>GetAllFlowsResponse</returns>
-    GetAllFlowsResponse GetAll();
+    /// <param name="name"> (optional)</param>
+    /// <returns>List&lt;FlowInstance&gt;</returns>
+    List<FlowInstance> Get(string? name = default(string?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of GetAllFlowsResponse</returns>
-    ApiResponse<GetAllFlowsResponse> GetAllWithHttpInfo();
+    /// <param name="name"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;FlowInstance&gt;</returns>
+    ApiResponse<List<FlowInstance>> GetWithHttpInfo(string? name = default(string?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="name"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of GetAllFlowsResponse</returns>
-    Task<GetAllFlowsResponse> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;FlowInstance&gt;</returns>
+    Task<List<FlowInstance>> GetAsync(string? name = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="name"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (GetAllFlowsResponse)</returns>
-    Task<ApiResponse<GetAllFlowsResponse>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;FlowInstance&gt;)</returns>
+    Task<ApiResponse<List<FlowInstance>>> GetWithHttpInfoAsync(string? name = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -175,35 +179,35 @@ public interface IFlowClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="flowName"></param>
     /// <returns>List&lt;string&gt;</returns>
-    List<string> GetEvents(Guid id);
+    List<string> GetEvents(string flowName);
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="flowName"></param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
-    ApiResponse<List<string>> GetEventsWithHttpInfo(Guid id);
+    ApiResponse<List<string>> GetEventsWithHttpInfo(string flowName);
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="flowName"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;string&gt;</returns>
-    Task<List<string>> GetEventsAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task<List<string>> GetEventsAsync(string flowName, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="flowName"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    Task<ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(string flowName, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -280,39 +284,35 @@ public interface IFlowClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateFlowRequest"> (optional)</param>
-    /// <returns>PostFlowResponse</returns>
-    PostFlowResponse Put(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?));
+    /// <param name="name"></param>
+    /// <returns>GetFlowResponse</returns>
+    GetFlowResponse Name(string name);
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateFlowRequest"> (optional)</param>
-    /// <returns>ApiResponse of PostFlowResponse</returns>
-    ApiResponse<PostFlowResponse> PutWithHttpInfo(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?));
+    /// <param name="name"></param>
+    /// <returns>ApiResponse of GetFlowResponse</returns>
+    ApiResponse<GetFlowResponse> NameWithHttpInfo(string name);
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateFlowRequest"> (optional)</param>
+    /// <param name="name"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of PostFlowResponse</returns>
-    Task<PostFlowResponse> PutAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of GetFlowResponse</returns>
+    Task<GetFlowResponse> NameAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateFlowRequest"> (optional)</param>
+    /// <param name="name"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (PostFlowResponse)</returns>
-    Task<ApiResponse<PostFlowResponse>> PutWithHttpInfoAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (GetFlowResponse)</returns>
+    Task<ApiResponse<GetFlowResponse>> NameWithHttpInfoAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -501,12 +501,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>GetAllFlowsResponse</returns>
-        public GetAllFlowsResponse GetAll()
+        /// <param name="name"> (optional)</param>
+        /// <returns>List&lt;FlowInstance&gt;</returns>
+        public List<FlowInstance> Get(string? name = default(string?))
         {
             try
             {
-                return _internalClient.GetAll();
+                return _internalClient.Get(name);
             }
             catch (ApiException e)
             {
@@ -518,12 +519,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of GetAllFlowsResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse> GetAllWithHttpInfo()
+        /// <param name="name"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;FlowInstance&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<FlowInstance>> GetWithHttpInfo(string? name = default(string?))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfo();
+                return _internalClient.GetWithHttpInfo(name);
             }
             catch (ApiException e)
             {
@@ -535,13 +537,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetAllFlowsResponse</returns>
-        public System.Threading.Tasks.Task<GetAllFlowsResponse> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;FlowInstance&gt;</returns>
+        public System.Threading.Tasks.Task<List<FlowInstance>> GetAsync(string? name = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllAsync(cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(name, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -553,13 +556,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetAllFlowsResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;FlowInstance&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<FlowInstance>>> GetWithHttpInfoAsync(string? name = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(name, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -712,13 +716,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetEvents(Guid id)
+        public List<string> GetEvents(string flowName)
         {
             try
             {
-                return _internalClient.GetEvents(id);
+                return _internalClient.GetEvents(flowName);
             }
             catch (ApiException e)
             {
@@ -730,13 +734,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<string>> GetEventsWithHttpInfo(Guid id)
+        public Simplic.OxS.SDK.ApiResponse<List<string>> GetEventsWithHttpInfo(string flowName)
         {
             try
             {
-                return _internalClient.GetEventsWithHttpInfo(id);
+                return _internalClient.GetEventsWithHttpInfo(flowName);
             }
             catch (ApiException e)
             {
@@ -748,14 +752,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public System.Threading.Tasks.Task<List<string>> GetEventsAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<string>> GetEventsAsync(string flowName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetEventsAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetEventsAsync(flowName, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -767,14 +771,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(string flowName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetEventsWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetEventsWithHttpInfoAsync(flowName, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -931,14 +935,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
-        /// <returns>PostFlowResponse</returns>
-        public PostFlowResponse Put(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?))
+        /// <param name="name"></param>
+        /// <returns>GetFlowResponse</returns>
+        public GetFlowResponse Name(string name)
         {
             try
             {
-                return _internalClient.Put(id, updateFlowRequest);
+                return _internalClient.Name(name);
             }
             catch (ApiException e)
             {
@@ -950,14 +953,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
-        /// <returns>ApiResponse of PostFlowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<PostFlowResponse> PutWithHttpInfo(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?))
+        /// <param name="name"></param>
+        /// <returns>ApiResponse of GetFlowResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetFlowResponse> NameWithHttpInfo(string name)
         {
             try
             {
-                return _internalClient.PutWithHttpInfo(id, updateFlowRequest);
+                return _internalClient.NameWithHttpInfo(name);
             }
             catch (ApiException e)
             {
@@ -969,15 +971,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PostFlowResponse</returns>
-        public System.Threading.Tasks.Task<PostFlowResponse> PutAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GetFlowResponse</returns>
+        public System.Threading.Tasks.Task<GetFlowResponse> NameAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutAsync(id, updateFlowRequest, cancellationToken: cancellationToken);
+                return _internalClient.NameAsync(name, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -989,15 +990,14 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PostFlowResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PostFlowResponse>> PutWithHttpInfoAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GetFlowResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetFlowResponse>> NameWithHttpInfoAsync(string name, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PutWithHttpInfoAsync(id, updateFlowRequest, cancellationToken: cancellationToken);
+                return _internalClient.NameWithHttpInfoAsync(name, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1114,9 +1114,10 @@ public interface IFlowClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetAllFlowsResponse</returns>
-        GetAllFlowsResponse GetAll(int operationIndex = 0);
+        /// <returns>List&lt;FlowInstance&gt;</returns>
+        List<FlowInstance> Get(string? name = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1125,9 +1126,10 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetAllFlowsResponse</returns>
-        ApiResponse<GetAllFlowsResponse> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;FlowInstance&gt;</returns>
+        ApiResponse<List<FlowInstance>> GetWithHttpInfo(string? name = default(string?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1170,10 +1172,10 @@ public interface IFlowClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> GetEvents(Guid id, int operationIndex = 0);
+        List<string> GetEvents(string flowName, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1182,10 +1184,10 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> GetEventsWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<List<string>> GetEventsWithHttpInfo(string flowName, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1230,11 +1232,10 @@ public interface IFlowClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PostFlowResponse</returns>
-        PostFlowResponse Put(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0);
+        /// <returns>GetFlowResponse</returns>
+        GetFlowResponse Name(string name, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1243,11 +1244,10 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PostFlowResponse</returns>
-        ApiResponse<PostFlowResponse> PutWithHttpInfo(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of GetFlowResponse</returns>
+        ApiResponse<GetFlowResponse> NameWithHttpInfo(string name, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1309,10 +1309,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetAllFlowsResponse</returns>
-        System.Threading.Tasks.Task<GetAllFlowsResponse> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;FlowInstance&gt;</returns>
+        System.Threading.Tasks.Task<List<FlowInstance>> GetAsync(string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1321,10 +1322,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetAllFlowsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAllFlowsResponse>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;FlowInstance&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<FlowInstance>>> GetWithHttpInfoAsync(string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1380,11 +1382,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> GetEventsAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> GetEventsAsync(string flowName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1393,11 +1395,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(string flowName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1455,12 +1457,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PostFlowResponse</returns>
-        System.Threading.Tasks.Task<PostFlowResponse> PutAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GetFlowResponse</returns>
+        System.Threading.Tasks.Task<GetFlowResponse> NameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1469,12 +1470,11 @@ public interface IFlowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PostFlowResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostFlowResponse>> PutWithHttpInfoAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GetFlowResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetFlowResponse>> NameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1782,11 +1782,12 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetAllFlowsResponse</returns>
-        public GetAllFlowsResponse GetAll(int operationIndex = 0)
+        /// <returns>List&lt;FlowInstance&gt;</returns>
+        public List<FlowInstance> Get(string? name = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<FlowInstance>> localVarResponse = GetWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
@@ -1794,9 +1795,10 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetAllFlowsResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;FlowInstance&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<FlowInstance>> GetWithHttpInfo(string? name = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1822,8 +1824,12 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (name != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
 
-            localVarRequestOptions.Operation = "FlowClient.FlowGetAllGet";
+            localVarRequestOptions.Operation = "FlowClient.FlowGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1838,10 +1844,10 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetAllFlowsResponse>("/Flow/get-all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<FlowInstance>>("/Flow", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1855,12 +1861,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetAllFlowsResponse</returns>
-        public async System.Threading.Tasks.Task<GetAllFlowsResponse> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;FlowInstance&gt;</returns>
+        public async System.Threading.Tasks.Task<List<FlowInstance>> GetAsync(string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<FlowInstance>> localVarResponse = await GetWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1868,10 +1875,11 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetAllFlowsResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetAllFlowsResponse>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;FlowInstance&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<FlowInstance>>> GetWithHttpInfoAsync(string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1898,8 +1906,12 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (name != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
 
-            localVarRequestOptions.Operation = "FlowClient.FlowGetAllGet";
+            localVarRequestOptions.Operation = "FlowClient.FlowGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1914,11 +1926,11 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAllFlowsResponse>("/Flow/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<FlowInstance>>("/Flow", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2250,12 +2262,12 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetEvents(Guid id, int operationIndex = 0)
+        public List<string> GetEvents(string flowName, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<string>> localVarResponse = GetEventsWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<List<string>> localVarResponse = GetEventsWithHttpInfo(flowName);
             return localVarResponse.Data;
         }
 
@@ -2263,11 +2275,17 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<string>> GetEventsWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<string>> GetEventsWithHttpInfo(string flowName, int operationIndex = 0)
         {
+            // verify the required parameter 'flowName' is set
+            if (flowName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'flowName' when calling FlowClient->FlowGetEventsFlowNameGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2292,9 +2310,9 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("flowName", Simplic.OxS.SDK.ClientUtils.ParameterToString(flowName)); // path parameter
 
-            localVarRequestOptions.Operation = "FlowClient.FlowGetEventsIdGet";
+            localVarRequestOptions.Operation = "FlowClient.FlowGetEventsFlowNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2309,10 +2327,10 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/Flow/get-events/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<string>>("/Flow/get-events/{flowName}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowGetEventsIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowGetEventsFlowNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2326,13 +2344,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> GetEventsAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> GetEventsAsync(string flowName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<string>> localVarResponse = await GetEventsWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<string>> localVarResponse = await GetEventsWithHttpInfoAsync(flowName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2340,12 +2358,18 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="flowName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<string>>> GetEventsWithHttpInfoAsync(string flowName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'flowName' is set
+            if (flowName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'flowName' when calling FlowClient->FlowGetEventsFlowNameGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2371,9 +2395,9 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("flowName", Simplic.OxS.SDK.ClientUtils.ParameterToString(flowName)); // path parameter
 
-            localVarRequestOptions.Operation = "FlowClient.FlowGetEventsIdGet";
+            localVarRequestOptions.Operation = "FlowClient.FlowGetEventsFlowNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2388,11 +2412,11 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/Flow/get-events/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/Flow/get-events/{flowName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowGetEventsIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowGetEventsFlowNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2716,13 +2740,12 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PostFlowResponse</returns>
-        public PostFlowResponse Put(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0)
+        /// <returns>GetFlowResponse</returns>
+        public GetFlowResponse Name(string name, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<PostFlowResponse> localVarResponse = PutWithHttpInfo(id, updateFlowRequest);
+            Simplic.OxS.SDK.ApiResponse<GetFlowResponse> localVarResponse = NameWithHttpInfo(name);
             return localVarResponse.Data;
         }
 
@@ -2730,18 +2753,20 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PostFlowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<PostFlowResponse> PutWithHttpInfo(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of GetFlowResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<GetFlowResponse> NameWithHttpInfo(string name, int operationIndex = 0)
         {
+            // verify the required parameter 'name' is set
+            if (name == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling FlowClient->FlowNameNameGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2763,10 +2788,9 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateFlowRequest;
+            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "FlowClient.FlowIdPut";
+            localVarRequestOptions.Operation = "FlowClient.FlowNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2781,10 +2805,10 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<PostFlowResponse>("/Flow/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetFlowResponse>("/Flow/{name}/name", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2798,14 +2822,13 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PostFlowResponse</returns>
-        public async System.Threading.Tasks.Task<PostFlowResponse> PutAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GetFlowResponse</returns>
+        public async System.Threading.Tasks.Task<GetFlowResponse> NameAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<PostFlowResponse> localVarResponse = await PutWithHttpInfoAsync(id, updateFlowRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<GetFlowResponse> localVarResponse = await NameWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2813,20 +2836,22 @@ public interface IFlowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateFlowRequest"> (optional)</param>
+        /// <param name="name"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PostFlowResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PostFlowResponse>> PutWithHttpInfoAsync(Guid id, UpdateFlowRequest? updateFlowRequest = default(UpdateFlowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GetFlowResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetFlowResponse>> NameWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'name' is set
+            if (name == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'name' when calling FlowClient->FlowNameNameGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2848,10 +2873,9 @@ public interface IFlowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateFlowRequest;
+            localVarRequestOptions.PathParameters.Add("name", Simplic.OxS.SDK.ClientUtils.ParameterToString(name)); // path parameter
 
-            localVarRequestOptions.Operation = "FlowClient.FlowIdPut";
+            localVarRequestOptions.Operation = "FlowClient.FlowNameNameGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2866,11 +2890,11 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<PostFlowResponse>("/Flow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetFlowResponse>("/Flow/{name}/name", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("FlowIdPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FlowNameNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

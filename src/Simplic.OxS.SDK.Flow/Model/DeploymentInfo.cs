@@ -41,10 +41,11 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentInfo" /> class.
         /// </summary>
+        /// <param name="dateTime">dateTime.</param>
         /// <param name="packages">packages (required).</param>
         /// <param name="assemblies">assemblies (required).</param>
         /// <param name="totalSize">totalSize (required).</param>
-        public DeploymentInfo(List<NodePackage> packages = default(List<NodePackage>), List<string> assemblies = default(List<string>), long totalSize = default(long))
+        public DeploymentInfo(DateTime dateTime = default(DateTime), List<NodePackage> packages = default(List<NodePackage>), List<string> assemblies = default(List<string>), long totalSize = default(long))
         {
             // to ensure "packages" is required (not null)
             if (packages == null)
@@ -59,7 +60,14 @@ namespace Simplic.OxS.SDK.Flow
             }
             this.Assemblies = assemblies;
             this.TotalSize = totalSize;
+            this.DateTime = dateTime;
         }
+
+        /// <summary>
+        /// Gets or Sets DateTime
+        /// </summary>
+        [DataMember(Name = "dateTime", EmitDefaultValue = false)]
+        public DateTime DateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Packages
@@ -87,6 +95,7 @@ namespace Simplic.OxS.SDK.Flow
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DeploymentInfo {\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
             sb.Append("  Packages: ").Append(Packages).Append("\n");
             sb.Append("  Assemblies: ").Append(Assemblies).Append("\n");
             sb.Append("  TotalSize: ").Append(TotalSize).Append("\n");
@@ -126,6 +135,11 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
+                    this.DateTime == input.DateTime ||
+                    (this.DateTime != null &&
+                    this.DateTime.Equals(input.DateTime))
+                ) && 
+                (
                     this.Packages == input.Packages ||
                     this.Packages != null &&
                     input.Packages != null &&
@@ -152,6 +166,10 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
+                }
                 if (this.Packages != null)
                 {
                     hashCode = (hashCode * 59) + this.Packages.GetHashCode();

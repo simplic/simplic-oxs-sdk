@@ -435,6 +435,94 @@
                 }
             }
         },
+        "/Entra/connect": {
+            "post": {
+                "tags": [
+                    "Entra"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraConnectRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraConnectRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraConnectRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/internal/InternalCertificate/{id}": {
             "get": {
                 "tags": [
@@ -4525,6 +4613,38 @@
                 },
                 "additionalProperties": false
             },
+            "EntraConnectRequest": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets the authorization code",
+                        "nullable": true
+                    },
+                    "state": {
+                        "description": "Gets or sets the state"
+                    },
+                    "redirectUri": {
+                        "type": "string",
+                        "description": "Gets or sets the redirect uri",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the request for connecting to microsoft entra"
+            },
+            "EntraConnectResponse": {
+                "type": "object",
+                "properties": {
+                    "entraTenantId": {
+                        "type": "string",
+                        "description": "Gets or sets the entra tenant id",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response for connecting to microsoft entra"
+            },
             "FederalStateModel": {
                 "type": "object",
                 "properties": {
@@ -5105,6 +5225,11 @@
                     "isDummy": {
                         "type": "boolean",
                         "description": "Whether this organization is used for testing purposes.\r\nThis allows for deleting it"
+                    },
+                    "entraTenantId": {
+                        "type": "string",
+                        "description": "Gets or set the entra tenant id",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

@@ -5,13 +5,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**Deploy**](FlowClient.md#flowdeployidpost) | **POST** /Flow/deploy/{id} |  |
-| [**GetAll**](FlowClient.md#flowgetallget) | **GET** /Flow/get-all |  |
-| [**GetAllRefs**](FlowClient.md#flowgetallrefsget) | **GET** /Flow/get-all-refs |  |
-| [**GetByEvent**](FlowClient.md#flowgetbyeventeventnameget) | **GET** /Flow/get-by-event/{eventName} |  |
-| [**GetEvents**](FlowClient.md#flowgeteventsidget) | **GET** /Flow/get-events/{id} |  |
+| [**Get**](FlowClient.md#flowget) | **GET** /Flow |  |
+| [**GetAllRefsGet**](FlowClient.md#flowgetallrefsget) | **GET** /Flow/get-all-refs |  |
+| [**GetByEventEventNameGet**](FlowClient.md#flowgetbyeventeventnameget) | **GET** /Flow/get-by-event/{eventName} |  |
+| [**GetEventsFlowNameGet**](FlowClient.md#flowgeteventsflownameget) | **GET** /Flow/get-events/{flowName} |  |
 | [**Delete**](FlowClient.md#flowiddelete) | **DELETE** /Flow/{id} |  |
 | [**Get**](FlowClient.md#flowidget) | **GET** /Flow/{id} |  |
-| [**Put**](FlowClient.md#flowidput) | **PUT** /Flow/{id} |  |
+| [**Name**](FlowClient.md#flownamenameget) | **GET** /Flow/{name}/name |  |
 | [**Post**](FlowClient.md#flowpost) | **POST** /Flow |  |
 
 <a id="flowdeployidpost"></a>
@@ -111,9 +111,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="flowgetallget"></a>
-# **GetAll**
-> GetAllFlowsResponse GetAll ()
+<a id="flowget"></a>
+# **Get**
+> List&lt;FlowInstance&gt; Get (string? name = null)
 
 
 
@@ -126,7 +126,7 @@ using Simplic.OxS.SDK.Flow;
 
 namespace Example
 {
-    public class GetAllExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -142,15 +142,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
+            var name = "name_example";  // string? |  (optional) 
 
             try
             {
-                GetAllFlowsResponse result = apiInstance.GetAll();
+                List<FlowInstance> result = apiInstance.Get(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FlowClient.GetAll: " + e.Message);
+                Debug.Print("Exception when calling FlowClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -159,30 +160,34 @@ namespace Example
 }
 ```
 
-#### Using the GetAllWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<GetAllFlowsResponse> response = apiInstance.GetAllWithHttpInfo();
+    ApiResponse<List<FlowInstance>> response = apiInstance.GetWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FlowClient.GetAllWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FlowClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **name** | **string?** |  | [optional]  |
+
 ### Return type
 
-[**GetAllFlowsResponse**](GetAllFlowsResponse.md)
+[**List&lt;FlowInstance&gt;**](FlowInstance.md)
 
 ### Authorization
 
@@ -203,8 +208,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="flowgetallrefsget"></a>
-# **GetAllRefs**
-> GetAllFlowReferencesResponse GetAllRefs ()
+# **GetAllRefsGet**
+> GetAllFlowReferencesResponse GetAllRefsGet ()
 
 
 
@@ -217,7 +222,7 @@ using Simplic.OxS.SDK.Flow;
 
 namespace Example
 {
-    public class GetAllRefsExample
+    public class GetAllRefsGetExample
     {
         public static void Main()
         {
@@ -236,12 +241,12 @@ namespace Example
 
             try
             {
-                GetAllFlowReferencesResponse result = apiInstance.GetAllRefs();
+                GetAllFlowReferencesResponse result = apiInstance.GetAllRefsGet();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FlowClient.GetAllRefs: " + e.Message);
+                Debug.Print("Exception when calling FlowClient.GetAllRefsGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -250,20 +255,20 @@ namespace Example
 }
 ```
 
-#### Using the GetAllRefsWithHttpInfo variant
+#### Using the GetAllRefsGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<GetAllFlowReferencesResponse> response = apiInstance.GetAllRefsWithHttpInfo();
+    ApiResponse<GetAllFlowReferencesResponse> response = apiInstance.GetAllRefsGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FlowClient.GetAllRefsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FlowClient.GetAllRefsGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -294,8 +299,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="flowgetbyeventeventnameget"></a>
-# **GetByEvent**
-> List&lt;Guid&gt; GetByEvent (string eventName)
+# **GetByEventEventNameGet**
+> List&lt;Guid&gt; GetByEventEventNameGet (string eventName)
 
 
 
@@ -308,7 +313,7 @@ using Simplic.OxS.SDK.Flow;
 
 namespace Example
 {
-    public class GetByEventExample
+    public class GetByEventEventNameGetExample
     {
         public static void Main()
         {
@@ -328,12 +333,12 @@ namespace Example
 
             try
             {
-                List<Guid> result = apiInstance.GetByEvent(eventName);
+                List<Guid> result = apiInstance.GetByEventEventNameGet(eventName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FlowClient.GetByEvent: " + e.Message);
+                Debug.Print("Exception when calling FlowClient.GetByEventEventNameGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -342,20 +347,20 @@ namespace Example
 }
 ```
 
-#### Using the GetByEventWithHttpInfo variant
+#### Using the GetByEventEventNameGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Guid>> response = apiInstance.GetByEventWithHttpInfo(eventName);
+    ApiResponse<List<Guid>> response = apiInstance.GetByEventEventNameGetWithHttpInfo(eventName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FlowClient.GetByEventWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FlowClient.GetByEventEventNameGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -389,9 +394,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="flowgeteventsidget"></a>
-# **GetEvents**
-> List&lt;string&gt; GetEvents (Guid id)
+<a id="flowgeteventsflownameget"></a>
+# **GetEventsFlowNameGet**
+> List&lt;string&gt; GetEventsFlowNameGet (string flowName)
 
 
 
@@ -404,7 +409,7 @@ using Simplic.OxS.SDK.Flow;
 
 namespace Example
 {
-    public class GetEventsExample
+    public class GetEventsFlowNameGetExample
     {
         public static void Main()
         {
@@ -420,16 +425,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
-            var id = "id_example";  // Guid | 
+            var flowName = "flowName_example";  // string | 
 
             try
             {
-                List<string> result = apiInstance.GetEvents(id);
+                List<string> result = apiInstance.GetEventsFlowNameGet(flowName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FlowClient.GetEvents: " + e.Message);
+                Debug.Print("Exception when calling FlowClient.GetEventsFlowNameGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -438,20 +443,20 @@ namespace Example
 }
 ```
 
-#### Using the GetEventsWithHttpInfo variant
+#### Using the GetEventsFlowNameGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<string>> response = apiInstance.GetEventsWithHttpInfo(id);
+    ApiResponse<List<string>> response = apiInstance.GetEventsFlowNameGetWithHttpInfo(flowName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FlowClient.GetEventsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FlowClient.GetEventsFlowNameGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -461,7 +466,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **flowName** | **string** |  |  |
 
 ### Return type
 
@@ -675,9 +680,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="flowidput"></a>
-# **Put**
-> PostFlowResponse Put (Guid id, UpdateFlowRequest? updateFlowRequest = null)
+<a id="flownamenameget"></a>
+# **Name**
+> GetFlowResponse Name (string name)
 
 
 
@@ -690,7 +695,7 @@ using Simplic.OxS.SDK.Flow;
 
 namespace Example
 {
-    public class PutExample
+    public class NameExample
     {
         public static void Main()
         {
@@ -706,17 +711,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
-            var id = "id_example";  // Guid | 
-            var updateFlowRequest = new UpdateFlowRequest?(); // UpdateFlowRequest? |  (optional) 
+            var name = "name_example";  // string | 
 
             try
             {
-                PostFlowResponse result = apiInstance.Put(id, updateFlowRequest);
+                GetFlowResponse result = apiInstance.Name(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FlowClient.Put: " + e.Message);
+                Debug.Print("Exception when calling FlowClient.Name: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -725,20 +729,20 @@ namespace Example
 }
 ```
 
-#### Using the PutWithHttpInfo variant
+#### Using the NameWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<PostFlowResponse> response = apiInstance.PutWithHttpInfo(id, updateFlowRequest);
+    ApiResponse<GetFlowResponse> response = apiInstance.NameWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FlowClient.PutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FlowClient.NameWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -748,12 +752,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **updateFlowRequest** | [**UpdateFlowRequest?**](UpdateFlowRequest?.md) |  | [optional]  |
+| **name** | **string** |  |  |
 
 ### Return type
 
-[**PostFlowResponse**](PostFlowResponse.md)
+[**GetFlowResponse**](GetFlowResponse.md)
 
 ### Authorization
 
@@ -761,7 +764,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 

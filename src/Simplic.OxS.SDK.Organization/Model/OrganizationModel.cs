@@ -41,13 +41,15 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="address">address.</param>
         /// <param name="billingAddressModel">billingAddressModel.</param>
         /// <param name="isDummy">Whether this organization is used for testing purposes.  This allows for deleting it.</param>
-        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool))
+        /// <param name="entraTenantId">Gets or set the entra tenant id.</param>
+        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool), string entraTenantId = default(string))
         {
             this.Id = id;
             this.Name = name;
             this.Address = address;
             this.BillingAddressModel = billingAddressModel;
             this.IsDummy = isDummy;
+            this.EntraTenantId = entraTenantId;
         }
 
         /// <summary>
@@ -84,6 +86,13 @@ namespace Simplic.OxS.SDK.Organization
         public bool IsDummy { get; set; }
 
         /// <summary>
+        /// Gets or set the entra tenant id
+        /// </summary>
+        /// <value>Gets or set the entra tenant id</value>
+        [DataMember(Name = "entraTenantId", EmitDefaultValue = true)]
+        public string EntraTenantId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,6 +105,7 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  BillingAddressModel: ").Append(BillingAddressModel).Append("\n");
             sb.Append("  IsDummy: ").Append(IsDummy).Append("\n");
+            sb.Append("  EntraTenantId: ").Append(EntraTenantId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,6 +164,11 @@ namespace Simplic.OxS.SDK.Organization
                 (
                     this.IsDummy == input.IsDummy ||
                     this.IsDummy.Equals(input.IsDummy)
+                ) && 
+                (
+                    this.EntraTenantId == input.EntraTenantId ||
+                    (this.EntraTenantId != null &&
+                    this.EntraTenantId.Equals(input.EntraTenantId))
                 );
         }
 
@@ -183,6 +198,10 @@ namespace Simplic.OxS.SDK.Organization
                     hashCode = (hashCode * 59) + this.BillingAddressModel.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDummy.GetHashCode();
+                if (this.EntraTenantId != null)
+                {
+                    hashCode = (hashCode * 59) + this.EntraTenantId.GetHashCode();
+                }
                 return hashCode;
             }
         }
