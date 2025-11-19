@@ -3185,6 +3185,321 @@
                 }
             }
         },
+        "/TaxKey": {
+            "post": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Creates a new tax key.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TaxKeyRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TaxKeyRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TaxKeyRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TaxKey/{id}": {
+            "patch": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Patches a tax key.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTaxKeyRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTaxKeyRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTaxKeyRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Deletes a tax key.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Gets a tax key by ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/TaxRate": {
             "post": {
                 "tags": [
@@ -8156,14 +8471,6 @@
                         "description": "Gets or sets the set of countries.",
                         "nullable": true
                     },
-                    "taxKeys": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TaxKeyModel"
-                        },
-                        "description": "Gets or sets the tax keys for this tax group.",
-                        "nullable": true
-                    },
                     "createDateTime": {
                         "type": "string",
                         "description": "Gets or sets the date and time the tax group is created.",
@@ -8204,8 +8511,7 @@
                 "required": [
                     "countryIsoCodes",
                     "name",
-                    "number",
-                    "taxKeys"
+                    "number"
                 ],
                 "type": "object",
                 "properties": {
@@ -8226,13 +8532,6 @@
                             "type": "string"
                         },
                         "description": "Gets or sets the set of countries given by ISO code."
-                    },
-                    "taxKeys": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TaxKeyRequest"
-                        },
-                        "description": "Gets or sets the tax keys for this tax group."
                     }
                 },
                 "additionalProperties": false,
@@ -8251,8 +8550,82 @@
                         "description": "Gets or sets the name.",
                         "nullable": true
                     },
-                    "type": {
-                        "$ref": "#/components/schemas/TaxKeyModel"
+                    "taxGroup": {
+                        "$ref": "#/components/schemas/TaxGroupModel"
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/TaxRateModel"
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the tax rate value given in percent.",
+                        "format": "double"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "Gets or sets the point in time this tax key is valid from.",
+                        "format": "date-time"
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the tax key is created.",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user that created the tax key.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that created the tax key.",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the tax key is updated.",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user that updated the tax key.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that updated the tax key.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TaxKey."
+            },
+            "TaxKeyRequest": {
+                "required": [
+                    "name",
+                    "validFrom",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "maxLength": 100,
+                        "minLength": 2,
+                        "type": "string"
+                    },
+                    "taxGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax group given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate given by ID.",
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "value": {
                         "type": "number",
@@ -8266,42 +8639,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for Simplic.OxS.ERP.TaxKey."
-            },
-            "TaxKeyRequest": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the ID.",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name.",
-                        "nullable": true
-                    },
-                    "taxRateId": {
-                        "type": "string",
-                        "description": "Gets or sets the tax rate given by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "value": {
-                        "type": "number",
-                        "description": "Gets or sets the tax rate value given in percent.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "validFrom": {
-                        "type": "string",
-                        "description": "Gets or sets the point in time this tax rate is valid from.",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a request to create or update a Simplic.OxS.ERP.TaxKey."
+                "description": "Represents a request to create a Simplic.OxS.ERP.TaxKey."
             },
             "TaxRateModel": {
                 "type": "object",
@@ -10219,18 +10557,45 @@
                         },
                         "description": "Gets or sets the set of countries given by ISO code.",
                         "nullable": true
-                    },
-                    "taxKeys": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TaxKeyRequest"
-                        },
-                        "description": "Gets or sets the tax rates for this tax group.",
-                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to update a Simplic.OxS.ERP.TaxGroup."
+            },
+            "UpdateTaxKeyRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "taxGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax group given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the tax rate value given in percent.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "Gets or sets the point in time this tax rate is valid from.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to update a Simplic.OxS.ERP.TaxKey."
             },
             "UpdateTaxRateRequest": {
                 "type": "object",

@@ -39,13 +39,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="countryIsoCodes">Gets or sets the set of countries given by ISO code..</param>
-        /// <param name="taxKeys">Gets or sets the tax rates for this tax group..</param>
-        public UpdateTaxGroupRequest(int? number = default(int?), string name = default(string), List<string> countryIsoCodes = default(List<string>), List<TaxKeyRequest> taxKeys = default(List<TaxKeyRequest>))
+        public UpdateTaxGroupRequest(int? number = default(int?), string name = default(string), List<string> countryIsoCodes = default(List<string>))
         {
             this.Number = number;
             this.Name = name;
             this.CountryIsoCodes = countryIsoCodes;
-            this.TaxKeys = taxKeys;
         }
 
         /// <summary>
@@ -70,13 +68,6 @@ namespace Simplic.OxS.SDK.ERP
         public List<string> CountryIsoCodes { get; set; }
 
         /// <summary>
-        /// Gets or sets the tax rates for this tax group.
-        /// </summary>
-        /// <value>Gets or sets the tax rates for this tax group.</value>
-        [DataMember(Name = "taxKeys", EmitDefaultValue = true)]
-        public List<TaxKeyRequest> TaxKeys { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -87,7 +78,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CountryIsoCodes: ").Append(CountryIsoCodes).Append("\n");
-            sb.Append("  TaxKeys: ").Append(TaxKeys).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,12 +128,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.CountryIsoCodes != null &&
                     input.CountryIsoCodes != null &&
                     this.CountryIsoCodes.SequenceEqual(input.CountryIsoCodes)
-                ) && 
-                (
-                    this.TaxKeys == input.TaxKeys ||
-                    this.TaxKeys != null &&
-                    input.TaxKeys != null &&
-                    this.TaxKeys.SequenceEqual(input.TaxKeys)
                 );
         }
 
@@ -167,10 +151,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CountryIsoCodes != null)
                 {
                     hashCode = (hashCode * 59) + this.CountryIsoCodes.GetHashCode();
-                }
-                if (this.TaxKeys != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxKeys.GetHashCode();
                 }
                 return hashCode;
             }

@@ -42,14 +42,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="countries">Gets or sets the set of countries..</param>
-        /// <param name="taxKeys">Gets or sets the tax keys for this tax group..</param>
         /// <param name="createDateTime">Gets or sets the date and time the tax group is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the tax group..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the tax group..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the tax group is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax group..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax group..</param>
-        public TaxGroupModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), List<TaxGroupCountryModel> countries = default(List<TaxGroupCountryModel>), List<TaxKeyModel> taxKeys = default(List<TaxKeyModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxGroupModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), List<TaxGroupCountryModel> countries = default(List<TaxGroupCountryModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -57,7 +56,6 @@ namespace Simplic.OxS.SDK.ERP
             this.Number = number;
             this.Name = name;
             this.Countries = countries;
-            this.TaxKeys = taxKeys;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -104,13 +102,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the set of countries.</value>
         [DataMember(Name = "countries", EmitDefaultValue = true)]
         public List<TaxGroupCountryModel> Countries { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tax keys for this tax group.
-        /// </summary>
-        /// <value>Gets or sets the tax keys for this tax group.</value>
-        [DataMember(Name = "taxKeys", EmitDefaultValue = true)]
-        public List<TaxKeyModel> TaxKeys { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time the tax group is created.
@@ -168,7 +159,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
-            sb.Append("  TaxKeys: ").Append(TaxKeys).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -240,12 +230,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Countries.SequenceEqual(input.Countries)
                 ) && 
                 (
-                    this.TaxKeys == input.TaxKeys ||
-                    this.TaxKeys != null &&
-                    input.TaxKeys != null &&
-                    this.TaxKeys.SequenceEqual(input.TaxKeys)
-                ) && 
-                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -303,10 +287,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Countries != null)
                 {
                     hashCode = (hashCode * 59) + this.Countries.GetHashCode();
-                }
-                if (this.TaxKeys != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxKeys.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {

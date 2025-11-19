@@ -38,16 +38,30 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="name">Gets or sets the name..</param>
-        /// <param name="type">type.</param>
+        /// <param name="taxGroup">taxGroup.</param>
+        /// <param name="taxRate">taxRate.</param>
         /// <param name="value">Gets or sets the tax rate value given in percent..</param>
-        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
-        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxKeyModel type = default(TaxKeyModel), double value = default(double), DateTime validFrom = default(DateTime))
+        /// <param name="validFrom">Gets or sets the point in time this tax key is valid from..</param>
+        /// <param name="createDateTime">Gets or sets the date and time the tax key is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the tax key..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the tax key..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the tax key is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the tax key..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the tax key..</param>
+        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), TaxRateModel taxRate = default(TaxRateModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Name = name;
-            this.Type = type;
+            this.TaxGroup = taxGroup;
+            this.TaxRate = taxRate;
             this.Value = value;
             this.ValidFrom = validFrom;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
@@ -65,10 +79,16 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or Sets TaxGroup
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TaxKeyModel Type { get; set; }
+        [DataMember(Name = "taxGroup", EmitDefaultValue = false)]
+        public TaxGroupModel TaxGroup { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxRate
+        /// </summary>
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+        public TaxRateModel TaxRate { get; set; }
 
         /// <summary>
         /// Gets or sets the tax rate value given in percent.
@@ -78,11 +98,53 @@ namespace Simplic.OxS.SDK.ERP
         public double Value { get; set; }
 
         /// <summary>
-        /// Gets or sets the point in time this tax rate is valid from.
+        /// Gets or sets the point in time this tax key is valid from.
         /// </summary>
-        /// <value>Gets or sets the point in time this tax rate is valid from.</value>
+        /// <value>Gets or sets the point in time this tax key is valid from.</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time the tax key is created.
+        /// </summary>
+        /// <value>Gets or sets the date and time the tax key is created.</value>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the user that created the tax key.
+        /// </summary>
+        /// <value>Gets or sets the id of the user that created the tax key.</value>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the user that created the tax key.
+        /// </summary>
+        /// <value>Gets or sets the name of the user that created the tax key.</value>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time the tax key is updated.
+        /// </summary>
+        /// <value>Gets or sets the date and time the tax key is updated.</value>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the user that updated the tax key.
+        /// </summary>
+        /// <value>Gets or sets the id of the user that updated the tax key.</value>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the user that updated the tax key.
+        /// </summary>
+        /// <value>Gets or sets the name of the user that updated the tax key.</value>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,9 +156,16 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class TaxKeyModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
+            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -143,9 +212,14 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.TaxGroup == input.TaxGroup ||
+                    (this.TaxGroup != null &&
+                    this.TaxGroup.Equals(input.TaxGroup))
+                ) && 
+                (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -155,6 +229,36 @@ namespace Simplic.OxS.SDK.ERP
                     this.ValidFrom == input.ValidFrom ||
                     (this.ValidFrom != null &&
                     this.ValidFrom.Equals(input.ValidFrom))
+                ) && 
+                (
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
+                ) && 
+                (
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -175,14 +279,42 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.TaxGroup != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TaxGroup.GetHashCode();
+                }
+                if (this.TaxRate != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 if (this.ValidFrom != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
+                }
+                if (this.CreateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.CreateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
                 return hashCode;
             }

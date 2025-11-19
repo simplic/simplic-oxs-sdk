@@ -44,8 +44,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="number">Gets or sets the number. (required).</param>
         /// <param name="name">Gets or sets the name. (required).</param>
         /// <param name="countryIsoCodes">Gets or sets the set of countries given by ISO code. (required).</param>
-        /// <param name="taxKeys">Gets or sets the tax keys for this tax group. (required).</param>
-        public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>), List<TaxKeyRequest> taxKeys = default(List<TaxKeyRequest>))
+        public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>))
         {
             this.Number = number;
             // to ensure "name" is required (not null)
@@ -60,12 +59,6 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("countryIsoCodes is a required property for TaxGroupRequest and cannot be null");
             }
             this.CountryIsoCodes = countryIsoCodes;
-            // to ensure "taxKeys" is required (not null)
-            if (taxKeys == null)
-            {
-                throw new ArgumentNullException("taxKeys is a required property for TaxGroupRequest and cannot be null");
-            }
-            this.TaxKeys = taxKeys;
         }
 
         /// <summary>
@@ -90,13 +83,6 @@ namespace Simplic.OxS.SDK.ERP
         public List<string> CountryIsoCodes { get; set; }
 
         /// <summary>
-        /// Gets or sets the tax keys for this tax group.
-        /// </summary>
-        /// <value>Gets or sets the tax keys for this tax group.</value>
-        [DataMember(Name = "taxKeys", IsRequired = true, EmitDefaultValue = true)]
-        public List<TaxKeyRequest> TaxKeys { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,7 +93,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CountryIsoCodes: ").Append(CountryIsoCodes).Append("\n");
-            sb.Append("  TaxKeys: ").Append(TaxKeys).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -157,12 +142,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.CountryIsoCodes != null &&
                     input.CountryIsoCodes != null &&
                     this.CountryIsoCodes.SequenceEqual(input.CountryIsoCodes)
-                ) && 
-                (
-                    this.TaxKeys == input.TaxKeys ||
-                    this.TaxKeys != null &&
-                    input.TaxKeys != null &&
-                    this.TaxKeys.SequenceEqual(input.TaxKeys)
                 );
         }
 
@@ -183,10 +162,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CountryIsoCodes != null)
                 {
                     hashCode = (hashCode * 59) + this.CountryIsoCodes.GetHashCode();
-                }
-                if (this.TaxKeys != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxKeys.GetHashCode();
                 }
                 return hashCode;
             }

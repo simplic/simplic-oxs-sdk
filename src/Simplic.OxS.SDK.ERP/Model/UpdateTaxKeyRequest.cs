@@ -28,42 +28,32 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to create a Simplic.OxS.ERP.TaxKey.
+    /// Represents a request to update a Simplic.OxS.ERP.TaxKey.
     /// </summary>
-    [DataContract(Name = "TaxKeyRequest")]
-    public partial class TaxKeyRequest : IEquatable<TaxKeyRequest>, IValidatableObject
+    [DataContract(Name = "UpdateTaxKeyRequest")]
+    public partial class UpdateTaxKeyRequest : IEquatable<UpdateTaxKeyRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TaxKeyRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateTaxKeyRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TaxKeyRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TaxKeyRequest" /> class.
-        /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         /// <param name="taxGroupId">Gets or sets the tax group given by ID..</param>
         /// <param name="taxRateId">Gets or sets the tax rate given by ID..</param>
-        /// <param name="value">Gets or sets the tax rate value given in percent. (required).</param>
-        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from. (required).</param>
-        public TaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double value = default(double), DateTime validFrom = default(DateTime))
+        /// <param name="value">Gets or sets the tax rate value given in percent..</param>
+        /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
+        public UpdateTaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double? value = default(double?), DateTime? validFrom = default(DateTime?))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TaxKeyRequest and cannot be null");
-            }
             this.Name = name;
-            this.Value = value;
-            this.ValidFrom = validFrom;
             this.TaxGroupId = taxGroupId;
             this.TaxRateId = taxRateId;
+            this.Value = value;
+            this.ValidFrom = validFrom;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -84,15 +74,15 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the tax rate value given in percent.
         /// </summary>
         /// <value>Gets or sets the tax rate value given in percent.</value>
-        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
-        public double Value { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public double? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the point in time this tax rate is valid from.
         /// </summary>
         /// <value>Gets or sets the point in time this tax rate is valid from.</value>
-        [DataMember(Name = "validFrom", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime ValidFrom { get; set; }
+        [DataMember(Name = "validFrom", EmitDefaultValue = true)]
+        public DateTime? ValidFrom { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -101,7 +91,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TaxKeyRequest {\n");
+            sb.Append("class UpdateTaxKeyRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
@@ -127,15 +117,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TaxKeyRequest);
+            return this.Equals(input as UpdateTaxKeyRequest);
         }
 
         /// <summary>
-        /// Returns true if TaxKeyRequest instances are equal
+        /// Returns true if UpdateTaxKeyRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of TaxKeyRequest to be compared</param>
+        /// <param name="input">Instance of UpdateTaxKeyRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TaxKeyRequest input)
+        public bool Equals(UpdateTaxKeyRequest input)
         {
             if (input == null)
             {
@@ -159,7 +149,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
                     this.ValidFrom == input.ValidFrom ||
@@ -189,7 +180,10 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.TaxRateId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                if (this.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
                 if (this.ValidFrom != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
@@ -205,18 +199,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 2)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 2.", new [] { "Name" });
-            }
-
             yield break;
         }
     }
