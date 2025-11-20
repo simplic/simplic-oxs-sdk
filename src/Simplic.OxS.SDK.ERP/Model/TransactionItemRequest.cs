@@ -65,13 +65,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
+        /// <param name="taxKey">taxKey.</param>
+        /// <param name="costCenters">Gets or sets the assigned cost centers given by ID with their respective percentages..</param>
+        /// <param name="costObjects">Gets or sets the assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="quantity">Gets or sets the quantity..</param>
         /// <param name="unitId">Gets or sets the unit the quantity is measured in by ID..</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), double? quantity = default(double?), Guid? unitId = default(Guid?), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
+        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKey taxKey = default(TaxKey), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), double? quantity = default(double?), Guid? unitId = default(Guid?), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
         {
             this.Id = id;
             this.Text = text;
@@ -84,6 +87,9 @@ namespace Simplic.OxS.SDK.ERP
             this.BehaviorDefinitions = behaviorDefinitions;
             this.InputPrice = inputPrice;
             this.InputPriceType = inputPriceType;
+            this.TaxKey = taxKey;
+            this.CostCenters = costCenters;
+            this.CostObjects = costObjects;
             this.Quantity = quantity;
             this.UnitId = unitId;
             this.ArticleId = articleId;
@@ -149,6 +155,26 @@ namespace Simplic.OxS.SDK.ERP
         public double? InputPrice { get; set; }
 
         /// <summary>
+        /// Gets or Sets TaxKey
+        /// </summary>
+        [DataMember(Name = "taxKey", EmitDefaultValue = false)]
+        public TaxKey TaxKey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the assigned cost centers given by ID with their respective percentages.
+        /// </summary>
+        /// <value>Gets or sets the assigned cost centers given by ID with their respective percentages.</value>
+        [DataMember(Name = "costCenters", EmitDefaultValue = true)]
+        public Dictionary<string, double> CostCenters { get; set; }
+
+        /// <summary>
+        /// Gets or sets the assigned cost objects given by ID with their respective percentages.
+        /// </summary>
+        /// <value>Gets or sets the assigned cost objects given by ID with their respective percentages.</value>
+        [DataMember(Name = "costObjects", EmitDefaultValue = true)]
+        public Dictionary<string, double> CostObjects { get; set; }
+
+        /// <summary>
         /// Gets or sets the quantity.
         /// </summary>
         /// <value>Gets or sets the quantity.</value>
@@ -209,6 +235,9 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  BehaviorDefinitions: ").Append(BehaviorDefinitions).Append("\n");
             sb.Append("  InputPrice: ").Append(InputPrice).Append("\n");
             sb.Append("  InputPriceType: ").Append(InputPriceType).Append("\n");
+            sb.Append("  TaxKey: ").Append(TaxKey).Append("\n");
+            sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
+            sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  UnitId: ").Append(UnitId).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
@@ -304,6 +333,23 @@ namespace Simplic.OxS.SDK.ERP
                     this.InputPriceType.Equals(input.InputPriceType)
                 ) && 
                 (
+                    this.TaxKey == input.TaxKey ||
+                    (this.TaxKey != null &&
+                    this.TaxKey.Equals(input.TaxKey))
+                ) && 
+                (
+                    this.CostCenters == input.CostCenters ||
+                    this.CostCenters != null &&
+                    input.CostCenters != null &&
+                    this.CostCenters.SequenceEqual(input.CostCenters)
+                ) && 
+                (
+                    this.CostObjects == input.CostObjects ||
+                    this.CostObjects != null &&
+                    input.CostObjects != null &&
+                    this.CostObjects.SequenceEqual(input.CostObjects)
+                ) && 
+                (
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
@@ -380,6 +426,18 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.InputPrice.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.InputPriceType.GetHashCode();
+                if (this.TaxKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxKey.GetHashCode();
+                }
+                if (this.CostCenters != null)
+                {
+                    hashCode = (hashCode * 59) + this.CostCenters.GetHashCode();
+                }
+                if (this.CostObjects != null)
+                {
+                    hashCode = (hashCode * 59) + this.CostObjects.GetHashCode();
+                }
                 if (this.Quantity != null)
                 {
                     hashCode = (hashCode * 59) + this.Quantity.GetHashCode();

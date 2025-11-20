@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **TaxRate** | [**TaxRateModel**](TaxRateModel.md) |  | [optional] 
 **Value** | **double** | Gets or sets the tax rate value given in percent. | [optional] 
 **ValidFrom** | **DateTime** | Gets or sets the point in time this tax key is valid from. | [optional] 
+**ValidTo** | **DateTime?** | Gets or sets the point in time this tax rate is valid to. | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the tax key is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the tax key. | [optional] 
 **CreateUserName** | **string** | Gets or sets the name of the user that created the tax key. | [optional] 

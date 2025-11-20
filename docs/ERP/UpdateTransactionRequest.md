@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **ReferenceNr** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
+**IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

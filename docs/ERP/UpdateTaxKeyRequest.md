@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **TaxRateId** | **Guid?** | Gets or sets the tax rate given by ID. | [optional] 
 **Value** | **double?** | Gets or sets the tax rate value given in percent. | [optional] 
 **ValidFrom** | **DateTime?** | Gets or sets the point in time this tax rate is valid from. | [optional] 
+**ValidTo** | **DateTime?** | Gets or sets the point in time this tax rate is valid to. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

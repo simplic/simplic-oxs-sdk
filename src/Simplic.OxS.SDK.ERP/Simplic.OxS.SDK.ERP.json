@@ -6253,6 +6253,7 @@
             },
             "CreateTransactionRequest": {
                 "required": [
+                    "isGross",
                     "number",
                     "subtypeId",
                     "typeId"
@@ -6419,6 +6420,28 @@
                     },
                     "operationItemCombinationMode": {
                         "$ref": "#/components/schemas/OperationItemCombinationMode"
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the transaction is gross or net."
+                    },
+                    "defaultCostCenters": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "defaultCostObjects": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -8537,6 +8560,74 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxGroup."
             },
+            "TaxKey": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "taxGroupId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "value": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TaxKeyModel": {
                 "type": "object",
                 "properties": {
@@ -8565,6 +8656,12 @@
                         "type": "string",
                         "description": "Gets or sets the point in time this tax key is valid from.",
                         "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "Gets or sets the point in time this tax rate is valid to.",
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
@@ -8636,6 +8733,12 @@
                         "type": "string",
                         "description": "Gets or sets the point in time this tax rate is valid from.",
                         "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "Gets or sets the point in time this tax rate is valid to.",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -9354,6 +9457,27 @@
                     "inputPriceType": {
                         "$ref": "#/components/schemas/InputPriceType"
                     },
+                    "taxKey": {
+                        "$ref": "#/components/schemas/TaxKey"
+                    },
+                    "costCenters": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
+                        "nullable": true
+                    },
                     "quantity": {
                         "minimum": 0,
                         "type": "number",
@@ -9661,7 +9785,8 @@
                     "balance": {
                         "type": "number",
                         "description": "Gets or sets the balance.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "barcode": {
                         "type": "string",
@@ -9777,6 +9902,31 @@
                     },
                     "operationItemCombinationMode": {
                         "$ref": "#/components/schemas/OperationItemCombinationMode"
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the transaction is gross or net."
+                    },
+                    "validationResult": {
+                        "$ref": "#/components/schemas/TransactionValidationResultModel"
+                    },
+                    "defaultCostCenters": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the default assigned cost centers with their respective percentages.",
+                        "nullable": true
+                    },
+                    "defaultCostObjects": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "description": "Gets or sets the default assigned cost objects with their respective percentages.",
+                        "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
@@ -10366,6 +10516,25 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a user in a transaction."
             },
+            "TransactionValidationResultModel": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets the list of validation errors.",
+                        "nullable": true
+                    },
+                    "isValid": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the transaction is valid for purposes of financial accounting."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of validating a transaction for financial accounting."
+            },
             "UpdateCostCenterRequest": {
                 "type": "object",
                 "properties": {
@@ -10590,6 +10759,12 @@
                     "validFrom": {
                         "type": "string",
                         "description": "Gets or sets the point in time this tax rate is valid from.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "Gets or sets the point in time this tax rate is valid to.",
                         "format": "date-time",
                         "nullable": true
                     }
@@ -10870,6 +11045,11 @@
                     },
                     "operationItemCombinationMode": {
                         "$ref": "#/components/schemas/OperationItemCombinationMode"
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the transaction is gross or net.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

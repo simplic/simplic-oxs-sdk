@@ -73,7 +73,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="referenceNr">Gets or sets the reference number..</param>
         /// <param name="taxGroupId">Gets or sets the tax group by ID..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
-        public UpdateTransactionRequest(string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?))
+        /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net..</param>
+        public UpdateTransactionRequest(string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?))
         {
             this.Number = number;
             this.Reference = reference;
@@ -106,6 +107,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ReferenceNr = referenceNr;
             this.TaxGroupId = taxGroupId;
             this.OperationItemCombinationMode = operationItemCombinationMode;
+            this.IsGross = isGross;
         }
 
         /// <summary>
@@ -312,6 +314,13 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? TaxGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the transaction is gross or net.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the transaction is gross or net.</value>
+        [DataMember(Name = "isGross", EmitDefaultValue = true)]
+        public bool? IsGross { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -350,6 +359,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ReferenceNr: ").Append(ReferenceNr).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
+            sb.Append("  IsGross: ").Append(IsGross).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -539,6 +549,11 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.OperationItemCombinationMode == input.OperationItemCombinationMode ||
                     this.OperationItemCombinationMode.Equals(input.OperationItemCombinationMode)
+                ) && 
+                (
+                    this.IsGross == input.IsGross ||
+                    (this.IsGross != null &&
+                    this.IsGross.Equals(input.IsGross))
                 );
         }
 
@@ -672,6 +687,10 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
+                if (this.IsGross != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                }
                 return hashCode;
             }
         }

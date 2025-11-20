@@ -96,13 +96,17 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="signedTotalPriceTax">Gets or sets the signed total price tax..</param>
         /// <param name="sign">Gets or sets the total price value sign.     The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.  .</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
+        /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net..</param>
+        /// <param name="validationResult">validationResult.</param>
+        /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers with their respective percentages..</param>
+        /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects with their respective percentages..</param>
         /// <param name="createDateTime">Gets or sets the date and time the transaction is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the transaction..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the transaction..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the transaction is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction..</param>
-        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double balance = default(double), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double cashDiscountPercentValue = default(double), double cashDiscountTotal = default(double), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -152,6 +156,10 @@ namespace Simplic.OxS.SDK.ERP
             this.SignedTotalPriceTax = signedTotalPriceTax;
             this.Sign = sign;
             this.OperationItemCombinationMode = operationItemCombinationMode;
+            this.IsGross = isGross;
+            this.ValidationResult = validationResult;
+            this.DefaultCostCenters = defaultCostCenters;
+            this.DefaultCostObjects = defaultCostObjects;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -297,8 +305,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the balance.
         /// </summary>
         /// <value>Gets or sets the balance.</value>
-        [DataMember(Name = "balance", EmitDefaultValue = false)]
-        public double Balance { get; set; }
+        [DataMember(Name = "balance", EmitDefaultValue = true)]
+        public double? Balance { get; set; }
 
         /// <summary>
         /// Gets or sets the barcode.
@@ -463,6 +471,33 @@ namespace Simplic.OxS.SDK.ERP
         public int Sign { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the transaction is gross or net.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the transaction is gross or net.</value>
+        [DataMember(Name = "isGross", EmitDefaultValue = true)]
+        public bool IsGross { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ValidationResult
+        /// </summary>
+        [DataMember(Name = "validationResult", EmitDefaultValue = false)]
+        public TransactionValidationResultModel ValidationResult { get; set; }
+
+        /// <summary>
+        /// Gets or sets the default assigned cost centers with their respective percentages.
+        /// </summary>
+        /// <value>Gets or sets the default assigned cost centers with their respective percentages.</value>
+        [DataMember(Name = "defaultCostCenters", EmitDefaultValue = true)]
+        public Dictionary<string, double> DefaultCostCenters { get; set; }
+
+        /// <summary>
+        /// Gets or sets the default assigned cost objects with their respective percentages.
+        /// </summary>
+        /// <value>Gets or sets the default assigned cost objects with their respective percentages.</value>
+        [DataMember(Name = "defaultCostObjects", EmitDefaultValue = true)]
+        public Dictionary<string, double> DefaultCostObjects { get; set; }
+
+        /// <summary>
         /// Gets or sets the date and time the transaction is created.
         /// </summary>
         /// <value>Gets or sets the date and time the transaction is created.</value>
@@ -560,6 +595,10 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SignedTotalPriceTax: ").Append(SignedTotalPriceTax).Append("\n");
             sb.Append("  Sign: ").Append(Sign).Append("\n");
             sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
+            sb.Append("  IsGross: ").Append(IsGross).Append("\n");
+            sb.Append("  ValidationResult: ").Append(ValidationResult).Append("\n");
+            sb.Append("  DefaultCostCenters: ").Append(DefaultCostCenters).Append("\n");
+            sb.Append("  DefaultCostObjects: ").Append(DefaultCostObjects).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -712,7 +751,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Balance == input.Balance ||
-                    this.Balance.Equals(input.Balance)
+                    (this.Balance != null &&
+                    this.Balance.Equals(input.Balance))
                 ) && 
                 (
                     this.Barcode == input.Barcode ||
@@ -826,6 +866,27 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.OperationItemCombinationMode == input.OperationItemCombinationMode ||
                     this.OperationItemCombinationMode.Equals(input.OperationItemCombinationMode)
+                ) && 
+                (
+                    this.IsGross == input.IsGross ||
+                    this.IsGross.Equals(input.IsGross)
+                ) && 
+                (
+                    this.ValidationResult == input.ValidationResult ||
+                    (this.ValidationResult != null &&
+                    this.ValidationResult.Equals(input.ValidationResult))
+                ) && 
+                (
+                    this.DefaultCostCenters == input.DefaultCostCenters ||
+                    this.DefaultCostCenters != null &&
+                    input.DefaultCostCenters != null &&
+                    this.DefaultCostCenters.SequenceEqual(input.DefaultCostCenters)
+                ) && 
+                (
+                    this.DefaultCostObjects == input.DefaultCostObjects ||
+                    this.DefaultCostObjects != null &&
+                    input.DefaultCostObjects != null &&
+                    this.DefaultCostObjects.SequenceEqual(input.DefaultCostObjects)
                 ) && 
                 (
                     this.CreateDateTime == input.CreateDateTime ||
@@ -950,7 +1011,10 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.AlternativePaymentDeadline.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Balance.GetHashCode();
+                if (this.Balance != null)
+                {
+                    hashCode = (hashCode * 59) + this.Balance.GetHashCode();
+                }
                 if (this.Barcode != null)
                 {
                     hashCode = (hashCode * 59) + this.Barcode.GetHashCode();
@@ -1012,6 +1076,19 @@ namespace Simplic.OxS.SDK.ERP
                 hashCode = (hashCode * 59) + this.SignedTotalPriceTax.GetHashCode();
                 hashCode = (hashCode * 59) + this.Sign.GetHashCode();
                 hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                if (this.ValidationResult != null)
+                {
+                    hashCode = (hashCode * 59) + this.ValidationResult.GetHashCode();
+                }
+                if (this.DefaultCostCenters != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultCostCenters.GetHashCode();
+                }
+                if (this.DefaultCostObjects != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultCostObjects.GetHashCode();
+                }
                 if (this.CreateDateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();

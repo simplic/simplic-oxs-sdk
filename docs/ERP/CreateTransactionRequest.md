@@ -37,6 +37,9 @@ Name | Type | Description | Notes
 **ReferenceNr** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
+**IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | 
+**DefaultCostCenters** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
+**DefaultCostObjects** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

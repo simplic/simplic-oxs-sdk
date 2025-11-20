@@ -41,13 +41,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="taxRateId">Gets or sets the tax rate given by ID..</param>
         /// <param name="value">Gets or sets the tax rate value given in percent..</param>
         /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
-        public UpdateTaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double? value = default(double?), DateTime? validFrom = default(DateTime?))
+        /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
+        public UpdateTaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double? value = default(double?), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?))
         {
             this.Name = name;
             this.TaxGroupId = taxGroupId;
             this.TaxRateId = taxRateId;
             this.Value = value;
             this.ValidFrom = validFrom;
+            this.ValidTo = validTo;
         }
 
         /// <summary>
@@ -85,6 +87,13 @@ namespace Simplic.OxS.SDK.ERP
         public DateTime? ValidFrom { get; set; }
 
         /// <summary>
+        /// Gets or sets the point in time this tax rate is valid to.
+        /// </summary>
+        /// <value>Gets or sets the point in time this tax rate is valid to.</value>
+        [DataMember(Name = "validTo", EmitDefaultValue = true)]
+        public DateTime? ValidTo { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +106,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
+            sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,6 +166,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ValidFrom == input.ValidFrom ||
                     (this.ValidFrom != null &&
                     this.ValidFrom.Equals(input.ValidFrom))
+                ) && 
+                (
+                    this.ValidTo == input.ValidTo ||
+                    (this.ValidTo != null &&
+                    this.ValidTo.Equals(input.ValidTo))
                 );
         }
 
@@ -187,6 +202,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ValidFrom != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
+                }
+                if (this.ValidTo != null)
+                {
+                    hashCode = (hashCode * 59) + this.ValidTo.GetHashCode();
                 }
                 return hashCode;
             }
