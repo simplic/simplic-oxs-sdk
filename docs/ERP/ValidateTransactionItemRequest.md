@@ -1,10 +1,11 @@
-# Simplic.OxS.SDK.ERP.TransactionItemRequest
+# Simplic.OxS.SDK.ERP.ValidateTransactionItemRequest
 Represents a request to create or update a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TemporaryId** | **Guid** | Gets or sets the temporary ID used for client-side identification in the validation response. | [optional] 
 **Id** | **Guid** | Gets or sets the ID. | [optional] 
 **Text** | **string** | Gets or sets the text. | [optional] 
 **TypeId** | **Guid?** | Gets or sets the item type by ID. | [optional] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 **ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 
 **GeneralLedgerAccountId** | **Guid?** | Gets or sets the general ledger account by ID. | [optional] 
 **DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
-**Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
+**Items** | [**List&lt;ValidateTransactionItemRequest&gt;**](ValidateTransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

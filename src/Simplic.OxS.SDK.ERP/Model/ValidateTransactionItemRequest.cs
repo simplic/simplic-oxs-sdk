@@ -30,8 +30,8 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a request to create or update a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
-    [DataContract(Name = "TransactionItemRequest")]
-    public partial class TransactionItemRequest : IEquatable<TransactionItemRequest>, IValidatableObject
+    [DataContract(Name = "ValidateTransactionItemRequest")]
+    public partial class ValidateTransactionItemRequest : IEquatable<ValidateTransactionItemRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -52,8 +52,9 @@ namespace Simplic.OxS.SDK.ERP
         [DataMember(Name = "inputPriceType", EmitDefaultValue = false)]
         public InputPriceType? InputPriceType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionItemRequest" /> class.
+        /// Initializes a new instance of the <see cref="ValidateTransactionItemRequest" /> class.
         /// </summary>
+        /// <param name="temporaryId">Gets or sets the temporary ID used for client-side identification in the validation response..</param>
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="text">Gets or sets the text..</param>
         /// <param name="typeId">Gets or sets the item type by ID..</param>
@@ -74,8 +75,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKey = default(Guid?), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
+        public ValidateTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKey = default(Guid?), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>))
         {
+            this.TemporaryId = temporaryId;
             this.Id = id;
             this.Text = text;
             this.TypeId = typeId;
@@ -97,6 +99,13 @@ namespace Simplic.OxS.SDK.ERP
             this.DeltaValue = deltaValue;
             this.Items = items;
         }
+
+        /// <summary>
+        /// Gets or sets the temporary ID used for client-side identification in the validation response.
+        /// </summary>
+        /// <value>Gets or sets the temporary ID used for client-side identification in the validation response.</value>
+        [DataMember(Name = "temporaryId", EmitDefaultValue = false)]
+        public Guid TemporaryId { get; set; }
 
         /// <summary>
         /// Gets or sets the ID.
@@ -215,7 +224,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets a set of transaction items that are part of the group.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<TransactionItemRequest> Items { get; set; }
+        public List<ValidateTransactionItemRequest> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -224,7 +233,8 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionItemRequest {\n");
+            sb.Append("class ValidateTransactionItemRequest {\n");
+            sb.Append("  TemporaryId: ").Append(TemporaryId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  TypeId: ").Append(TypeId).Append("\n");
@@ -265,21 +275,26 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionItemRequest);
+            return this.Equals(input as ValidateTransactionItemRequest);
         }
 
         /// <summary>
-        /// Returns true if TransactionItemRequest instances are equal
+        /// Returns true if ValidateTransactionItemRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionItemRequest to be compared</param>
+        /// <param name="input">Instance of ValidateTransactionItemRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionItemRequest input)
+        public bool Equals(ValidateTransactionItemRequest input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.TemporaryId == input.TemporaryId ||
+                    (this.TemporaryId != null &&
+                    this.TemporaryId.Equals(input.TemporaryId))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -392,6 +407,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TemporaryId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TemporaryId.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

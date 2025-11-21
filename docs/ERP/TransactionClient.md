@@ -13,6 +13,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} | Gets a transaction by ID. |
 | [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} | Patches a transaction. |
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
+| [**Validate**](TransactionClient.md#transactionvalidatepost) | **POST** /Transaction/validate | Validates a transaction. |
 
 <a id="transactioncancelput"></a>
 # **Cancel**
@@ -883,6 +884,105 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **createTransactionRequest** | [**CreateTransactionRequest?**](CreateTransactionRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**TransactionResultModel**](TransactionResultModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="transactionvalidatepost"></a>
+# **Validate**
+> TransactionResultModel Validate (ValidateTransactionRequest? validateTransactionRequest = null)
+
+Validates a transaction.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class ValidateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new TransactionClient(config);
+            var validateTransactionRequest = new ValidateTransactionRequest?(); // ValidateTransactionRequest? |  (optional) 
+
+            try
+            {
+                // Validates a transaction.
+                TransactionResultModel result = apiInstance.Validate(validateTransactionRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TransactionClient.Validate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ValidateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Validates a transaction.
+    ApiResponse<TransactionResultModel> response = apiInstance.ValidateWithHttpInfo(validateTransactionRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TransactionClient.ValidateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **validateTransactionRequest** | [**ValidateTransactionRequest?**](ValidateTransactionRequest?.md) |  | [optional]  |
 
 ### Return type
 

@@ -30,8 +30,8 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
-    [DataContract(Name = "CreateTransactionRequest")]
-    public partial class CreateTransactionRequest : IEquatable<CreateTransactionRequest>, IValidatableObject
+    [DataContract(Name = "ValidateTransactionRequest")]
+    public partial class ValidateTransactionRequest : IEquatable<ValidateTransactionRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -40,18 +40,13 @@ namespace Simplic.OxS.SDK.ERP
         [DataMember(Name = "operationItemCombinationMode", EmitDefaultValue = false)]
         public OperationItemCombinationMode? OperationItemCombinationMode { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateTransactionRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateTransactionRequest" /> class.
+        /// Initializes a new instance of the <see cref="ValidateTransactionRequest" /> class.
         /// </summary>
         /// <param name="creator">creator.</param>
-        /// <param name="number">Gets or sets the transaction number. (required).</param>
+        /// <param name="number">Gets or sets the transaction number..</param>
         /// <param name="reference">Gets or sets the reference..</param>
-        /// <param name="typeId">Gets or sets the type by ID. (required).</param>
-        /// <param name="subtypeId">Gets or sets the subtype by ID. (required).</param>
+        /// <param name="typeId">Gets or sets the type by ID..</param>
+        /// <param name="subtypeId">Gets or sets the subtype by ID..</param>
         /// <param name="date">Gets or sets the time of the underlying transaction..</param>
         /// <param name="deliveryDate">Gets or sets the time of delivery..</param>
         /// <param name="termsOfPaymentId">Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.  .</param>
@@ -79,23 +74,17 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="referenceNr">Gets or sets the reference number..</param>
         /// <param name="taxGroupId">Gets or sets the tax group by ID..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
-        /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net. (required).</param>
+        /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net..</param>
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
-        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), double? checkSum = default(double?))
+        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), double? checkSum = default(double?))
         {
-            // to ensure "number" is required (not null)
-            if (number == null)
-            {
-                throw new ArgumentNullException("number is a required property for CreateTransactionRequest and cannot be null");
-            }
+            this.Creator = creator;
             this.Number = number;
+            this.Reference = reference;
             this.TypeId = typeId;
             this.SubtypeId = subtypeId;
-            this.IsGross = isGross;
-            this.Creator = creator;
-            this.Reference = reference;
             this.Date = date;
             this.DeliveryDate = deliveryDate;
             this.TermsOfPaymentId = termsOfPaymentId;
@@ -123,6 +112,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ReferenceNr = referenceNr;
             this.TaxGroupId = taxGroupId;
             this.OperationItemCombinationMode = operationItemCombinationMode;
+            this.IsGross = isGross;
             this.DefaultCostCenters = defaultCostCenters;
             this.DefaultCostObjects = defaultCostObjects;
             this.CheckSum = checkSum;
@@ -138,7 +128,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the transaction number.
         /// </summary>
         /// <value>Gets or sets the transaction number.</value>
-        [DataMember(Name = "number", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
@@ -152,15 +142,15 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the type by ID.
         /// </summary>
         /// <value>Gets or sets the type by ID.</value>
-        [DataMember(Name = "typeId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid TypeId { get; set; }
+        [DataMember(Name = "typeId", EmitDefaultValue = true)]
+        public Guid? TypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the subtype by ID.
         /// </summary>
         /// <value>Gets or sets the subtype by ID.</value>
-        [DataMember(Name = "subtypeId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid SubtypeId { get; set; }
+        [DataMember(Name = "subtypeId", EmitDefaultValue = true)]
+        public Guid? SubtypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the time of the underlying transaction.
@@ -245,7 +235,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the items of this transaction.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<TransactionItemRequest> Items { get; set; }
+        public List<ValidateTransactionItemRequest> Items { get; set; }
 
         /// <summary>
         /// Gets or sets an alternative payment deadline to the one defined in the terms of payment.
@@ -340,8 +330,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets a value indicating whether the transaction is gross or net.
         /// </summary>
         /// <value>Gets or sets a value indicating whether the transaction is gross or net.</value>
-        [DataMember(Name = "isGross", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsGross { get; set; }
+        [DataMember(Name = "isGross", EmitDefaultValue = true)]
+        public bool? IsGross { get; set; }
 
         /// <summary>
         /// Gets or sets the default assigned cost centers given by ID with their respective percentages.
@@ -371,7 +361,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateTransactionRequest {\n");
+            sb.Append("class ValidateTransactionRequest {\n");
             sb.Append("  Creator: ").Append(Creator).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
@@ -428,15 +418,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateTransactionRequest);
+            return this.Equals(input as ValidateTransactionRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateTransactionRequest instances are equal
+        /// Returns true if ValidateTransactionRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateTransactionRequest to be compared</param>
+        /// <param name="input">Instance of ValidateTransactionRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateTransactionRequest input)
+        public bool Equals(ValidateTransactionRequest input)
         {
             if (input == null)
             {
@@ -605,7 +595,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.IsGross == input.IsGross ||
-                    this.IsGross.Equals(input.IsGross)
+                    (this.IsGross != null &&
+                    this.IsGross.Equals(input.IsGross))
                 ) && 
                 (
                     this.DefaultCostCenters == input.DefaultCostCenters ||
@@ -760,7 +751,10 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                if (this.IsGross != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                }
                 if (this.DefaultCostCenters != null)
                 {
                     hashCode = (hashCode * 59) + this.DefaultCostCenters.GetHashCode();
@@ -784,36 +778,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Number (string) minLength
-            if (this.Number != null && this.Number.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Number, length must be greater than 1.", new [] { "Number" });
-            }
-
-            // Notes (string) maxLength
-            if (this.Notes != null && this.Notes.Length > 10000)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Notes, length must be less than 10000.", new [] { "Notes" });
-            }
-
-            // Notes (string) minLength
-            if (this.Notes != null && this.Notes.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Notes, length must be greater than 1.", new [] { "Notes" });
-            }
-
-            // ReferenceNr (string) maxLength
-            if (this.ReferenceNr != null && this.ReferenceNr.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be less than 100.", new [] { "ReferenceNr" });
-            }
-
-            // ReferenceNr (string) minLength
-            if (this.ReferenceNr != null && this.ReferenceNr.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be greater than 1.", new [] { "ReferenceNr" });
-            }
-
             yield break;
         }
     }

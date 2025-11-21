@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.ERP.CreateTransactionRequest
+# Simplic.OxS.SDK.ERP.ValidateTransactionRequest
 Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
 
 ## Properties
@@ -6,10 +6,10 @@ Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Creator** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
-**Number** | **string** | Gets or sets the transaction number. | 
+**Number** | **string** | Gets or sets the transaction number. | [optional] 
 **Reference** | **string** | Gets or sets the reference. | [optional] 
-**TypeId** | **Guid** | Gets or sets the type by ID. | 
-**SubtypeId** | **Guid** | Gets or sets the subtype by ID. | 
+**TypeId** | **Guid?** | Gets or sets the type by ID. | [optional] 
+**SubtypeId** | **Guid?** | Gets or sets the subtype by ID. | [optional] 
 **Date** | **DateTime?** | Gets or sets the time of the underlying transaction. | [optional] 
 **DeliveryDate** | **DateTime?** | Gets or sets the time of delivery. | [optional] 
 **TermsOfPaymentId** | **Guid?** | Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Payer** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
 **Responsible** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
 **Representative** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
-**Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets the items of this transaction. | [optional] 
+**Items** | [**List&lt;ValidateTransactionItemRequest&gt;**](ValidateTransactionItemRequest.md) | Gets or sets the items of this transaction. | [optional] 
 **AlternativePaymentDeadline** | **DateTime?** | Gets or sets an alternative payment deadline to the one defined in the terms of payment. | [optional] 
 **Balance** | **double?** |  | [optional] 
 **Barcode** | **string** | Gets or sets the barcode. | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **ReferenceNr** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
-**IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | 
+**IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
 **DefaultCostCenters** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
 **DefaultCostObjects** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
 **CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
