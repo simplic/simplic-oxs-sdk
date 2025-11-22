@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="id">id (required).</param>
         /// <param name="deploymentInfo">deploymentInfo (required).</param>
         /// <param name="flow">flow (required).</param>
-        public PostFlowResponse(Guid id = default(Guid), DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance))
+        /// <param name="flowKey">flowKey (required).</param>
+        public PostFlowResponse(Guid id = default(Guid), DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance), FlowKey flowKey = default(FlowKey))
         {
             this.Id = id;
             // to ensure "deploymentInfo" is required (not null)
@@ -59,6 +60,12 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("flow is a required property for PostFlowResponse and cannot be null");
             }
             this.Flow = flow;
+            // to ensure "flowKey" is required (not null)
+            if (flowKey == null)
+            {
+                throw new ArgumentNullException("flowKey is a required property for PostFlowResponse and cannot be null");
+            }
+            this.FlowKey = flowKey;
         }
 
         /// <summary>
@@ -80,6 +87,12 @@ namespace Simplic.OxS.SDK.Flow
         public FlowInstance Flow { get; set; }
 
         /// <summary>
+        /// Gets or Sets FlowKey
+        /// </summary>
+        [DataMember(Name = "flowKey", IsRequired = true, EmitDefaultValue = true)]
+        public FlowKey FlowKey { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,6 +103,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeploymentInfo: ").Append(DeploymentInfo).Append("\n");
             sb.Append("  Flow: ").Append(Flow).Append("\n");
+            sb.Append("  FlowKey: ").Append(FlowKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.Flow == input.Flow ||
                     (this.Flow != null &&
                     this.Flow.Equals(input.Flow))
+                ) && 
+                (
+                    this.FlowKey == input.FlowKey ||
+                    (this.FlowKey != null &&
+                    this.FlowKey.Equals(input.FlowKey))
                 );
         }
 
@@ -162,6 +181,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.Flow != null)
                 {
                     hashCode = (hashCode * 59) + this.Flow.GetHashCode();
+                }
+                if (this.FlowKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.FlowKey.GetHashCode();
                 }
                 return hashCode;
             }

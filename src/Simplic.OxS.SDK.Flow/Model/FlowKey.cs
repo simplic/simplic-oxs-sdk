@@ -28,42 +28,61 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// FlowReference
+    /// FlowKey
     /// </summary>
-    [DataContract(Name = "FlowReference")]
-    public partial class FlowReference : IEquatable<FlowReference>, IValidatableObject
+    [DataContract(Name = "FlowKey")]
+    public partial class FlowKey : IEquatable<FlowKey>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FlowReference" /> class.
+        /// Initializes a new instance of the <see cref="FlowKey" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="description">description.</param>
-        public FlowReference(Guid id = default(Guid), string name = default(string), string description = default(string))
+        [JsonConstructorAttribute]
+        public FlowKey()
         {
-            this.Id = id;
-            this.Name = name;
-            this.Description = description;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public string Value { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Returns false as Value should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeValue()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets FlowName
+        /// </summary>
+        [DataMember(Name = "flowName", EmitDefaultValue = true)]
+        public string FlowName { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Returns false as FlowName should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeFlowName()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public Guid OrganizationId { get; private set; }
 
+        /// <summary>
+        /// Returns false as OrganizationId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOrganizationId()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -71,10 +90,10 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class FlowReference {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class FlowKey {\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  FlowName: ").Append(FlowName).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +114,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FlowReference);
+            return this.Equals(input as FlowKey);
         }
 
         /// <summary>
-        /// Returns true if FlowReference instances are equal
+        /// Returns true if FlowKey instances are equal
         /// </summary>
-        /// <param name="input">Instance of FlowReference to be compared</param>
+        /// <param name="input">Instance of FlowKey to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FlowReference input)
+        public bool Equals(FlowKey input)
         {
             if (input == null)
             {
@@ -111,19 +130,19 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.FlowName == input.FlowName ||
+                    (this.FlowName != null &&
+                    this.FlowName.Equals(input.FlowName))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 );
         }
 
@@ -136,17 +155,17 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.FlowName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FlowName.GetHashCode();
                 }
-                if (this.Description != null)
+                if (this.OrganizationId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 return hashCode;
             }

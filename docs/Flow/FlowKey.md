@@ -1,13 +1,12 @@
-# Simplic.OxS.SDK.Flow.PostFlowResponse
+# Simplic.OxS.SDK.Flow.FlowKey
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | 
-**DeploymentInfo** | [**DeploymentInfo**](DeploymentInfo.md) |  | 
-**Flow** | [**FlowInstance**](FlowInstance.md) |  | 
-**FlowKey** | [**FlowKey**](FlowKey.md) |  | 
+**Value** | **string** |  | [optional] [readonly] 
+**FlowName** | **string** |  | [optional] [readonly] 
+**OrganizationId** | **Guid** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
