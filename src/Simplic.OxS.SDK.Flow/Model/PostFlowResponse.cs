@@ -45,7 +45,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="deploymentInfo">deploymentInfo (required).</param>
         /// <param name="flow">flow (required).</param>
         /// <param name="flowKey">flowKey (required).</param>
-        public PostFlowResponse(Guid id = default(Guid), DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance), FlowKey flowKey = default(FlowKey))
+        public PostFlowResponse(Guid id = default(Guid), DeploymentInfo deploymentInfo = default(DeploymentInfo), FlowInstance flow = default(FlowInstance), string flowKey = default(string))
         {
             this.Id = id;
             // to ensure "deploymentInfo" is required (not null)
@@ -90,7 +90,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets FlowKey
         /// </summary>
         [DataMember(Name = "flowKey", IsRequired = true, EmitDefaultValue = true)]
-        public FlowKey FlowKey { get; set; }
+        public string FlowKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

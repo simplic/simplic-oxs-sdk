@@ -705,7 +705,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowKey"
+                                        "type": "string"
                                     }
                                 }
                             },
@@ -713,7 +713,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowKey"
+                                        "type": "string"
                                     }
                                 }
                             },
@@ -721,7 +721,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowKey"
+                                        "type": "string"
                                     }
                                 }
                             }
@@ -1568,27 +1568,6 @@
                 },
                 "additionalProperties": false
             },
-            "FlowKey": {
-                "type": "object",
-                "properties": {
-                    "value": {
-                        "type": "string",
-                        "nullable": true,
-                        "readOnly": true
-                    },
-                    "flowName": {
-                        "type": "string",
-                        "nullable": true,
-                        "readOnly": true
-                    },
-                    "organizationId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "FlowOutPinDefinition": {
                 "type": "object",
                 "properties": {
@@ -2114,7 +2093,8 @@
                         "$ref": "#/components/schemas/FlowInstance"
                     },
                     "flowKey": {
-                        "$ref": "#/components/schemas/FlowKey"
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

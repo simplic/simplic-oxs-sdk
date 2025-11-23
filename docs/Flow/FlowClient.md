@@ -15,7 +15,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="flowbyeventeventnameget"></a>
 # **ByEvent**
-> List&lt;FlowKey&gt; ByEvent (string eventName)
+> List&lt;string&gt; ByEvent (string eventName)
 
 
 
@@ -48,7 +48,7 @@ namespace Example
 
             try
             {
-                List<FlowKey> result = apiInstance.ByEvent(eventName);
+                List<string> result = apiInstance.ByEvent(eventName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<FlowKey>> response = apiInstance.ByEventWithHttpInfo(eventName);
+    ApiResponse<List<string>> response = apiInstance.ByEventWithHttpInfo(eventName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -89,7 +89,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;FlowKey&gt;**](FlowKey.md)
+**List<string>**
 
 ### Authorization
 
