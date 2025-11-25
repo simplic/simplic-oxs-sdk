@@ -36,13 +36,21 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceContract" /> class.
         /// </summary>
+        /// <param name="providerName">providerName.</param>
         /// <param name="endpointContracts">endpointContracts.</param>
         /// <param name="requiredEndpointContracts">requiredEndpointContracts.</param>
-        public ServiceContract(List<EndpointContractDefinition> endpointContracts = default(List<EndpointContractDefinition>), List<RequiredEndpointContractDefinition> requiredEndpointContracts = default(List<RequiredEndpointContractDefinition>))
+        public ServiceContract(string providerName = default(string), List<EndpointContractDefinition> endpointContracts = default(List<EndpointContractDefinition>), List<RequiredEndpointContractDefinition> requiredEndpointContracts = default(List<RequiredEndpointContractDefinition>))
         {
+            this.ProviderName = providerName;
             this.EndpointContracts = endpointContracts;
             this.RequiredEndpointContracts = requiredEndpointContracts;
         }
+
+        /// <summary>
+        /// Gets or Sets ProviderName
+        /// </summary>
+        [DataMember(Name = "providerName", EmitDefaultValue = true)]
+        public string ProviderName { get; set; }
 
         /// <summary>
         /// Gets or Sets EndpointContracts
@@ -64,6 +72,7 @@ namespace Simplic.OxS.SDK.Ai
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ServiceContract {\n");
+            sb.Append("  ProviderName: ").Append(ProviderName).Append("\n");
             sb.Append("  EndpointContracts: ").Append(EndpointContracts).Append("\n");
             sb.Append("  RequiredEndpointContracts: ").Append(RequiredEndpointContracts).Append("\n");
             sb.Append("}\n");
@@ -102,6 +111,11 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
+                    this.ProviderName == input.ProviderName ||
+                    (this.ProviderName != null &&
+                    this.ProviderName.Equals(input.ProviderName))
+                ) && 
+                (
                     this.EndpointContracts == input.EndpointContracts ||
                     this.EndpointContracts != null &&
                     input.EndpointContracts != null &&
@@ -124,6 +138,10 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ProviderName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProviderName.GetHashCode();
+                }
                 if (this.EndpointContracts != null)
                 {
                     hashCode = (hashCode * 59) + this.EndpointContracts.GetHashCode();

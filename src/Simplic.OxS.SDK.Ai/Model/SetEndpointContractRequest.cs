@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="contractName">contractName (required).</param>
         /// <param name="endpoint">endpoint (required).</param>
-        public SetEndpointContractRequest(string contractName = default(string), string endpoint = default(string))
+        /// <param name="providerName">providerName.</param>
+        public SetEndpointContractRequest(string contractName = default(string), string endpoint = default(string), string providerName = default(string))
         {
             // to ensure "contractName" is required (not null)
             if (contractName == null)
@@ -57,6 +58,7 @@ namespace Simplic.OxS.SDK.Ai
                 throw new ArgumentNullException("endpoint is a required property for SetEndpointContractRequest and cannot be null");
             }
             this.Endpoint = endpoint;
+            this.ProviderName = providerName;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace Simplic.OxS.SDK.Ai
         public string Endpoint { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProviderName
+        /// </summary>
+        [DataMember(Name = "providerName", EmitDefaultValue = true)]
+        public string ProviderName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -81,6 +89,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class SetEndpointContractRequest {\n");
             sb.Append("  ContractName: ").Append(ContractName).Append("\n");
             sb.Append("  Endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("  ProviderName: ").Append(ProviderName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,6 +134,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Endpoint == input.Endpoint ||
                     (this.Endpoint != null &&
                     this.Endpoint.Equals(input.Endpoint))
+                ) && 
+                (
+                    this.ProviderName == input.ProviderName ||
+                    (this.ProviderName != null &&
+                    this.ProviderName.Equals(input.ProviderName))
                 );
         }
 
@@ -144,6 +158,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Endpoint != null)
                 {
                     hashCode = (hashCode * 59) + this.Endpoint.GetHashCode();
+                }
+                if (this.ProviderName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProviderName.GetHashCode();
                 }
                 return hashCode;
             }

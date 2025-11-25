@@ -37,9 +37,11 @@ namespace Simplic.OxS.SDK.Ai
         /// Initializes a new instance of the <see cref="RequiredEndpointContractDefinition" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        public RequiredEndpointContractDefinition(string name = default(string))
+        /// <param name="allowMultiple">allowMultiple.</param>
+        public RequiredEndpointContractDefinition(string name = default(string), bool allowMultiple = default(bool))
         {
             this.Name = name;
+            this.AllowMultiple = allowMultiple;
         }
 
         /// <summary>
@@ -47,6 +49,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AllowMultiple
+        /// </summary>
+        [DataMember(Name = "allowMultiple", EmitDefaultValue = true)]
+        public bool AllowMultiple { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,6 +65,7 @@ namespace Simplic.OxS.SDK.Ai
             StringBuilder sb = new StringBuilder();
             sb.Append("class RequiredEndpointContractDefinition {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  AllowMultiple: ").Append(AllowMultiple).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,6 +105,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.AllowMultiple == input.AllowMultiple ||
+                    this.AllowMultiple.Equals(input.AllowMultiple)
                 );
         }
 
@@ -112,6 +125,7 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AllowMultiple.GetHashCode();
                 return hashCode;
             }
         }

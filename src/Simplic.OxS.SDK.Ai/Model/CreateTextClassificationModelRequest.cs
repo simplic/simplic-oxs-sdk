@@ -37,9 +37,9 @@ namespace Simplic.OxS.SDK.Ai
         /// Initializes a new instance of the <see cref="CreateTextClassificationModelRequest" /> class.
         /// </summary>
         /// <param name="name">Gets or sets the name of the model base..</param>
-        /// <param name="type">Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification.</param>
-        /// <param name="state">Gets or sets the state of the base model.  new, training, completed and failed.s.</param>
-        /// <param name="trainingFormatData">Gets or sets the format of the training data.  e.g. csv..</param>
+        /// <param name="type">Gets or sets the type of the model base. as example. aws-comprehend-multi-classification.</param>
+        /// <param name="state">Gets or sets the state of the base model. new, training, completed and failed.s.</param>
+        /// <param name="trainingFormatData">Gets or sets the format of the training data. e.g. csv..</param>
         /// <param name="delimiter">Gets or sets the delimiter for the data..</param>
         /// <param name="labelDelimiter">Gets or sets the delimiter for the labels..</param>
         public CreateTextClassificationModelRequest(string name = default(string), string type = default(string), string state = default(string), string trainingFormatData = default(string), string delimiter = default(string), string labelDelimiter = default(string))
@@ -60,23 +60,23 @@ namespace Simplic.OxS.SDK.Ai
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification
+        /// Gets or sets the type of the model base. as example. aws-comprehend-multi-classification
         /// </summary>
-        /// <value>Gets or sets the type of the model base.  as example. aws-comprehend-multi-classification</value>
+        /// <value>Gets or sets the type of the model base. as example. aws-comprehend-multi-classification</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the state of the base model.  new, training, completed and failed.s
+        /// Gets or sets the state of the base model. new, training, completed and failed.s
         /// </summary>
-        /// <value>Gets or sets the state of the base model.  new, training, completed and failed.s</value>
+        /// <value>Gets or sets the state of the base model. new, training, completed and failed.s</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
-        /// Gets or sets the format of the training data.  e.g. csv.
+        /// Gets or sets the format of the training data. e.g. csv.
         /// </summary>
-        /// <value>Gets or sets the format of the training data.  e.g. csv.</value>
+        /// <value>Gets or sets the format of the training data. e.g. csv.</value>
         [DataMember(Name = "trainingFormatData", EmitDefaultValue = true)]
         public string TrainingFormatData { get; set; }
 

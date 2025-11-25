@@ -68,14 +68,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="unitId">Gets or sets the unit the quantity is measured in by ID..</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
-        /// <param name="taxKey">Gets or sets the tax key given by ID if a specific tax key should be used for this item..</param>
+        /// <param name="taxKeyId">Gets or sets the tax key given by ID if a specific tax key should be used for this item..</param>
         /// <param name="costCenters">Gets or sets the assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="costObjects">Gets or sets the assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public ValidateTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKey = default(Guid?), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>))
+        public ValidateTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>))
         {
             this.TemporaryId = temporaryId;
             this.Id = id;
@@ -91,7 +91,7 @@ namespace Simplic.OxS.SDK.ERP
             this.UnitId = unitId;
             this.InputPrice = inputPrice;
             this.InputPriceType = inputPriceType;
-            this.TaxKey = taxKey;
+            this.TaxKeyId = taxKeyId;
             this.CostCenters = costCenters;
             this.CostObjects = costObjects;
             this.ArticleId = articleId;
@@ -181,8 +181,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the tax key given by ID if a specific tax key should be used for this item.
         /// </summary>
         /// <value>Gets or sets the tax key given by ID if a specific tax key should be used for this item.</value>
-        [DataMember(Name = "taxKey", EmitDefaultValue = true)]
-        public Guid? TaxKey { get; set; }
+        [DataMember(Name = "taxKeyId", EmitDefaultValue = true)]
+        public Guid? TaxKeyId { get; set; }
 
         /// <summary>
         /// Gets or sets the assigned cost centers given by ID with their respective percentages.
@@ -248,7 +248,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  UnitId: ").Append(UnitId).Append("\n");
             sb.Append("  InputPrice: ").Append(InputPrice).Append("\n");
             sb.Append("  InputPriceType: ").Append(InputPriceType).Append("\n");
-            sb.Append("  TaxKey: ").Append(TaxKey).Append("\n");
+            sb.Append("  TaxKeyId: ").Append(TaxKeyId).Append("\n");
             sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
@@ -359,9 +359,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.InputPriceType.Equals(input.InputPriceType)
                 ) && 
                 (
-                    this.TaxKey == input.TaxKey ||
-                    (this.TaxKey != null &&
-                    this.TaxKey.Equals(input.TaxKey))
+                    this.TaxKeyId == input.TaxKeyId ||
+                    (this.TaxKeyId != null &&
+                    this.TaxKeyId.Equals(input.TaxKeyId))
                 ) && 
                 (
                     this.CostCenters == input.CostCenters ||
@@ -454,9 +454,9 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.InputPrice.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.InputPriceType.GetHashCode();
-                if (this.TaxKey != null)
+                if (this.TaxKeyId != null)
                 {
-                    hashCode = (hashCode * 59) + this.TaxKey.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TaxKeyId.GetHashCode();
                 }
                 if (this.CostCenters != null)
                 {

@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyTextAsyncResponse" /> class.
         /// </summary>
-        /// <param name="jobId">Gets or sets the job id.  Its the id to check the aws query..</param>
-        /// <param name="state">Gets or sets the state of the job.  e.g. processing, complete or failed..</param>
+        /// <param name="jobId">Gets or sets the job id. Its the id to check the aws query..</param>
+        /// <param name="state">Gets or sets the state of the job. e.g. processing, complete or failed..</param>
         /// <param name="stateText">Gets or sets a state text with more informations about the state..</param>
         /// <param name="results">Gets or sets a list of the results..</param>
         public ClassifyTextAsyncResponse(string jobId = default(string), string state = default(string), string stateText = default(string), List<TextClassificationResultResponse> results = default(List<TextClassificationResultResponse>))
@@ -49,16 +49,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or sets the job id.  Its the id to check the aws query.
+        /// Gets or sets the job id. Its the id to check the aws query.
         /// </summary>
-        /// <value>Gets or sets the job id.  Its the id to check the aws query.</value>
+        /// <value>Gets or sets the job id. Its the id to check the aws query.</value>
         [DataMember(Name = "jobId", EmitDefaultValue = true)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// Gets or sets the state of the job.  e.g. processing, complete or failed.
+        /// Gets or sets the state of the job. e.g. processing, complete or failed.
         /// </summary>
-        /// <value>Gets or sets the state of the job.  e.g. processing, complete or failed.</value>
+        /// <value>Gets or sets the state of the job. e.g. processing, complete or failed.</value>
         [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 

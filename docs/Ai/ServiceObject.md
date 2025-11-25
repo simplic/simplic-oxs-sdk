@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **SwaggerJsonUrl** | **string** |  | [optional] 
 **ModelDefinitionUrl** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
-**Contract** | [**ServiceContract**](ServiceContract.md) |  | [optional] 
+**Contracts** | [**List&lt;ServiceContract&gt;**](ServiceContract.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **ManualVAT** | [**TransactionManualVatRequest**](TransactionManualVatRequest.md) |  | [optional] 
 **Notes** | **string** | Gets or sets notes. | [optional] 
 **DueDate** | **DateTime?** | Gets or sets the due date. | [optional] 
-**ReferenceNr** | **string** | Gets or sets the reference number. | [optional] 
+**ReferenceNumber** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
 **IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | 

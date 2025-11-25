@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **UnitId** | **Guid?** | Gets or sets the unit the quantity is measured in by ID. | [optional] 
 **InputPrice** | **double?** | Gets or sets the price user input. | [optional] 
 **InputPriceType** | **InputPriceType** |  | [optional] 
-**TaxKey** | **Guid?** | Gets or sets the tax key given by ID if a specific tax key should be used for this item. | [optional] 
+**TaxKeyId** | **Guid?** | Gets or sets the tax key given by ID if a specific tax key should be used for this item. | [optional] 
 **CostCenters** | **Dictionary&lt;string, double&gt;** | Gets or sets the assigned cost centers given by ID with their respective percentages. | [optional] 
 **CostObjects** | **Dictionary&lt;string, double&gt;** | Gets or sets the assigned cost objects given by ID with their respective percentages. | [optional] 
 **ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 

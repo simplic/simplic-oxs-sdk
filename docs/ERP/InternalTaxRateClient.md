@@ -1,14 +1,14 @@
-# Simplic.OxS.SDK.Ai.DocumentClient
+# Simplic.OxS.SDK.ERP.InternalTaxRateClient
 
-All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
+All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Process**](DocumentClient.md#documentprocesspost) | **POST** /Document/process |  |
+| [**GetById**](InternalTaxRateClient.md#internalinternaltaxrategetbyidget) | **GET** /internal/InternalTaxRate/get-by-id |  |
 
-<a id="documentprocesspost"></a>
-# **Process**
-> void Process (ProcessDocumentRequest? processDocumentRequest = null)
+<a id="internalinternaltaxrategetbyidget"></a>
+# **GetById**
+> TaxRateModel GetById (Guid? id = null)
 
 
 
@@ -17,33 +17,36 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using Simplic.OxS.SDK.Ai;
+using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class ProcessExample
+    public class GetByIdExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
             // Configure API key authorization: ApiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure Bearer token for authorization: Bearer
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DocumentClient(config);
-            var processDocumentRequest = new ProcessDocumentRequest?(); // ProcessDocumentRequest? |  (optional) 
+            var apiInstance = new InternalTaxRateClient(config);
+            var id = "id_example";  // Guid? |  (optional) 
 
             try
             {
-                apiInstance.Process(processDocumentRequest);
+                TaxRateModel result = apiInstance.GetById(id);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentClient.Process: " + e.Message);
+                Debug.Print("Exception when calling InternalTaxRateClient.GetById: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -52,17 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the ProcessWithHttpInfo variant
+#### Using the GetByIdWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.ProcessWithHttpInfo(processDocumentRequest);
+    ApiResponse<TaxRateModel> response = apiInstance.GetByIdWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DocumentClient.ProcessWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling InternalTaxRateClient.GetByIdWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -72,11 +78,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **processDocumentRequest** | [**ProcessDocumentRequest?**](ProcessDocumentRequest?.md) |  | [optional]  |
+| **id** | **Guid?** |  | [optional]  |
 
 ### Return type
 
-void (empty response body)
+[**TaxRateModel**](TaxRateModel.md)
 
 ### Authorization
 
@@ -84,7 +90,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 
@@ -92,8 +98,8 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

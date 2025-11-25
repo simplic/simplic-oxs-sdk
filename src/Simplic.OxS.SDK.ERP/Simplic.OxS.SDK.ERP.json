@@ -1406,6 +1406,85 @@
                 }
             }
         },
+        "/internal/InternalTaxRate/get-by-id": {
+            "get": {
+                "tags": [
+                    "InternalTaxRate"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxRateModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxRateModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxRateModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/OrganizationSettings": {
             "get": {
                 "tags": [
@@ -6495,7 +6574,7 @@
                         "format": "date-time",
                         "nullable": true
                     },
-                    "referenceNr": {
+                    "referenceNumber": {
                         "maxLength": 100,
                         "minLength": 1,
                         "type": "string",
@@ -9254,6 +9333,29 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a document in a transaction."
             },
+            "TransactionGeneralLedgerAccount": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TransactionItemModel": {
                 "type": "object",
                 "properties": {
@@ -9423,11 +9525,8 @@
                         "format": "uuid",
                         "nullable": true
                     },
-                    "generalLedgerAccountId": {
-                        "type": "string",
-                        "description": "Gets or sets the general ledger account by ID.",
-                        "format": "uuid",
-                        "nullable": true
+                    "generalLedgerAccount": {
+                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccount"
                     },
                     "deltaValue": {
                         "type": "number",
@@ -9519,7 +9618,7 @@
                     "inputPriceType": {
                         "$ref": "#/components/schemas/InputPriceType"
                     },
-                    "taxKey": {
+                    "taxKeyId": {
                         "type": "string",
                         "description": "Gets or sets the tax key given by ID if a specific tax key should be used for this item.",
                         "format": "uuid",
@@ -11234,7 +11333,7 @@
                     "inputPriceType": {
                         "$ref": "#/components/schemas/InputPriceType"
                     },
-                    "taxKey": {
+                    "taxKeyId": {
                         "type": "string",
                         "description": "Gets or sets the tax key given by ID if a specific tax key should be used for this item.",
                         "format": "uuid",
@@ -11436,7 +11535,7 @@
                         "format": "date-time",
                         "nullable": true
                     },
-                    "referenceNr": {
+                    "referenceNumber": {
                         "type": "string",
                         "description": "Gets or sets the reference number.",
                         "nullable": true

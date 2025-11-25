@@ -1,5 +1,5 @@
 {
-    "openapi": "3.0.1",
+    "openapi": "3.0.4",
     "info": {
         "title": "Simplic.OxS.ai",
         "version": "v1"
@@ -3577,12 +3577,12 @@
                 "properties": {
                     "jobId": {
                         "type": "string",
-                        "description": "Gets or sets the job id.\r\nIts the id to check the aws query.",
+                        "description": "Gets or sets the job id.\nIts the id to check the aws query.",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
-                        "description": "Gets or sets the state of the job.\r\ne.g. processing, complete or failed.",
+                        "description": "Gets or sets the state of the job.\ne.g. processing, complete or failed.",
                         "nullable": true
                     },
                     "stateText": {
@@ -3650,7 +3650,7 @@
                     },
                     "contextMessage": {
                         "type": "string",
-                        "description": "Gets or sets a message, that represents a manual context.\r\nIf this is set, togehter with Name and Id, both will be passed to the AI",
+                        "description": "Gets or sets a message, that represents a manual context.\nIf this is set, togehter with Name and Id, both will be passed to the AI",
                         "nullable": true
                     }
                 },
@@ -3739,17 +3739,17 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "Gets or sets the type of the model base.\r\nas example. aws-comprehend-multi-classification",
+                        "description": "Gets or sets the type of the model base.\nas example. aws-comprehend-multi-classification",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
-                        "description": "Gets or sets the state of the base model.\r\nnew, training, completed and failed.s",
+                        "description": "Gets or sets the state of the base model.\nnew, training, completed and failed.s",
                         "nullable": true
                     },
                     "trainingFormatData": {
                         "type": "string",
-                        "description": "Gets or sets the format of the training data.\r\ne.g. csv.",
+                        "description": "Gets or sets the format of the training data.\ne.g. csv.",
                         "nullable": true
                     },
                     "delimiter": {
@@ -3944,6 +3944,10 @@
                         "nullable": true
                     },
                     "endpoint": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "providerName": {
                         "type": "string",
                         "nullable": true
                     }
@@ -4298,6 +4302,9 @@
                     "name": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "allowMultiple": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -4333,6 +4340,10 @@
             "ServiceContract": {
                 "type": "object",
                 "properties": {
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "endpointContracts": {
                         "type": "array",
                         "items": {
@@ -4377,8 +4388,12 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "contract": {
-                        "$ref": "#/components/schemas/ServiceContract"
+                    "contracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ServiceContract"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4397,6 +4412,10 @@
                     "endpoint": {
                         "minLength": 5,
                         "type": "string"
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4485,22 +4504,22 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "Gets or sets the type of the model base.\r\nas example. aws-comprehend-multi-classification",
+                        "description": "Gets or sets the type of the model base.\nas example. aws-comprehend-multi-classification",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
-                        "description": "Gets or sets the state of the base model.\r\nnew, training, completed and failed.s",
+                        "description": "Gets or sets the state of the base model.\nnew, training, completed and failed.s",
                         "nullable": true
                     },
                     "stateText": {
                         "type": "string",
-                        "description": "Gets or sets the current state text.\r\nIts a text with more information about the state.",
+                        "description": "Gets or sets the current state text.\nIts a text with more information about the state.",
                         "nullable": true
                     },
                     "trainingFormatData": {
                         "type": "string",
-                        "description": "Gets or sets the format of the training data.\r\ne.g. csv.",
+                        "description": "Gets or sets the format of the training data.\ne.g. csv.",
                         "nullable": true
                     },
                     "delimiter": {
@@ -4515,7 +4534,7 @@
                     },
                     "trainingDataPath": {
                         "type": "string",
-                        "description": "Gets or sets the actually trainings data.\r\nIts a path to a csv file in a aws bucket.",
+                        "description": "Gets or sets the actually trainings data.\nIts a path to a csv file in a aws bucket.",
                         "nullable": true
                     },
                     "version": {
@@ -4555,10 +4574,10 @@
         },
         "securitySchemes": {
             "Bearer": {
-                "type": "apiKey",
+                "type": "http",
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
-                "name": "Authorization",
-                "in": "header"
+                "scheme": "Bearer",
+                "bearerFormat": "JWT"
             },
             "ApiKey": {
                 "type": "apiKey",
@@ -4572,6 +4591,44 @@
         {
             "Bearer": [],
             "ApiKey": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Conversation"
+        },
+        {
+            "name": "DataSet"
+        },
+        {
+            "name": "Document"
+        },
+        {
+            "name": "Embedding"
+        },
+        {
+            "name": "IInternalConversation"
+        },
+        {
+            "name": "LLM"
+        },
+        {
+            "name": "LLMTask"
+        },
+        {
+            "name": "OrganizationSettings"
+        },
+        {
+            "name": "ServiceContract"
+        },
+        {
+            "name": "ServiceDefinition"
+        },
+        {
+            "name": "TextClassification"
+        },
+        {
+            "name": "TextClassificationModel"
         }
     ]
 }

@@ -76,14 +76,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="manualVAT">manualVAT.</param>
         /// <param name="notes">Gets or sets notes..</param>
         /// <param name="dueDate">Gets or sets the due date..</param>
-        /// <param name="referenceNr">Gets or sets the reference number..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number..</param>
         /// <param name="taxGroupId">Gets or sets the tax group by ID..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
         /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net. (required).</param>
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
-        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), double? checkSum = default(double?))
+        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), double? checkSum = default(double?))
         {
             // to ensure "number" is required (not null)
             if (number == null)
@@ -120,7 +120,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ManualVAT = manualVAT;
             this.Notes = notes;
             this.DueDate = dueDate;
-            this.ReferenceNr = referenceNr;
+            this.ReferenceNumber = referenceNumber;
             this.TaxGroupId = taxGroupId;
             this.OperationItemCombinationMode = operationItemCombinationMode;
             this.DefaultCostCenters = defaultCostCenters;
@@ -326,8 +326,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the reference number.
         /// </summary>
         /// <value>Gets or sets the reference number.</value>
-        [DataMember(Name = "referenceNr", EmitDefaultValue = true)]
-        public string ReferenceNr { get; set; }
+        [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
+        public string ReferenceNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the tax group by ID.
@@ -401,7 +401,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ManualVAT: ").Append(ManualVAT).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
-            sb.Append("  ReferenceNr: ").Append(ReferenceNr).Append("\n");
+            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
@@ -590,9 +590,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.DueDate.Equals(input.DueDate))
                 ) && 
                 (
-                    this.ReferenceNr == input.ReferenceNr ||
-                    (this.ReferenceNr != null &&
-                    this.ReferenceNr.Equals(input.ReferenceNr))
+                    this.ReferenceNumber == input.ReferenceNumber ||
+                    (this.ReferenceNumber != null &&
+                    this.ReferenceNumber.Equals(input.ReferenceNumber))
                 ) && 
                 (
                     this.TaxGroupId == input.TaxGroupId ||
@@ -751,9 +751,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.DueDate.GetHashCode();
                 }
-                if (this.ReferenceNr != null)
+                if (this.ReferenceNumber != null)
                 {
-                    hashCode = (hashCode * 59) + this.ReferenceNr.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ReferenceNumber.GetHashCode();
                 }
                 if (this.TaxGroupId != null)
                 {
@@ -802,16 +802,16 @@ namespace Simplic.OxS.SDK.ERP
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Notes, length must be greater than 1.", new [] { "Notes" });
             }
 
-            // ReferenceNr (string) maxLength
-            if (this.ReferenceNr != null && this.ReferenceNr.Length > 100)
+            // ReferenceNumber (string) maxLength
+            if (this.ReferenceNumber != null && this.ReferenceNumber.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be less than 100.", new [] { "ReferenceNr" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNumber, length must be less than 100.", new [] { "ReferenceNumber" });
             }
 
-            // ReferenceNr (string) minLength
-            if (this.ReferenceNr != null && this.ReferenceNr.Length < 1)
+            // ReferenceNumber (string) minLength
+            if (this.ReferenceNumber != null && this.ReferenceNumber.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNr, length must be greater than 1.", new [] { "ReferenceNr" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReferenceNumber, length must be greater than 1.", new [] { "ReferenceNumber" });
             }
 
             yield break;

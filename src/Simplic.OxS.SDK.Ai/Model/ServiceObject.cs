@@ -42,8 +42,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="swaggerJsonUrl">swaggerJsonUrl.</param>
         /// <param name="modelDefinitionUrl">modelDefinitionUrl.</param>
         /// <param name="type">type.</param>
-        /// <param name="contract">contract.</param>
-        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), string type = default(string), ServiceContract contract = default(ServiceContract))
+        /// <param name="contracts">contracts.</param>
+        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), string type = default(string), List<ServiceContract> contracts = default(List<ServiceContract>))
         {
             this.Name = name;
             this.VarVersion = varVersion;
@@ -51,7 +51,7 @@ namespace Simplic.OxS.SDK.Ai
             this.SwaggerJsonUrl = swaggerJsonUrl;
             this.ModelDefinitionUrl = modelDefinitionUrl;
             this.Type = type;
-            this.Contract = contract;
+            this.Contracts = contracts;
         }
 
         /// <summary>
@@ -91,10 +91,10 @@ namespace Simplic.OxS.SDK.Ai
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Contract
+        /// Gets or Sets Contracts
         /// </summary>
-        [DataMember(Name = "contract", EmitDefaultValue = false)]
-        public ServiceContract Contract { get; set; }
+        [DataMember(Name = "contracts", EmitDefaultValue = true)]
+        public List<ServiceContract> Contracts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -110,7 +110,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  SwaggerJsonUrl: ").Append(SwaggerJsonUrl).Append("\n");
             sb.Append("  ModelDefinitionUrl: ").Append(ModelDefinitionUrl).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Contract: ").Append(Contract).Append("\n");
+            sb.Append("  Contracts: ").Append(Contracts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,9 +177,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Contract == input.Contract ||
-                    (this.Contract != null &&
-                    this.Contract.Equals(input.Contract))
+                    this.Contracts == input.Contracts ||
+                    this.Contracts != null &&
+                    input.Contracts != null &&
+                    this.Contracts.SequenceEqual(input.Contracts)
                 );
         }
 
@@ -216,9 +217,9 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                if (this.Contract != null)
+                if (this.Contracts != null)
                 {
-                    hashCode = (hashCode * 59) + this.Contract.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Contracts.GetHashCode();
                 }
                 return hashCode;
             }

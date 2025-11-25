@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ProviderName** | **string** |  | [optional] 
 **EndpointContracts** | [**List&lt;EndpointContractDefinition&gt;**](EndpointContractDefinition.md) |  | [optional] 
 **RequiredEndpointContracts** | [**List&lt;RequiredEndpointContractDefinition&gt;**](RequiredEndpointContractDefinition.md) |  | [optional] 
 
