@@ -1,5 +1,5 @@
-# Simplic.OxS.SDK.ERP.TaxGroupCountryModel
-Represents the shared model for Simplic.OxS.ERP.TaxGroupCountry.
+# Simplic.OxS.SDK.ERP.TaxGroupCountryIsoRequest
+Represents the request model for country isos.
 
 ## Properties
 

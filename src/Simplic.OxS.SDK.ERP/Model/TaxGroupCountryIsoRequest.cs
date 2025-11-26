@@ -28,44 +28,35 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to update a Simplic.OxS.ERP.TaxGroup.
+    /// Represents the request model for country isos.
     /// </summary>
-    [DataContract(Name = "UpdateTaxGroupRequest")]
-    public partial class UpdateTaxGroupRequest : IEquatable<UpdateTaxGroupRequest>, IValidatableObject
+    [DataContract(Name = "TaxGroupCountryIsoRequest")]
+    public partial class TaxGroupCountryIsoRequest : IEquatable<TaxGroupCountryIsoRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateTaxGroupRequest" /> class.
+        /// Initializes a new instance of the <see cref="TaxGroupCountryIsoRequest" /> class.
         /// </summary>
-        /// <param name="number">Gets or sets the number..</param>
-        /// <param name="name">Gets or sets the name..</param>
-        /// <param name="countries">Gets or sets the set of countries given by ISO code..</param>
-        public UpdateTaxGroupRequest(int? number = default(int?), string name = default(string), List<TaxGroupCountryIsoRequest> countries = default(List<TaxGroupCountryIsoRequest>))
+        /// <param name="name">Gets or sets the name of the country..</param>
+        /// <param name="isoCode">Gets or sets the ISO code..</param>
+        public TaxGroupCountryIsoRequest(string name = default(string), string isoCode = default(string))
         {
-            this.Number = number;
             this.Name = name;
-            this.Countries = countries;
+            this.IsoCode = isoCode;
         }
 
         /// <summary>
-        /// Gets or sets the number.
+        /// Gets or sets the name of the country.
         /// </summary>
-        /// <value>Gets or sets the number.</value>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public int? Number { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>Gets or sets the name.</value>
+        /// <value>Gets or sets the name of the country.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the set of countries given by ISO code.
+        /// Gets or sets the ISO code.
         /// </summary>
-        /// <value>Gets or sets the set of countries given by ISO code.</value>
-        [DataMember(Name = "countries", EmitDefaultValue = true)]
-        public List<TaxGroupCountryIsoRequest> Countries { get; set; }
+        /// <value>Gets or sets the ISO code.</value>
+        [DataMember(Name = "isoCode", EmitDefaultValue = true)]
+        public string IsoCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,10 +65,9 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateTaxGroupRequest {\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("class TaxGroupCountryIsoRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Countries: ").Append(Countries).Append("\n");
+            sb.Append("  IsoCode: ").Append(IsoCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateTaxGroupRequest);
+            return this.Equals(input as TaxGroupCountryIsoRequest);
         }
 
         /// <summary>
-        /// Returns true if UpdateTaxGroupRequest instances are equal
+        /// Returns true if TaxGroupCountryIsoRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateTaxGroupRequest to be compared</param>
+        /// <param name="input">Instance of TaxGroupCountryIsoRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateTaxGroupRequest input)
+        public bool Equals(TaxGroupCountryIsoRequest input)
         {
             if (input == null)
             {
@@ -114,20 +104,14 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Countries == input.Countries ||
-                    this.Countries != null &&
-                    input.Countries != null &&
-                    this.Countries.SequenceEqual(input.Countries)
+                    this.IsoCode == input.IsoCode ||
+                    (this.IsoCode != null &&
+                    this.IsoCode.Equals(input.IsoCode))
                 );
         }
 
@@ -140,17 +124,13 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Number != null)
-                {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Countries != null)
+                if (this.IsoCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.Countries.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsoCode.GetHashCode();
                 }
                 return hashCode;
             }

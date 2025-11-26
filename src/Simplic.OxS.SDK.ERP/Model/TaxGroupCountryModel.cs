@@ -36,11 +36,20 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxGroupCountryModel" /> class.
         /// </summary>
+        /// <param name="name">Gets or sets the name of the country..</param>
         /// <param name="isoCode">Gets or sets the ISO code..</param>
-        public TaxGroupCountryModel(string isoCode = default(string))
+        public TaxGroupCountryModel(string name = default(string), string isoCode = default(string))
         {
+            this.Name = name;
             this.IsoCode = isoCode;
         }
+
+        /// <summary>
+        /// Gets or sets the name of the country.
+        /// </summary>
+        /// <value>Gets or sets the name of the country.</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the ISO code.
@@ -57,6 +66,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TaxGroupCountryModel {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsoCode: ").Append(IsoCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -94,6 +104,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
                     this.IsoCode == input.IsoCode ||
                     (this.IsoCode != null &&
                     this.IsoCode.Equals(input.IsoCode))
@@ -109,6 +124,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.IsoCode != null)
                 {
                     hashCode = (hashCode * 59) + this.IsoCode.GetHashCode();

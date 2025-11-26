@@ -8625,9 +8625,31 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "TaxGroupCountryIsoRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the country.",
+                        "nullable": true
+                    },
+                    "isoCode": {
+                        "type": "string",
+                        "description": "Gets or sets the ISO code.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the request model for country isos."
+            },
             "TaxGroupCountryModel": {
                 "type": "object",
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the country.",
+                        "nullable": true
+                    },
                     "isoCode": {
                         "type": "string",
                         "description": "Gets or sets the ISO code.",
@@ -8707,7 +8729,7 @@
             },
             "TaxGroupRequest": {
                 "required": [
-                    "countryIsoCodes",
+                    "countries",
                     "name",
                     "number"
                 ],
@@ -8724,10 +8746,10 @@
                         "type": "string",
                         "description": "Gets or sets the name."
                     },
-                    "countryIsoCodes": {
+                    "countries": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/TaxGroupCountryIsoRequest"
                         },
                         "description": "Gets or sets the set of countries given by ISO code."
                     }
@@ -9077,45 +9099,45 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
-                    "organizationId": {
-                        "type": "string",
-                        "format": "uuid"
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the number.",
+                        "format": "int32"
                     },
-                    "isDeleted": {
-                        "type": "boolean"
-                    },
-                    "createDateTime": {
+                    "name": {
                         "type": "string",
-                        "description": "Gets or sets the create date time.",
-                        "format": "date-time"
-                    },
-                    "createUserId": {
-                        "type": "string",
-                        "description": "Gets or sets the create user id.",
-                        "format": "uuid",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
-                    "createUserName": {
-                        "type": "string",
-                        "description": "Gets or sets the create user name.",
+                    "cashDiscount": {
+                        "type": "number",
+                        "description": "Gets or sets the cash discount quantity.",
+                        "format": "double"
+                    },
+                    "cashDiscountDays": {
+                        "type": "integer",
+                        "description": "Gets or sets the number of days the cash discount applies for.",
+                        "format": "int32"
+                    },
+                    "paymentDeadlineDays": {
+                        "type": "integer",
+                        "description": "Gets or sets the number of days to payment deadline.",
+                        "format": "int32"
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
                         "nullable": true
                     },
-                    "updateDateTime": {
+                    "formattedText": {
                         "type": "string",
-                        "description": "Gets or sets the update date time.",
-                        "format": "date-time"
-                    },
-                    "updateUserId": {
-                        "type": "string",
-                        "description": "Gets or sets the update user id.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "updateUserName": {
-                        "type": "string",
-                        "description": "Gets or sets the update user name.",
+                        "description": "Gets or sets a descriptive formatted text containing the terms of payment parameters.",
                         "nullable": true
                     }
                 },
@@ -10355,9 +10377,7 @@
                 "required": [
                     "name",
                     "number",
-                    "outputConfigurationId",
-                    "reportId",
-                    "sequenceId"
+                    "reportId"
                 ],
                 "type": "object",
                 "properties": {
@@ -10374,12 +10394,14 @@
                     "sequenceId": {
                         "type": "string",
                         "description": "Gets or sets an optional sequence for this subtype given by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "outputConfigurationId": {
                         "type": "string",
                         "description": "Gets or sets the output configuration given by ID..",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "number": {
                         "type": "integer",
@@ -10876,10 +10898,10 @@
                         "description": "Gets or sets the name.",
                         "nullable": true
                     },
-                    "countryIsoCodes": {
+                    "countries": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/TaxGroupCountryIsoRequest"
                         },
                         "description": "Gets or sets the set of countries given by ISO code.",
                         "nullable": true

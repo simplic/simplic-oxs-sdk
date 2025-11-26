@@ -36,87 +36,81 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsOfPaymentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
-        /// <param name="createDateTime">Gets or sets the create date time..</param>
-        /// <param name="createUserId">Gets or sets the create user id..</param>
-        /// <param name="createUserName">Gets or sets the create user name..</param>
-        /// <param name="updateDateTime">Gets or sets the update date time..</param>
-        /// <param name="updateUserId">Gets or sets the update user id..</param>
-        /// <param name="updateUserName">Gets or sets the update user name..</param>
-        public TermsOfPaymentModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="cashDiscount">Gets or sets the cash discount quantity..</param>
+        /// <param name="cashDiscountDays">Gets or sets the number of days the cash discount applies for..</param>
+        /// <param name="paymentDeadlineDays">Gets or sets the number of days to payment deadline..</param>
+        /// <param name="states">Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  .</param>
+        /// <param name="formattedText">Gets or sets a descriptive formatted text containing the terms of payment parameters..</param>
+        public TermsOfPaymentModel(Guid id = default(Guid), int number = default(int), string name = default(string), double cashDiscount = default(double), int cashDiscountDays = default(int), int paymentDeadlineDays = default(int), List<string> states = default(List<string>), string formattedText = default(string))
         {
             this.Id = id;
-            this.OrganizationId = organizationId;
-            this.IsDeleted = isDeleted;
-            this.CreateDateTime = createDateTime;
-            this.CreateUserId = createUserId;
-            this.CreateUserName = createUserName;
-            this.UpdateDateTime = updateDateTime;
-            this.UpdateUserId = updateUserId;
-            this.UpdateUserName = updateUserName;
+            this.Number = number;
+            this.Name = name;
+            this.CashDiscount = cashDiscount;
+            this.CashDiscountDays = cashDiscountDays;
+            this.PaymentDeadlineDays = paymentDeadlineDays;
+            this.States = states;
+            this.FormattedText = formattedText;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or sets the number.
         /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
+        /// <value>Gets or sets the number.</value>
+        [DataMember(Name = "number", EmitDefaultValue = false)]
+        public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Gets or sets the name.
         /// </summary>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
+        /// <value>Gets or sets the name.</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the create date time.
+        /// Gets or sets the cash discount quantity.
         /// </summary>
-        /// <value>Gets or sets the create date time.</value>
-        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
-        public DateTime CreateDateTime { get; set; }
+        /// <value>Gets or sets the cash discount quantity.</value>
+        [DataMember(Name = "cashDiscount", EmitDefaultValue = false)]
+        public double CashDiscount { get; set; }
 
         /// <summary>
-        /// Gets or sets the create user id.
+        /// Gets or sets the number of days the cash discount applies for.
         /// </summary>
-        /// <value>Gets or sets the create user id.</value>
-        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
-        public Guid? CreateUserId { get; set; }
+        /// <value>Gets or sets the number of days the cash discount applies for.</value>
+        [DataMember(Name = "cashDiscountDays", EmitDefaultValue = false)]
+        public int CashDiscountDays { get; set; }
 
         /// <summary>
-        /// Gets or sets the create user name.
+        /// Gets or sets the number of days to payment deadline.
         /// </summary>
-        /// <value>Gets or sets the create user name.</value>
-        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
-        public string CreateUserName { get; set; }
+        /// <value>Gets or sets the number of days to payment deadline.</value>
+        [DataMember(Name = "paymentDeadlineDays", EmitDefaultValue = false)]
+        public int PaymentDeadlineDays { get; set; }
 
         /// <summary>
-        /// Gets or sets the update date time.
+        /// Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  
         /// </summary>
-        /// <value>Gets or sets the update date time.</value>
-        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
-        public DateTime UpdateDateTime { get; set; }
+        /// <value>Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  </value>
+        [DataMember(Name = "states", EmitDefaultValue = true)]
+        public List<string> States { get; set; }
 
         /// <summary>
-        /// Gets or sets the update user id.
+        /// Gets or sets a descriptive formatted text containing the terms of payment parameters.
         /// </summary>
-        /// <value>Gets or sets the update user id.</value>
-        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
-        public Guid? UpdateUserId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the update user name.
-        /// </summary>
-        /// <value>Gets or sets the update user name.</value>
-        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
-        public string UpdateUserName { get; set; }
+        /// <value>Gets or sets a descriptive formatted text containing the terms of payment parameters.</value>
+        [DataMember(Name = "formattedText", EmitDefaultValue = true)]
+        public string FormattedText { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -127,14 +121,13 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TermsOfPaymentModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
-            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
-            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
-            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
-            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
-            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CashDiscount: ").Append(CashDiscount).Append("\n");
+            sb.Append("  CashDiscountDays: ").Append(CashDiscountDays).Append("\n");
+            sb.Append("  PaymentDeadlineDays: ").Append(PaymentDeadlineDays).Append("\n");
+            sb.Append("  States: ").Append(States).Append("\n");
+            sb.Append("  FormattedText: ").Append(FormattedText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,43 +169,36 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
+                    this.Number == input.Number ||
+                    this.Number.Equals(input.Number)
                 ) && 
                 (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.CreateDateTime == input.CreateDateTime ||
-                    (this.CreateDateTime != null &&
-                    this.CreateDateTime.Equals(input.CreateDateTime))
+                    this.CashDiscount == input.CashDiscount ||
+                    this.CashDiscount.Equals(input.CashDiscount)
                 ) && 
                 (
-                    this.CreateUserId == input.CreateUserId ||
-                    (this.CreateUserId != null &&
-                    this.CreateUserId.Equals(input.CreateUserId))
+                    this.CashDiscountDays == input.CashDiscountDays ||
+                    this.CashDiscountDays.Equals(input.CashDiscountDays)
                 ) && 
                 (
-                    this.CreateUserName == input.CreateUserName ||
-                    (this.CreateUserName != null &&
-                    this.CreateUserName.Equals(input.CreateUserName))
+                    this.PaymentDeadlineDays == input.PaymentDeadlineDays ||
+                    this.PaymentDeadlineDays.Equals(input.PaymentDeadlineDays)
                 ) && 
                 (
-                    this.UpdateDateTime == input.UpdateDateTime ||
-                    (this.UpdateDateTime != null &&
-                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                    this.States == input.States ||
+                    this.States != null &&
+                    input.States != null &&
+                    this.States.SequenceEqual(input.States)
                 ) && 
                 (
-                    this.UpdateUserId == input.UpdateUserId ||
-                    (this.UpdateUserId != null &&
-                    this.UpdateUserId.Equals(input.UpdateUserId))
-                ) && 
-                (
-                    this.UpdateUserName == input.UpdateUserName ||
-                    (this.UpdateUserName != null &&
-                    this.UpdateUserName.Equals(input.UpdateUserName))
+                    this.FormattedText == input.FormattedText ||
+                    (this.FormattedText != null &&
+                    this.FormattedText.Equals(input.FormattedText))
                 );
         }
 
@@ -229,34 +215,21 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.OrganizationId != null)
+                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
-                if (this.CreateDateTime != null)
+                hashCode = (hashCode * 59) + this.CashDiscount.GetHashCode();
+                hashCode = (hashCode * 59) + this.CashDiscountDays.GetHashCode();
+                hashCode = (hashCode * 59) + this.PaymentDeadlineDays.GetHashCode();
+                if (this.States != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.States.GetHashCode();
                 }
-                if (this.CreateUserId != null)
+                if (this.FormattedText != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
-                }
-                if (this.CreateUserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
-                }
-                if (this.UpdateDateTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
-                }
-                if (this.UpdateUserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
-                }
-                if (this.UpdateUserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FormattedText.GetHashCode();
                 }
                 return hashCode;
             }

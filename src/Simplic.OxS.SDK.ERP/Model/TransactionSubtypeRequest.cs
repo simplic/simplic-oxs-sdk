@@ -67,8 +67,8 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="reportId">Gets or sets an optional report for this subtype given by ID. (required).</param>
-        /// <param name="sequenceId">Gets or sets an optional sequence for this subtype given by ID. (required).</param>
-        /// <param name="outputConfigurationId">Gets or sets the output configuration given by ID.. (required).</param>
+        /// <param name="sequenceId">Gets or sets an optional sequence for this subtype given by ID..</param>
+        /// <param name="outputConfigurationId">Gets or sets the output configuration given by ID...</param>
         /// <param name="number">Gets or sets a unique id (required).</param>
         /// <param name="name">Gets or sets the subtype name (required).</param>
         /// <param name="documentTitleTemplate">Gets or sets the document title template..</param>
@@ -83,11 +83,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="dueDateMode">dueDateMode.</param>
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
-        public TransactionSubtypeRequest(Guid id = default(Guid), Guid reportId = default(Guid), Guid sequenceId = default(Guid), Guid outputConfigurationId = default(Guid), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool? useNumberReservation = default(bool?), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool? summarizeBookings = default(bool?), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?))
+        public TransactionSubtypeRequest(Guid id = default(Guid), Guid reportId = default(Guid), Guid? sequenceId = default(Guid?), Guid? outputConfigurationId = default(Guid?), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool? useNumberReservation = default(bool?), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool? summarizeBookings = default(bool?), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?))
         {
             this.ReportId = reportId;
-            this.SequenceId = sequenceId;
-            this.OutputConfigurationId = outputConfigurationId;
             this.Number = number;
             // to ensure "name" is required (not null)
             if (name == null)
@@ -96,6 +94,8 @@ namespace Simplic.OxS.SDK.ERP
             }
             this.Name = name;
             this.Id = id;
+            this.SequenceId = sequenceId;
+            this.OutputConfigurationId = outputConfigurationId;
             this.DocumentTitleTemplate = documentTitleTemplate;
             this.ArchiveMode = archiveMode;
             this.BarcodeTemplate = barcodeTemplate;
@@ -128,15 +128,15 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets an optional sequence for this subtype given by ID.
         /// </summary>
         /// <value>Gets or sets an optional sequence for this subtype given by ID.</value>
-        [DataMember(Name = "sequenceId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid SequenceId { get; set; }
+        [DataMember(Name = "sequenceId", EmitDefaultValue = true)]
+        public Guid? SequenceId { get; set; }
 
         /// <summary>
         /// Gets or sets the output configuration given by ID..
         /// </summary>
         /// <value>Gets or sets the output configuration given by ID..</value>
-        [DataMember(Name = "outputConfigurationId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid OutputConfigurationId { get; set; }
+        [DataMember(Name = "outputConfigurationId", EmitDefaultValue = true)]
+        public Guid? OutputConfigurationId { get; set; }
 
         /// <summary>
         /// Gets or sets a unique id

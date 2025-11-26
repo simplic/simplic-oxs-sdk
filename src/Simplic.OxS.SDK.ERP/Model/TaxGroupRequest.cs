@@ -43,8 +43,8 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="number">Gets or sets the number. (required).</param>
         /// <param name="name">Gets or sets the name. (required).</param>
-        /// <param name="countryIsoCodes">Gets or sets the set of countries given by ISO code. (required).</param>
-        public TaxGroupRequest(int number = default(int), string name = default(string), List<string> countryIsoCodes = default(List<string>))
+        /// <param name="countries">Gets or sets the set of countries given by ISO code. (required).</param>
+        public TaxGroupRequest(int number = default(int), string name = default(string), List<TaxGroupCountryIsoRequest> countries = default(List<TaxGroupCountryIsoRequest>))
         {
             this.Number = number;
             // to ensure "name" is required (not null)
@@ -53,12 +53,12 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("name is a required property for TaxGroupRequest and cannot be null");
             }
             this.Name = name;
-            // to ensure "countryIsoCodes" is required (not null)
-            if (countryIsoCodes == null)
+            // to ensure "countries" is required (not null)
+            if (countries == null)
             {
-                throw new ArgumentNullException("countryIsoCodes is a required property for TaxGroupRequest and cannot be null");
+                throw new ArgumentNullException("countries is a required property for TaxGroupRequest and cannot be null");
             }
-            this.CountryIsoCodes = countryIsoCodes;
+            this.Countries = countries;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the set of countries given by ISO code.
         /// </summary>
         /// <value>Gets or sets the set of countries given by ISO code.</value>
-        [DataMember(Name = "countryIsoCodes", IsRequired = true, EmitDefaultValue = true)]
-        public List<string> CountryIsoCodes { get; set; }
+        [DataMember(Name = "countries", IsRequired = true, EmitDefaultValue = true)]
+        public List<TaxGroupCountryIsoRequest> Countries { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -92,7 +92,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class TaxGroupRequest {\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CountryIsoCodes: ").Append(CountryIsoCodes).Append("\n");
+            sb.Append("  Countries: ").Append(Countries).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,10 +138,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.CountryIsoCodes == input.CountryIsoCodes ||
-                    this.CountryIsoCodes != null &&
-                    input.CountryIsoCodes != null &&
-                    this.CountryIsoCodes.SequenceEqual(input.CountryIsoCodes)
+                    this.Countries == input.Countries ||
+                    this.Countries != null &&
+                    input.Countries != null &&
+                    this.Countries.SequenceEqual(input.Countries)
                 );
         }
 
@@ -159,9 +159,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.CountryIsoCodes != null)
+                if (this.Countries != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountryIsoCodes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Countries.GetHashCode();
                 }
                 return hashCode;
             }
