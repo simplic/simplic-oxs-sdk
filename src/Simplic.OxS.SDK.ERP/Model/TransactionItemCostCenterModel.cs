@@ -28,20 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a update cost center request.
+    /// Represents the shared model for the result of validating a transaction for financial accounting.
     /// </summary>
-    [DataContract(Name = "UpdateCostCenterRequest")]
-    public partial class UpdateCostCenterRequest : IEquatable<UpdateCostCenterRequest>, IValidatableObject
+    [DataContract(Name = "TransactionItemCostCenterModel")]
+    public partial class TransactionItemCostCenterModel : IEquatable<TransactionItemCostCenterModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateCostCenterRequest" /> class.
+        /// Initializes a new instance of the <see cref="TransactionItemCostCenterModel" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the name of the cost center..</param>
-        /// <param name="number">Gets or sets the unique number of the cost center..</param>
-        /// <param name="validFrom">Gets or sets the valid from date.</param>
-        /// <param name="validTo">Gets or sets the valid to date.</param>
-        public UpdateCostCenterRequest(string name = default(string), int number = default(int), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?))
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the unique number..</param>
+        /// <param name="validFrom">Gets or sets the valid from date..</param>
+        /// <param name="validTo">Gets or sets the valid to date..</param>
+        public TransactionItemCostCenterModel(Guid id = default(Guid), string name = default(string), int number = default(int), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?))
         {
+            this.Id = id;
             this.Name = name;
             this.Number = number;
             this.ValidFrom = validFrom;
@@ -49,30 +51,37 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets the name of the cost center.
+        /// Gets or sets the ID.
         /// </summary>
-        /// <value>Gets or sets the name of the cost center.</value>
+        /// <value>Gets or sets the ID.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the unique number of the cost center.
+        /// Gets or sets the unique number.
         /// </summary>
-        /// <value>Gets or sets the unique number of the cost center.</value>
+        /// <value>Gets or sets the unique number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the valid from date
+        /// Gets or sets the valid from date.
         /// </summary>
-        /// <value>Gets or sets the valid from date</value>
-        [DataMember(Name = "validFrom", EmitDefaultValue = true)]
-        public DateTime? ValidFrom { get; set; }
+        /// <value>Gets or sets the valid from date.</value>
+        [DataMember(Name = "validFrom", EmitDefaultValue = false)]
+        public DateTime ValidFrom { get; set; }
 
         /// <summary>
-        /// Gets or sets the valid to date
+        /// Gets or sets the valid to date.
         /// </summary>
-        /// <value>Gets or sets the valid to date</value>
+        /// <value>Gets or sets the valid to date.</value>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
         public DateTime? ValidTo { get; set; }
 
@@ -83,7 +92,8 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateCostCenterRequest {\n");
+            sb.Append("class TransactionItemCostCenterModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
@@ -108,21 +118,26 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateCostCenterRequest);
+            return this.Equals(input as TransactionItemCostCenterModel);
         }
 
         /// <summary>
-        /// Returns true if UpdateCostCenterRequest instances are equal
+        /// Returns true if TransactionItemCostCenterModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateCostCenterRequest to be compared</param>
+        /// <param name="input">Instance of TransactionItemCostCenterModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateCostCenterRequest input)
+        public bool Equals(TransactionItemCostCenterModel input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -153,6 +168,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

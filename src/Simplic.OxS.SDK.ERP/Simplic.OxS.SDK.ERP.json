@@ -10,332 +10,6 @@
         }
     ],
     "paths": {
-        "/CostCenter/{id}": {
-            "get": {
-                "tags": [
-                    "CostCenter"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "patch": {
-                "tags": [
-                    "CostCenter"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateCostCenterRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateCostCenterRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateCostCenterRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "CostCenter"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/CostCenter": {
-            "post": {
-                "tags": [
-                    "CostCenter"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateCostCenterRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateCostCenterRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateCostCenterRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CostCenterModel"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Currency": {
             "post": {
                 "tags": [
@@ -5970,6 +5644,38 @@
                 "additionalProperties": false,
                 "description": "Represents a request to convert a set of transactions."
             },
+            "CostCenterAssignmentModel": {
+                "type": "object",
+                "properties": {
+                    "costCenter": {
+                        "$ref": "#/components/schemas/TransactionItemCostCenterModel"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for a cost center assignment."
+            },
+            "CostCenterAssignmentRequest": {
+                "type": "object",
+                "properties": {
+                    "costCenterId": {
+                        "type": "string",
+                        "description": "Gets or sets the cost center to assign by ID.",
+                        "format": "uuid"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create or update a cost center assignment."
+            },
             "CostCenterModel": {
                 "type": "object",
                 "properties": {
@@ -6302,35 +6008,6 @@
                 "type": "integer",
                 "format": "int32"
             },
-            "CreateCostCenterRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the cost center.",
-                        "nullable": true
-                    },
-                    "number": {
-                        "type": "integer",
-                        "description": "Gets or sets the unique number of the cost center.",
-                        "format": "int32"
-                    },
-                    "validFrom": {
-                        "type": "string",
-                        "description": "Gets or sets the valid from date",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "validTo": {
-                        "type": "string",
-                        "description": "Gets or sets the valid to date",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a create cost center request."
-            },
             "CreateElectronicInvoiceRequest": {
                 "type": "object",
                 "properties": {
@@ -6595,19 +6272,17 @@
                         "description": "Gets or sets a value indicating whether the transaction is gross or net."
                     },
                     "defaultCostCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
                         "nullable": true
                     },
                     "defaultCostObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
@@ -9378,6 +9053,39 @@
                 },
                 "additionalProperties": false
             },
+            "TransactionItemCostCenterModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the unique number.",
+                        "format": "int32"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "Gets or sets the valid from date.",
+                        "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "Gets or sets the valid to date.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of validating a transaction for financial accounting."
+            },
             "TransactionItemModel": {
                 "type": "object",
                 "properties": {
@@ -9468,19 +9176,17 @@
                         "$ref": "#/components/schemas/TaxKeyModel"
                     },
                     "costCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the assigned cost centers with their respective percentages.",
                         "nullable": true
                     },
                     "costObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the assigned cost objects with their respective percentages.",
                         "nullable": true
@@ -9647,19 +9353,17 @@
                         "nullable": true
                     },
                     "costCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
                         "nullable": true
                     },
                     "costObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
@@ -10084,19 +9788,17 @@
                         "$ref": "#/components/schemas/TransactionValidationResultModel"
                     },
                     "defaultCostCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the default assigned cost centers with their respective percentages.",
                         "nullable": true
                     },
                     "defaultCostObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the default assigned cost objects with their respective percentages.",
                         "nullable": true
@@ -10713,35 +10415,6 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for the result of validating a transaction for financial accounting."
-            },
-            "UpdateCostCenterRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the cost center.",
-                        "nullable": true
-                    },
-                    "number": {
-                        "type": "integer",
-                        "description": "Gets or sets the unique number of the cost center.",
-                        "format": "int32"
-                    },
-                    "validFrom": {
-                        "type": "string",
-                        "description": "Gets or sets the valid from date",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "validTo": {
-                        "type": "string",
-                        "description": "Gets or sets the valid to date",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a update cost center request."
             },
             "UpdateCurrencyRequest": {
                 "type": "object",
@@ -11362,19 +11035,17 @@
                         "nullable": true
                     },
                     "costCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
                         "nullable": true
                     },
                     "costObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
@@ -11407,7 +11078,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to create or update a transaction item of a Simplic.OxS.ERP.Transaction.Transaction."
+                "description": "Represents a request to validate a transaction item of a Simplic.OxS.ERP.Transaction.Transaction."
             },
             "ValidateTransactionRequest": {
                 "type": "object",
@@ -11577,19 +11248,17 @@
                         "nullable": true
                     },
                     "defaultCostCenters": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
                         "nullable": true
                     },
                     "defaultCostObjects": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "number",
-                            "format": "double"
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
@@ -11602,7 +11271,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction."
+                "description": "Represents a request to validate a Simplic.OxS.ERP.Transaction.Transaction."
             },
             "ValueOperator": {
                 "enum": [

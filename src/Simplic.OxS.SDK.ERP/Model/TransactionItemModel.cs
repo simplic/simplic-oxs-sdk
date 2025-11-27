@@ -87,7 +87,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccount">generalLedgerAccount.</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ModelValueOperator? valueOperator = default(ModelValueOperator?), ModelAssignmentMode? assignmentMode = default(ModelAssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), double? quantity = default(double?), QuantityUnitModel unit = default(QuantityUnitModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccount generalLedgerAccount = default(TransactionGeneralLedgerAccount), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
+        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ModelValueOperator? valueOperator = default(ModelValueOperator?), ModelAssignmentMode? assignmentMode = default(ModelAssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), double? quantity = default(double?), QuantityUnitModel unit = default(QuantityUnitModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccount generalLedgerAccount = default(TransactionGeneralLedgerAccount), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
         {
             this.Id = id;
             this.Text = text;
@@ -229,14 +229,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the assigned cost centers with their respective percentages.</value>
         [DataMember(Name = "costCenters", EmitDefaultValue = true)]
-        public Dictionary<string, double> CostCenters { get; set; }
+        public List<CostCenterAssignmentModel> CostCenters { get; set; }
 
         /// <summary>
         /// Gets or sets the assigned cost objects with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the assigned cost objects with their respective percentages.</value>
         [DataMember(Name = "costObjects", EmitDefaultValue = true)]
-        public Dictionary<string, double> CostObjects { get; set; }
+        public List<CostCenterAssignmentModel> CostObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the resulting single price.

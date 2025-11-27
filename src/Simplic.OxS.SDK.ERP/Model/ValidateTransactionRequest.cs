@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
+    /// Represents a request to validate a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
     [DataContract(Name = "ValidateTransactionRequest")]
     public partial class ValidateTransactionRequest : IEquatable<ValidateTransactionRequest>, IValidatableObject
@@ -78,7 +78,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
-        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), Dictionary<string, double> defaultCostCenters = default(Dictionary<string, double>), Dictionary<string, double> defaultCostObjects = default(Dictionary<string, double>), double? checkSum = default(double?))
+        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?))
         {
             this.Creator = creator;
             this.Number = number;
@@ -338,14 +338,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the default assigned cost centers given by ID with their respective percentages.</value>
         [DataMember(Name = "defaultCostCenters", EmitDefaultValue = true)]
-        public Dictionary<string, double> DefaultCostCenters { get; set; }
+        public List<CostCenterAssignmentRequest> DefaultCostCenters { get; set; }
 
         /// <summary>
         /// Gets or sets the default assigned cost objects given by ID with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the default assigned cost objects given by ID with their respective percentages.</value>
         [DataMember(Name = "defaultCostObjects", EmitDefaultValue = true)]
-        public Dictionary<string, double> DefaultCostObjects { get; set; }
+        public List<CostCenterAssignmentRequest> DefaultCostObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.

@@ -74,7 +74,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), Dictionary<string, double> costCenters = default(Dictionary<string, double>), Dictionary<string, double> costObjects = default(Dictionary<string, double>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
+        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
         {
             this.Id = id;
             this.Text = text;
@@ -180,14 +180,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the assigned cost centers given by ID with their respective percentages.</value>
         [DataMember(Name = "costCenters", EmitDefaultValue = true)]
-        public Dictionary<string, double> CostCenters { get; set; }
+        public List<CostCenterAssignmentRequest> CostCenters { get; set; }
 
         /// <summary>
         /// Gets or sets the assigned cost objects given by ID with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the assigned cost objects given by ID with their respective percentages.</value>
         [DataMember(Name = "costObjects", EmitDefaultValue = true)]
-        public Dictionary<string, double> CostObjects { get; set; }
+        public List<CostCenterAssignmentRequest> CostObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the article by ID.

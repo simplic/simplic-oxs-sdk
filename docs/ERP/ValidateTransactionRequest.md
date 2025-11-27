@@ -1,5 +1,5 @@
 # Simplic.OxS.SDK.ERP.ValidateTransactionRequest
-Represents a request to create a Simplic.OxS.ERP.Transaction.Transaction.
+Represents a request to validate a Simplic.OxS.ERP.Transaction.Transaction.
 
 ## Properties
 
@@ -38,8 +38,8 @@ Name | Type | Description | Notes
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
 **IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
-**DefaultCostCenters** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
-**DefaultCostObjects** | **Dictionary&lt;string, double&gt;** | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
+**DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
+**DefaultCostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
 **CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
