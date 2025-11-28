@@ -36,13 +36,22 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionValidationResultModel" /> class.
         /// </summary>
+        /// <param name="inputFieldValidationResults">Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  .</param>
         /// <param name="errors">Gets or sets the list of validation errors..</param>
         /// <param name="isValid">Gets or sets whether the transaction is valid for purposes of financial accounting..</param>
-        public TransactionValidationResultModel(List<string> errors = default(List<string>), bool isValid = default(bool))
+        public TransactionValidationResultModel(Dictionary<string, bool?> inputFieldValidationResults = default(Dictionary<string, bool?>), List<string> errors = default(List<string>), bool isValid = default(bool))
         {
+            this.InputFieldValidationResults = inputFieldValidationResults;
             this.Errors = errors;
             this.IsValid = isValid;
         }
+
+        /// <summary>
+        /// Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  
+        /// </summary>
+        /// <value>Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  </value>
+        [DataMember(Name = "inputFieldValidationResults", EmitDefaultValue = true)]
+        public Dictionary<string, bool?> InputFieldValidationResults { get; set; }
 
         /// <summary>
         /// Gets or sets the list of validation errors.
@@ -66,6 +75,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionValidationResultModel {\n");
+            sb.Append("  InputFieldValidationResults: ").Append(InputFieldValidationResults).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("  IsValid: ").Append(IsValid).Append("\n");
             sb.Append("}\n");
@@ -104,6 +114,12 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.InputFieldValidationResults == input.InputFieldValidationResults ||
+                    this.InputFieldValidationResults != null &&
+                    input.InputFieldValidationResults != null &&
+                    this.InputFieldValidationResults.SequenceEqual(input.InputFieldValidationResults)
+                ) && 
+                (
                     this.Errors == input.Errors ||
                     this.Errors != null &&
                     input.Errors != null &&
@@ -124,6 +140,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.InputFieldValidationResults != null)
+                {
+                    hashCode = (hashCode * 59) + this.InputFieldValidationResults.GetHashCode();
+                }
                 if (this.Errors != null)
                 {
                     hashCode = (hashCode * 59) + this.Errors.GetHashCode();

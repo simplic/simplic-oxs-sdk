@@ -4005,17 +4005,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             }
                         }
@@ -4025,17 +4025,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
                                 }
                             }
                         }
@@ -10400,6 +10400,15 @@
             "TransactionValidationResultModel": {
                 "type": "object",
                 "properties": {
+                    "inputFieldValidationResults": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "boolean",
+                            "nullable": true
+                        },
+                        "description": "Gets or sets the validation results for individual input fields.\r\n\n\r\ntrue = valid, false = invalid, null = not validated\r\n",
+                        "nullable": true
+                    },
                     "errors": {
                         "type": "array",
                         "items": {
@@ -10951,6 +10960,29 @@
                 "additionalProperties": false,
                 "description": "Represents a request to update a Simplic.OxS.ERP.Transaction.TransactionSubtype."
             },
+            "ValidateItemCostCenterAssignmentRequest": {
+                "type": "object",
+                "properties": {
+                    "temporaryItemId": {
+                        "type": "string",
+                        "description": "Gets or sets the temporary ID of the transaction item.\r\n\n\r\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "costCenterId": {
+                        "type": "string",
+                        "description": "Gets or sets the cost center to assign by ID.",
+                        "format": "uuid"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to validate an item cost center assignment."
+            },
             "ValidateTransactionItemRequest": {
                 "type": "object",
                 "properties": {
@@ -11037,7 +11069,7 @@
                     "costCenters": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                            "$ref": "#/components/schemas/ValidateItemCostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
                         "nullable": true
@@ -11045,7 +11077,7 @@
                     "costObjects": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                            "$ref": "#/components/schemas/ValidateItemCostCenterAssignmentRequest"
                         },
                         "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
                         "nullable": true

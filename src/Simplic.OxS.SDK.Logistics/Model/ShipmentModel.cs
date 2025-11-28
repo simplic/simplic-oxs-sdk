@@ -98,8 +98,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="deliveryWorkflow">deliveryWorkflow.</param>
         /// <param name="tours">Gets or sets a list of tour shipments.     This collection will be filled when creating or updating tour objects.  .</param>
         /// <param name="constructionSite">constructionSite.</param>
+        /// <param name="department">department.</param>
         /// <param name="addon">Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.  .</param>
-        public ShipmentModel(Guid id = default(Guid), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime), Guid createUserId = default(Guid), Guid updateUserId = default(Guid), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), BillableContactModel carrier = default(BillableContactModel), BillableContactModel freightPayer = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), AddressModel recipientAddress = default(AddressModel), BillableContactModel invoiceRecipient = default(BillableContactModel), AddressModel senderAddress = default(AddressModel), BillableContactModel supplier = default(BillableContactModel), DateTime loadStart = default(DateTime), DateTime loadEnd = default(DateTime), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime deliveryStart = default(DateTime), DateTime deliveryEnd = default(DateTime), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime orderDate = default(DateTime), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), ShipmentStatusModel status = default(ShipmentStatusModel), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentItemModel> items = default(List<ShipmentItemModel>), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), List<ShipmentTourModel> tours = default(List<ShipmentTourModel>), ConstructionSiteModel constructionSite = default(ConstructionSiteModel), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public ShipmentModel(Guid id = default(Guid), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime), Guid createUserId = default(Guid), Guid updateUserId = default(Guid), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), BillableContactModel carrier = default(BillableContactModel), BillableContactModel freightPayer = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), AddressModel recipientAddress = default(AddressModel), BillableContactModel invoiceRecipient = default(BillableContactModel), AddressModel senderAddress = default(AddressModel), BillableContactModel supplier = default(BillableContactModel), DateTime loadStart = default(DateTime), DateTime loadEnd = default(DateTime), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime deliveryStart = default(DateTime), DateTime deliveryEnd = default(DateTime), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime orderDate = default(DateTime), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), ShipmentStatusModel status = default(ShipmentStatusModel), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentItemModel> items = default(List<ShipmentItemModel>), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), List<ShipmentTourModel> tours = default(List<ShipmentTourModel>), ConstructionSiteModel constructionSite = default(ConstructionSiteModel), DepartmentResponse department = default(DepartmentResponse), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.Id = id;
             this.CreateDateTime = createDateTime;
@@ -151,6 +152,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.DeliveryWorkflow = deliveryWorkflow;
             this.Tours = tours;
             this.ConstructionSite = constructionSite;
+            this.Department = department;
             this.Addon = addon;
         }
 
@@ -477,6 +479,12 @@ namespace Simplic.OxS.SDK.Logistics
         public ConstructionSiteModel ConstructionSite { get; set; }
 
         /// <summary>
+        /// Gets or Sets Department
+        /// </summary>
+        [DataMember(Name = "department", EmitDefaultValue = false)]
+        public DepartmentResponse Department { get; set; }
+
+        /// <summary>
         /// Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.  
         /// </summary>
         /// <value>Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.  </value>
@@ -541,6 +549,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  DeliveryWorkflow: ").Append(DeliveryWorkflow).Append("\n");
             sb.Append("  Tours: ").Append(Tours).Append("\n");
             sb.Append("  ConstructionSite: ").Append(ConstructionSite).Append("\n");
+            sb.Append("  Department: ").Append(Department).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -828,6 +837,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.ConstructionSite.Equals(input.ConstructionSite))
                 ) && 
                 (
+                    this.Department == input.Department ||
+                    (this.Department != null &&
+                    this.Department.Equals(input.Department))
+                ) && 
+                (
                     this.Addon == input.Addon ||
                     this.Addon != null &&
                     input.Addon != null &&
@@ -1031,6 +1045,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.ConstructionSite != null)
                 {
                     hashCode = (hashCode * 59) + this.ConstructionSite.GetHashCode();
+                }
+                if (this.Department != null)
+                {
+                    hashCode = (hashCode * 59) + this.Department.GetHashCode();
                 }
                 if (this.Addon != null)
                 {

@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **LoadWorkflow** | [**ShipmentTelematicWorkflowModel**](ShipmentTelematicWorkflowModel.md) |  | [optional] 
 **DeliveryWorkflow** | [**ShipmentTelematicWorkflowModel**](ShipmentTelematicWorkflowModel.md) |  | [optional] 
 **ConstructionSiteId** | **Guid?** | Gets or sets a construction site id.     The id will be resolved by the construction site api.   | [optional] 
+**DepartmentId** | **Guid?** | Gets or sets the department id. | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.   | [optional] 
 **Items** | [**List&lt;CreateShipmentItemRequest&gt;**](CreateShipmentItemRequest.md) | Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.   | [optional] 
 

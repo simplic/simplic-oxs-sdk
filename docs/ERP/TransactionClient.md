@@ -910,7 +910,7 @@ catch (ApiException e)
 
 <a id="transactionvalidatepost"></a>
 # **Validate**
-> TransactionResultModel Validate (ValidateTransactionRequest? validateTransactionRequest = null)
+> TransactionValidationResultModel Validate (ValidateTransactionRequest? validateTransactionRequest = null)
 
 Validates a transaction.
 
@@ -944,7 +944,7 @@ namespace Example
             try
             {
                 // Validates a transaction.
-                TransactionResultModel result = apiInstance.Validate(validateTransactionRequest);
+                TransactionValidationResultModel result = apiInstance.Validate(validateTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -965,7 +965,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Validates a transaction.
-    ApiResponse<TransactionResultModel> response = apiInstance.ValidateWithHttpInfo(validateTransactionRequest);
+    ApiResponse<TransactionValidationResultModel> response = apiInstance.ValidateWithHttpInfo(validateTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -986,7 +986,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionResultModel**](TransactionResultModel.md)
+[**TransactionValidationResultModel**](TransactionValidationResultModel.md)
 
 ### Authorization
 

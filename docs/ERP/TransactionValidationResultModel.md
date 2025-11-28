@@ -5,6 +5,7 @@ Represents the shared model for the result of validating a transaction for finan
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**InputFieldValidationResults** | **Dictionary&lt;string, bool?&gt;** | Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated   | [optional] 
 **Errors** | **List&lt;string&gt;** | Gets or sets the list of validation errors. | [optional] 
 **IsValid** | **bool** | Gets or sets whether the transaction is valid for purposes of financial accounting. | [optional] 
 

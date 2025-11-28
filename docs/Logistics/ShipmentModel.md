@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **DeliveryWorkflow** | [**ShipmentTelematicWorkflowModel**](ShipmentTelematicWorkflowModel.md) |  | [optional] 
 **Tours** | [**List&lt;ShipmentTourModel&gt;**](ShipmentTourModel.md) | Gets or sets a list of tour shipments.     This collection will be filled when creating or updating tour objects.   | [optional] 
 **ConstructionSite** | [**ConstructionSiteModel**](ConstructionSiteModel.md) |  | [optional] 
+**Department** | [**DepartmentResponse**](DepartmentResponse.md) |  | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.   | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

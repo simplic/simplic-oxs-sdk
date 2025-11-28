@@ -11271,6 +11271,12 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "departmentId": {
+                        "type": "string",
+                        "description": "Gets or sets the department id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
@@ -12971,6 +12977,12 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "departmentId": {
+                        "type": "string",
+                        "description": "Gets or sets the department id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
@@ -14406,6 +14418,9 @@
                     },
                     "constructionSite": {
                         "$ref": "#/components/schemas/ConstructionSiteModel"
+                    },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentResponse"
                     },
                     "addon": {
                         "type": "object",
