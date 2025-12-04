@@ -1843,6 +1843,11 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "taxRateId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "ean": {
                         "type": "string",
                         "nullable": true
@@ -1917,6 +1922,11 @@
                     },
                     "number": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "format": "uuid",
                         "nullable": true
                     },
                     "ean": {
@@ -2066,6 +2076,11 @@
                     },
                     "number": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "format": "uuid",
                         "nullable": true
                     },
                     "ean": {

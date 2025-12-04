@@ -78,7 +78,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
-        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?))
+        /// <param name="validatePriceInput">Gets or sets whether price input validation is enabled..</param>
+        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?), bool validatePriceInput = default(bool))
         {
             this.Creator = creator;
             this.Number = number;
@@ -116,6 +117,7 @@ namespace Simplic.OxS.SDK.ERP
             this.DefaultCostCenters = defaultCostCenters;
             this.DefaultCostObjects = defaultCostObjects;
             this.CheckSum = checkSum;
+            this.ValidatePriceInput = validatePriceInput;
         }
 
         /// <summary>
@@ -355,6 +357,13 @@ namespace Simplic.OxS.SDK.ERP
         public double? CheckSum { get; set; }
 
         /// <summary>
+        /// Gets or sets whether price input validation is enabled.
+        /// </summary>
+        /// <value>Gets or sets whether price input validation is enabled.</value>
+        [DataMember(Name = "validatePriceInput", EmitDefaultValue = true)]
+        public bool ValidatePriceInput { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -398,6 +407,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  DefaultCostCenters: ").Append(DefaultCostCenters).Append("\n");
             sb.Append("  DefaultCostObjects: ").Append(DefaultCostObjects).Append("\n");
             sb.Append("  CheckSum: ").Append(CheckSum).Append("\n");
+            sb.Append("  ValidatePriceInput: ").Append(ValidatePriceInput).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -614,6 +624,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.CheckSum == input.CheckSum ||
                     (this.CheckSum != null &&
                     this.CheckSum.Equals(input.CheckSum))
+                ) && 
+                (
+                    this.ValidatePriceInput == input.ValidatePriceInput ||
+                    this.ValidatePriceInput.Equals(input.ValidatePriceInput)
                 );
         }
 
@@ -767,6 +781,7 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.CheckSum.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.ValidatePriceInput.GetHashCode();
                 return hashCode;
             }
         }

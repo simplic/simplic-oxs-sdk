@@ -11300,6 +11300,10 @@
                         "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
                         "format": "double",
                         "nullable": true
+                    },
+                    "validatePriceInput": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether price input validation is enabled."
                     }
                 },
                 "additionalProperties": false,

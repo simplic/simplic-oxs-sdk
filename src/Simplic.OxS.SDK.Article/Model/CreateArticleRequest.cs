@@ -39,13 +39,15 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="shortName">shortName.</param>
         /// <param name="fullName">fullName.</param>
         /// <param name="number">number.</param>
+        /// <param name="taxRateId">taxRateId.</param>
         /// <param name="ean">ean.</param>
         /// <param name="articleGroupId">articleGroupId.</param>
-        public CreateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), string ean = default(string), Guid? articleGroupId = default(Guid?))
+        public CreateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid? articleGroupId = default(Guid?))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
             this.Number = number;
+            this.TaxRateId = taxRateId;
             this.Ean = ean;
             this.ArticleGroupId = articleGroupId;
         }
@@ -67,6 +69,12 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxRateId
+        /// </summary>
+        [DataMember(Name = "taxRateId", EmitDefaultValue = true)]
+        public Guid? TaxRateId { get; set; }
 
         /// <summary>
         /// Gets or Sets Ean
@@ -91,6 +99,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  FullName: ").Append(FullName).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  Ean: ").Append(Ean).Append("\n");
             sb.Append("  ArticleGroupId: ").Append(ArticleGroupId).Append("\n");
             sb.Append("}\n");
@@ -144,6 +153,11 @@ namespace Simplic.OxS.SDK.Article
                     this.Number.Equals(input.Number))
                 ) && 
                 (
+                    this.TaxRateId == input.TaxRateId ||
+                    (this.TaxRateId != null &&
+                    this.TaxRateId.Equals(input.TaxRateId))
+                ) && 
+                (
                     this.Ean == input.Ean ||
                     (this.Ean != null &&
                     this.Ean.Equals(input.Ean))
@@ -175,6 +189,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
+                if (this.TaxRateId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRateId.GetHashCode();
                 }
                 if (this.Ean != null)
                 {

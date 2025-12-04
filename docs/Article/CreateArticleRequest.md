@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ShortName** | **string** |  | [optional] 
 **FullName** | **string** |  | [optional] 
 **Number** | **string** |  | [optional] 
+**TaxRateId** | **Guid?** |  | [optional] 
 **Ean** | **string** |  | [optional] 
 **ArticleGroupId** | **Guid?** |  | [optional] 
 
