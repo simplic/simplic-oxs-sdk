@@ -1,10 +1,11 @@
-# Simplic.OxS.SDK.ERP.UpdateTransactionRequest
-Represents a request to update a Simplic.OxS.ERP.Transaction.Transaction.
+# Simplic.OxS.SDK.ERP.PreviewTransactionRequest
+Represents a request to preview a Simplic.OxS.ERP.Transaction.Transaction.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Creator** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
 **Number** | **string** | Gets or sets the transaction number. | [optional] 
 **Reference** | **string** | Gets or sets the reference. | [optional] 
 **TypeId** | **Guid?** | Gets or sets the type by ID. | [optional] 
@@ -21,9 +22,9 @@ Name | Type | Description | Notes
 **Payer** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
 **Responsible** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
 **Representative** | [**TransactionContactRequest**](TransactionContactRequest.md) |  | [optional] 
-**Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets the items of this transaction. | [optional] 
+**Items** | [**List&lt;PreviewTransactionItemRequest&gt;**](PreviewTransactionItemRequest.md) | Gets or sets the items of this transaction. | [optional] 
 **AlternativePaymentDeadline** | **DateTime?** | Gets or sets an alternative payment deadline to the one defined in the terms of payment. | [optional] 
-**Balance** | **double?** | Gets or sets the balance. | [optional] 
+**Balance** | **double?** |  | [optional] 
 **Barcode** | **string** | Gets or sets the barcode. | [optional] 
 **BillToText** | **string** | Gets or sets the bill as a text. | [optional] 
 **CashDiscountPercentValue** | **double?** | Gets or sets the relative cash discount. | [optional] 
@@ -39,7 +40,8 @@ Name | Type | Description | Notes
 **IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
-**MetadataProcessingData** | [**MetadataProcessingDataRequest**](MetadataProcessingDataRequest.md) |  | [optional] 
+**CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
+**ValidatePriceInput** | **bool** | Gets or sets whether price input validation is enabled. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

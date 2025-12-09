@@ -3973,28 +3973,28 @@
                 }
             }
         },
-        "/Transaction/validate": {
+        "/Transaction/preview": {
             "post": {
                 "tags": [
                     "Transaction"
                 ],
-                "summary": "Validates a transaction.",
+                "summary": "Validates and creates a preview for a transaction.",
                 "requestBody": {
                     "description": "",
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ValidateTransactionRequest"
+                                "$ref": "#/components/schemas/PreviewTransactionRequest"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ValidateTransactionRequest"
+                                "$ref": "#/components/schemas/PreviewTransactionRequest"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ValidateTransactionRequest"
+                                "$ref": "#/components/schemas/PreviewTransactionRequest"
                             }
                         }
                     }
@@ -6287,11 +6287,8 @@
                         "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
                     },
-                    "checkSum": {
-                        "type": "number",
-                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
-                        "format": "double",
-                        "nullable": true
+                    "metadataProcessingData": {
+                        "$ref": "#/components/schemas/MetadataProcessingDataRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -7603,6 +7600,32 @@
                 },
                 "additionalProperties": false
             },
+            "MetadataProcessingDataModel": {
+                "type": "object",
+                "properties": {
+                    "checkSum": {
+                        "type": "number",
+                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the data provided by metadata processing."
+            },
+            "MetadataProcessingDataRequest": {
+                "type": "object",
+                "properties": {
+                    "checkSum": {
+                        "type": "number",
+                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create or update the data provided by metadata processing."
+            },
             "ModelAssignmentMode": {
                 "enum": [
                     0,
@@ -8119,6 +8142,355 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.PersonalAccount."
+            },
+            "PreviewItemCostCenterAssignmentRequest": {
+                "type": "object",
+                "properties": {
+                    "temporaryItemId": {
+                        "type": "string",
+                        "description": "Gets or sets the temporary ID of the transaction item.\r\n\n\r\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "costCenterId": {
+                        "type": "string",
+                        "description": "Gets or sets the cost center to assign by ID.",
+                        "format": "uuid"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to preview an item cost center assignment."
+            },
+            "PreviewTransactionItemRequest": {
+                "type": "object",
+                "properties": {
+                    "temporaryId": {
+                        "type": "string",
+                        "description": "Gets or sets the temporary ID used for client-side identification in the preview response.",
+                        "format": "uuid"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the text.",
+                        "nullable": true
+                    },
+                    "typeId": {
+                        "type": "string",
+                        "description": "Gets or sets the item type by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "sortNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the sort number.",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "deserializationType": {
+                        "type": "string",
+                        "description": "Gets or sets an identifier for the type of the item for correct deserialization.",
+                        "nullable": true
+                    },
+                    "valueOperator": {
+                        "$ref": "#/components/schemas/ValueOperator"
+                    },
+                    "assignmentMode": {
+                        "$ref": "#/components/schemas/AssignmentMode"
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "behaviorDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BehaviorDefinitionRequest"
+                        },
+                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest.",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Gets or sets the quantity.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "unitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit the quantity is measured in by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "inputPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the price user input.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "inputPriceType": {
+                        "$ref": "#/components/schemas/InputPriceType"
+                    },
+                    "taxKeyId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax key given by ID if a specific tax key should be used for this item.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PreviewItemCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PreviewItemCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "articleId": {
+                        "type": "string",
+                        "description": "Gets or sets the article by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "deltaValue": {
+                        "type": "number",
+                        "description": "Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PreviewTransactionItemRequest"
+                        },
+                        "description": "Gets or sets a set of transaction items that are part of the group.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to preview a transaction item of a Simplic.OxS.ERP.Transaction.Transaction."
+            },
+            "PreviewTransactionRequest": {
+                "type": "object",
+                "properties": {
+                    "creator": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the transaction number.",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the reference.",
+                        "nullable": true
+                    },
+                    "typeId": {
+                        "type": "string",
+                        "description": "Gets or sets the type by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "subtypeId": {
+                        "type": "string",
+                        "description": "Gets or sets the subtype by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the time of the underlying transaction.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the time of delivery.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "termsOfPaymentId": {
+                        "type": "string",
+                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "paymentMethodId": {
+                        "type": "string",
+                        "description": "Gets or sets the payment method for this transaction given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "currencyId": {
+                        "type": "string",
+                        "description": "Gets or sets the currency used to quantify this transaction by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Gets or sets the description.",
+                        "nullable": true
+                    },
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "deliveryAddress": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "invoiceRecipient": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "payer": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "responsible": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "representative": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PreviewTransactionItemRequest"
+                        },
+                        "description": "Gets or sets the items of this transaction.",
+                        "nullable": true
+                    },
+                    "alternativePaymentDeadline": {
+                        "type": "string",
+                        "description": "Gets or sets an alternative payment deadline to the one defined in the terms of payment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "balance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "barcode": {
+                        "type": "string",
+                        "description": "Gets or sets the barcode.",
+                        "nullable": true
+                    },
+                    "billToText": {
+                        "type": "string",
+                        "description": "Gets or sets the bill as a text.",
+                        "nullable": true
+                    },
+                    "cashDiscountPercentValue": {
+                        "type": "number",
+                        "description": "Gets or sets the relative cash discount.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "cashDiscountTotal": {
+                        "type": "number",
+                        "description": "Gets or sets the total cash discount.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "financialAccountingPeriodId": {
+                        "type": "string",
+                        "description": "Gets or sets the financial year period of this transaction given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "periodId": {
+                        "type": "string",
+                        "description": "Gets or sets the financial year period of this transaction for inventory management given by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "manualVAT": {
+                        "$ref": "#/components/schemas/TransactionManualVatRequest"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets notes.",
+                        "nullable": true
+                    },
+                    "dueDate": {
+                        "type": "string",
+                        "description": "Gets or sets the due date.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number.",
+                        "nullable": true
+                    },
+                    "taxGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax group by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "operationItemCombinationMode": {
+                        "$ref": "#/components/schemas/OperationItemCombinationMode"
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the transaction is gross or net.",
+                        "nullable": true
+                    },
+                    "defaultCostCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "defaultCostObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "checkSum": {
+                        "type": "number",
+                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "validatePriceInput": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether price input validation is enabled."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to preview a Simplic.OxS.ERP.Transaction.Transaction."
             },
             "ProblemDetails": {
                 "type": "object",
@@ -9803,11 +10175,8 @@
                         "description": "Gets or sets the default assigned cost objects with their respective percentages.",
                         "nullable": true
                     },
-                    "checkSum": {
-                        "type": "number",
-                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
-                        "format": "double",
-                        "nullable": true
+                    "metadataProcessingData": {
+                        "$ref": "#/components/schemas/MetadataProcessingDataModel"
                     },
                     "createDateTime": {
                         "type": "string",
@@ -10400,6 +10769,9 @@
             "TransactionValidationResultModel": {
                 "type": "object",
                 "properties": {
+                    "transactionPreview": {
+                        "$ref": "#/components/schemas/TransactionModel"
+                    },
                     "inputFieldValidationResults": {
                         "type": "object",
                         "additionalProperties": {
@@ -10891,7 +11263,7 @@
                         "format": "date-time",
                         "nullable": true
                     },
-                    "referenceNr": {
+                    "referenceNumber": {
                         "maxLength": 100,
                         "minLength": 1,
                         "type": "string",
@@ -10911,6 +11283,25 @@
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the transaction is gross or net.",
                         "nullable": true
+                    },
+                    "defaultCostCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "defaultCostObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
+                        "nullable": true
+                    },
+                    "metadataProcessingData": {
+                        "$ref": "#/components/schemas/MetadataProcessingDataRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -10959,355 +11350,6 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to update a Simplic.OxS.ERP.Transaction.TransactionSubtype."
-            },
-            "ValidateItemCostCenterAssignmentRequest": {
-                "type": "object",
-                "properties": {
-                    "temporaryItemId": {
-                        "type": "string",
-                        "description": "Gets or sets the temporary ID of the transaction item.\r\n\n\r\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.\r\n",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "costCenterId": {
-                        "type": "string",
-                        "description": "Gets or sets the cost center to assign by ID.",
-                        "format": "uuid"
-                    },
-                    "percentage": {
-                        "type": "number",
-                        "description": "Gets or sets the percentage to assign.",
-                        "format": "double"
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a request to validate an item cost center assignment."
-            },
-            "ValidateTransactionItemRequest": {
-                "type": "object",
-                "properties": {
-                    "temporaryId": {
-                        "type": "string",
-                        "description": "Gets or sets the temporary ID used for client-side identification in the validation response.",
-                        "format": "uuid"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the ID.",
-                        "format": "uuid"
-                    },
-                    "text": {
-                        "type": "string",
-                        "description": "Gets or sets the text.",
-                        "nullable": true
-                    },
-                    "typeId": {
-                        "type": "string",
-                        "description": "Gets or sets the item type by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "sortNumber": {
-                        "type": "integer",
-                        "description": "Gets or sets the sort number.",
-                        "format": "int32",
-                        "nullable": true
-                    },
-                    "deserializationType": {
-                        "type": "string",
-                        "description": "Gets or sets an identifier for the type of the item for correct deserialization.",
-                        "nullable": true
-                    },
-                    "valueOperator": {
-                        "$ref": "#/components/schemas/ValueOperator"
-                    },
-                    "assignmentMode": {
-                        "$ref": "#/components/schemas/AssignmentMode"
-                    },
-                    "amount": {
-                        "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "behaviorDefinitions": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BehaviorDefinitionRequest"
-                        },
-                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest.",
-                        "nullable": true
-                    },
-                    "quantity": {
-                        "minimum": 0,
-                        "type": "number",
-                        "description": "Gets or sets the quantity.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "unitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit the quantity is measured in by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "inputPrice": {
-                        "type": "number",
-                        "description": "Gets or sets the price user input.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "inputPriceType": {
-                        "$ref": "#/components/schemas/InputPriceType"
-                    },
-                    "taxKeyId": {
-                        "type": "string",
-                        "description": "Gets or sets the tax key given by ID if a specific tax key should be used for this item.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "costCenters": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidateItemCostCenterAssignmentRequest"
-                        },
-                        "description": "Gets or sets the assigned cost centers given by ID with their respective percentages.",
-                        "nullable": true
-                    },
-                    "costObjects": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidateItemCostCenterAssignmentRequest"
-                        },
-                        "description": "Gets or sets the assigned cost objects given by ID with their respective percentages.",
-                        "nullable": true
-                    },
-                    "articleId": {
-                        "type": "string",
-                        "description": "Gets or sets the article by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "generalLedgerAccountId": {
-                        "type": "string",
-                        "description": "Gets or sets the general ledger account by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "deltaValue": {
-                        "type": "number",
-                        "description": "Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "items": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidateTransactionItemRequest"
-                        },
-                        "description": "Gets or sets a set of transaction items that are part of the group.",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a request to validate a transaction item of a Simplic.OxS.ERP.Transaction.Transaction."
-            },
-            "ValidateTransactionRequest": {
-                "type": "object",
-                "properties": {
-                    "creator": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "number": {
-                        "type": "string",
-                        "description": "Gets or sets the transaction number.",
-                        "nullable": true
-                    },
-                    "reference": {
-                        "type": "string",
-                        "description": "Gets or sets the reference.",
-                        "nullable": true
-                    },
-                    "typeId": {
-                        "type": "string",
-                        "description": "Gets or sets the type by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "subtypeId": {
-                        "type": "string",
-                        "description": "Gets or sets the subtype by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "date": {
-                        "type": "string",
-                        "description": "Gets or sets the time of the underlying transaction.",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "deliveryDate": {
-                        "type": "string",
-                        "description": "Gets or sets the time of delivery.",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "termsOfPaymentId": {
-                        "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "paymentMethodId": {
-                        "type": "string",
-                        "description": "Gets or sets the payment method for this transaction given by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "currencyId": {
-                        "type": "string",
-                        "description": "Gets or sets the currency used to quantify this transaction by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Gets or sets the description.",
-                        "nullable": true
-                    },
-                    "financialPartner": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "deliveryAddress": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "invoiceRecipient": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "payer": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "responsible": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "representative": {
-                        "$ref": "#/components/schemas/TransactionContactRequest"
-                    },
-                    "items": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidateTransactionItemRequest"
-                        },
-                        "description": "Gets or sets the items of this transaction.",
-                        "nullable": true
-                    },
-                    "alternativePaymentDeadline": {
-                        "type": "string",
-                        "description": "Gets or sets an alternative payment deadline to the one defined in the terms of payment.",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "balance": {
-                        "type": "number",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "barcode": {
-                        "type": "string",
-                        "description": "Gets or sets the barcode.",
-                        "nullable": true
-                    },
-                    "billToText": {
-                        "type": "string",
-                        "description": "Gets or sets the bill as a text.",
-                        "nullable": true
-                    },
-                    "cashDiscountPercentValue": {
-                        "type": "number",
-                        "description": "Gets or sets the relative cash discount.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "cashDiscountTotal": {
-                        "type": "number",
-                        "description": "Gets or sets the total cash discount.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "financialAccountingPeriodId": {
-                        "type": "string",
-                        "description": "Gets or sets the financial year period of this transaction given by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "periodId": {
-                        "type": "string",
-                        "description": "Gets or sets the financial year period of this transaction for inventory management given by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "manualVAT": {
-                        "$ref": "#/components/schemas/TransactionManualVatRequest"
-                    },
-                    "notes": {
-                        "type": "string",
-                        "description": "Gets or sets notes.",
-                        "nullable": true
-                    },
-                    "dueDate": {
-                        "type": "string",
-                        "description": "Gets or sets the due date.",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "referenceNumber": {
-                        "type": "string",
-                        "description": "Gets or sets the reference number.",
-                        "nullable": true
-                    },
-                    "taxGroupId": {
-                        "type": "string",
-                        "description": "Gets or sets the tax group by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "operationItemCombinationMode": {
-                        "$ref": "#/components/schemas/OperationItemCombinationMode"
-                    },
-                    "isGross": {
-                        "type": "boolean",
-                        "description": "Gets or sets a value indicating whether the transaction is gross or net.",
-                        "nullable": true
-                    },
-                    "defaultCostCenters": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
-                        },
-                        "description": "Gets or sets the default assigned cost centers given by ID with their respective percentages.",
-                        "nullable": true
-                    },
-                    "defaultCostObjects": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
-                        },
-                        "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
-                        "nullable": true
-                    },
-                    "checkSum": {
-                        "type": "number",
-                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "validatePriceInput": {
-                        "type": "boolean",
-                        "description": "Gets or sets whether price input validation is enabled."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents a request to validate a Simplic.OxS.ERP.Transaction.Transaction."
             },
             "ValueOperator": {
                 "enum": [

@@ -367,38 +367,38 @@ public interface ITransactionClient
 
 
     /// <summary>
-    /// Validates a transaction. 
+    /// Validates and creates a preview for a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="validateTransactionRequest"> (optional)</param>
+    /// <param name="previewTransactionRequest"> (optional)</param>
     /// <returns>TransactionValidationResultModel</returns>
-    TransactionValidationResultModel Validate(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?));
+    TransactionValidationResultModel Preview(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?));
 
     /// <summary>
-    /// Validates a transaction. 
+    /// Validates and creates a preview for a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="validateTransactionRequest"> (optional)</param>
+    /// <param name="previewTransactionRequest"> (optional)</param>
     /// <returns>ApiResponse of TransactionValidationResultModel</returns>
-    ApiResponse<TransactionValidationResultModel> ValidateWithHttpInfo(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?));
+    ApiResponse<TransactionValidationResultModel> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?));
         
     /// <summary>
-    /// Validates a transaction. 
+    /// Validates and creates a preview for a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="validateTransactionRequest"> (optional)</param>
+    /// <param name="previewTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TransactionValidationResultModel</returns>
-    Task<TransactionValidationResultModel> ValidateAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<TransactionValidationResultModel> PreviewAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Validates a transaction. 
+    /// Validates and creates a preview for a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="validateTransactionRequest"> (optional)</param>
+    /// <param name="previewTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TransactionValidationResultModel)</returns>
-    Task<ApiResponse<TransactionValidationResultModel>> ValidateWithHttpInfoAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<TransactionValidationResultModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -1145,16 +1145,16 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <returns>TransactionValidationResultModel</returns>
-        public TransactionValidationResultModel Validate(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?))
+        public TransactionValidationResultModel Preview(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?))
         {
             try
             {
-                return _internalClient.Validate(validateTransactionRequest);
+                return _internalClient.Preview(previewTransactionRequest);
             }
             catch (ApiException e)
             {
@@ -1163,16 +1163,16 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <returns>ApiResponse of TransactionValidationResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> ValidateWithHttpInfo(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?))
+        public Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?))
         {
             try
             {
-                return _internalClient.ValidateWithHttpInfo(validateTransactionRequest);
+                return _internalClient.PreviewWithHttpInfo(previewTransactionRequest);
             }
             catch (ApiException e)
             {
@@ -1181,17 +1181,17 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionValidationResultModel</returns>
-        public System.Threading.Tasks.Task<TransactionValidationResultModel> ValidateAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionValidationResultModel> PreviewAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ValidateAsync(validateTransactionRequest, cancellationToken: cancellationToken);
+                return _internalClient.PreviewAsync(previewTransactionRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1200,17 +1200,17 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionValidationResultModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel>> ValidateWithHttpInfoAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ValidateWithHttpInfoAsync(validateTransactionRequest, cancellationToken: cancellationToken);
+                return _internalClient.PreviewWithHttpInfoAsync(previewTransactionRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1417,25 +1417,25 @@ public interface ITransactionClient
         /// <returns>ApiResponse of TransactionResultModel</returns>
         ApiResponse<TransactionResultModel> PostWithHttpInfo(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0);
         /// <summary>
-        /// Validates a transaction.
+        /// Validates and creates a preview for a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionValidationResultModel</returns>
-        TransactionValidationResultModel Validate(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0);
+        TransactionValidationResultModel Preview(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Validates a transaction.
+        /// Validates and creates a preview for a transaction.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionValidationResultModel</returns>
-        ApiResponse<TransactionValidationResultModel> ValidateWithHttpInfo(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0);
+        ApiResponse<TransactionValidationResultModel> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1677,30 +1677,30 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> PostWithHttpInfoAsync(CreateTransactionRequest? createTransactionRequest = default(CreateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Validates a transaction.
+        /// Validates and creates a preview for a transaction.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionValidationResultModel</returns>
-        System.Threading.Tasks.Task<TransactionValidationResultModel> ValidateAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionValidationResultModel> PreviewAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Validates a transaction.
+        /// Validates and creates a preview for a transaction.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionValidationResultModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionValidationResultModel>> ValidateWithHttpInfoAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionValidationResultModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -3298,26 +3298,26 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionValidationResultModel</returns>
-        public TransactionValidationResultModel Validate(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0)
+        public TransactionValidationResultModel Preview(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> localVarResponse = ValidateWithHttpInfo(validateTransactionRequest);
+            Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> localVarResponse = PreviewWithHttpInfo(previewTransactionRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionValidationResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> ValidateWithHttpInfo(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -3346,9 +3346,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = validateTransactionRequest;
+            localVarRequestOptions.Data = previewTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionValidatePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionPreviewPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3363,10 +3363,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionValidationResultModel>("/Transaction/validate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TransactionValidationResultModel>("/Transaction/preview", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionValidatePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionPreviewPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3377,28 +3377,28 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionValidationResultModel</returns>
-        public async System.Threading.Tasks.Task<TransactionValidationResultModel> ValidateAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionValidationResultModel> PreviewAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> localVarResponse = await ValidateWithHttpInfoAsync(validateTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel> localVarResponse = await PreviewWithHttpInfoAsync(previewTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Validates a transaction. 
+        /// Validates and creates a preview for a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="validateTransactionRequest"> (optional)</param>
+        /// <param name="previewTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionValidationResultModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel>> ValidateWithHttpInfoAsync(ValidateTransactionRequest? validateTransactionRequest = default(ValidateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionValidationResultModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -3428,9 +3428,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = validateTransactionRequest;
+            localVarRequestOptions.Data = previewTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionValidatePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionPreviewPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3445,11 +3445,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionValidationResultModel>("/Transaction/validate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionValidationResultModel>("/Transaction/preview", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionValidatePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionPreviewPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

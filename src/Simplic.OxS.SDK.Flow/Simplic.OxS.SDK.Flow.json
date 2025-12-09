@@ -1504,34 +1504,11 @@
                 "additionalProperties": false
             },
             "DeploymentInfo": {
-                "required": [
-                    "assemblies",
-                    "packages",
-                    "totalSize"
-                ],
                 "type": "object",
                 "properties": {
                     "dateTime": {
                         "type": "string",
                         "format": "date-time"
-                    },
-                    "packages": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/NodePackage"
-                        },
-                        "nullable": true
-                    },
-                    "assemblies": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "totalSize": {
-                        "type": "integer",
-                        "format": "int64"
                     }
                 },
                 "additionalProperties": false
@@ -1928,32 +1905,6 @@
                 },
                 "additionalProperties": false
             },
-            "NodePackage": {
-                "required": [
-                    "assemblyName",
-                    "className",
-                    "name"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "version": {
-                        "$ref": "#/components/schemas/PackageVersion"
-                    },
-                    "assemblyName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "className": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "NodePackageRequest": {
                 "required": [
                     "assemblyName",
@@ -2008,56 +1959,6 @@
                     }
                 },
                 "additionalProperties": false
-            },
-            "PackageVersion": {
-                "type": "object",
-                "properties": {
-                    "kind": {
-                        "$ref": "#/components/schemas/PackageVersionKind"
-                    },
-                    "isLatest": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "isExact": {
-                        "type": "boolean",
-                        "readOnly": true
-                    },
-                    "major": {
-                        "type": "integer",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "minor": {
-                        "type": "integer",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "patch": {
-                        "type": "integer",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "revision": {
-                        "type": "integer",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "normalized": {
-                        "type": "string",
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "PackageVersionKind": {
-                "enum": [
-                    0,
-                    1
-                ],
-                "type": "integer",
-                "format": "int32"
             },
             "Point": {
                 "type": "object",

@@ -36,15 +36,23 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionValidationResultModel" /> class.
         /// </summary>
+        /// <param name="transactionPreview">transactionPreview.</param>
         /// <param name="inputFieldValidationResults">Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  .</param>
         /// <param name="errors">Gets or sets the list of validation errors..</param>
         /// <param name="isValid">Gets or sets whether the transaction is valid for purposes of financial accounting..</param>
-        public TransactionValidationResultModel(Dictionary<string, bool?> inputFieldValidationResults = default(Dictionary<string, bool?>), List<string> errors = default(List<string>), bool isValid = default(bool))
+        public TransactionValidationResultModel(TransactionModel transactionPreview = default(TransactionModel), Dictionary<string, bool?> inputFieldValidationResults = default(Dictionary<string, bool?>), List<string> errors = default(List<string>), bool isValid = default(bool))
         {
+            this.TransactionPreview = transactionPreview;
             this.InputFieldValidationResults = inputFieldValidationResults;
             this.Errors = errors;
             this.IsValid = isValid;
         }
+
+        /// <summary>
+        /// Gets or Sets TransactionPreview
+        /// </summary>
+        [DataMember(Name = "transactionPreview", EmitDefaultValue = false)]
+        public TransactionModel TransactionPreview { get; set; }
 
         /// <summary>
         /// Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  
@@ -75,6 +83,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionValidationResultModel {\n");
+            sb.Append("  TransactionPreview: ").Append(TransactionPreview).Append("\n");
             sb.Append("  InputFieldValidationResults: ").Append(InputFieldValidationResults).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("  IsValid: ").Append(IsValid).Append("\n");
@@ -114,6 +123,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.TransactionPreview == input.TransactionPreview ||
+                    (this.TransactionPreview != null &&
+                    this.TransactionPreview.Equals(input.TransactionPreview))
+                ) && 
+                (
                     this.InputFieldValidationResults == input.InputFieldValidationResults ||
                     this.InputFieldValidationResults != null &&
                     input.InputFieldValidationResults != null &&
@@ -140,6 +154,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TransactionPreview != null)
+                {
+                    hashCode = (hashCode * 59) + this.TransactionPreview.GetHashCode();
+                }
                 if (this.InputFieldValidationResults != null)
                 {
                     hashCode = (hashCode * 59) + this.InputFieldValidationResults.GetHashCode();

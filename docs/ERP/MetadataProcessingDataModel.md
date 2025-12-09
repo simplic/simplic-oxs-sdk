@@ -1,10 +1,11 @@
-# Simplic.OxS.SDK.Flow.DeploymentInfo
+# Simplic.OxS.SDK.ERP.MetadataProcessingDataModel
+Represents the shared model for the data provided by metadata processing.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DateTime** | **DateTime** |  | [optional] 
+**CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

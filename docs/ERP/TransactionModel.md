@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 **ValidationResult** | [**TransactionValidationResultModel**](TransactionValidationResultModel.md) |  | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost centers with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost objects with their respective percentages. | [optional] 
-**CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
+**MetadataProcessingData** | [**MetadataProcessingDataModel**](MetadataProcessingDataModel.md) |  | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the transaction is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the transaction. | [optional] 
 **CreateUserName** | **string** | Gets or sets the name of the user that created the transaction. | [optional] 

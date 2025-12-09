@@ -13,7 +13,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} | Gets a transaction by ID. |
 | [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} | Patches a transaction. |
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
-| [**Validate**](TransactionClient.md#transactionvalidatepost) | **POST** /Transaction/validate | Validates a transaction. |
+| [**Preview**](TransactionClient.md#transactionpreviewpost) | **POST** /Transaction/preview | Validates and creates a preview for a transaction. |
 
 <a id="transactioncancelput"></a>
 # **Cancel**
@@ -908,11 +908,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactionvalidatepost"></a>
-# **Validate**
-> TransactionValidationResultModel Validate (ValidateTransactionRequest? validateTransactionRequest = null)
+<a id="transactionpreviewpost"></a>
+# **Preview**
+> TransactionValidationResultModel Preview (PreviewTransactionRequest? previewTransactionRequest = null)
 
-Validates a transaction.
+Validates and creates a preview for a transaction.
 
 ### Example
 ```csharp
@@ -923,7 +923,7 @@ using Simplic.OxS.SDK.ERP;
 
 namespace Example
 {
-    public class ValidateExample
+    public class PreviewExample
     {
         public static void Main()
         {
@@ -939,17 +939,17 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionClient(config);
-            var validateTransactionRequest = new ValidateTransactionRequest?(); // ValidateTransactionRequest? |  (optional) 
+            var previewTransactionRequest = new PreviewTransactionRequest?(); // PreviewTransactionRequest? |  (optional) 
 
             try
             {
-                // Validates a transaction.
-                TransactionValidationResultModel result = apiInstance.Validate(validateTransactionRequest);
+                // Validates and creates a preview for a transaction.
+                TransactionValidationResultModel result = apiInstance.Preview(previewTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TransactionClient.Validate: " + e.Message);
+                Debug.Print("Exception when calling TransactionClient.Preview: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -958,21 +958,21 @@ namespace Example
 }
 ```
 
-#### Using the ValidateWithHttpInfo variant
+#### Using the PreviewWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Validates a transaction.
-    ApiResponse<TransactionValidationResultModel> response = apiInstance.ValidateWithHttpInfo(validateTransactionRequest);
+    // Validates and creates a preview for a transaction.
+    ApiResponse<TransactionValidationResultModel> response = apiInstance.PreviewWithHttpInfo(previewTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TransactionClient.ValidateWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TransactionClient.PreviewWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -982,7 +982,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **validateTransactionRequest** | [**ValidateTransactionRequest?**](ValidateTransactionRequest?.md) |  | [optional]  |
+| **previewTransactionRequest** | [**PreviewTransactionRequest?**](PreviewTransactionRequest?.md) |  | [optional]  |
 
 ### Return type
 

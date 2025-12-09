@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to validate a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
+    /// Represents a request to preview a transaction item of a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
-    [DataContract(Name = "ValidateTransactionItemRequest")]
-    public partial class ValidateTransactionItemRequest : IEquatable<ValidateTransactionItemRequest>, IValidatableObject
+    [DataContract(Name = "PreviewTransactionItemRequest")]
+    public partial class PreviewTransactionItemRequest : IEquatable<PreviewTransactionItemRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace Simplic.OxS.SDK.ERP
         [DataMember(Name = "inputPriceType", EmitDefaultValue = false)]
         public InputPriceType? InputPriceType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValidateTransactionItemRequest" /> class.
+        /// Initializes a new instance of the <see cref="PreviewTransactionItemRequest" /> class.
         /// </summary>
-        /// <param name="temporaryId">Gets or sets the temporary ID used for client-side identification in the validation response..</param>
+        /// <param name="temporaryId">Gets or sets the temporary ID used for client-side identification in the preview response..</param>
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="text">Gets or sets the text..</param>
         /// <param name="typeId">Gets or sets the item type by ID..</param>
@@ -75,7 +75,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public ValidateTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<ValidateItemCostCenterAssignmentRequest> costCenters = default(List<ValidateItemCostCenterAssignmentRequest>), List<ValidateItemCostCenterAssignmentRequest> costObjects = default(List<ValidateItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>))
+        public PreviewTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<PreviewItemCostCenterAssignmentRequest> costCenters = default(List<PreviewItemCostCenterAssignmentRequest>), List<PreviewItemCostCenterAssignmentRequest> costObjects = default(List<PreviewItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>))
         {
             this.TemporaryId = temporaryId;
             this.Id = id;
@@ -101,9 +101,9 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets the temporary ID used for client-side identification in the validation response.
+        /// Gets or sets the temporary ID used for client-side identification in the preview response.
         /// </summary>
-        /// <value>Gets or sets the temporary ID used for client-side identification in the validation response.</value>
+        /// <value>Gets or sets the temporary ID used for client-side identification in the preview response.</value>
         [DataMember(Name = "temporaryId", EmitDefaultValue = false)]
         public Guid TemporaryId { get; set; }
 
@@ -189,14 +189,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the assigned cost centers given by ID with their respective percentages.</value>
         [DataMember(Name = "costCenters", EmitDefaultValue = true)]
-        public List<ValidateItemCostCenterAssignmentRequest> CostCenters { get; set; }
+        public List<PreviewItemCostCenterAssignmentRequest> CostCenters { get; set; }
 
         /// <summary>
         /// Gets or sets the assigned cost objects given by ID with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the assigned cost objects given by ID with their respective percentages.</value>
         [DataMember(Name = "costObjects", EmitDefaultValue = true)]
-        public List<ValidateItemCostCenterAssignmentRequest> CostObjects { get; set; }
+        public List<PreviewItemCostCenterAssignmentRequest> CostObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the article by ID.
@@ -224,7 +224,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets a set of transaction items that are part of the group.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<ValidateTransactionItemRequest> Items { get; set; }
+        public List<PreviewTransactionItemRequest> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -233,7 +233,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ValidateTransactionItemRequest {\n");
+            sb.Append("class PreviewTransactionItemRequest {\n");
             sb.Append("  TemporaryId: ").Append(TemporaryId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
@@ -275,15 +275,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ValidateTransactionItemRequest);
+            return this.Equals(input as PreviewTransactionItemRequest);
         }
 
         /// <summary>
-        /// Returns true if ValidateTransactionItemRequest instances are equal
+        /// Returns true if PreviewTransactionItemRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ValidateTransactionItemRequest to be compared</param>
+        /// <param name="input">Instance of PreviewTransactionItemRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ValidateTransactionItemRequest input)
+        public bool Equals(PreviewTransactionItemRequest input)
         {
             if (input == null)
             {

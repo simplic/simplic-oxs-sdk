@@ -82,8 +82,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net. (required).</param>
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
-        /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
-        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?))
+        /// <param name="metadataProcessingData">metadataProcessingData.</param>
+        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), MetadataProcessingDataRequest metadataProcessingData = default(MetadataProcessingDataRequest))
         {
             // to ensure "number" is required (not null)
             if (number == null)
@@ -125,7 +125,7 @@ namespace Simplic.OxS.SDK.ERP
             this.OperationItemCombinationMode = operationItemCombinationMode;
             this.DefaultCostCenters = defaultCostCenters;
             this.DefaultCostObjects = defaultCostObjects;
-            this.CheckSum = checkSum;
+            this.MetadataProcessingData = metadataProcessingData;
         }
 
         /// <summary>
@@ -358,11 +358,10 @@ namespace Simplic.OxS.SDK.ERP
         public List<CostCenterAssignmentRequest> DefaultCostObjects { get; set; }
 
         /// <summary>
-        /// Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.
+        /// Gets or Sets MetadataProcessingData
         /// </summary>
-        /// <value>Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.</value>
-        [DataMember(Name = "checkSum", EmitDefaultValue = true)]
-        public double? CheckSum { get; set; }
+        [DataMember(Name = "metadataProcessingData", EmitDefaultValue = false)]
+        public MetadataProcessingDataRequest MetadataProcessingData { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -407,7 +406,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
             sb.Append("  DefaultCostCenters: ").Append(DefaultCostCenters).Append("\n");
             sb.Append("  DefaultCostObjects: ").Append(DefaultCostObjects).Append("\n");
-            sb.Append("  CheckSum: ").Append(CheckSum).Append("\n");
+            sb.Append("  MetadataProcessingData: ").Append(MetadataProcessingData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -620,9 +619,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.DefaultCostObjects.SequenceEqual(input.DefaultCostObjects)
                 ) && 
                 (
-                    this.CheckSum == input.CheckSum ||
-                    (this.CheckSum != null &&
-                    this.CheckSum.Equals(input.CheckSum))
+                    this.MetadataProcessingData == input.MetadataProcessingData ||
+                    (this.MetadataProcessingData != null &&
+                    this.MetadataProcessingData.Equals(input.MetadataProcessingData))
                 );
         }
 
@@ -769,9 +768,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.DefaultCostObjects.GetHashCode();
                 }
-                if (this.CheckSum != null)
+                if (this.MetadataProcessingData != null)
                 {
-                    hashCode = (hashCode * 59) + this.CheckSum.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MetadataProcessingData.GetHashCode();
                 }
                 return hashCode;
             }

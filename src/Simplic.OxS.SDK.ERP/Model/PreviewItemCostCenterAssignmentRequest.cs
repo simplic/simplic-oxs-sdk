@@ -28,18 +28,18 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to validate an item cost center assignment.
+    /// Represents a request to preview an item cost center assignment.
     /// </summary>
-    [DataContract(Name = "ValidateItemCostCenterAssignmentRequest")]
-    public partial class ValidateItemCostCenterAssignmentRequest : IEquatable<ValidateItemCostCenterAssignmentRequest>, IValidatableObject
+    [DataContract(Name = "PreviewItemCostCenterAssignmentRequest")]
+    public partial class PreviewItemCostCenterAssignmentRequest : IEquatable<PreviewItemCostCenterAssignmentRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValidateItemCostCenterAssignmentRequest" /> class.
+        /// Initializes a new instance of the <see cref="PreviewItemCostCenterAssignmentRequest" /> class.
         /// </summary>
         /// <param name="temporaryItemId">Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  .</param>
         /// <param name="costCenterId">Gets or sets the cost center to assign by ID..</param>
         /// <param name="percentage">Gets or sets the percentage to assign..</param>
-        public ValidateItemCostCenterAssignmentRequest(Guid? temporaryItemId = default(Guid?), Guid costCenterId = default(Guid), double percentage = default(double))
+        public PreviewItemCostCenterAssignmentRequest(Guid? temporaryItemId = default(Guid?), Guid costCenterId = default(Guid), double percentage = default(double))
         {
             this.TemporaryItemId = temporaryItemId;
             this.CostCenterId = costCenterId;
@@ -74,7 +74,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ValidateItemCostCenterAssignmentRequest {\n");
+            sb.Append("class PreviewItemCostCenterAssignmentRequest {\n");
             sb.Append("  TemporaryItemId: ").Append(TemporaryItemId).Append("\n");
             sb.Append("  CostCenterId: ").Append(CostCenterId).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
@@ -98,15 +98,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ValidateItemCostCenterAssignmentRequest);
+            return this.Equals(input as PreviewItemCostCenterAssignmentRequest);
         }
 
         /// <summary>
-        /// Returns true if ValidateItemCostCenterAssignmentRequest instances are equal
+        /// Returns true if PreviewItemCostCenterAssignmentRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ValidateItemCostCenterAssignmentRequest to be compared</param>
+        /// <param name="input">Instance of PreviewItemCostCenterAssignmentRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ValidateItemCostCenterAssignmentRequest input)
+        public bool Equals(PreviewItemCostCenterAssignmentRequest input)
         {
             if (input == null)
             {

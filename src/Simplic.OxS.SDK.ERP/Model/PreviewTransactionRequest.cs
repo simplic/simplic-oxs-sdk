@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to validate a Simplic.OxS.ERP.Transaction.Transaction.
+    /// Represents a request to preview a Simplic.OxS.ERP.Transaction.Transaction.
     /// </summary>
-    [DataContract(Name = "ValidateTransactionRequest")]
-    public partial class ValidateTransactionRequest : IEquatable<ValidateTransactionRequest>, IValidatableObject
+    [DataContract(Name = "PreviewTransactionRequest")]
+    public partial class PreviewTransactionRequest : IEquatable<PreviewTransactionRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Simplic.OxS.SDK.ERP
         [DataMember(Name = "operationItemCombinationMode", EmitDefaultValue = false)]
         public OperationItemCombinationMode? OperationItemCombinationMode { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValidateTransactionRequest" /> class.
+        /// Initializes a new instance of the <see cref="PreviewTransactionRequest" /> class.
         /// </summary>
         /// <param name="creator">creator.</param>
         /// <param name="number">Gets or sets the transaction number..</param>
@@ -79,7 +79,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="checkSum">Gets or sets the sum of all transaction item total price gross values resulting from metadata processing..</param>
         /// <param name="validatePriceInput">Gets or sets whether price input validation is enabled..</param>
-        public ValidateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<ValidateTransactionItemRequest> items = default(List<ValidateTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?), bool validatePriceInput = default(bool))
+        public PreviewTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), double? checkSum = default(double?), bool validatePriceInput = default(bool))
         {
             this.Creator = creator;
             this.Number = number;
@@ -237,7 +237,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the items of this transaction.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<ValidateTransactionItemRequest> Items { get; set; }
+        public List<PreviewTransactionItemRequest> Items { get; set; }
 
         /// <summary>
         /// Gets or sets an alternative payment deadline to the one defined in the terms of payment.
@@ -370,7 +370,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ValidateTransactionRequest {\n");
+            sb.Append("class PreviewTransactionRequest {\n");
             sb.Append("  Creator: ").Append(Creator).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
@@ -428,15 +428,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ValidateTransactionRequest);
+            return this.Equals(input as PreviewTransactionRequest);
         }
 
         /// <summary>
-        /// Returns true if ValidateTransactionRequest instances are equal
+        /// Returns true if PreviewTransactionRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ValidateTransactionRequest to be compared</param>
+        /// <param name="input">Instance of PreviewTransactionRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ValidateTransactionRequest input)
+        public bool Equals(PreviewTransactionRequest input)
         {
             if (input == null)
             {
