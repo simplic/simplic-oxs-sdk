@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Initializes a new instance of the <see cref="GetFlowResponse" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
-        /// <param name="description">description (required).</param>
+        /// <param name="description">description.</param>
         /// <param name="nodes">nodes.</param>
         /// <param name="variables">variables.</param>
         public GetFlowResponse(string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>))
@@ -53,11 +53,6 @@ namespace Simplic.OxS.SDK.Flow
                 throw new ArgumentNullException("name is a required property for GetFlowResponse and cannot be null");
             }
             this.Name = name;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for GetFlowResponse and cannot be null");
-            }
             this.Description = description;
             this.Nodes = nodes;
             this.Variables = variables;
@@ -72,7 +67,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>

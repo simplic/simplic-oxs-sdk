@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
-**CheckSum** | **double?** | Gets or sets the sum of all transaction item total price gross values resulting from metadata processing. | [optional] 
+**MetadataProcessingData** | [**MetadataProcessingDataRequest**](MetadataProcessingDataRequest.md) |  | [optional] 
 **ValidatePriceInput** | **bool** | Gets or sets whether price input validation is enabled. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

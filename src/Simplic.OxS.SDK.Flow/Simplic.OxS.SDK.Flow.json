@@ -1515,7 +1515,6 @@
             },
             "FlowInstance": {
                 "required": [
-                    "description",
                     "name"
                 ],
                 "type": "object",
@@ -1629,7 +1628,6 @@
             },
             "GetFlowResponse": {
                 "required": [
-                    "description",
                     "name"
                 ],
                 "type": "object",

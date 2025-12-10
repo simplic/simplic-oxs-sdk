@@ -8478,11 +8478,8 @@
                         "description": "Gets or sets the default assigned cost objects given by ID with their respective percentages.",
                         "nullable": true
                     },
-                    "checkSum": {
-                        "type": "number",
-                        "description": "Gets or sets the sum of all transaction item total price gross values resulting from metadata processing.",
-                        "format": "double",
-                        "nullable": true
+                    "metadataProcessingData": {
+                        "$ref": "#/components/schemas/MetadataProcessingDataRequest"
                     },
                     "validatePriceInput": {
                         "type": "boolean",

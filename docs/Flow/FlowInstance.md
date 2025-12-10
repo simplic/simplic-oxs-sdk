@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Description** | **string** |  | 
+**Description** | **string** |  | [optional] 
 **Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 
 **Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | [optional] 
 
