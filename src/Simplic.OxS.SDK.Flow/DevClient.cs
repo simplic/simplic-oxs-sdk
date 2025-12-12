@@ -73,41 +73,6 @@ public interface IDevClient
     /// <returns>Task of ApiResponse</returns>
     Task<ApiResponse<Object>> FwdlogsWithHttpInfoAsync(string? host = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="flowId"></param>
-    /// <returns>string</returns>
-    string ShowCode(Guid flowId);
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="flowId"></param>
-    /// <returns>ApiResponse of string</returns>
-    ApiResponse<string> ShowCodeWithHttpInfo(Guid flowId);
-        
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="flowId"></param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of string</returns>
-    Task<string> ShowCodeAsync(Guid flowId, CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="flowId"></param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (string)</returns>
-    Task<ApiResponse<string>> ShowCodeWithHttpInfoAsync(Guid flowId, CancellationToken cancellationToken = default(CancellationToken));
-
 }
 
 
@@ -256,79 +221,6 @@ public interface IDevClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <returns>string</returns>
-        public string ShowCode(Guid flowId)
-        {
-            try
-            {
-                return _internalClient.ShowCode(flowId);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <returns>ApiResponse of string</returns>
-        public Simplic.OxS.SDK.ApiResponse<string> ShowCodeWithHttpInfo(Guid flowId)
-        {
-            try
-            {
-                return _internalClient.ShowCodeWithHttpInfo(flowId);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public System.Threading.Tasks.Task<string> ShowCodeAsync(Guid flowId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.ShowCodeAsync(flowId, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<string>> ShowCodeWithHttpInfoAsync(Guid flowId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.ShowCodeWithHttpInfoAsync(flowId, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -362,26 +254,6 @@ public interface IDevClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> FwdlogsWithHttpInfo(string? host = default(string?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        string ShowCode(Guid flowId, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> ShowCodeWithHttpInfo(Guid flowId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -416,31 +288,6 @@ public interface IDevClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FwdlogsWithHttpInfoAsync(string? host = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> ShowCodeAsync(Guid flowId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> ShowCodeWithHttpInfoAsync(Guid flowId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -714,162 +561,6 @@ public interface IDevClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DevFwdlogsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        public string ShowCode(Guid flowId, int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<string> localVarResponse = ShowCodeWithHttpInfo(flowId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        public Simplic.OxS.SDK.ApiResponse<string> ShowCodeWithHttpInfo(Guid flowId, int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("flowId", Simplic.OxS.SDK.ClientUtils.ParameterToString(flowId)); // path parameter
-
-            localVarRequestOptions.Operation = "DevClient.DevShowCodeFlowIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<string>("/Dev/show-code/{flowId}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DevShowCodeFlowIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> ShowCodeAsync(Guid flowId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<string> localVarResponse = await ShowCodeWithHttpInfoAsync(flowId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="flowId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<string>> ShowCodeWithHttpInfoAsync(Guid flowId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("flowId", Simplic.OxS.SDK.ClientUtils.ParameterToString(flowId)); // path parameter
-
-            localVarRequestOptions.Operation = "DevClient.DevShowCodeFlowIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/Dev/show-code/{flowId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DevShowCodeFlowIdGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
