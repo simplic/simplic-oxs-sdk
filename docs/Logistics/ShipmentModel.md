@@ -57,6 +57,7 @@ Name | Type | Description | Notes
 **ConstructionSite** | [**ConstructionSiteModel**](ConstructionSiteModel.md) |  | [optional] 
 **Department** | [**DepartmentResponse**](DepartmentResponse.md) |  | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.   | [optional] 
+**Tariff** | [**TariffModel**](TariffModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

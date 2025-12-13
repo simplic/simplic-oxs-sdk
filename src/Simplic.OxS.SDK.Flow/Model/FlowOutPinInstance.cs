@@ -36,10 +36,20 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="FlowOutPinInstance" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        [JsonConstructorAttribute]
+        protected FlowOutPinInstance() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FlowOutPinInstance" /> class.
+        /// </summary>
+        /// <param name="name">name (required).</param>
         /// <param name="target">target.</param>
         public FlowOutPinInstance(string name = default(string), Guid? target = default(Guid?))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for FlowOutPinInstance and cannot be null");
+            }
             this.Name = name;
             this.Target = target;
         }
@@ -47,7 +57,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

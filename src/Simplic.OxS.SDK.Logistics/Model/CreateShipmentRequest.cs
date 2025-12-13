@@ -98,8 +98,9 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="constructionSiteId">Gets or sets a construction site id.     The id will be resolved by the construction site api.  .</param>
         /// <param name="departmentId">Gets or sets the department id..</param>
         /// <param name="addon">Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.  .</param>
+        /// <param name="tariff">tariff.</param>
         /// <param name="items">Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  .</param>
-        public CreateShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>))
+        public CreateShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>))
         {
             this.LoadAddressId = loadAddressId;
             this.DeliveryAddressId = deliveryAddressId;
@@ -151,6 +152,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.ConstructionSiteId = constructionSiteId;
             this.DepartmentId = departmentId;
             this.Addon = addon;
+            this.Tariff = tariff;
             this.Items = items;
         }
 
@@ -474,6 +476,12 @@ namespace Simplic.OxS.SDK.Logistics
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tariff
+        /// </summary>
+        [DataMember(Name = "tariff", EmitDefaultValue = false)]
+        public TariffModel Tariff { get; set; }
+
+        /// <summary>
         /// Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  
         /// </summary>
         /// <value>Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  </value>
@@ -538,6 +546,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  ConstructionSiteId: ").Append(ConstructionSiteId).Append("\n");
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
+            sb.Append("  Tariff: ").Append(Tariff).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -824,6 +833,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Addon.SequenceEqual(input.Addon)
                 ) && 
                 (
+                    this.Tariff == input.Tariff ||
+                    (this.Tariff != null &&
+                    this.Tariff.Equals(input.Tariff))
+                ) && 
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
@@ -1027,6 +1041,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Addon != null)
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();
+                }
+                if (this.Tariff != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tariff.GetHashCode();
                 }
                 if (this.Items != null)
                 {

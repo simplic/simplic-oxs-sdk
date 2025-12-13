@@ -11283,6 +11283,9 @@
                         "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
                         "nullable": true
                     },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
                     "items": {
                         "type": "array",
                         "items": {
@@ -12989,6 +12992,9 @@
                         "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
                         "nullable": true
                     },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
                     "items": {
                         "type": "array",
                         "items": {
@@ -14427,6 +14433,9 @@
                         "additionalProperties": {},
                         "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
                         "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
                     }
                 },
                 "additionalProperties": false,
@@ -14719,6 +14728,67 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "TariffModel": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "type": "string",
+                        "description": "Human-readable display name of the tariff.",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "description": "Key used for localization/translation of the display name.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Technical name/identifier of the tariff.",
+                        "nullable": true
+                    },
+                    "parameters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffParameterModel"
+                        },
+                        "description": "Collection of parameters that define the tariff behavior/configuration.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the server model of a tariff."
+            },
+            "TariffParameterModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Technical parameter name.",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Human-readable display name of the parameter.",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "description": "Localization/translation key for the parameter display name.",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Type discriminator indicating how to interpret the value (e.g., string, int, decimal, bool, datetime, guid, json).",
+                        "nullable": true
+                    },
+                    "value": {
+                        "description": "Parameter value.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Parameter entry for a tariff configuration."
             },
             "TourActionModel": {
                 "type": "object",

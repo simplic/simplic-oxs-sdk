@@ -1465,6 +1465,9 @@
                 "additionalProperties": false
             },
             "FlowOutPinDefinition": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
@@ -1475,6 +1478,9 @@
                 "additionalProperties": false
             },
             "FlowOutPinInstance": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
