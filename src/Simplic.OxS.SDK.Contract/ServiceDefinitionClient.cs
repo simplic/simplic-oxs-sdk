@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Contract
 /// <summary>
 /// Client to interact with the API endpoints of the contract service.
 /// </summary>
-public interface IContractStatusDeploymentClient
+public interface IServiceDefinitionClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -43,74 +43,62 @@ public interface IContractStatusDeploymentClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchContractStatusRequest"> (optional)</param>
-    /// <returns>ContractStatusModel</returns>
-    ContractStatusModel Patch(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?));
+    /// <returns>ServiceObject</returns>
+    ServiceObject Get();
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchContractStatusRequest"> (optional)</param>
-    /// <returns>ApiResponse of ContractStatusModel</returns>
-    ApiResponse<ContractStatusModel> PatchWithHttpInfo(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?));
+    /// <returns>ApiResponse of ServiceObject</returns>
+    ApiResponse<ServiceObject> GetWithHttpInfo();
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchContractStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ContractStatusModel</returns>
-    Task<ContractStatusModel> PatchAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ServiceObject</returns>
+    Task<ServiceObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchContractStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-    Task<ApiResponse<ContractStatusModel>> PatchWithHttpInfoAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (ServiceObject)</returns>
+    Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createContractStatusRequest"> (optional)</param>
-    /// <returns>ContractStatusModel</returns>
-    ContractStatusModel Post(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?));
+    /// <returns></returns>
+    void RegisterService();
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createContractStatusRequest"> (optional)</param>
-    /// <returns>ApiResponse of ContractStatusModel</returns>
-    ApiResponse<ContractStatusModel> PostWithHttpInfo(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?));
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> RegisterServiceWithHttpInfo();
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createContractStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ContractStatusModel</returns>
-    Task<ContractStatusModel> PostAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of void</returns>
+    Task RegisterServiceAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createContractStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-    Task<ApiResponse<ContractStatusModel>> PostWithHttpInfoAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -120,16 +108,16 @@ public interface IContractStatusDeploymentClient
     /// <summary>
     /// Client to interact with the API endpoints of the contract service.
     /// </summary>
-    public class ContractStatusDeploymentClient : IContractStatusDeploymentClient
+    public class ServiceDefinitionClient : IServiceDefinitionClient
     {
-        private __ContractStatusDeploymentClient _internalClient;
+        private __ServiceDefinitionClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public ContractStatusDeploymentClient(string host, string? authorization = null)
+        public ServiceDefinitionClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __ContractStatusDeploymentClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/contract-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -137,14 +125,14 @@ public interface IContractStatusDeploymentClient
             }
             else
             {
-                _internalClient = new __ContractStatusDeploymentClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/contract-api/v1",
                 });
             }
         }
 
-        public ContractStatusDeploymentClient(Environment env, string? authorization = null)
+        public ServiceDefinitionClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -191,14 +179,12 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
-        /// <returns>ContractStatusModel</returns>
-        public ContractStatusModel Patch(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?))
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get()
         {
             try
             {
-                return _internalClient.Patch(id, patchContractStatusRequest);
+                return _internalClient.Get();
             }
             catch (ApiException e)
             {
@@ -210,14 +196,12 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContractStatusModel> PatchWithHttpInfo(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?))
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo()
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, patchContractStatusRequest);
+                return _internalClient.GetWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -229,15 +213,13 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        public System.Threading.Tasks.Task<ContractStatusModel> PatchAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public System.Threading.Tasks.Task<ServiceObject> GetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, patchContractStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -249,15 +231,13 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContractStatusModel>> PatchWithHttpInfoAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, patchContractStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -268,13 +248,12 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
-        /// <returns>ContractStatusModel</returns>
-        public ContractStatusModel Post(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?))
+        /// <returns></returns>
+        public void RegisterService()
         {
             try
             {
-                return _internalClient.Post(createContractStatusRequest);
+                _internalClient.RegisterService();
             }
             catch (ApiException e)
             {
@@ -286,13 +265,12 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContractStatusModel> PostWithHttpInfo(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?))
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo()
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createContractStatusRequest);
+                return _internalClient.RegisterServiceWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -304,14 +282,13 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        public System.Threading.Tasks.Task<ContractStatusModel> PostAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task RegisterServiceAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createContractStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.RegisterServiceAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -323,14 +300,13 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContractStatusModel>> PostWithHttpInfoAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createContractStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.RegisterServiceWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -347,18 +323,16 @@ public interface IContractStatusDeploymentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IContractStatusDeploymentClientSync : IApiAccessor
+    internal interface __IServiceDefinitionClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ContractStatusModel</returns>
-        ContractStatusModel Patch(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0);
+        /// <returns>ServiceObject</returns>
+        ServiceObject Get(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -367,19 +341,16 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        ApiResponse<ContractStatusModel> PatchWithHttpInfo(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of ServiceObject</returns>
+        ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ContractStatusModel</returns>
-        ContractStatusModel Post(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0);
+        /// <returns></returns>
+        void RegisterService(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -388,17 +359,16 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        ApiResponse<ContractStatusModel> PostWithHttpInfo(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IContractStatusDeploymentClientAsync : IApiAccessor
+    internal interface __IServiceDefinitionClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -408,12 +378,10 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        System.Threading.Tasks.Task<ContractStatusModel> PatchAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ServiceObject</returns>
+        System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -422,12 +390,10 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContractStatusModel>> PatchWithHttpInfoAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -435,11 +401,10 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        System.Threading.Tasks.Task<ContractStatusModel> PostAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -448,18 +413,17 @@ public interface IContractStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContractStatusModel>> PostWithHttpInfoAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IContractStatusDeploymentClient : __IContractStatusDeploymentClientSync, __IContractStatusDeploymentClientAsync
+    internal interface __IServiceDefinitionClient : __IServiceDefinitionClientSync, __IServiceDefinitionClientAsync
     {
 
     }
@@ -467,24 +431,24 @@ public interface IContractStatusDeploymentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __ContractStatusDeploymentClient : __IContractStatusDeploymentClient
+    internal /*partial*/ class __ServiceDefinitionClient : __IServiceDefinitionClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ContractStatusDeploymentClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __ContractStatusDeploymentClient() : this((string)null)
+        public __ServiceDefinitionClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ContractStatusDeploymentClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __ContractStatusDeploymentClient(string basePath)
+        public __ServiceDefinitionClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -497,12 +461,12 @@ public interface IContractStatusDeploymentClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ContractStatusDeploymentClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __ContractStatusDeploymentClient(Simplic.OxS.SDK.Configuration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -516,13 +480,13 @@ public interface IContractStatusDeploymentClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ContractStatusDeploymentClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __ContractStatusDeploymentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -579,13 +543,11 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ContractStatusModel</returns>
-        public ContractStatusModel Patch(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0)
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ContractStatusModel> localVarResponse = PatchWithHttpInfo(id, patchContractStatusRequest);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -593,18 +555,13 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContractStatusModel> PatchWithHttpInfo(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -626,10 +583,8 @@ public interface IContractStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = patchContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusDeploymentClient.ContractStatusDeploymentIdPatch";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -645,10 +600,10 @@ public interface IContractStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<ContractStatusModel>("/ContractStatusDeployment/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ContractStatusDeploymentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -662,14 +617,12 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        public async System.Threading.Tasks.Task<ContractStatusModel> PatchAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public async System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ContractStatusModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchContractStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -677,20 +630,15 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContractStatusModel>> PatchWithHttpInfoAsync(Guid id, PatchContractStatusRequest? patchContractStatusRequest = default(PatchContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -712,10 +660,8 @@ public interface IContractStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = patchContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusDeploymentClient.ContractStatusDeploymentIdPatch";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -731,11 +677,11 @@ public interface IContractStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<ContractStatusModel>("/ContractStatusDeployment/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ContractStatusDeploymentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -749,30 +695,24 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ContractStatusModel</returns>
-        public ContractStatusModel Post(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0)
+        /// <returns></returns>
+        public void RegisterService(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ContractStatusModel> localVarResponse = PostWithHttpInfo(createContractStatusRequest);
-            return localVarResponse.Data;
+            RegisterServiceWithHttpInfo();
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ContractStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContractStatusModel> PostWithHttpInfo(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -794,9 +734,8 @@ public interface IContractStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusDeploymentClient.ContractStatusDeploymentPost";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -812,10 +751,10 @@ public interface IContractStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<ContractStatusModel>("/ContractStatusDeployment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ContractStatusDeploymentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -829,33 +768,27 @@ public interface IContractStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ContractStatusModel</returns>
-        public async System.Threading.Tasks.Task<ContractStatusModel> PostAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ContractStatusModel> localVarResponse = await PostWithHttpInfoAsync(createContractStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await RegisterServiceWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createContractStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ContractStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContractStatusModel>> PostWithHttpInfoAsync(CreateContractStatusRequest? createContractStatusRequest = default(CreateContractStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -877,9 +810,8 @@ public interface IContractStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createContractStatusRequest;
 
-            localVarRequestOptions.Operation = "ContractStatusDeploymentClient.ContractStatusDeploymentPost";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -895,11 +827,11 @@ public interface IContractStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ContractStatusModel>("/ContractStatusDeployment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ContractStatusDeploymentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

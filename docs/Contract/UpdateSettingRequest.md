@@ -1,11 +1,10 @@
-# Simplic.OxS.SDK.Flow.CustomFlowOutPinInstance
+# Simplic.OxS.SDK.Contract.UpdateSettingRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Target** | **Guid?** |  | [optional] 
+**Value** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4016,9 +4016,25 @@
                     "endpoint": {
                         "type": "string",
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GrpcDefinitions": {
+                "type": "object",
+                "properties": {
+                    "package": {
+                        "type": "string",
+                        "nullable": true
                     },
-                    "schema": {
-                        "$ref": "#/components/schemas/JsonSchema"
+                    "service": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "protoFile": {
+                        "type": "string",
+                        "format": "byte",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4028,90 +4044,6 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "JsonSchema": {
-                "type": "object",
-                "properties": {
-                    "schema": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "title": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "type": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "singleType": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "format": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "ref": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "enum": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "const": {
-                        "nullable": true
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/JsonSchema"
-                        },
-                        "nullable": true
-                    },
-                    "required": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "additionalProperties": {
-                        "$ref": "#/components/schemas/JsonSchema"
-                    },
-                    "items": {
-                        "$ref": "#/components/schemas/JsonSchema"
-                    },
-                    "prefixItems": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/JsonSchema"
-                        },
-                        "nullable": true
-                    },
-                    "minItems": {
-                        "type": "integer",
-                        "format": "int32",
-                        "nullable": true
-                    },
-                    "maxItems": {
-                        "type": "integer",
-                        "format": "int32",
                         "nullable": true
                     }
                 },
@@ -4434,6 +4366,13 @@
                     },
                     "modelDefinitionUrl": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "grpcDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GrpcDefinitions"
+                        },
                         "nullable": true
                     },
                     "type": {

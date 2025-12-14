@@ -71,7 +71,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="loadingAddressId">loadingAddressId.</param>
         /// <param name="unloadingAddressId">unloadingAddressId.</param>
         /// <param name="contractNumber">contractNumber.</param>
-        public CreateItemModel(string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), string contractNumber = default(string))
+        public CreateItemModel(string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), string contractNumber = default(string))
         {
             this.Text = text;
             this.Index = index;
@@ -138,13 +138,13 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public QuantityModel Quantity { get; set; }
+        public QuantityRequest Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets PlannedQuantity
         /// </summary>
         [DataMember(Name = "plannedQuantity", EmitDefaultValue = false)]
-        public QuantityModel PlannedQuantity { get; set; }
+        public QuantityRequest PlannedQuantity { get; set; }
 
         /// <summary>
         /// Gets or Sets Costs

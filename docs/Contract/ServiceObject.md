@@ -1,4 +1,4 @@
-# Simplic.OxS.SDK.Ai.ServiceObject
+# Simplic.OxS.SDK.Contract.ServiceObject
 
 ## Properties
 
@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **BaseUrl** | **string** |  | [optional] 
 **SwaggerJsonUrl** | **string** |  | [optional] 
 **ModelDefinitionUrl** | **string** |  | [optional] 
-**GrpcDefinitions** | [**List&lt;GrpcDefinitions&gt;**](GrpcDefinitions.md) |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Contracts** | [**List&lt;ServiceContract&gt;**](ServiceContract.md) |  | [optional] 
 

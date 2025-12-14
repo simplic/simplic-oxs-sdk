@@ -1,15 +1,15 @@
-# Simplic.OxS.SDK.Contract.ContractStatusDeploymentClient
+# Simplic.OxS.SDK.Contract.ServiceDefinitionClient
 
 All URIs are relative to *https://dev-oxs.simplic.io/contract-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Patch**](ContractStatusDeploymentClient.md#contractstatusdeploymentidpatch) | **PATCH** /ContractStatusDeployment/{id} |  |
-| [**Post**](ContractStatusDeploymentClient.md#contractstatusdeploymentpost) | **POST** /ContractStatusDeployment |  |
+| [**Get**](ServiceDefinitionClient.md#servicedefinitionget) | **GET** /ServiceDefinition |  |
+| [**RegisterService**](ServiceDefinitionClient.md#servicedefinitionregisterservicepost) | **POST** /ServiceDefinition/register-service |  |
 
-<a id="contractstatusdeploymentidpatch"></a>
-# **Patch**
-> ContractStatusModel Patch (Guid id, PatchContractStatusRequest? patchContractStatusRequest = null)
+<a id="servicedefinitionget"></a>
+# **Get**
+> ServiceObject Get ()
 
 
 
@@ -22,7 +22,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class PatchExample
+    public class GetExample
     {
         public static void Main()
         {
@@ -35,18 +35,16 @@ namespace Example
             // Configure Bearer token for authorization: Bearer
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new ContractStatusDeploymentClient(config);
-            var id = "id_example";  // Guid | 
-            var patchContractStatusRequest = new PatchContractStatusRequest?(); // PatchContractStatusRequest? |  (optional) 
+            var apiInstance = new ServiceDefinitionClient(config);
 
             try
             {
-                ContractStatusModel result = apiInstance.Patch(id, patchContractStatusRequest);
+                ServiceObject result = apiInstance.Get();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusDeploymentClient.Patch: " + e.Message);
+                Debug.Print("Exception when calling ServiceDefinitionClient.Get: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,35 +53,30 @@ namespace Example
 }
 ```
 
-#### Using the PatchWithHttpInfo variant
+#### Using the GetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractStatusModel> response = apiInstance.PatchWithHttpInfo(id, patchContractStatusRequest);
+    ApiResponse<ServiceObject> response = apiInstance.GetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusDeploymentClient.PatchWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ServiceDefinitionClient.GetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **patchContractStatusRequest** | [**PatchContractStatusRequest?**](PatchContractStatusRequest?.md) |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
-[**ContractStatusModel**](ContractStatusModel.md)
+[**ServiceObject**](ServiceObject.md)
 
 ### Authorization
 
@@ -91,7 +84,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 
@@ -104,9 +97,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="contractstatusdeploymentpost"></a>
-# **Post**
-> ContractStatusModel Post (CreateContractStatusRequest? createContractStatusRequest = null)
+<a id="servicedefinitionregisterservicepost"></a>
+# **RegisterService**
+> void RegisterService ()
 
 
 
@@ -119,7 +112,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class PostExample
+    public class RegisterServiceExample
     {
         public static void Main()
         {
@@ -132,17 +125,15 @@ namespace Example
             // Configure Bearer token for authorization: Bearer
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new ContractStatusDeploymentClient(config);
-            var createContractStatusRequest = new CreateContractStatusRequest?(); // CreateContractStatusRequest? |  (optional) 
+            var apiInstance = new ServiceDefinitionClient(config);
 
             try
             {
-                ContractStatusModel result = apiInstance.Post(createContractStatusRequest);
-                Debug.WriteLine(result);
+                apiInstance.RegisterService();
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ContractStatusDeploymentClient.Post: " + e.Message);
+                Debug.Print("Exception when calling ServiceDefinitionClient.RegisterService: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -151,34 +142,27 @@ namespace Example
 }
 ```
 
-#### Using the PostWithHttpInfo variant
+#### Using the RegisterServiceWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ContractStatusModel> response = apiInstance.PostWithHttpInfo(createContractStatusRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.RegisterServiceWithHttpInfo();
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ContractStatusDeploymentClient.PostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ServiceDefinitionClient.RegisterServiceWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **createContractStatusRequest** | [**CreateContractStatusRequest?**](CreateContractStatusRequest?.md) |  | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
-[**ContractStatusModel**](ContractStatusModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -186,7 +170,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 

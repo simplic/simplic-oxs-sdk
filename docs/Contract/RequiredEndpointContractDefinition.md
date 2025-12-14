@@ -1,11 +1,11 @@
-# Simplic.OxS.SDK.Flow.CustomFlowOutPinInstance
+# Simplic.OxS.SDK.Contract.RequiredEndpointContractDefinition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Target** | **Guid?** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**AllowMultiple** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1324,6 +1324,9 @@
                 "additionalProperties": false
             },
             "CustomFlowOutPinInstance": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
