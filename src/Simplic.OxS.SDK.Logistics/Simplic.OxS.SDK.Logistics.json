@@ -14732,6 +14732,11 @@
             "TariffModel": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the tarrif id",
+                        "format": "uuid"
+                    },
                     "displayName": {
                         "type": "string",
                         "description": "Human-readable display name of the tariff.",

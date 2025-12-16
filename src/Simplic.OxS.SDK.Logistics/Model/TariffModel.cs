@@ -36,17 +36,26 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="TariffModel" /> class.
         /// </summary>
+        /// <param name="id">Gets or sets the tarrif id.</param>
         /// <param name="displayName">Human-readable display name of the tariff..</param>
         /// <param name="displayKey">Key used for localization/translation of the display name..</param>
         /// <param name="name">Technical name/identifier of the tariff..</param>
         /// <param name="parameters">Collection of parameters that define the tariff behavior/configuration..</param>
-        public TariffModel(string displayName = default(string), string displayKey = default(string), string name = default(string), List<TariffParameterModel> parameters = default(List<TariffParameterModel>))
+        public TariffModel(Guid id = default(Guid), string displayName = default(string), string displayKey = default(string), string name = default(string), List<TariffParameterModel> parameters = default(List<TariffParameterModel>))
         {
+            this.Id = id;
             this.DisplayName = displayName;
             this.DisplayKey = displayKey;
             this.Name = name;
             this.Parameters = parameters;
         }
+
+        /// <summary>
+        /// Gets or sets the tarrif id
+        /// </summary>
+        /// <value>Gets or sets the tarrif id</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Human-readable display name of the tariff.
@@ -84,6 +93,7 @@ namespace Simplic.OxS.SDK.Logistics
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TariffModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -124,6 +134,11 @@ namespace Simplic.OxS.SDK.Logistics
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
@@ -155,6 +170,10 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.DisplayName != null)
                 {
                     hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();

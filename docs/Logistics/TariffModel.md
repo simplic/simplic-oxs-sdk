@@ -5,6 +5,7 @@ Represents the server model of a tariff.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** | Gets or sets the tarrif id | [optional] 
 **DisplayName** | **string** | Human-readable display name of the tariff. | [optional] 
 **DisplayKey** | **string** | Key used for localization/translation of the display name. | [optional] 
 **Name** | **string** | Technical name/identifier of the tariff. | [optional] 
