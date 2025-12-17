@@ -910,7 +910,7 @@ catch (ApiException e)
 
 <a id="transactionpreviewpost"></a>
 # **Preview**
-> TransactionValidationResultModel Preview (PreviewTransactionRequest? previewTransactionRequest = null)
+> PreviewTransactionResult Preview (PreviewTransactionRequest? previewTransactionRequest = null)
 
 Validates and creates a preview for a transaction.
 
@@ -944,7 +944,7 @@ namespace Example
             try
             {
                 // Validates and creates a preview for a transaction.
-                TransactionValidationResultModel result = apiInstance.Preview(previewTransactionRequest);
+                PreviewTransactionResult result = apiInstance.Preview(previewTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -965,7 +965,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Validates and creates a preview for a transaction.
-    ApiResponse<TransactionValidationResultModel> response = apiInstance.PreviewWithHttpInfo(previewTransactionRequest);
+    ApiResponse<PreviewTransactionResult> response = apiInstance.PreviewWithHttpInfo(previewTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -986,7 +986,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TransactionValidationResultModel**](TransactionValidationResultModel.md)
+[**PreviewTransactionResult**](PreviewTransactionResult.md)
 
 ### Authorization
 

@@ -28,43 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the shared model for a cost center assignment.
+    /// Represents the shared model for the result of previewing a transaction.
     /// </summary>
-    [DataContract(Name = "CostCenterAssignmentModel")]
-    public partial class CostCenterAssignmentModel : IEquatable<CostCenterAssignmentModel>, IValidatableObject
+    [DataContract(Name = "PreviewTransactionResult")]
+    public partial class PreviewTransactionResult : IEquatable<PreviewTransactionResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CostCenterAssignmentModel" /> class.
+        /// Initializes a new instance of the <see cref="PreviewTransactionResult" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the ID..</param>
-        /// <param name="costCenter">costCenter.</param>
-        /// <param name="percentage">Gets or sets the percentage to assign..</param>
-        public CostCenterAssignmentModel(Guid id = default(Guid), TransactionItemCostCenterModel costCenter = default(TransactionItemCostCenterModel), double percentage = default(double))
+        /// <param name="previewTransaction">previewTransaction.</param>
+        /// <param name="validationResult">validationResult.</param>
+        public PreviewTransactionResult(TransactionModel previewTransaction = default(TransactionModel), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel))
         {
-            this.Id = id;
-            this.CostCenter = costCenter;
-            this.Percentage = percentage;
+            this.PreviewTransaction = previewTransaction;
+            this.ValidationResult = validationResult;
         }
 
         /// <summary>
-        /// Gets or sets the ID.
+        /// Gets or Sets PreviewTransaction
         /// </summary>
-        /// <value>Gets or sets the ID.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "previewTransaction", EmitDefaultValue = false)]
+        public TransactionModel PreviewTransaction { get; set; }
 
         /// <summary>
-        /// Gets or Sets CostCenter
+        /// Gets or Sets ValidationResult
         /// </summary>
-        [DataMember(Name = "costCenter", EmitDefaultValue = false)]
-        public TransactionItemCostCenterModel CostCenter { get; set; }
-
-        /// <summary>
-        /// Gets or sets the percentage to assign.
-        /// </summary>
-        /// <value>Gets or sets the percentage to assign.</value>
-        [DataMember(Name = "percentage", EmitDefaultValue = false)]
-        public double Percentage { get; set; }
+        [DataMember(Name = "validationResult", EmitDefaultValue = false)]
+        public TransactionValidationResultModel ValidationResult { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,10 +63,9 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CostCenterAssignmentModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CostCenter: ").Append(CostCenter).Append("\n");
-            sb.Append("  Percentage: ").Append(Percentage).Append("\n");
+            sb.Append("class PreviewTransactionResult {\n");
+            sb.Append("  PreviewTransaction: ").Append(PreviewTransaction).Append("\n");
+            sb.Append("  ValidationResult: ").Append(ValidationResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +86,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CostCenterAssignmentModel);
+            return this.Equals(input as PreviewTransactionResult);
         }
 
         /// <summary>
-        /// Returns true if CostCenterAssignmentModel instances are equal
+        /// Returns true if PreviewTransactionResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of CostCenterAssignmentModel to be compared</param>
+        /// <param name="input">Instance of PreviewTransactionResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CostCenterAssignmentModel input)
+        public bool Equals(PreviewTransactionResult input)
         {
             if (input == null)
             {
@@ -113,18 +102,14 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.PreviewTransaction == input.PreviewTransaction ||
+                    (this.PreviewTransaction != null &&
+                    this.PreviewTransaction.Equals(input.PreviewTransaction))
                 ) && 
                 (
-                    this.CostCenter == input.CostCenter ||
-                    (this.CostCenter != null &&
-                    this.CostCenter.Equals(input.CostCenter))
-                ) && 
-                (
-                    this.Percentage == input.Percentage ||
-                    this.Percentage.Equals(input.Percentage)
+                    this.ValidationResult == input.ValidationResult ||
+                    (this.ValidationResult != null &&
+                    this.ValidationResult.Equals(input.ValidationResult))
                 );
         }
 
@@ -137,15 +122,14 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.PreviewTransaction != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PreviewTransaction.GetHashCode();
                 }
-                if (this.CostCenter != null)
+                if (this.ValidationResult != null)
                 {
-                    hashCode = (hashCode * 59) + this.CostCenter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ValidationResult.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Percentage.GetHashCode();
                 return hashCode;
             }
         }

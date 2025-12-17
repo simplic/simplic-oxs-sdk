@@ -4005,17 +4005,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             }
                         }
@@ -4025,17 +4025,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TransactionValidationResultModel"
+                                    "$ref": "#/components/schemas/PreviewTransactionResult"
                                 }
                             }
                         }
@@ -5647,6 +5647,11 @@
             "CostCenterAssignmentModel": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
                     "costCenter": {
                         "$ref": "#/components/schemas/TransactionItemCostCenterModel"
                     },
@@ -5662,6 +5667,11 @@
             "CostCenterAssignmentRequest": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
                     "costCenterId": {
                         "type": "string",
                         "description": "Gets or sets the cost center to assign by ID.",
@@ -8146,6 +8156,11 @@
             "PreviewItemCostCenterAssignmentRequest": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
                     "temporaryItemId": {
                         "type": "string",
                         "description": "Gets or sets the temporary ID of the transaction item.\r\n\n\r\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.\r\n",
@@ -8488,6 +8503,19 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to preview a Simplic.OxS.ERP.Transaction.Transaction."
+            },
+            "PreviewTransactionResult": {
+                "type": "object",
+                "properties": {
+                    "previewTransaction": {
+                        "$ref": "#/components/schemas/TransactionModel"
+                    },
+                    "validationResult": {
+                        "$ref": "#/components/schemas/TransactionValidationResultModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of previewing a transaction."
             },
             "ProblemDetails": {
                 "type": "object",
@@ -10766,9 +10794,6 @@
             "TransactionValidationResultModel": {
                 "type": "object",
                 "properties": {
-                    "transactionPreview": {
-                        "$ref": "#/components/schemas/TransactionModel"
-                    },
                     "inputFieldValidationResults": {
                         "type": "object",
                         "additionalProperties": {
@@ -10903,6 +10928,14 @@
                     },
                     "creditLimit": {
                         "$ref": "#/components/schemas/CreditLimitModel"
+                    },
+                    "addressContactIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "nullable": true
                     },
                     "saleTermsOfPaymentId": {
                         "type": "string",

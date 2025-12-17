@@ -36,15 +36,24 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="PreviewItemCostCenterAssignmentRequest" /> class.
         /// </summary>
+        /// <param name="id">Gets or sets the ID..</param>
         /// <param name="temporaryItemId">Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  .</param>
         /// <param name="costCenterId">Gets or sets the cost center to assign by ID..</param>
         /// <param name="percentage">Gets or sets the percentage to assign..</param>
-        public PreviewItemCostCenterAssignmentRequest(Guid? temporaryItemId = default(Guid?), Guid costCenterId = default(Guid), double percentage = default(double))
+        public PreviewItemCostCenterAssignmentRequest(Guid id = default(Guid), Guid? temporaryItemId = default(Guid?), Guid costCenterId = default(Guid), double percentage = default(double))
         {
+            this.Id = id;
             this.TemporaryItemId = temporaryItemId;
             this.CostCenterId = costCenterId;
             this.Percentage = percentage;
         }
+
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
+        /// <value>Gets or sets the ID.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  
@@ -75,6 +84,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PreviewItemCostCenterAssignmentRequest {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TemporaryItemId: ").Append(TemporaryItemId).Append("\n");
             sb.Append("  CostCenterId: ").Append(CostCenterId).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
@@ -114,6 +124,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.TemporaryItemId == input.TemporaryItemId ||
                     (this.TemporaryItemId != null &&
                     this.TemporaryItemId.Equals(input.TemporaryItemId))
@@ -138,6 +153,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.TemporaryItemId != null)
                 {
                     hashCode = (hashCode * 59) + this.TemporaryItemId.GetHashCode();

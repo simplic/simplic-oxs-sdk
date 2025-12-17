@@ -41,16 +41,18 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="vatId">Gets or sets the vat id..</param>
         /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
+        /// <param name="addressContactIds">addressContactIds.</param>
         /// <param name="saleTermsOfPaymentId">Gets or sets the id of the sale terms of payment..</param>
         /// <param name="purchaseTermsOfPaymentId">Gets or sets the id of the purchase terms of payment..</param>
         /// <param name="taxGroupId">Gets or sets the id of the tax group..</param>
-        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
+        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
         {
             this.Id = id;
             this.Number = number;
             this.VatId = vatId;
             this.Type = type;
             this.CreditLimit = creditLimit;
+            this.AddressContactIds = addressContactIds;
             this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
             this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
             this.TaxGroupId = taxGroupId;
@@ -91,6 +93,12 @@ namespace Simplic.OxS.SDK.ERP
         public CreditLimitModel CreditLimit { get; set; }
 
         /// <summary>
+        /// Gets or Sets AddressContactIds
+        /// </summary>
+        [DataMember(Name = "addressContactIds", EmitDefaultValue = true)]
+        public List<Guid> AddressContactIds { get; set; }
+
+        /// <summary>
         /// Gets or sets the id of the sale terms of payment.
         /// </summary>
         /// <value>Gets or sets the id of the sale terms of payment.</value>
@@ -124,6 +132,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
+            sb.Append("  AddressContactIds: ").Append(AddressContactIds).Append("\n");
             sb.Append("  SaleTermsOfPaymentId: ").Append(SaleTermsOfPaymentId).Append("\n");
             sb.Append("  PurchaseTermsOfPaymentId: ").Append(PurchaseTermsOfPaymentId).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
@@ -188,6 +197,12 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit.Equals(input.CreditLimit))
                 ) && 
                 (
+                    this.AddressContactIds == input.AddressContactIds ||
+                    this.AddressContactIds != null &&
+                    input.AddressContactIds != null &&
+                    this.AddressContactIds.SequenceEqual(input.AddressContactIds)
+                ) && 
+                (
                     this.SaleTermsOfPaymentId == input.SaleTermsOfPaymentId ||
                     (this.SaleTermsOfPaymentId != null &&
                     this.SaleTermsOfPaymentId.Equals(input.SaleTermsOfPaymentId))
@@ -232,6 +247,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
+                }
+                if (this.AddressContactIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.AddressContactIds.GetHashCode();
                 }
                 if (this.SaleTermsOfPaymentId != null)
                 {

@@ -36,13 +36,22 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="CostCenterAssignmentRequest" /> class.
         /// </summary>
+        /// <param name="id">Gets or sets the ID..</param>
         /// <param name="costCenterId">Gets or sets the cost center to assign by ID..</param>
         /// <param name="percentage">Gets or sets the percentage to assign..</param>
-        public CostCenterAssignmentRequest(Guid costCenterId = default(Guid), double percentage = default(double))
+        public CostCenterAssignmentRequest(Guid id = default(Guid), Guid costCenterId = default(Guid), double percentage = default(double))
         {
+            this.Id = id;
             this.CostCenterId = costCenterId;
             this.Percentage = percentage;
         }
+
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
+        /// <value>Gets or sets the ID.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the cost center to assign by ID.
@@ -66,6 +75,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CostCenterAssignmentRequest {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CostCenterId: ").Append(CostCenterId).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
             sb.Append("}\n");
@@ -104,6 +114,11 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.CostCenterId == input.CostCenterId ||
                     (this.CostCenterId != null &&
                     this.CostCenterId.Equals(input.CostCenterId))
@@ -123,6 +138,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.CostCenterId != null)
                 {
                     hashCode = (hashCode * 59) + this.CostCenterId.GetHashCode();

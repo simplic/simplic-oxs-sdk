@@ -5,6 +5,7 @@ Represents the shared model for a cost center assignment.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** | Gets or sets the ID. | [optional] 
 **CostCenter** | [**TransactionItemCostCenterModel**](TransactionItemCostCenterModel.md) |  | [optional] 
 **Percentage** | **double** | Gets or sets the percentage to assign. | [optional] 
 
