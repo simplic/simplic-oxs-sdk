@@ -4,11 +4,107 @@ All URIs are relative to *https://dev-oxs.simplic.io/contract-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ConvertToShipment**](ContractClient.md#contractconverttoshipmentpost) | **POST** /Contract/convert-to-shipment |  |
 | [**Delete**](ContractClient.md#contractiddelete) | **DELETE** /Contract/{id} |  |
 | [**Get**](ContractClient.md#contractidget) | **GET** /Contract/{id} |  |
 | [**Patch**](ContractClient.md#contractidpatch) | **PATCH** /Contract/{id} |  |
 | [**Post**](ContractClient.md#contractpost) | **POST** /Contract |  |
 | [**Search**](ContractClient.md#contractsearchget) | **GET** /Contract/search |  |
+
+<a id="contractconverttoshipmentpost"></a>
+# **ConvertToShipment**
+> List&lt;ShipmentResponse&gt; ConvertToShipment (ConvertToShipmentRequest? convertToShipmentRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Contract;
+
+namespace Example
+{
+    public class ConvertToShipmentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/contract-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new ContractClient(config);
+            var convertToShipmentRequest = new ConvertToShipmentRequest?(); // ConvertToShipmentRequest? |  (optional) 
+
+            try
+            {
+                List<ShipmentResponse> result = apiInstance.ConvertToShipment(convertToShipmentRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ContractClient.ConvertToShipment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ConvertToShipmentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<ShipmentResponse>> response = apiInstance.ConvertToShipmentWithHttpInfo(convertToShipmentRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ContractClient.ConvertToShipmentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **convertToShipmentRequest** | [**ConvertToShipmentRequest?**](ConvertToShipmentRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**List&lt;ShipmentResponse&gt;**](ShipmentResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="contractiddelete"></a>
 # **Delete**

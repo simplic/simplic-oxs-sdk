@@ -48,6 +48,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateItemModel" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="text">text.</param>
         /// <param name="index">index.</param>
         /// <param name="positionNumber">positionNumber.</param>
@@ -71,8 +72,9 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="loadingAddressId">loadingAddressId.</param>
         /// <param name="unloadingAddressId">unloadingAddressId.</param>
         /// <param name="contractNumber">contractNumber.</param>
-        public CreateItemModel(string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), string contractNumber = default(string))
+        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), string contractNumber = default(string))
         {
+            this.Id = id;
             this.Text = text;
             this.Index = index;
             this.PositionNumber = positionNumber;
@@ -97,6 +99,12 @@ namespace Simplic.OxS.SDK.Contract
             this.UnloadingAddressId = unloadingAddressId;
             this.ContractNumber = contractNumber;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
@@ -232,6 +240,7 @@ namespace Simplic.OxS.SDK.Contract
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateItemModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Index: ").Append(Index).Append("\n");
             sb.Append("  PositionNumber: ").Append(PositionNumber).Append("\n");
@@ -290,6 +299,11 @@ namespace Simplic.OxS.SDK.Contract
                 return false;
             }
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
@@ -408,6 +422,10 @@ namespace Simplic.OxS.SDK.Contract
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Text != null)
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();

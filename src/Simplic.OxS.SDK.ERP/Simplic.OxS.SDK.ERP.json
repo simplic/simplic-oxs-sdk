@@ -5675,12 +5675,14 @@
                     "costCenterId": {
                         "type": "string",
                         "description": "Gets or sets the cost center to assign by ID.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "percentage": {
                         "type": "number",
                         "description": "Gets or sets the percentage to assign.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

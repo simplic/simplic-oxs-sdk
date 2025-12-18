@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **Text** | **string** |  | [optional] 
 **Index** | **int** |  | [optional] 
 **PositionNumber** | **int** |  | [optional] 
