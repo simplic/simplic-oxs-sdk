@@ -10205,6 +10205,12 @@
                     "metadataProcessingData": {
                         "$ref": "#/components/schemas/MetadataProcessingDataModel"
                     },
+                    "cashDiscountDate": {
+                        "type": "string",
+                        "description": "Gets or sets the date until which a cash discount is applicable.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "createDateTime": {
                         "type": "string",
                         "description": "Gets or sets the date and time the transaction is created.",
