@@ -73,7 +73,9 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="article">article.</param>
         /// <param name="loadingAddress">loadingAddress.</param>
         /// <param name="unloadingAddress">unloadingAddress.</param>
-        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address))
+        /// <param name="alternativeLoadingAddress">alternativeLoadingAddress.</param>
+        /// <param name="alternativeUnloadingAddress">alternativeUnloadingAddress.</param>
+        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address))
         {
             this.Id = id;
             this.Text = text;
@@ -100,6 +102,8 @@ namespace Simplic.OxS.SDK.Contract
             this.Article = article;
             this.LoadingAddress = loadingAddress;
             this.UnloadingAddress = unloadingAddress;
+            this.AlternativeLoadingAddress = alternativeLoadingAddress;
+            this.AlternativeUnloadingAddress = alternativeUnloadingAddress;
         }
 
         /// <summary>
@@ -241,6 +245,18 @@ namespace Simplic.OxS.SDK.Contract
         public Address UnloadingAddress { get; set; }
 
         /// <summary>
+        /// Gets or Sets AlternativeLoadingAddress
+        /// </summary>
+        [DataMember(Name = "alternativeLoadingAddress", EmitDefaultValue = false)]
+        public Address AlternativeLoadingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AlternativeUnloadingAddress
+        /// </summary>
+        [DataMember(Name = "alternativeUnloadingAddress", EmitDefaultValue = false)]
+        public Address AlternativeUnloadingAddress { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -273,6 +289,8 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Article: ").Append(Article).Append("\n");
             sb.Append("  LoadingAddress: ").Append(LoadingAddress).Append("\n");
             sb.Append("  UnloadingAddress: ").Append(UnloadingAddress).Append("\n");
+            sb.Append("  AlternativeLoadingAddress: ").Append(AlternativeLoadingAddress).Append("\n");
+            sb.Append("  AlternativeUnloadingAddress: ").Append(AlternativeUnloadingAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -424,6 +442,16 @@ namespace Simplic.OxS.SDK.Contract
                     this.UnloadingAddress == input.UnloadingAddress ||
                     (this.UnloadingAddress != null &&
                     this.UnloadingAddress.Equals(input.UnloadingAddress))
+                ) && 
+                (
+                    this.AlternativeLoadingAddress == input.AlternativeLoadingAddress ||
+                    (this.AlternativeLoadingAddress != null &&
+                    this.AlternativeLoadingAddress.Equals(input.AlternativeLoadingAddress))
+                ) && 
+                (
+                    this.AlternativeUnloadingAddress == input.AlternativeUnloadingAddress ||
+                    (this.AlternativeUnloadingAddress != null &&
+                    this.AlternativeUnloadingAddress.Equals(input.AlternativeUnloadingAddress))
                 );
         }
 
@@ -508,6 +536,14 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.UnloadingAddress != null)
                 {
                     hashCode = (hashCode * 59) + this.UnloadingAddress.GetHashCode();
+                }
+                if (this.AlternativeLoadingAddress != null)
+                {
+                    hashCode = (hashCode * 59) + this.AlternativeLoadingAddress.GetHashCode();
+                }
+                if (this.AlternativeUnloadingAddress != null)
+                {
+                    hashCode = (hashCode * 59) + this.AlternativeUnloadingAddress.GetHashCode();
                 }
                 return hashCode;
             }

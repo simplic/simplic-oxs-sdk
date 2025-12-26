@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **Article** | [**ArticleModel**](ArticleModel.md) |  | [optional] 
 **LoadingAddress** | [**Address**](Address.md) |  | [optional] 
 **UnloadingAddress** | [**Address**](Address.md) |  | [optional] 
+**AlternativeLoadingAddress** | [**Address**](Address.md) |  | [optional] 
+**AlternativeUnloadingAddress** | [**Address**](Address.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

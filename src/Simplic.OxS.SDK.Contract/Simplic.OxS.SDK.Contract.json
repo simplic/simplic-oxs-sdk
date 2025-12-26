@@ -2220,6 +2220,12 @@
                     },
                     "unloadingAddress": {
                         "$ref": "#/components/schemas/Address"
+                    },
+                    "alternativeLoadingAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "alternativeUnloadingAddress": {
+                        "$ref": "#/components/schemas/Address"
                     }
                 },
                 "additionalProperties": false
@@ -2802,6 +2808,16 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "alternativeLoadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "alternativeUnloadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "contractNumber": {
                         "type": "string",
                         "nullable": true
@@ -3239,6 +3255,16 @@
                         "nullable": true
                     },
                     "unloadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "alternativeLoadingAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "alternativeUnloadingAddressId": {
                         "type": "string",
                         "format": "uuid",
                         "nullable": true
