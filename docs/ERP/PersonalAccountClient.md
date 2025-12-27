@@ -9,7 +9,6 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Delete**](PersonalAccountClient.md#personalaccountiddelete) | **DELETE** /PersonalAccount/{id} | Deletes a personal account. |
 | [**Get**](PersonalAccountClient.md#personalaccountidget) | **GET** /PersonalAccount/{id} | Gets a personal account by ID. |
 | [**Patch**](PersonalAccountClient.md#personalaccountidpatch) | **PATCH** /PersonalAccount/{id} | Patches a personal account. |
-| [**Put**](PersonalAccountClient.md#personalaccountidput) | **PUT** /PersonalAccount/{id} | Patches a personal account. |
 | [**Post**](PersonalAccountClient.md#personalaccountpost) | **POST** /PersonalAccount | Creates a new personal account. |
 | [**Reindex**](PersonalAccountClient.md#personalaccountreindexpost) | **POST** /PersonalAccount/reindex | Retrieves a data page of personal accounts for comboboxes. |
 | [**RemoveAddressContactId**](PersonalAccountClient.md#personalaccountremoveaddressidcontactidput) | **PUT** /PersonalAccount/remove-address/{id}/{contactId} | Removes an address given by ID from a personal account. |
@@ -474,107 +473,6 @@ try
 catch (ApiException e)
 {
     Debug.Print("Exception when calling PersonalAccountClient.PatchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **updatePersonalAccountRequest** | [**UpdatePersonalAccountRequest?**](UpdatePersonalAccountRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**PersonalAccountModel**](PersonalAccountModel.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="personalaccountidput"></a>
-# **Put**
-> PersonalAccountModel Put (Guid id, UpdatePersonalAccountRequest? updatePersonalAccountRequest = null)
-
-Patches a personal account.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.ERP;
-
-namespace Example
-{
-    public class PutExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new PersonalAccountClient(config);
-            var id = "id_example";  // Guid | 
-            var updatePersonalAccountRequest = new UpdatePersonalAccountRequest?(); // UpdatePersonalAccountRequest? |  (optional) 
-
-            try
-            {
-                // Patches a personal account.
-                PersonalAccountModel result = apiInstance.Put(id, updatePersonalAccountRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PersonalAccountClient.Put: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PutWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Patches a personal account.
-    ApiResponse<PersonalAccountModel> response = apiInstance.PutWithHttpInfo(id, updatePersonalAccountRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PersonalAccountClient.PutWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -1825,6 +1825,75 @@
                 }
             }
         },
+        "/ServiceDefinition/graphql/sdl": {
+            "get": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/ServiceDefinition/register-service": {
             "post": {
                 "tags": [
@@ -2917,92 +2986,24 @@
                     "endpoint": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "schema": {
-                        "$ref": "#/components/schemas/JsonSchema"
                     }
                 },
                 "additionalProperties": false
             },
-            "JsonSchema": {
+            "GrpcDefinitions": {
                 "type": "object",
                 "properties": {
-                    "schema": {
+                    "package": {
                         "type": "string",
                         "nullable": true
                     },
-                    "title": {
+                    "service": {
                         "type": "string",
                         "nullable": true
                     },
-                    "type": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "singleType": {
+                    "protoFile": {
                         "type": "string",
-                        "nullable": true
-                    },
-                    "description": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "format": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "ref": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "enum": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "const": {
-                        "nullable": true
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/JsonSchema"
-                        },
-                        "nullable": true
-                    },
-                    "required": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "additionalProperties": {
-                        "$ref": "#/components/schemas/JsonSchema"
-                    },
-                    "items": {
-                        "$ref": "#/components/schemas/JsonSchema"
-                    },
-                    "prefixItems": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/JsonSchema"
-                        },
-                        "nullable": true
-                    },
-                    "minItems": {
-                        "type": "integer",
-                        "format": "int32",
-                        "nullable": true
-                    },
-                    "maxItems": {
-                        "type": "integer",
-                        "format": "int32",
+                        "format": "byte",
                         "nullable": true
                     }
                 },
@@ -3419,6 +3420,13 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "grpcDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GrpcDefinitions"
+                        },
+                        "nullable": true
+                    },
                     "type": {
                         "type": "string",
                         "nullable": true
@@ -3428,6 +3436,10 @@
                         "items": {
                             "$ref": "#/components/schemas/ServiceContract"
                         },
+                        "nullable": true
+                    },
+                    "graphQLSchema": {
+                        "type": "string",
                         "nullable": true
                     }
                 },

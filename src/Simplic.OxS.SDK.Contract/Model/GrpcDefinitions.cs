@@ -28,33 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// EndpointContractDefinition
+    /// GrpcDefinitions
     /// </summary>
-    [DataContract(Name = "EndpointContractDefinition")]
-    public partial class EndpointContractDefinition : IEquatable<EndpointContractDefinition>, IValidatableObject
+    [DataContract(Name = "GrpcDefinitions")]
+    public partial class GrpcDefinitions : IEquatable<GrpcDefinitions>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EndpointContractDefinition" /> class.
+        /// Initializes a new instance of the <see cref="GrpcDefinitions" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="endpoint">endpoint.</param>
-        public EndpointContractDefinition(string name = default(string), string endpoint = default(string))
+        /// <param name="package">package.</param>
+        /// <param name="service">service.</param>
+        /// <param name="protoFile">protoFile.</param>
+        public GrpcDefinitions(string package = default(string), string service = default(string), byte[] protoFile = default(byte[]))
         {
-            this.Name = name;
-            this.Endpoint = endpoint;
+            this.Package = package;
+            this.Service = service;
+            this.ProtoFile = protoFile;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Package
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "package", EmitDefaultValue = true)]
+        public string Package { get; set; }
 
         /// <summary>
-        /// Gets or Sets Endpoint
+        /// Gets or Sets Service
         /// </summary>
-        [DataMember(Name = "endpoint", EmitDefaultValue = true)]
-        public string Endpoint { get; set; }
+        [DataMember(Name = "service", EmitDefaultValue = true)]
+        public string Service { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProtoFile
+        /// </summary>
+        [DataMember(Name = "protoFile", EmitDefaultValue = true)]
+        public byte[] ProtoFile { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,9 +71,10 @@ namespace Simplic.OxS.SDK.Contract
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class EndpointContractDefinition {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("class GrpcDefinitions {\n");
+            sb.Append("  Package: ").Append(Package).Append("\n");
+            sb.Append("  Service: ").Append(Service).Append("\n");
+            sb.Append("  ProtoFile: ").Append(ProtoFile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +95,15 @@ namespace Simplic.OxS.SDK.Contract
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EndpointContractDefinition);
+            return this.Equals(input as GrpcDefinitions);
         }
 
         /// <summary>
-        /// Returns true if EndpointContractDefinition instances are equal
+        /// Returns true if GrpcDefinitions instances are equal
         /// </summary>
-        /// <param name="input">Instance of EndpointContractDefinition to be compared</param>
+        /// <param name="input">Instance of GrpcDefinitions to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EndpointContractDefinition input)
+        public bool Equals(GrpcDefinitions input)
         {
             if (input == null)
             {
@@ -102,14 +111,19 @@ namespace Simplic.OxS.SDK.Contract
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Package == input.Package ||
+                    (this.Package != null &&
+                    this.Package.Equals(input.Package))
                 ) && 
                 (
-                    this.Endpoint == input.Endpoint ||
-                    (this.Endpoint != null &&
-                    this.Endpoint.Equals(input.Endpoint))
+                    this.Service == input.Service ||
+                    (this.Service != null &&
+                    this.Service.Equals(input.Service))
+                ) && 
+                (
+                    this.ProtoFile == input.ProtoFile ||
+                    (this.ProtoFile != null &&
+                    this.ProtoFile.Equals(input.ProtoFile))
                 );
         }
 
@@ -122,13 +136,17 @@ namespace Simplic.OxS.SDK.Contract
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Package != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Package.GetHashCode();
                 }
-                if (this.Endpoint != null)
+                if (this.Service != null)
                 {
-                    hashCode = (hashCode * 59) + this.Endpoint.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Service.GetHashCode();
+                }
+                if (this.ProtoFile != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProtoFile.GetHashCode();
                 }
                 return hashCode;
             }

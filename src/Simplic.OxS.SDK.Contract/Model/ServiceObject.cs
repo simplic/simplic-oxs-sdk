@@ -41,17 +41,21 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="baseUrl">baseUrl.</param>
         /// <param name="swaggerJsonUrl">swaggerJsonUrl.</param>
         /// <param name="modelDefinitionUrl">modelDefinitionUrl.</param>
+        /// <param name="grpcDefinitions">grpcDefinitions.</param>
         /// <param name="type">type.</param>
         /// <param name="contracts">contracts.</param>
-        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), string type = default(string), List<ServiceContract> contracts = default(List<ServiceContract>))
+        /// <param name="graphQLSchema">graphQLSchema.</param>
+        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), List<GrpcDefinitions> grpcDefinitions = default(List<GrpcDefinitions>), string type = default(string), List<ServiceContract> contracts = default(List<ServiceContract>), string graphQLSchema = default(string))
         {
             this.Name = name;
             this.VarVersion = varVersion;
             this.BaseUrl = baseUrl;
             this.SwaggerJsonUrl = swaggerJsonUrl;
             this.ModelDefinitionUrl = modelDefinitionUrl;
+            this.GrpcDefinitions = grpcDefinitions;
             this.Type = type;
             this.Contracts = contracts;
+            this.GraphQLSchema = graphQLSchema;
         }
 
         /// <summary>
@@ -85,6 +89,12 @@ namespace Simplic.OxS.SDK.Contract
         public string ModelDefinitionUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets GrpcDefinitions
+        /// </summary>
+        [DataMember(Name = "grpcDefinitions", EmitDefaultValue = true)]
+        public List<GrpcDefinitions> GrpcDefinitions { get; set; }
+
+        /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = true)]
@@ -95,6 +105,12 @@ namespace Simplic.OxS.SDK.Contract
         /// </summary>
         [DataMember(Name = "contracts", EmitDefaultValue = true)]
         public List<ServiceContract> Contracts { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GraphQLSchema
+        /// </summary>
+        [DataMember(Name = "graphQLSchema", EmitDefaultValue = true)]
+        public string GraphQLSchema { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -109,8 +125,10 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  BaseUrl: ").Append(BaseUrl).Append("\n");
             sb.Append("  SwaggerJsonUrl: ").Append(SwaggerJsonUrl).Append("\n");
             sb.Append("  ModelDefinitionUrl: ").Append(ModelDefinitionUrl).Append("\n");
+            sb.Append("  GrpcDefinitions: ").Append(GrpcDefinitions).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Contracts: ").Append(Contracts).Append("\n");
+            sb.Append("  GraphQLSchema: ").Append(GraphQLSchema).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,6 +190,12 @@ namespace Simplic.OxS.SDK.Contract
                     this.ModelDefinitionUrl.Equals(input.ModelDefinitionUrl))
                 ) && 
                 (
+                    this.GrpcDefinitions == input.GrpcDefinitions ||
+                    this.GrpcDefinitions != null &&
+                    input.GrpcDefinitions != null &&
+                    this.GrpcDefinitions.SequenceEqual(input.GrpcDefinitions)
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -181,6 +205,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.Contracts != null &&
                     input.Contracts != null &&
                     this.Contracts.SequenceEqual(input.Contracts)
+                ) && 
+                (
+                    this.GraphQLSchema == input.GraphQLSchema ||
+                    (this.GraphQLSchema != null &&
+                    this.GraphQLSchema.Equals(input.GraphQLSchema))
                 );
         }
 
@@ -213,6 +242,10 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.ModelDefinitionUrl.GetHashCode();
                 }
+                if (this.GrpcDefinitions != null)
+                {
+                    hashCode = (hashCode * 59) + this.GrpcDefinitions.GetHashCode();
+                }
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
@@ -220,6 +253,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Contracts != null)
                 {
                     hashCode = (hashCode * 59) + this.Contracts.GetHashCode();
+                }
+                if (this.GraphQLSchema != null)
+                {
+                    hashCode = (hashCode * 59) + this.GraphQLSchema.GetHashCode();
                 }
                 return hashCode;
             }
