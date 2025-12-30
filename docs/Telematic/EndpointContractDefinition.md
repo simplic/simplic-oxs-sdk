@@ -1,13 +1,11 @@
-# Simplic.OxS.SDK.Telematic.MessageQueueResponse
+# Simplic.OxS.SDK.Telematic.EndpointContractDefinition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Flows** | **List&lt;string&gt;** |  | [optional] 
-**TypeFilter** | [**List&lt;IncomingMessageType&gt;**](IncomingMessageType.md) |  | [optional] 
+**Endpoint** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

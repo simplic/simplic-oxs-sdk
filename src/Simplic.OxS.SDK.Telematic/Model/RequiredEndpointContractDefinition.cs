@@ -28,22 +28,20 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchMessageQueueRequest
+    /// RequiredEndpointContractDefinition
     /// </summary>
-    [DataContract(Name = "PatchMessageQueueRequest")]
-    public partial class PatchMessageQueueRequest : IEquatable<PatchMessageQueueRequest>, IValidatableObject
+    [DataContract(Name = "RequiredEndpointContractDefinition")]
+    public partial class RequiredEndpointContractDefinition : IEquatable<RequiredEndpointContractDefinition>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchMessageQueueRequest" /> class.
+        /// Initializes a new instance of the <see cref="RequiredEndpointContractDefinition" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="flows">flows.</param>
-        /// <param name="typeFilter">typeFilter.</param>
-        public PatchMessageQueueRequest(string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
+        /// <param name="allowMultiple">allowMultiple.</param>
+        public RequiredEndpointContractDefinition(string name = default(string), bool allowMultiple = default(bool))
         {
             this.Name = name;
-            this.Flows = flows;
-            this.TypeFilter = typeFilter;
+            this.AllowMultiple = allowMultiple;
         }
 
         /// <summary>
@@ -53,16 +51,10 @@ namespace Simplic.OxS.SDK.Telematic
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flows
+        /// Gets or Sets AllowMultiple
         /// </summary>
-        [DataMember(Name = "flows", EmitDefaultValue = true)]
-        public List<string> Flows { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TypeFilter
-        /// </summary>
-        [DataMember(Name = "typeFilter", EmitDefaultValue = true)]
-        public List<IncomingMessageType> TypeFilter { get; set; }
+        [DataMember(Name = "allowMultiple", EmitDefaultValue = true)]
+        public bool AllowMultiple { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +63,9 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PatchMessageQueueRequest {\n");
+            sb.Append("class RequiredEndpointContractDefinition {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Flows: ").Append(Flows).Append("\n");
-            sb.Append("  TypeFilter: ").Append(TypeFilter).Append("\n");
+            sb.Append("  AllowMultiple: ").Append(AllowMultiple).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +86,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PatchMessageQueueRequest);
+            return this.Equals(input as RequiredEndpointContractDefinition);
         }
 
         /// <summary>
-        /// Returns true if PatchMessageQueueRequest instances are equal
+        /// Returns true if RequiredEndpointContractDefinition instances are equal
         /// </summary>
-        /// <param name="input">Instance of PatchMessageQueueRequest to be compared</param>
+        /// <param name="input">Instance of RequiredEndpointContractDefinition to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PatchMessageQueueRequest input)
+        public bool Equals(RequiredEndpointContractDefinition input)
         {
             if (input == null)
             {
@@ -116,16 +107,8 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Flows == input.Flows ||
-                    this.Flows != null &&
-                    input.Flows != null &&
-                    this.Flows.SequenceEqual(input.Flows)
-                ) && 
-                (
-                    this.TypeFilter == input.TypeFilter ||
-                    this.TypeFilter != null &&
-                    input.TypeFilter != null &&
-                    this.TypeFilter.SequenceEqual(input.TypeFilter)
+                    this.AllowMultiple == input.AllowMultiple ||
+                    this.AllowMultiple.Equals(input.AllowMultiple)
                 );
         }
 
@@ -142,14 +125,7 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Flows != null)
-                {
-                    hashCode = (hashCode * 59) + this.Flows.GetHashCode();
-                }
-                if (this.TypeFilter != null)
-                {
-                    hashCode = (hashCode * 59) + this.TypeFilter.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.AllowMultiple.GetHashCode();
                 return hashCode;
             }
         }

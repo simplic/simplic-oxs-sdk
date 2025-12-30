@@ -28,41 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchMessageQueueRequest
+    /// SettingOption
     /// </summary>
-    [DataContract(Name = "PatchMessageQueueRequest")]
-    public partial class PatchMessageQueueRequest : IEquatable<PatchMessageQueueRequest>, IValidatableObject
+    [DataContract(Name = "SettingOption")]
+    public partial class SettingOption : IEquatable<SettingOption>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchMessageQueueRequest" /> class.
+        /// Initializes a new instance of the <see cref="SettingOption" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="flows">flows.</param>
-        /// <param name="typeFilter">typeFilter.</param>
-        public PatchMessageQueueRequest(string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
+        /// <param name="value">value.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="displayKey">displayKey.</param>
+        public SettingOption(Object value = default(Object), string displayName = default(string), string displayKey = default(string))
         {
-            this.Name = name;
-            this.Flows = flows;
-            this.TypeFilter = typeFilter;
+            this.Value = value;
+            this.DisplayName = displayName;
+            this.DisplayKey = displayKey;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public Object Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flows
+        /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "flows", EmitDefaultValue = true)]
-        public List<string> Flows { get; set; }
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeFilter
+        /// Gets or Sets DisplayKey
         /// </summary>
-        [DataMember(Name = "typeFilter", EmitDefaultValue = true)]
-        public List<IncomingMessageType> TypeFilter { get; set; }
+        [DataMember(Name = "displayKey", EmitDefaultValue = true)]
+        public string DisplayKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +71,10 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PatchMessageQueueRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Flows: ").Append(Flows).Append("\n");
-            sb.Append("  TypeFilter: ").Append(TypeFilter).Append("\n");
+            sb.Append("class SettingOption {\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +95,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PatchMessageQueueRequest);
+            return this.Equals(input as SettingOption);
         }
 
         /// <summary>
-        /// Returns true if PatchMessageQueueRequest instances are equal
+        /// Returns true if SettingOption instances are equal
         /// </summary>
-        /// <param name="input">Instance of PatchMessageQueueRequest to be compared</param>
+        /// <param name="input">Instance of SettingOption to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PatchMessageQueueRequest input)
+        public bool Equals(SettingOption input)
         {
             if (input == null)
             {
@@ -111,21 +111,19 @@ namespace Simplic.OxS.SDK.Telematic
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
-                    this.Flows == input.Flows ||
-                    this.Flows != null &&
-                    input.Flows != null &&
-                    this.Flows.SequenceEqual(input.Flows)
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
                 ) && 
                 (
-                    this.TypeFilter == input.TypeFilter ||
-                    this.TypeFilter != null &&
-                    input.TypeFilter != null &&
-                    this.TypeFilter.SequenceEqual(input.TypeFilter)
+                    this.DisplayKey == input.DisplayKey ||
+                    (this.DisplayKey != null &&
+                    this.DisplayKey.Equals(input.DisplayKey))
                 );
         }
 
@@ -138,17 +136,17 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
-                if (this.Flows != null)
+                if (this.DisplayName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Flows.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
                 }
-                if (this.TypeFilter != null)
+                if (this.DisplayKey != null)
                 {
-                    hashCode = (hashCode * 59) + this.TypeFilter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DisplayKey.GetHashCode();
                 }
                 return hashCode;
             }

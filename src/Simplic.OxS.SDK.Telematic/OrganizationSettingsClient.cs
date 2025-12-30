@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Telematic
 /// <summary>
 /// Client to interact with the API endpoints of the telematic service.
 /// </summary>
-public interface IWorkflowClient
+public interface IOrganizationSettingsClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -43,144 +43,105 @@ public interface IWorkflowClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <returns>Object</returns>
-    Object Delete(Guid id);
+    /// <returns>List&lt;OrganizationSettingResult&gt;</returns>
+    List<OrganizationSettingResult> Get();
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <returns>ApiResponse of Object</returns>
-    ApiResponse<Object> DeleteWithHttpInfo(Guid id);
+    /// <returns>ApiResponse of List&lt;OrganizationSettingResult&gt;</returns>
+    ApiResponse<List<OrganizationSettingResult>> GetWithHttpInfo();
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of Object</returns>
-    Task<Object> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;OrganizationSettingResult&gt;</returns>
+    Task<List<OrganizationSettingResult>> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;OrganizationSettingResult&gt;)</returns>
+    Task<ApiResponse<List<OrganizationSettingResult>>> GetWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <returns>WorkflowResponse</returns>
-    WorkflowResponse Get(Guid id);
+    /// <param name="internalName"></param>
+    /// <returns>OrganizationSettingResult</returns>
+    OrganizationSettingResult Get(string internalName);
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <returns>ApiResponse of WorkflowResponse</returns>
-    ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id);
+    /// <param name="internalName"></param>
+    /// <returns>ApiResponse of OrganizationSettingResult</returns>
+    ApiResponse<OrganizationSettingResult> GetWithHttpInfo(string internalName);
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="internalName"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of WorkflowResponse</returns>
-    Task<WorkflowResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of OrganizationSettingResult</returns>
+    Task<OrganizationSettingResult> GetAsync(string internalName, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="internalName"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-    Task<ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (OrganizationSettingResult)</returns>
+    Task<ApiResponse<OrganizationSettingResult>> GetWithHttpInfoAsync(string internalName, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowRequest"> (optional)</param>
-    /// <returns>WorkflowResponse</returns>
-    WorkflowResponse Patch(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?));
+    /// <param name="internalName"></param>
+    /// <param name="updateSettingRequest"> (optional)</param>
+    /// <returns></returns>
+    void Put(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowRequest"> (optional)</param>
-    /// <returns>ApiResponse of WorkflowResponse</returns>
-    ApiResponse<WorkflowResponse> PatchWithHttpInfo(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?));
+    /// <param name="internalName"></param>
+    /// <param name="updateSettingRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> PutWithHttpInfo(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowRequest"> (optional)</param>
+    /// <param name="internalName"></param>
+    /// <param name="updateSettingRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of WorkflowResponse</returns>
-    Task<WorkflowResponse> PatchAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of void</returns>
+    Task PutAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowRequest"> (optional)</param>
+    /// <param name="internalName"></param>
+    /// <param name="updateSettingRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-    Task<ApiResponse<WorkflowResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowRequest"> (optional)</param>
-    /// <returns>WorkflowResponse</returns>
-    WorkflowResponse Post(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowRequest"> (optional)</param>
-    /// <returns>ApiResponse of WorkflowResponse</returns>
-    ApiResponse<WorkflowResponse> PostWithHttpInfo(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?));
-        
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of WorkflowResponse</returns>
-    Task<WorkflowResponse> PostAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-    Task<ApiResponse<WorkflowResponse>> PostWithHttpInfoAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> PutWithHttpInfoAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -190,16 +151,16 @@ public interface IWorkflowClient
     /// <summary>
     /// Client to interact with the API endpoints of the telematic service.
     /// </summary>
-    public class WorkflowClient : IWorkflowClient
+    public class OrganizationSettingsClient : IOrganizationSettingsClient
     {
-        private __WorkflowClient _internalClient;
+        private __OrganizationSettingsClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public WorkflowClient(string host, string? authorization = null)
+        public OrganizationSettingsClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __WorkflowClient(new Configuration
+                _internalClient = new __OrganizationSettingsClient(new Configuration
                 {
                     BasePath = $"{host}/telematic-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -207,14 +168,14 @@ public interface IWorkflowClient
             }
             else
             {
-                _internalClient = new __WorkflowClient(new Configuration
+                _internalClient = new __OrganizationSettingsClient(new Configuration
                 {
                     BasePath = $"{host}/telematic-api/v1",
                 });
             }
         }
 
-        public WorkflowClient(Environment env, string? authorization = null)
+        public OrganizationSettingsClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -261,13 +222,12 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <returns>Object</returns>
-        public Object Delete(Guid id)
+        /// <returns>List&lt;OrganizationSettingResult&gt;</returns>
+        public List<OrganizationSettingResult> Get()
         {
             try
             {
-                return _internalClient.Delete(id);
+                return _internalClient.Get();
             }
             catch (ApiException e)
             {
@@ -279,13 +239,12 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of List&lt;OrganizationSettingResult&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>> GetWithHttpInfo()
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfo(id);
+                return _internalClient.GetWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -297,14 +256,13 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;OrganizationSettingResult&gt;</returns>
+        public System.Threading.Tasks.Task<List<OrganizationSettingResult>> GetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -316,14 +274,13 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;OrganizationSettingResult&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>>> GetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DeleteWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -334,13 +291,13 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Get(Guid id)
+        /// <param name="internalName"></param>
+        /// <returns>OrganizationSettingResult</returns>
+        public OrganizationSettingResult Get(string internalName)
         {
             try
             {
-                return _internalClient.Get(id);
+                return _internalClient.Get(internalName);
             }
             catch (ApiException e)
             {
@@ -352,13 +309,13 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id)
+        /// <param name="internalName"></param>
+        /// <returns>ApiResponse of OrganizationSettingResult</returns>
+        public Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult> GetWithHttpInfo(string internalName)
         {
             try
             {
-                return _internalClient.GetWithHttpInfo(id);
+                return _internalClient.GetWithHttpInfo(internalName);
             }
             catch (ApiException e)
             {
@@ -370,14 +327,14 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public System.Threading.Tasks.Task<WorkflowResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OrganizationSettingResult</returns>
+        public System.Threading.Tasks.Task<OrganizationSettingResult> GetAsync(string internalName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(internalName, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -389,14 +346,14 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OrganizationSettingResult)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult>> GetWithHttpInfoAsync(string internalName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(internalName, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -407,14 +364,14 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Patch(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?))
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
+        /// <returns></returns>
+        public void Put(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, patchWorkflowRequest);
+                _internalClient.Put(internalName, updateSettingRequest);
             }
             catch (ApiException e)
             {
@@ -426,14 +383,14 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> PatchWithHttpInfo(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?))
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> PutWithHttpInfo(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, patchWorkflowRequest);
+                return _internalClient.PutWithHttpInfo(internalName, updateSettingRequest);
             }
             catch (ApiException e)
             {
@@ -445,15 +402,15 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public System.Threading.Tasks.Task<WorkflowResponse> PatchAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task PutAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, patchWorkflowRequest, cancellationToken: cancellationToken);
+                return _internalClient.PutAsync(internalName, updateSettingRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -465,88 +422,15 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> PutWithHttpInfoAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, patchWorkflowRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Post(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?))
-        {
-            try
-            {
-                return _internalClient.Post(createWorkflowRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> PostWithHttpInfo(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?))
-        {
-            try
-            {
-                return _internalClient.PostWithHttpInfo(createWorkflowRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public System.Threading.Tasks.Task<WorkflowResponse> PostAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PostAsync(createWorkflowRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> PostWithHttpInfoAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.PostWithHttpInfoAsync(createWorkflowRequest, cancellationToken: cancellationToken);
+                return _internalClient.PutWithHttpInfoAsync(internalName, updateSettingRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -563,17 +447,16 @@ public interface IWorkflowClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IWorkflowClientSync : IApiAccessor
+    internal interface __IOrganizationSettingsClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        Object Delete(Guid id, int operationIndex = 0);
+        /// <returns>List&lt;OrganizationSettingResult&gt;</returns>
+        List<OrganizationSettingResult> Get(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -582,18 +465,17 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;OrganizationSettingResult&gt;</returns>
+        ApiResponse<List<OrganizationSettingResult>> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        WorkflowResponse Get(Guid id, int operationIndex = 0);
+        /// <returns>OrganizationSettingResult</returns>
+        OrganizationSettingResult Get(string internalName, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -602,19 +484,19 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of OrganizationSettingResult</returns>
+        ApiResponse<OrganizationSettingResult> GetWithHttpInfo(string internalName, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        WorkflowResponse Patch(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0);
+        /// <returns></returns>
+        void Put(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -623,38 +505,18 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        ApiResponse<WorkflowResponse> PatchWithHttpInfo(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        WorkflowResponse Post(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        ApiResponse<WorkflowResponse> PostWithHttpInfo(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> PutWithHttpInfo(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IWorkflowClientAsync : IApiAccessor
+    internal interface __IOrganizationSettingsClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -664,11 +526,10 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;OrganizationSettingResult&gt;</returns>
+        System.Threading.Tasks.Task<List<OrganizationSettingResult>> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -677,11 +538,10 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;OrganizationSettingResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationSettingResult>>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -689,11 +549,11 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        System.Threading.Tasks.Task<WorkflowResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of OrganizationSettingResult</returns>
+        System.Threading.Tasks.Task<OrganizationSettingResult> GetAsync(string internalName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -702,11 +562,11 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (OrganizationSettingResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OrganizationSettingResult>> GetWithHttpInfoAsync(string internalName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -714,12 +574,12 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        System.Threading.Tasks.Task<WorkflowResponse> PatchAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task PutAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -728,44 +588,19 @@ public interface IWorkflowClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkflowResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        System.Threading.Tasks.Task<WorkflowResponse> PostAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkflowResponse>> PostWithHttpInfoAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> PutWithHttpInfoAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IWorkflowClient : __IWorkflowClientSync, __IWorkflowClientAsync
+    internal interface __IOrganizationSettingsClient : __IOrganizationSettingsClientSync, __IOrganizationSettingsClientAsync
     {
 
     }
@@ -773,24 +608,24 @@ public interface IWorkflowClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __WorkflowClient : __IWorkflowClient
+    internal /*partial*/ class __OrganizationSettingsClient : __IOrganizationSettingsClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__WorkflowClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationSettingsClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __WorkflowClient() : this((string)null)
+        public __OrganizationSettingsClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__WorkflowClient"/> class.
+        /// Initializes a new instance of the <see cref="__OrganizationSettingsClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __WorkflowClient(string basePath)
+        public __OrganizationSettingsClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -803,12 +638,12 @@ public interface IWorkflowClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__WorkflowClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationSettingsClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __WorkflowClient(Simplic.OxS.SDK.Configuration configuration)
+        public __OrganizationSettingsClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -822,13 +657,13 @@ public interface IWorkflowClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__WorkflowClient"/> class
+        /// Initializes a new instance of the <see cref="__OrganizationSettingsClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __WorkflowClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __OrganizationSettingsClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -885,12 +720,11 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        public Object Delete(Guid id, int operationIndex = 0)
+        /// <returns>List&lt;OrganizationSettingResult&gt;</returns>
+        public List<OrganizationSettingResult> Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = DeleteWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -898,10 +732,9 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;OrganizationSettingResult&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -927,9 +760,8 @@ public interface IWorkflowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdDelete";
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -945,10 +777,10 @@ public interface IWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/Workflow/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<OrganizationSettingResult>>("/OrganizationSettings", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("WorkflowIdDelete", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -962,13 +794,12 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;OrganizationSettingResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<OrganizationSettingResult>> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<Object> localVarResponse = await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -976,169 +807,10 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/Workflow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("WorkflowIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Get(Guid id, int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = GetWithHttpInfo(id);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<WorkflowResponse>("/Workflow/{id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("WorkflowIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public async System.Threading.Tasks.Task<WorkflowResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;OrganizationSettingResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrganizationSettingResult>>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1165,9 +837,8 @@ public interface IWorkflowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdGet";
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1183,11 +854,11 @@ public interface IWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkflowResponse>("/Workflow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OrganizationSettingResult>>("/OrganizationSettings", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("WorkflowIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1201,13 +872,12 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Patch(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0)
+        /// <returns>OrganizationSettingResult</returns>
+        public OrganizationSettingResult Get(string internalName, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = PatchWithHttpInfo(id, patchWorkflowRequest);
+            Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult> localVarResponse = GetWithHttpInfo(internalName);
             return localVarResponse.Data;
         }
 
@@ -1215,12 +885,188 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> PatchWithHttpInfo(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of OrganizationSettingResult</returns>
+        public Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult> GetWithHttpInfo(string internalName, int operationIndex = 0)
         {
+            // verify the required parameter 'internalName' is set
+            if (internalName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'internalName' when calling OrganizationSettingsClient->OrganizationSettingsInternalNameGet");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("internalName", Simplic.OxS.SDK.ClientUtils.ParameterToString(internalName)); // path parameter
+
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsInternalNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OrganizationSettingResult>("/OrganizationSettings/{internalName}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsInternalNameGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="internalName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationSettingResult</returns>
+        public async System.Threading.Tasks.Task<OrganizationSettingResult> GetAsync(string internalName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult> localVarResponse = await GetWithHttpInfoAsync(internalName, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="internalName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationSettingResult)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OrganizationSettingResult>> GetWithHttpInfoAsync(string internalName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'internalName' is set
+            if (internalName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'internalName' when calling OrganizationSettingsClient->OrganizationSettingsInternalNameGet");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("internalName", Simplic.OxS.SDK.ClientUtils.ParameterToString(internalName)); // path parameter
+
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsInternalNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OrganizationSettingResult>("/OrganizationSettings/{internalName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsInternalNameGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void Put(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0)
+        {
+            PutWithHttpInfo(internalName, updateSettingRequest);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> PutWithHttpInfo(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'internalName' is set
+            if (internalName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'internalName' when calling OrganizationSettingsClient->OrganizationSettingsInternalNamePut");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1248,10 +1094,10 @@ public interface IWorkflowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = patchWorkflowRequest;
+            localVarRequestOptions.PathParameters.Add("internalName", Simplic.OxS.SDK.ClientUtils.ParameterToString(internalName)); // path parameter
+            localVarRequestOptions.Data = updateSettingRequest;
 
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdPatch";
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsInternalNamePut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1267,10 +1113,10 @@ public interface IWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<WorkflowResponse>("/Workflow/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/OrganizationSettings/{internalName}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("WorkflowIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsInternalNamePut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1284,28 +1130,33 @@ public interface IWorkflowClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public async System.Threading.Tasks.Task<WorkflowResponse> PatchAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task PutAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchWorkflowRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await PutWithHttpInfoAsync(internalName, updateSettingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowRequest"> (optional)</param>
+        /// <param name="internalName"></param>
+        /// <param name="updateSettingRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowRequest? patchWorkflowRequest = default(PatchWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> PutWithHttpInfoAsync(string internalName, UpdateSettingRequest? updateSettingRequest = default(UpdateSettingRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'internalName' is set
+            if (internalName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'internalName' when calling OrganizationSettingsClient->OrganizationSettingsInternalNamePut");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1334,10 +1185,10 @@ public interface IWorkflowClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = patchWorkflowRequest;
+            localVarRequestOptions.PathParameters.Add("internalName", Simplic.OxS.SDK.ClientUtils.ParameterToString(internalName)); // path parameter
+            localVarRequestOptions.Data = updateSettingRequest;
 
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowIdPatch";
+            localVarRequestOptions.Operation = "OrganizationSettingsClient.OrganizationSettingsInternalNamePut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1353,175 +1204,11 @@ public interface IWorkflowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<WorkflowResponse>("/Workflow/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/OrganizationSettings/{internalName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("WorkflowIdPatch", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>WorkflowResponse</returns>
-        public WorkflowResponse Post(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = PostWithHttpInfo(createWorkflowRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of WorkflowResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> PostWithHttpInfo(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = createWorkflowRequest;
-
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkflowResponse>("/Workflow", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("WorkflowPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowResponse</returns>
-        public async System.Threading.Tasks.Task<WorkflowResponse> PostAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<WorkflowResponse> localVarResponse = await PostWithHttpInfoAsync(createWorkflowRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> PostWithHttpInfoAsync(CreateWorkflowRequest? createWorkflowRequest = default(CreateWorkflowRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = createWorkflowRequest;
-
-            localVarRequestOptions.Operation = "WorkflowClient.WorkflowPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkflowResponse>("/Workflow", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("WorkflowPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrganizationSettingsInternalNamePut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -1,17 +1,16 @@
-# Simplic.OxS.SDK.Telematic.WorkflowClient
+# Simplic.OxS.SDK.Telematic.ServiceContractClient
 
 All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](WorkflowClient.md#workflowiddelete) | **DELETE** /Workflow/{id} |  |
-| [**Get**](WorkflowClient.md#workflowidget) | **GET** /Workflow/{id} |  |
-| [**Patch**](WorkflowClient.md#workflowidpatch) | **PATCH** /Workflow/{id} |  |
-| [**Post**](WorkflowClient.md#workflowpost) | **POST** /Workflow |  |
+| [**EndpointContract**](ServiceContractClient.md#servicecontractcontractnameendpointcontractget) | **GET** /ServiceContract/{contractName}/endpoint-contract |  |
+| [**EndpointContract**](ServiceContractClient.md#servicecontractendpointcontractpost) | **POST** /ServiceContract/endpoint-contract |  |
+| [**EndpointContracts**](ServiceContractClient.md#servicecontractendpointcontractsget) | **GET** /ServiceContract/endpoint-contracts |  |
 
-<a id="workflowiddelete"></a>
-# **Delete**
-> Object Delete (Guid id)
+<a id="servicecontractcontractnameendpointcontractget"></a>
+# **EndpointContract**
+> EndpointContract EndpointContract (string contractName)
 
 
 
@@ -24,7 +23,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class DeleteExample
+    public class EndpointContractExample
     {
         public static void Main()
         {
@@ -37,17 +36,17 @@ namespace Example
             // Configure Bearer token for authorization: Bearer
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new WorkflowClient(config);
-            var id = "id_example";  // Guid | 
+            var apiInstance = new ServiceContractClient(config);
+            var contractName = "contractName_example";  // string | 
 
             try
             {
-                Object result = apiInstance.Delete(id);
+                EndpointContract result = apiInstance.EndpointContract(contractName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkflowClient.Delete: " + e.Message);
+                Debug.Print("Exception when calling ServiceContractClient.EndpointContract: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -56,20 +55,20 @@ namespace Example
 }
 ```
 
-#### Using the DeleteWithHttpInfo variant
+#### Using the EndpointContractWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
+    ApiResponse<EndpointContract> response = apiInstance.EndpointContractWithHttpInfo(contractName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WorkflowClient.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ServiceContractClient.EndpointContractWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -79,11 +78,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **contractName** | **string** |  |  |
 
 ### Return type
 
-**Object**
+[**EndpointContract**](EndpointContract.md)
 
 ### Authorization
 
@@ -104,9 +103,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="workflowidget"></a>
-# **Get**
-> WorkflowResponse Get (Guid id)
+<a id="servicecontractendpointcontractpost"></a>
+# **EndpointContract**
+> void EndpointContract (SetEndpointContractRequest? setEndpointContractRequest = null)
 
 
 
@@ -119,7 +118,7 @@ using Simplic.OxS.SDK.Telematic;
 
 namespace Example
 {
-    public class GetExample
+    public class EndpointContractExample
     {
         public static void Main()
         {
@@ -132,17 +131,16 @@ namespace Example
             // Configure Bearer token for authorization: Bearer
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new WorkflowClient(config);
-            var id = "id_example";  // Guid | 
+            var apiInstance = new ServiceContractClient(config);
+            var setEndpointContractRequest = new SetEndpointContractRequest?(); // SetEndpointContractRequest? |  (optional) 
 
             try
             {
-                WorkflowResponse result = apiInstance.Get(id);
-                Debug.WriteLine(result);
+                apiInstance.EndpointContract(setEndpointContractRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkflowClient.Get: " + e.Message);
+                Debug.Print("Exception when calling ServiceContractClient.EndpointContract: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -151,20 +149,17 @@ namespace Example
 }
 ```
 
-#### Using the GetWithHttpInfo variant
+#### Using the EndpointContractWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<WorkflowResponse> response = apiInstance.GetWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.EndpointContractWithHttpInfo(setEndpointContractRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WorkflowClient.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ServiceContractClient.EndpointContractWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -174,11 +169,101 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **setEndpointContractRequest** | [**SetEndpointContractRequest?**](SetEndpointContractRequest?.md) |  | [optional]  |
 
 ### Return type
 
-[**WorkflowResponse**](WorkflowResponse.md)
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="servicecontractendpointcontractsget"></a>
+# **EndpointContracts**
+> List&lt;EndpointContract&gt; EndpointContracts ()
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Telematic;
+
+namespace Example
+{
+    public class EndpointContractsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new ServiceContractClient(config);
+
+            try
+            {
+                List<EndpointContract> result = apiInstance.EndpointContracts();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ServiceContractClient.EndpointContracts: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EndpointContractsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<EndpointContract>> response = apiInstance.EndpointContractsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ServiceContractClient.EndpointContractsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**List&lt;EndpointContract&gt;**](EndpointContract.md)
 
 ### Authorization
 
@@ -187,198 +272,6 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="workflowidpatch"></a>
-# **Patch**
-> WorkflowResponse Patch (Guid id, PatchWorkflowRequest? patchWorkflowRequest = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Telematic;
-
-namespace Example
-{
-    public class PatchExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure Bearer token for authorization: Bearer
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WorkflowClient(config);
-            var id = "id_example";  // Guid | 
-            var patchWorkflowRequest = new PatchWorkflowRequest?(); // PatchWorkflowRequest? |  (optional) 
-
-            try
-            {
-                WorkflowResponse result = apiInstance.Patch(id, patchWorkflowRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkflowClient.Patch: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PatchWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<WorkflowResponse> response = apiInstance.PatchWithHttpInfo(id, patchWorkflowRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WorkflowClient.PatchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **patchWorkflowRequest** | [**PatchWorkflowRequest?**](PatchWorkflowRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**WorkflowResponse**](WorkflowResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="workflowpost"></a>
-# **Post**
-> WorkflowResponse Post (CreateWorkflowRequest? createWorkflowRequest = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Telematic;
-
-namespace Example
-{
-    public class PostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure Bearer token for authorization: Bearer
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WorkflowClient(config);
-            var createWorkflowRequest = new CreateWorkflowRequest?(); // CreateWorkflowRequest? |  (optional) 
-
-            try
-            {
-                WorkflowResponse result = apiInstance.Post(createWorkflowRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkflowClient.Post: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<WorkflowResponse> response = apiInstance.PostWithHttpInfo(createWorkflowRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WorkflowClient.PostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **createWorkflowRequest** | [**CreateWorkflowRequest?**](CreateWorkflowRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**WorkflowResponse**](WorkflowResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

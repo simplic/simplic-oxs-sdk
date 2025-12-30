@@ -1,5 +1,5 @@
 {
-    "openapi": "3.0.1",
+    "openapi": "3.0.4",
     "info": {
         "title": "Simplic.OxS.Telematic",
         "version": "v1"
@@ -1043,6 +1043,282 @@
                 }
             }
         },
+        "/OrganizationSettings": {
+            "get": {
+                "tags": [
+                    "OrganizationSettings"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrganizationSettingResult"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrganizationSettingResult"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrganizationSettingResult"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/OrganizationSettings/{internalName}": {
+            "get": {
+                "tags": [
+                    "OrganizationSettings"
+                ],
+                "parameters": [
+                    {
+                        "name": "internalName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationSettingResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationSettingResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationSettingResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "OrganizationSettings"
+                ],
+                "parameters": [
+                    {
+                        "name": "internalName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSettingRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSettingRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSettingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/OutMessageLog/{id}": {
             "get": {
                 "tags": [
@@ -1082,6 +1358,424 @@
                     },
                     "404": {
                         "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceContract/endpoint-contracts": {
+            "get": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceContract/{contractName}/endpoint-contract": {
+            "get": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "parameters": [
+                    {
+                        "name": "contractName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceContract/endpoint-contract": {
+            "post": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition": {
+            "get": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition/graphql/sdl": {
+            "get": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition/register-service": {
+            "post": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2896,6 +3590,13 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "flows": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
                     "typeFilter": {
                         "type": "array",
                         "items": {
@@ -3139,6 +3840,49 @@
                 },
                 "additionalProperties": false
             },
+            "EndpointContract": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EndpointContractDefinition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "FmsData": {
                 "type": "object",
                 "properties": {
@@ -3169,6 +3913,25 @@
                     "timestampUtc": {
                         "type": "string",
                         "format": "date-time"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GrpcDefinitions": {
+                "type": "object",
+                "properties": {
+                    "package": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "service": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "protoFile": {
+                        "type": "string",
+                        "format": "byte",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -3479,6 +4242,13 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "flows": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
                     "typeFilter": {
                         "type": "array",
                         "items": {
@@ -3505,6 +4275,57 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "OrganizationSettingResult": {
+                "type": "object",
+                "properties": {
+                    "internalName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "nullable": true
+                    },
+                    "defaultValue": {
+                        "nullable": true
+                    },
+                    "valueTypeName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "options": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SettingOption"
+                        },
+                        "nullable": true
+                    },
+                    "hasOptions": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "groupKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "groupDisplayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "groupDisplayName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "OutMessageLogResponse": {
                 "type": "object",
@@ -3607,6 +4428,13 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "flows": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
                         "nullable": true
                     },
                     "typeFilter": {
@@ -3781,6 +4609,19 @@
                 },
                 "additionalProperties": false
             },
+            "RequiredEndpointContractDefinition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "allowMultiple": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "SendTextMessageRequest": {
                 "type": "object",
                 "properties": {
@@ -3795,6 +4636,117 @@
                         "nullable": true
                     },
                     "message": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ServiceContract": {
+                "type": "object",
+                "properties": {
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpointContracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EndpointContractDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "requiredEndpointContracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RequiredEndpointContractDefinition"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ServiceObject": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "baseUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "swaggerJsonUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "modelDefinitionUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "grpcDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GrpcDefinitions"
+                        },
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "contracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ServiceContract"
+                        },
+                        "nullable": true
+                    },
+                    "graphQLSchema": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SetEndpointContractRequest": {
+                "required": [
+                    "contractName",
+                    "endpoint"
+                ],
+                "type": "object",
+                "properties": {
+                    "contractName": {
+                        "minLength": 5,
+                        "type": "string"
+                    },
+                    "endpoint": {
+                        "minLength": 5,
+                        "type": "string"
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SettingOption": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
                         "type": "string",
                         "nullable": true
                     }
@@ -3846,6 +4798,15 @@
                     },
                     "updateUserName": {
                         "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateSettingRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
                         "nullable": true
                     }
                 },
@@ -3919,10 +4880,10 @@
         },
         "securitySchemes": {
             "Bearer": {
-                "type": "apiKey",
+                "type": "http",
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
-                "name": "Authorization",
-                "in": "header"
+                "scheme": "Bearer",
+                "bearerFormat": "JWT"
             },
             "ApiKey": {
                 "type": "apiKey",
@@ -3936,6 +4897,41 @@
         {
             "Bearer": [],
             "ApiKey": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "EmploymentConfiguration"
+        },
+        {
+            "name": "InternalWorkflow"
+        },
+        {
+            "name": "MessageQueue"
+        },
+        {
+            "name": "OrganizationSettings"
+        },
+        {
+            "name": "OutMessageLog"
+        },
+        {
+            "name": "ServiceContract"
+        },
+        {
+            "name": "ServiceDefinition"
+        },
+        {
+            "name": "Telematic"
+        },
+        {
+            "name": "TelematicConfiguration"
+        },
+        {
+            "name": "VehicleConfiguration"
+        },
+        {
+            "name": "Workflow"
         }
     ]
 }

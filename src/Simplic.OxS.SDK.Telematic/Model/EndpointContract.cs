@@ -28,24 +28,28 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// MessageQueueResponse
+    /// EndpointContract
     /// </summary>
-    [DataContract(Name = "MessageQueueResponse")]
-    public partial class MessageQueueResponse : IEquatable<MessageQueueResponse>, IValidatableObject
+    [DataContract(Name = "EndpointContract")]
+    public partial class EndpointContract : IEquatable<EndpointContract>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessageQueueResponse" /> class.
+        /// Initializes a new instance of the <see cref="EndpointContract" /> class.
         /// </summary>
         /// <param name="id">id.</param>
+        /// <param name="organizationId">organizationId.</param>
+        /// <param name="isDeleted">isDeleted.</param>
         /// <param name="name">name.</param>
-        /// <param name="flows">flows.</param>
-        /// <param name="typeFilter">typeFilter.</param>
-        public MessageQueueResponse(Guid id = default(Guid), string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
+        /// <param name="endpoint">endpoint.</param>
+        /// <param name="providerName">providerName.</param>
+        public EndpointContract(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), string endpoint = default(string), string providerName = default(string))
         {
             this.Id = id;
+            this.OrganizationId = organizationId;
+            this.IsDeleted = isDeleted;
             this.Name = name;
-            this.Flows = flows;
-            this.TypeFilter = typeFilter;
+            this.Endpoint = endpoint;
+            this.ProviderName = providerName;
         }
 
         /// <summary>
@@ -55,22 +59,34 @@ namespace Simplic.OxS.SDK.Telematic
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public Guid OrganizationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flows
+        /// Gets or Sets Endpoint
         /// </summary>
-        [DataMember(Name = "flows", EmitDefaultValue = true)]
-        public List<string> Flows { get; set; }
+        [DataMember(Name = "endpoint", EmitDefaultValue = true)]
+        public string Endpoint { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeFilter
+        /// Gets or Sets ProviderName
         /// </summary>
-        [DataMember(Name = "typeFilter", EmitDefaultValue = true)]
-        public List<IncomingMessageType> TypeFilter { get; set; }
+        [DataMember(Name = "providerName", EmitDefaultValue = true)]
+        public string ProviderName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +95,13 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class MessageQueueResponse {\n");
+            sb.Append("class EndpointContract {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Flows: ").Append(Flows).Append("\n");
-            sb.Append("  TypeFilter: ").Append(TypeFilter).Append("\n");
+            sb.Append("  Endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("  ProviderName: ").Append(ProviderName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +122,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MessageQueueResponse);
+            return this.Equals(input as EndpointContract);
         }
 
         /// <summary>
-        /// Returns true if MessageQueueResponse instances are equal
+        /// Returns true if EndpointContract instances are equal
         /// </summary>
-        /// <param name="input">Instance of MessageQueueResponse to be compared</param>
+        /// <param name="input">Instance of EndpointContract to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MessageQueueResponse input)
+        public bool Equals(EndpointContract input)
         {
             if (input == null)
             {
@@ -125,21 +143,28 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    this.IsDeleted.Equals(input.IsDeleted)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Flows == input.Flows ||
-                    this.Flows != null &&
-                    input.Flows != null &&
-                    this.Flows.SequenceEqual(input.Flows)
+                    this.Endpoint == input.Endpoint ||
+                    (this.Endpoint != null &&
+                    this.Endpoint.Equals(input.Endpoint))
                 ) && 
                 (
-                    this.TypeFilter == input.TypeFilter ||
-                    this.TypeFilter != null &&
-                    input.TypeFilter != null &&
-                    this.TypeFilter.SequenceEqual(input.TypeFilter)
+                    this.ProviderName == input.ProviderName ||
+                    (this.ProviderName != null &&
+                    this.ProviderName.Equals(input.ProviderName))
                 );
         }
 
@@ -156,17 +181,22 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.OrganizationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Flows != null)
+                if (this.Endpoint != null)
                 {
-                    hashCode = (hashCode * 59) + this.Flows.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Endpoint.GetHashCode();
                 }
-                if (this.TypeFilter != null)
+                if (this.ProviderName != null)
                 {
-                    hashCode = (hashCode * 59) + this.TypeFilter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ProviderName.GetHashCode();
                 }
                 return hashCode;
             }

@@ -28,41 +28,25 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchMessageQueueRequest
+    /// UpdateSettingRequest
     /// </summary>
-    [DataContract(Name = "PatchMessageQueueRequest")]
-    public partial class PatchMessageQueueRequest : IEquatable<PatchMessageQueueRequest>, IValidatableObject
+    [DataContract(Name = "UpdateSettingRequest")]
+    public partial class UpdateSettingRequest : IEquatable<UpdateSettingRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchMessageQueueRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateSettingRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="flows">flows.</param>
-        /// <param name="typeFilter">typeFilter.</param>
-        public PatchMessageQueueRequest(string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
+        /// <param name="value">value.</param>
+        public UpdateSettingRequest(Object value = default(Object))
         {
-            this.Name = name;
-            this.Flows = flows;
-            this.TypeFilter = typeFilter;
+            this.Value = value;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Flows
-        /// </summary>
-        [DataMember(Name = "flows", EmitDefaultValue = true)]
-        public List<string> Flows { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TypeFilter
-        /// </summary>
-        [DataMember(Name = "typeFilter", EmitDefaultValue = true)]
-        public List<IncomingMessageType> TypeFilter { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public Object Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +55,8 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PatchMessageQueueRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Flows: ").Append(Flows).Append("\n");
-            sb.Append("  TypeFilter: ").Append(TypeFilter).Append("\n");
+            sb.Append("class UpdateSettingRequest {\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +77,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PatchMessageQueueRequest);
+            return this.Equals(input as UpdateSettingRequest);
         }
 
         /// <summary>
-        /// Returns true if PatchMessageQueueRequest instances are equal
+        /// Returns true if UpdateSettingRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of PatchMessageQueueRequest to be compared</param>
+        /// <param name="input">Instance of UpdateSettingRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PatchMessageQueueRequest input)
+        public bool Equals(UpdateSettingRequest input)
         {
             if (input == null)
             {
@@ -111,21 +93,9 @@ namespace Simplic.OxS.SDK.Telematic
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Flows == input.Flows ||
-                    this.Flows != null &&
-                    input.Flows != null &&
-                    this.Flows.SequenceEqual(input.Flows)
-                ) && 
-                (
-                    this.TypeFilter == input.TypeFilter ||
-                    this.TypeFilter != null &&
-                    input.TypeFilter != null &&
-                    this.TypeFilter.SequenceEqual(input.TypeFilter)
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -138,17 +108,9 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Flows != null)
-                {
-                    hashCode = (hashCode * 59) + this.Flows.GetHashCode();
-                }
-                if (this.TypeFilter != null)
-                {
-                    hashCode = (hashCode * 59) + this.TypeFilter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
                 return hashCode;
             }

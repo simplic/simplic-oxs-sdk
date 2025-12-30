@@ -37,10 +37,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// Initializes a new instance of the <see cref="CreateMessageQueueRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
+        /// <param name="flows">flows.</param>
         /// <param name="typeFilter">typeFilter.</param>
-        public CreateMessageQueueRequest(string name = default(string), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
+        public CreateMessageQueueRequest(string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
         {
             this.Name = name;
+            this.Flows = flows;
             this.TypeFilter = typeFilter;
         }
 
@@ -49,6 +51,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Flows
+        /// </summary>
+        [DataMember(Name = "flows", EmitDefaultValue = true)]
+        public List<string> Flows { get; set; }
 
         /// <summary>
         /// Gets or Sets TypeFilter
@@ -65,6 +73,7 @@ namespace Simplic.OxS.SDK.Telematic
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateMessageQueueRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Flows: ").Append(Flows).Append("\n");
             sb.Append("  TypeFilter: ").Append(TypeFilter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,6 +116,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Flows == input.Flows ||
+                    this.Flows != null &&
+                    input.Flows != null &&
+                    this.Flows.SequenceEqual(input.Flows)
+                ) && 
+                (
                     this.TypeFilter == input.TypeFilter ||
                     this.TypeFilter != null &&
                     input.TypeFilter != null &&
@@ -126,6 +141,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Flows != null)
+                {
+                    hashCode = (hashCode * 59) + this.Flows.GetHashCode();
                 }
                 if (this.TypeFilter != null)
                 {

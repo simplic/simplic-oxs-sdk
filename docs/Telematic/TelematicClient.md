@@ -36,10 +36,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
             var checkCredentialsRequest = new CheckCredentialsRequest?(); // CheckCredentialsRequest? |  (optional) 
@@ -133,10 +131,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
             var createReadJobRequest = new CreateReadJobRequest?(); // CreateReadJobRequest? |  (optional) 
@@ -226,10 +222,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
             var deleteReadJobRequest = new DeleteReadJobRequest?(); // DeleteReadJobRequest? |  (optional) 
@@ -319,10 +313,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
 
@@ -410,10 +402,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
             var importVehiclesRequest = new ImportVehiclesRequest?(); // ImportVehiclesRequest? |  (optional) 
@@ -507,10 +497,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TelematicClient(config);
             var sendTextMessageRequest = new SendTextMessageRequest?(); // SendTextMessageRequest? |  (optional) 
