@@ -46,13 +46,16 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="startDateTime">startDateTime.</param>
         /// <param name="endDateTime">endDateTime.</param>
         /// <param name="autoAssignResourceModes">autoAssignResourceModes.</param>
-        public ShipmentToTourRequest(Guid shipmentId = default(Guid), Guid? resourceId = default(Guid?), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), List<string> autoAssignResourceModes = default(List<string>))
+        /// <param name="actionOptimizationMode">Gets or sets the action optimization mode.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  none  default  &lt;/list&gt; (default to &quot;none&quot;).</param>
+        public ShipmentToTourRequest(Guid shipmentId = default(Guid), Guid? resourceId = default(Guid?), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), List<string> autoAssignResourceModes = default(List<string>), string actionOptimizationMode = @"none")
         {
             this.ShipmentId = shipmentId;
             this.ResourceId = resourceId;
             this.StartDateTime = startDateTime;
             this.EndDateTime = endDateTime;
             this.AutoAssignResourceModes = autoAssignResourceModes;
+            // use default value if no "actionOptimizationMode" provided
+            this.ActionOptimizationMode = actionOptimizationMode ?? @"none";
         }
 
         /// <summary>
@@ -86,6 +89,13 @@ namespace Simplic.OxS.SDK.Logistics
         public List<string> AutoAssignResourceModes { get; set; }
 
         /// <summary>
+        /// Gets or sets the action optimization mode.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  none  default  &lt;/list&gt;
+        /// </summary>
+        /// <value>Gets or sets the action optimization mode.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  none  default  &lt;/list&gt;</value>
+        [DataMember(Name = "actionOptimizationMode", EmitDefaultValue = true)]
+        public string ActionOptimizationMode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -98,6 +108,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
             sb.Append("  EndDateTime: ").Append(EndDateTime).Append("\n");
             sb.Append("  AutoAssignResourceModes: ").Append(AutoAssignResourceModes).Append("\n");
+            sb.Append("  ActionOptimizationMode: ").Append(ActionOptimizationMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -158,6 +169,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.AutoAssignResourceModes != null &&
                     input.AutoAssignResourceModes != null &&
                     this.AutoAssignResourceModes.SequenceEqual(input.AutoAssignResourceModes)
+                ) && 
+                (
+                    this.ActionOptimizationMode == input.ActionOptimizationMode ||
+                    (this.ActionOptimizationMode != null &&
+                    this.ActionOptimizationMode.Equals(input.ActionOptimizationMode))
                 );
         }
 
@@ -189,6 +205,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.AutoAssignResourceModes != null)
                 {
                     hashCode = (hashCode * 59) + this.AutoAssignResourceModes.GetHashCode();
+                }
+                if (this.ActionOptimizationMode != null)
+                {
+                    hashCode = (hashCode * 59) + this.ActionOptimizationMode.GetHashCode();
                 }
                 return hashCode;
             }

@@ -14572,6 +14572,12 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "actionOptimizationMode": {
+                        "type": "string",
+                        "description": "Gets or sets the action optimization mode.\r\n<list type=\"bullet\">\r\nnone\r\ndefault\r\n</list>",
+                        "default": "none",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -14724,6 +14730,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "nullable": true
+                    },
+                    "actionOptimizationMode": {
+                        "type": "string",
+                        "description": "Gets or sets the action optimization mode.\r\n<list type=\"bullet\">\r\nnone\r\ndefault\r\n</list>",
+                        "default": "none",
                         "nullable": true
                     }
                 },
