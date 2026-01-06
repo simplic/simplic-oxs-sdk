@@ -653,19 +653,10 @@
                 }
             }
         },
-        "/Contact/test": {
+        "/Contact/resolve-geo-locations": {
             "post": {
                 "tags": [
                     "Contact"
-                ],
-                "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
                 ],
                 "responses": {
                     "200": {
@@ -1477,7 +1468,6 @@
                 "properties": {
                     "number": {
                         "type": "string",
-                        "format": "tel",
                         "nullable": true
                     },
                     "type": {

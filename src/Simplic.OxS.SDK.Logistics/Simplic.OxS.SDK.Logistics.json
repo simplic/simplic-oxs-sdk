@@ -11286,6 +11286,9 @@
                     "tariff": {
                         "$ref": "#/components/schemas/TariffModel"
                     },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
                     "items": {
                         "type": "array",
                         "items": {
@@ -12995,6 +12998,9 @@
                     "tariff": {
                         "$ref": "#/components/schemas/TariffModel"
                     },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
                     "items": {
                         "type": "array",
                         "items": {
@@ -14435,6 +14441,9 @@
                         "nullable": true
                     },
                     "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
                         "$ref": "#/components/schemas/TariffModel"
                     }
                 },
