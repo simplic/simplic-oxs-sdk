@@ -253,6 +253,25 @@
                 "tags": [
                     "Contract"
                 ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UnwrapItemRequet"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UnwrapItemRequet"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UnwrapItemRequet"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -3731,6 +3750,17 @@
                     },
                     "number": {
                         "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UnwrapItemRequet": {
+                "type": "object",
+                "properties": {
+                    "contractId": {
+                        "type": "string",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },

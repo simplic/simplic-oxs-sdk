@@ -584,7 +584,7 @@ catch (ApiException e)
 
 <a id="contractunwrapcontractspost"></a>
 # **UnwrapContracts**
-> void UnwrapContracts ()
+> void UnwrapContracts (UnwrapItemRequet? unwrapItemRequet = null)
 
 
 
@@ -611,10 +611,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new ContractClient(config);
+            var unwrapItemRequet = new UnwrapItemRequet?(); // UnwrapItemRequet? |  (optional) 
 
             try
             {
-                apiInstance.UnwrapContracts();
+                apiInstance.UnwrapContracts(unwrapItemRequet);
             }
             catch (ApiException  e)
             {
@@ -633,7 +634,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.UnwrapContractsWithHttpInfo();
+    apiInstance.UnwrapContractsWithHttpInfo(unwrapItemRequet);
 }
 catch (ApiException e)
 {
@@ -644,7 +645,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **unwrapItemRequet** | [**UnwrapItemRequet?**](UnwrapItemRequet?.md) |  | [optional]  |
+
 ### Return type
 
 void (empty response body)
@@ -655,7 +660,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

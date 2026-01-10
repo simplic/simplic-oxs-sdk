@@ -1,11 +1,10 @@
-# Simplic.OxS.SDK.Flow.ExecuteFlowRequest
+# Simplic.OxS.SDK.Contract.UnwrapItemRequet
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Profiling** | **bool** |  | [optional] [default to false]
-**Args** | **Object** |  | [optional] 
+**ContractId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

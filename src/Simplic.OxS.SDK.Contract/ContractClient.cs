@@ -261,31 +261,35 @@ public interface IContractClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="unwrapItemRequet"> (optional)</param>
     /// <returns></returns>
-    void UnwrapContracts();
+    void UnwrapContracts(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="unwrapItemRequet"> (optional)</param>
     /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> UnwrapContractsWithHttpInfo();
+    ApiResponse<Object> UnwrapContractsWithHttpInfo(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="unwrapItemRequet"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of void</returns>
-    Task UnwrapContractsAsync(CancellationToken cancellationToken = default(CancellationToken));
+    Task UnwrapContractsAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="unwrapItemRequet"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -812,12 +816,13 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <returns></returns>
-        public void UnwrapContracts()
+        public void UnwrapContracts(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?))
         {
             try
             {
-                _internalClient.UnwrapContracts();
+                _internalClient.UnwrapContracts(unwrapItemRequet);
             }
             catch (ApiException e)
             {
@@ -829,12 +834,13 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> UnwrapContractsWithHttpInfo()
+        public Simplic.OxS.SDK.ApiResponse<Object> UnwrapContractsWithHttpInfo(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?))
         {
             try
             {
-                return _internalClient.UnwrapContractsWithHttpInfo();
+                return _internalClient.UnwrapContractsWithHttpInfo(unwrapItemRequet);
             }
             catch (ApiException e)
             {
@@ -846,13 +852,14 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task UnwrapContractsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task UnwrapContractsAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.UnwrapContractsAsync(cancellationToken: cancellationToken);
+                return _internalClient.UnwrapContractsAsync(unwrapItemRequet, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -864,13 +871,14 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.UnwrapContractsWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.UnwrapContractsWithHttpInfoAsync(unwrapItemRequet, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1018,9 +1026,10 @@ public interface IContractClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void UnwrapContracts(int operationIndex = 0);
+        void UnwrapContracts(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1029,9 +1038,10 @@ public interface IContractClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UnwrapContractsWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Object> UnwrapContractsWithHttpInfo(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1202,10 +1212,11 @@ public interface IContractClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UnwrapContractsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UnwrapContractsAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1214,10 +1225,11 @@ public interface IContractClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2332,24 +2344,29 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void UnwrapContracts(int operationIndex = 0)
+        public void UnwrapContracts(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0)
         {
-            UnwrapContractsWithHttpInfo();
+            UnwrapContractsWithHttpInfo(unwrapItemRequet);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> UnwrapContractsWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> UnwrapContractsWithHttpInfo(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2371,6 +2388,7 @@ public interface IContractClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = unwrapItemRequet;
 
             localVarRequestOptions.Operation = "ContractClient.ContractUnwrapContractsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2405,27 +2423,32 @@ public interface IContractClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UnwrapContractsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UnwrapContractsAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UnwrapContractsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            await UnwrapContractsWithHttpInfoAsync(unwrapItemRequet, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="unwrapItemRequet"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> UnwrapContractsWithHttpInfoAsync(UnwrapItemRequet? unwrapItemRequet = default(UnwrapItemRequet?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2447,6 +2470,7 @@ public interface IContractClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = unwrapItemRequet;
 
             localVarRequestOptions.Operation = "ContractClient.ContractUnwrapContractsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
