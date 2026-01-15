@@ -7512,6 +7512,24 @@
                 },
                 "additionalProperties": false
             },
+            "LocalizableErrorModel": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "Gets or sets the localization key.",
+                        "nullable": true
+                    },
+                    "params": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a set of parameters for localization.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for an error that can be localized."
+            },
             "MetadataProcessingDataModel": {
                 "type": "object",
                 "properties": {
@@ -10714,7 +10732,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
                         },
                         "description": "Gets or sets the list of validation errors.",
                         "nullable": true

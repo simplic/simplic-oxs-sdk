@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="inputFieldValidationResults">Gets or sets the validation results for individual input fields.     true &#x3D; valid, false &#x3D; invalid, null &#x3D; not validated  .</param>
         /// <param name="errors">Gets or sets the list of validation errors..</param>
         /// <param name="isValid">Gets or sets whether the transaction is valid for purposes of financial accounting..</param>
-        public TransactionValidationResultModel(Dictionary<string, bool?> inputFieldValidationResults = default(Dictionary<string, bool?>), List<string> errors = default(List<string>), bool isValid = default(bool))
+        public TransactionValidationResultModel(Dictionary<string, bool?> inputFieldValidationResults = default(Dictionary<string, bool?>), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>), bool isValid = default(bool))
         {
             this.InputFieldValidationResults = inputFieldValidationResults;
             this.Errors = errors;
@@ -58,7 +58,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the list of validation errors.</value>
         [DataMember(Name = "errors", EmitDefaultValue = true)]
-        public List<string> Errors { get; set; }
+        public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
         /// Gets or sets whether the transaction is valid for purposes of financial accounting.
