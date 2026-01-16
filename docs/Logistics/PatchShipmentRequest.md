@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **CalculatedDeliveryEnd** | **DateTime?** | Gets or sets the calculated delivery end with date and time.     This defines the calculated end of the delivery / unlaoding process.    This will usually be set by an api based on telematics data. | [optional] 
 **ActualDeliveryStart** | **DateTime?** | Gets or sets the actual delivery start with date and time.     This defines the actual start of the delivery / unlaoding process.    This will usually be set by an api based on telematics data. | [optional] 
 **ActualDeliveryEnd** | **DateTime?** | Gets or sets the actual delivery end with date and time.     This defines the actual end of the delivery / unlaoding process.    This will usually be set by an api based on telematics data. | [optional] 
+**ActualStartDateTime** | **DateTime?** | Gets or sets the actual start date and time for the shipment. | [optional] 
+**ActualDeliveryStartDateTime** | **DateTime?** | Gets or sets the actual delivery start date and time for the shipment. | [optional] 
 **DeliveryTimeType** | **LoadingDateTimeType** |  | [optional] 
 **OrderDate** | **DateTime?** | Gets or sets the order date.     This defines the date the shipment is ordered at.  This is a relevant information for the billing process and needs to be set.   | [optional] 
 **ShipmentNumber** | **string** | Gets or sets the shipment number.     This defines a number to identify the shipment as the user.   | [optional] 

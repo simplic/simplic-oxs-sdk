@@ -79,6 +79,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="calculatedDeliveryEnd">Gets or sets the calculated delivery end with date and time.     This defines the calculated end of the delivery / unlaoding process.    This will usually be set by an api based on telematics data..</param>
         /// <param name="actualDeliveryStart">Gets or sets the actual delivery start with date and time.     This defines the actual start of the delivery / unlaoding process.    This will usually be set by an api based on telematics data..</param>
         /// <param name="actualDeliveryEnd">Gets or sets the actual delivery end with date and time.     This defines the actual end of the delivery / unlaoding process.    This will usually be set by an api based on telematics data..</param>
+        /// <param name="actualStartDateTime">Gets or sets the actual start date and time for the shipment..</param>
+        /// <param name="actualDeliveryStartDateTime">Gets or sets the actual delivery start date and time for the shipment..</param>
         /// <param name="deliveryTimeType">deliveryTimeType.</param>
         /// <param name="orderDate">Gets or sets the order date.     This defines the date the shipment is ordered at.  This is a relevant information for the billing process and needs to be set.  .</param>
         /// <param name="shipmentNumber">Gets or sets the shipment number.     This defines a number to identify the shipment as the user.  .</param>
@@ -101,7 +103,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="tariff">tariff.</param>
         /// <param name="carrierTariff">carrierTariff.</param>
         /// <param name="items">Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  .</param>
-        public CreateShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>))
+        public CreateShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualDeliveryStartDateTime = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>))
         {
             this.LoadAddressId = loadAddressId;
             this.DeliveryAddressId = deliveryAddressId;
@@ -134,6 +136,8 @@ namespace Simplic.OxS.SDK.Logistics
             this.CalculatedDeliveryEnd = calculatedDeliveryEnd;
             this.ActualDeliveryStart = actualDeliveryStart;
             this.ActualDeliveryEnd = actualDeliveryEnd;
+            this.ActualStartDateTime = actualStartDateTime;
+            this.ActualDeliveryStartDateTime = actualDeliveryStartDateTime;
             this.DeliveryTimeType = deliveryTimeType;
             this.OrderDate = orderDate;
             this.ShipmentNumber = shipmentNumber;
@@ -355,6 +359,20 @@ namespace Simplic.OxS.SDK.Logistics
         public DateTime? ActualDeliveryEnd { get; set; }
 
         /// <summary>
+        /// Gets or sets the actual start date and time for the shipment.
+        /// </summary>
+        /// <value>Gets or sets the actual start date and time for the shipment.</value>
+        [DataMember(Name = "actualStartDateTime", EmitDefaultValue = true)]
+        public DateTime? ActualStartDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the actual delivery start date and time for the shipment.
+        /// </summary>
+        /// <value>Gets or sets the actual delivery start date and time for the shipment.</value>
+        [DataMember(Name = "actualDeliveryStartDateTime", EmitDefaultValue = true)]
+        public DateTime? ActualDeliveryStartDateTime { get; set; }
+
+        /// <summary>
         /// Gets or sets the order date.     This defines the date the shipment is ordered at.  This is a relevant information for the billing process and needs to be set.  
         /// </summary>
         /// <value>Gets or sets the order date.     This defines the date the shipment is ordered at.  This is a relevant information for the billing process and needs to be set.  </value>
@@ -535,6 +553,8 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  CalculatedDeliveryEnd: ").Append(CalculatedDeliveryEnd).Append("\n");
             sb.Append("  ActualDeliveryStart: ").Append(ActualDeliveryStart).Append("\n");
             sb.Append("  ActualDeliveryEnd: ").Append(ActualDeliveryEnd).Append("\n");
+            sb.Append("  ActualStartDateTime: ").Append(ActualStartDateTime).Append("\n");
+            sb.Append("  ActualDeliveryStartDateTime: ").Append(ActualDeliveryStartDateTime).Append("\n");
             sb.Append("  DeliveryTimeType: ").Append(DeliveryTimeType).Append("\n");
             sb.Append("  OrderDate: ").Append(OrderDate).Append("\n");
             sb.Append("  ShipmentNumber: ").Append(ShipmentNumber).Append("\n");
@@ -745,6 +765,16 @@ namespace Simplic.OxS.SDK.Logistics
                     this.ActualDeliveryEnd == input.ActualDeliveryEnd ||
                     (this.ActualDeliveryEnd != null &&
                     this.ActualDeliveryEnd.Equals(input.ActualDeliveryEnd))
+                ) && 
+                (
+                    this.ActualStartDateTime == input.ActualStartDateTime ||
+                    (this.ActualStartDateTime != null &&
+                    this.ActualStartDateTime.Equals(input.ActualStartDateTime))
+                ) && 
+                (
+                    this.ActualDeliveryStartDateTime == input.ActualDeliveryStartDateTime ||
+                    (this.ActualDeliveryStartDateTime != null &&
+                    this.ActualDeliveryStartDateTime.Equals(input.ActualDeliveryStartDateTime))
                 ) && 
                 (
                     this.DeliveryTimeType == input.DeliveryTimeType ||
@@ -988,6 +1018,14 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.ActualDeliveryEnd != null)
                 {
                     hashCode = (hashCode * 59) + this.ActualDeliveryEnd.GetHashCode();
+                }
+                if (this.ActualStartDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.ActualStartDateTime.GetHashCode();
+                }
+                if (this.ActualDeliveryStartDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.ActualDeliveryStartDateTime.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.DeliveryTimeType.GetHashCode();
                 if (this.OrderDate != null)

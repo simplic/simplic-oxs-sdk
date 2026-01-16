@@ -11187,6 +11187,18 @@
                         "format": "date-time",
                         "nullable": true
                     },
+                    "actualStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual start date and time for the shipment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "actualDeliveryStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual delivery start date and time for the shipment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "deliveryTimeType": {
                         "$ref": "#/components/schemas/LoadingDateTimeType"
                     },
@@ -12899,6 +12911,18 @@
                         "format": "date-time",
                         "nullable": true
                     },
+                    "actualStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual start date and time for the shipment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "actualDeliveryStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual delivery start date and time for the shipment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "deliveryTimeType": {
                         "$ref": "#/components/schemas/LoadingDateTimeType"
                     },
@@ -14335,6 +14359,18 @@
                     "actualDeliveryEnd": {
                         "type": "string",
                         "description": "Gets or sets the actual delivery end with date and time.\r\n\n\r\nThis defines the actual end of the delivery / unlaoding process.\r\n\r\nThis will usually be set by an api based on telematics data.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "actualStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual start date and time for the shipment.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "actualDeliveryStartDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the actual delivery start date and time for the shipment.",
                         "format": "date-time",
                         "nullable": true
                     },

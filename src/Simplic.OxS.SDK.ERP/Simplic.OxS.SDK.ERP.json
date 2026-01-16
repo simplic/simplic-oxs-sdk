@@ -5288,6 +5288,111 @@
     },
     "components": {
         "schemas": {
+            "AdditionalReferencedDocumentContentRequest": {
+                "type": "object",
+                "properties": {
+                    "blob": {
+                        "type": "string",
+                        "description": "Gets or sets the document content as a byte array.",
+                        "format": "byte",
+                        "nullable": true
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "description": "Gets or sets the document file name.\r\n\n\r\nShould include the extension in order to be able to read the file reliably after extraction.\r\n",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the request object for the file content of an additional document to embed in an electronic invoice."
+            },
+            "AdditionalReferencedDocumentReferenceTypeCode": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "AdditionalReferencedDocumentRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "nullable": true
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/AdditionalReferencedDocumentTypeCode"
+                    },
+                    "content": {
+                        "$ref": "#/components/schemas/AdditionalReferencedDocumentContentRequest"
+                    },
+                    "referenceType": {
+                        "$ref": "#/components/schemas/AdditionalReferencedDocumentReferenceTypeCode"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name or a description of the document.",
+                        "nullable": true
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Gets or sets the URL where the document can be accessed if not embedded.",
+                        "nullable": true
+                    },
+                    "issueTime": {
+                        "type": "string",
+                        "description": "Gets or sets the issue date of the document.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the request object for an additional document to embed in an electronic invoice."
+            },
+            "AdditionalReferencedDocumentTypeCode": {
+                "enum": [
+                    50,
+                    130,
+                    916,
+                    65536
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
             "AssignmentMode": {
                 "enum": [
                     0,
@@ -7411,6 +7516,14 @@
                             "$ref": "#/components/schemas/InvoiceItemRequest"
                         },
                         "description": "Gets or sets the set of invoice items.",
+                        "nullable": true
+                    },
+                    "additionalReferencedDocuments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalReferencedDocumentRequest"
+                        },
+                        "description": "Gets or sets the set of additional referenced documents.",
                         "nullable": true
                     }
                 },
