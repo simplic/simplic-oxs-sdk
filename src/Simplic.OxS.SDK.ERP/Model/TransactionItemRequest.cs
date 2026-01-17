@@ -474,12 +474,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Quantity (double?) minimum
-            if (this.Quantity < (double?)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value greater than or equal to 0.", new [] { "Quantity" });
-            }
-
             yield break;
         }
     }

@@ -9755,7 +9755,6 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "minimum": 0,
                         "type": "number",
                         "description": "Gets or sets the quantity.",
                         "format": "double",
