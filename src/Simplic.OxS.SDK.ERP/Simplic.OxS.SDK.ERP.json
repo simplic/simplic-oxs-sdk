@@ -9822,6 +9822,10 @@
                         },
                         "description": "Gets or sets a set of transaction items that are part of the group.",
                         "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
                     }
                 },
                 "additionalProperties": false,

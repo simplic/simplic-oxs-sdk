@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **GeneralLedgerAccountId** | **Guid?** | Gets or sets the general ledger account by ID. | [optional] 
 **DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
 **Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
+**Remove** | **bool** | Remove flag for the patch helper. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

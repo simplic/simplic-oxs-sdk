@@ -74,7 +74,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>))
+        /// <param name="remove">Remove flag for the patch helper..</param>
+        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), bool remove = default(bool))
         {
             this.Id = id;
             this.Text = text;
@@ -96,6 +97,7 @@ namespace Simplic.OxS.SDK.ERP
             this.GeneralLedgerAccountId = generalLedgerAccountId;
             this.DeltaValue = deltaValue;
             this.Items = items;
+            this.Remove = remove;
         }
 
         /// <summary>
@@ -218,6 +220,13 @@ namespace Simplic.OxS.SDK.ERP
         public List<TransactionItemRequest> Items { get; set; }
 
         /// <summary>
+        /// Remove flag for the patch helper.
+        /// </summary>
+        /// <value>Remove flag for the patch helper.</value>
+        [DataMember(Name = "_remove", EmitDefaultValue = true)]
+        public bool Remove { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -245,6 +254,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  GeneralLedgerAccountId: ").Append(GeneralLedgerAccountId).Append("\n");
             sb.Append("  DeltaValue: ").Append(DeltaValue).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -380,6 +390,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.Remove == input.Remove ||
+                    this.Remove.Equals(input.Remove)
                 );
         }
 
@@ -463,6 +477,7 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Remove.GetHashCode();
                 return hashCode;
             }
         }
