@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
 **IsGross** | **bool?** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
+**FinancialExportDisabled** | **bool?** | Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.   | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
 **MetadataProcessingData** | [**MetadataProcessingDataRequest**](MetadataProcessingDataRequest.md) |  | [optional] 

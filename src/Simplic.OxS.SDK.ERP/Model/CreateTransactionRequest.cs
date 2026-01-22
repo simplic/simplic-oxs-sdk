@@ -80,10 +80,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="taxGroupId">Gets or sets the tax group by ID..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
         /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net. (required).</param>
+        /// <param name="financialExportDisabled">Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.  .</param>
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="metadataProcessingData">metadataProcessingData.</param>
-        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), MetadataProcessingDataRequest metadataProcessingData = default(MetadataProcessingDataRequest))
+        public CreateTransactionRequest(TransactionContactRequest creator = default(TransactionContactRequest), string number = default(string), string reference = default(string), Guid typeId = default(Guid), Guid subtypeId = default(Guid), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool isGross = default(bool), bool financialExportDisabled = default(bool), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), MetadataProcessingDataRequest metadataProcessingData = default(MetadataProcessingDataRequest))
         {
             // to ensure "number" is required (not null)
             if (number == null)
@@ -123,6 +124,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ReferenceNumber = referenceNumber;
             this.TaxGroupId = taxGroupId;
             this.OperationItemCombinationMode = operationItemCombinationMode;
+            this.FinancialExportDisabled = financialExportDisabled;
             this.DefaultCostCenters = defaultCostCenters;
             this.DefaultCostObjects = defaultCostObjects;
             this.MetadataProcessingData = metadataProcessingData;
@@ -344,6 +346,13 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsGross { get; set; }
 
         /// <summary>
+        /// Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.  
+        /// </summary>
+        /// <value>Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.  </value>
+        [DataMember(Name = "financialExportDisabled", EmitDefaultValue = true)]
+        public bool FinancialExportDisabled { get; set; }
+
+        /// <summary>
         /// Gets or sets the default assigned cost centers given by ID with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the default assigned cost centers given by ID with their respective percentages.</value>
@@ -404,6 +413,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
             sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
+            sb.Append("  FinancialExportDisabled: ").Append(FinancialExportDisabled).Append("\n");
             sb.Append("  DefaultCostCenters: ").Append(DefaultCostCenters).Append("\n");
             sb.Append("  DefaultCostObjects: ").Append(DefaultCostObjects).Append("\n");
             sb.Append("  MetadataProcessingData: ").Append(MetadataProcessingData).Append("\n");
@@ -607,6 +617,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.IsGross.Equals(input.IsGross)
                 ) && 
                 (
+                    this.FinancialExportDisabled == input.FinancialExportDisabled ||
+                    this.FinancialExportDisabled.Equals(input.FinancialExportDisabled)
+                ) && 
+                (
                     this.DefaultCostCenters == input.DefaultCostCenters ||
                     this.DefaultCostCenters != null &&
                     input.DefaultCostCenters != null &&
@@ -760,6 +774,7 @@ namespace Simplic.OxS.SDK.ERP
                 }
                 hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                hashCode = (hashCode * 59) + this.FinancialExportDisabled.GetHashCode();
                 if (this.DefaultCostCenters != null)
                 {
                     hashCode = (hashCode * 59) + this.DefaultCostCenters.GetHashCode();

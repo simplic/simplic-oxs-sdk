@@ -54,6 +54,7 @@ Name | Type | Description | Notes
 **Sign** | **int** | Gets or sets the total price value sign.     The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.   | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
 **IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
+**FinancialExportDisabled** | **bool** | Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.   | [optional] 
 **ValidationResult** | [**TransactionValidationResultModel**](TransactionValidationResultModel.md) |  | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost centers with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost objects with their respective percentages. | [optional] 

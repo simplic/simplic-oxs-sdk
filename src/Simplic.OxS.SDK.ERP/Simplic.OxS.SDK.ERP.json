@@ -6288,6 +6288,10 @@
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the transaction is gross or net."
                     },
+                    "financialExportDisabled": {
+                        "type": "boolean",
+                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n"
+                    },
                     "defaultCostCenters": {
                         "type": "array",
                         "items": {
@@ -8510,6 +8514,11 @@
                         "description": "Gets or sets a value indicating whether the transaction is gross or net.",
                         "nullable": true
                     },
+                    "financialExportDisabled": {
+                        "type": "boolean",
+                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n",
+                        "nullable": true
+                    },
                     "defaultCostCenters": {
                         "type": "array",
                         "items": {
@@ -10217,6 +10226,10 @@
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the transaction is gross or net."
                     },
+                    "financialExportDisabled": {
+                        "type": "boolean",
+                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n"
+                    },
                     "validationResult": {
                         "$ref": "#/components/schemas/TransactionValidationResultModel"
                     },
@@ -11354,6 +11367,11 @@
                     "isGross": {
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the transaction is gross or net.",
+                        "nullable": true
+                    },
+                    "financialExportDisabled": {
+                        "type": "boolean",
+                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n",
                         "nullable": true
                     },
                     "defaultCostCenters": {
