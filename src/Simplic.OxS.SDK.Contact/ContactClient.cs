@@ -277,31 +277,35 @@ public interface IContactClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="resolveLocationRequest"> (optional)</param>
     /// <returns>ContactModel</returns>
-    ContactModel ResolveGeoLocations();
+    ContactModel ResolveGeoLocations(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="resolveLocationRequest"> (optional)</param>
     /// <returns>ApiResponse of ContactModel</returns>
-    ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo();
+    ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="resolveLocationRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ContactModel</returns>
-    Task<ContactModel> ResolveGeoLocationsAsync(CancellationToken cancellationToken = default(CancellationToken));
+    Task<ContactModel> ResolveGeoLocationsAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="resolveLocationRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (ContactModel)</returns>
-    Task<ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -887,12 +891,13 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <returns>ContactModel</returns>
-        public ContactModel ResolveGeoLocations()
+        public ContactModel ResolveGeoLocations(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?))
         {
             try
             {
-                return _internalClient.ResolveGeoLocations();
+                return _internalClient.ResolveGeoLocations(resolveLocationRequest);
             }
             catch (ApiException e)
             {
@@ -904,12 +909,13 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <returns>ApiResponse of ContactModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo()
+        public Simplic.OxS.SDK.ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?))
         {
             try
             {
-                return _internalClient.ResolveGeoLocationsWithHttpInfo();
+                return _internalClient.ResolveGeoLocationsWithHttpInfo(resolveLocationRequest);
             }
             catch (ApiException e)
             {
@@ -921,13 +927,14 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactModel</returns>
-        public System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ResolveGeoLocationsAsync(cancellationToken: cancellationToken);
+                return _internalClient.ResolveGeoLocationsAsync(resolveLocationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -939,13 +946,14 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ResolveGeoLocationsWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.ResolveGeoLocationsWithHttpInfoAsync(resolveLocationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1182,9 +1190,10 @@ public interface IContactClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ContactModel</returns>
-        ContactModel ResolveGeoLocations(int operationIndex = 0);
+        ContactModel ResolveGeoLocations(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1193,9 +1202,10 @@ public interface IContactClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ContactModel</returns>
-        ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(int operationIndex = 0);
+        ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1398,10 +1408,11 @@ public interface IContactClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactModel</returns>
-        System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1410,10 +1421,11 @@ public interface IContactClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -2593,11 +2605,12 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ContactModel</returns>
-        public ContactModel ResolveGeoLocations(int operationIndex = 0)
+        public ContactModel ResolveGeoLocations(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = ResolveGeoLocationsWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = ResolveGeoLocationsWithHttpInfo(resolveLocationRequest);
             return localVarResponse.Data;
         }
 
@@ -2605,13 +2618,17 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ContactModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<ContactModel> ResolveGeoLocationsWithHttpInfo(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2633,6 +2650,7 @@ public interface IContactClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = resolveLocationRequest;
 
             localVarRequestOptions.Operation = "ContactClient.ContactResolveGeoLocationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2666,12 +2684,13 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactModel</returns>
-        public async System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContactModel> ResolveGeoLocationsAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = await ResolveGeoLocationsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = await ResolveGeoLocationsWithHttpInfoAsync(resolveLocationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2679,15 +2698,19 @@ public interface IContactClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="resolveLocationRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> ResolveGeoLocationsWithHttpInfoAsync(ResolveLocationRequest? resolveLocationRequest = default(ResolveLocationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -2709,6 +2732,7 @@ public interface IContactClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = resolveLocationRequest;
 
             localVarRequestOptions.Operation = "ContactClient.ContactResolveGeoLocationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;

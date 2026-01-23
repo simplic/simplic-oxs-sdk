@@ -605,7 +605,7 @@ catch (ApiException e)
 
 <a id="contactresolvegeolocationspost"></a>
 # **ResolveGeoLocations**
-> ContactModel ResolveGeoLocations ()
+> ContactModel ResolveGeoLocations (ResolveLocationRequest? resolveLocationRequest = null)
 
 
 
@@ -634,10 +634,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ContactClient(config);
+            var resolveLocationRequest = new ResolveLocationRequest?(); // ResolveLocationRequest? |  (optional) 
 
             try
             {
-                ContactModel result = apiInstance.ResolveGeoLocations();
+                ContactModel result = apiInstance.ResolveGeoLocations(resolveLocationRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -657,7 +658,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<ContactModel> response = apiInstance.ResolveGeoLocationsWithHttpInfo();
+    ApiResponse<ContactModel> response = apiInstance.ResolveGeoLocationsWithHttpInfo(resolveLocationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -671,7 +672,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **resolveLocationRequest** | [**ResolveLocationRequest?**](ResolveLocationRequest?.md) |  | [optional]  |
+
 ### Return type
 
 [**ContactModel**](ContactModel.md)
@@ -682,7 +687,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

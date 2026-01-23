@@ -37,10 +37,18 @@ namespace Simplic.OxS.SDK.Contract
         /// Initializes a new instance of the <see cref="Dates" /> class.
         /// </summary>
         /// <param name="date">date.</param>
+        /// <param name="loadStartDateTime">loadStartDateTime.</param>
+        /// <param name="deliveryStartDateTime">deliveryStartDateTime.</param>
+        /// <param name="loadNumber">loadNumber.</param>
+        /// <param name="unloadNumber">unloadNumber.</param>
         /// <param name="amount">amount.</param>
-        public Dates(DateTime date = default(DateTime), int amount = default(int))
+        public Dates(DateTime date = default(DateTime), DateTime? loadStartDateTime = default(DateTime?), DateTime? deliveryStartDateTime = default(DateTime?), string loadNumber = default(string), string unloadNumber = default(string), int amount = default(int))
         {
             this.Date = date;
+            this.LoadStartDateTime = loadStartDateTime;
+            this.DeliveryStartDateTime = deliveryStartDateTime;
+            this.LoadNumber = loadNumber;
+            this.UnloadNumber = unloadNumber;
             this.Amount = amount;
         }
 
@@ -49,6 +57,30 @@ namespace Simplic.OxS.SDK.Contract
         /// </summary>
         [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadStartDateTime
+        /// </summary>
+        [DataMember(Name = "loadStartDateTime", EmitDefaultValue = true)]
+        public DateTime? LoadStartDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveryStartDateTime
+        /// </summary>
+        [DataMember(Name = "deliveryStartDateTime", EmitDefaultValue = true)]
+        public DateTime? DeliveryStartDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadNumber
+        /// </summary>
+        [DataMember(Name = "loadNumber", EmitDefaultValue = true)]
+        public string LoadNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UnloadNumber
+        /// </summary>
+        [DataMember(Name = "unloadNumber", EmitDefaultValue = true)]
+        public string UnloadNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
@@ -65,6 +97,10 @@ namespace Simplic.OxS.SDK.Contract
             StringBuilder sb = new StringBuilder();
             sb.Append("class Dates {\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  LoadStartDateTime: ").Append(LoadStartDateTime).Append("\n");
+            sb.Append("  DeliveryStartDateTime: ").Append(DeliveryStartDateTime).Append("\n");
+            sb.Append("  LoadNumber: ").Append(LoadNumber).Append("\n");
+            sb.Append("  UnloadNumber: ").Append(UnloadNumber).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,6 +143,26 @@ namespace Simplic.OxS.SDK.Contract
                     this.Date.Equals(input.Date))
                 ) && 
                 (
+                    this.LoadStartDateTime == input.LoadStartDateTime ||
+                    (this.LoadStartDateTime != null &&
+                    this.LoadStartDateTime.Equals(input.LoadStartDateTime))
+                ) && 
+                (
+                    this.DeliveryStartDateTime == input.DeliveryStartDateTime ||
+                    (this.DeliveryStartDateTime != null &&
+                    this.DeliveryStartDateTime.Equals(input.DeliveryStartDateTime))
+                ) && 
+                (
+                    this.LoadNumber == input.LoadNumber ||
+                    (this.LoadNumber != null &&
+                    this.LoadNumber.Equals(input.LoadNumber))
+                ) && 
+                (
+                    this.UnloadNumber == input.UnloadNumber ||
+                    (this.UnloadNumber != null &&
+                    this.UnloadNumber.Equals(input.UnloadNumber))
+                ) && 
+                (
                     this.Amount == input.Amount ||
                     this.Amount.Equals(input.Amount)
                 );
@@ -124,6 +180,22 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Date != null)
                 {
                     hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                }
+                if (this.LoadStartDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadStartDateTime.GetHashCode();
+                }
+                if (this.DeliveryStartDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryStartDateTime.GetHashCode();
+                }
+                if (this.LoadNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadNumber.GetHashCode();
+                }
+                if (this.UnloadNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.UnloadNumber.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
                 return hashCode;

@@ -2314,6 +2314,9 @@
                     },
                     "alternativeUnloadingAddress": {
                         "$ref": "#/components/schemas/Address"
+                    },
+                    "departmentModel": {
+                        "$ref": "#/components/schemas/DepartmentModel"
                     }
                 },
                 "additionalProperties": false
@@ -2909,6 +2912,11 @@
                     "contractNumber": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "departmentId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2959,9 +2967,41 @@
                         "type": "string",
                         "format": "date-time"
                     },
+                    "loadStartDateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "deliveryStartDateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "unloadNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "amount": {
                         "type": "integer",
                         "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DepartmentModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -3291,6 +3331,11 @@
                     },
                     "contractNumber": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "departmentId": {
+                        "type": "string",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },

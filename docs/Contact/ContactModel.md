@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumberModel&gt;**](PhoneNumberModel.md) |  | [optional] 
 **MatchCode** | **string** |  | [optional] 
 **Functions** | **List&lt;string&gt;** |  | [optional] 
+**OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
+**ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **CreateDateTime** | **DateTime** |  | [optional] 

@@ -43,7 +43,9 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="matchCode">matchCode.</param>
         /// <param name="functions">functions.</param>
-        public CreateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>))
+        /// <param name="openingHours">openingHours.</param>
+        /// <param name="closedDays">closedDays.</param>
+        public CreateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -52,6 +54,8 @@ namespace Simplic.OxS.SDK.Contact
             this.PhoneNumbers = phoneNumbers;
             this.MatchCode = matchCode;
             this.Functions = functions;
+            this.OpeningHours = openingHours;
+            this.ClosedDays = closedDays;
         }
 
         /// <summary>
@@ -97,6 +101,18 @@ namespace Simplic.OxS.SDK.Contact
         public List<string> Functions { get; set; }
 
         /// <summary>
+        /// Gets or Sets OpeningHours
+        /// </summary>
+        [DataMember(Name = "openingHours", EmitDefaultValue = true)]
+        public List<OpeningHoursModel> OpeningHours { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ClosedDays
+        /// </summary>
+        [DataMember(Name = "closedDays", EmitDefaultValue = true)]
+        public List<ClosedDayModel> ClosedDays { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +127,8 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("  Functions: ").Append(Functions).Append("\n");
+            sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
+            sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +201,18 @@ namespace Simplic.OxS.SDK.Contact
                     this.Functions != null &&
                     input.Functions != null &&
                     this.Functions.SequenceEqual(input.Functions)
+                ) && 
+                (
+                    this.OpeningHours == input.OpeningHours ||
+                    this.OpeningHours != null &&
+                    input.OpeningHours != null &&
+                    this.OpeningHours.SequenceEqual(input.OpeningHours)
+                ) && 
+                (
+                    this.ClosedDays == input.ClosedDays ||
+                    this.ClosedDays != null &&
+                    input.ClosedDays != null &&
+                    this.ClosedDays.SequenceEqual(input.ClosedDays)
                 );
         }
 
@@ -222,6 +252,14 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.Functions != null)
                 {
                     hashCode = (hashCode * 59) + this.Functions.GetHashCode();
+                }
+                if (this.OpeningHours != null)
+                {
+                    hashCode = (hashCode * 59) + this.OpeningHours.GetHashCode();
+                }
+                if (this.ClosedDays != null)
+                {
+                    hashCode = (hashCode * 59) + this.ClosedDays.GetHashCode();
                 }
                 return hashCode;
             }

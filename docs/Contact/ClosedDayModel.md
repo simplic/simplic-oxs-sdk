@@ -1,15 +1,11 @@
-# Simplic.OxS.SDK.Contract.Dates
+# Simplic.OxS.SDK.Contact.ClosedDayModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | **DateTime** |  | [optional] 
-**LoadStartDateTime** | **DateTime?** |  | [optional] 
-**DeliveryStartDateTime** | **DateTime?** |  | [optional] 
-**LoadNumber** | **string** |  | [optional] 
-**UnloadNumber** | **string** |  | [optional] 
-**Amount** | **int** |  | [optional] 
+**Reason** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **UnloadingAddress** | [**Address**](Address.md) |  | [optional] 
 **AlternativeLoadingAddress** | [**Address**](Address.md) |  | [optional] 
 **AlternativeUnloadingAddress** | [**Address**](Address.md) |  | [optional] 
+**DepartmentModel** | [**DepartmentModel**](DepartmentModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

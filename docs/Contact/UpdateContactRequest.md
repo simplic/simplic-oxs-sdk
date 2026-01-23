@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumberModel&gt;**](PhoneNumberModel.md) |  | [optional] 
 **MatchCode** | **string** |  | [optional] 
 **Functions** | **List&lt;string&gt;** |  | [optional] 
+**OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
+**ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

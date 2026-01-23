@@ -74,7 +74,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="alternativeLoadingAddressId">alternativeLoadingAddressId.</param>
         /// <param name="alternativeUnloadingAddressId">alternativeUnloadingAddressId.</param>
         /// <param name="contractNumber">contractNumber.</param>
-        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string))
+        /// <param name="departmentId">departmentId.</param>
+        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?))
         {
             this.Id = id;
             this.Text = text;
@@ -102,6 +103,7 @@ namespace Simplic.OxS.SDK.Contract
             this.AlternativeLoadingAddressId = alternativeLoadingAddressId;
             this.AlternativeUnloadingAddressId = alternativeUnloadingAddressId;
             this.ContractNumber = contractNumber;
+            this.DepartmentId = departmentId;
         }
 
         /// <summary>
@@ -249,6 +251,12 @@ namespace Simplic.OxS.SDK.Contract
         public string ContractNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets DepartmentId
+        /// </summary>
+        [DataMember(Name = "departmentId", EmitDefaultValue = true)]
+        public Guid? DepartmentId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -282,6 +290,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  AlternativeLoadingAddressId: ").Append(AlternativeLoadingAddressId).Append("\n");
             sb.Append("  AlternativeUnloadingAddressId: ").Append(AlternativeUnloadingAddressId).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
+            sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -438,6 +447,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.ContractNumber == input.ContractNumber ||
                     (this.ContractNumber != null &&
                     this.ContractNumber.Equals(input.ContractNumber))
+                ) && 
+                (
+                    this.DepartmentId == input.DepartmentId ||
+                    (this.DepartmentId != null &&
+                    this.DepartmentId.Equals(input.DepartmentId))
                 );
         }
 
@@ -526,6 +540,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.ContractNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ContractNumber.GetHashCode();
+                }
+                if (this.DepartmentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DepartmentId.GetHashCode();
                 }
                 return hashCode;
             }

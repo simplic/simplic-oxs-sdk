@@ -52,7 +52,9 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="latitude">latitude.</param>
         /// <param name="longitude">longitude.</param>
         /// <param name="matchCode">matchCode.</param>
-        public AddressModel(string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), double latitude = default(double), double longitude = default(double), string matchCode = default(string))
+        /// <param name="manualCoordinates">manualCoordinates.</param>
+        /// <param name="geoScore">geoScore.</param>
+        public AddressModel(string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), double latitude = default(double), double longitude = default(double), string matchCode = default(string), bool manualCoordinates = default(bool), double geoScore = default(double))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -70,6 +72,8 @@ namespace Simplic.OxS.SDK.Contact
             this.Latitude = latitude;
             this.Longitude = longitude;
             this.MatchCode = matchCode;
+            this.ManualCoordinates = manualCoordinates;
+            this.GeoScore = geoScore;
         }
 
         /// <summary>
@@ -169,6 +173,18 @@ namespace Simplic.OxS.SDK.Contact
         public string MatchCode { get; set; }
 
         /// <summary>
+        /// Gets or Sets ManualCoordinates
+        /// </summary>
+        [DataMember(Name = "manualCoordinates", EmitDefaultValue = true)]
+        public bool ManualCoordinates { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GeoScore
+        /// </summary>
+        [DataMember(Name = "geoScore", EmitDefaultValue = false)]
+        public double GeoScore { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -192,6 +208,8 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
+            sb.Append("  ManualCoordinates: ").Append(ManualCoordinates).Append("\n");
+            sb.Append("  GeoScore: ").Append(GeoScore).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -304,6 +322,14 @@ namespace Simplic.OxS.SDK.Contact
                     this.MatchCode == input.MatchCode ||
                     (this.MatchCode != null &&
                     this.MatchCode.Equals(input.MatchCode))
+                ) && 
+                (
+                    this.ManualCoordinates == input.ManualCoordinates ||
+                    this.ManualCoordinates.Equals(input.ManualCoordinates)
+                ) && 
+                (
+                    this.GeoScore == input.GeoScore ||
+                    this.GeoScore.Equals(input.GeoScore)
                 );
         }
 
@@ -374,6 +400,8 @@ namespace Simplic.OxS.SDK.Contact
                 {
                     hashCode = (hashCode * 59) + this.MatchCode.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.ManualCoordinates.GetHashCode();
+                hashCode = (hashCode * 59) + this.GeoScore.GetHashCode();
                 return hashCode;
             }
         }
