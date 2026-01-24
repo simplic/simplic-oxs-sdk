@@ -43,13 +43,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="value">Gets or sets the tax rate value given in percent..</param>
         /// <param name="validFrom">Gets or sets the point in time this tax key is valid from..</param>
         /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
+        /// <param name="buNumber">Gets or sets the BU number.  This number is important for tax keys in germany..</param>
         /// <param name="createDateTime">Gets or sets the date and time the tax key is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the tax key..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the tax key..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the tax key is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax key..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax key..</param>
-        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), TaxRateModel taxRate = default(TaxRateModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), TaxRateModel taxRate = default(TaxRateModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -58,6 +59,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Value = value;
             this.ValidFrom = validFrom;
             this.ValidTo = validTo;
+            this.BuNumber = buNumber;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -112,6 +114,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the point in time this tax rate is valid to.</value>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
         public DateTime? ValidTo { get; set; }
+
+        /// <summary>
+        /// Gets or sets the BU number.  This number is important for tax keys in germany.
+        /// </summary>
+        /// <value>Gets or sets the BU number.  This number is important for tax keys in germany.</value>
+        [DataMember(Name = "buNumber", EmitDefaultValue = true)]
+        public int? BuNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time the tax key is created.
@@ -170,6 +179,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
+            sb.Append("  BuNumber: ").Append(BuNumber).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -246,6 +256,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ValidTo.Equals(input.ValidTo))
                 ) && 
                 (
+                    this.BuNumber == input.BuNumber ||
+                    (this.BuNumber != null &&
+                    this.BuNumber.Equals(input.BuNumber))
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -310,6 +325,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ValidTo != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidTo.GetHashCode();
+                }
+                if (this.BuNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.BuNumber.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {

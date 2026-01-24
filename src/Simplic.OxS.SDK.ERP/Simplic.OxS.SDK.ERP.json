@@ -8906,6 +8906,12 @@
                         "format": "date-time",
                         "nullable": true
                     },
+                    "buNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "format": "int32",
+                        "nullable": true
+                    },
                     "createDateTime": {
                         "type": "string",
                         "description": "Gets or sets the date and time the tax key is created.",
@@ -8981,6 +8987,12 @@
                         "type": "string",
                         "description": "Gets or sets the point in time this tax rate is valid to.",
                         "format": "date-time",
+                        "nullable": true
+                    },
+                    "buNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "format": "int32",
                         "nullable": true
                     }
                 },
@@ -11084,6 +11096,12 @@
                         "type": "string",
                         "description": "Gets or sets the point in time this tax rate is valid to.",
                         "format": "date-time",
+                        "nullable": true
+                    },
+                    "buNumber": {
+                        "type": "integer",
+                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "format": "int32",
                         "nullable": true
                     }
                 },

@@ -2981,7 +2981,7 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "unloadNumber": {
+                    "deliveryNumber": {
                         "type": "string",
                         "nullable": true
                     },

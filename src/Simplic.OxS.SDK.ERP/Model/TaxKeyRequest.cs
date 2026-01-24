@@ -47,7 +47,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="value">Gets or sets the tax rate value given in percent. (required).</param>
         /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from. (required).</param>
         /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
-        public TaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?))
+        /// <param name="buNumber">Gets or sets the BU number.  This number is important for tax keys in germany..</param>
+        public TaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -60,6 +61,7 @@ namespace Simplic.OxS.SDK.ERP
             this.TaxGroupId = taxGroupId;
             this.TaxRateId = taxRateId;
             this.ValidTo = validTo;
+            this.BuNumber = buNumber;
         }
 
         /// <summary>
@@ -104,6 +106,13 @@ namespace Simplic.OxS.SDK.ERP
         public DateTime? ValidTo { get; set; }
 
         /// <summary>
+        /// Gets or sets the BU number.  This number is important for tax keys in germany.
+        /// </summary>
+        /// <value>Gets or sets the BU number.  This number is important for tax keys in germany.</value>
+        [DataMember(Name = "buNumber", EmitDefaultValue = true)]
+        public int? BuNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +126,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
+            sb.Append("  BuNumber: ").Append(BuNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -180,6 +190,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ValidTo == input.ValidTo ||
                     (this.ValidTo != null &&
                     this.ValidTo.Equals(input.ValidTo))
+                ) && 
+                (
+                    this.BuNumber == input.BuNumber ||
+                    (this.BuNumber != null &&
+                    this.BuNumber.Equals(input.BuNumber))
                 );
         }
 
@@ -212,6 +227,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ValidTo != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidTo.GetHashCode();
+                }
+                if (this.BuNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.BuNumber.GetHashCode();
                 }
                 return hashCode;
             }

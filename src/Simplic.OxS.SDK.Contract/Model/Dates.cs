@@ -40,15 +40,15 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="loadStartDateTime">loadStartDateTime.</param>
         /// <param name="deliveryStartDateTime">deliveryStartDateTime.</param>
         /// <param name="loadNumber">loadNumber.</param>
-        /// <param name="unloadNumber">unloadNumber.</param>
+        /// <param name="deliveryNumber">deliveryNumber.</param>
         /// <param name="amount">amount.</param>
-        public Dates(DateTime date = default(DateTime), DateTime? loadStartDateTime = default(DateTime?), DateTime? deliveryStartDateTime = default(DateTime?), string loadNumber = default(string), string unloadNumber = default(string), int amount = default(int))
+        public Dates(DateTime date = default(DateTime), DateTime? loadStartDateTime = default(DateTime?), DateTime? deliveryStartDateTime = default(DateTime?), string loadNumber = default(string), string deliveryNumber = default(string), int amount = default(int))
         {
             this.Date = date;
             this.LoadStartDateTime = loadStartDateTime;
             this.DeliveryStartDateTime = deliveryStartDateTime;
             this.LoadNumber = loadNumber;
-            this.UnloadNumber = unloadNumber;
+            this.DeliveryNumber = deliveryNumber;
             this.Amount = amount;
         }
 
@@ -77,10 +77,10 @@ namespace Simplic.OxS.SDK.Contract
         public string LoadNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnloadNumber
+        /// Gets or Sets DeliveryNumber
         /// </summary>
-        [DataMember(Name = "unloadNumber", EmitDefaultValue = true)]
-        public string UnloadNumber { get; set; }
+        [DataMember(Name = "deliveryNumber", EmitDefaultValue = true)]
+        public string DeliveryNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
@@ -100,7 +100,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  LoadStartDateTime: ").Append(LoadStartDateTime).Append("\n");
             sb.Append("  DeliveryStartDateTime: ").Append(DeliveryStartDateTime).Append("\n");
             sb.Append("  LoadNumber: ").Append(LoadNumber).Append("\n");
-            sb.Append("  UnloadNumber: ").Append(UnloadNumber).Append("\n");
+            sb.Append("  DeliveryNumber: ").Append(DeliveryNumber).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -158,9 +158,9 @@ namespace Simplic.OxS.SDK.Contract
                     this.LoadNumber.Equals(input.LoadNumber))
                 ) && 
                 (
-                    this.UnloadNumber == input.UnloadNumber ||
-                    (this.UnloadNumber != null &&
-                    this.UnloadNumber.Equals(input.UnloadNumber))
+                    this.DeliveryNumber == input.DeliveryNumber ||
+                    (this.DeliveryNumber != null &&
+                    this.DeliveryNumber.Equals(input.DeliveryNumber))
                 ) && 
                 (
                     this.Amount == input.Amount ||
@@ -193,9 +193,9 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.LoadNumber.GetHashCode();
                 }
-                if (this.UnloadNumber != null)
+                if (this.DeliveryNumber != null)
                 {
-                    hashCode = (hashCode * 59) + this.UnloadNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DeliveryNumber.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
                 return hashCode;
