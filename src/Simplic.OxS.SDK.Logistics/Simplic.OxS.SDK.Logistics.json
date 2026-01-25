@@ -11655,6 +11655,24 @@
                         "type": "string",
                         "description": "Gets or sets the hex color.",
                         "nullable": true
+                    },
+                    "defaultLoadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default load duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultUnloadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default unload duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultLoadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "defaultUnloadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
                     }
                 },
                 "additionalProperties": false,
@@ -12459,6 +12477,24 @@
                         "type": "string",
                         "description": "Gets or sets the hex color.",
                         "nullable": true
+                    },
+                    "defaultLoadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default load duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultUnloadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default unload duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultLoadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "defaultUnloadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
                     }
                 },
                 "additionalProperties": false,
@@ -13420,6 +13456,24 @@
                         "type": "string",
                         "description": "Gets or sets the hex color.",
                         "nullable": true
+                    },
+                    "defaultLoadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default load duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultUnloadDuration": {
+                        "type": "string",
+                        "description": "Gets or sets the default unload duration.",
+                        "format": "date-span",
+                        "nullable": true
+                    },
+                    "defaultLoadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "defaultUnloadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
                     }
                 },
                 "additionalProperties": false,

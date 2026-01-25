@@ -40,12 +40,20 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="orderId">Gets or sets the order id..</param>
         /// <param name="hexColor">Gets or sets the hex color..</param>
-        public DepartmentResponse(Guid id = default(Guid), string name = default(string), int orderId = default(int), string hexColor = default(string))
+        /// <param name="defaultLoadDuration">Gets or sets the default load duration..</param>
+        /// <param name="defaultUnloadDuration">Gets or sets the default unload duration..</param>
+        /// <param name="defaultLoadWorkflow">defaultLoadWorkflow.</param>
+        /// <param name="defaultUnloadWorkflow">defaultUnloadWorkflow.</param>
+        public DepartmentResponse(Guid id = default(Guid), string name = default(string), int orderId = default(int), string hexColor = default(string), string defaultLoadDuration = default(string), string defaultUnloadDuration = default(string), ShipmentTelematicWorkflowModel defaultLoadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel defaultUnloadWorkflow = default(ShipmentTelematicWorkflowModel))
         {
             this.Id = id;
             this.Name = name;
             this.OrderId = orderId;
             this.HexColor = hexColor;
+            this.DefaultLoadDuration = defaultLoadDuration;
+            this.DefaultUnloadDuration = defaultUnloadDuration;
+            this.DefaultLoadWorkflow = defaultLoadWorkflow;
+            this.DefaultUnloadWorkflow = defaultUnloadWorkflow;
         }
 
         /// <summary>
@@ -77,6 +85,32 @@ namespace Simplic.OxS.SDK.Logistics
         public string HexColor { get; set; }
 
         /// <summary>
+        /// Gets or sets the default load duration.
+        /// </summary>
+        /// <value>Gets or sets the default load duration.</value>
+        [DataMember(Name = "defaultLoadDuration", EmitDefaultValue = true)]
+        public string DefaultLoadDuration { get; set; }
+
+        /// <summary>
+        /// Gets or sets the default unload duration.
+        /// </summary>
+        /// <value>Gets or sets the default unload duration.</value>
+        [DataMember(Name = "defaultUnloadDuration", EmitDefaultValue = true)]
+        public string DefaultUnloadDuration { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DefaultLoadWorkflow
+        /// </summary>
+        [DataMember(Name = "defaultLoadWorkflow", EmitDefaultValue = false)]
+        public ShipmentTelematicWorkflowModel DefaultLoadWorkflow { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DefaultUnloadWorkflow
+        /// </summary>
+        [DataMember(Name = "defaultUnloadWorkflow", EmitDefaultValue = false)]
+        public ShipmentTelematicWorkflowModel DefaultUnloadWorkflow { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -88,6 +122,10 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  HexColor: ").Append(HexColor).Append("\n");
+            sb.Append("  DefaultLoadDuration: ").Append(DefaultLoadDuration).Append("\n");
+            sb.Append("  DefaultUnloadDuration: ").Append(DefaultUnloadDuration).Append("\n");
+            sb.Append("  DefaultLoadWorkflow: ").Append(DefaultLoadWorkflow).Append("\n");
+            sb.Append("  DefaultUnloadWorkflow: ").Append(DefaultUnloadWorkflow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,6 +179,26 @@ namespace Simplic.OxS.SDK.Logistics
                     this.HexColor == input.HexColor ||
                     (this.HexColor != null &&
                     this.HexColor.Equals(input.HexColor))
+                ) && 
+                (
+                    this.DefaultLoadDuration == input.DefaultLoadDuration ||
+                    (this.DefaultLoadDuration != null &&
+                    this.DefaultLoadDuration.Equals(input.DefaultLoadDuration))
+                ) && 
+                (
+                    this.DefaultUnloadDuration == input.DefaultUnloadDuration ||
+                    (this.DefaultUnloadDuration != null &&
+                    this.DefaultUnloadDuration.Equals(input.DefaultUnloadDuration))
+                ) && 
+                (
+                    this.DefaultLoadWorkflow == input.DefaultLoadWorkflow ||
+                    (this.DefaultLoadWorkflow != null &&
+                    this.DefaultLoadWorkflow.Equals(input.DefaultLoadWorkflow))
+                ) && 
+                (
+                    this.DefaultUnloadWorkflow == input.DefaultUnloadWorkflow ||
+                    (this.DefaultUnloadWorkflow != null &&
+                    this.DefaultUnloadWorkflow.Equals(input.DefaultUnloadWorkflow))
                 );
         }
 
@@ -165,6 +223,22 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.HexColor != null)
                 {
                     hashCode = (hashCode * 59) + this.HexColor.GetHashCode();
+                }
+                if (this.DefaultLoadDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultLoadDuration.GetHashCode();
+                }
+                if (this.DefaultUnloadDuration != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultUnloadDuration.GetHashCode();
+                }
+                if (this.DefaultLoadWorkflow != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultLoadWorkflow.GetHashCode();
+                }
+                if (this.DefaultUnloadWorkflow != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefaultUnloadWorkflow.GetHashCode();
                 }
                 return hashCode;
             }

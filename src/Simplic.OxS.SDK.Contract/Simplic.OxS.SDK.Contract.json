@@ -2938,10 +2938,10 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "$ref": "#/components/schemas/QuantityRequest"
+                        "$ref": "#/components/schemas/QuantityModel"
                     },
                     "weight": {
-                        "$ref": "#/components/schemas/QuantityRequest"
+                        "$ref": "#/components/schemas/QuantityModel"
                     },
                     "articleId": {
                         "type": "string",
