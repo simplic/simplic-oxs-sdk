@@ -60,6 +60,7 @@ Name | Type | Description | Notes
 **Tariff** | [**TariffModel**](TariffModel.md) |  | [optional] 
 **CarrierTariff** | [**TariffModel**](TariffModel.md) |  | [optional] 
 **Items** | [**List&lt;CreateShipmentItemRequest&gt;**](CreateShipmentItemRequest.md) | Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.   | [optional] 
+**BillingLines** | [**List&lt;CreateBillingLineRequest&gt;**](CreateBillingLineRequest.md) | Gets or sets the list of billing lines. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

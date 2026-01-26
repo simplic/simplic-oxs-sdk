@@ -92,6 +92,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="status">status.</param>
         /// <param name="transportOrder">transportOrder.</param>
         /// <param name="items">Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  .</param>
+        /// <param name="billingLines">Gets or sets the list of billing lines..</param>
         /// <param name="documents">Gets or sets the documments.     These documents contain more information that just the shipment.   E.g. the shipment item id or weight note id.    Furthermore documents might be marked for invoices and ordered for them..</param>
         /// <param name="tags">Gets or sets the tags.     Tags are short texts to add information to a shipment without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions..</param>
         /// <param name="notes">Gets or sets the nots.     This gives the user the possibillity to add some more sentences about this shipment.  .</param>
@@ -104,7 +105,7 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="addon">Gets or sets a dictionary of addon properties.     Can be used to set customer exclusive properties for a shipment.  .</param>
         /// <param name="tariff">tariff.</param>
         /// <param name="carrierTariff">carrierTariff.</param>
-        public ShipmentModel(Guid id = default(Guid), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime), Guid createUserId = default(Guid), Guid updateUserId = default(Guid), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), BillableContactModel carrier = default(BillableContactModel), BillableContactModel freightPayer = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), AddressModel recipientAddress = default(AddressModel), BillableContactModel invoiceRecipient = default(BillableContactModel), AddressModel senderAddress = default(AddressModel), BillableContactModel supplier = default(BillableContactModel), DateTime loadStart = default(DateTime), DateTime loadEnd = default(DateTime), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime deliveryStart = default(DateTime), DateTime deliveryEnd = default(DateTime), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualDeliveryStartDateTime = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime orderDate = default(DateTime), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), ShipmentStatusModel status = default(ShipmentStatusModel), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentItemModel> items = default(List<ShipmentItemModel>), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), List<ShipmentTourModel> tours = default(List<ShipmentTourModel>), ConstructionSiteModel constructionSite = default(ConstructionSiteModel), DepartmentResponse department = default(DepartmentResponse), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel))
+        public ShipmentModel(Guid id = default(Guid), DateTime createDateTime = default(DateTime), DateTime updateDateTime = default(DateTime), Guid createUserId = default(Guid), Guid updateUserId = default(Guid), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), BillableContactModel carrier = default(BillableContactModel), BillableContactModel freightPayer = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), AddressModel recipientAddress = default(AddressModel), BillableContactModel invoiceRecipient = default(BillableContactModel), AddressModel senderAddress = default(AddressModel), BillableContactModel supplier = default(BillableContactModel), DateTime loadStart = default(DateTime), DateTime loadEnd = default(DateTime), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime deliveryStart = default(DateTime), DateTime deliveryEnd = default(DateTime), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualDeliveryStartDateTime = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime orderDate = default(DateTime), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), ShipmentStatusModel status = default(ShipmentStatusModel), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentItemModel> items = default(List<ShipmentItemModel>), List<BillingLineModel> billingLines = default(List<BillingLineModel>), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), List<ShipmentTourModel> tours = default(List<ShipmentTourModel>), ConstructionSiteModel constructionSite = default(ConstructionSiteModel), DepartmentResponse department = default(DepartmentResponse), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel))
         {
             this.Id = id;
             this.CreateDateTime = createDateTime;
@@ -150,6 +151,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.Status = status;
             this.TransportOrder = transportOrder;
             this.Items = items;
+            this.BillingLines = billingLines;
             this.Documents = documents;
             this.Tags = tags;
             this.Notes = notes;
@@ -448,6 +450,13 @@ namespace Simplic.OxS.SDK.Logistics
         public List<ShipmentItemModel> Items { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of billing lines.
+        /// </summary>
+        /// <value>Gets or sets the list of billing lines.</value>
+        [DataMember(Name = "billingLines", EmitDefaultValue = true)]
+        public List<BillingLineModel> BillingLines { get; set; }
+
+        /// <summary>
         /// Gets or sets the documments.     These documents contain more information that just the shipment.   E.g. the shipment item id or weight note id.    Furthermore documents might be marked for invoices and ordered for them.
         /// </summary>
         /// <value>Gets or sets the documments.     These documents contain more information that just the shipment.   E.g. the shipment item id or weight note id.    Furthermore documents might be marked for invoices and ordered for them.</value>
@@ -577,6 +586,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TransportOrder: ").Append(TransportOrder).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  BillingLines: ").Append(BillingLines).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
@@ -843,6 +853,12 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Items.SequenceEqual(input.Items)
                 ) && 
                 (
+                    this.BillingLines == input.BillingLines ||
+                    this.BillingLines != null &&
+                    input.BillingLines != null &&
+                    this.BillingLines.SequenceEqual(input.BillingLines)
+                ) && 
+                (
                     this.Documents == input.Documents ||
                     this.Documents != null &&
                     input.Documents != null &&
@@ -1082,6 +1098,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Items != null)
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
+                }
+                if (this.BillingLines != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillingLines.GetHashCode();
                 }
                 if (this.Documents != null)
                 {

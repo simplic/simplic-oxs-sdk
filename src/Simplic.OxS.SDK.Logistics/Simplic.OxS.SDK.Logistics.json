@@ -336,6 +336,504 @@
                 }
             }
         },
+        "/BillingLineStatus": {
+            "post": {
+                "tags": [
+                    "BillingLineStatus"
+                ],
+                "summary": "Creates a new billing line status.",
+                "requestBody": {
+                    "description": "A create billing line status request object.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLineStatus/{id}": {
+            "get": {
+                "tags": [
+                    "BillingLineStatus"
+                ],
+                "summary": "Retrives the billing line status with the given id.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the billing line status.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "BillingLineStatus"
+                ],
+                "summary": "Updates/saves the given billing line status.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the billing line status to update.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Billing line status to update.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLineStatus/get-all": {
+            "get": {
+                "tags": [
+                    "BillingLineStatus"
+                ],
+                "summary": "Retrieves all billing line statuses.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineStatusModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineStatusModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineStatusModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLineStatusDeployment": {
+            "post": {
+                "tags": [
+                    "BillingLineStatusDeployment"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLineStatusDeployment/{id}": {
+            "patch": {
+                "tags": [
+                    "BillingLineStatusDeployment"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/ComposedResource/{id}": {
             "get": {
                 "tags": [
@@ -10237,12 +10735,6 @@
                     "type": {
                         "$ref": "#/components/schemas/BillingLineType"
                     },
-                    "billableContact": {
-                        "$ref": "#/components/schemas/BillableContactModel"
-                    },
-                    "pricing": {
-                        "$ref": "#/components/schemas/BillingLinePricingModel"
-                    },
                     "status": {
                         "$ref": "#/components/schemas/BillingLineStatusModel"
                     },
@@ -10259,23 +10751,6 @@
                     "quantity": {
                         "$ref": "#/components/schemas/QuantityModel"
                     },
-                    "transactionItems": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BillingLineTransationItemModel"
-                        },
-                        "description": "Gets or sets the transaction items where the billing line is present in.\r\n\n\r\nThe list will be filled during the billing process.\r\n",
-                        "nullable": true
-                    },
-                    "article": {
-                        "$ref": "#/components/schemas/ShipmentArticleModel"
-                    },
-                    "weightNoteId": {
-                        "type": "string",
-                        "description": "Gets or sets the weight note id that will be billed",
-                        "format": "uuid",
-                        "nullable": true
-                    },
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the external reference.",
@@ -10285,31 +10760,9 @@
                 "additionalProperties": false,
                 "description": "Shared model of billing line."
             },
-            "BillingLinePricingModel": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the selected pricing configuration.",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the selected pricing configuration.",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Shared model of billing line pricing."
-            },
             "BillingLineStatusModel": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id.\r\n\n\r\nThe id is the unique identifier of the status.\r\n",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name.",
@@ -10325,67 +10778,26 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item><item>disable_edit</item><item>billable</item><item>disable_delete</item><item>billed</item></list>",
+                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
                         "nullable": true
                     },
                     "hexColor": {
                         "type": "string",
                         "description": "Gets or sets the color as as hexadecimal value.",
                         "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id.\r\n\n\r\nThe id is the unique identifier of the status.\r\n",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the status is deleted."
                     }
                 },
                 "additionalProperties": false,
                 "description": "Shared model of billing line status."
-            },
-            "BillingLineTransationItemModel": {
-                "type": "object",
-                "properties": {
-                    "transactionId": {
-                        "type": "string",
-                        "description": "Gets or sets the transaction id.\r\n\n\r\nThis represents the unique identifier of a Simplic.Erp.Transaction.\r\n",
-                        "format": "uuid"
-                    },
-                    "transactionItemId": {
-                        "type": "string",
-                        "description": "Gets or sets the transaction item id.\r\n\n\r\nThis represents the unique identifier fo a Simplic.Erp.TransactionItem.\r\n",
-                        "format": "uuid"
-                    },
-                    "number": {
-                        "type": "string",
-                        "description": "Gets or sets the transaction number.\r\n\n\r\nThis represents the number of a transaction, which is a human readable number to represent the transaction.\r\n",
-                        "nullable": true
-                    },
-                    "typeName": {
-                        "type": "string",
-                        "description": "Gets or sets the type name.\r\n\n\r\nRepresents the name of the type of the transaction.\r\n",
-                        "nullable": true
-                    },
-                    "subtypeName": {
-                        "type": "string",
-                        "description": "Gets or sets the subtype name.\r\n\n\r\nRepresents the name of the subtype of the transaction.\r\n",
-                        "nullable": true
-                    },
-                    "createDateTime": {
-                        "type": "string",
-                        "description": "Gets or sets the create date time.\r\n\n\r\nRepresents the create date and time of the transaction.\r\n",
-                        "format": "date-time"
-                    },
-                    "singlePrice": {
-                        "type": "number",
-                        "description": "Gets or sets the single price.\r\n\n\r\nRepresents the single price of the transaction item.\r\n",
-                        "format": "double"
-                    },
-                    "totalPrice": {
-                        "type": "number",
-                        "description": "Gets or sets the total price.\r\n\n\r\nRepresents the total price of a transaction item.\r\n",
-                        "format": "double"
-                    },
-                    "quantity": {
-                        "$ref": "#/components/schemas/QuantityModel"
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Shared model of billing line transaction."
             },
             "BillingLineType": {
                 "enum": [
@@ -10754,6 +11166,72 @@
                 "additionalProperties": false,
                 "description": "Request to create an appointment."
             },
+            "CreateBillingLineRequest": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/BillingLineType"
+                    },
+                    "statusId": {
+                        "type": "string",
+                        "description": "Gets or sets the status id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "singlePrice": {
+                        "type": "number",
+                        "description": "Gets or sets the single price.\r\n\n\r\nRepresents the price of a single item.\r\n",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the total price.\r\n\n\r\nRepresents the price of all items.\r\n",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the external reference.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request to create a billing line."
+            },
+            "CreateBillingLineStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.\r\n\n\r\nThe number is a human readable identifier for the status.\r\n",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
+                        "nullable": true
+                    },
+                    "hexColor": {
+                        "type": "string",
+                        "description": "Gets or sets the color as as hexadecimal value.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create a billing line status."
+            },
             "CreateGeofenceRequest": {
                 "type": "object",
                 "properties": {
@@ -10976,14 +11454,6 @@
                     },
                     "weight": {
                         "$ref": "#/components/schemas/QuantityModel"
-                    },
-                    "billingLines": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BillingLineModel"
-                        },
-                        "description": "Gets or sets the billing lines.\r\n\n\r\nBilling lines determine which persons can be billed which amounts.\r\n",
-                        "nullable": true
                     },
                     "article": {
                         "$ref": "#/components/schemas/ShipmentArticleModel"
@@ -11307,6 +11777,14 @@
                             "$ref": "#/components/schemas/CreateShipmentItemRequest"
                         },
                         "description": "Gets or sets shipment items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
+                        "nullable": true
+                    },
+                    "billingLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateBillingLineRequest"
+                        },
+                        "description": "Gets or sets the list of billing lines.",
                         "nullable": true
                     }
                 },
@@ -12432,6 +12910,47 @@
                 "additionalProperties": false,
                 "description": "Request to patch an appointment."
             },
+            "PatchBillingLineRequest": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/BillingLineType"
+                    },
+                    "statusId": {
+                        "type": "string",
+                        "description": "Gets or sets the status id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "singlePrice": {
+                        "type": "number",
+                        "description": "Gets or sets the single price.\r\n\n\r\nRepresents the price of a single item.\r\n",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the total price.\r\n\n\r\nRepresents the price of all items.\r\n",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityModel"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the external reference.",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id.\r\n\n\r\nRepresents the unique identifier of a billing line.\r\n",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request to patch a billing line."
+            },
             "PatchComposedResourceSettingsRequest": {
                 "type": "object",
                 "properties": {
@@ -12731,14 +13250,6 @@
                     },
                     "weight": {
                         "$ref": "#/components/schemas/QuantityModel"
-                    },
-                    "billingLines": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BillingLineModel"
-                        },
-                        "description": "Gets or sets the billing lines.\r\n\n\r\nBilling lines determine which persons can be billed which amounts.\r\n",
-                        "nullable": true
                     },
                     "article": {
                         "$ref": "#/components/schemas/ShipmentArticleModel"
@@ -13067,6 +13578,14 @@
                             "$ref": "#/components/schemas/PatchShipmentItemRequest"
                         },
                         "description": "Gets or sets shipment items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
+                        "nullable": true
+                    },
+                    "billingLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchBillingLineRequest"
+                        },
+                        "description": "Gets or sets the list of billing lines.",
                         "nullable": true
                     }
                 },
@@ -14479,6 +14998,14 @@
                         "description": "Gets or sets shipment items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
                         "nullable": true
                     },
+                    "billingLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineModel"
+                        },
+                        "description": "Gets or sets the list of billing lines.",
+                        "nullable": true
+                    },
                     "documents": {
                         "type": "array",
                         "items": {
@@ -15532,6 +16059,36 @@
                 },
                 "additionalProperties": false,
                 "description": "Shared model of transport order status."
+            },
+            "UpdateBillingLineStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.\r\n\n\r\nThe number is a human readable identifier for the status.\r\n",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
+                        "nullable": true
+                    },
+                    "hexColor": {
+                        "type": "string",
+                        "description": "Gets or sets the color as as hexadecimal value.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to update a billing line status."
             },
             "UpdateResourceGroupRequest": {
                 "required": [

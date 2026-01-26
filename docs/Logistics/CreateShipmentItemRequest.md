@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **Reference** | **string** | Gets or sets the external reference. | [optional] 
 **Quantity** | [**QuantityModel**](QuantityModel.md) |  | [optional] 
 **Weight** | [**QuantityModel**](QuantityModel.md) |  | [optional] 
-**BillingLines** | [**List&lt;BillingLineModel&gt;**](BillingLineModel.md) | Gets or sets the billing lines.     Billing lines determine which persons can be billed which amounts.   | [optional] 
 **Article** | [**ShipmentArticleModel**](ShipmentArticleModel.md) |  | [optional] 
 **WeightNotes** | [**List&lt;WeightNoteModel&gt;**](WeightNoteModel.md) | Gets or sets the weight notes.     Weight notes are used to get the real amount of the driven freight.   | [optional] 
 **Status** | [**ShipmentItemStatusModel**](ShipmentItemStatusModel.md) |  | [optional] 

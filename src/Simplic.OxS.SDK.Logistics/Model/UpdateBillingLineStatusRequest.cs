@@ -28,28 +28,24 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
-    /// Shared model of billing line status.
+    /// Represents a request to update a billing line status.
     /// </summary>
-    [DataContract(Name = "BillingLineStatusModel")]
-    public partial class BillingLineStatusModel : IEquatable<BillingLineStatusModel>, IValidatableObject
+    [DataContract(Name = "UpdateBillingLineStatusRequest")]
+    public partial class UpdateBillingLineStatusRequest : IEquatable<UpdateBillingLineStatusRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BillingLineStatusModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateBillingLineStatusRequest" /> class.
         /// </summary>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number.     The number is a human readable identifier for the status.  .</param>
         /// <param name="roles">Gets or sets roles.     These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt; Will set the status as default, only one status should be a default status.&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the billing lines.&lt;item&gt;billable&lt;/item&gt; Will set the billing line as billable.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the billing line if a status with this role is set.&lt;item&gt;billed&lt;/item&gt; If a status with this role is set the item is shown as billed.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically  updated when updated in a contact.&lt;/list&gt;.</param>
         /// <param name="hexColor">Gets or sets the color as as hexadecimal value..</param>
-        /// <param name="id">Gets or sets the id.     The id is the unique identifier of the status.  .</param>
-        /// <param name="isDeleted">Gets or sets whether the status is deleted..</param>
-        public BillingLineStatusModel(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexColor = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public UpdateBillingLineStatusRequest(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexColor = default(string))
         {
             this.Name = name;
             this.Number = number;
             this.Roles = roles;
             this.HexColor = hexColor;
-            this.Id = id;
-            this.IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -81,33 +77,17 @@ namespace Simplic.OxS.SDK.Logistics
         public string HexColor { get; set; }
 
         /// <summary>
-        /// Gets or sets the id.     The id is the unique identifier of the status.  
-        /// </summary>
-        /// <value>Gets or sets the id.     The id is the unique identifier of the status.  </value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Gets or sets whether the status is deleted.
-        /// </summary>
-        /// <value>Gets or sets whether the status is deleted.</value>
-        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
-        public bool IsDeleted { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BillingLineStatusModel {\n");
+            sb.Append("class UpdateBillingLineStatusRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("  HexColor: ").Append(HexColor).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,15 +108,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BillingLineStatusModel);
+            return this.Equals(input as UpdateBillingLineStatusRequest);
         }
 
         /// <summary>
-        /// Returns true if BillingLineStatusModel instances are equal
+        /// Returns true if UpdateBillingLineStatusRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of BillingLineStatusModel to be compared</param>
+        /// <param name="input">Instance of UpdateBillingLineStatusRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BillingLineStatusModel input)
+        public bool Equals(UpdateBillingLineStatusRequest input)
         {
             if (input == null)
             {
@@ -163,15 +143,6 @@ namespace Simplic.OxS.SDK.Logistics
                     this.HexColor == input.HexColor ||
                     (this.HexColor != null &&
                     this.HexColor.Equals(input.HexColor))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    this.IsDeleted.Equals(input.IsDeleted)
                 );
         }
 
@@ -200,11 +171,6 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.HexColor.GetHashCode();
                 }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

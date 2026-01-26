@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **Status** | [**ShipmentStatusModel**](ShipmentStatusModel.md) |  | [optional] 
 **TransportOrder** | [**ShipmentTransportOrderModel**](ShipmentTransportOrderModel.md) |  | [optional] 
 **Items** | [**List&lt;ShipmentItemModel&gt;**](ShipmentItemModel.md) | Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.   | [optional] 
+**BillingLines** | [**List&lt;BillingLineModel&gt;**](BillingLineModel.md) | Gets or sets the list of billing lines. | [optional] 
 **Documents** | [**List&lt;ShipmentDocumentModel&gt;**](ShipmentDocumentModel.md) | Gets or sets the documments.     These documents contain more information that just the shipment.   E.g. the shipment item id or weight note id.    Furthermore documents might be marked for invoices and ordered for them. | [optional] 
 **Tags** | [**List&lt;ShipmentTagModel&gt;**](ShipmentTagModel.md) | Gets or sets the tags.     Tags are short texts to add information to a shipment without the need to add new properties.    These are e.g. used in the pricing module to add some additional conditions. | [optional] 
 **Notes** | **string** | Gets or sets the nots.     This gives the user the possibillity to add some more sentences about this shipment.   | [optional] 

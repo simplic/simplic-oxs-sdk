@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Logistics
 {
     /// <summary>
-    /// Shared model of billing line.
+    /// Request to create a billing line.
     /// </summary>
-    [DataContract(Name = "BillingLineModel")]
-    public partial class BillingLineModel : IEquatable<BillingLineModel>, IValidatableObject
+    [DataContract(Name = "CreateBillingLineRequest")]
+    public partial class CreateBillingLineRequest : IEquatable<CreateBillingLineRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -40,20 +40,18 @@ namespace Simplic.OxS.SDK.Logistics
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public BillingLineType? Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="BillingLineModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateBillingLineRequest" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id.     Represents the unique identifier of a billing line.  .</param>
         /// <param name="type">type.</param>
-        /// <param name="status">status.</param>
+        /// <param name="statusId">Gets or sets the status id..</param>
         /// <param name="singlePrice">Gets or sets the single price.     Represents the price of a single item.  .</param>
         /// <param name="totalPrice">Gets or sets the total price.     Represents the price of all items.  .</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="reference">Gets or sets the external reference..</param>
-        public BillingLineModel(Guid id = default(Guid), BillingLineType? type = default(BillingLineType?), BillingLineStatusModel status = default(BillingLineStatusModel), double singlePrice = default(double), double totalPrice = default(double), QuantityModel quantity = default(QuantityModel), string reference = default(string))
+        public CreateBillingLineRequest(BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), QuantityModel quantity = default(QuantityModel), string reference = default(string))
         {
-            this.Id = id;
             this.Type = type;
-            this.Status = status;
+            this.StatusId = statusId;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
             this.Quantity = quantity;
@@ -61,31 +59,25 @@ namespace Simplic.OxS.SDK.Logistics
         }
 
         /// <summary>
-        /// Gets or sets the id.     Represents the unique identifier of a billing line.  
+        /// Gets or sets the status id.
         /// </summary>
-        /// <value>Gets or sets the id.     Represents the unique identifier of a billing line.  </value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Status
-        /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public BillingLineStatusModel Status { get; set; }
+        /// <value>Gets or sets the status id.</value>
+        [DataMember(Name = "statusId", EmitDefaultValue = true)]
+        public Guid? StatusId { get; set; }
 
         /// <summary>
         /// Gets or sets the single price.     Represents the price of a single item.  
         /// </summary>
         /// <value>Gets or sets the single price.     Represents the price of a single item.  </value>
-        [DataMember(Name = "singlePrice", EmitDefaultValue = false)]
-        public double SinglePrice { get; set; }
+        [DataMember(Name = "singlePrice", EmitDefaultValue = true)]
+        public double? SinglePrice { get; set; }
 
         /// <summary>
         /// Gets or sets the total price.     Represents the price of all items.  
         /// </summary>
         /// <value>Gets or sets the total price.     Represents the price of all items.  </value>
-        [DataMember(Name = "totalPrice", EmitDefaultValue = false)]
-        public double TotalPrice { get; set; }
+        [DataMember(Name = "totalPrice", EmitDefaultValue = true)]
+        public double? TotalPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
@@ -107,10 +99,9 @@ namespace Simplic.OxS.SDK.Logistics
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BillingLineModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class CreateBillingLineRequest {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  StatusId: ").Append(StatusId).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
@@ -135,15 +126,15 @@ namespace Simplic.OxS.SDK.Logistics
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BillingLineModel);
+            return this.Equals(input as CreateBillingLineRequest);
         }
 
         /// <summary>
-        /// Returns true if BillingLineModel instances are equal
+        /// Returns true if CreateBillingLineRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of BillingLineModel to be compared</param>
+        /// <param name="input">Instance of CreateBillingLineRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BillingLineModel input)
+        public bool Equals(CreateBillingLineRequest input)
         {
             if (input == null)
             {
@@ -151,26 +142,23 @@ namespace Simplic.OxS.SDK.Logistics
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.StatusId == input.StatusId ||
+                    (this.StatusId != null &&
+                    this.StatusId.Equals(input.StatusId))
                 ) && 
                 (
                     this.SinglePrice == input.SinglePrice ||
-                    this.SinglePrice.Equals(input.SinglePrice)
+                    (this.SinglePrice != null &&
+                    this.SinglePrice.Equals(input.SinglePrice))
                 ) && 
                 (
                     this.TotalPrice == input.TotalPrice ||
-                    this.TotalPrice.Equals(input.TotalPrice)
+                    (this.TotalPrice != null &&
+                    this.TotalPrice.Equals(input.TotalPrice))
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
@@ -193,17 +181,19 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.Status != null)
+                if (this.StatusId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StatusId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.SinglePrice.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPrice.GetHashCode();
+                if (this.SinglePrice != null)
+                {
+                    hashCode = (hashCode * 59) + this.SinglePrice.GetHashCode();
+                }
+                if (this.TotalPrice != null)
+                {
+                    hashCode = (hashCode * 59) + this.TotalPrice.GetHashCode();
+                }
                 if (this.Quantity != null)
                 {
                     hashCode = (hashCode * 59) + this.Quantity.GetHashCode();

@@ -103,7 +103,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="tariff">tariff.</param>
         /// <param name="carrierTariff">carrierTariff.</param>
         /// <param name="items">Gets or sets shipment items.     Represents a list of items of a shipment which will contain further information about the freight.  .</param>
-        public PatchShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualDeliveryStartDateTime = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel), List<PatchShipmentItemRequest> items = default(List<PatchShipmentItemRequest>))
+        /// <param name="billingLines">Gets or sets the list of billing lines..</param>
+        public PatchShipmentRequest(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), DateTime? actualStartDateTime = default(DateTime?), DateTime? actualDeliveryStartDateTime = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), Guid? statusId = default(Guid?), ShipmentTransportOrderModel transportOrder = default(ShipmentTransportOrderModel), List<ShipmentDocumentModel> documents = default(List<ShipmentDocumentModel>), List<ShipmentTagModel> tags = default(List<ShipmentTagModel>), string notes = default(string), bool isDeleted = default(bool), ShipmentTelematicWorkflowModel loadWorkflow = default(ShipmentTelematicWorkflowModel), ShipmentTelematicWorkflowModel deliveryWorkflow = default(ShipmentTelematicWorkflowModel), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel), List<PatchShipmentItemRequest> items = default(List<PatchShipmentItemRequest>), List<PatchBillingLineRequest> billingLines = default(List<PatchBillingLineRequest>))
         {
             this.LoadAddressId = loadAddressId;
             this.DeliveryAddressId = deliveryAddressId;
@@ -160,6 +161,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.Tariff = tariff;
             this.CarrierTariff = carrierTariff;
             this.Items = items;
+            this.BillingLines = billingLines;
         }
 
         /// <summary>
@@ -515,6 +517,13 @@ namespace Simplic.OxS.SDK.Logistics
         public List<PatchShipmentItemRequest> Items { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of billing lines.
+        /// </summary>
+        /// <value>Gets or sets the list of billing lines.</value>
+        [DataMember(Name = "billingLines", EmitDefaultValue = true)]
+        public List<PatchBillingLineRequest> BillingLines { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -577,6 +586,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Tariff: ").Append(Tariff).Append("\n");
             sb.Append("  CarrierTariff: ").Append(CarrierTariff).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  BillingLines: ").Append(BillingLines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -886,6 +896,12 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.BillingLines == input.BillingLines ||
+                    this.BillingLines != null &&
+                    input.BillingLines != null &&
+                    this.BillingLines.SequenceEqual(input.BillingLines)
                 );
         }
 
@@ -1105,6 +1121,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Items != null)
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
+                }
+                if (this.BillingLines != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillingLines.GetHashCode();
                 }
                 return hashCode;
             }
