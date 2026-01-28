@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Construction.Site
 /// <summary>
 /// Client to interact with the API endpoints of the construction-site service.
 /// </summary>
-public interface IConstructionSiteStatusDeploymentClient
+public interface IServiceDefinitionClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -43,74 +43,93 @@ public interface IConstructionSiteStatusDeploymentClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
-    /// <returns>ConstructionSiteStatusModel</returns>
-    ConstructionSiteStatusModel Patch(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?));
+    /// <returns>ServiceObject</returns>
+    ServiceObject Get();
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
-    /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-    ApiResponse<ConstructionSiteStatusModel> PatchWithHttpInfo(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?));
+    /// <returns>ApiResponse of ServiceObject</returns>
+    ApiResponse<ServiceObject> GetWithHttpInfo();
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ConstructionSiteStatusModel</returns>
-    Task<ConstructionSiteStatusModel> PatchAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ServiceObject</returns>
+    Task<ServiceObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-    Task<ApiResponse<ConstructionSiteStatusModel>> PatchWithHttpInfoAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (ServiceObject)</returns>
+    Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
-    /// <returns>ConstructionSiteStatusModel</returns>
-    ConstructionSiteStatusModel Post(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?));
+    /// <returns>ServiceObject</returns>
+    ServiceObject GraphqlSdl();
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
-    /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-    ApiResponse<ConstructionSiteStatusModel> PostWithHttpInfo(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?));
+    /// <returns>ApiResponse of ServiceObject</returns>
+    ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo();
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ConstructionSiteStatusModel</returns>
-    Task<ConstructionSiteStatusModel> PostAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ServiceObject</returns>
+    Task<ServiceObject> GraphqlSdlAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-    Task<ApiResponse<ConstructionSiteStatusModel>> PostWithHttpInfoAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (ServiceObject)</returns>
+    Task<ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns></returns>
+    void RegisterService();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> RegisterServiceWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task RegisterServiceAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -120,16 +139,16 @@ public interface IConstructionSiteStatusDeploymentClient
     /// <summary>
     /// Client to interact with the API endpoints of the construction-site service.
     /// </summary>
-    public class ConstructionSiteStatusDeploymentClient : IConstructionSiteStatusDeploymentClient
+    public class ServiceDefinitionClient : IServiceDefinitionClient
     {
-        private __ConstructionSiteStatusDeploymentClient _internalClient;
+        private __ServiceDefinitionClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public ConstructionSiteStatusDeploymentClient(string host, string? authorization = null)
+        public ServiceDefinitionClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __ConstructionSiteStatusDeploymentClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/construction-site-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -137,14 +156,14 @@ public interface IConstructionSiteStatusDeploymentClient
             }
             else
             {
-                _internalClient = new __ConstructionSiteStatusDeploymentClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/construction-site-api/v1",
                 });
             }
         }
 
-        public ConstructionSiteStatusDeploymentClient(Environment env, string? authorization = null)
+        public ServiceDefinitionClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -191,14 +210,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        public ConstructionSiteStatusModel Patch(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?))
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get()
         {
             try
             {
-                return _internalClient.Patch(id, updateConstructionSiteStatusRequest);
+                return _internalClient.Get();
             }
             catch (ApiException e)
             {
@@ -210,14 +227,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> PatchWithHttpInfo(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?))
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo()
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, updateConstructionSiteStatusRequest);
+                return _internalClient.GetWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -229,15 +244,13 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        public System.Threading.Tasks.Task<ConstructionSiteStatusModel> PatchAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public System.Threading.Tasks.Task<ServiceObject> GetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, updateConstructionSiteStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -249,15 +262,13 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel>> PatchWithHttpInfoAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, updateConstructionSiteStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -268,13 +279,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        public ConstructionSiteStatusModel Post(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?))
+        /// <returns>ServiceObject</returns>
+        public ServiceObject GraphqlSdl()
         {
             try
             {
-                return _internalClient.Post(createConstructionSiteStatusRequest);
+                return _internalClient.GraphqlSdl();
             }
             catch (ApiException e)
             {
@@ -286,13 +296,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> PostWithHttpInfo(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?))
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo()
         {
             try
             {
-                return _internalClient.PostWithHttpInfo(createConstructionSiteStatusRequest);
+                return _internalClient.GraphqlSdlWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -304,14 +313,13 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        public System.Threading.Tasks.Task<ConstructionSiteStatusModel> PostAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostAsync(createConstructionSiteStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GraphqlSdlAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -323,14 +331,82 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel>> PostWithHttpInfoAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PostWithHttpInfoAsync(createConstructionSiteStatusRequest, cancellationToken: cancellationToken);
+                return _internalClient.GraphqlSdlWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns></returns>
+        public void RegisterService()
+        {
+            try
+            {
+                _internalClient.RegisterService();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.RegisterServiceWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task RegisterServiceAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterServiceAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterServiceWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -347,18 +423,16 @@ public interface IConstructionSiteStatusDeploymentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IConstructionSiteStatusDeploymentClientSync : IApiAccessor
+    internal interface __IServiceDefinitionClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        ConstructionSiteStatusModel Patch(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0);
+        /// <returns>ServiceObject</returns>
+        ServiceObject Get(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -367,19 +441,16 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        ApiResponse<ConstructionSiteStatusModel> PatchWithHttpInfo(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of ServiceObject</returns>
+        ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        ConstructionSiteStatusModel Post(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0);
+        /// <returns>ServiceObject</returns>
+        ServiceObject GraphqlSdl(int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -388,17 +459,34 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        ApiResponse<ConstructionSiteStatusModel> PostWithHttpInfo(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of ServiceObject</returns>
+        ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo(int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void RegisterService(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IConstructionSiteStatusDeploymentClientAsync : IApiAccessor
+    internal interface __IServiceDefinitionClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -408,12 +496,10 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        System.Threading.Tasks.Task<ConstructionSiteStatusModel> PatchAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ServiceObject</returns>
+        System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -422,12 +508,10 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConstructionSiteStatusModel>> PatchWithHttpInfoAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -435,11 +519,10 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        System.Threading.Tasks.Task<ConstructionSiteStatusModel> PostAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ServiceObject</returns>
+        System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -448,18 +531,40 @@ public interface IConstructionSiteStatusDeploymentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConstructionSiteStatusModel>> PostWithHttpInfoAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IConstructionSiteStatusDeploymentClient : __IConstructionSiteStatusDeploymentClientSync, __IConstructionSiteStatusDeploymentClientAsync
+    internal interface __IServiceDefinitionClient : __IServiceDefinitionClientSync, __IServiceDefinitionClientAsync
     {
 
     }
@@ -467,24 +572,24 @@ public interface IConstructionSiteStatusDeploymentClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __ConstructionSiteStatusDeploymentClient : __IConstructionSiteStatusDeploymentClient
+    internal /*partial*/ class __ServiceDefinitionClient : __IServiceDefinitionClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ConstructionSiteStatusDeploymentClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __ConstructionSiteStatusDeploymentClient() : this((string)null)
+        public __ServiceDefinitionClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ConstructionSiteStatusDeploymentClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __ConstructionSiteStatusDeploymentClient(string basePath)
+        public __ServiceDefinitionClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -497,12 +602,12 @@ public interface IConstructionSiteStatusDeploymentClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ConstructionSiteStatusDeploymentClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __ConstructionSiteStatusDeploymentClient(Simplic.OxS.SDK.Configuration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -516,13 +621,13 @@ public interface IConstructionSiteStatusDeploymentClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__ConstructionSiteStatusDeploymentClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __ConstructionSiteStatusDeploymentClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -579,13 +684,11 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        public ConstructionSiteStatusModel Patch(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0)
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> localVarResponse = PatchWithHttpInfo(id, updateConstructionSiteStatusRequest);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -593,18 +696,13 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> PatchWithHttpInfo(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -626,10 +724,8 @@ public interface IConstructionSiteStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateConstructionSiteStatusRequest;
 
-            localVarRequestOptions.Operation = "ConstructionSiteStatusDeploymentClient.ConstructionSiteStatusDeploymentIdPatch";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -645,10 +741,10 @@ public interface IConstructionSiteStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<ConstructionSiteStatusModel>("/ConstructionSiteStatusDeployment/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConstructionSiteStatusDeploymentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -662,14 +758,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        public async System.Threading.Tasks.Task<ConstructionSiteStatusModel> PatchAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public async System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateConstructionSiteStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -677,20 +771,15 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="updateConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel>> PatchWithHttpInfoAsync(Guid id, UpdateConstructionSiteStatusRequest? updateConstructionSiteStatusRequest = default(UpdateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -712,10 +801,8 @@ public interface IConstructionSiteStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateConstructionSiteStatusRequest;
 
-            localVarRequestOptions.Operation = "ConstructionSiteStatusDeploymentClient.ConstructionSiteStatusDeploymentIdPatch";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -731,11 +818,11 @@ public interface IConstructionSiteStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<ConstructionSiteStatusModel>("/ConstructionSiteStatusDeployment/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConstructionSiteStatusDeploymentIdPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -749,12 +836,11 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConstructionSiteStatusModel</returns>
-        public ConstructionSiteStatusModel Post(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0)
+        /// <returns>ServiceObject</returns>
+        public ServiceObject GraphqlSdl(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> localVarResponse = PostWithHttpInfo(createConstructionSiteStatusRequest);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = GraphqlSdlWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -762,17 +848,13 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConstructionSiteStatusModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> PostWithHttpInfo(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -794,9 +876,8 @@ public interface IConstructionSiteStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createConstructionSiteStatusRequest;
 
-            localVarRequestOptions.Operation = "ConstructionSiteStatusDeploymentClient.ConstructionSiteStatusDeploymentPost";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGraphqlSdlGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -812,10 +893,10 @@ public interface IConstructionSiteStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<ConstructionSiteStatusModel>("/ConstructionSiteStatusDeployment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ServiceObject>("/ServiceDefinition/graphql/sdl", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConstructionSiteStatusDeploymentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGraphqlSdlGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -829,13 +910,12 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConstructionSiteStatusModel</returns>
-        public async System.Threading.Tasks.Task<ConstructionSiteStatusModel> PostAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public async System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel> localVarResponse = await PostWithHttpInfoAsync(createConstructionSiteStatusRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = await GraphqlSdlWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -843,19 +923,15 @@ public interface IConstructionSiteStatusDeploymentClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createConstructionSiteStatusRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConstructionSiteStatusModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ConstructionSiteStatusModel>> PostWithHttpInfoAsync(CreateConstructionSiteStatusRequest? createConstructionSiteStatusRequest = default(CreateConstructionSiteStatusRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
             };
 
             // to determine the Accept header
@@ -877,9 +953,8 @@ public interface IConstructionSiteStatusDeploymentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = createConstructionSiteStatusRequest;
 
-            localVarRequestOptions.Operation = "ConstructionSiteStatusDeploymentClient.ConstructionSiteStatusDeploymentPost";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGraphqlSdlGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -895,11 +970,161 @@ public interface IConstructionSiteStatusDeploymentClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ConstructionSiteStatusModel>("/ConstructionSiteStatusDeployment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ServiceObject>("/ServiceDefinition/graphql/sdl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ConstructionSiteStatusDeploymentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGraphqlSdlGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void RegisterService(int operationIndex = 0)
+        {
+            RegisterServiceWithHttpInfo();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RegisterServiceWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -10755,6 +10755,11 @@
                         "type": "string",
                         "description": "Gets or sets the external reference.",
                         "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the billing line text",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -11196,6 +11201,11 @@
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the external reference.",
+                        "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the billing line text",
                         "nullable": true
                     }
                 },
@@ -12940,6 +12950,11 @@
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the external reference.",
+                        "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the billing line text",
                         "nullable": true
                     },
                     "id": {

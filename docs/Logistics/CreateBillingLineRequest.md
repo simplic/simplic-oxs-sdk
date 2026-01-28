@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **TotalPrice** | **double?** | Gets or sets the total price.     Represents the price of all items.   | [optional] 
 **Quantity** | [**QuantityModel**](QuantityModel.md) |  | [optional] 
 **Reference** | **string** | Gets or sets the external reference. | [optional] 
+**Text** | **string** | Gets or sets the billing line text | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

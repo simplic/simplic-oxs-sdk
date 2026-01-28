@@ -27,10 +27,12 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://dev-oxs.simplic.io/construction-site-api/v1";
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new InternalConstructionSiteClient(config);
             var id = "id_example";  // Guid? |  (optional) 
@@ -82,7 +84,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -93,7 +95,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **400** | Bad Request |  -  |
 

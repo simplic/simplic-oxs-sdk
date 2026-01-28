@@ -48,7 +48,8 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="totalPrice">Gets or sets the total price.     Represents the price of all items.  .</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="reference">Gets or sets the external reference..</param>
-        public CreateBillingLineRequest(BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), QuantityModel quantity = default(QuantityModel), string reference = default(string))
+        /// <param name="text">Gets or sets the billing line text.</param>
+        public CreateBillingLineRequest(BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), QuantityModel quantity = default(QuantityModel), string reference = default(string), string text = default(string))
         {
             this.Type = type;
             this.StatusId = statusId;
@@ -56,6 +57,7 @@ namespace Simplic.OxS.SDK.Logistics
             this.TotalPrice = totalPrice;
             this.Quantity = quantity;
             this.Reference = reference;
+            this.Text = text;
         }
 
         /// <summary>
@@ -93,6 +95,13 @@ namespace Simplic.OxS.SDK.Logistics
         public string Reference { get; set; }
 
         /// <summary>
+        /// Gets or sets the billing line text
+        /// </summary>
+        /// <value>Gets or sets the billing line text</value>
+        [DataMember(Name = "text", EmitDefaultValue = true)]
+        public string Text { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -106,6 +115,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -169,6 +179,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Reference == input.Reference ||
                     (this.Reference != null &&
                     this.Reference.Equals(input.Reference))
+                ) && 
+                (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -201,6 +216,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Reference != null)
                 {
                     hashCode = (hashCode * 59) + this.Reference.GetHashCode();
+                }
+                if (this.Text != null)
+                {
+                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
                 return hashCode;
             }
