@@ -10562,7 +10562,7 @@
                     },
                     "outputConfigurationId": {
                         "type": "string",
-                        "description": "Gets or sets the output configuration given by ID..",
+                        "description": "Gets or sets the output configuration given by ID.",
                         "format": "uuid",
                         "nullable": true
                     },

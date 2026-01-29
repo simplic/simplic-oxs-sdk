@@ -68,7 +68,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="reportId">Gets or sets an optional report for this subtype given by ID. (required).</param>
         /// <param name="sequenceId">Gets or sets an optional sequence for this subtype given by ID..</param>
-        /// <param name="outputConfigurationId">Gets or sets the output configuration given by ID...</param>
+        /// <param name="outputConfigurationId">Gets or sets the output configuration given by ID..</param>
         /// <param name="number">Gets or sets a unique id (required).</param>
         /// <param name="name">Gets or sets the subtype name (required).</param>
         /// <param name="documentTitleTemplate">Gets or sets the document title template..</param>
@@ -132,9 +132,9 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? SequenceId { get; set; }
 
         /// <summary>
-        /// Gets or sets the output configuration given by ID..
+        /// Gets or sets the output configuration given by ID.
         /// </summary>
-        /// <value>Gets or sets the output configuration given by ID..</value>
+        /// <value>Gets or sets the output configuration given by ID.</value>
         [DataMember(Name = "outputConfigurationId", EmitDefaultValue = true)]
         public Guid? OutputConfigurationId { get; set; }
 
