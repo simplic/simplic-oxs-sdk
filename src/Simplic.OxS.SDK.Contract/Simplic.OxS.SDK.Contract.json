@@ -2770,7 +2770,8 @@
                     },
                     "statusId": {
                         "type": "string",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2805,6 +2806,9 @@
                 "additionalProperties": false
             },
             "CreateItemModel": {
+                "required": [
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -2854,17 +2858,20 @@
                     },
                     "distance": {
                         "type": "number",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "tollDistance": {
                         "type": "number",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "vehicleType": {
                         "$ref": "#/components/schemas/VehicleTypeModel"
                     },
                     "cashDiscount": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "nullable": true
                     },
                     "alternativeType": {
                         "$ref": "#/components/schemas/AlternativeTypeModel"
@@ -2875,14 +2882,16 @@
                         "nullable": true
                     },
                     "printToReporting": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "nullable": true
                     },
                     "useInDisposition": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "nullable": true
                     },
                     "type": {
-                        "type": "string",
-                        "nullable": true
+                        "minLength": 1,
+                        "type": "string"
                     },
                     "supplierContactId": {
                         "type": "string",

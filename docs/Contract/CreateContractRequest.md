@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **RepresentativeUserId** | **Guid?** |  | [optional] 
 **ContactPersonContactId** | **Guid?** |  | [optional] 
 **Items** | [**List&lt;CreateItemModel&gt;**](CreateItemModel.md) |  | [optional] 
-**StatusId** | **Guid** |  | [optional] 
+**StatusId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

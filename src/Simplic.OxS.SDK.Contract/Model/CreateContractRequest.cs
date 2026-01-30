@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="contactPersonContactId">contactPersonContactId.</param>
         /// <param name="items">items.</param>
         /// <param name="statusId">statusId.</param>
-        public CreateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<CreateItemModel> items = default(List<CreateItemModel>), Guid statusId = default(Guid))
+        public CreateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<CreateItemModel> items = default(List<CreateItemModel>), Guid? statusId = default(Guid?))
         {
             this.Number = number;
             this.Name = name;
@@ -213,8 +213,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Gets or Sets StatusId
         /// </summary>
-        [DataMember(Name = "statusId", EmitDefaultValue = false)]
-        public Guid StatusId { get; set; }
+        [DataMember(Name = "statusId", EmitDefaultValue = true)]
+        public Guid? StatusId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

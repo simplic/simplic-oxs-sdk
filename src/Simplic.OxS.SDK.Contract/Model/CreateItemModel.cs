@@ -48,6 +48,11 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateItemModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CreateItemModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateItemModel" /> class.
+        /// </summary>
         /// <param name="id">id.</param>
         /// <param name="text">text.</param>
         /// <param name="index">index.</param>
@@ -67,7 +72,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="parentItem">parentItem.</param>
         /// <param name="printToReporting">printToReporting.</param>
         /// <param name="useInDisposition">useInDisposition.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">type (required).</param>
         /// <param name="supplierContactId">supplierContactId.</param>
         /// <param name="loadingAddressId">loadingAddressId.</param>
         /// <param name="unloadingAddressId">unloadingAddressId.</param>
@@ -75,8 +80,14 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="alternativeUnloadingAddressId">alternativeUnloadingAddressId.</param>
         /// <param name="contractNumber">contractNumber.</param>
         /// <param name="departmentId">departmentId.</param>
-        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?))
+        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?))
         {
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for CreateItemModel and cannot be null");
+            }
+            this.Type = type;
             this.Id = id;
             this.Text = text;
             this.Index = index;
@@ -96,7 +107,6 @@ namespace Simplic.OxS.SDK.Contract
             this.ParentItem = parentItem;
             this.PrintToReporting = printToReporting;
             this.UseInDisposition = useInDisposition;
-            this.Type = type;
             this.SupplierContactId = supplierContactId;
             this.LoadingAddressId = loadingAddressId;
             this.UnloadingAddressId = unloadingAddressId;
@@ -169,14 +179,14 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Gets or Sets Distance
         /// </summary>
-        [DataMember(Name = "distance", EmitDefaultValue = false)]
-        public double Distance { get; set; }
+        [DataMember(Name = "distance", EmitDefaultValue = true)]
+        public double? Distance { get; set; }
 
         /// <summary>
         /// Gets or Sets TollDistance
         /// </summary>
-        [DataMember(Name = "tollDistance", EmitDefaultValue = false)]
-        public double TollDistance { get; set; }
+        [DataMember(Name = "tollDistance", EmitDefaultValue = true)]
+        public double? TollDistance { get; set; }
 
         /// <summary>
         /// Gets or Sets VehicleType
@@ -188,7 +198,7 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or Sets CashDiscount
         /// </summary>
         [DataMember(Name = "cashDiscount", EmitDefaultValue = true)]
-        public bool CashDiscount { get; set; }
+        public bool? CashDiscount { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentItem
@@ -200,18 +210,18 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or Sets PrintToReporting
         /// </summary>
         [DataMember(Name = "printToReporting", EmitDefaultValue = true)]
-        public bool PrintToReporting { get; set; }
+        public bool? PrintToReporting { get; set; }
 
         /// <summary>
         /// Gets or Sets UseInDisposition
         /// </summary>
         [DataMember(Name = "useInDisposition", EmitDefaultValue = true)]
-        public bool UseInDisposition { get; set; }
+        public bool? UseInDisposition { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
@@ -381,11 +391,13 @@ namespace Simplic.OxS.SDK.Contract
                 ) && 
                 (
                     this.Distance == input.Distance ||
-                    this.Distance.Equals(input.Distance)
+                    (this.Distance != null &&
+                    this.Distance.Equals(input.Distance))
                 ) && 
                 (
                     this.TollDistance == input.TollDistance ||
-                    this.TollDistance.Equals(input.TollDistance)
+                    (this.TollDistance != null &&
+                    this.TollDistance.Equals(input.TollDistance))
                 ) && 
                 (
                     this.VehicleType == input.VehicleType ||
@@ -394,7 +406,8 @@ namespace Simplic.OxS.SDK.Contract
                 ) && 
                 (
                     this.CashDiscount == input.CashDiscount ||
-                    this.CashDiscount.Equals(input.CashDiscount)
+                    (this.CashDiscount != null &&
+                    this.CashDiscount.Equals(input.CashDiscount))
                 ) && 
                 (
                     this.AlternativeType == input.AlternativeType ||
@@ -407,11 +420,13 @@ namespace Simplic.OxS.SDK.Contract
                 ) && 
                 (
                     this.PrintToReporting == input.PrintToReporting ||
-                    this.PrintToReporting.Equals(input.PrintToReporting)
+                    (this.PrintToReporting != null &&
+                    this.PrintToReporting.Equals(input.PrintToReporting))
                 ) && 
                 (
                     this.UseInDisposition == input.UseInDisposition ||
-                    this.UseInDisposition.Equals(input.UseInDisposition)
+                    (this.UseInDisposition != null &&
+                    this.UseInDisposition.Equals(input.UseInDisposition))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -499,20 +514,35 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Costs.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Distance.GetHashCode();
-                hashCode = (hashCode * 59) + this.TollDistance.GetHashCode();
+                if (this.Distance != null)
+                {
+                    hashCode = (hashCode * 59) + this.Distance.GetHashCode();
+                }
+                if (this.TollDistance != null)
+                {
+                    hashCode = (hashCode * 59) + this.TollDistance.GetHashCode();
+                }
                 if (this.VehicleType != null)
                 {
                     hashCode = (hashCode * 59) + this.VehicleType.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CashDiscount.GetHashCode();
+                if (this.CashDiscount != null)
+                {
+                    hashCode = (hashCode * 59) + this.CashDiscount.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.AlternativeType.GetHashCode();
                 if (this.ParentItem != null)
                 {
                     hashCode = (hashCode * 59) + this.ParentItem.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.PrintToReporting.GetHashCode();
-                hashCode = (hashCode * 59) + this.UseInDisposition.GetHashCode();
+                if (this.PrintToReporting != null)
+                {
+                    hashCode = (hashCode * 59) + this.PrintToReporting.GetHashCode();
+                }
+                if (this.UseInDisposition != null)
+                {
+                    hashCode = (hashCode * 59) + this.UseInDisposition.GetHashCode();
+                }
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
@@ -556,6 +586,12 @@ namespace Simplic.OxS.SDK.Contract
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Type (string) minLength
+            if (this.Type != null && this.Type.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be greater than 1.", new [] { "Type" });
+            }
+
             yield break;
         }
     }
