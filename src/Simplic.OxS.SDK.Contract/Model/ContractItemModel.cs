@@ -75,8 +75,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="unloadingAddress">unloadingAddress.</param>
         /// <param name="alternativeLoadingAddress">alternativeLoadingAddress.</param>
         /// <param name="alternativeUnloadingAddress">alternativeUnloadingAddress.</param>
-        /// <param name="departmentModel">departmentModel.</param>
-        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address), DepartmentModel departmentModel = default(DepartmentModel))
+        /// <param name="department">department.</param>
+        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address), DepartmentModel department = default(DepartmentModel))
         {
             this.Id = id;
             this.Text = text;
@@ -105,7 +105,7 @@ namespace Simplic.OxS.SDK.Contract
             this.UnloadingAddress = unloadingAddress;
             this.AlternativeLoadingAddress = alternativeLoadingAddress;
             this.AlternativeUnloadingAddress = alternativeUnloadingAddress;
-            this.DepartmentModel = departmentModel;
+            this.Department = department;
         }
 
         /// <summary>
@@ -259,10 +259,10 @@ namespace Simplic.OxS.SDK.Contract
         public Address AlternativeUnloadingAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets DepartmentModel
+        /// Gets or Sets Department
         /// </summary>
-        [DataMember(Name = "departmentModel", EmitDefaultValue = false)]
-        public DepartmentModel DepartmentModel { get; set; }
+        [DataMember(Name = "department", EmitDefaultValue = false)]
+        public DepartmentModel Department { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -299,7 +299,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  UnloadingAddress: ").Append(UnloadingAddress).Append("\n");
             sb.Append("  AlternativeLoadingAddress: ").Append(AlternativeLoadingAddress).Append("\n");
             sb.Append("  AlternativeUnloadingAddress: ").Append(AlternativeUnloadingAddress).Append("\n");
-            sb.Append("  DepartmentModel: ").Append(DepartmentModel).Append("\n");
+            sb.Append("  Department: ").Append(Department).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -463,9 +463,9 @@ namespace Simplic.OxS.SDK.Contract
                     this.AlternativeUnloadingAddress.Equals(input.AlternativeUnloadingAddress))
                 ) && 
                 (
-                    this.DepartmentModel == input.DepartmentModel ||
-                    (this.DepartmentModel != null &&
-                    this.DepartmentModel.Equals(input.DepartmentModel))
+                    this.Department == input.Department ||
+                    (this.Department != null &&
+                    this.Department.Equals(input.Department))
                 );
         }
 
@@ -559,9 +559,9 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.AlternativeUnloadingAddress.GetHashCode();
                 }
-                if (this.DepartmentModel != null)
+                if (this.Department != null)
                 {
-                    hashCode = (hashCode * 59) + this.DepartmentModel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Department.GetHashCode();
                 }
                 return hashCode;
             }
