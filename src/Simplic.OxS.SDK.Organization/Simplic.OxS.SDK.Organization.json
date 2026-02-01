@@ -523,6 +523,173 @@
                 }
             }
         },
+        "/Entra/admin-consent-request": {
+            "post": {
+                "tags": [
+                    "Entra"
+                ],
+                "parameters": [
+                    {
+                        "name": "RedirectUri",
+                        "in": "query",
+                        "description": "Gets or sets the redirect uri",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraRequestAdminConsentResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraRequestAdminConsentResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraRequestAdminConsentResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Entra/admin-consent-callback": {
+            "post": {
+                "tags": [
+                    "Entra"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraAdminConsentCallbackRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraAdminConsentCallbackRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EntraAdminConsentCallbackRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntraConnectResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/internal/InternalCertificate/{id}": {
             "get": {
                 "tags": [
@@ -4613,6 +4780,38 @@
                 },
                 "additionalProperties": false
             },
+            "EntraAdminConsentCallbackRequest": {
+                "type": "object",
+                "properties": {
+                    "adminConsent": {
+                        "type": "string",
+                        "description": "Gets or sets whether admin consent was granted (should be \"True\" if granted).",
+                        "nullable": true
+                    },
+                    "tenant": {
+                        "type": "string",
+                        "description": "Gets or sets the Entra tenant ID.",
+                        "nullable": true
+                    },
+                    "state": {
+                        "type": "string",
+                        "description": "Gets or sets the state parameter that was passed in the initial request.",
+                        "nullable": true
+                    },
+                    "error": {
+                        "type": "string",
+                        "description": "Gets or sets the error code if consent was denied or failed.",
+                        "nullable": true
+                    },
+                    "errorDescription": {
+                        "type": "string",
+                        "description": "Gets or sets the error description if consent was denied or failed.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the callback request from Entra ID after admin consent is granted or denied."
+            },
             "EntraConnectRequest": {
                 "type": "object",
                 "properties": {
@@ -4644,6 +4843,18 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the response for connecting to microsoft entra"
+            },
+            "EntraRequestAdminConsentResponse": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Gets or sets the url to request admin consent",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response containing the URL used to request administrator consent for the application."
             },
             "FederalStateModel": {
                 "type": "object",
@@ -5230,6 +5441,10 @@
                         "type": "string",
                         "description": "Gets or set the entra tenant id",
                         "nullable": true
+                    },
+                    "entraIdAdminConsent": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether admin consent has been granted for the application in Azure Active\r\nDirectory."
                     }
                 },
                 "additionalProperties": false,

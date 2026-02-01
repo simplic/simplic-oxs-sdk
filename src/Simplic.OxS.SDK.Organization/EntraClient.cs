@@ -43,6 +43,76 @@ public interface IEntraClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+    /// <returns>EntraConnectResponse</returns>
+    EntraConnectResponse AdminConsentCallback(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+    /// <returns>ApiResponse of EntraConnectResponse</returns>
+    ApiResponse<EntraConnectResponse> AdminConsentCallbackWithHttpInfo(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of EntraConnectResponse</returns>
+    Task<EntraConnectResponse> AdminConsentCallbackAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (EntraConnectResponse)</returns>
+    Task<ApiResponse<EntraConnectResponse>> AdminConsentCallbackWithHttpInfoAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+    /// <returns>EntraRequestAdminConsentResponse</returns>
+    EntraRequestAdminConsentResponse AdminConsentRequest(string? redirectUri = default(string?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+    /// <returns>ApiResponse of EntraRequestAdminConsentResponse</returns>
+    ApiResponse<EntraRequestAdminConsentResponse> AdminConsentRequestWithHttpInfo(string? redirectUri = default(string?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of EntraRequestAdminConsentResponse</returns>
+    Task<EntraRequestAdminConsentResponse> AdminConsentRequestAsync(string? redirectUri = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (EntraRequestAdminConsentResponse)</returns>
+    Task<ApiResponse<EntraRequestAdminConsentResponse>> AdminConsentRequestWithHttpInfoAsync(string? redirectUri = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="entraConnectRequest"> (optional)</param>
     /// <returns>EntraConnectResponse</returns>
     EntraConnectResponse Connect(EntraConnectRequest? entraConnectRequest = default(EntraConnectRequest?));
@@ -152,6 +222,152 @@ public interface IEntraClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <returns>EntraConnectResponse</returns>
+        public EntraConnectResponse AdminConsentCallback(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?))
+        {
+            try
+            {
+                return _internalClient.AdminConsentCallback(entraAdminConsentCallbackRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <returns>ApiResponse of EntraConnectResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EntraConnectResponse> AdminConsentCallbackWithHttpInfo(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?))
+        {
+            try
+            {
+                return _internalClient.AdminConsentCallbackWithHttpInfo(entraAdminConsentCallbackRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraConnectResponse</returns>
+        public System.Threading.Tasks.Task<EntraConnectResponse> AdminConsentCallbackAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AdminConsentCallbackAsync(entraAdminConsentCallbackRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraConnectResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EntraConnectResponse>> AdminConsentCallbackWithHttpInfoAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AdminConsentCallbackWithHttpInfoAsync(entraAdminConsentCallbackRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <returns>EntraRequestAdminConsentResponse</returns>
+        public EntraRequestAdminConsentResponse AdminConsentRequest(string? redirectUri = default(string?))
+        {
+            try
+            {
+                return _internalClient.AdminConsentRequest(redirectUri);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <returns>ApiResponse of EntraRequestAdminConsentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse> AdminConsentRequestWithHttpInfo(string? redirectUri = default(string?))
+        {
+            try
+            {
+                return _internalClient.AdminConsentRequestWithHttpInfo(redirectUri);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraRequestAdminConsentResponse</returns>
+        public System.Threading.Tasks.Task<EntraRequestAdminConsentResponse> AdminConsentRequestAsync(string? redirectUri = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AdminConsentRequestAsync(redirectUri, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraRequestAdminConsentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse>> AdminConsentRequestWithHttpInfoAsync(string? redirectUri = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AdminConsentRequestWithHttpInfoAsync(redirectUri, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entraConnectRequest"> (optional)</param>
         /// <returns>EntraConnectResponse</returns>
         public EntraConnectResponse Connect(EntraConnectRequest? entraConnectRequest = default(EntraConnectRequest?))
@@ -238,6 +454,46 @@ public interface IEntraClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntraConnectResponse</returns>
+        EntraConnectResponse AdminConsentCallback(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntraConnectResponse</returns>
+        ApiResponse<EntraConnectResponse> AdminConsentCallbackWithHttpInfo(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntraRequestAdminConsentResponse</returns>
+        EntraRequestAdminConsentResponse AdminConsentRequest(string? redirectUri = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntraRequestAdminConsentResponse</returns>
+        ApiResponse<EntraRequestAdminConsentResponse> AdminConsentRequestWithHttpInfo(string? redirectUri = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="entraConnectRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>EntraConnectResponse</returns>
@@ -263,6 +519,56 @@ public interface IEntraClient
     internal interface __IEntraClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraConnectResponse</returns>
+        System.Threading.Tasks.Task<EntraConnectResponse> AdminConsentCallbackAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraConnectResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EntraConnectResponse>> AdminConsentCallbackWithHttpInfoAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraRequestAdminConsentResponse</returns>
+        System.Threading.Tasks.Task<EntraRequestAdminConsentResponse> AdminConsentRequestAsync(string? redirectUri = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraRequestAdminConsentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EntraRequestAdminConsentResponse>> AdminConsentRequestWithHttpInfoAsync(string? redirectUri = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -408,6 +714,330 @@ public interface IEntraClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntraConnectResponse</returns>
+        public EntraConnectResponse AdminConsentCallback(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<EntraConnectResponse> localVarResponse = AdminConsentCallbackWithHttpInfo(entraAdminConsentCallbackRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntraConnectResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EntraConnectResponse> AdminConsentCallbackWithHttpInfo(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = entraAdminConsentCallbackRequest;
+
+            localVarRequestOptions.Operation = "EntraClient.EntraAdminConsentCallbackPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<EntraConnectResponse>("/Entra/admin-consent-callback", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntraAdminConsentCallbackPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraConnectResponse</returns>
+        public async System.Threading.Tasks.Task<EntraConnectResponse> AdminConsentCallbackAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<EntraConnectResponse> localVarResponse = await AdminConsentCallbackWithHttpInfoAsync(entraAdminConsentCallbackRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entraAdminConsentCallbackRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraConnectResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EntraConnectResponse>> AdminConsentCallbackWithHttpInfoAsync(EntraAdminConsentCallbackRequest? entraAdminConsentCallbackRequest = default(EntraAdminConsentCallbackRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = entraAdminConsentCallbackRequest;
+
+            localVarRequestOptions.Operation = "EntraClient.EntraAdminConsentCallbackPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EntraConnectResponse>("/Entra/admin-consent-callback", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntraAdminConsentCallbackPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntraRequestAdminConsentResponse</returns>
+        public EntraRequestAdminConsentResponse AdminConsentRequest(string? redirectUri = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse> localVarResponse = AdminConsentRequestWithHttpInfo(redirectUri);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntraRequestAdminConsentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse> AdminConsentRequestWithHttpInfo(string? redirectUri = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (redirectUri != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "RedirectUri", redirectUri));
+            }
+
+            localVarRequestOptions.Operation = "EntraClient.EntraAdminConsentRequestPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<EntraRequestAdminConsentResponse>("/Entra/admin-consent-request", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntraAdminConsentRequestPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntraRequestAdminConsentResponse</returns>
+        public async System.Threading.Tasks.Task<EntraRequestAdminConsentResponse> AdminConsentRequestAsync(string? redirectUri = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse> localVarResponse = await AdminConsentRequestWithHttpInfoAsync(redirectUri, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirectUri">Gets or sets the redirect uri (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntraRequestAdminConsentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EntraRequestAdminConsentResponse>> AdminConsentRequestWithHttpInfoAsync(string? redirectUri = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (redirectUri != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "RedirectUri", redirectUri));
+            }
+
+            localVarRequestOptions.Operation = "EntraClient.EntraAdminConsentRequestPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EntraRequestAdminConsentResponse>("/Entra/admin-consent-request", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntraAdminConsentRequestPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

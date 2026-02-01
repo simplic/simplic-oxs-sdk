@@ -42,7 +42,8 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="billingAddressModel">billingAddressModel.</param>
         /// <param name="isDummy">Whether this organization is used for testing purposes.  This allows for deleting it.</param>
         /// <param name="entraTenantId">Gets or set the entra tenant id.</param>
-        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool), string entraTenantId = default(string))
+        /// <param name="entraIdAdminConsent">Gets or sets a value indicating whether admin consent has been granted for the application in Azure Active  Directory..</param>
+        public OrganizationModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), BillingAddressModel billingAddressModel = default(BillingAddressModel), bool isDummy = default(bool), string entraTenantId = default(string), bool entraIdAdminConsent = default(bool))
         {
             this.Id = id;
             this.Name = name;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Organization
             this.BillingAddressModel = billingAddressModel;
             this.IsDummy = isDummy;
             this.EntraTenantId = entraTenantId;
+            this.EntraIdAdminConsent = entraIdAdminConsent;
         }
 
         /// <summary>
@@ -93,6 +95,13 @@ namespace Simplic.OxS.SDK.Organization
         public string EntraTenantId { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether admin consent has been granted for the application in Azure Active  Directory.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether admin consent has been granted for the application in Azure Active  Directory.</value>
+        [DataMember(Name = "entraIdAdminConsent", EmitDefaultValue = true)]
+        public bool EntraIdAdminConsent { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -106,6 +115,7 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("  BillingAddressModel: ").Append(BillingAddressModel).Append("\n");
             sb.Append("  IsDummy: ").Append(IsDummy).Append("\n");
             sb.Append("  EntraTenantId: ").Append(EntraTenantId).Append("\n");
+            sb.Append("  EntraIdAdminConsent: ").Append(EntraIdAdminConsent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -169,6 +179,10 @@ namespace Simplic.OxS.SDK.Organization
                     this.EntraTenantId == input.EntraTenantId ||
                     (this.EntraTenantId != null &&
                     this.EntraTenantId.Equals(input.EntraTenantId))
+                ) && 
+                (
+                    this.EntraIdAdminConsent == input.EntraIdAdminConsent ||
+                    this.EntraIdAdminConsent.Equals(input.EntraIdAdminConsent)
                 );
         }
 
@@ -202,6 +216,7 @@ namespace Simplic.OxS.SDK.Organization
                 {
                     hashCode = (hashCode * 59) + this.EntraTenantId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.EntraIdAdminConsent.GetHashCode();
                 return hashCode;
             }
         }
