@@ -38,12 +38,10 @@ namespace Simplic.OxS.SDK.Contract
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        /// <param name="loadableWeight">loadableWeight.</param>
-        public VehicleTypeModel(Guid id = default(Guid), string name = default(string), double loadableWeight = default(double))
+        public VehicleTypeModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
             this.Name = name;
-            this.LoadableWeight = loadableWeight;
         }
 
         /// <summary>
@@ -59,12 +57,6 @@ namespace Simplic.OxS.SDK.Contract
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadableWeight
-        /// </summary>
-        [DataMember(Name = "loadableWeight", EmitDefaultValue = false)]
-        public double LoadableWeight { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,7 +66,6 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("class VehicleTypeModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  LoadableWeight: ").Append(LoadableWeight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,10 +110,6 @@ namespace Simplic.OxS.SDK.Contract
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.LoadableWeight == input.LoadableWeight ||
-                    this.LoadableWeight.Equals(input.LoadableWeight)
                 );
         }
 
@@ -143,7 +130,6 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.LoadableWeight.GetHashCode();
                 return hashCode;
             }
         }

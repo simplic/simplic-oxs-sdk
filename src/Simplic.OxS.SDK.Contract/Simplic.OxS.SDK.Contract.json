@@ -3346,6 +3346,9 @@
                         "type": "string",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -3960,10 +3963,6 @@
                     "name": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "loadableWeight": {
-                        "type": "number",
-                        "format": "double"
                     }
                 },
                 "additionalProperties": false
