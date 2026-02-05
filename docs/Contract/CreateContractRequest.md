@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Insurance** | **double?** |  | [optional] 
 **Creditworthiness** | **string** |  | [optional] 
 **CreditLimit** | **string** |  | [optional] 
+**InternalNote** | **string** |  | [optional] 
 **IsDeleted** | **bool?** |  | [optional] 
 **BusinessPartnerContactId** | **Guid?** |  | [optional] 
 **BusinessPartnerPersonalAccountId** | **Guid?** |  | [optional] 

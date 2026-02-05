@@ -80,7 +80,10 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="alternativeUnloadingAddressId">alternativeUnloadingAddressId.</param>
         /// <param name="contractNumber">contractNumber.</param>
         /// <param name="departmentId">departmentId.</param>
-        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?))
+        /// <param name="description">description.</param>
+        /// <param name="certified">certified.</param>
+        /// <param name="endDate">endDate.</param>
+        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -114,6 +117,9 @@ namespace Simplic.OxS.SDK.Contract
             this.AlternativeUnloadingAddressId = alternativeUnloadingAddressId;
             this.ContractNumber = contractNumber;
             this.DepartmentId = departmentId;
+            this.Description = description;
+            this.Certified = certified;
+            this.EndDate = endDate;
         }
 
         /// <summary>
@@ -267,6 +273,24 @@ namespace Simplic.OxS.SDK.Contract
         public Guid? DepartmentId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Certified
+        /// </summary>
+        [DataMember(Name = "certified", EmitDefaultValue = true)]
+        public bool? Certified { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EndDate
+        /// </summary>
+        [DataMember(Name = "endDate", EmitDefaultValue = true)]
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -301,6 +325,9 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  AlternativeUnloadingAddressId: ").Append(AlternativeUnloadingAddressId).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Certified: ").Append(Certified).Append("\n");
+            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -467,6 +494,21 @@ namespace Simplic.OxS.SDK.Contract
                     this.DepartmentId == input.DepartmentId ||
                     (this.DepartmentId != null &&
                     this.DepartmentId.Equals(input.DepartmentId))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Certified == input.Certified ||
+                    (this.Certified != null &&
+                    this.Certified.Equals(input.Certified))
+                ) && 
+                (
+                    this.EndDate == input.EndDate ||
+                    (this.EndDate != null &&
+                    this.EndDate.Equals(input.EndDate))
                 );
         }
 
@@ -574,6 +616,18 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.DepartmentId != null)
                 {
                     hashCode = (hashCode * 59) + this.DepartmentId.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Certified != null)
+                {
+                    hashCode = (hashCode * 59) + this.Certified.GetHashCode();
+                }
+                if (this.EndDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
                 }
                 return hashCode;
             }

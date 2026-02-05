@@ -31,6 +31,9 @@ Name | Type | Description | Notes
 **AlternativeUnloadingAddressId** | **Guid?** |  | [optional] 
 **ContractNumber** | **string** |  | [optional] 
 **DepartmentId** | **Guid?** |  | [optional] 
+**Description** | **string** |  | [optional] 
+**Certified** | **bool?** |  | [optional] 
+**EndDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

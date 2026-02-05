@@ -55,6 +55,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="insurance">insurance.</param>
         /// <param name="creditworthiness">creditworthiness.</param>
         /// <param name="creditLimit">creditLimit.</param>
+        /// <param name="internalNote">internalNote.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="businessPartnerContactId">businessPartnerContactId.</param>
         /// <param name="businessPartnerPersonalAccountId">businessPartnerPersonalAccountId.</param>
@@ -64,7 +65,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="contactPersonContactId">contactPersonContactId.</param>
         /// <param name="items">items.</param>
         /// <param name="statusId">statusId.</param>
-        public UpdateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<PatchItemModel> items = default(List<PatchItemModel>), Guid? statusId = default(Guid?))
+        public UpdateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), string internalNote = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<PatchItemModel> items = default(List<PatchItemModel>), Guid? statusId = default(Guid?))
         {
             this.Number = number;
             this.Name = name;
@@ -79,6 +80,7 @@ namespace Simplic.OxS.SDK.Contract
             this.Insurance = insurance;
             this.Creditworthiness = creditworthiness;
             this.CreditLimit = creditLimit;
+            this.InternalNote = internalNote;
             this.IsDeleted = isDeleted;
             this.BusinessPartnerContactId = businessPartnerContactId;
             this.BusinessPartnerPersonalAccountId = businessPartnerPersonalAccountId;
@@ -163,6 +165,12 @@ namespace Simplic.OxS.SDK.Contract
         public string CreditLimit { get; set; }
 
         /// <summary>
+        /// Gets or Sets InternalNote
+        /// </summary>
+        [DataMember(Name = "internalNote", EmitDefaultValue = true)]
+        public string InternalNote { get; set; }
+
+        /// <summary>
         /// Gets or Sets IsDeleted
         /// </summary>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
@@ -237,6 +245,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Insurance: ").Append(Insurance).Append("\n");
             sb.Append("  Creditworthiness: ").Append(Creditworthiness).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
+            sb.Append("  InternalNote: ").Append(InternalNote).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  BusinessPartnerContactId: ").Append(BusinessPartnerContactId).Append("\n");
             sb.Append("  BusinessPartnerPersonalAccountId: ").Append(BusinessPartnerPersonalAccountId).Append("\n");
@@ -346,6 +355,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.CreditLimit.Equals(input.CreditLimit))
                 ) && 
                 (
+                    this.InternalNote == input.InternalNote ||
+                    (this.InternalNote != null &&
+                    this.InternalNote.Equals(input.InternalNote))
+                ) && 
+                (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
@@ -450,6 +464,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
+                }
+                if (this.InternalNote != null)
+                {
+                    hashCode = (hashCode * 59) + this.InternalNote.GetHashCode();
                 }
                 if (this.IsDeleted != null)
                 {

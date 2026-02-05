@@ -32,6 +32,9 @@ Name | Type | Description | Notes
 **AlternativeLoadingAddress** | [**Address**](Address.md) |  | [optional] 
 **AlternativeUnloadingAddress** | [**Address**](Address.md) |  | [optional] 
 **Department** | [**DepartmentModel**](DepartmentModel.md) |  | [optional] 
+**Description** | **string** |  | [optional] 
+**Certified** | **bool?** |  | [optional] 
+**EndDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
