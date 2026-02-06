@@ -39,11 +39,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="costCenterId">Gets or sets the cost center to assign by ID..</param>
         /// <param name="percentage">Gets or sets the percentage to assign..</param>
-        public CostCenterAssignmentRequest(Guid id = default(Guid), Guid? costCenterId = default(Guid?), double? percentage = default(double?))
+        /// <param name="remove">Remove flag for the patch helper..</param>
+        public CostCenterAssignmentRequest(Guid id = default(Guid), Guid? costCenterId = default(Guid?), double? percentage = default(double?), bool remove = default(bool))
         {
             this.Id = id;
             this.CostCenterId = costCenterId;
             this.Percentage = percentage;
+            this.Remove = remove;
         }
 
         /// <summary>
@@ -68,6 +70,13 @@ namespace Simplic.OxS.SDK.ERP
         public double? Percentage { get; set; }
 
         /// <summary>
+        /// Remove flag for the patch helper.
+        /// </summary>
+        /// <value>Remove flag for the patch helper.</value>
+        [DataMember(Name = "_remove", EmitDefaultValue = true)]
+        public bool Remove { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +87,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CostCenterId: ").Append(CostCenterId).Append("\n");
             sb.Append("  Percentage: ").Append(Percentage).Append("\n");
+            sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +137,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.Percentage == input.Percentage ||
                     (this.Percentage != null &&
                     this.Percentage.Equals(input.Percentage))
+                ) && 
+                (
+                    this.Remove == input.Remove ||
+                    this.Remove.Equals(input.Remove)
                 );
         }
 
@@ -151,6 +165,7 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Percentage.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Remove.GetHashCode();
                 return hashCode;
             }
         }

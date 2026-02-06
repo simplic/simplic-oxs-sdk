@@ -5688,6 +5688,10 @@
                         "description": "Gets or sets the percentage to assign.",
                         "format": "double",
                         "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
                     }
                 },
                 "additionalProperties": false,
