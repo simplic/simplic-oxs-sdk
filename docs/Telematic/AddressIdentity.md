@@ -1,14 +1,11 @@
-# Simplic.OxS.SDK.Contract.QuantityUnitModel
+# Simplic.OxS.SDK.Telematic.AddressIdentity
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**Ident** | **int** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**ShortName** | **string** |  | [optional] 
-**Digits** | **int?** |  | [optional] 
+**AddressNo** | **string** |  | [optional] 
+**AddressUid** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

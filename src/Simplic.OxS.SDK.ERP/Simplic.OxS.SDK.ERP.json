@@ -11354,6 +11354,14 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Gets or sets a set of states the transaction is in.\r\n\n\r\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting\r\n",
+                        "nullable": true
+                    },
                     "manualVAT": {
                         "$ref": "#/components/schemas/TransactionManualVatRequest"
                     },

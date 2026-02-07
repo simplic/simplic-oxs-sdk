@@ -2294,17 +2294,26 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/showWorkingTimesResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WorkingTime"
+                                    }
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/showWorkingTimesResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WorkingTime"
+                                    }
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/showWorkingTimesResponse"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WorkingTime"
+                                    }
                                 }
                             }
                         }
@@ -3655,6 +3664,20 @@
                 },
                 "additionalProperties": false
             },
+            "AddressIdentity": {
+                "type": "object",
+                "properties": {
+                    "addressNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "addressUid": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "AutomaticVehicleConfigurationCreationSettings": {
                 "type": "object",
                 "properties": {
@@ -3694,6 +3717,46 @@
                         "items": {
                             "type": "string"
                         },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BasicDriver": {
+                "type": "object",
+                "properties": {
+                    "driverName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "driverNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "driverUid": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BasicObject": {
+                "type": "object",
+                "properties": {
+                    "objectNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "objectUid": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "objectName": {
+                        "type": "string",
                         "nullable": true
                     }
                 },
@@ -3907,6 +3970,15 @@
                 },
                 "additionalProperties": false
             },
+            "DriverRole": {
+                "enum": [
+                    0,
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
             "EPoD": {
                 "type": "object",
                 "properties": {
@@ -4079,6 +4151,40 @@
                     "timestampUtc": {
                         "type": "string",
                         "format": "date-time"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GeoPosition": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "latitudeSpecified": {
+                        "type": "boolean"
+                    },
+                    "longitude": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "longitudeSpecified": {
+                        "type": "boolean"
+                    },
+                    "mapcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitudeHumanReadable": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "longitudeHumanReadable": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4943,6 +5049,68 @@
                 },
                 "additionalProperties": false
             },
+            "StartAndEndPosWithCoordinates": {
+                "type": "object",
+                "properties": {
+                    "startOdometer": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "startOdometerSpecified": {
+                        "type": "boolean"
+                    },
+                    "startPosText": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "startDateAndTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "startDateAndTimeSpecified": {
+                        "type": "boolean"
+                    },
+                    "endOdometer": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "endOdometerSpecified": {
+                        "type": "boolean"
+                    },
+                    "endPosText": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endDateAndTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDateAndTimeSpecified": {
+                        "type": "boolean"
+                    },
+                    "startOdometerLong": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "startOdometerLongSpecified": {
+                        "type": "boolean"
+                    },
+                    "endOdometerLong": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "endOdometerLongSpecified": {
+                        "type": "boolean"
+                    },
+                    "startPos": {
+                        "$ref": "#/components/schemas/GeoPosition"
+                    },
+                    "endPos": {
+                        "$ref": "#/components/schemas/GeoPosition"
+                    }
+                },
+                "additionalProperties": false
+            },
             "TelematicConfigurationResponse": {
                 "type": "object",
                 "properties": {
@@ -5045,6 +5213,22 @@
                 },
                 "additionalProperties": false
             },
+            "WorkState": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
             "WorkflowResponse": {
                 "type": "object",
                 "properties": {
@@ -5067,8 +5251,56 @@
                 },
                 "additionalProperties": false
             },
-            "showWorkingTimesResponse": {
+            "WorkingTime": {
                 "type": "object",
+                "properties": {
+                    "object": {
+                        "$ref": "#/components/schemas/BasicObject"
+                    },
+                    "driver": {
+                        "$ref": "#/components/schemas/BasicDriver"
+                    },
+                    "geoPositions": {
+                        "$ref": "#/components/schemas/StartAndEndPosWithCoordinates"
+                    },
+                    "startAddress": {
+                        "$ref": "#/components/schemas/AddressIdentity"
+                    },
+                    "endAddress": {
+                        "$ref": "#/components/schemas/AddressIdentity"
+                    },
+                    "workState": {
+                        "$ref": "#/components/schemas/WorkState"
+                    },
+                    "workStateSpecified": {
+                        "type": "boolean"
+                    },
+                    "activityType": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "activityTypeSpecified": {
+                        "type": "boolean"
+                    },
+                    "driverSignOnRole": {
+                        "$ref": "#/components/schemas/DriverRole"
+                    },
+                    "driverSignOnRoleSpecified": {
+                        "type": "boolean"
+                    },
+                    "endObject": {
+                        "$ref": "#/components/schemas/BasicObject"
+                    },
+                    "externalDeviceTimeOffset": {
+                        "type": "integer",
+                        "format": "int64",
+                        "nullable": true
+                    },
+                    "externalDeviceTimeOffsetSpecified": {
+                        "type": "boolean"
+                    }
+                },
                 "additionalProperties": false
             }
         },

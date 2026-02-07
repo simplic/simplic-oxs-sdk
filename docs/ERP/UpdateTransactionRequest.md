@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **CashDiscountTotal** | **double?** | Gets or sets the total cash discount. | [optional] 
 **FinancialAccountingPeriodId** | **Guid?** | Gets or sets the financial year period of this transaction given by ID. | [optional] 
 **PeriodId** | **Guid?** | Gets or sets the financial year period of this transaction for inventory management given by ID. | [optional] 
+**States** | **List&lt;string&gt;** | Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting   | [optional] 
 **ManualVAT** | [**TransactionManualVatRequest**](TransactionManualVatRequest.md) |  | [optional] 
 **Notes** | **string** | Gets or sets notes. | [optional] 
 **DueDate** | **DateTime?** | Gets or sets the due date. | [optional] 

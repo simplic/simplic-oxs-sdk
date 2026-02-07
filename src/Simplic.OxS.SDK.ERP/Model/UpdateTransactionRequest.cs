@@ -67,6 +67,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="cashDiscountTotal">Gets or sets the total cash discount..</param>
         /// <param name="financialAccountingPeriodId">Gets or sets the financial year period of this transaction given by ID..</param>
         /// <param name="periodId">Gets or sets the financial year period of this transaction for inventory management given by ID..</param>
+        /// <param name="states">Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  .</param>
         /// <param name="manualVAT">manualVAT.</param>
         /// <param name="notes">Gets or sets notes..</param>
         /// <param name="dueDate">Gets or sets the due date..</param>
@@ -78,7 +79,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="metadataProcessingData">metadataProcessingData.</param>
-        public UpdateTransactionRequest(string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), bool? financialExportDisabled = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), MetadataProcessingDataRequest metadataProcessingData = default(MetadataProcessingDataRequest))
+        public UpdateTransactionRequest(string number = default(string), string reference = default(string), Guid? typeId = default(Guid?), Guid? subtypeId = default(Guid?), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), Guid? termsOfPaymentId = default(Guid?), Guid? paymentMethodId = default(Guid?), Guid? currencyId = default(Guid?), string description = default(string), TransactionContactRequest financialPartner = default(TransactionContactRequest), TransactionContactRequest deliveryAddress = default(TransactionContactRequest), TransactionContactRequest invoiceRecipient = default(TransactionContactRequest), TransactionContactRequest payer = default(TransactionContactRequest), TransactionContactRequest responsible = default(TransactionContactRequest), TransactionContactRequest representative = default(TransactionContactRequest), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), Guid? financialAccountingPeriodId = default(Guid?), Guid? periodId = default(Guid?), List<string> states = default(List<string>), TransactionManualVatRequest manualVAT = default(TransactionManualVatRequest), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), Guid? taxGroupId = default(Guid?), OperationItemCombinationMode? operationItemCombinationMode = default(OperationItemCombinationMode?), bool? isGross = default(bool?), bool? financialExportDisabled = default(bool?), List<CostCenterAssignmentRequest> defaultCostCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> defaultCostObjects = default(List<CostCenterAssignmentRequest>), MetadataProcessingDataRequest metadataProcessingData = default(MetadataProcessingDataRequest))
         {
             this.Number = number;
             this.Reference = reference;
@@ -105,6 +106,7 @@ namespace Simplic.OxS.SDK.ERP
             this.CashDiscountTotal = cashDiscountTotal;
             this.FinancialAccountingPeriodId = financialAccountingPeriodId;
             this.PeriodId = periodId;
+            this.States = states;
             this.ManualVAT = manualVAT;
             this.Notes = notes;
             this.DueDate = dueDate;
@@ -288,6 +290,13 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? PeriodId { get; set; }
 
         /// <summary>
+        /// Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  
+        /// </summary>
+        /// <value>Gets or sets a set of states the transaction is in.     Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting  </value>
+        [DataMember(Name = "states", EmitDefaultValue = true)]
+        public List<string> States { get; set; }
+
+        /// <summary>
         /// Gets or Sets ManualVAT
         /// </summary>
         [DataMember(Name = "manualVAT", EmitDefaultValue = false)]
@@ -388,6 +397,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  CashDiscountTotal: ").Append(CashDiscountTotal).Append("\n");
             sb.Append("  FinancialAccountingPeriodId: ").Append(FinancialAccountingPeriodId).Append("\n");
             sb.Append("  PeriodId: ").Append(PeriodId).Append("\n");
+            sb.Append("  States: ").Append(States).Append("\n");
             sb.Append("  ManualVAT: ").Append(ManualVAT).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
@@ -561,6 +571,12 @@ namespace Simplic.OxS.SDK.ERP
                     this.PeriodId.Equals(input.PeriodId))
                 ) && 
                 (
+                    this.States == input.States ||
+                    this.States != null &&
+                    input.States != null &&
+                    this.States.SequenceEqual(input.States)
+                ) && 
+                (
                     this.ManualVAT == input.ManualVAT ||
                     (this.ManualVAT != null &&
                     this.ManualVAT.Equals(input.ManualVAT))
@@ -726,6 +742,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.PeriodId != null)
                 {
                     hashCode = (hashCode * 59) + this.PeriodId.GetHashCode();
+                }
+                if (this.States != null)
+                {
+                    hashCode = (hashCode * 59) + this.States.GetHashCode();
                 }
                 if (this.ManualVAT != null)
                 {

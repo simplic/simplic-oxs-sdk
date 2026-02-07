@@ -44,7 +44,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="articleId">articleId.</param>
         /// <param name="loadingAidId">loadingAidId.</param>
         /// <param name="orderNumber">orderNumber.</param>
-        public CreateShipmentItemRequest(string text = default(string), double? loadingMeters = default(double?), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), Guid? articleId = default(Guid?), Guid? loadingAidId = default(Guid?), int orderNumber = default(int))
+        public CreateShipmentItemRequest(string text = default(string), double? loadingMeters = default(double?), string reference = default(string), QuantityShipmentModel quantity = default(QuantityShipmentModel), QuantityShipmentModel weight = default(QuantityShipmentModel), Guid? articleId = default(Guid?), Guid? loadingAidId = default(Guid?), int orderNumber = default(int))
         {
             this.Text = text;
             this.LoadingMeters = loadingMeters;
@@ -78,13 +78,13 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public QuantityModel Quantity { get; set; }
+        public QuantityShipmentModel Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
         [DataMember(Name = "weight", EmitDefaultValue = false)]
-        public QuantityModel Weight { get; set; }
+        public QuantityShipmentModel Weight { get; set; }
 
         /// <summary>
         /// Gets or Sets ArticleId

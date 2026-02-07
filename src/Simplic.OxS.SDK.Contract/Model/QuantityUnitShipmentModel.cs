@@ -28,22 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// QuantityUnitModel
+    /// QuantityUnitShipmentModel
     /// </summary>
-    [DataContract(Name = "QuantityUnitModel")]
-    public partial class QuantityUnitModel : IEquatable<QuantityUnitModel>, IValidatableObject
+    [DataContract(Name = "QuantityUnitShipmentModel")]
+    public partial class QuantityUnitShipmentModel : IEquatable<QuantityUnitShipmentModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuantityUnitModel" /> class.
+        /// Initializes a new instance of the <see cref="QuantityUnitShipmentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="guid">guid.</param>
         /// <param name="ident">ident.</param>
         /// <param name="name">name.</param>
         /// <param name="shortName">shortName.</param>
         /// <param name="digits">digits.</param>
-        public QuantityUnitModel(Guid id = default(Guid), int ident = default(int), string name = default(string), string shortName = default(string), int? digits = default(int?))
+        public QuantityUnitShipmentModel(Guid guid = default(Guid), int ident = default(int), string name = default(string), string shortName = default(string), int? digits = default(int?))
         {
-            this.Id = id;
+            this.Guid = guid;
             this.Ident = ident;
             this.Name = name;
             this.ShortName = shortName;
@@ -51,10 +51,10 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Guid
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "guid", EmitDefaultValue = false)]
+        public Guid Guid { get; set; }
 
         /// <summary>
         /// Gets or Sets Ident
@@ -87,8 +87,8 @@ namespace Simplic.OxS.SDK.Contract
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class QuantityUnitModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class QuantityUnitShipmentModel {\n");
+            sb.Append("  Guid: ").Append(Guid).Append("\n");
             sb.Append("  Ident: ").Append(Ident).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
@@ -113,15 +113,15 @@ namespace Simplic.OxS.SDK.Contract
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as QuantityUnitModel);
+            return this.Equals(input as QuantityUnitShipmentModel);
         }
 
         /// <summary>
-        /// Returns true if QuantityUnitModel instances are equal
+        /// Returns true if QuantityUnitShipmentModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of QuantityUnitModel to be compared</param>
+        /// <param name="input">Instance of QuantityUnitShipmentModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(QuantityUnitModel input)
+        public bool Equals(QuantityUnitShipmentModel input)
         {
             if (input == null)
             {
@@ -129,9 +129,9 @@ namespace Simplic.OxS.SDK.Contract
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Guid == input.Guid ||
+                    (this.Guid != null &&
+                    this.Guid.Equals(input.Guid))
                 ) && 
                 (
                     this.Ident == input.Ident ||
@@ -163,9 +163,9 @@ namespace Simplic.OxS.SDK.Contract
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Guid != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Guid.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Ident.GetHashCode();
                 if (this.Name != null)

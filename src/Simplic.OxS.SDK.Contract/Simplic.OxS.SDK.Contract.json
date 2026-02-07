@@ -2981,10 +2981,10 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "$ref": "#/components/schemas/QuantityModel"
+                        "$ref": "#/components/schemas/QuantityShipmentModel"
                     },
                     "weight": {
-                        "$ref": "#/components/schemas/QuantityModel"
+                        "$ref": "#/components/schemas/QuantityShipmentModel"
                     },
                     "articleId": {
                         "type": "string",
@@ -3456,7 +3456,47 @@
                 },
                 "additionalProperties": false
             },
+            "QuantityShipmentModel": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitShipmentModel"
+                    }
+                },
+                "additionalProperties": false
+            },
             "QuantityUnitModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "ident": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "digits": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "QuantityUnitShipmentModel": {
                 "type": "object",
                 "properties": {
                     "guid": {

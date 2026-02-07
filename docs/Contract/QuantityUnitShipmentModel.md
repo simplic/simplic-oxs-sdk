@@ -1,10 +1,10 @@
-# Simplic.OxS.SDK.Contract.QuantityUnitModel
+# Simplic.OxS.SDK.Contract.QuantityUnitShipmentModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Guid** | **Guid** |  | [optional] 
 **Ident** | **int** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
