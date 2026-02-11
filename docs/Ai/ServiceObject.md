@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **GrpcDefinitions** | [**List&lt;GrpcDefinitions&gt;**](GrpcDefinitions.md) |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Contracts** | [**List&lt;ServiceContract&gt;**](ServiceContract.md) |  | [optional] 
+**GraphQLSchema** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

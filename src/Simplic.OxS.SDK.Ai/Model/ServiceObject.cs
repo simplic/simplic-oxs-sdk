@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="grpcDefinitions">grpcDefinitions.</param>
         /// <param name="type">type.</param>
         /// <param name="contracts">contracts.</param>
-        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), List<GrpcDefinitions> grpcDefinitions = default(List<GrpcDefinitions>), string type = default(string), List<ServiceContract> contracts = default(List<ServiceContract>))
+        /// <param name="graphQLSchema">graphQLSchema.</param>
+        public ServiceObject(string name = default(string), string varVersion = default(string), string baseUrl = default(string), string swaggerJsonUrl = default(string), string modelDefinitionUrl = default(string), List<GrpcDefinitions> grpcDefinitions = default(List<GrpcDefinitions>), string type = default(string), List<ServiceContract> contracts = default(List<ServiceContract>), string graphQLSchema = default(string))
         {
             this.Name = name;
             this.VarVersion = varVersion;
@@ -54,6 +55,7 @@ namespace Simplic.OxS.SDK.Ai
             this.GrpcDefinitions = grpcDefinitions;
             this.Type = type;
             this.Contracts = contracts;
+            this.GraphQLSchema = graphQLSchema;
         }
 
         /// <summary>
@@ -105,6 +107,12 @@ namespace Simplic.OxS.SDK.Ai
         public List<ServiceContract> Contracts { get; set; }
 
         /// <summary>
+        /// Gets or Sets GraphQLSchema
+        /// </summary>
+        [DataMember(Name = "graphQLSchema", EmitDefaultValue = true)]
+        public string GraphQLSchema { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +128,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  GrpcDefinitions: ").Append(GrpcDefinitions).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Contracts: ").Append(Contracts).Append("\n");
+            sb.Append("  GraphQLSchema: ").Append(GraphQLSchema).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,6 +205,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Contracts != null &&
                     input.Contracts != null &&
                     this.Contracts.SequenceEqual(input.Contracts)
+                ) && 
+                (
+                    this.GraphQLSchema == input.GraphQLSchema ||
+                    (this.GraphQLSchema != null &&
+                    this.GraphQLSchema.Equals(input.GraphQLSchema))
                 );
         }
 
@@ -239,6 +253,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Contracts != null)
                 {
                     hashCode = (hashCode * 59) + this.Contracts.GetHashCode();
+                }
+                if (this.GraphQLSchema != null)
+                {
+                    hashCode = (hashCode * 59) + this.GraphQLSchema.GetHashCode();
                 }
                 return hashCode;
             }
