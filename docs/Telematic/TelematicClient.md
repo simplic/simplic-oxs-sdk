@@ -475,7 +475,7 @@ catch (ApiException e)
 
 <a id="telematicgetworkingtimespost"></a>
 # **GetWorkingTimes**
-> List&lt;WorkingTime&gt; GetWorkingTimes (GetWorkingTimesRequest? getWorkingTimesRequest = null)
+> List&lt;DtcoWorkingTimeResponse&gt; GetWorkingTimes (GetWorkingTimesRequest? getWorkingTimesRequest = null)
 
 
 
@@ -506,7 +506,7 @@ namespace Example
 
             try
             {
-                List<WorkingTime> result = apiInstance.GetWorkingTimes(getWorkingTimesRequest);
+                List<DtcoWorkingTimeResponse> result = apiInstance.GetWorkingTimes(getWorkingTimesRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -526,7 +526,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<WorkingTime>> response = apiInstance.GetWorkingTimesWithHttpInfo(getWorkingTimesRequest);
+    ApiResponse<List<DtcoWorkingTimeResponse>> response = apiInstance.GetWorkingTimesWithHttpInfo(getWorkingTimesRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -547,7 +547,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;WorkingTime&gt;**](WorkingTime.md)
+[**List&lt;DtcoWorkingTimeResponse&gt;**](DtcoWorkingTimeResponse.md)
 
 ### Authorization
 

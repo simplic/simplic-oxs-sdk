@@ -36,29 +36,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="GetWorkingTimesRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
-        /// <param name="driverNo">driverNo.</param>
         /// <param name="from">from.</param>
         /// <param name="to">to.</param>
-        public GetWorkingTimesRequest(string providerName = default(string), string driverNo = default(string), DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        public GetWorkingTimesRequest(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
         {
-            this.ProviderName = providerName;
-            this.DriverNo = driverNo;
             this.From = from;
             this.To = to;
         }
-
-        /// <summary>
-        /// Gets or Sets ProviderName
-        /// </summary>
-        [DataMember(Name = "providerName", EmitDefaultValue = true)]
-        public string ProviderName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DriverNo
-        /// </summary>
-        [DataMember(Name = "driverNo", EmitDefaultValue = true)]
-        public string DriverNo { get; set; }
 
         /// <summary>
         /// Gets or Sets From
@@ -80,8 +64,6 @@ namespace Simplic.OxS.SDK.Telematic
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetWorkingTimesRequest {\n");
-            sb.Append("  ProviderName: ").Append(ProviderName).Append("\n");
-            sb.Append("  DriverNo: ").Append(DriverNo).Append("\n");
             sb.Append("  From: ").Append(From).Append("\n");
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("}\n");
@@ -120,16 +102,6 @@ namespace Simplic.OxS.SDK.Telematic
             }
             return 
                 (
-                    this.ProviderName == input.ProviderName ||
-                    (this.ProviderName != null &&
-                    this.ProviderName.Equals(input.ProviderName))
-                ) && 
-                (
-                    this.DriverNo == input.DriverNo ||
-                    (this.DriverNo != null &&
-                    this.DriverNo.Equals(input.DriverNo))
-                ) && 
-                (
                     this.From == input.From ||
                     (this.From != null &&
                     this.From.Equals(input.From))
@@ -150,14 +122,6 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProviderName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProviderName.GetHashCode();
-                }
-                if (this.DriverNo != null)
-                {
-                    hashCode = (hashCode * 59) + this.DriverNo.GetHashCode();
-                }
                 if (this.From != null)
                 {
                     hashCode = (hashCode * 59) + this.From.GetHashCode();

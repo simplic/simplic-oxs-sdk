@@ -7780,6 +7780,497 @@
                 }
             }
         },
+        "/ShipmentTemplate/{id}": {
+            "get": {
+                "tags": [
+                    "ShipmentTemplate"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ShipmentTemplate"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IActionResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "ShipmentTemplate"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchShipmentTemplateRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchShipmentTemplateRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchShipmentTemplateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ShipmentTemplate": {
+            "post": {
+                "tags": [
+                    "ShipmentTemplate"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateShipmentTemplateRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateShipmentTemplateRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateShipmentTemplateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentTemplateModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ShipmentTemplate/create-shipment-from-template": {
+            "post": {
+                "tags": [
+                    "ShipmentTemplate"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ShipmentFromTemplateRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ShipmentFromTemplateRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ShipmentFromTemplateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Tour/{id}": {
             "get": {
                 "tags": [
@@ -11841,6 +12332,178 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a shipment status."
             },
+            "CreateShipmentTemplateRequest": {
+                "type": "object",
+                "properties": {
+                    "loadAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "deliveryAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "recipientAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "senderAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "freightPayerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "freightPayerAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "invoiceRecipientPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "invoiceRecipientAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "supplierPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "supplierAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "shipmentNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the shipment number.\r\n\n\r\nThis defines a number to identify the shipment as the user.\r\n",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number\r\n\n\r\nThis defines a number that references the same shipment in another programm or context.\r\n",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number.\r\n\n\r\nThis defines a number that the driver might need to load this shipment\r\n",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number.\r\n\n\r\nThis defines a number that the driber might need to deliver / unload this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isTemplate": {
+                        "type": "boolean",
+                        "description": "Gets or sets werther the shipment is a template.\r\n\n\r\nTemplate shipments are used to create shipments with certain values preset.\r\n"
+                    },
+                    "templateName": {
+                        "type": "string",
+                        "description": "Gets or sets the template name.\r\n\n\r\nA name for the template to give the user the option to find it easier\r\n",
+                        "nullable": true
+                    },
+                    "transportOrder": {
+                        "$ref": "#/components/schemas/ShipmentTransportOrderModel"
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentDocumentModel"
+                        },
+                        "description": "Gets or sets the documments.\r\n\n\r\nThese documents contain more information that just the shipment. \r\nE.g. the shipment item id or weight note id.\r\n\r\nFurthermore documents might be marked for invoices and ordered for them.",
+                        "nullable": true
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentTagModel"
+                        },
+                        "description": "Gets or sets the tags.\r\n\n\r\nTags are short texts to add information to a shipment without the need to add new properties.\r\n\r\nThese are e.g. used in the pricing module to add some additional conditions.",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the notes.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the shipment is deleted."
+                    },
+                    "loadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "deliveryWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "constructionSiteId": {
+                        "type": "string",
+                        "description": "Gets or sets a construction site id.\r\n\n\r\nThe id will be resolved by the construction site api.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "departmentId": {
+                        "type": "string",
+                        "description": "Gets or sets the department id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
+                        "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateShipmentItemRequest"
+                        },
+                        "description": "Gets or sets shipment template items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Request to create a shipment template."
+            },
             "CreateTourActionRequest": {
                 "type": "object",
                 "properties": {
@@ -13606,6 +14269,177 @@
                 },
                 "additionalProperties": false
             },
+            "PatchShipmentTemplateRequest": {
+                "type": "object",
+                "properties": {
+                    "loadAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "deliveryAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "recipientAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "senderAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "carrierAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "freightPayerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "freightPayerAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "customerAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "invoiceRecipientPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "invoiceRecipientAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "supplierPersonalAccountId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "supplierAddressId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "shipmentNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the shipment number.\r\n\n\r\nThis defines a number to identify the shipment as the user.\r\n",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number\r\n\n\r\nThis defines a number that references the same shipment in another programm or context.\r\n",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number.\r\n\n\r\nThis defines a number that the driver might need to load this shipment\r\n",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number.\r\n\n\r\nThis defines a number that the driber might need to deliver / unload this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isTemplate": {
+                        "type": "boolean",
+                        "description": "Gets or sets werther the shipment is a template.\r\n\n\r\nTemplate shipments are used to create shipments with certain values preset.\r\n"
+                    },
+                    "templateName": {
+                        "type": "string",
+                        "description": "Gets or sets the template name.\r\n\n\r\nA name for the template to give the user the option to find it easier\r\n",
+                        "nullable": true
+                    },
+                    "transportOrder": {
+                        "$ref": "#/components/schemas/ShipmentTransportOrderModel"
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentDocumentModel"
+                        },
+                        "description": "Gets or sets the documments.\r\n\n\r\nThese documents contain more information that just the shipment. \r\nE.g. the shipment item id or weight note id.\r\n\r\nFurthermore documents might be marked for invoices and ordered for them.",
+                        "nullable": true
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentTagModel"
+                        },
+                        "description": "Gets or sets the tags.\r\n\n\r\nTags are short texts to add information to a shipment without the need to add new properties.\r\n\r\nThese are e.g. used in the pricing module to add some additional conditions.",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the notes.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the shipment is deleted."
+                    },
+                    "loadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "deliveryWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "constructionSiteId": {
+                        "type": "string",
+                        "description": "Gets or sets a construction site id.\r\n\n\r\nThe id will be resolved by the construction site api.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "departmentId": {
+                        "type": "string",
+                        "description": "Gets or sets the department id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
+                        "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchShipmentItemRequest"
+                        },
+                        "description": "Gets or sets shipment template items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "PatchTourActionRequest": {
                 "type": "object",
                 "properties": {
@@ -14654,6 +15488,21 @@
                 "additionalProperties": false,
                 "description": "Shared model of shipment document."
             },
+            "ShipmentFromTemplateRequest": {
+                "required": [
+                    "shipmentTemplateId"
+                ],
+                "type": "object",
+                "properties": {
+                    "shipmentTemplateId": {
+                        "type": "string",
+                        "description": "Gets for sets the id of the shipment template.",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The request to create a shipment from a shipment template."
+            },
             "ShipmentItemModel": {
                 "type": "object",
                 "properties": {
@@ -15183,6 +16032,143 @@
                 },
                 "additionalProperties": false,
                 "description": "Shared model of shipment telematic workflow."
+            },
+            "ShipmentTemplateModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id.",
+                        "format": "uuid"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the create user id.\r\n\n\r\nThis is the user that created the shipment.\r\n",
+                        "format": "uuid"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the update user id.\r\n\n\r\nThis defines the user which made the last changes to the shipment.\r\n",
+                        "format": "uuid"
+                    },
+                    "loadAddress": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "deliveryAddress": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "carrier": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "freightPayer": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "customer": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "recipientAddress": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "invoiceRecipient": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "senderAddress": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    },
+                    "supplier": {
+                        "$ref": "#/components/schemas/BillableContactModel"
+                    },
+                    "shipmentNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number\r\n\n\r\nThis defines a number that references the same shipment in another programm or context.\r\n",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the load number.\r\n\n\r\nThis defines a number that the driver might need to load this shipment\r\n",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery number.\r\n\n\r\nThis defines a number that the driber might need to deliver / unload this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isTemplate": {
+                        "type": "boolean",
+                        "description": "Gets or sets werther the shipment is a template.\r\n\n\r\nTemplate shipments are used to create shipments with certain values preset.\r\n"
+                    },
+                    "templateName": {
+                        "type": "string",
+                        "description": "Gets or sets the template name.\r\n\n\r\nA name for the template to give the user the option to find it easier\r\n",
+                        "nullable": true
+                    },
+                    "transportOrder": {
+                        "$ref": "#/components/schemas/ShipmentTransportOrderModel"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentItemModel"
+                        },
+                        "description": "Gets or sets shipment items.\r\n\n\r\nRepresents a list of items of a shipment which will contain further information about the freight.\r\n",
+                        "nullable": true
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentDocumentModel"
+                        },
+                        "description": "Gets or sets the documments.\r\n\n\r\nThese documents contain more information that just the shipment. \r\nE.g. the shipment item id or weight note id.\r\n\r\nFurthermore documents might be marked for invoices and ordered for them.",
+                        "nullable": true
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentTagModel"
+                        },
+                        "description": "Gets or sets the tags.\r\n\n\r\nTags are short texts to add information to a shipment without the need to add new properties.\r\n\r\nThese are e.g. used in the pricing module to add some additional conditions.",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets the nots.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "isDeleted": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the shipment is deleted."
+                    },
+                    "loadWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "deliveryWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflowModel"
+                    },
+                    "constructionSite": {
+                        "$ref": "#/components/schemas/ConstructionSiteModel"
+                    },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentResponse"
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\r\n\n\r\nCan be used to set customer exclusive properties for a shipment.\r\n",
+                        "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Shared Model of a Shipment Template"
             },
             "ShipmentToTourRequest": {
                 "required": [
