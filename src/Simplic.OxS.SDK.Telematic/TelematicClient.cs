@@ -214,41 +214,6 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="getWorkingTimesRequest"> (optional)</param>
-    /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    List<DtcoWorkingTimeResponse> GetWorkingTimes(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="getWorkingTimesRequest"> (optional)</param>
-    /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    ApiResponse<List<DtcoWorkingTimeResponse>> GetWorkingTimesWithHttpInfo(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?));
-        
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="getWorkingTimesRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    Task<List<DtcoWorkingTimeResponse>> GetWorkingTimesAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="getWorkingTimesRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-    Task<ApiResponse<List<DtcoWorkingTimeResponse>>> GetWorkingTimesWithHttpInfoAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="sendTextMessageRequest"> (optional)</param>
     /// <returns></returns>
     void SendTextMessage(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?));
@@ -278,6 +243,45 @@ public interface ITelematicClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
     Task<ApiResponse<Object>> SendTextMessageWithHttpInfoAsync(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="from"> (optional)</param>
+    /// <param name="to"> (optional)</param>
+    /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="from"> (optional)</param>
+    /// <param name="to"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="from"> (optional)</param>
+    /// <param name="to"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="from"> (optional)</param>
+    /// <param name="to"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+    Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -719,79 +723,6 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public List<DtcoWorkingTimeResponse> GetWorkingTimes(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?))
-        {
-            try
-            {
-                return _internalClient.GetWorkingTimes(getWorkingTimesRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> GetWorkingTimesWithHttpInfo(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?))
-        {
-            try
-            {
-                return _internalClient.GetWorkingTimesWithHttpInfo(getWorkingTimesRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> GetWorkingTimesAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.GetWorkingTimesAsync(getWorkingTimesRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> GetWorkingTimesWithHttpInfoAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.GetWorkingTimesWithHttpInfoAsync(getWorkingTimesRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <returns></returns>
         public void SendTextMessage(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?))
@@ -855,6 +786,83 @@ public interface ITelematicClient
             try
             {
                 return _internalClient.SendTextMessageWithHttpInfoAsync(sendTextMessageRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        {
+            try
+            {
+                return _internalClient.WorkingTimes(from, to);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        {
+            try
+            {
+                return _internalClient.WorkingTimesWithHttpInfo(from, to);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.WorkingTimesAsync(from, to, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.WorkingTimesWithHttpInfoAsync(from, to, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -976,26 +984,6 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        List<DtcoWorkingTimeResponse> GetWorkingTimes(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        ApiResponse<List<DtcoWorkingTimeResponse>> GetWorkingTimesWithHttpInfo(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1012,6 +1000,28 @@ public interface ITelematicClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SendTextMessageWithHttpInfo(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1151,31 +1161,6 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> GetWorkingTimesAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DtcoWorkingTimeResponse>>> GetWorkingTimesWithHttpInfoAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1194,6 +1179,33 @@ public interface ITelematicClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SendTextMessageWithHttpInfoAsync(SendTextMessageRequest? sendTextMessageRequest = default(SendTextMessageRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2124,170 +2136,6 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public List<DtcoWorkingTimeResponse> GetWorkingTimes(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = GetWorkingTimesWithHttpInfo(getWorkingTimesRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> GetWorkingTimesWithHttpInfo(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getWorkingTimesRequest;
-
-            localVarRequestOptions.Operation = "TelematicClient.TelematicGetWorkingTimesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<DtcoWorkingTimeResponse>>("/Telematic/get-working-times", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TelematicGetWorkingTimesPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> GetWorkingTimesAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = await GetWorkingTimesWithHttpInfoAsync(getWorkingTimesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="getWorkingTimesRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> GetWorkingTimesWithHttpInfoAsync(GetWorkingTimesRequest? getWorkingTimesRequest = default(GetWorkingTimesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = getWorkingTimesRequest;
-
-            localVarRequestOptions.Operation = "TelematicClient.TelematicGetWorkingTimesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<DtcoWorkingTimeResponse>>("/Telematic/get-working-times", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TelematicGetWorkingTimesPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendTextMessageRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -2437,6 +2285,182 @@ public interface ITelematicClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicSendTextMessagePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = WorkingTimesWithHttpInfo(from, to);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicWorkingTimesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DtcoWorkingTimeResponse>>("/Telematic/working-times", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicWorkingTimesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = await WorkingTimesWithHttpInfoAsync(from, to, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicWorkingTimesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DtcoWorkingTimeResponse>>("/Telematic/working-times", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicWorkingTimesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

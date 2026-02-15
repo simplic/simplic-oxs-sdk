@@ -9,8 +9,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 | [**DeleteReadJob**](TelematicClient.md#telematicdeletereadjobdelete) | **DELETE** /Telematic/delete-read-job |  |
 | [**GetAvailableServices**](TelematicClient.md#telematicgetavailableservicesget) | **GET** /Telematic/get-available-services |  |
 | [**GetImportVehicle**](TelematicClient.md#telematicgetimportvehiclepost) | **POST** /Telematic/get-import-vehicle |  |
-| [**GetWorkingTimes**](TelematicClient.md#telematicgetworkingtimespost) | **POST** /Telematic/get-working-times |  |
 | [**SendTextMessage**](TelematicClient.md#telematicsendtextmessagepost) | **POST** /Telematic/send-text-message |  |
+| [**WorkingTimes**](TelematicClient.md#telematicworkingtimesget) | **GET** /Telematic/working-times |  |
 
 <a id="telematiccheckcredentialspost"></a>
 # **CheckCredentials**
@@ -473,101 +473,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="telematicgetworkingtimespost"></a>
-# **GetWorkingTimes**
-> List&lt;DtcoWorkingTimeResponse&gt; GetWorkingTimes (GetWorkingTimesRequest? getWorkingTimesRequest = null)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Telematic;
-
-namespace Example
-{
-    public class GetWorkingTimesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure Bearer token for authorization: Bearer
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new TelematicClient(config);
-            var getWorkingTimesRequest = new GetWorkingTimesRequest?(); // GetWorkingTimesRequest? |  (optional) 
-
-            try
-            {
-                List<DtcoWorkingTimeResponse> result = apiInstance.GetWorkingTimes(getWorkingTimesRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TelematicClient.GetWorkingTimes: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWorkingTimesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<List<DtcoWorkingTimeResponse>> response = apiInstance.GetWorkingTimesWithHttpInfo(getWorkingTimesRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TelematicClient.GetWorkingTimesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **getWorkingTimesRequest** | [**GetWorkingTimesRequest?**](GetWorkingTimesRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**List&lt;DtcoWorkingTimeResponse&gt;**](DtcoWorkingTimeResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="telematicsendtextmessagepost"></a>
 # **SendTextMessage**
 > void SendTextMessage (SendTextMessageRequest? sendTextMessageRequest = null)
@@ -655,6 +560,104 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="telematicworkingtimesget"></a>
+# **WorkingTimes**
+> List&lt;DtcoWorkingTimeResponse&gt; WorkingTimes (DateTime? from = null, DateTime? to = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Telematic;
+
+namespace Example
+{
+    public class WorkingTimesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new TelematicClient(config);
+            var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+
+            try
+            {
+                List<DtcoWorkingTimeResponse> result = apiInstance.WorkingTimes(from, to);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TelematicClient.WorkingTimes: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the WorkingTimesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<DtcoWorkingTimeResponse>> response = apiInstance.WorkingTimesWithHttpInfo(from, to);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TelematicClient.WorkingTimesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **from** | **DateTime?** |  | [optional]  |
+| **to** | **DateTime?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;DtcoWorkingTimeResponse&gt;**](DtcoWorkingTimeResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **500** | Internal Server Error |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
