@@ -9752,6 +9752,74 @@
                 }
             }
         },
+        "/Tour/temp-fix-shipmentTours": {
+            "post": {
+                "tags": [
+                    "Tour"
+                ],
+                "summary": "Retrieves all tours that contains the resource id.",
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TourModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TourModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TourModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/TourCalculation/calculate-routes": {
             "post": {
                 "tags": [
@@ -12238,6 +12306,11 @@
                         "description": "Gets or sets the notes.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
                         "nullable": true
                     },
+                    "externalNotes": {
+                        "type": "string",
+                        "description": "Gets or sets notes which are visible for external users (e.g. the driver, carrier).",
+                        "nullable": true
+                    },
                     "isDeleted": {
                         "type": "boolean",
                         "description": "Gets or sets whether the shipment is deleted."
@@ -14216,6 +14289,11 @@
                         "description": "Gets or sets the notes.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
                         "nullable": true
                     },
+                    "externalNotes": {
+                        "type": "string",
+                        "description": "Gets or sets notes which are visible for external users (e.g. the driver, carrier).",
+                        "nullable": true
+                    },
                     "isDeleted": {
                         "type": "boolean",
                         "description": "Gets or sets whether the shipment is deleted."
@@ -15889,6 +15967,11 @@
                     "notes": {
                         "type": "string",
                         "description": "Gets or sets the nots.\r\n\n\r\nThis gives the user the possibillity to add some more sentences about this shipment.\r\n",
+                        "nullable": true
+                    },
+                    "externalNotes": {
+                        "type": "string",
+                        "description": "Gets or sets notes which are visible for external users (e.g. the driver, carrier).",
                         "nullable": true
                     },
                     "isDeleted": {

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **ValidFrom** | **DateTime?** |  | [optional] 
 **ValidTo** | **DateTime?** |  | [optional] 
 **ActiveServices** | **List&lt;string&gt;** |  | [optional] 
+**LoadWorkflow** | [**WorkflowResponse**](WorkflowResponse.md) |  | [optional] 
+**DeliveryWorkflow** | [**WorkflowResponse**](WorkflowResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

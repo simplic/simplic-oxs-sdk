@@ -3856,6 +3856,16 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "loadWorkflowId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "deliveryWorkflowId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4763,6 +4773,16 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "loadWorkflowId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "deliveryWorkflowId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -5084,6 +5104,12 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "loadWorkflow": {
+                        "$ref": "#/components/schemas/WorkflowResponse"
+                    },
+                    "deliveryWorkflow": {
+                        "$ref": "#/components/schemas/WorkflowResponse"
                     }
                 },
                 "additionalProperties": false

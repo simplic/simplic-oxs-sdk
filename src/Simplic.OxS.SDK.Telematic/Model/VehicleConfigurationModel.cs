@@ -44,7 +44,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="validFrom">validFrom.</param>
         /// <param name="validTo">validTo.</param>
         /// <param name="activeServices">activeServices.</param>
-        public VehicleConfigurationModel(Guid id = default(Guid), Guid vehicleId = default(Guid), string matchCode = default(string), string providerName = default(string), string externalVehicleIdentifier = default(string), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), List<string> activeServices = default(List<string>))
+        /// <param name="loadWorkflow">loadWorkflow.</param>
+        /// <param name="deliveryWorkflow">deliveryWorkflow.</param>
+        public VehicleConfigurationModel(Guid id = default(Guid), Guid vehicleId = default(Guid), string matchCode = default(string), string providerName = default(string), string externalVehicleIdentifier = default(string), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), List<string> activeServices = default(List<string>), WorkflowResponse loadWorkflow = default(WorkflowResponse), WorkflowResponse deliveryWorkflow = default(WorkflowResponse))
         {
             this.Id = id;
             this.VehicleId = vehicleId;
@@ -54,6 +56,8 @@ namespace Simplic.OxS.SDK.Telematic
             this.ValidFrom = validFrom;
             this.ValidTo = validTo;
             this.ActiveServices = activeServices;
+            this.LoadWorkflow = loadWorkflow;
+            this.DeliveryWorkflow = deliveryWorkflow;
         }
 
         /// <summary>
@@ -105,6 +109,18 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> ActiveServices { get; set; }
 
         /// <summary>
+        /// Gets or Sets LoadWorkflow
+        /// </summary>
+        [DataMember(Name = "loadWorkflow", EmitDefaultValue = false)]
+        public WorkflowResponse LoadWorkflow { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveryWorkflow
+        /// </summary>
+        [DataMember(Name = "deliveryWorkflow", EmitDefaultValue = false)]
+        public WorkflowResponse DeliveryWorkflow { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +136,8 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
             sb.Append("  ActiveServices: ").Append(ActiveServices).Append("\n");
+            sb.Append("  LoadWorkflow: ").Append(LoadWorkflow).Append("\n");
+            sb.Append("  DeliveryWorkflow: ").Append(DeliveryWorkflow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +213,16 @@ namespace Simplic.OxS.SDK.Telematic
                     this.ActiveServices != null &&
                     input.ActiveServices != null &&
                     this.ActiveServices.SequenceEqual(input.ActiveServices)
+                ) && 
+                (
+                    this.LoadWorkflow == input.LoadWorkflow ||
+                    (this.LoadWorkflow != null &&
+                    this.LoadWorkflow.Equals(input.LoadWorkflow))
+                ) && 
+                (
+                    this.DeliveryWorkflow == input.DeliveryWorkflow ||
+                    (this.DeliveryWorkflow != null &&
+                    this.DeliveryWorkflow.Equals(input.DeliveryWorkflow))
                 );
         }
 
@@ -238,6 +266,14 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.ActiveServices != null)
                 {
                     hashCode = (hashCode * 59) + this.ActiveServices.GetHashCode();
+                }
+                if (this.LoadWorkflow != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadWorkflow.GetHashCode();
+                }
+                if (this.DeliveryWorkflow != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryWorkflow.GetHashCode();
                 }
                 return hashCode;
             }
