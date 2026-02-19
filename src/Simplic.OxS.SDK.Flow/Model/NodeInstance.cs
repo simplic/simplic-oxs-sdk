@@ -36,6 +36,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="NodeInstance" /> class.
         /// </summary>
+        /// <param name="setup">setup.</param>
         /// <param name="id">id.</param>
         /// <param name="nodeType">nodeType.</param>
         /// <param name="description">description.</param>
@@ -45,8 +46,9 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataInPins">dataInPins.</param>
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
-        public NodeInstance(Guid id = default(Guid), string nodeType = default(string), string description = default(string), Point position = default(Point), List<CustomDataInPinInstance> customDataInPins = default(List<CustomDataInPinInstance>), List<CustomFlowOutPinInstance> customFlowOutPins = default(List<CustomFlowOutPinInstance>), List<DataInPinInstance> dataInPins = default(List<DataInPinInstance>), List<DataOutPinInstance> dataOutPins = default(List<DataOutPinInstance>), List<FlowOutPinInstance> flowOutPins = default(List<FlowOutPinInstance>))
+        public NodeInstance(NodeInstanceSetup setup = default(NodeInstanceSetup), Guid id = default(Guid), string nodeType = default(string), string description = default(string), Point position = default(Point), List<CustomDataInPinInstance> customDataInPins = default(List<CustomDataInPinInstance>), List<CustomFlowOutPinInstance> customFlowOutPins = default(List<CustomFlowOutPinInstance>), List<DataInPinInstance> dataInPins = default(List<DataInPinInstance>), List<DataOutPinInstance> dataOutPins = default(List<DataOutPinInstance>), List<FlowOutPinInstance> flowOutPins = default(List<FlowOutPinInstance>))
         {
+            this.Setup = setup;
             this.Id = id;
             this.NodeType = nodeType;
             this.Description = description;
@@ -57,6 +59,12 @@ namespace Simplic.OxS.SDK.Flow
             this.DataOutPins = dataOutPins;
             this.FlowOutPins = flowOutPins;
         }
+
+        /// <summary>
+        /// Gets or Sets Setup
+        /// </summary>
+        [DataMember(Name = "setup", EmitDefaultValue = false)]
+        public NodeInstanceSetup Setup { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -134,6 +142,7 @@ namespace Simplic.OxS.SDK.Flow
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class NodeInstance {\n");
+            sb.Append("  Setup: ").Append(Setup).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  NodeType: ").Append(NodeType).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -179,6 +188,11 @@ namespace Simplic.OxS.SDK.Flow
                 return false;
             }
             return 
+                (
+                    this.Setup == input.Setup ||
+                    (this.Setup != null &&
+                    this.Setup.Equals(input.Setup))
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -246,6 +260,10 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Setup != null)
+                {
+                    hashCode = (hashCode * 59) + this.Setup.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

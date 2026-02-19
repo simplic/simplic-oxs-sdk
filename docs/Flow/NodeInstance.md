@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Setup** | [**NodeInstanceSetup**](NodeInstanceSetup.md) |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **NodeType** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

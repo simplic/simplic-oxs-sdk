@@ -1784,6 +1784,9 @@
             "NodeInstance": {
                 "type": "object",
                 "properties": {
+                    "setup": {
+                        "$ref": "#/components/schemas/NodeInstanceSetup"
+                    },
                     "id": {
                         "type": "string",
                         "format": "uuid"
@@ -1844,6 +1847,21 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "NodeInstanceSetup": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "$ref": "#/components/schemas/NodeInstanceSetupAction"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NodeInstanceSetupAction": {
+                "enum": [
+                    "CreateSchedule"
+                ],
+                "type": "string"
             },
             "NodePackageRequest": {
                 "required": [
