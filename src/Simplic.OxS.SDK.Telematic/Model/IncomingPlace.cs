@@ -46,7 +46,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="planEndDateTimeUtc">planEndDateTimeUtc.</param>
         /// <param name="reference">reference.</param>
         /// <param name="notes">notes.</param>
-        public IncomingPlace(Guid internalId = default(Guid), string providerIdentifier = default(string), Address address = default(Address), List<IncomingOrder> orders = default(List<IncomingOrder>), double? latitude = default(double?), double? longitude = default(double?), DateTime? planStartDateTimeUtc = default(DateTime?), DateTime? planEndDateTimeUtc = default(DateTime?), string reference = default(string), string notes = default(string))
+        /// <param name="attachments">attachments.</param>
+        public IncomingPlace(Guid internalId = default(Guid), string providerIdentifier = default(string), Address address = default(Address), List<IncomingOrder> orders = default(List<IncomingOrder>), double? latitude = default(double?), double? longitude = default(double?), DateTime? planStartDateTimeUtc = default(DateTime?), DateTime? planEndDateTimeUtc = default(DateTime?), string reference = default(string), string notes = default(string), List<IncomingAttachment> attachments = default(List<IncomingAttachment>))
         {
             this.InternalId = internalId;
             this.ProviderIdentifier = providerIdentifier;
@@ -58,6 +59,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.PlanEndDateTimeUtc = planEndDateTimeUtc;
             this.Reference = reference;
             this.Notes = notes;
+            this.Attachments = attachments;
         }
 
         /// <summary>
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.Telematic
         public string Notes { get; set; }
 
         /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<IncomingAttachment> Attachments { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +146,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  PlanEndDateTimeUtc: ").Append(PlanEndDateTimeUtc).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -223,6 +232,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Notes == input.Notes ||
                     (this.Notes != null &&
                     this.Notes.Equals(input.Notes))
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
                 );
         }
 
@@ -274,6 +289,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Notes != null)
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
                 }
                 return hashCode;
             }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **StartDateTimeUtc** | **DateTime?** |  | [optional] 
 **EndDateTimeUtc** | **DateTime?** |  | [optional] 
 **TourDateUtc** | **DateTime?** |  | [optional] 
+**Attachments** | [**List&lt;IncomingAttachment&gt;**](IncomingAttachment.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

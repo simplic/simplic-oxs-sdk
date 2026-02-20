@@ -42,7 +42,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="startDateTimeUtc">startDateTimeUtc.</param>
         /// <param name="endDateTimeUtc">endDateTimeUtc.</param>
         /// <param name="tourDateUtc">tourDateUtc.</param>
-        public IncomingTour(Guid? internalId = default(Guid?), string providerIdentifier = default(string), List<IncomingPlace> places = default(List<IncomingPlace>), DateTime? startDateTimeUtc = default(DateTime?), DateTime? endDateTimeUtc = default(DateTime?), DateTime? tourDateUtc = default(DateTime?))
+        /// <param name="attachments">attachments.</param>
+        public IncomingTour(Guid? internalId = default(Guid?), string providerIdentifier = default(string), List<IncomingPlace> places = default(List<IncomingPlace>), DateTime? startDateTimeUtc = default(DateTime?), DateTime? endDateTimeUtc = default(DateTime?), DateTime? tourDateUtc = default(DateTime?), List<IncomingAttachment> attachments = default(List<IncomingAttachment>))
         {
             this.InternalId = internalId;
             this.ProviderIdentifier = providerIdentifier;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.StartDateTimeUtc = startDateTimeUtc;
             this.EndDateTimeUtc = endDateTimeUtc;
             this.TourDateUtc = tourDateUtc;
+            this.Attachments = attachments;
         }
 
         /// <summary>
@@ -89,6 +91,12 @@ namespace Simplic.OxS.SDK.Telematic
         public DateTime? TourDateUtc { get; set; }
 
         /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<IncomingAttachment> Attachments { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +110,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  StartDateTimeUtc: ").Append(StartDateTimeUtc).Append("\n");
             sb.Append("  EndDateTimeUtc: ").Append(EndDateTimeUtc).Append("\n");
             sb.Append("  TourDateUtc: ").Append(TourDateUtc).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,6 +176,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.TourDateUtc == input.TourDateUtc ||
                     (this.TourDateUtc != null &&
                     this.TourDateUtc.Equals(input.TourDateUtc))
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
                 );
         }
 
@@ -202,6 +217,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.TourDateUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.TourDateUtc.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
                 }
                 return hashCode;
             }

@@ -4242,6 +4242,25 @@
                 },
                 "additionalProperties": false
             },
+            "IncomingAttachment": {
+                "type": "object",
+                "properties": {
+                    "blobId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mediaType": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "IncomingMessageType": {
                 "enum": [
                     0,
@@ -4351,6 +4370,13 @@
                     },
                     "notes": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingAttachment"
+                        },
                         "nullable": true
                     }
                 },
@@ -4469,6 +4495,13 @@
                     "tourDateUtc": {
                         "type": "string",
                         "format": "date-time",
+                        "nullable": true
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IncomingAttachment"
+                        },
                         "nullable": true
                     }
                 },

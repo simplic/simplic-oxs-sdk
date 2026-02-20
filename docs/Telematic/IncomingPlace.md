@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **PlanEndDateTimeUtc** | **DateTime?** |  | [optional] 
 **Reference** | **string** |  | [optional] 
 **Notes** | **string** |  | [optional] 
+**Attachments** | [**List&lt;IncomingAttachment&gt;**](IncomingAttachment.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
