@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Type** | **string** |  | [optional] 
 **IsDiscount** | **bool?** |  | [optional] 
 **ContractNumber** | **string** |  | [optional] 
+**Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Supplier** | [**Address**](Address.md) |  | [optional] 
 **Article** | [**ArticleModel**](ArticleModel.md) |  | [optional] 
 **LoadingAddress** | [**Address**](Address.md) |  | [optional] 

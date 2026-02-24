@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **DepartmentId** | **Guid?** |  | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Items** | [**List&lt;CreateShipmentItemRequest&gt;**](CreateShipmentItemRequest.md) |  | [optional] 
+**BillingLines** | [**List&lt;CreateBillingLineRequest&gt;**](CreateBillingLineRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,11 +37,11 @@ namespace Simplic.OxS.SDK.Contract
         /// Initializes a new instance of the <see cref="QuantityModel" /> class.
         /// </summary>
         /// <param name="value">value.</param>
-        /// <param name="quantityUnit">quantityUnit.</param>
-        public QuantityModel(double value = default(double), QuantityUnitModel quantityUnit = default(QuantityUnitModel))
+        /// <param name="quantityUnitId">quantityUnitId.</param>
+        public QuantityModel(double value = default(double), Guid? quantityUnitId = default(Guid?))
         {
             this.Value = value;
-            this.QuantityUnit = quantityUnit;
+            this.QuantityUnitId = quantityUnitId;
         }
 
         /// <summary>
@@ -51,10 +51,10 @@ namespace Simplic.OxS.SDK.Contract
         public double Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets QuantityUnit
+        /// Gets or Sets QuantityUnitId
         /// </summary>
-        [DataMember(Name = "quantityUnit", EmitDefaultValue = false)]
-        public QuantityUnitModel QuantityUnit { get; set; }
+        [DataMember(Name = "quantityUnitId", EmitDefaultValue = true)]
+        public Guid? QuantityUnitId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.Contract
             StringBuilder sb = new StringBuilder();
             sb.Append("class QuantityModel {\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
+            sb.Append("  QuantityUnitId: ").Append(QuantityUnitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,9 +106,9 @@ namespace Simplic.OxS.SDK.Contract
                     this.Value.Equals(input.Value)
                 ) && 
                 (
-                    this.QuantityUnit == input.QuantityUnit ||
-                    (this.QuantityUnit != null &&
-                    this.QuantityUnit.Equals(input.QuantityUnit))
+                    this.QuantityUnitId == input.QuantityUnitId ||
+                    (this.QuantityUnitId != null &&
+                    this.QuantityUnitId.Equals(input.QuantityUnitId))
                 );
         }
 
@@ -122,9 +122,9 @@ namespace Simplic.OxS.SDK.Contract
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                if (this.QuantityUnit != null)
+                if (this.QuantityUnitId != null)
                 {
-                    hashCode = (hashCode * 59) + this.QuantityUnit.GetHashCode();
+                    hashCode = (hashCode * 59) + this.QuantityUnitId.GetHashCode();
                 }
                 return hashCode;
             }

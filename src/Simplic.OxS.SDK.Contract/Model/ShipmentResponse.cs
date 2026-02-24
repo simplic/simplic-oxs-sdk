@@ -95,7 +95,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="departmentId">departmentId.</param>
         /// <param name="addon">addon.</param>
         /// <param name="items">items.</param>
-        public ShipmentResponse(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), List<Guid> tags = default(List<Guid>), string notes = default(string), Guid? loadWorkflowId = default(Guid?), Guid? deliveryWorkflowId = default(Guid?), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>))
+        /// <param name="billingLines">billingLines.</param>
+        public ShipmentResponse(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), List<Guid> tags = default(List<Guid>), string notes = default(string), Guid? loadWorkflowId = default(Guid?), Guid? deliveryWorkflowId = default(Guid?), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>), List<CreateBillingLineRequest> billingLines = default(List<CreateBillingLineRequest>))
         {
             this.LoadAddressId = loadAddressId;
             this.DeliveryAddressId = deliveryAddressId;
@@ -144,6 +145,7 @@ namespace Simplic.OxS.SDK.Contract
             this.DepartmentId = departmentId;
             this.Addon = addon;
             this.Items = items;
+            this.BillingLines = billingLines;
         }
 
         /// <summary>
@@ -417,6 +419,12 @@ namespace Simplic.OxS.SDK.Contract
         public List<CreateShipmentItemRequest> Items { get; set; }
 
         /// <summary>
+        /// Gets or Sets BillingLines
+        /// </summary>
+        [DataMember(Name = "billingLines", EmitDefaultValue = true)]
+        public List<CreateBillingLineRequest> BillingLines { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -471,6 +479,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  BillingLines: ").Append(BillingLines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -740,6 +749,12 @@ namespace Simplic.OxS.SDK.Contract
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.BillingLines == input.BillingLines ||
+                    this.BillingLines != null &&
+                    input.BillingLines != null &&
+                    this.BillingLines.SequenceEqual(input.BillingLines)
                 );
         }
 
@@ -930,6 +945,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Items != null)
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
+                }
+                if (this.BillingLines != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillingLines.GetHashCode();
                 }
                 return hashCode;
             }

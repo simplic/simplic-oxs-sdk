@@ -41,14 +41,16 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="deliveryStartDateTime">deliveryStartDateTime.</param>
         /// <param name="loadNumber">loadNumber.</param>
         /// <param name="deliveryNumber">deliveryNumber.</param>
+        /// <param name="quantity">quantity (default to 25D).</param>
         /// <param name="amount">amount.</param>
-        public Dates(DateTime date = default(DateTime), DateTime? loadStartDateTime = default(DateTime?), DateTime? deliveryStartDateTime = default(DateTime?), string loadNumber = default(string), string deliveryNumber = default(string), int amount = default(int))
+        public Dates(DateTime date = default(DateTime), DateTime? loadStartDateTime = default(DateTime?), DateTime? deliveryStartDateTime = default(DateTime?), string loadNumber = default(string), string deliveryNumber = default(string), double quantity = 25D, int amount = default(int))
         {
             this.Date = date;
             this.LoadStartDateTime = loadStartDateTime;
             this.DeliveryStartDateTime = deliveryStartDateTime;
             this.LoadNumber = loadNumber;
             this.DeliveryNumber = deliveryNumber;
+            this.Quantity = quantity;
             this.Amount = amount;
         }
 
@@ -83,6 +85,12 @@ namespace Simplic.OxS.SDK.Contract
         public string DeliveryNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets Quantity
+        /// </summary>
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
+        public double Quantity { get; set; }
+
+        /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
@@ -101,6 +109,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  DeliveryStartDateTime: ").Append(DeliveryStartDateTime).Append("\n");
             sb.Append("  LoadNumber: ").Append(LoadNumber).Append("\n");
             sb.Append("  DeliveryNumber: ").Append(DeliveryNumber).Append("\n");
+            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -163,6 +172,10 @@ namespace Simplic.OxS.SDK.Contract
                     this.DeliveryNumber.Equals(input.DeliveryNumber))
                 ) && 
                 (
+                    this.Quantity == input.Quantity ||
+                    this.Quantity.Equals(input.Quantity)
+                ) && 
+                (
                     this.Amount == input.Amount ||
                     this.Amount.Equals(input.Amount)
                 );
@@ -197,6 +210,7 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.DeliveryNumber.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
                 hashCode = (hashCode * 59) + this.Amount.GetHashCode();
                 return hashCode;
             }

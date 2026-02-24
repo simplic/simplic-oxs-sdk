@@ -83,7 +83,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="description">description.</param>
         /// <param name="certified">certified.</param>
         /// <param name="endDate">endDate.</param>
-        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?))
+        /// <param name="addon">addon.</param>
+        public CreateItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<CostObjectModel> costs = default(List<CostObjectModel>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -120,6 +121,7 @@ namespace Simplic.OxS.SDK.Contract
             this.Description = description;
             this.Certified = certified;
             this.EndDate = endDate;
+            this.Addon = addon;
         }
 
         /// <summary>
@@ -291,6 +293,12 @@ namespace Simplic.OxS.SDK.Contract
         public DateTime? EndDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets Addon
+        /// </summary>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -328,6 +336,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Certified: ").Append(Certified).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -509,6 +518,12 @@ namespace Simplic.OxS.SDK.Contract
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
+                ) && 
+                (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
                 );
         }
 
@@ -628,6 +643,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.EndDate != null)
                 {
                     hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
                 return hashCode;
             }
