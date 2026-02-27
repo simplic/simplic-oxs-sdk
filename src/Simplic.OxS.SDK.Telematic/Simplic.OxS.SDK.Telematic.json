@@ -3706,6 +3706,13 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "sms": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -4378,6 +4385,9 @@
                             "$ref": "#/components/schemas/IncomingAttachment"
                         },
                         "nullable": true
+                    },
+                    "ePoD": {
+                        "$ref": "#/components/schemas/EPoD"
                     }
                 },
                 "additionalProperties": false

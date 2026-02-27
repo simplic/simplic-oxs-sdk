@@ -39,11 +39,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="spedion">spedion.</param>
         /// <param name="transics">transics.</param>
         /// <param name="webfleet">webfleet.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>))
+        /// <param name="sms">sms.</param>
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
             this.Webfleet = webfleet;
+            this.Sms = sms;
         }
 
         /// <summary>
@@ -65,6 +67,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> Webfleet { get; set; }
 
         /// <summary>
+        /// Gets or Sets Sms
+        /// </summary>
+        [DataMember(Name = "sms", EmitDefaultValue = true)]
+        public List<string> Sms { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -75,6 +83,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Spedion: ").Append(Spedion).Append("\n");
             sb.Append("  Transics: ").Append(Transics).Append("\n");
             sb.Append("  Webfleet: ").Append(Webfleet).Append("\n");
+            sb.Append("  Sms: ").Append(Sms).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +136,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Webfleet != null &&
                     input.Webfleet != null &&
                     this.Webfleet.SequenceEqual(input.Webfleet)
+                ) && 
+                (
+                    this.Sms == input.Sms ||
+                    this.Sms != null &&
+                    input.Sms != null &&
+                    this.Sms.SequenceEqual(input.Sms)
                 );
         }
 
@@ -150,6 +165,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Webfleet != null)
                 {
                     hashCode = (hashCode * 59) + this.Webfleet.GetHashCode();
+                }
+                if (this.Sms != null)
+                {
+                    hashCode = (hashCode * 59) + this.Sms.GetHashCode();
                 }
                 return hashCode;
             }

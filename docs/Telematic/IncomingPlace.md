@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Reference** | **string** |  | [optional] 
 **Notes** | **string** |  | [optional] 
 **Attachments** | [**List&lt;IncomingAttachment&gt;**](IncomingAttachment.md) |  | [optional] 
+**EPoD** | [**EPoD**](EPoD.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
