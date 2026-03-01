@@ -2551,6 +2551,85 @@
                 },
                 "additionalProperties": false
             },
+            "AddressModel": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional01": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additional02": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "district": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CarrierContactModel": {
+                "type": "object",
+                "properties": {
+                    "contactId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/AddressModel"
+                    }
+                },
+                "additionalProperties": false
+            },
             "CreateVehicleApiKeyRequest": {
                 "required": [
                     "vehicleId"
@@ -2625,6 +2704,17 @@
                     },
                     "department": {
                         "$ref": "#/components/schemas/DepartmentModel"
+                    },
+                    "carrier": {
+                        "$ref": "#/components/schemas/CarrierContactModel"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eMailAddress": {
+                        "type": "string",
+                        "nullable": true
                     },
                     "vehicleTypeSubType": {
                         "$ref": "#/components/schemas/VehicleTypeSubTypeModel"
@@ -3409,6 +3499,17 @@
                     "department": {
                         "$ref": "#/components/schemas/DepartmentModel"
                     },
+                    "carrier": {
+                        "$ref": "#/components/schemas/CarrierContactModel"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eMailAddress": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "vehicleTypeSubType": {
                         "$ref": "#/components/schemas/VehicleTypeSubTypeModel"
                     },
@@ -3629,6 +3730,17 @@
                     },
                     "department": {
                         "$ref": "#/components/schemas/DepartmentModel"
+                    },
+                    "carrier": {
+                        "$ref": "#/components/schemas/CarrierContactModel"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eMailAddress": {
+                        "type": "string",
+                        "nullable": true
                     },
                     "vehicleTypeSubType": {
                         "$ref": "#/components/schemas/VehicleTypeSubTypeModel"

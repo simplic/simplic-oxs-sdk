@@ -50,6 +50,9 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="vehicleRegistration">vehicleRegistration.</param>
         /// <param name="isSystemVehicle">isSystemVehicle.</param>
         /// <param name="department">department.</param>
+        /// <param name="carrier">carrier.</param>
+        /// <param name="phoneNumber">phoneNumber.</param>
+        /// <param name="eMailAddress">eMailAddress.</param>
         /// <param name="vehicleTypeSubType">vehicleTypeSubType.</param>
         /// <param name="additionalTechnicalData">additionalTechnicalData.</param>
         /// <param name="registrationCertificate">registrationCertificate.</param>
@@ -68,7 +71,7 @@ namespace Simplic.OxS.SDK.Vehicle
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        public VehicleModel(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), string qrCode = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public VehicleModel(string location = default(string), string matchCode = default(string), VehicleStatusModel status = default(VehicleStatusModel), double? mileage = default(double?), DateTime? mileageDate = default(DateTime?), double? operatingHours = default(double?), int? fuelTankCapacity = default(int?), string remark = default(string), string dispositionSortingKey = default(string), DateTime? yearOfManufacturing = default(DateTime?), string registrationDocument = default(string), string vehicleRegistration = default(string), bool? isSystemVehicle = default(bool?), DepartmentModel department = default(DepartmentModel), CarrierContactModel carrier = default(CarrierContactModel), string phoneNumber = default(string), string eMailAddress = default(string), VehicleTypeSubTypeModel vehicleTypeSubType = default(VehicleTypeSubTypeModel), AdditionalTechnicalDataModel additionalTechnicalData = default(AdditionalTechnicalDataModel), RegistrationCertificateModel registrationCertificate = default(RegistrationCertificateModel), RegistrationPlateModel registrationPlate = default(RegistrationPlateModel), RegistrationDocumentLocationModel registrationDocumentLocation = default(RegistrationDocumentLocationModel), TollModel toll = default(TollModel), DateTime? usableUntil = default(DateTime?), List<LoadingSlotModel> loadingSlots = default(List<LoadingSlotModel>), string qrCode = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Location = location;
             this.MatchCode = matchCode;
@@ -84,6 +87,9 @@ namespace Simplic.OxS.SDK.Vehicle
             this.VehicleRegistration = vehicleRegistration;
             this.IsSystemVehicle = isSystemVehicle;
             this.Department = department;
+            this.Carrier = carrier;
+            this.PhoneNumber = phoneNumber;
+            this.EMailAddress = eMailAddress;
             this.VehicleTypeSubType = vehicleTypeSubType;
             this.AdditionalTechnicalData = additionalTechnicalData;
             this.RegistrationCertificate = registrationCertificate;
@@ -187,6 +193,24 @@ namespace Simplic.OxS.SDK.Vehicle
         /// </summary>
         [DataMember(Name = "department", EmitDefaultValue = false)]
         public DepartmentModel Department { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Carrier
+        /// </summary>
+        [DataMember(Name = "carrier", EmitDefaultValue = false)]
+        public CarrierContactModel Carrier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhoneNumber
+        /// </summary>
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EMailAddress
+        /// </summary>
+        [DataMember(Name = "eMailAddress", EmitDefaultValue = true)]
+        public string EMailAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets VehicleTypeSubType
@@ -318,6 +342,9 @@ namespace Simplic.OxS.SDK.Vehicle
             sb.Append("  VehicleRegistration: ").Append(VehicleRegistration).Append("\n");
             sb.Append("  IsSystemVehicle: ").Append(IsSystemVehicle).Append("\n");
             sb.Append("  Department: ").Append(Department).Append("\n");
+            sb.Append("  Carrier: ").Append(Carrier).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  EMailAddress: ").Append(EMailAddress).Append("\n");
             sb.Append("  VehicleTypeSubType: ").Append(VehicleTypeSubType).Append("\n");
             sb.Append("  AdditionalTechnicalData: ").Append(AdditionalTechnicalData).Append("\n");
             sb.Append("  RegistrationCertificate: ").Append(RegistrationCertificate).Append("\n");
@@ -440,6 +467,21 @@ namespace Simplic.OxS.SDK.Vehicle
                     this.Department == input.Department ||
                     (this.Department != null &&
                     this.Department.Equals(input.Department))
+                ) && 
+                (
+                    this.Carrier == input.Carrier ||
+                    (this.Carrier != null &&
+                    this.Carrier.Equals(input.Carrier))
+                ) && 
+                (
+                    this.PhoneNumber == input.PhoneNumber ||
+                    (this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(input.PhoneNumber))
+                ) && 
+                (
+                    this.EMailAddress == input.EMailAddress ||
+                    (this.EMailAddress != null &&
+                    this.EMailAddress.Equals(input.EMailAddress))
                 ) && 
                 (
                     this.VehicleTypeSubType == input.VehicleTypeSubType ||
@@ -597,6 +639,18 @@ namespace Simplic.OxS.SDK.Vehicle
                 if (this.Department != null)
                 {
                     hashCode = (hashCode * 59) + this.Department.GetHashCode();
+                }
+                if (this.Carrier != null)
+                {
+                    hashCode = (hashCode * 59) + this.Carrier.GetHashCode();
+                }
+                if (this.PhoneNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
+                }
+                if (this.EMailAddress != null)
+                {
+                    hashCode = (hashCode * 59) + this.EMailAddress.GetHashCode();
                 }
                 if (this.VehicleTypeSubType != null)
                 {
