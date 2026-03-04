@@ -206,6 +206,45 @@ public interface IContactClient
     /// <param name="id"></param>
     /// <param name="updateContactRequest"> (optional)</param>
     /// <returns>ContactModel</returns>
+    ContactModel Patch(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateContactRequest"> (optional)</param>
+    /// <returns>ApiResponse of ContactModel</returns>
+    ApiResponse<ContactModel> PatchWithHttpInfo(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateContactRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ContactModel</returns>
+    Task<ContactModel> PatchAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateContactRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (ContactModel)</returns>
+    Task<ApiResponse<ContactModel>> PatchWithHttpInfoAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="updateContactRequest"> (optional)</param>
+    /// <returns>ContactModel</returns>
     ContactModel Put(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?));
 
     /// <summary>
@@ -744,6 +783,83 @@ public interface IContactClient
         /// <param name="id"></param>
         /// <param name="updateContactRequest"> (optional)</param>
         /// <returns>ContactModel</returns>
+        public ContactModel Patch(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?))
+        {
+            try
+            {
+                return _internalClient.Patch(id, updateContactRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <returns>ApiResponse of ContactModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<ContactModel> PatchWithHttpInfo(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?))
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfo(id, updateContactRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContactModel</returns>
+        public System.Threading.Tasks.Task<ContactModel> PatchAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchAsync(id, updateContactRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContactModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> PatchWithHttpInfoAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfoAsync(id, updateContactRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <returns>ContactModel</returns>
         public ContactModel Put(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?))
         {
             try
@@ -1152,6 +1268,28 @@ public interface IContactClient
         /// <param name="updateContactRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ContactModel</returns>
+        ContactModel Patch(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ContactModel</returns>
+        ApiResponse<ContactModel> PatchWithHttpInfo(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ContactModel</returns>
         ContactModel Put(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0);
 
         /// <summary>
@@ -1349,6 +1487,33 @@ public interface IContactClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContactModel</returns>
+        System.Threading.Tasks.Task<ContactModel> PatchAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContactModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ContactModel>> PatchWithHttpInfoAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -2262,6 +2427,174 @@ public interface IContactClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ContactIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ContactModel</returns>
+        public ContactModel Patch(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = PatchWithHttpInfo(id, updateContactRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ContactModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<ContactModel> PatchWithHttpInfo(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updateContactRequest;
+
+            localVarRequestOptions.Operation = "ContactClient.ContactIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<ContactModel>("/Contact/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContactModel</returns>
+        public async System.Threading.Tasks.Task<ContactModel> PatchAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<ContactModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateContactRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="updateContactRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContactModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ContactModel>> PatchWithHttpInfoAsync(Guid id, UpdateContactRequest? updateContactRequest = default(UpdateContactRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updateContactRequest;
+
+            localVarRequestOptions.Operation = "ContactClient.ContactIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<ContactModel>("/Contact/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ContactIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
