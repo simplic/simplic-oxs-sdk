@@ -43,6 +43,37 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    List<DtcoWorkingTimeResponse> AllCurrentWorkingTimes();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    ApiResponse<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+    Task<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+    Task<ApiResponse<List<DtcoWorkingTimeResponse>>> AllCurrentWorkingTimesWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="checkCredentialsRequest"> (optional)</param>
     /// <returns>bool</returns>
     bool CheckCredentials(CheckCredentialsRequest? checkCredentialsRequest = default(CheckCredentialsRequest?));
@@ -78,6 +109,41 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDtcoReadJobRequest"> (optional)</param>
+    /// <returns></returns>
+    void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDtcoReadJobRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> CreateDtcoReadJobWithHttpInfo(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDtcoReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task CreateDtcoReadJobAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDtcoReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> CreateDtcoReadJobWithHttpInfoAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createReadJobRequest"> (optional)</param>
     /// <returns></returns>
     void CreateReadJob(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?));
@@ -107,6 +173,41 @@ public interface ITelematicClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
     Task<ApiResponse<Object>> CreateReadJobWithHttpInfoAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+    /// <returns></returns>
+    void DeleteDtcoReadJob(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> DeleteDtcoReadJobWithHttpInfo(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task DeleteDtcoReadJobAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> DeleteDtcoReadJobWithHttpInfoAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -249,39 +350,43 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="driver"></param>
     /// <param name="from"> (optional)</param>
     /// <param name="to"> (optional)</param>
     /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
+    List<DtcoWorkingTimeResponse> WorkingTimes(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="driver"></param>
     /// <param name="from"> (optional)</param>
     /// <param name="to"> (optional)</param>
     /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
+    ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="driver"></param>
     /// <param name="from"> (optional)</param>
     /// <param name="to"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-    Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="driver"></param>
     /// <param name="from"> (optional)</param>
     /// <param name="to"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-    Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -362,6 +467,75 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public List<DtcoWorkingTimeResponse> AllCurrentWorkingTimes()
+        {
+            try
+            {
+                return _internalClient.AllCurrentWorkingTimes();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.AllCurrentWorkingTimesWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AllCurrentWorkingTimesAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> AllCurrentWorkingTimesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AllCurrentWorkingTimesWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkCredentialsRequest"> (optional)</param>
         /// <returns>bool</returns>
         public bool CheckCredentials(CheckCredentialsRequest? checkCredentialsRequest = default(CheckCredentialsRequest?))
@@ -435,6 +609,79 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <returns></returns>
+        public void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?))
+        {
+            try
+            {
+                _internalClient.CreateDtcoReadJob(createDtcoReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> CreateDtcoReadJobWithHttpInfo(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?))
+        {
+            try
+            {
+                return _internalClient.CreateDtcoReadJobWithHttpInfo(createDtcoReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task CreateDtcoReadJobAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateDtcoReadJobAsync(createDtcoReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CreateDtcoReadJobWithHttpInfoAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateDtcoReadJobWithHttpInfoAsync(createDtcoReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <returns></returns>
         public void CreateReadJob(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?))
@@ -498,6 +745,79 @@ public interface ITelematicClient
             try
             {
                 return _internalClient.CreateReadJobWithHttpInfoAsync(createReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <returns></returns>
+        public void DeleteDtcoReadJob(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?))
+        {
+            try
+            {
+                _internalClient.DeleteDtcoReadJob(deleteDtcoReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteDtcoReadJobWithHttpInfo(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?))
+        {
+            try
+            {
+                return _internalClient.DeleteDtcoReadJobWithHttpInfo(deleteDtcoReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task DeleteDtcoReadJobAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteDtcoReadJobAsync(deleteDtcoReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteDtcoReadJobWithHttpInfoAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteDtcoReadJobWithHttpInfoAsync(deleteDtcoReadJobRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -796,14 +1116,15 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        public List<DtcoWorkingTimeResponse> WorkingTimes(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
         {
             try
             {
-                return _internalClient.WorkingTimes(from, to);
+                return _internalClient.WorkingTimes(driver, from, to);
             }
             catch (ApiException e)
             {
@@ -815,14 +1136,15 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
         {
             try
             {
-                return _internalClient.WorkingTimesWithHttpInfo(from, to);
+                return _internalClient.WorkingTimesWithHttpInfo(driver, from, to);
             }
             catch (ApiException e)
             {
@@ -834,15 +1156,16 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.WorkingTimesAsync(from, to, cancellationToken: cancellationToken);
+                return _internalClient.WorkingTimesAsync(driver, from, to, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -854,15 +1177,16 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.WorkingTimesWithHttpInfoAsync(from, to, cancellationToken: cancellationToken);
+                return _internalClient.WorkingTimesWithHttpInfoAsync(driver, from, to, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -882,6 +1206,24 @@ public interface ITelematicClient
     internal interface __ITelematicClientSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        List<DtcoWorkingTimeResponse> AllCurrentWorkingTimes(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        ApiResponse<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -906,6 +1248,26 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> CreateDtcoReadJobWithHttpInfo(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -922,6 +1284,26 @@ public interface ITelematicClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateReadJobWithHttpInfo(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void DeleteDtcoReadJob(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteDtcoReadJobWithHttpInfo(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1004,11 +1386,12 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
+        List<DtcoWorkingTimeResponse> WorkingTimes(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1017,11 +1400,12 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
+        ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1031,6 +1415,29 @@ public interface ITelematicClient
     internal interface __ITelematicClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DtcoWorkingTimeResponse>>> AllCurrentWorkingTimesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1063,6 +1470,31 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task CreateDtcoReadJobAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateDtcoReadJobWithHttpInfoAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1081,6 +1513,31 @@ public interface ITelematicClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateReadJobWithHttpInfoAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteDtcoReadJobAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDtcoReadJobWithHttpInfoAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1186,12 +1643,13 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1200,12 +1658,13 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1326,6 +1785,158 @@ public interface ITelematicClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public List<DtcoWorkingTimeResponse> AllCurrentWorkingTimes(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = AllCurrentWorkingTimesWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicAllCurrentWorkingTimesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DtcoWorkingTimeResponse>>("/Telematic/all-current-working-times", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicAllCurrentWorkingTimesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> AllCurrentWorkingTimesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = await AllCurrentWorkingTimesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> AllCurrentWorkingTimesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicAllCurrentWorkingTimesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DtcoWorkingTimeResponse>>("/Telematic/all-current-working-times", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicAllCurrentWorkingTimesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1496,6 +2107,168 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0)
+        {
+            CreateDtcoReadJobWithHttpInfo(createDtcoReadJobRequest);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> CreateDtcoReadJobWithHttpInfo(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDtcoReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateDtcoReadJobPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/Telematic/create-dtco-read-job", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicCreateDtcoReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task CreateDtcoReadJobAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await CreateDtcoReadJobWithHttpInfoAsync(createDtcoReadJobRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CreateDtcoReadJobWithHttpInfoAsync(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDtcoReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateDtcoReadJobPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Telematic/create-dtco-read-job", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicCreateDtcoReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1645,6 +2418,168 @@ public interface ITelematicClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicCreateReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void DeleteDtcoReadJob(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0)
+        {
+            DeleteDtcoReadJobWithHttpInfo(deleteDtcoReadJobRequest);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteDtcoReadJobWithHttpInfo(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = deleteDtcoReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteDtcoReadJobDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/Telematic/delete-dtco-read-job", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicDeleteDtcoReadJobDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteDtcoReadJobAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteDtcoReadJobWithHttpInfoAsync(deleteDtcoReadJobRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDtcoReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteDtcoReadJobWithHttpInfoAsync(DeleteDtcoReadJobRequest? deleteDtcoReadJobRequest = default(DeleteDtcoReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = deleteDtcoReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteDtcoReadJobDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/Telematic/delete-dtco-read-job", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicDeleteDtcoReadJobDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2298,13 +3233,14 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public List<DtcoWorkingTimeResponse> WorkingTimes(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        public List<DtcoWorkingTimeResponse> WorkingTimes(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = WorkingTimesWithHttpInfo(from, to);
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = WorkingTimesWithHttpInfo(driver, from, to);
             return localVarResponse.Data;
         }
 
@@ -2312,12 +3248,19 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> WorkingTimesWithHttpInfo(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0)
         {
+            // verify the required parameter 'driver' is set
+            if (driver == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'driver' when calling TelematicClient->TelematicWorkingTimesGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2342,6 +3285,7 @@ public interface ITelematicClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "driver", driver));
             if (from != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
@@ -2384,14 +3328,15 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DtcoWorkingTimeResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DtcoWorkingTimeResponse>> WorkingTimesAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = await WorkingTimesWithHttpInfoAsync(from, to, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>> localVarResponse = await WorkingTimesWithHttpInfoAsync(driver, from, to, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2399,13 +3344,20 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="driver"></param>
         /// <param name="from"> (optional)</param>
         /// <param name="to"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DtcoWorkingTimeResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<DtcoWorkingTimeResponse>>> WorkingTimesWithHttpInfoAsync(string driver, DateTime? from = default(DateTime?), DateTime? to = default(DateTime?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'driver' is set
+            if (driver == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'driver' when calling TelematicClient->TelematicWorkingTimesGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2431,6 +3383,7 @@ public interface ITelematicClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "driver", driver));
             if (from != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "from", from));
