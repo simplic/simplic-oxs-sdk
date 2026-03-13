@@ -43,7 +43,13 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="personalAccount">personalAccount.</param>
         /// <param name="values">values.</param>
         /// <param name="lastBooking">lastBooking.</param>
-        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse), List<LoadingAidValueResponse> values = default(List<LoadingAidValueResponse>), DateTime lastBooking = default(DateTime))
+        /// <param name="createDateTime">createDateTime.</param>
+        /// <param name="createUserId">createUserId.</param>
+        /// <param name="createUserName">createUserName.</param>
+        /// <param name="updateDateTime">updateDateTime.</param>
+        /// <param name="updateUserId">updateUserId.</param>
+        /// <param name="updateUserName">updateUserName.</param>
+        public LoadingAidBookingAccountResponse(Guid id = default(Guid), string name = default(string), string number = default(string), AddressModel contact = default(AddressModel), PersonalAccountResponse personalAccount = default(PersonalAccountResponse), List<LoadingAidValueResponse> values = default(List<LoadingAidValueResponse>), DateTime lastBooking = default(DateTime), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -52,6 +58,12 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.PersonalAccount = personalAccount;
             this.Values = values;
             this.LastBooking = lastBooking;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
@@ -97,6 +109,42 @@ namespace Simplic.OxS.SDK.Storage.Management
         public DateTime LastBooking { get; set; }
 
         /// <summary>
+        /// Gets or Sets CreateDateTime
+        /// </summary>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserId
+        /// </summary>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateUserName
+        /// </summary>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateDateTime
+        /// </summary>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserId
+        /// </summary>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateUserName
+        /// </summary>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +159,12 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  PersonalAccount: ").Append(PersonalAccount).Append("\n");
             sb.Append("  Values: ").Append(Values).Append("\n");
             sb.Append("  LastBooking: ").Append(LastBooking).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +235,36 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.LastBooking == input.LastBooking ||
                     (this.LastBooking != null &&
                     this.LastBooking.Equals(input.LastBooking))
+                ) && 
+                (
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
+                ) && 
+                (
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -220,6 +304,30 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.LastBooking != null)
                 {
                     hashCode = (hashCode * 59) + this.LastBooking.GetHashCode();
+                }
+                if (this.CreateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.CreateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
                 return hashCode;
             }
