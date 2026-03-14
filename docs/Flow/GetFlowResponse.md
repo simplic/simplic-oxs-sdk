@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
 **Name** | **string** |  | 
-**Description** | **string** |  | [optional] 
-**Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 
-**Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | [optional] 
+**Description** | **string** |  | 
+**Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | 
+**Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | 
+**Options** | [**FlowOptionsResponse**](FlowOptionsResponse.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

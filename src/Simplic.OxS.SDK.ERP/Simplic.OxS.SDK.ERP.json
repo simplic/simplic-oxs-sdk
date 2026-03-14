@@ -9115,6 +9115,38 @@
                         "type": "string",
                         "description": "Gets or sets a descriptive formatted text containing the terms of payment parameters.",
                         "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the terms of payment is created.",
+                        "format": "date-time"
+                    },
+                    "createUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user that created the terms of payment.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "createUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that created the terms of payment.",
+                        "nullable": true
+                    },
+                    "updateDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the date and time the terms of payment is updated.",
+                        "format": "date-time"
+                    },
+                    "updateUserId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the user that updated the terms of payment.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "updateUserName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the user that updated the terms of payment.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

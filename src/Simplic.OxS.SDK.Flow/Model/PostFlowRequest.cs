@@ -28,64 +28,44 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// GetFlowResponse
+    /// PostFlowRequest
     /// </summary>
-    [DataContract(Name = "GetFlowResponse")]
-    public partial class GetFlowResponse : IEquatable<GetFlowResponse>, IValidatableObject
+    [DataContract(Name = "PostFlowRequest")]
+    public partial class PostFlowRequest : IEquatable<PostFlowRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetFlowResponse" /> class.
+        /// Initializes a new instance of the <see cref="PostFlowRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected GetFlowResponse() { }
+        protected PostFlowRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetFlowResponse" /> class.
+        /// Initializes a new instance of the <see cref="PostFlowRequest" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
+        /// <param name="id">id.</param>
         /// <param name="name">name (required).</param>
-        /// <param name="description">description (required).</param>
-        /// <param name="nodes">nodes (required).</param>
-        /// <param name="variables">variables (required).</param>
-        /// <param name="options">options (required).</param>
-        public GetFlowResponse(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>), FlowOptionsResponse options = default(FlowOptionsResponse))
+        /// <param name="description">description.</param>
+        /// <param name="nodes">nodes.</param>
+        /// <param name="variables">variables.</param>
+        /// <param name="options">options.</param>
+        public PostFlowRequest(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>), FlowOptionsRequest options = default(FlowOptionsRequest))
         {
-            this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for GetFlowResponse and cannot be null");
+                throw new ArgumentNullException("name is a required property for PostFlowRequest and cannot be null");
             }
             this.Name = name;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for GetFlowResponse and cannot be null");
-            }
+            this.Id = id;
             this.Description = description;
-            // to ensure "nodes" is required (not null)
-            if (nodes == null)
-            {
-                throw new ArgumentNullException("nodes is a required property for GetFlowResponse and cannot be null");
-            }
             this.Nodes = nodes;
-            // to ensure "variables" is required (not null)
-            if (variables == null)
-            {
-                throw new ArgumentNullException("variables is a required property for GetFlowResponse and cannot be null");
-            }
             this.Variables = variables;
-            // to ensure "options" is required (not null)
-            if (options == null)
-            {
-                throw new ArgumentNullException("options is a required property for GetFlowResponse and cannot be null");
-            }
             this.Options = options;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -97,26 +77,26 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Nodes
         /// </summary>
-        [DataMember(Name = "nodes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "nodes", EmitDefaultValue = true)]
         public List<NodeInstance> Nodes { get; set; }
 
         /// <summary>
         /// Gets or Sets Variables
         /// </summary>
-        [DataMember(Name = "variables", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "variables", EmitDefaultValue = true)]
         public List<FlowVariableInstance> Variables { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
         /// </summary>
-        [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
-        public FlowOptionsResponse Options { get; set; }
+        [DataMember(Name = "options", EmitDefaultValue = false)]
+        public FlowOptionsRequest Options { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -125,7 +105,7 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GetFlowResponse {\n");
+            sb.Append("class PostFlowRequest {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -152,15 +132,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetFlowResponse);
+            return this.Equals(input as PostFlowRequest);
         }
 
         /// <summary>
-        /// Returns true if GetFlowResponse instances are equal
+        /// Returns true if PostFlowRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of GetFlowResponse to be compared</param>
+        /// <param name="input">Instance of PostFlowRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GetFlowResponse input)
+        public bool Equals(PostFlowRequest input)
         {
             if (input == null)
             {
@@ -245,6 +225,12 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

@@ -14,7 +14,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="flowget"></a>
 # **Get**
-> List&lt;FlowInstance&gt; Get (string? name = null)
+> List&lt;GetFlowResponse&gt; Get (string? name = null)
 
 
 
@@ -47,7 +47,7 @@ namespace Example
 
             try
             {
-                List<FlowInstance> result = apiInstance.Get(name);
+                List<GetFlowResponse> result = apiInstance.Get(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<FlowInstance>> response = apiInstance.GetWithHttpInfo(name);
+    ApiResponse<List<GetFlowResponse>> response = apiInstance.GetWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;FlowInstance&gt;**](FlowInstance.md)
+[**List&lt;GetFlowResponse&gt;**](GetFlowResponse.md)
 
 ### Authorization
 
@@ -587,7 +587,7 @@ void (empty response body)
 
 <a id="flowpost"></a>
 # **Post**
-> PostFlowResponse Post (FlowInstance? flowInstance = null)
+> PostFlowResponse Post (PostFlowRequest? postFlowRequest = null)
 
 
 
@@ -616,11 +616,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
-            var flowInstance = new FlowInstance?(); // FlowInstance? |  (optional) 
+            var postFlowRequest = new PostFlowRequest?(); // PostFlowRequest? |  (optional) 
 
             try
             {
-                PostFlowResponse result = apiInstance.Post(flowInstance);
+                PostFlowResponse result = apiInstance.Post(postFlowRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -640,7 +640,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<PostFlowResponse> response = apiInstance.PostWithHttpInfo(flowInstance);
+    ApiResponse<PostFlowResponse> response = apiInstance.PostWithHttpInfo(postFlowRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -657,7 +657,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **flowInstance** | [**FlowInstance?**](FlowInstance?.md) |  | [optional]  |
+| **postFlowRequest** | [**PostFlowRequest?**](PostFlowRequest?.md) |  | [optional]  |
 
 ### Return type
 

@@ -44,7 +44,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="paymentDeadlineDays">Gets or sets the number of days to payment deadline..</param>
         /// <param name="states">Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming  .</param>
         /// <param name="formattedText">Gets or sets a descriptive formatted text containing the terms of payment parameters..</param>
-        public TermsOfPaymentModel(Guid id = default(Guid), int number = default(int), string name = default(string), double cashDiscount = default(double), int cashDiscountDays = default(int), int paymentDeadlineDays = default(int), List<string> states = default(List<string>), string formattedText = default(string))
+        /// <param name="createDateTime">Gets or sets the date and time the terms of payment is created..</param>
+        /// <param name="createUserId">Gets or sets the id of the user that created the terms of payment..</param>
+        /// <param name="createUserName">Gets or sets the name of the user that created the terms of payment..</param>
+        /// <param name="updateDateTime">Gets or sets the date and time the terms of payment is updated..</param>
+        /// <param name="updateUserId">Gets or sets the id of the user that updated the terms of payment..</param>
+        /// <param name="updateUserName">Gets or sets the name of the user that updated the terms of payment..</param>
+        public TermsOfPaymentModel(Guid id = default(Guid), int number = default(int), string name = default(string), double cashDiscount = default(double), int cashDiscountDays = default(int), int paymentDeadlineDays = default(int), List<string> states = default(List<string>), string formattedText = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Number = number;
@@ -54,6 +60,12 @@ namespace Simplic.OxS.SDK.ERP
             this.PaymentDeadlineDays = paymentDeadlineDays;
             this.States = states;
             this.FormattedText = formattedText;
+            this.CreateDateTime = createDateTime;
+            this.CreateUserId = createUserId;
+            this.CreateUserName = createUserName;
+            this.UpdateDateTime = updateDateTime;
+            this.UpdateUserId = updateUserId;
+            this.UpdateUserName = updateUserName;
         }
 
         /// <summary>
@@ -113,6 +125,48 @@ namespace Simplic.OxS.SDK.ERP
         public string FormattedText { get; set; }
 
         /// <summary>
+        /// Gets or sets the date and time the terms of payment is created.
+        /// </summary>
+        /// <value>Gets or sets the date and time the terms of payment is created.</value>
+        [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the user that created the terms of payment.
+        /// </summary>
+        /// <value>Gets or sets the id of the user that created the terms of payment.</value>
+        [DataMember(Name = "createUserId", EmitDefaultValue = true)]
+        public Guid? CreateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the user that created the terms of payment.
+        /// </summary>
+        /// <value>Gets or sets the name of the user that created the terms of payment.</value>
+        [DataMember(Name = "createUserName", EmitDefaultValue = true)]
+        public string CreateUserName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time the terms of payment is updated.
+        /// </summary>
+        /// <value>Gets or sets the date and time the terms of payment is updated.</value>
+        [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
+        public DateTime UpdateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the user that updated the terms of payment.
+        /// </summary>
+        /// <value>Gets or sets the id of the user that updated the terms of payment.</value>
+        [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
+        public Guid? UpdateUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the user that updated the terms of payment.
+        /// </summary>
+        /// <value>Gets or sets the name of the user that updated the terms of payment.</value>
+        [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
+        public string UpdateUserName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -128,6 +182,12 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  PaymentDeadlineDays: ").Append(PaymentDeadlineDays).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
             sb.Append("  FormattedText: ").Append(FormattedText).Append("\n");
+            sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
+            sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
+            sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
+            sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
+            sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +259,36 @@ namespace Simplic.OxS.SDK.ERP
                     this.FormattedText == input.FormattedText ||
                     (this.FormattedText != null &&
                     this.FormattedText.Equals(input.FormattedText))
+                ) && 
+                (
+                    this.CreateDateTime == input.CreateDateTime ||
+                    (this.CreateDateTime != null &&
+                    this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.CreateUserId == input.CreateUserId ||
+                    (this.CreateUserId != null &&
+                    this.CreateUserId.Equals(input.CreateUserId))
+                ) && 
+                (
+                    this.CreateUserName == input.CreateUserName ||
+                    (this.CreateUserName != null &&
+                    this.CreateUserName.Equals(input.CreateUserName))
+                ) && 
+                (
+                    this.UpdateDateTime == input.UpdateDateTime ||
+                    (this.UpdateDateTime != null &&
+                    this.UpdateDateTime.Equals(input.UpdateDateTime))
+                ) && 
+                (
+                    this.UpdateUserId == input.UpdateUserId ||
+                    (this.UpdateUserId != null &&
+                    this.UpdateUserId.Equals(input.UpdateUserId))
+                ) && 
+                (
+                    this.UpdateUserName == input.UpdateUserName ||
+                    (this.UpdateUserName != null &&
+                    this.UpdateUserName.Equals(input.UpdateUserName))
                 );
         }
 
@@ -230,6 +320,30 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.FormattedText != null)
                 {
                     hashCode = (hashCode * 59) + this.FormattedText.GetHashCode();
+                }
+                if (this.CreateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.CreateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserId.GetHashCode();
+                }
+                if (this.CreateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreateUserName.GetHashCode();
+                }
+                if (this.UpdateDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateDateTime.GetHashCode();
+                }
+                if (this.UpdateUserId != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserId.GetHashCode();
+                }
+                if (this.UpdateUserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
                 }
                 return hashCode;
             }

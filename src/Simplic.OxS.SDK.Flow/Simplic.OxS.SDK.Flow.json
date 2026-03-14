@@ -634,7 +634,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowInstance"
+                                        "$ref": "#/components/schemas/GetFlowResponse"
                                     }
                                 }
                             },
@@ -642,7 +642,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowInstance"
+                                        "$ref": "#/components/schemas/GetFlowResponse"
                                     }
                                 }
                             },
@@ -650,7 +650,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/FlowInstance"
+                                        "$ref": "#/components/schemas/GetFlowResponse"
                                     }
                                 }
                             }
@@ -686,17 +686,17 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
+                                "$ref": "#/components/schemas/PostFlowRequest"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
+                                "$ref": "#/components/schemas/PostFlowRequest"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/FlowInstance"
+                                "$ref": "#/components/schemas/PostFlowRequest"
                             }
                         }
                     }
@@ -1476,6 +1476,27 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "FlowOptionsRequest": {
+                "required": [
+                    "apiKey"
+                ],
+                "type": "object",
+                "properties": {
+                    "apiKey": {
+                        "$ref": "#/components/schemas/StringFlowOptionValueRequest"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "FlowOptionsResponse": {
+                "type": "object",
+                "properties": {
+                    "hasApiKey": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "FlowOutPinDefinition": {
                 "required": [
                     "name"
@@ -1566,7 +1587,12 @@
             },
             "GetFlowResponse": {
                 "required": [
-                    "name"
+                    "description",
+                    "id",
+                    "name",
+                    "nodes",
+                    "options",
+                    "variables"
                 ],
                 "type": "object",
                 "properties": {
@@ -1595,6 +1621,9 @@
                             "$ref": "#/components/schemas/FlowVariableInstance"
                         },
                         "nullable": true
+                    },
+                    "options": {
+                        "$ref": "#/components/schemas/FlowOptionsResponse"
                     }
                 },
                 "additionalProperties": false
@@ -1932,12 +1961,51 @@
                 },
                 "additionalProperties": false
             },
+            "PostFlowRequest": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "nodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NodeInstance"
+                        },
+                        "nullable": true
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FlowVariableInstance"
+                        },
+                        "nullable": true
+                    },
+                    "options": {
+                        "$ref": "#/components/schemas/FlowOptionsRequest"
+                    }
+                },
+                "additionalProperties": false
+            },
             "PostFlowResponse": {
                 "required": [
                     "deploymentInfo",
                     "flow",
                     "flowKey",
-                    "id"
+                    "id",
+                    "options"
                 ],
                 "type": "object",
                 "properties": {
@@ -1950,6 +2018,9 @@
                     },
                     "flow": {
                         "$ref": "#/components/schemas/FlowInstance"
+                    },
+                    "options": {
+                        "$ref": "#/components/schemas/FlowOptionsResponse"
                     },
                     "flowKey": {
                         "type": "string",
@@ -2293,6 +2364,19 @@
                     },
                     "package": {
                         "$ref": "#/components/schemas/NodePackageResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "StringFlowOptionValueRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "requestChange": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
