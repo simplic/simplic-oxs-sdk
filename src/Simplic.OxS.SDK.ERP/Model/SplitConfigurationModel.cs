@@ -28,24 +28,28 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccount
+    /// Represents the response model for Simplic.OxS.ERP.SplitConfiguration.
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccount")]
-    public partial class TransactionGeneralLedgerAccount : IEquatable<TransactionGeneralLedgerAccount>, IValidatableObject
+    [DataContract(Name = "SplitConfigurationModel")]
+    public partial class SplitConfigurationModel : IEquatable<SplitConfigurationModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccount" /> class.
+        /// Initializes a new instance of the <see cref="SplitConfigurationModel" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="taxRate">taxRate.</param>
-        public TransactionGeneralLedgerAccount(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRate taxRate = default(TransactionTaxRate))
+        /// <param name="organizationId">organizationId.</param>
+        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="splitDefinitions">Gets or sets the split definitions..</param>
+        public SplitConfigurationModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string name = default(string), List<SplitDefinition> splitDefinitions = default(List<SplitDefinition>))
         {
             this.Id = id;
-            this.Name = name;
+            this.OrganizationId = organizationId;
+            this.IsDeleted = isDeleted;
             this.Number = number;
-            this.TaxRate = taxRate;
+            this.Name = name;
+            this.SplitDefinitions = splitDefinitions;
         }
 
         /// <summary>
@@ -55,22 +59,37 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets OrganizationId
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public Guid OrganizationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or Sets IsDeleted
         /// </summary>
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number.
+        /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRate
+        /// Gets or sets the name.
         /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
+        /// <value>Gets or sets the name.</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the split definitions.
+        /// </summary>
+        /// <value>Gets or sets the split definitions.</value>
+        [DataMember(Name = "splitDefinitions", EmitDefaultValue = true)]
+        public List<SplitDefinition> SplitDefinitions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +98,13 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccount {\n");
+            sb.Append("class SplitConfigurationModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  SplitDefinitions: ").Append(SplitDefinitions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +125,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccount);
+            return this.Equals(input as SplitConfigurationModel);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccount instances are equal
+        /// Returns true if SplitConfigurationModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccount to be compared</param>
+        /// <param name="input">Instance of SplitConfigurationModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccount input)
+        public bool Equals(SplitConfigurationModel input)
         {
             if (input == null)
             {
@@ -125,9 +146,13 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    this.IsDeleted.Equals(input.IsDeleted)
                 ) && 
                 (
                     this.Number == input.Number ||
@@ -135,9 +160,15 @@ namespace Simplic.OxS.SDK.ERP
                     this.Number.Equals(input.Number))
                 ) && 
                 (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.SplitDefinitions == input.SplitDefinitions ||
+                    this.SplitDefinitions != null &&
+                    input.SplitDefinitions != null &&
+                    this.SplitDefinitions.SequenceEqual(input.SplitDefinitions)
                 );
         }
 
@@ -154,17 +185,22 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.OrganizationId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
-                if (this.TaxRate != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.SplitDefinitions != null)
+                {
+                    hashCode = (hashCode * 59) + this.SplitDefinitions.GetHashCode();
                 }
                 return hashCode;
             }

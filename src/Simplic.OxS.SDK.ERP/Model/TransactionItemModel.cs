@@ -85,9 +85,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="pricing">Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.     Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.  .</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccount">generalLedgerAccount.</param>
+        /// <param name="billingLine">billingLine.</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ModelValueOperator? valueOperator = default(ModelValueOperator?), ModelAssignmentMode? assignmentMode = default(ModelAssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), double? quantity = default(double?), QuantityUnitModel unit = default(QuantityUnitModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccount generalLedgerAccount = default(TransactionGeneralLedgerAccount), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
+        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ModelValueOperator? valueOperator = default(ModelValueOperator?), ModelAssignmentMode? assignmentMode = default(ModelAssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), double? quantity = default(double?), QuantityUnitModel unit = default(QuantityUnitModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccount generalLedgerAccount = default(TransactionGeneralLedgerAccount), TransactionBillingLine billingLine = default(TransactionBillingLine), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
         {
             this.Id = id;
             this.Text = text;
@@ -120,6 +121,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Pricing = pricing;
             this.ArticleId = articleId;
             this.GeneralLedgerAccount = generalLedgerAccount;
+            this.BillingLine = billingLine;
             this.DeltaValue = deltaValue;
             this.Items = items;
         }
@@ -315,6 +317,12 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionGeneralLedgerAccount GeneralLedgerAccount { get; set; }
 
         /// <summary>
+        /// Gets or Sets BillingLine
+        /// </summary>
+        [DataMember(Name = "billingLine", EmitDefaultValue = false)]
+        public TransactionBillingLine BillingLine { get; set; }
+
+        /// <summary>
         /// Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.
         /// </summary>
         /// <value>Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.</value>
@@ -367,6 +375,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Pricing: ").Append(Pricing).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
             sb.Append("  GeneralLedgerAccount: ").Append(GeneralLedgerAccount).Append("\n");
+            sb.Append("  BillingLine: ").Append(BillingLine).Append("\n");
             sb.Append("  DeltaValue: ").Append(DeltaValue).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
@@ -561,6 +570,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.GeneralLedgerAccount.Equals(input.GeneralLedgerAccount))
                 ) && 
                 (
+                    this.BillingLine == input.BillingLine ||
+                    (this.BillingLine != null &&
+                    this.BillingLine.Equals(input.BillingLine))
+                ) && 
+                (
                     this.DeltaValue == input.DeltaValue ||
                     (this.DeltaValue != null &&
                     this.DeltaValue.Equals(input.DeltaValue))
@@ -693,6 +707,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.GeneralLedgerAccount != null)
                 {
                     hashCode = (hashCode * 59) + this.GeneralLedgerAccount.GetHashCode();
+                }
+                if (this.BillingLine != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillingLine.GetHashCode();
                 }
                 if (this.DeltaValue != null)
                 {

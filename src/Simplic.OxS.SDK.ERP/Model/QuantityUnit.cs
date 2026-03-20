@@ -28,24 +28,20 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccount
+    /// QuantityUnit
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccount")]
-    public partial class TransactionGeneralLedgerAccount : IEquatable<TransactionGeneralLedgerAccount>, IValidatableObject
+    [DataContract(Name = "QuantityUnit")]
+    public partial class QuantityUnit : IEquatable<QuantityUnit>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccount" /> class.
+        /// Initializes a new instance of the <see cref="QuantityUnit" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="taxRate">taxRate.</param>
-        public TransactionGeneralLedgerAccount(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRate taxRate = default(TransactionTaxRate))
+        public QuantityUnit(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
             this.Name = name;
-            this.Number = number;
-            this.TaxRate = taxRate;
         }
 
         /// <summary>
@@ -61,29 +57,15 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
-        /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public string Number { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxRate
-        /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccount {\n");
+            sb.Append("class QuantityUnit {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +86,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccount);
+            return this.Equals(input as QuantityUnit);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccount instances are equal
+        /// Returns true if QuantityUnit instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccount to be compared</param>
+        /// <param name="input">Instance of QuantityUnit to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccount input)
+        public bool Equals(QuantityUnit input)
         {
             if (input == null)
             {
@@ -128,16 +110,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
                 );
         }
 
@@ -157,14 +129,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Number != null)
-                {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
-                if (this.TaxRate != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 return hashCode;
             }

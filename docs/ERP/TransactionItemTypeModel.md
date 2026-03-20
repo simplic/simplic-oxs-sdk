@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsDeleted** | **bool** |  | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
 **Number** | **int** | Gets or sets the number. | [optional] 
+**Code** | **string** | Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.   | [optional] 
 **HasPositionNumber** | **bool** | Gets or sets the has position number flag. | [optional] 
 **IsSelectable** | **bool** | Gets or sets the is selectable flag. | [optional] 
 **DetailHtml** | **string** | Gets or sets the detail HTML. | [optional] 

@@ -28,24 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccount
+    /// TransactionTaxRate
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccount")]
-    public partial class TransactionGeneralLedgerAccount : IEquatable<TransactionGeneralLedgerAccount>, IValidatableObject
+    [DataContract(Name = "TransactionTaxRate")]
+    public partial class TransactionTaxRate : IEquatable<TransactionTaxRate>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccount" /> class.
+        /// Initializes a new instance of the <see cref="TransactionTaxRate" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
-        /// <param name="taxRate">taxRate.</param>
-        public TransactionGeneralLedgerAccount(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRate taxRate = default(TransactionTaxRate))
+        public TransactionTaxRate(Guid id = default(Guid), string name = default(string), string number = default(string))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
-            this.TaxRate = taxRate;
         }
 
         /// <summary>
@@ -67,23 +65,16 @@ namespace Simplic.OxS.SDK.ERP
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRate
-        /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccount {\n");
+            sb.Append("class TransactionTaxRate {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +95,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccount);
+            return this.Equals(input as TransactionTaxRate);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccount instances are equal
+        /// Returns true if TransactionTaxRate instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccount to be compared</param>
+        /// <param name="input">Instance of TransactionTaxRate to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccount input)
+        public bool Equals(TransactionTaxRate input)
         {
             if (input == null)
             {
@@ -133,11 +124,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Number == input.Number ||
                     (this.Number != null &&
                     this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
                 );
         }
 
@@ -161,10 +147,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
-                if (this.TaxRate != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 return hashCode;
             }

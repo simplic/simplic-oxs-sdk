@@ -28,24 +28,26 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccount
+    /// TransactionItemCostCenter
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccount")]
-    public partial class TransactionGeneralLedgerAccount : IEquatable<TransactionGeneralLedgerAccount>, IValidatableObject
+    [DataContract(Name = "TransactionItemCostCenter")]
+    public partial class TransactionItemCostCenter : IEquatable<TransactionItemCostCenter>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccount" /> class.
+        /// Initializes a new instance of the <see cref="TransactionItemCostCenter" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="number">number.</param>
-        /// <param name="taxRate">taxRate.</param>
-        public TransactionGeneralLedgerAccount(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRate taxRate = default(TransactionTaxRate))
+        /// <param name="validFrom">validFrom.</param>
+        /// <param name="validTo">validTo.</param>
+        public TransactionItemCostCenter(Guid id = default(Guid), string name = default(string), int number = default(int), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
-            this.TaxRate = taxRate;
+            this.ValidFrom = validFrom;
+            this.ValidTo = validTo;
         }
 
         /// <summary>
@@ -63,14 +65,20 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Gets or Sets Number
         /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public string Number { get; set; }
+        [DataMember(Name = "number", EmitDefaultValue = false)]
+        public int Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRate
+        /// Gets or Sets ValidFrom
         /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
+        [DataMember(Name = "validFrom", EmitDefaultValue = false)]
+        public DateTime ValidFrom { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ValidTo
+        /// </summary>
+        [DataMember(Name = "validTo", EmitDefaultValue = true)]
+        public DateTime? ValidTo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +87,12 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccount {\n");
+            sb.Append("class TransactionItemCostCenter {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
+            sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
+            sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +113,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccount);
+            return this.Equals(input as TransactionItemCostCenter);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccount instances are equal
+        /// Returns true if TransactionItemCostCenter instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccount to be compared</param>
+        /// <param name="input">Instance of TransactionItemCostCenter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccount input)
+        public bool Equals(TransactionItemCostCenter input)
         {
             if (input == null)
             {
@@ -131,13 +140,17 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
+                    this.Number.Equals(input.Number)
                 ) && 
                 (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
+                    this.ValidFrom == input.ValidFrom ||
+                    (this.ValidFrom != null &&
+                    this.ValidFrom.Equals(input.ValidFrom))
+                ) && 
+                (
+                    this.ValidTo == input.ValidTo ||
+                    (this.ValidTo != null &&
+                    this.ValidTo.Equals(input.ValidTo))
                 );
         }
 
@@ -158,13 +171,14 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Number != null)
+                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.ValidFrom != null)
                 {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ValidFrom.GetHashCode();
                 }
-                if (this.TaxRate != null)
+                if (this.ValidTo != null)
                 {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ValidTo.GetHashCode();
                 }
                 return hashCode;
             }

@@ -28,24 +28,22 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccount
+    /// CostCenterAssignment
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccount")]
-    public partial class TransactionGeneralLedgerAccount : IEquatable<TransactionGeneralLedgerAccount>, IValidatableObject
+    [DataContract(Name = "CostCenterAssignment")]
+    public partial class CostCenterAssignment : IEquatable<CostCenterAssignment>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccount" /> class.
+        /// Initializes a new instance of the <see cref="CostCenterAssignment" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="taxRate">taxRate.</param>
-        public TransactionGeneralLedgerAccount(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRate taxRate = default(TransactionTaxRate))
+        /// <param name="costCenter">costCenter.</param>
+        /// <param name="percentage">percentage.</param>
+        public CostCenterAssignment(Guid id = default(Guid), TransactionItemCostCenter costCenter = default(TransactionItemCostCenter), double percentage = default(double))
         {
             this.Id = id;
-            this.Name = name;
-            this.Number = number;
-            this.TaxRate = taxRate;
+            this.CostCenter = costCenter;
+            this.Percentage = percentage;
         }
 
         /// <summary>
@@ -55,22 +53,16 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets CostCenter
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "costCenter", EmitDefaultValue = false)]
+        public TransactionItemCostCenter CostCenter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or Sets Percentage
         /// </summary>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public string Number { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxRate
-        /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
+        [DataMember(Name = "percentage", EmitDefaultValue = false)]
+        public double Percentage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +71,10 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccount {\n");
+            sb.Append("class CostCenterAssignment {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
+            sb.Append("  CostCenter: ").Append(CostCenter).Append("\n");
+            sb.Append("  Percentage: ").Append(Percentage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +95,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccount);
+            return this.Equals(input as CostCenterAssignment);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccount instances are equal
+        /// Returns true if CostCenterAssignment instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccount to be compared</param>
+        /// <param name="input">Instance of CostCenterAssignment to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccount input)
+        public bool Equals(CostCenterAssignment input)
         {
             if (input == null)
             {
@@ -125,19 +116,13 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.CostCenter == input.CostCenter ||
+                    (this.CostCenter != null &&
+                    this.CostCenter.Equals(input.CostCenter))
                 ) && 
                 (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
+                    this.Percentage == input.Percentage ||
+                    this.Percentage.Equals(input.Percentage)
                 );
         }
 
@@ -154,18 +139,11 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.CostCenter != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CostCenter.GetHashCode();
                 }
-                if (this.Number != null)
-                {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                }
-                if (this.TaxRate != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Percentage.GetHashCode();
                 return hashCode;
             }
         }

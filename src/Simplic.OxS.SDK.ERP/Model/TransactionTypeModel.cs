@@ -44,6 +44,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="reportName">Gets or sets the report title..</param>
         /// <param name="shortName">Gets or sets the short name..</param>
         /// <param name="functions">Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
+        /// <param name="code">Gets or sets the code used to identify default transaction type documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  .</param>
         /// <param name="subtypes">Gets or sets the set of subtypes..</param>
         /// <param name="createDateTime">Gets or sets the date and time the transaction type is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the transaction type..</param>
@@ -51,7 +52,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction type is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction type..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction type..</param>
-        public TransactionTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeModel> subtypes = default(List<TransactionSubtypeModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), string code = default(string), List<TransactionSubtypeModel> subtypes = default(List<TransactionSubtypeModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -61,6 +62,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ReportName = reportName;
             this.ShortName = shortName;
             this.Functions = functions;
+            this.Code = code;
             this.Subtypes = subtypes;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
@@ -122,6 +124,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  </value>
         [DataMember(Name = "functions", EmitDefaultValue = true)]
         public List<string> Functions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the code used to identify default transaction type documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  
+        /// </summary>
+        /// <value>Gets or sets the code used to identify default transaction type documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  </value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the set of subtypes.
@@ -188,6 +197,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ReportName: ").Append(ReportName).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  Functions: ").Append(Functions).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Subtypes: ").Append(Subtypes).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
@@ -270,6 +280,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Functions.SequenceEqual(input.Functions)
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Subtypes == input.Subtypes ||
                     this.Subtypes != null &&
                     input.Subtypes != null &&
@@ -341,6 +356,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Functions != null)
                 {
                     hashCode = (hashCode * 59) + this.Functions.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 if (this.Subtypes != null)
                 {

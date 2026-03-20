@@ -10,6 +10,632 @@
         }
     ],
     "paths": {
+        "/BillingLine": {
+            "post": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Creates a new billing line.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateBillingLineRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Gets all billing lines.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLine/{id}": {
+            "patch": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Patches a billing line.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateBillingLineRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Deletes a billing line.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Gets a billing line by ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLine/get-by-state/{state}": {
+            "get": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Gets all billing lines with a given state.",
+                "parameters": [
+                    {
+                        "name": "state",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/BillingLineState"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BillingLineModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLine/{id}/lock": {
+            "post": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Locks a billing line. The operation is only executed if the billing line is in state\r\nSimplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),\r\n`false` if the billing line was in an illegal state for locking.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BillingLine/{id}/unlock": {
+            "post": {
+                "tags": [
+                    "BillingLine"
+                ],
+                "summary": "Unlocks a billing line. The operation is only executed if the billing line is in state\r\nSimplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked\r\nstate is already considered unlocked.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Currency": {
             "post": {
                 "tags": [
@@ -2444,6 +3070,398 @@
                 }
             }
         },
+        "/SplitConfiguration": {
+            "post": {
+                "tags": [
+                    "SplitConfiguration"
+                ],
+                "summary": "Creates a new split configuration.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSplitConfigurationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSplitConfigurationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSplitConfigurationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SplitConfiguration"
+                ],
+                "summary": "Gets all split configurations.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SplitConfigurationModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SplitConfigurationModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SplitConfigurationModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SplitConfiguration/{id}": {
+            "patch": {
+                "tags": [
+                    "SplitConfiguration"
+                ],
+                "summary": "Patches a split configuration.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSplitConfigurationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSplitConfigurationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSplitConfigurationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "SplitConfiguration"
+                ],
+                "summary": "Deletes a split configuration.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SplitConfiguration"
+                ],
+                "summary": "Gets a split configuration by ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SplitConfigurationModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/TaxGroup": {
             "post": {
                 "tags": [
@@ -3794,6 +4812,336 @@
                 }
             }
         },
+        "/Transaction/draft-transactions": {
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Creates a set of draft transactions resulting from a set of billing lines.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateDraftTransactionsRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateDraftTransactionsRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateDraftTransactionsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Transaction/add-billing-lines-to-draft": {
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Adds a set of billing lines to an existing draft transaction.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Transaction/remove-billing-lines-from-draft": {
+            "delete": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.\r\nBilling lines may belong to different draft transactions; each is updated independently.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RemoveBillingLinesFromDraftTransactionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RemoveBillingLinesFromDraftTransactionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RemoveBillingLinesFromDraftTransactionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Transaction/preview": {
             "post": {
                 "tags": [
@@ -4576,6 +5924,218 @@
                 }
             }
         },
+        "/Transaction/{id}/convert-draft": {
+            "put": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Converts a draft transaction to a regular, non-draft transaction.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the draft transaction to convert.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Transaction/distribute-billing-lines-to-drafts": {
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Distributes a set of billing lines onto existing draft transactions according to a split configuration.\r\nBilling lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.\r\nWhen multiple draft transactions are eligible for a billing line it is reported as ambiguous.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DistributeBillingLinesToDraftTransactionsResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/TransactionItemType": {
             "post": {
                 "tags": [
@@ -5209,6 +6769,46 @@
     },
     "components": {
         "schemas": {
+            "AddBillingLinesToDraftTransactionRequest": {
+                "type": "object",
+                "properties": {
+                    "draftTransactionId": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the draft transaction to add billing lines to.",
+                        "format": "uuid"
+                    },
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the set of billing line IDs to add to the draft transaction.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to add a set of billing lines to an existing draft transaction."
+            },
+            "AddBillingLinesToDraftTransactionResultModel": {
+                "type": "object",
+                "properties": {
+                    "draftTransactionResult": {
+                        "$ref": "#/components/schemas/DraftTransactionResultModel"
+                    },
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the IDs of all billing lines that were added to the draft transaction\r\nas part of this operation.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the model for the result of adding a set of billing lines to a single draft\r\ntransaction, together with the IDs of all billing lines that were added."
+            },
             "AdditionalReferencedDocumentContentRequest": {
                 "type": "object",
                 "properties": {
@@ -5313,6 +6913,26 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "AmbiguousBillingLineAssignmentModel": {
+                "type": "object",
+                "properties": {
+                    "billingLineId": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the billing line with an ambiguous assignment.",
+                        "format": "uuid"
+                    },
+                    "eligibleTransactions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TransactionModel"
+                        },
+                        "description": "Gets or sets the set of draft transactions eligible to receive this billing line.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the model for a billing line whose split-configuration-based assignment\r\nis ambiguous because multiple eligible draft transactions were found."
             },
             "AssignmentMode": {
                 "enum": [
@@ -5444,6 +7064,137 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create or update a Simplic.OxS.ERP.Transaction.BehaviorDefinition"
             },
+            "BillingLineModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/TransactionContact"
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line.",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity of the item or service described by this billing line.",
+                        "format": "double"
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnit"
+                    },
+                    "priceUnit": {
+                        "$ref": "#/components/schemas/QuantityUnit"
+                    },
+                    "singlePrice": {
+                        "type": "number",
+                        "description": "Gets or sets the price for a single unit.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the total price.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net."
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignment"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignment"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/TaxRateModel"
+                    },
+                    "generalLedgerAccountGroup": {
+                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccountGroup"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReference"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually."
+                    },
+                    "state": {
+                        "$ref": "#/components/schemas/BillingLineState"
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a set of additional properties.",
+                        "nullable": true
+                    },
+                    "assignedTransactionId": {
+                        "type": "string",
+                        "description": "Gets or sets the transaction this billing line has been assigned to (either draft or finalized).\r\n\n\r\nThis information is used to easily determine whether the billing line is assigned to a particular draft transaction.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response model for Simplic.OxS.ERP.BillingLine."
+            },
+            "BillingLineReference": {
+                "type": "object",
+                "properties": {
+                    "dataType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BillingLineState": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
             "BillingPeriodRequest": {
                 "type": "object",
                 "properties": {
@@ -5569,6 +7320,23 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to convert a set of transactions."
+            },
+            "CostCenterAssignment": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "costCenter": {
+                        "$ref": "#/components/schemas/TransactionItemCostCenter"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
             },
             "CostCenterAssignmentModel": {
                 "type": "object",
@@ -5875,6 +7643,133 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "CreateBillingLineRequest": {
+                "type": "object",
+                "properties": {
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n",
+                        "format": "date-time"
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line.",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity of the item or service described by this billing line.",
+                        "format": "double"
+                    },
+                    "quantityUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement for the total quantity by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "priceUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured \r\nin tons.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "singlePrice": {
+                        "type": "number",
+                        "description": "Gets or sets the price for a single unit of the item or service described \r\nby this billing line.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the total price of the item or service described by this billing line.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net."
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account group for this billing line by ID.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to \r\ndetermine the general ledger account.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually."
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a create request for a Simplic.OxS.ERP.BillingLine.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n"
+            },
+            "CreateDraftTransactionsRequest": {
+                "type": "object",
+                "properties": {
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the set of billing line IDs to convert into draft transactions.",
+                        "nullable": true
+                    },
+                    "target": {
+                        "$ref": "#/components/schemas/SplitTarget"
+                    },
+                    "splitConfigurationId": {
+                        "type": "string",
+                        "description": "Gets or sets the split configuration ID to use for the split operation if split mode is set to configuration-based.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create a set of draft transactions from a set of billing lines."
+            },
             "CreateElectronicInvoiceRequest": {
                 "type": "object",
                 "properties": {
@@ -5963,6 +7858,31 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to create a personal account."
+            },
+            "CreateSplitConfigurationRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "splitDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SplitDefinition"
+                        },
+                        "description": "Gets or sets the split definitions.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a create request for a Simplic.OxS.ERP.SplitConfiguration."
             },
             "CreateTransactionRequest": {
                 "required": [
@@ -6598,6 +8518,100 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "DistributeBillingLinesToDraftTransactionsRequest": {
+                "type": "object",
+                "properties": {
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the set of billing line IDs to distribute.",
+                        "nullable": true
+                    },
+                    "pinnedTransactionIds": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets an optional map of billing line ID to a pinned draft transaction ID.\r\nWhen a billing line ID is present in this map its target transaction is used directly,\r\nbypassing the split configuration matching.",
+                        "nullable": true
+                    },
+                    "splitConfigurationId": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the split configuration used to match unassigned billing lines\r\nto existing draft transactions.",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to distribute a set of billing lines onto existing draft transactions."
+            },
+            "DistributeBillingLinesToDraftTransactionsResultModel": {
+                "type": "object",
+                "properties": {
+                    "draftTransactionResults": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionResultModel"
+                        },
+                        "description": "Gets or sets one entry per draft transaction that received at least one billing line,\r\neach carrying the Simplic.OxS.ERP.Server.DraftTransactionResultModel and the IDs of the billing lines added.",
+                        "nullable": true
+                    },
+                    "ambiguousAssignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AmbiguousBillingLineAssignmentModel"
+                        },
+                        "description": "Gets or sets the set of billing lines whose assignment was ambiguous,\r\ntogether with the eligible draft transactions per billing line.",
+                        "nullable": true
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the result model for distributing a set of billing lines to existing draft transactions."
+            },
+            "DraftTransactionResultModel": {
+                "type": "object",
+                "properties": {
+                    "draftTransaction": {
+                        "$ref": "#/components/schemas/TransactionModel"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation\r\nrepresented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the result of an operation on a draft transaction."
+            },
+            "DraftTransactionsResultModel": {
+                "type": "object",
+                "properties": {
+                    "draftTransactionResults": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DraftTransactionResultModel"
+                        },
+                        "description": "Gets or sets the list of results for the draft transactions.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model of the result of an operation resulting in a set of draft \r\ntransactions."
             },
             "DueDateMode": {
                 "enum": [
@@ -7496,6 +9510,15 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for an error that can be localized."
+            },
+            "LockBillingLineResult": {
+                "type": "object",
+                "properties": {
+                    "locked": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
             },
             "MetadataProcessingDataModel": {
                 "type": "object",
@@ -8507,6 +10530,20 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "QuantityUnit": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "QuantityUnitModel": {
                 "type": "object",
                 "properties": {
@@ -8523,6 +10560,22 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.QuantityUnit."
+            },
+            "RemoveBillingLinesFromDraftTransactionRequest": {
+                "type": "object",
+                "properties": {
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the set of billing line IDs whose associated transaction items should be removed.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to remove billing line transaction items from their assigned draft transactions."
             },
             "RoundingMode": {
                 "enum": [
@@ -8547,6 +10600,81 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "SplitConfigurationModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "splitDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SplitDefinition"
+                        },
+                        "description": "Gets or sets the split definitions.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response model for Simplic.OxS.ERP.SplitConfiguration."
+            },
+            "SplitDefinition": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/SplitDefinitionType"
+                    },
+                    "addonPropertyPath": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SplitDefinitionType": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "SplitTarget": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
             },
             "StringTransactionPriceObjectModelKeyValuePair": {
                 "type": "object",
@@ -9207,6 +11335,62 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TermsOfPayment configuration."
             },
+            "TransactionAddress": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "district": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TransactionAddressModel": {
                 "type": "object",
                 "properties": {
@@ -9275,6 +11459,77 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for an address in a transaction."
+            },
+            "TransactionBillingLine": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnit"
+                    },
+                    "priceUnit": {
+                        "$ref": "#/components/schemas/QuantityUnit"
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/TransactionTaxRate"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReference"
+                        },
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TransactionContact": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "taxGroupId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/TransactionAddress"
+                    }
+                },
+                "additionalProperties": false
             },
             "TransactionContactModel": {
                 "type": "object",
@@ -9378,9 +11633,52 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "taxRateId": {
+                    "taxRate": {
+                        "$ref": "#/components/schemas/TransactionTaxRate"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TransactionGeneralLedgerAccountGroup": {
+                "type": "object",
+                "properties": {
+                    "id": {
                         "type": "string",
-                        "format": "uuid",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TransactionItemCostCenter": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "format": "date-time",
                         "nullable": true
                     }
                 },
@@ -9589,6 +11887,9 @@
                     "generalLedgerAccount": {
                         "$ref": "#/components/schemas/TransactionGeneralLedgerAccount"
                     },
+                    "billingLine": {
+                        "$ref": "#/components/schemas/TransactionBillingLine"
+                    },
                     "deltaValue": {
                         "type": "number",
                         "description": "Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.",
@@ -9757,6 +12058,11 @@
                         "type": "integer",
                         "description": "Gets or sets the number.",
                         "format": "int32"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n",
+                        "nullable": true
                     },
                     "hasPositionNumber": {
                         "type": "boolean",
@@ -10542,6 +12848,24 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a transaction subtype sequence."
             },
+            "TransactionTaxRate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TransactionTransactionTypeModel": {
                 "type": "object",
                 "properties": {
@@ -10625,6 +12949,11 @@
                             "type": "string"
                         },
                         "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets the code used to identify default transaction type documents when generating transactions from code.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n",
                         "nullable": true
                     },
                     "subtypes": {
@@ -10767,6 +13096,115 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for the result of validating a transaction for financial accounting."
+            },
+            "UnlockBillingLineResult": {
+                "type": "object",
+                "properties": {
+                    "unlocked": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateBillingLineRequest": {
+                "type": "object",
+                "properties": {
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/TransactionContactRequest"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line.",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity of the item or service.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantityUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement for the total quantity by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "priceUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured \r\nin tons.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "singlePrice": {
+                        "type": "number",
+                        "description": "Gets or sets the price for a single unit of the item or service described \r\nby this billing line.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "totalPrice": {
+                        "type": "number",
+                        "description": "Gets or sets the total price of the item or service described by this billing line.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net.",
+                        "nullable": true
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account group for this billing line by ID.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to \r\ndetermine the general ledger account.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually.",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a patch request for a Simplic.OxS.ERP.BillingLine."
             },
             "UpdateCurrencyRequest": {
                 "type": "object",
@@ -10916,6 +13354,31 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "UpdateSplitConfigurationRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "splitDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SplitDefinition"
+                        },
+                        "description": "Gets or sets the split definitions.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a patch request for a Simplic.OxS.ERP.SplitConfiguration."
             },
             "UpdateTaxGroupRequest": {
                 "type": "object",

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ReportName** | **string** | Gets or sets the report title. | [optional] 
 **ShortName** | **string** | Gets or sets the short name. | [optional] 
 **Functions** | **List&lt;string&gt;** | Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order   | [optional] 
+**Code** | **string** | Gets or sets the code used to identify default transaction type documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.   | [optional] 
 **Subtypes** | [**List&lt;TransactionSubtypeModel&gt;**](TransactionSubtypeModel.md) | Gets or sets the set of subtypes. | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the transaction type is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the transaction type. | [optional] 

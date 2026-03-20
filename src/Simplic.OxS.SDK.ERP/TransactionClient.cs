@@ -40,6 +40,41 @@ public interface ITransactionClient
 
 
     /// <summary>
+    /// Adds a set of billing lines to an existing draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+    /// <returns>DraftTransactionResultModel</returns>
+    DraftTransactionResultModel AddBillingLinesToDraft(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
+
+    /// <summary>
+    /// Adds a set of billing lines to an existing draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+    /// <returns>ApiResponse of DraftTransactionResultModel</returns>
+    ApiResponse<DraftTransactionResultModel> AddBillingLinesToDraftWithHttpInfo(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
+        
+    /// <summary>
+    /// Adds a set of billing lines to an existing draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DraftTransactionResultModel</returns>
+    Task<DraftTransactionResultModel> AddBillingLinesToDraftAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Adds a set of billing lines to an existing draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
+    Task<ApiResponse<DraftTransactionResultModel>> AddBillingLinesToDraftWithHttpInfoAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -107,6 +142,76 @@ public interface ITransactionClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (ConvertResultModel)</returns>
     Task<ApiResponse<ConvertResultModel>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    DistributeBillingLinesToDraftTransactionsResultModel DistributeBillingLinesToDrafts(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
+
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
+        
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    Task<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+    Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DistributeBillingLinesToDraftsWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Creates a set of draft transactions resulting from a set of billing lines. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDraftTransactionsRequest"> (optional)</param>
+    /// <returns>DraftTransactionsResultModel</returns>
+    DraftTransactionsResultModel DraftTransactions(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?));
+
+    /// <summary>
+    /// Creates a set of draft transactions resulting from a set of billing lines. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDraftTransactionsRequest"> (optional)</param>
+    /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+    ApiResponse<DraftTransactionsResultModel> DraftTransactionsWithHttpInfo(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?));
+        
+    /// <summary>
+    /// Creates a set of draft transactions resulting from a set of billing lines. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DraftTransactionsResultModel</returns>
+    Task<DraftTransactionsResultModel> DraftTransactionsAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Creates a set of draft transactions resulting from a set of billing lines. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+    Task<ApiResponse<DraftTransactionsResultModel>> DraftTransactionsWithHttpInfoAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -216,6 +321,41 @@ public interface ITransactionClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
     Task<ApiResponse<List<TransactionModel>>> GetByNumberWithHttpInfoAsync(string? number = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Converts a draft transaction to a regular, non-draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <returns>TransactionResultModel</returns>
+    TransactionResultModel ConvertDraft(Guid id);
+
+    /// <summary>
+    /// Converts a draft transaction to a regular, non-draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <returns>ApiResponse of TransactionResultModel</returns>
+    ApiResponse<TransactionResultModel> ConvertDraftWithHttpInfo(Guid id);
+        
+    /// <summary>
+    /// Converts a draft transaction to a regular, non-draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TransactionResultModel</returns>
+    Task<TransactionResultModel> ConvertDraftAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Converts a draft transaction to a regular, non-draft transaction. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+    Task<ApiResponse<TransactionResultModel>> ConvertDraftWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -400,6 +540,41 @@ public interface ITransactionClient
     /// <returns>Task of ApiResponse (PreviewTransactionResult)</returns>
     Task<ApiResponse<PreviewTransactionResult>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+    /// <returns>DraftTransactionsResultModel</returns>
+    DraftTransactionsResultModel RemoveBillingLinesFromDraft(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?));
+
+    /// <summary>
+    /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+    /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+    ApiResponse<DraftTransactionsResultModel> RemoveBillingLinesFromDraftWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?));
+        
+    /// <summary>
+    /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DraftTransactionsResultModel</returns>
+    Task<DraftTransactionsResultModel> RemoveBillingLinesFromDraftAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+    Task<ApiResponse<DraftTransactionsResultModel>> RemoveBillingLinesFromDraftWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -475,6 +650,79 @@ public interface ITransactionClient
             set { _exceptionFactory = value; }
         }
 
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <returns>DraftTransactionResultModel</returns>
+        public DraftTransactionResultModel AddBillingLinesToDraft(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
+        {
+            try
+            {
+                return _internalClient.AddBillingLinesToDraft(addBillingLinesToDraftTransactionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> AddBillingLinesToDraftWithHttpInfo(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
+        {
+            try
+            {
+                return _internalClient.AddBillingLinesToDraftWithHttpInfo(addBillingLinesToDraftTransactionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionResultModel</returns>
+        public System.Threading.Tasks.Task<DraftTransactionResultModel> AddBillingLinesToDraftAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AddBillingLinesToDraftAsync(addBillingLinesToDraftTransactionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel>> AddBillingLinesToDraftWithHttpInfoAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AddBillingLinesToDraftWithHttpInfoAsync(addBillingLinesToDraftTransactionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
         /// <summary>
         /// Cancels a transaction. 
         /// </summary>
@@ -615,6 +863,152 @@ public interface ITransactionClient
             try
             {
                 return _internalClient.ConvertTransactionsWithHttpInfoAsync(convertTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public DistributeBillingLinesToDraftTransactionsResultModel DistributeBillingLinesToDrafts(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DistributeBillingLinesToDrafts(distributeBillingLinesToDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DistributeBillingLinesToDraftsWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DistributeBillingLinesToDraftsAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DistributeBillingLinesToDraftsWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DistributeBillingLinesToDraftsWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        public DraftTransactionsResultModel DraftTransactions(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DraftTransactions(createDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> DraftTransactionsWithHttpInfo(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DraftTransactionsWithHttpInfo(createDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        public System.Threading.Tasks.Task<DraftTransactionsResultModel> DraftTransactionsAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DraftTransactionsAsync(createDraftTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel>> DraftTransactionsWithHttpInfoAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DraftTransactionsWithHttpInfoAsync(createDraftTransactionsRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -838,6 +1232,79 @@ public interface ITransactionClient
             try
             {
                 return _internalClient.GetByNumberWithHttpInfoAsync(number, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel ConvertDraft(Guid id)
+        {
+            try
+            {
+                return _internalClient.ConvertDraft(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> ConvertDraftWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.ConvertDraftWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public System.Threading.Tasks.Task<TransactionResultModel> ConvertDraftAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ConvertDraftAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> ConvertDraftWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ConvertDraftWithHttpInfoAsync(id, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1217,6 +1684,79 @@ public interface ITransactionClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        public DraftTransactionsResultModel RemoveBillingLinesFromDraft(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?))
+        {
+            try
+            {
+                return _internalClient.RemoveBillingLinesFromDraft(removeBillingLinesFromDraftTransactionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> RemoveBillingLinesFromDraftWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?))
+        {
+            try
+            {
+                return _internalClient.RemoveBillingLinesFromDraftWithHttpInfo(removeBillingLinesFromDraftTransactionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        public System.Threading.Tasks.Task<DraftTransactionsResultModel> RemoveBillingLinesFromDraftAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemoveBillingLinesFromDraftAsync(removeBillingLinesFromDraftTransactionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel>> RemoveBillingLinesFromDraftWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RemoveBillingLinesFromDraftWithHttpInfoAsync(removeBillingLinesFromDraftTransactionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -1230,6 +1770,26 @@ public interface ITransactionClient
     internal interface __ITransactionClientSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionResultModel</returns>
+        DraftTransactionResultModel AddBillingLinesToDraft(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
+        ApiResponse<DraftTransactionResultModel> AddBillingLinesToDraftWithHttpInfo(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
         /// <summary>
         /// Cancels a transaction.
         /// </summary>
@@ -1270,6 +1830,46 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConvertResultModel</returns>
         ApiResponse<ConvertResultModel> ConvertTransactionsWithHttpInfo(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        DistributeBillingLinesToDraftTransactionsResultModel DistributeBillingLinesToDrafts(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        DraftTransactionsResultModel DraftTransactions(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        ApiResponse<DraftTransactionsResultModel> DraftTransactionsWithHttpInfo(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0);
         /// <summary>
         /// Gets a transaction by barcode.
         /// </summary>
@@ -1332,6 +1932,26 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
         ApiResponse<List<TransactionModel>> GetByNumberWithHttpInfo(string? number = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        TransactionResultModel ConvertDraft(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        ApiResponse<TransactionResultModel> ConvertDraftWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Deletes a transaction.
         /// </summary>
@@ -1436,6 +2056,26 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PreviewTransactionResult</returns>
         ApiResponse<PreviewTransactionResult> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        DraftTransactionsResultModel RemoveBillingLinesFromDraft(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        ApiResponse<DraftTransactionsResultModel> RemoveBillingLinesFromDraftWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1445,6 +2085,31 @@ public interface ITransactionClient
     internal interface __ITransactionClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionResultModel</returns>
+        System.Threading.Tasks.Task<DraftTransactionResultModel> AddBillingLinesToDraftAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DraftTransactionResultModel>> AddBillingLinesToDraftWithHttpInfoAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Cancels a transaction.
         /// </summary>
@@ -1495,6 +2160,56 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConvertResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConvertResultModel>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DistributeBillingLinesToDraftsWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        System.Threading.Tasks.Task<DraftTransactionsResultModel> DraftTransactionsAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DraftTransactionsResultModel>> DraftTransactionsWithHttpInfoAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets a transaction by barcode.
         /// </summary>
@@ -1572,6 +2287,31 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TransactionModel>>> GetByNumberWithHttpInfoAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        System.Threading.Tasks.Task<TransactionResultModel> ConvertDraftAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> ConvertDraftWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a transaction.
         /// </summary>
@@ -1701,6 +2441,31 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PreviewTransactionResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<PreviewTransactionResult>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        System.Threading.Tasks.Task<DraftTransactionsResultModel> RemoveBillingLinesFromDraftAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DraftTransactionsResultModel>> RemoveBillingLinesFromDraftWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1821,6 +2586,168 @@ public interface ITransactionClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionResultModel</returns>
+        public DraftTransactionResultModel AddBillingLinesToDraft(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> localVarResponse = AddBillingLinesToDraftWithHttpInfo(addBillingLinesToDraftTransactionRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> AddBillingLinesToDraftWithHttpInfo(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = addBillingLinesToDraftTransactionRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionAddBillingLinesToDraftPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DraftTransactionResultModel>("/Transaction/add-billing-lines-to-draft", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionAddBillingLinesToDraftPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionResultModel</returns>
+        public async System.Threading.Tasks.Task<DraftTransactionResultModel> AddBillingLinesToDraftAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> localVarResponse = await AddBillingLinesToDraftWithHttpInfoAsync(addBillingLinesToDraftTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Adds a set of billing lines to an existing draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel>> AddBillingLinesToDraftWithHttpInfoAsync(AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = addBillingLinesToDraftTransactionRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionAddBillingLinesToDraftPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DraftTransactionResultModel>("/Transaction/add-billing-lines-to-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionAddBillingLinesToDraftPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2138,6 +3065,330 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionConvertTransactionsPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public DistributeBillingLinesToDraftTransactionsResultModel DistributeBillingLinesToDrafts(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = DistributeBillingLinesToDraftsWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDistributeBillingLinesToDraftsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/distribute-billing-lines-to-drafts", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDistributeBillingLinesToDraftsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public async System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DistributeBillingLinesToDraftsAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = await DistributeBillingLinesToDraftsWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DistributeBillingLinesToDraftsWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDistributeBillingLinesToDraftsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/distribute-billing-lines-to-drafts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDistributeBillingLinesToDraftsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        public DraftTransactionsResultModel DraftTransactions(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> localVarResponse = DraftTransactionsWithHttpInfo(createDraftTransactionsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> DraftTransactionsWithHttpInfo(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftTransactionsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DraftTransactionsResultModel>("/Transaction/draft-transactions", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDraftTransactionsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        public async System.Threading.Tasks.Task<DraftTransactionsResultModel> DraftTransactionsAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> localVarResponse = await DraftTransactionsWithHttpInfoAsync(createDraftTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a set of draft transactions resulting from a set of billing lines. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel>> DraftTransactionsWithHttpInfoAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftTransactionsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DraftTransactionsResultModel>("/Transaction/draft-transactions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDraftTransactionsPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2636,6 +3887,162 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionGetByNumberGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel ConvertDraft(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = ConvertDraftWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> ConvertDraftWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdConvertDraftPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<TransactionResultModel>("/Transaction/{id}/convert-draft", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdConvertDraftPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public async System.Threading.Tasks.Task<TransactionResultModel> ConvertDraftAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await ConvertDraftWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Converts a draft transaction to a regular, non-draft transaction. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> ConvertDraftWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdConvertDraftPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionResultModel>("/Transaction/{id}/convert-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdConvertDraftPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3450,6 +4857,168 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionPreviewPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DraftTransactionsResultModel</returns>
+        public DraftTransactionsResultModel RemoveBillingLinesFromDraft(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> localVarResponse = RemoveBillingLinesFromDraftWithHttpInfo(removeBillingLinesFromDraftTransactionRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> RemoveBillingLinesFromDraftWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = removeBillingLinesFromDraftTransactionRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionRemoveBillingLinesFromDraftDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<DraftTransactionsResultModel>("/Transaction/remove-billing-lines-from-draft", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionRemoveBillingLinesFromDraftDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DraftTransactionsResultModel</returns>
+        public async System.Threading.Tasks.Task<DraftTransactionsResultModel> RemoveBillingLinesFromDraftAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel> localVarResponse = await RemoveBillingLinesFromDraftWithHttpInfoAsync(removeBillingLinesFromDraftTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionsResultModel>> RemoveBillingLinesFromDraftWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = removeBillingLinesFromDraftTransactionRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionRemoveBillingLinesFromDraftDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DraftTransactionsResultModel>("/Transaction/remove-billing-lines-from-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionRemoveBillingLinesFromDraftDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -41,6 +41,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number..</param>
+        /// <param name="code">Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  .</param>
         /// <param name="hasPositionNumber">Gets or sets the has position number flag..</param>
         /// <param name="isSelectable">Gets or sets the is selectable flag..</param>
         /// <param name="detailHtml">Gets or sets the detail HTML..</param>
@@ -52,13 +53,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction item type is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction item type..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction item type..</param>
-        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), string code = default(string), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.Name = name;
             this.Number = number;
+            this.Code = code;
             this.HasPositionNumber = hasPositionNumber;
             this.IsSelectable = isSelectable;
             this.DetailHtml = detailHtml;
@@ -103,6 +105,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = false)]
         public int Number { get; set; }
+
+        /// <summary>
+        /// Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  
+        /// </summary>
+        /// <value>Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  </value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the has position number flag.
@@ -194,6 +203,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  HasPositionNumber: ").Append(HasPositionNumber).Append("\n");
             sb.Append("  IsSelectable: ").Append(IsSelectable).Append("\n");
             sb.Append("  DetailHtml: ").Append(DetailHtml).Append("\n");
@@ -262,6 +272,11 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.Number == input.Number ||
                     this.Number.Equals(input.Number)
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 ) && 
                 (
                     this.HasPositionNumber == input.HasPositionNumber ||
@@ -341,6 +356,10 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.HasPositionNumber.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsSelectable.GetHashCode();
                 if (this.DetailHtml != null)
