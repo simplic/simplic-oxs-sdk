@@ -28,15 +28,25 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a mode of applying multiple operation items to a transaction.
+    /// Represents a mode of assigning transaction items to operation transaction items.     This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  
     /// </summary>
-    /// <value>Represents a mode of applying multiple operation items to a transaction.</value>
-    public enum OperationItemCombinationMode
+    /// <value>Represents a mode of assigning transaction items to operation transaction items.     This type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \&quot;Failed to load API definition\&quot; error.  </value>
+    public enum AssignmentModeModel
     {
         /// <summary>
         /// Enum NUMBER_0 for value: 0
         /// </summary>
-        NUMBER_0 = 0
+        NUMBER_0 = 0,
+
+        /// <summary>
+        /// Enum NUMBER_1 for value: 1
+        /// </summary>
+        NUMBER_1 = 1,
+
+        /// <summary>
+        /// Enum NUMBER_2 for value: 2
+        /// </summary>
+        NUMBER_2 = 2
     }
 
 }

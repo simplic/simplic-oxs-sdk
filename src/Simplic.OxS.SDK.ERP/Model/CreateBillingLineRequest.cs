@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="reference">Gets or sets the main reference..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="addon">Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line..</param>
-        public CreateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), Guid? quantityUnitId = default(Guid?), Guid? priceUnitId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), bool isManualBillingLine = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public CreateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), Guid quantityUnitId = default(Guid), Guid? priceUnitId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), Guid taxRateId = default(Guid), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), bool isManualBillingLine = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.FinancialPartner = financialPartner;
             this.Date = date;
@@ -112,8 +112,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the unit of measurement for the total quantity by ID.
         /// </summary>
         /// <value>Gets or sets the unit of measurement for the total quantity by ID.</value>
-        [DataMember(Name = "quantityUnitId", EmitDefaultValue = true)]
-        public Guid? QuantityUnitId { get; set; }
+        [DataMember(Name = "quantityUnitId", EmitDefaultValue = false)]
+        public Guid QuantityUnitId { get; set; }
 
         /// <summary>
         /// Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured   in tons.  
@@ -147,8 +147,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the tax rate by ID.
         /// </summary>
         /// <value>Gets or sets the tax rate by ID.</value>
-        [DataMember(Name = "taxRateId", EmitDefaultValue = true)]
-        public Guid? TaxRateId { get; set; }
+        [DataMember(Name = "taxRateId", EmitDefaultValue = false)]
+        public Guid TaxRateId { get; set; }
 
         /// <summary>
         /// Gets or sets the cost center assignments associated with this billing line.

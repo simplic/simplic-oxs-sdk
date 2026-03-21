@@ -28,31 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// BillingLineReference
+    /// Represents the shared model for Simplic.OxS.ERP.BillingLineReference.
     /// </summary>
-    [DataContract(Name = "BillingLineReference")]
-    public partial class BillingLineReference : IEquatable<BillingLineReference>, IValidatableObject
+    [DataContract(Name = "BillingLineReferenceModel")]
+    public partial class BillingLineReferenceModel : IEquatable<BillingLineReferenceModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BillingLineReference" /> class.
+        /// Initializes a new instance of the <see cref="BillingLineReferenceModel" /> class.
         /// </summary>
-        /// <param name="dataType">dataType.</param>
-        /// <param name="id">id.</param>
-        public BillingLineReference(string dataType = default(string), string id = default(string))
+        /// <param name="dataType">Gets or sets the data type associated with the property..</param>
+        /// <param name="id">Gets or sets the reference ID..</param>
+        public BillingLineReferenceModel(string dataType = default(string), string id = default(string))
         {
             this.DataType = dataType;
             this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets DataType
+        /// Gets or sets the data type associated with the property.
         /// </summary>
+        /// <value>Gets or sets the data type associated with the property.</value>
         [DataMember(Name = "dataType", EmitDefaultValue = true)]
         public string DataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the reference ID.
         /// </summary>
+        /// <value>Gets or sets the reference ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -63,7 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BillingLineReference {\n");
+            sb.Append("class BillingLineReferenceModel {\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
@@ -86,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BillingLineReference);
+            return this.Equals(input as BillingLineReferenceModel);
         }
 
         /// <summary>
-        /// Returns true if BillingLineReference instances are equal
+        /// Returns true if BillingLineReferenceModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of BillingLineReference to be compared</param>
+        /// <param name="input">Instance of BillingLineReferenceModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BillingLineReference input)
+        public bool Equals(BillingLineReferenceModel input)
         {
             if (input == null)
             {

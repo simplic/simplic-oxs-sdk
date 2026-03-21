@@ -28,41 +28,52 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionGeneralLedgerAccountGroup
+    /// Represents the shared model for Simplic.OxS.ERP.TransactionGeneralLedgerAccount.
     /// </summary>
-    [DataContract(Name = "TransactionGeneralLedgerAccountGroup")]
-    public partial class TransactionGeneralLedgerAccountGroup : IEquatable<TransactionGeneralLedgerAccountGroup>, IValidatableObject
+    [DataContract(Name = "TransactionGeneralLedgerAccountModel")]
+    public partial class TransactionGeneralLedgerAccountModel : IEquatable<TransactionGeneralLedgerAccountModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccountGroup" /> class.
+        /// Initializes a new instance of the <see cref="TransactionGeneralLedgerAccountModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        public TransactionGeneralLedgerAccountGroup(Guid id = default(Guid), string name = default(string), string number = default(string))
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="taxRate">taxRate.</param>
+        public TransactionGeneralLedgerAccountModel(Guid id = default(Guid), string name = default(string), string number = default(string), TransactionTaxRateModel taxRate = default(TransactionTaxRateModel))
         {
             this.Id = id;
             this.Name = name;
             this.Number = number;
+            this.TaxRate = taxRate;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxRate
+        /// </summary>
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+        public TransactionTaxRateModel TaxRate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +82,11 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionGeneralLedgerAccountGroup {\n");
+            sb.Append("class TransactionGeneralLedgerAccountModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,15 +107,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionGeneralLedgerAccountGroup);
+            return this.Equals(input as TransactionGeneralLedgerAccountModel);
         }
 
         /// <summary>
-        /// Returns true if TransactionGeneralLedgerAccountGroup instances are equal
+        /// Returns true if TransactionGeneralLedgerAccountModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionGeneralLedgerAccountGroup to be compared</param>
+        /// <param name="input">Instance of TransactionGeneralLedgerAccountModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionGeneralLedgerAccountGroup input)
+        public bool Equals(TransactionGeneralLedgerAccountModel input)
         {
             if (input == null)
             {
@@ -124,6 +136,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Number == input.Number ||
                     (this.Number != null &&
                     this.Number.Equals(input.Number))
+                ) && 
+                (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
                 );
         }
 
@@ -147,6 +164,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
+                if (this.TaxRate != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 return hashCode;
             }

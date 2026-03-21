@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents a request to create a Simplic.OxS.ERP.Transaction.TransactionSubtype.
+    /// Represents a request to create or update a Simplic.OxS.ERP.Transaction.TransactionSubtype.
     /// </summary>
     [DataContract(Name = "TransactionSubtypeRequest")]
     public partial class TransactionSubtypeRequest : IEquatable<TransactionSubtypeRequest>, IValidatableObject

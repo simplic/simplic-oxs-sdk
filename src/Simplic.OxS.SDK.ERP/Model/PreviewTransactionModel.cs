@@ -30,15 +30,15 @@ namespace Simplic.OxS.SDK.ERP
     /// <summary>
     /// Represents the shared model for the result of previewing a transaction.
     /// </summary>
-    [DataContract(Name = "PreviewTransactionResult")]
-    public partial class PreviewTransactionResult : IEquatable<PreviewTransactionResult>, IValidatableObject
+    [DataContract(Name = "PreviewTransactionModel")]
+    public partial class PreviewTransactionModel : IEquatable<PreviewTransactionModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PreviewTransactionResult" /> class.
+        /// Initializes a new instance of the <see cref="PreviewTransactionModel" /> class.
         /// </summary>
         /// <param name="previewTransaction">previewTransaction.</param>
         /// <param name="validationResult">validationResult.</param>
-        public PreviewTransactionResult(TransactionModel previewTransaction = default(TransactionModel), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel))
+        public PreviewTransactionModel(TransactionModel previewTransaction = default(TransactionModel), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel))
         {
             this.PreviewTransaction = previewTransaction;
             this.ValidationResult = validationResult;
@@ -63,7 +63,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PreviewTransactionResult {\n");
+            sb.Append("class PreviewTransactionModel {\n");
             sb.Append("  PreviewTransaction: ").Append(PreviewTransaction).Append("\n");
             sb.Append("  ValidationResult: ").Append(ValidationResult).Append("\n");
             sb.Append("}\n");
@@ -86,15 +86,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PreviewTransactionResult);
+            return this.Equals(input as PreviewTransactionModel);
         }
 
         /// <summary>
-        /// Returns true if PreviewTransactionResult instances are equal
+        /// Returns true if PreviewTransactionModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of PreviewTransactionResult to be compared</param>
+        /// <param name="input">Instance of PreviewTransactionModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PreviewTransactionResult input)
+        public bool Equals(PreviewTransactionModel input)
         {
             if (input == null)
             {

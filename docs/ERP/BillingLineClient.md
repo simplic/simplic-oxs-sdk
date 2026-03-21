@@ -8,9 +8,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**GetByStateStateGet**](BillingLineClient.md#billinglinegetbystatestateget) | **GET** /BillingLine/get-by-state/{state} | Gets all billing lines with a given state. |
 | [**Delete**](BillingLineClient.md#billinglineiddelete) | **DELETE** /BillingLine/{id} | Deletes a billing line. |
 | [**Get**](BillingLineClient.md#billinglineidget) | **GET** /BillingLine/{id} | Gets a billing line by ID. |
-| [**Lock**](BillingLineClient.md#billinglineidlockpost) | **POST** /BillingLine/{id}/lock | Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. |
+| [**Lock**](BillingLineClient.md#billinglineidlockput) | **PUT** /BillingLine/{id}/lock | Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. |
 | [**Patch**](BillingLineClient.md#billinglineidpatch) | **PATCH** /BillingLine/{id} | Patches a billing line. |
-| [**Unlock**](BillingLineClient.md#billinglineidunlockpost) | **POST** /BillingLine/{id}/unlock | Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. |
+| [**Unlock**](BillingLineClient.md#billinglineidunlockput) | **PUT** /BillingLine/{id}/unlock | Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. |
 | [**Post**](BillingLineClient.md#billinglinepost) | **POST** /BillingLine | Creates a new billing line. |
 
 <a id="billinglineget"></a>
@@ -397,7 +397,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="billinglineidlockpost"></a>
+<a id="billinglineidlockput"></a>
 # **Lock**
 > LockBillingLineResult Lock (Guid id)
 
@@ -598,7 +598,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="billinglineidunlockpost"></a>
+<a id="billinglineidunlockput"></a>
 # **Unlock**
 > UnlockBillingLineResult Unlock (Guid id)
 

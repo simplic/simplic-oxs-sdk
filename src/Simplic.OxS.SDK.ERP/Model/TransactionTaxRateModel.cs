@@ -28,33 +28,44 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// QuantityUnit
+    /// Represents the shared model for Simplic.OxS.ERP.TransactionTaxRate.
     /// </summary>
-    [DataContract(Name = "QuantityUnit")]
-    public partial class QuantityUnit : IEquatable<QuantityUnit>, IValidatableObject
+    [DataContract(Name = "TransactionTaxRateModel")]
+    public partial class TransactionTaxRateModel : IEquatable<TransactionTaxRateModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuantityUnit" /> class.
+        /// Initializes a new instance of the <see cref="TransactionTaxRateModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        public QuantityUnit(Guid id = default(Guid), string name = default(string))
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        public TransactionTaxRateModel(Guid id = default(Guid), string name = default(string), string number = default(string))
         {
             this.Id = id;
             this.Name = name;
+            this.Number = number;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number.
+        /// </summary>
+        /// <value>Gets or sets the number.</value>
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,9 +74,10 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class QuantityUnit {\n");
+            sb.Append("class TransactionTaxRateModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +98,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as QuantityUnit);
+            return this.Equals(input as TransactionTaxRateModel);
         }
 
         /// <summary>
-        /// Returns true if QuantityUnit instances are equal
+        /// Returns true if TransactionTaxRateModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of QuantityUnit to be compared</param>
+        /// <param name="input">Instance of TransactionTaxRateModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(QuantityUnit input)
+        public bool Equals(TransactionTaxRateModel input)
         {
             if (input == null)
             {
@@ -110,6 +122,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Number == input.Number ||
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
                 );
         }
 
@@ -129,6 +146,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
                 return hashCode;
             }

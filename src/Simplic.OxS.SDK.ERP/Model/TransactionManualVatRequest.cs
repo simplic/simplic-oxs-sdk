@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="value">Gets or sets the value..</param>
         /// <param name="date">Gets or sets the date..</param>
-        public TransactionManualVatRequest(double value = default(double), DateTime date = default(DateTime))
+        public TransactionManualVatRequest(double? value = default(double?), DateTime? date = default(DateTime?))
         {
             this.Value = value;
             this.Date = date;
@@ -48,15 +48,15 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the value.
         /// </summary>
         /// <value>Gets or sets the value.</value>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
-        public double Value { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public double? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the date.
         /// </summary>
         /// <value>Gets or sets the date.</value>
-        [DataMember(Name = "date", EmitDefaultValue = false)]
-        public DateTime Date { get; set; }
+        [DataMember(Name = "date", EmitDefaultValue = true)]
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -105,7 +105,8 @@ namespace Simplic.OxS.SDK.ERP
             return 
                 (
                     this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
                     this.Date == input.Date ||
@@ -123,7 +124,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                if (this.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
                 if (this.Date != null)
                 {
                     hashCode = (hashCode * 59) + this.Date.GetHashCode();

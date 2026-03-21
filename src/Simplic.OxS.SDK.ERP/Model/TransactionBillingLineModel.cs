@@ -28,23 +28,23 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionBillingLine
+    /// Represents the shared model for Simplic.OxS.ERP.TransactionBillingLine.
     /// </summary>
-    [DataContract(Name = "TransactionBillingLine")]
-    public partial class TransactionBillingLine : IEquatable<TransactionBillingLine>, IValidatableObject
+    [DataContract(Name = "TransactionBillingLineModel")]
+    public partial class TransactionBillingLineModel : IEquatable<TransactionBillingLineModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionBillingLine" /> class.
+        /// Initializes a new instance of the <see cref="TransactionBillingLineModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="text">text.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="text">Gets or sets the text describing this billing line..</param>
         /// <param name="quantityUnit">quantityUnit.</param>
         /// <param name="priceUnit">priceUnit.</param>
         /// <param name="taxRate">taxRate.</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="references">references.</param>
-        /// <param name="isManualBillingLine">isManualBillingLine.</param>
-        public TransactionBillingLine(Guid id = default(Guid), string text = default(string), QuantityUnit quantityUnit = default(QuantityUnit), QuantityUnit priceUnit = default(QuantityUnit), TransactionTaxRate taxRate = default(TransactionTaxRate), string reference = default(string), List<BillingLineReference> references = default(List<BillingLineReference>), bool isManualBillingLine = default(bool))
+        /// <param name="reference">Gets or sets the main reference..</param>
+        /// <param name="references">Gets or sets a set of additional references..</param>
+        /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
+        public TransactionBillingLineModel(Guid id = default(Guid), string text = default(string), QuantityUnitModel quantityUnit = default(QuantityUnitModel), QuantityUnitModel priceUnit = default(QuantityUnitModel), TransactionTaxRateModel taxRate = default(TransactionTaxRateModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool))
         {
             this.Id = id;
             this.Text = text;
@@ -57,14 +57,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text describing this billing line.
         /// </summary>
+        /// <value>Gets or sets the text describing this billing line.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -72,35 +74,38 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets QuantityUnit
         /// </summary>
         [DataMember(Name = "quantityUnit", EmitDefaultValue = false)]
-        public QuantityUnit QuantityUnit { get; set; }
+        public QuantityUnitModel QuantityUnit { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceUnit
         /// </summary>
         [DataMember(Name = "priceUnit", EmitDefaultValue = false)]
-        public QuantityUnit PriceUnit { get; set; }
+        public QuantityUnitModel PriceUnit { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRate
         /// </summary>
         [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRate TaxRate { get; set; }
+        public TransactionTaxRateModel TaxRate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the main reference.
         /// </summary>
+        /// <value>Gets or sets the main reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets References
+        /// Gets or sets a set of additional references.
         /// </summary>
+        /// <value>Gets or sets a set of additional references.</value>
         [DataMember(Name = "references", EmitDefaultValue = true)]
-        public List<BillingLineReference> References { get; set; }
+        public List<BillingLineReferenceModel> References { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsManualBillingLine
+        /// Gets or sets the flag indicating whether the billing line was created manually.
         /// </summary>
+        /// <value>Gets or sets the flag indicating whether the billing line was created manually.</value>
         [DataMember(Name = "isManualBillingLine", EmitDefaultValue = true)]
         public bool IsManualBillingLine { get; set; }
 
@@ -111,7 +116,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionBillingLine {\n");
+            sb.Append("class TransactionBillingLineModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
@@ -140,15 +145,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionBillingLine);
+            return this.Equals(input as TransactionBillingLineModel);
         }
 
         /// <summary>
-        /// Returns true if TransactionBillingLine instances are equal
+        /// Returns true if TransactionBillingLineModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionBillingLine to be compared</param>
+        /// <param name="input">Instance of TransactionBillingLineModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionBillingLine input)
+        public bool Equals(TransactionBillingLineModel input)
         {
             if (input == null)
             {

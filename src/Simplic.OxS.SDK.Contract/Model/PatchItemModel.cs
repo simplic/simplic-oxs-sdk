@@ -80,7 +80,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="endDate">endDate.</param>
         /// <param name="remove">remove.</param>
         /// <param name="addon">addon.</param>
-        public PatchItemModel(Guid id = default(Guid), string text = default(string), int? index = default(int?), int? positionNumber = default(int?), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<PatchCostObject> costs = default(List<PatchCostObject>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?), bool remove = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        /// <param name="allowExternalOrdering">allowExternalOrdering.</param>
+        public PatchItemModel(Guid id = default(Guid), string text = default(string), int? index = default(int?), int? positionNumber = default(int?), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), Guid? articleId = default(Guid?), QuantityRequest quantity = default(QuantityRequest), QuantityRequest plannedQuantity = default(QuantityRequest), List<PatchCostObject> costs = default(List<PatchCostObject>), double? distance = default(double?), double? tollDistance = default(double?), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool? cashDiscount = default(bool?), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool? printToReporting = default(bool?), bool? useInDisposition = default(bool?), string type = default(string), Guid? supplierContactId = default(Guid?), Guid? loadingAddressId = default(Guid?), Guid? unloadingAddressId = default(Guid?), Guid? alternativeLoadingAddressId = default(Guid?), Guid? alternativeUnloadingAddressId = default(Guid?), string contractNumber = default(string), Guid? departmentId = default(Guid?), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?), bool remove = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>), bool? allowExternalOrdering = default(bool?))
         {
             this.Id = id;
             this.Text = text;
@@ -114,6 +115,7 @@ namespace Simplic.OxS.SDK.Contract
             this.EndDate = endDate;
             this.Remove = remove;
             this.Addon = addon;
+            this.AllowExternalOrdering = allowExternalOrdering;
         }
 
         /// <summary>
@@ -297,6 +299,12 @@ namespace Simplic.OxS.SDK.Contract
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
+        /// Gets or Sets AllowExternalOrdering
+        /// </summary>
+        [DataMember(Name = "allowExternalOrdering", EmitDefaultValue = true)]
+        public bool? AllowExternalOrdering { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -336,6 +344,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
+            sb.Append("  AllowExternalOrdering: ").Append(AllowExternalOrdering).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -529,6 +538,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.Addon != null &&
                     input.Addon != null &&
                     this.Addon.SequenceEqual(input.Addon)
+                ) && 
+                (
+                    this.AllowExternalOrdering == input.AllowExternalOrdering ||
+                    (this.AllowExternalOrdering != null &&
+                    this.AllowExternalOrdering.Equals(input.AllowExternalOrdering))
                 );
         }
 
@@ -659,6 +673,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Addon != null)
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();
+                }
+                if (this.AllowExternalOrdering != null)
+                {
+                    hashCode = (hashCode * 59) + this.AllowExternalOrdering.GetHashCode();
                 }
                 return hashCode;
             }

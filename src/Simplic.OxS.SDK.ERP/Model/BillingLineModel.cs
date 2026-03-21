@@ -46,6 +46,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="financialPartner">financialPartner.</param>
+        /// <param name="date">Gets or sets the date associated with this billing line..</param>
+        /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
         /// <param name="quantity">Gets or sets the quantity of the item or service described by this billing line..</param>
         /// <param name="quantityUnit">quantityUnit.</param>
@@ -63,12 +65,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="state">state.</param>
         /// <param name="addon">Gets or sets a set of additional properties..</param>
         /// <param name="assignedTransactionId">Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.  .</param>
-        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContact financialPartner = default(TransactionContact), string text = default(string), double quantity = default(double), QuantityUnit quantityUnit = default(QuantityUnit), QuantityUnit priceUnit = default(QuantityUnit), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignment> costCenters = default(List<CostCenterAssignment>), List<CostCenterAssignment> costObjects = default(List<CostCenterAssignment>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroup generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroup), string reference = default(string), List<BillingLineReference> references = default(List<BillingLineReference>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
+        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), QuantityUnitModel quantityUnit = default(QuantityUnitModel), QuantityUnitModel priceUnit = default(QuantityUnitModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.FinancialPartner = financialPartner;
+            this.Date = date;
+            this.DeliveryDate = deliveryDate;
             this.Text = text;
             this.Quantity = quantity;
             this.QuantityUnit = quantityUnit;
@@ -110,7 +114,21 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets FinancialPartner
         /// </summary>
         [DataMember(Name = "financialPartner", EmitDefaultValue = false)]
-        public TransactionContact FinancialPartner { get; set; }
+        public TransactionContactModel FinancialPartner { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the date associated with this billing line.</value>
+        [DataMember(Name = "date", EmitDefaultValue = false)]
+        public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delivery date associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the delivery date associated with this billing line.</value>
+        [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
+        public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
         /// Gets or sets the text describing this billing line.
@@ -130,13 +148,13 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets QuantityUnit
         /// </summary>
         [DataMember(Name = "quantityUnit", EmitDefaultValue = false)]
-        public QuantityUnit QuantityUnit { get; set; }
+        public QuantityUnitModel QuantityUnit { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceUnit
         /// </summary>
         [DataMember(Name = "priceUnit", EmitDefaultValue = false)]
-        public QuantityUnit PriceUnit { get; set; }
+        public QuantityUnitModel PriceUnit { get; set; }
 
         /// <summary>
         /// Gets or sets the price for a single unit.
@@ -164,14 +182,14 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the cost center assignments associated with this billing line.</value>
         [DataMember(Name = "costCenters", EmitDefaultValue = true)]
-        public List<CostCenterAssignment> CostCenters { get; set; }
+        public List<CostCenterAssignmentModel> CostCenters { get; set; }
 
         /// <summary>
         /// Gets or sets the cost object assignments associated with this billing line.
         /// </summary>
         /// <value>Gets or sets the cost object assignments associated with this billing line.</value>
         [DataMember(Name = "costObjects", EmitDefaultValue = true)]
-        public List<CostCenterAssignment> CostObjects { get; set; }
+        public List<CostCenterAssignmentModel> CostObjects { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRate
@@ -183,7 +201,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets GeneralLedgerAccountGroup
         /// </summary>
         [DataMember(Name = "generalLedgerAccountGroup", EmitDefaultValue = false)]
-        public TransactionGeneralLedgerAccountGroup GeneralLedgerAccountGroup { get; set; }
+        public TransactionGeneralLedgerAccountGroupModel GeneralLedgerAccountGroup { get; set; }
 
         /// <summary>
         /// Gets or sets the main reference.
@@ -197,7 +215,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets a set of additional references.</value>
         [DataMember(Name = "references", EmitDefaultValue = true)]
-        public List<BillingLineReference> References { get; set; }
+        public List<BillingLineReferenceModel> References { get; set; }
 
         /// <summary>
         /// Gets or sets the flag indicating whether the billing line was created manually.
@@ -232,6 +250,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  FinancialPartner: ").Append(FinancialPartner).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
@@ -302,6 +322,16 @@ namespace Simplic.OxS.SDK.ERP
                     this.FinancialPartner == input.FinancialPartner ||
                     (this.FinancialPartner != null &&
                     this.FinancialPartner.Equals(input.FinancialPartner))
+                ) && 
+                (
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
+                ) && 
+                (
+                    this.DeliveryDate == input.DeliveryDate ||
+                    (this.DeliveryDate != null &&
+                    this.DeliveryDate.Equals(input.DeliveryDate))
                 ) && 
                 (
                     this.Text == input.Text ||
@@ -411,6 +441,14 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.FinancialPartner != null)
                 {
                     hashCode = (hashCode * 59) + this.FinancialPartner.GetHashCode();
+                }
+                if (this.Date != null)
+                {
+                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                }
+                if (this.DeliveryDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryDate.GetHashCode();
                 }
                 if (this.Text != null)
                 {

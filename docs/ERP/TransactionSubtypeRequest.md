@@ -1,5 +1,5 @@
 # Simplic.OxS.SDK.ERP.TransactionSubtypeRequest
-Represents a request to create a Simplic.OxS.ERP.Transaction.TransactionSubtype.
+Represents a request to create or update a Simplic.OxS.ERP.Transaction.TransactionSubtype.
 
 ## Properties
 

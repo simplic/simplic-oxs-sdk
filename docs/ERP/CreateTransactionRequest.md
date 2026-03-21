@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **DueDate** | **DateTime?** | Gets or sets the due date. | [optional] 
 **ReferenceNumber** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
-**OperationItemCombinationMode** | **OperationItemCombinationMode** |  | [optional] 
+**OperationItemCombinationMode** | **OperationItemCombinationModeModel** |  | [optional] 
 **IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | 
 **FinancialExportDisabled** | **bool** | Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.   | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 

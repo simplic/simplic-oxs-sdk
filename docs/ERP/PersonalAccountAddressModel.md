@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **District** | **string** | Gets or sets the district. | [optional] 
 **FederalState** | **string** | Gets or sets the federal state of the address. | [optional] 
 **CountryIso** | **string** | Gets or sets the country iso. | [optional] 
-**Latitude** | **double** | Gets or sets the latitude. | [optional] 
-**Longitude** | **double** | Gets or sets the longitude. | [optional] 
+**Latitude** | **double?** | Gets or sets the latitude. | [optional] 
+**Longitude** | **double?** | Gets or sets the longitude. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

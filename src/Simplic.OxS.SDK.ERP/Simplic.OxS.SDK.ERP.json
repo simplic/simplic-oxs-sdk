@@ -473,7 +473,7 @@
             }
         },
         "/BillingLine/{id}/lock": {
-            "post": {
+            "put": {
                 "tags": [
                     "BillingLine"
                 ],
@@ -555,7 +555,7 @@
             }
         },
         "/BillingLine/{id}/unlock": {
-            "post": {
+            "put": {
                 "tags": [
                     "BillingLine"
                 ],
@@ -4812,7 +4812,7 @@
                 }
             }
         },
-        "/Transaction/draft-transactions": {
+        "/Transaction/drafts": {
             "post": {
                 "tags": [
                     "Transaction"
@@ -4920,14 +4920,83 @@
                         }
                     }
                 }
+            },
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Gets all draft transactions.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TransactionModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TransactionModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TransactionModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
-        "/Transaction/add-billing-lines-to-draft": {
+        "/Transaction/drafts/{id}/billing-lines": {
             "post": {
                 "tags": [
                     "Transaction"
                 ],
                 "summary": "Adds a set of billing lines to an existing draft transaction.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the draft transaction.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "description": "",
                     "content": {
@@ -5032,12 +5101,12 @@
                 }
             }
         },
-        "/Transaction/remove-billing-lines-from-draft": {
-            "delete": {
+        "/Transaction/drafts/billing-lines/remove": {
+            "post": {
                 "tags": [
                     "Transaction"
                 ],
-                "summary": "Removes a set of billing line transaction items from their assigned draft transaction by billing line IDs.\r\nBilling lines may belong to different draft transactions; each is updated independently.",
+                "summary": "Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.\r\nBilling lines may belong to different draft transactions; each is updated independently.",
                 "requestBody": {
                     "description": "",
                     "content": {
@@ -5174,17 +5243,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             }
                         }
@@ -5194,17 +5263,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PreviewTransactionResult"
+                                    "$ref": "#/components/schemas/PreviewTransactionModel"
                                 }
                             }
                         }
@@ -5486,7 +5555,7 @@
             }
         },
         "/Transaction/convert-transactions": {
-            "put": {
+            "post": {
                 "tags": [
                     "Transaction"
                 ],
@@ -5656,7 +5725,7 @@
                 }
             }
         },
-        "/Transaction/get-by-barcode": {
+        "/Transaction/by-barcode": {
             "get": {
                 "tags": [
                     "Transaction"
@@ -5736,7 +5805,7 @@
                 }
             }
         },
-        "/Transaction/get-by-date": {
+        "/Transaction/by-date": {
             "get": {
                 "tags": [
                     "Transaction"
@@ -5835,7 +5904,7 @@
                 }
             }
         },
-        "/Transaction/get-by-number": {
+        "/Transaction/by-number": {
             "get": {
                 "tags": [
                     "Transaction"
@@ -5924,7 +5993,7 @@
                 }
             }
         },
-        "/Transaction/{id}/convert-draft": {
+        "/Transaction/drafts/{id}/convert": {
             "put": {
                 "tags": [
                     "Transaction"
@@ -6026,7 +6095,7 @@
                 }
             }
         },
-        "/Transaction/distribute-billing-lines-to-drafts": {
+        "/Transaction/drafts/distribute-billing-lines": {
             "post": {
                 "tags": [
                     "Transaction"
@@ -6943,6 +7012,16 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "AssignmentModeModel": {
+                "enum": [
+                    0,
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "description": "Represents a mode of assigning transaction items to operation transaction items.\r\n\n\r\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.\r\n",
+                "format": "int32"
+            },
             "Bank": {
                 "type": "object",
                 "properties": {
@@ -7079,7 +7158,18 @@
                         "type": "boolean"
                     },
                     "financialPartner": {
-                        "$ref": "#/components/schemas/TransactionContact"
+                        "$ref": "#/components/schemas/TransactionContactModel"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.",
+                        "format": "date-time"
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "text": {
                         "type": "string",
@@ -7092,10 +7182,10 @@
                         "format": "double"
                     },
                     "quantityUnit": {
-                        "$ref": "#/components/schemas/QuantityUnit"
+                        "$ref": "#/components/schemas/QuantityUnitModel"
                     },
                     "priceUnit": {
-                        "$ref": "#/components/schemas/QuantityUnit"
+                        "$ref": "#/components/schemas/QuantityUnitModel"
                     },
                     "singlePrice": {
                         "type": "number",
@@ -7116,7 +7206,7 @@
                     "costCenters": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignment"
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the cost center assignments associated with this billing line.",
                         "nullable": true
@@ -7124,7 +7214,7 @@
                     "costObjects": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/CostCenterAssignment"
+                            "$ref": "#/components/schemas/CostCenterAssignmentModel"
                         },
                         "description": "Gets or sets the cost object assignments associated with this billing line.",
                         "nullable": true
@@ -7133,7 +7223,7 @@
                         "$ref": "#/components/schemas/TaxRateModel"
                     },
                     "generalLedgerAccountGroup": {
-                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccountGroup"
+                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccountGroupModel"
                     },
                     "reference": {
                         "type": "string",
@@ -7143,7 +7233,7 @@
                     "references": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/BillingLineReference"
+                            "$ref": "#/components/schemas/BillingLineReferenceModel"
                         },
                         "description": "Gets or sets a set of additional references.",
                         "nullable": true
@@ -7171,19 +7261,22 @@
                 "additionalProperties": false,
                 "description": "Represents the response model for Simplic.OxS.ERP.BillingLine."
             },
-            "BillingLineReference": {
+            "BillingLineReferenceModel": {
                 "type": "object",
                 "properties": {
                     "dataType": {
                         "type": "string",
+                        "description": "Gets or sets the data type associated with the property.",
                         "nullable": true
                     },
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the reference ID.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.BillingLineReference."
             },
             "BillingLineState": {
                 "enum": [
@@ -7320,23 +7413,6 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to convert a set of transactions."
-            },
-            "CostCenterAssignment": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "costCenter": {
-                        "$ref": "#/components/schemas/TransactionItemCostCenter"
-                    },
-                    "percentage": {
-                        "type": "number",
-                        "format": "double"
-                    }
-                },
-                "additionalProperties": false
             },
             "CostCenterAssignmentModel": {
                 "type": "object",
@@ -7673,8 +7749,7 @@
                     "quantityUnitId": {
                         "type": "string",
                         "description": "Gets or sets the unit of measurement for the total quantity by ID.",
-                        "format": "uuid",
-                        "nullable": true
+                        "format": "uuid"
                     },
                     "priceUnitId": {
                         "type": "string",
@@ -7701,8 +7776,7 @@
                     "taxRateId": {
                         "type": "string",
                         "description": "Gets or sets the tax rate by ID.",
-                        "format": "uuid",
-                        "nullable": true
+                        "format": "uuid"
                     },
                     "costCenters": {
                         "type": "array",
@@ -8052,7 +8126,7 @@
                         "nullable": true
                     },
                     "operationItemCombinationMode": {
-                        "$ref": "#/components/schemas/OperationItemCombinationMode"
+                        "$ref": "#/components/schemas/OperationItemCombinationModeModel"
                     },
                     "isGross": {
                         "type": "boolean",
@@ -9546,26 +9620,7 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create or update the data provided by metadata processing."
             },
-            "ModelAssignmentMode": {
-                "enum": [
-                    0,
-                    1,
-                    2
-                ],
-                "type": "integer",
-                "description": "Represents a mode of assigning transaction items to operation transaction items.\r\n\n\r\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.\r\n",
-                "format": "int32"
-            },
-            "ModelValueOperator": {
-                "enum": [
-                    0,
-                    1
-                ],
-                "type": "integer",
-                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\r\n\n\r\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.\r\n",
-                "format": "int32"
-            },
-            "OperationItemCombinationMode": {
+            "OperationItemCombinationModeModel": {
                 "enum": [
                     0
                 ],
@@ -9973,12 +10028,14 @@
                     "latitude": {
                         "type": "number",
                         "description": "Gets or sets the latitude.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "longitude": {
                         "type": "number",
                         "description": "Gets or sets the longitude.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -10220,6 +10277,19 @@
                 "additionalProperties": false,
                 "description": "Represents a request to preview a transaction item of a Simplic.OxS.ERP.Transaction.Transaction."
             },
+            "PreviewTransactionModel": {
+                "type": "object",
+                "properties": {
+                    "previewTransaction": {
+                        "$ref": "#/components/schemas/TransactionModel"
+                    },
+                    "validationResult": {
+                        "$ref": "#/components/schemas/TransactionValidationResultModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of previewing a transaction."
+            },
             "PreviewTransactionRequest": {
                 "type": "object",
                 "properties": {
@@ -10380,7 +10450,7 @@
                         "nullable": true
                     },
                     "operationItemCombinationMode": {
-                        "$ref": "#/components/schemas/OperationItemCombinationMode"
+                        "$ref": "#/components/schemas/OperationItemCombinationModeModel"
                     },
                     "isGross": {
                         "type": "boolean",
@@ -10418,19 +10488,6 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to preview a Simplic.OxS.ERP.Transaction.Transaction."
-            },
-            "PreviewTransactionResult": {
-                "type": "object",
-                "properties": {
-                    "previewTransaction": {
-                        "$ref": "#/components/schemas/TransactionModel"
-                    },
-                    "validationResult": {
-                        "$ref": "#/components/schemas/TransactionValidationResultModel"
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents the shared model for the result of previewing a transaction."
             },
             "ProblemDetails": {
                 "type": "object",
@@ -10529,20 +10586,6 @@
                 ],
                 "type": "integer",
                 "format": "int32"
-            },
-            "QuantityUnit": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
             },
             "QuantityUnitModel": {
                 "type": "object",
@@ -11335,62 +11378,6 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TermsOfPayment configuration."
             },
-            "TransactionAddress": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "number": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "street": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "zipcode": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "district": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "federalState": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "country": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "countryIso": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "city": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "latitude": {
-                        "type": "number",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "longitude": {
-                        "type": "number",
-                        "format": "double",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "TransactionAddressModel": {
                 "type": "object",
                 "properties": {
@@ -11460,76 +11447,48 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for an address in a transaction."
             },
-            "TransactionBillingLine": {
+            "TransactionBillingLineModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text describing this billing line.",
                         "nullable": true
                     },
                     "quantityUnit": {
-                        "$ref": "#/components/schemas/QuantityUnit"
+                        "$ref": "#/components/schemas/QuantityUnitModel"
                     },
                     "priceUnit": {
-                        "$ref": "#/components/schemas/QuantityUnit"
+                        "$ref": "#/components/schemas/QuantityUnitModel"
                     },
                     "taxRate": {
-                        "$ref": "#/components/schemas/TransactionTaxRate"
+                        "$ref": "#/components/schemas/TransactionTaxRateModel"
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets the main reference.",
                         "nullable": true
                     },
                     "references": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/BillingLineReference"
+                            "$ref": "#/components/schemas/BillingLineReferenceModel"
                         },
+                        "description": "Gets or sets a set of additional references.",
                         "nullable": true
                     },
                     "isManualBillingLine": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually."
                     }
                 },
-                "additionalProperties": false
-            },
-            "TransactionContact": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "accountNumber": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "companyName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "firstName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "lastName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "taxGroupId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "address": {
-                        "$ref": "#/components/schemas/TransactionAddress"
-                    }
-                },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TransactionBillingLine."
             },
             "TransactionContactModel": {
                 "type": "object",
@@ -11618,71 +11577,52 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a document in a transaction."
             },
-            "TransactionGeneralLedgerAccount": {
+            "TransactionGeneralLedgerAccountGroupModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TransactionGeneralLedgerAccountGroup."
+            },
+            "TransactionGeneralLedgerAccountModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
                         "nullable": true
                     },
                     "taxRate": {
-                        "$ref": "#/components/schemas/TransactionTaxRate"
+                        "$ref": "#/components/schemas/TransactionTaxRateModel"
                     }
                 },
-                "additionalProperties": false
-            },
-            "TransactionGeneralLedgerAccountGroup": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "number": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "TransactionItemCostCenter": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "number": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "validFrom": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "validTo": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TransactionGeneralLedgerAccount."
             },
             "TransactionItemCostCenterModel": {
                 "type": "object",
@@ -11763,10 +11703,10 @@
                         "nullable": true
                     },
                     "valueOperator": {
-                        "$ref": "#/components/schemas/ModelValueOperator"
+                        "$ref": "#/components/schemas/ValueOperatorModel"
                     },
                     "assignmentMode": {
-                        "$ref": "#/components/schemas/ModelAssignmentMode"
+                        "$ref": "#/components/schemas/AssignmentModeModel"
                     },
                     "amount": {
                         "type": "number",
@@ -11885,10 +11825,10 @@
                         "nullable": true
                     },
                     "generalLedgerAccount": {
-                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccount"
+                        "$ref": "#/components/schemas/TransactionGeneralLedgerAccountModel"
                     },
                     "billingLine": {
-                        "$ref": "#/components/schemas/TransactionBillingLine"
+                        "$ref": "#/components/schemas/TransactionBillingLineModel"
                     },
                     "deltaValue": {
                         "type": "number",
@@ -12199,12 +12139,14 @@
                     "value": {
                         "type": "number",
                         "description": "Gets or sets the value.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "date": {
                         "type": "string",
                         "description": "Gets or sets the date.",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -12320,12 +12262,14 @@
                     "cashDiscountPercentValue": {
                         "type": "number",
                         "description": "Gets or sets the relative cash discount.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "cashDiscountTotal": {
                         "type": "number",
                         "description": "Gets or sets the total cash discount.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "document": {
                         "$ref": "#/components/schemas/TransactionDocumentModel"
@@ -12420,7 +12364,7 @@
                         "format": "int32"
                     },
                     "operationItemCombinationMode": {
-                        "$ref": "#/components/schemas/OperationItemCombinationMode"
+                        "$ref": "#/components/schemas/OperationItemCombinationModeModel"
                     },
                     "isGross": {
                         "type": "boolean",
@@ -12829,7 +12773,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a request to create a Simplic.OxS.ERP.Transaction.TransactionSubtype."
+                "description": "Represents a request to create or update a Simplic.OxS.ERP.Transaction.TransactionSubtype."
             },
             "TransactionSubtypeSequenceModel": {
                 "type": "object",
@@ -12848,23 +12792,27 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a transaction subtype sequence."
             },
-            "TransactionTaxRate": {
+            "TransactionTaxRateModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TransactionTaxRate."
             },
             "TransactionTransactionTypeModel": {
                 "type": "object",
@@ -13733,7 +13681,7 @@
                         "nullable": true
                     },
                     "operationItemCombinationMode": {
-                        "$ref": "#/components/schemas/OperationItemCombinationMode"
+                        "$ref": "#/components/schemas/OperationItemCombinationModeModel"
                     },
                     "isGross": {
                         "type": "boolean",
@@ -13818,6 +13766,15 @@
                     1
                 ],
                 "type": "integer",
+                "format": "int32"
+            },
+            "ValueOperatorModel": {
+                "enum": [
+                    0,
+                    1
+                ],
+                "type": "integer",
+                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\r\n\n\r\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.\r\n",
                 "format": "int32"
             },
             "ZUGFeRDVersion": {

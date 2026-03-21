@@ -70,6 +70,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="isDiscount">isDiscount.</param>
         /// <param name="contractNumber">contractNumber.</param>
         /// <param name="addon">addon.</param>
+        /// <param name="allowExternalOrdering">allowExternalOrdering.</param>
         /// <param name="supplier">supplier.</param>
         /// <param name="article">article.</param>
         /// <param name="loadingAddress">loadingAddress.</param>
@@ -80,7 +81,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="description">description.</param>
         /// <param name="certified">certified.</param>
         /// <param name="endDate">endDate.</param>
-        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address), DepartmentModel department = default(DepartmentModel), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?))
+        public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), bool allowExternalOrdering = default(bool), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address), DepartmentModel department = default(DepartmentModel), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?))
         {
             this.Id = id;
             this.Text = text;
@@ -104,6 +105,7 @@ namespace Simplic.OxS.SDK.Contract
             this.IsDiscount = isDiscount;
             this.ContractNumber = contractNumber;
             this.Addon = addon;
+            this.AllowExternalOrdering = allowExternalOrdering;
             this.Supplier = supplier;
             this.Article = article;
             this.LoadingAddress = loadingAddress;
@@ -237,6 +239,12 @@ namespace Simplic.OxS.SDK.Contract
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
+        /// Gets or Sets AllowExternalOrdering
+        /// </summary>
+        [DataMember(Name = "allowExternalOrdering", EmitDefaultValue = true)]
+        public bool AllowExternalOrdering { get; set; }
+
+        /// <summary>
         /// Gets or Sets Supplier
         /// </summary>
         [DataMember(Name = "supplier", EmitDefaultValue = false)]
@@ -326,6 +334,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  IsDiscount: ").Append(IsDiscount).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
+            sb.Append("  AllowExternalOrdering: ").Append(AllowExternalOrdering).Append("\n");
             sb.Append("  Supplier: ").Append(Supplier).Append("\n");
             sb.Append("  Article: ").Append(Article).Append("\n");
             sb.Append("  LoadingAddress: ").Append(LoadingAddress).Append("\n");
@@ -475,6 +484,10 @@ namespace Simplic.OxS.SDK.Contract
                     this.Addon.SequenceEqual(input.Addon)
                 ) && 
                 (
+                    this.AllowExternalOrdering == input.AllowExternalOrdering ||
+                    this.AllowExternalOrdering.Equals(input.AllowExternalOrdering)
+                ) && 
+                (
                     this.Supplier == input.Supplier ||
                     (this.Supplier != null &&
                     this.Supplier.Equals(input.Supplier))
@@ -596,6 +609,7 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AllowExternalOrdering.GetHashCode();
                 if (this.Supplier != null)
                 {
                     hashCode = (hashCode * 59) + this.Supplier.GetHashCode();
