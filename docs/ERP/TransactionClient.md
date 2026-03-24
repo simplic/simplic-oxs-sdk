@@ -9,8 +9,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**ByNumber**](TransactionClient.md#transactionbynumberget) | **GET** /Transaction/by-number | Gets a set of transactions by number. |
 | [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel | Cancels a transaction. |
 | [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionspost) | **POST** /Transaction/convert-transactions | Converts a set of transactions. |
+| [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepost) | **POST** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
 | [**DraftsBillingLinesRemove**](TransactionClient.md#transactiondraftsbillinglinesremovepost) | **POST** /Transaction/drafts/billing-lines/remove | Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. |
-| [**DraftsDistributeBillingLines**](TransactionClient.md#transactiondraftsdistributebillinglinespost) | **POST** /Transaction/drafts/distribute-billing-lines | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
 | [**Drafts**](TransactionClient.md#transactiondraftsget) | **GET** /Transaction/drafts | Gets all draft transactions. |
 | [**DraftsBillingLines**](TransactionClient.md#transactiondraftsidbillinglinespost) | **POST** /Transaction/drafts/{id}/billing-lines | Adds a set of billing lines to an existing draft transaction. |
 | [**DraftsConvert**](TransactionClient.md#transactiondraftsidconvertput) | **PUT** /Transaction/drafts/{id}/convert | Converts a draft transaction to a regular, non-draft transaction. |
@@ -518,6 +518,106 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="transactiondraftsbillinglinesdistributepost"></a>
+# **DraftsBillingLinesDistribute**
+> DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute (DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = null)
+
+Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class DraftsBillingLinesDistributeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new TransactionClient(config);
+            var distributeBillingLinesToDraftTransactionsRequest = new DistributeBillingLinesToDraftTransactionsRequest?(); // DistributeBillingLinesToDraftTransactionsRequest? |  (optional) 
+
+            try
+            {
+                // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+                DistributeBillingLinesToDraftTransactionsResultModel result = apiInstance.DraftsBillingLinesDistribute(distributeBillingLinesToDraftTransactionsRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TransactionClient.DraftsBillingLinesDistribute: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DraftsBillingLinesDistributeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+    ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> response = apiInstance.DraftsBillingLinesDistributeWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TransactionClient.DraftsBillingLinesDistributeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **distributeBillingLinesToDraftTransactionsRequest** | [**DistributeBillingLinesToDraftTransactionsRequest?**](DistributeBillingLinesToDraftTransactionsRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**DistributeBillingLinesToDraftTransactionsResultModel**](DistributeBillingLinesToDraftTransactionsResultModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="transactiondraftsbillinglinesremovepost"></a>
 # **DraftsBillingLinesRemove**
 > DraftTransactionsResultModel DraftsBillingLinesRemove (RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = null)
@@ -597,106 +697,6 @@ catch (ApiException e)
 ### Return type
 
 [**DraftTransactionsResultModel**](DraftTransactionsResultModel.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="transactiondraftsdistributebillinglinespost"></a>
-# **DraftsDistributeBillingLines**
-> DistributeBillingLinesToDraftTransactionsResultModel DraftsDistributeBillingLines (DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = null)
-
-Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.ERP;
-
-namespace Example
-{
-    public class DraftsDistributeBillingLinesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new TransactionClient(config);
-            var distributeBillingLinesToDraftTransactionsRequest = new DistributeBillingLinesToDraftTransactionsRequest?(); // DistributeBillingLinesToDraftTransactionsRequest? |  (optional) 
-
-            try
-            {
-                // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-                DistributeBillingLinesToDraftTransactionsResultModel result = apiInstance.DraftsDistributeBillingLines(distributeBillingLinesToDraftTransactionsRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TransactionClient.DraftsDistributeBillingLines: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DraftsDistributeBillingLinesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-    ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> response = apiInstance.DraftsDistributeBillingLinesWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TransactionClient.DraftsDistributeBillingLinesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **distributeBillingLinesToDraftTransactionsRequest** | [**DistributeBillingLinesToDraftTransactionsRequest?**](DistributeBillingLinesToDraftTransactionsRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**DistributeBillingLinesToDraftTransactionsResultModel**](DistributeBillingLinesToDraftTransactionsResultModel.md)
 
 ### Authorization
 

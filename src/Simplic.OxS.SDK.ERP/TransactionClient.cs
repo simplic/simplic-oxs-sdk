@@ -219,6 +219,41 @@ public interface ITransactionClient
 
 
     /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
+
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
+        
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+    Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+    Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsBillingLinesDistributeWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -251,41 +286,6 @@ public interface ITransactionClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
     Task<ApiResponse<DraftTransactionsResultModel>> DraftsBillingLinesRemoveWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-
-    /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-    /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
-    DistributeBillingLinesToDraftTransactionsResultModel DraftsDistributeBillingLines(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
-
-    /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-    /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-    ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
-        
-    /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-    Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
-    Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsDistributeBillingLinesWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -1055,6 +1055,79 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DraftsBillingLinesDistribute(distributeBillingLinesToDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
+        {
+            try
+            {
+                return _internalClient.DraftsBillingLinesDistributeWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DraftsBillingLinesDistributeAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsBillingLinesDistributeWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DraftsBillingLinesDistributeWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1121,79 +1194,6 @@ public interface ITransactionClient
             try
             {
                 return _internalClient.DraftsBillingLinesRemoveWithHttpInfoAsync(removeBillingLinesFromDraftTransactionRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public DistributeBillingLinesToDraftTransactionsResultModel DraftsDistributeBillingLines(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
-        {
-            try
-            {
-                return _internalClient.DraftsDistributeBillingLines(distributeBillingLinesToDraftTransactionsRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?))
-        {
-            try
-            {
-                return _internalClient.DraftsDistributeBillingLinesWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.DraftsDistributeBillingLinesAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsDistributeBillingLinesWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.DraftsDistributeBillingLinesWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1981,6 +1981,26 @@ public interface ITransactionClient
         /// <returns>ApiResponse of ConvertResultModel</returns>
         ApiResponse<ConvertResultModel> ConvertTransactionsWithHttpInfo(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0);
         /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
+        /// <summary>
         /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -2000,26 +2020,6 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
         ApiResponse<DraftTransactionsResultModel> DraftsBillingLinesRemoveWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0);
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        DistributeBillingLinesToDraftTransactionsResultModel DraftsDistributeBillingLines(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
         /// <summary>
         /// Gets all draft transactions.
         /// </summary>
@@ -2341,6 +2341,31 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (ConvertResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConvertResultModel>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsBillingLinesDistributeWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <remarks>
@@ -2365,31 +2390,6 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DraftTransactionsResultModel>> DraftsBillingLinesRemoveWithHttpInfoAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsDistributeBillingLinesWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets all draft transactions.
         /// </summary>
@@ -3564,6 +3564,168 @@ public interface ITransactionClient
         }
 
         /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = DraftsBillingLinesDistributeWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
+        public async System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = await DraftsBillingLinesDistributeWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsBillingLinesDistributeWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -3716,168 +3878,6 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesRemovePost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public DistributeBillingLinesToDraftTransactionsResultModel DraftsDistributeBillingLines(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = DraftsDistributeBillingLinesWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
-
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsDistributeBillingLinesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/distribute-billing-lines", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsDistributeBillingLinesPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DistributeBillingLinesToDraftTransactionsResultModel</returns>
-        public async System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsDistributeBillingLinesAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> localVarResponse = await DraftsDistributeBillingLinesWithHttpInfoAsync(distributeBillingLinesToDraftTransactionsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsDistributeBillingLinesWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
-
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsDistributeBillingLinesPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/distribute-billing-lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsDistributeBillingLinesPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
