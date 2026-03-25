@@ -36,7 +36,12 @@ Name | Type | Description | Notes
 **Pricing** | [**List&lt;StringTransactionPriceObjectModelKeyValuePair&gt;**](StringTransactionPriceObjectModelKeyValuePair.md) | Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.     Each tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.   | [optional] 
 **ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 
 **GeneralLedgerAccount** | [**TransactionGeneralLedgerAccountModel**](TransactionGeneralLedgerAccountModel.md) |  | [optional] 
-**BillingLine** | [**TransactionBillingLineModel**](TransactionBillingLineModel.md) |  | [optional] 
+**BillingLineId** | **Guid?** | Gets or sets the billing line by ID. | [optional] 
+**PriceUnit** | [**QuantityUnitModel**](QuantityUnitModel.md) |  | [optional] 
+**TaxRate** | [**TransactionTaxRateModel**](TransactionTaxRateModel.md) |  | [optional] 
+**Reference** | **string** | Gets or sets the main reference. | [optional] 
+**References** | [**List&lt;BillingLineReferenceModel&gt;**](BillingLineReferenceModel.md) | Gets or sets a set of additional references. | [optional] 
+**IsManualBillingLine** | **bool?** | Gets or sets the flag indicating whether the billing line was created manually. | [optional] 
 **DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
 **Items** | [**List&lt;TransactionItemModel&gt;**](TransactionItemModel.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
 

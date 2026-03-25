@@ -11447,49 +11447,6 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for an address in a transaction."
             },
-            "TransactionBillingLineModel": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the ID.",
-                        "format": "uuid"
-                    },
-                    "text": {
-                        "type": "string",
-                        "description": "Gets or sets the text describing this billing line.",
-                        "nullable": true
-                    },
-                    "quantityUnit": {
-                        "$ref": "#/components/schemas/QuantityUnitModel"
-                    },
-                    "priceUnit": {
-                        "$ref": "#/components/schemas/QuantityUnitModel"
-                    },
-                    "taxRate": {
-                        "$ref": "#/components/schemas/TransactionTaxRateModel"
-                    },
-                    "reference": {
-                        "type": "string",
-                        "description": "Gets or sets the main reference.",
-                        "nullable": true
-                    },
-                    "references": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BillingLineReferenceModel"
-                        },
-                        "description": "Gets or sets a set of additional references.",
-                        "nullable": true
-                    },
-                    "isManualBillingLine": {
-                        "type": "boolean",
-                        "description": "Gets or sets the flag indicating whether the billing line was created manually."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents the shared model for Simplic.OxS.ERP.TransactionBillingLine."
-            },
             "TransactionContactModel": {
                 "type": "object",
                 "properties": {
@@ -11827,8 +11784,35 @@
                     "generalLedgerAccount": {
                         "$ref": "#/components/schemas/TransactionGeneralLedgerAccountModel"
                     },
-                    "billingLine": {
-                        "$ref": "#/components/schemas/TransactionBillingLineModel"
+                    "billingLineId": {
+                        "type": "string",
+                        "description": "Gets or sets the billing line by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "priceUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitModel"
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/TransactionTaxRateModel"
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceModel"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually.",
+                        "nullable": true
                     },
                     "deltaValue": {
                         "type": "number",
@@ -11951,6 +11935,36 @@
                         "type": "string",
                         "description": "Gets or sets the general ledger account by ID.",
                         "format": "uuid",
+                        "nullable": true
+                    },
+                    "priceUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured\r\nin tons.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate for this billing line by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceModel"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually.",
                         "nullable": true
                     },
                     "deltaValue": {
