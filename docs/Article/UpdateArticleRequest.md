@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **TaxRateId** | **Guid?** |  | [optional] 
 **Ean** | **string** |  | [optional] 
 **ArticleGroupId** | **Guid?** |  | [optional] 
+**QuantityUnitId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

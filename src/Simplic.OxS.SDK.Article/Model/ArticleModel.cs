@@ -44,6 +44,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="articleGroup">articleGroup.</param>
+        /// <param name="quantityUnit">quantityUnit.</param>
         /// <param name="createDateTime">createDateTime.</param>
         /// <param name="createUserId">createUserId.</param>
         /// <param name="createUserName">createUserName.</param>
@@ -51,7 +52,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), QuantityUnitReferenceModel quantityUnit = default(QuantityUnitReferenceModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
@@ -61,6 +62,7 @@ namespace Simplic.OxS.SDK.Article
             this.Id = id;
             this.OrganizationId = organizationId;
             this.ArticleGroup = articleGroup;
+            this.QuantityUnit = quantityUnit;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -117,6 +119,12 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         [DataMember(Name = "articleGroup", EmitDefaultValue = false)]
         public ArticleGroupModel ArticleGroup { get; set; }
+
+        /// <summary>
+        /// Gets or Sets QuantityUnit
+        /// </summary>
+        [DataMember(Name = "quantityUnit", EmitDefaultValue = false)]
+        public QuantityUnitReferenceModel QuantityUnit { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateDateTime
@@ -176,6 +184,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  ArticleGroup: ").Append(ArticleGroup).Append("\n");
+            sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -259,6 +268,11 @@ namespace Simplic.OxS.SDK.Article
                     this.ArticleGroup.Equals(input.ArticleGroup))
                 ) && 
                 (
+                    this.QuantityUnit == input.QuantityUnit ||
+                    (this.QuantityUnit != null &&
+                    this.QuantityUnit.Equals(input.QuantityUnit))
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -334,6 +348,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.ArticleGroup != null)
                 {
                     hashCode = (hashCode * 59) + this.ArticleGroup.GetHashCode();
+                }
+                if (this.QuantityUnit != null)
+                {
+                    hashCode = (hashCode * 59) + this.QuantityUnit.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {

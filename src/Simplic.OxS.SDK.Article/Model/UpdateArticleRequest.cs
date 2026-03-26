@@ -42,7 +42,8 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="taxRateId">taxRateId.</param>
         /// <param name="ean">ean.</param>
         /// <param name="articleGroupId">articleGroupId.</param>
-        public UpdateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid? articleGroupId = default(Guid?))
+        /// <param name="quantityUnitId">quantityUnitId.</param>
+        public UpdateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid? articleGroupId = default(Guid?), Guid? quantityUnitId = default(Guid?))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Article
             this.TaxRateId = taxRateId;
             this.Ean = ean;
             this.ArticleGroupId = articleGroupId;
+            this.QuantityUnitId = quantityUnitId;
         }
 
         /// <summary>
@@ -89,6 +91,12 @@ namespace Simplic.OxS.SDK.Article
         public Guid? ArticleGroupId { get; set; }
 
         /// <summary>
+        /// Gets or Sets QuantityUnitId
+        /// </summary>
+        [DataMember(Name = "quantityUnitId", EmitDefaultValue = true)]
+        public Guid? QuantityUnitId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +110,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  Ean: ").Append(Ean).Append("\n");
             sb.Append("  ArticleGroupId: ").Append(ArticleGroupId).Append("\n");
+            sb.Append("  QuantityUnitId: ").Append(QuantityUnitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +175,11 @@ namespace Simplic.OxS.SDK.Article
                     this.ArticleGroupId == input.ArticleGroupId ||
                     (this.ArticleGroupId != null &&
                     this.ArticleGroupId.Equals(input.ArticleGroupId))
+                ) && 
+                (
+                    this.QuantityUnitId == input.QuantityUnitId ||
+                    (this.QuantityUnitId != null &&
+                    this.QuantityUnitId.Equals(input.QuantityUnitId))
                 );
         }
 
@@ -201,6 +215,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.ArticleGroupId != null)
                 {
                     hashCode = (hashCode * 59) + this.ArticleGroupId.GetHashCode();
+                }
+                if (this.QuantityUnitId != null)
+                {
+                    hashCode = (hashCode * 59) + this.QuantityUnitId.GetHashCode();
                 }
                 return hashCode;
             }

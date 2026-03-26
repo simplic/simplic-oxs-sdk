@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 
 **ArticleGroup** | [**ArticleGroupModel**](ArticleGroupModel.md) |  | [optional] 
+**QuantityUnit** | [**QuantityUnitReferenceModel**](QuantityUnitReferenceModel.md) |  | [optional] 
 **CreateDateTime** | **DateTime** |  | [optional] 
 **CreateUserId** | **Guid?** |  | [optional] 
 **CreateUserName** | **string** |  | [optional] 

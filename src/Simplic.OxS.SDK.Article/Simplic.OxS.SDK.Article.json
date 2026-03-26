@@ -1863,6 +1863,9 @@
                     "articleGroup": {
                         "$ref": "#/components/schemas/ArticleGroupModel"
                     },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitReferenceModel"
+                    },
                     "createDateTime": {
                         "type": "string",
                         "format": "date-time"
@@ -1934,6 +1937,11 @@
                         "nullable": true
                     },
                     "articleGroupId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "quantityUnitId": {
                         "type": "string",
                         "format": "uuid",
                         "nullable": true
@@ -2049,6 +2057,29 @@
                 },
                 "additionalProperties": false
             },
+            "QuantityUnitReferenceModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "ident": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "UpdateArticleGroupRequest": {
                 "type": "object",
                 "properties": {
@@ -2088,6 +2119,11 @@
                         "nullable": true
                     },
                     "articleGroupId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "quantityUnitId": {
                         "type": "string",
                         "format": "uuid",
                         "nullable": true
