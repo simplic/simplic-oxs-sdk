@@ -40,12 +40,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="transics">transics.</param>
         /// <param name="webfleet">webfleet.</param>
         /// <param name="sms">sms.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>))
+        /// <param name="none">none.</param>
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> none = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
             this.Webfleet = webfleet;
             this.Sms = sms;
+            this.None = none;
         }
 
         /// <summary>
@@ -73,6 +75,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> Sms { get; set; }
 
         /// <summary>
+        /// Gets or Sets None
+        /// </summary>
+        [DataMember(Name = "none", EmitDefaultValue = true)]
+        public List<string> None { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +92,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Transics: ").Append(Transics).Append("\n");
             sb.Append("  Webfleet: ").Append(Webfleet).Append("\n");
             sb.Append("  Sms: ").Append(Sms).Append("\n");
+            sb.Append("  None: ").Append(None).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +151,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Sms != null &&
                     input.Sms != null &&
                     this.Sms.SequenceEqual(input.Sms)
+                ) && 
+                (
+                    this.None == input.None ||
+                    this.None != null &&
+                    input.None != null &&
+                    this.None.SequenceEqual(input.None)
                 );
         }
 
@@ -169,6 +184,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Sms != null)
                 {
                     hashCode = (hashCode * 59) + this.Sms.GetHashCode();
+                }
+                if (this.None != null)
+                {
+                    hashCode = (hashCode * 59) + this.None.GetHashCode();
                 }
                 return hashCode;
             }

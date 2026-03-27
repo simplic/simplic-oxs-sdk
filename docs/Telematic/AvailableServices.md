@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Transics** | **List&lt;string&gt;** |  | [optional] 
 **Webfleet** | **List&lt;string&gt;** |  | [optional] 
 **Sms** | **List&lt;string&gt;** |  | [optional] 
+**None** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

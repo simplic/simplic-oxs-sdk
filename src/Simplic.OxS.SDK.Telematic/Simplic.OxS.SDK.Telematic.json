@@ -3756,6 +3756,13 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "none": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
