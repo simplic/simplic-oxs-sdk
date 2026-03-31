@@ -37,8 +37,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="TransactionResultModel" /> class.
         /// </summary>
         /// <param name="transaction">transaction.</param>
-        /// <param name="errors">Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects..</param>
-        public TransactionResultModel(TransactionModel transaction = default(TransactionModel), List<ErrorInfoModel> errors = default(List<ErrorInfoModel>))
+        /// <param name="errors">Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects..</param>
+        public TransactionResultModel(TransactionModel transaction = default(TransactionModel), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
             this.Transaction = transaction;
             this.Errors = errors;
@@ -51,11 +51,11 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionModel Transaction { get; set; }
 
         /// <summary>
-        /// Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects.
+        /// Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.
         /// </summary>
-        /// <value>Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects.</value>
+        /// <value>Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.</value>
         [DataMember(Name = "errors", EmitDefaultValue = true)]
-        public List<ErrorInfoModel> Errors { get; set; }
+        public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="DistributeBillingLinesToDraftTransactionsResultModel" /> class.
         /// </summary>
-        /// <param name="draftTransactionResults">Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the Simplic.OxS.ERP.Server.DraftTransactionResultModel and the IDs of the billing lines added..</param>
+        /// <param name="draftTransactionResults">Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the !:DraftTransactionResultModel and the IDs of the billing lines added..</param>
         /// <param name="ambiguousAssignments">Gets or sets the set of billing lines whose assignment was ambiguous,  together with the eligible draft transactions per billing line..</param>
         /// <param name="errors">Gets or sets the set of errors that occurred during the operation..</param>
         public DistributeBillingLinesToDraftTransactionsResultModel(List<AddBillingLinesToDraftTransactionResultModel> draftTransactionResults = default(List<AddBillingLinesToDraftTransactionResultModel>), List<AmbiguousBillingLineAssignmentModel> ambiguousAssignments = default(List<AmbiguousBillingLineAssignmentModel>), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
@@ -47,9 +47,9 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the Simplic.OxS.ERP.Server.DraftTransactionResultModel and the IDs of the billing lines added.
+        /// Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the !:DraftTransactionResultModel and the IDs of the billing lines added.
         /// </summary>
-        /// <value>Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the Simplic.OxS.ERP.Server.DraftTransactionResultModel and the IDs of the billing lines added.</value>
+        /// <value>Gets or sets one entry per draft transaction that received at least one billing line,  each carrying the !:DraftTransactionResultModel and the IDs of the billing lines added.</value>
         [DataMember(Name = "draftTransactionResults", EmitDefaultValue = true)]
         public List<AddBillingLinesToDraftTransactionResultModel> DraftTransactionResults { get; set; }
 

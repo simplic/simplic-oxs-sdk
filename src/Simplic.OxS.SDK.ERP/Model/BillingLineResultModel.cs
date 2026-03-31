@@ -28,25 +28,34 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// UnlockBillingLineResult
+    /// Represents the result model of an operation performed on a Simplic.OxS.ERP.Server.BillingLineResultModel.BillingLine.
     /// </summary>
-    [DataContract(Name = "UnlockBillingLineResult")]
-    public partial class UnlockBillingLineResult : IEquatable<UnlockBillingLineResult>, IValidatableObject
+    [DataContract(Name = "BillingLineResultModel")]
+    public partial class BillingLineResultModel : IEquatable<BillingLineResultModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnlockBillingLineResult" /> class.
+        /// Initializes a new instance of the <see cref="BillingLineResultModel" /> class.
         /// </summary>
-        /// <param name="unlocked">unlocked.</param>
-        public UnlockBillingLineResult(bool unlocked = default(bool))
+        /// <param name="billingLine">billingLine.</param>
+        /// <param name="errors">Gets or sets the set of errors that occurred during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects..</param>
+        public BillingLineResultModel(BillingLineModel billingLine = default(BillingLineModel), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
-            this.Unlocked = unlocked;
+            this.BillingLine = billingLine;
+            this.Errors = errors;
         }
 
         /// <summary>
-        /// Gets or Sets Unlocked
+        /// Gets or Sets BillingLine
         /// </summary>
-        [DataMember(Name = "unlocked", EmitDefaultValue = true)]
-        public bool Unlocked { get; set; }
+        [DataMember(Name = "billingLine", EmitDefaultValue = false)]
+        public BillingLineModel BillingLine { get; set; }
+
+        /// <summary>
+        /// Gets or sets the set of errors that occurred during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.
+        /// </summary>
+        /// <value>Gets or sets the set of errors that occurred during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.</value>
+        [DataMember(Name = "errors", EmitDefaultValue = true)]
+        public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,8 +64,9 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UnlockBillingLineResult {\n");
-            sb.Append("  Unlocked: ").Append(Unlocked).Append("\n");
+            sb.Append("class BillingLineResultModel {\n");
+            sb.Append("  BillingLine: ").Append(BillingLine).Append("\n");
+            sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +87,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UnlockBillingLineResult);
+            return this.Equals(input as BillingLineResultModel);
         }
 
         /// <summary>
-        /// Returns true if UnlockBillingLineResult instances are equal
+        /// Returns true if BillingLineResultModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of UnlockBillingLineResult to be compared</param>
+        /// <param name="input">Instance of BillingLineResultModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UnlockBillingLineResult input)
+        public bool Equals(BillingLineResultModel input)
         {
             if (input == null)
             {
@@ -93,8 +103,15 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.Unlocked == input.Unlocked ||
-                    this.Unlocked.Equals(input.Unlocked)
+                    this.BillingLine == input.BillingLine ||
+                    (this.BillingLine != null &&
+                    this.BillingLine.Equals(input.BillingLine))
+                ) && 
+                (
+                    this.Errors == input.Errors ||
+                    this.Errors != null &&
+                    input.Errors != null &&
+                    this.Errors.SequenceEqual(input.Errors)
                 );
         }
 
@@ -107,7 +124,14 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Unlocked.GetHashCode();
+                if (this.BillingLine != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillingLine.GetHashCode();
+                }
+                if (this.Errors != null)
+                {
+                    hashCode = (hashCode * 59) + this.Errors.GetHashCode();
+                }
                 return hashCode;
             }
         }

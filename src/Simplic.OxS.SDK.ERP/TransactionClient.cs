@@ -325,8 +325,8 @@ public interface ITransactionClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction.</param>
     /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
-    /// <returns>DraftTransactionResultModel</returns>
-    DraftTransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
+    /// <returns>TransactionResultModel</returns>
+    TransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
 
     /// <summary>
     /// Adds a set of billing lines to an existing draft transaction. 
@@ -334,8 +334,8 @@ public interface ITransactionClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction.</param>
     /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
-    /// <returns>ApiResponse of DraftTransactionResultModel</returns>
-    ApiResponse<DraftTransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
+    /// <returns>ApiResponse of TransactionResultModel</returns>
+    ApiResponse<TransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?));
         
     /// <summary>
     /// Adds a set of billing lines to an existing draft transaction. 
@@ -344,8 +344,8 @@ public interface ITransactionClient
     /// <param name="id">The ID of the draft transaction.</param>
     /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of DraftTransactionResultModel</returns>
-    Task<DraftTransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of TransactionResultModel</returns>
+    Task<TransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Adds a set of billing lines to an existing draft transaction. 
@@ -354,8 +354,8 @@ public interface ITransactionClient
     /// <param name="id">The ID of the draft transaction.</param>
     /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
-    Task<ApiResponse<DraftTransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+    Task<ApiResponse<TransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -539,6 +539,41 @@ public interface ITransactionClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
     Task<ApiResponse<TransactionResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Reverts a non-draft transaction back to draft state. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the transaction to revert to draft.</param>
+    /// <returns>TransactionResultModel</returns>
+    TransactionResultModel RevertToDraft(Guid id);
+
+    /// <summary>
+    /// Reverts a non-draft transaction back to draft state. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the transaction to revert to draft.</param>
+    /// <returns>ApiResponse of TransactionResultModel</returns>
+    ApiResponse<TransactionResultModel> RevertToDraftWithHttpInfo(Guid id);
+        
+    /// <summary>
+    /// Reverts a non-draft transaction back to draft state. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the transaction to revert to draft.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TransactionResultModel</returns>
+    Task<TransactionResultModel> RevertToDraftAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Reverts a non-draft transaction back to draft state. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The ID of the transaction to revert to draft.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+    Task<ApiResponse<TransactionResultModel>> RevertToDraftWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -1275,8 +1310,8 @@ public interface ITransactionClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
-        /// <returns>DraftTransactionResultModel</returns>
-        public DraftTransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
         {
             try
             {
@@ -1294,8 +1329,8 @@ public interface ITransactionClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
-        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?))
         {
             try
             {
@@ -1314,8 +1349,8 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DraftTransactionResultModel</returns>
-        public System.Threading.Tasks.Task<DraftTransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TransactionResultModel</returns>
+        public System.Threading.Tasks.Task<TransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1334,8 +1369,8 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1720,6 +1755,79 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel RevertToDraft(Guid id)
+        {
+            try
+            {
+                return _internalClient.RevertToDraft(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> RevertToDraftWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.RevertToDraftWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public System.Threading.Tasks.Task<TransactionResultModel> RevertToDraftAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RevertToDraftAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> RevertToDraftWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RevertToDraftWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Creates a new transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -2045,8 +2153,8 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DraftTransactionResultModel</returns>
-        DraftTransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
+        /// <returns>TransactionResultModel</returns>
+        TransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Adds a set of billing lines to an existing draft transaction.
@@ -2058,8 +2166,8 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
-        ApiResponse<DraftTransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        ApiResponse<TransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0);
         /// <summary>
         /// Converts a draft transaction to a regular, non-draft transaction.
         /// </summary>
@@ -2164,6 +2272,26 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
         ApiResponse<TransactionResultModel> PatchWithHttpInfo(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        TransactionResultModel RevertToDraft(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        ApiResponse<TransactionResultModel> RevertToDraftWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Creates a new transaction.
         /// </summary>
@@ -2424,8 +2552,8 @@ public interface ITransactionClient
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DraftTransactionResultModel</returns>
-        System.Threading.Tasks.Task<DraftTransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TransactionResultModel</returns>
+        System.Threading.Tasks.Task<TransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Adds a set of billing lines to an existing draft transaction.
@@ -2438,8 +2566,8 @@ public interface ITransactionClient
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DraftTransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Converts a draft transaction to a regular, non-draft transaction.
         /// </summary>
@@ -2569,6 +2697,31 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateTransactionRequest? updateTransactionRequest = default(UpdateTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        System.Threading.Tasks.Task<TransactionResultModel> RevertToDraftAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> RevertToDraftWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new transaction.
         /// </summary>
@@ -4044,10 +4197,10 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DraftTransactionResultModel</returns>
-        public DraftTransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel DraftsBillingLines(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> localVarResponse = DraftsBillingLinesWithHttpInfo(id, addBillingLinesToDraftTransactionRequest);
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = DraftsBillingLinesWithHttpInfo(id, addBillingLinesToDraftTransactionRequest);
             return localVarResponse.Data;
         }
 
@@ -4058,8 +4211,8 @@ public interface ITransactionClient
         /// <param name="id">The ID of the draft transaction.</param>
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DraftTransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsBillingLinesWithHttpInfo(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -4106,7 +4259,7 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DraftTransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionDraftsIdBillingLinesPost", localVarResponse);
@@ -4127,10 +4280,10 @@ public interface ITransactionClient
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DraftTransactionResultModel</returns>
-        public async System.Threading.Tasks.Task<DraftTransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TransactionResultModel</returns>
+        public async System.Threading.Tasks.Task<TransactionResultModel> DraftsBillingLinesAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel> localVarResponse = await DraftsBillingLinesWithHttpInfoAsync(id, addBillingLinesToDraftTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await DraftsBillingLinesWithHttpInfoAsync(id, addBillingLinesToDraftTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4142,8 +4295,8 @@ public interface ITransactionClient
         /// <param name="addBillingLinesToDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DraftTransactionResultModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DraftTransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsBillingLinesWithHttpInfoAsync(Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = default(AddBillingLinesToDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -4191,7 +4344,7 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DraftTransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -5004,6 +5157,162 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel RevertToDraft(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = RevertToDraftWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> RevertToDraftWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public async System.Threading.Tasks.Task<TransactionResultModel> RevertToDraftAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await RevertToDraftWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reverts a non-draft transaction back to draft state. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the transaction to revert to draft.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> RevertToDraftWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

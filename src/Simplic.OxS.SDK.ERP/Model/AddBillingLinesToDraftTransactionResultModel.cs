@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="draftTransactionResult">draftTransactionResult.</param>
         /// <param name="billingLineIds">Gets or sets the IDs of all billing lines that were added to the draft transaction  as part of this operation..</param>
-        public AddBillingLinesToDraftTransactionResultModel(DraftTransactionResultModel draftTransactionResult = default(DraftTransactionResultModel), List<Guid> billingLineIds = default(List<Guid>))
+        public AddBillingLinesToDraftTransactionResultModel(TransactionResultModel draftTransactionResult = default(TransactionResultModel), List<Guid> billingLineIds = default(List<Guid>))
         {
             this.DraftTransactionResult = draftTransactionResult;
             this.BillingLineIds = billingLineIds;
@@ -48,7 +48,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets DraftTransactionResult
         /// </summary>
         [DataMember(Name = "draftTransactionResult", EmitDefaultValue = false)]
-        public DraftTransactionResultModel DraftTransactionResult { get; set; }
+        public TransactionResultModel DraftTransactionResult { get; set; }
 
         /// <summary>
         /// Gets or sets the IDs of all billing lines that were added to the draft transaction  as part of this operation.

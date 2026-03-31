@@ -42,17 +42,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             }
                         }
@@ -62,17 +62,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             }
                         }
@@ -201,17 +201,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BillingLineModel"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             }
                         }
@@ -221,17 +221,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
                                 }
                             }
                         }
@@ -298,6 +298,26 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BillingLineResultModel"
+                                }
+                            }
+                        }
                     },
                     "401": {
                         "description": "Unauthorized",
@@ -496,17 +516,37 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/LockBillingLineResult"
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LockBillingLineResultModel"
                                 }
                             }
                         }
@@ -578,17 +618,37 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/UnlockBillingLineResult"
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnlockBillingLineResultModel"
                                 }
                             }
                         }
@@ -5023,17 +5083,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             }
                         }
@@ -5043,17 +5103,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DraftTransactionResultModel"
+                                    "$ref": "#/components/schemas/TransactionResultModel"
                                 }
                             }
                         }
@@ -6095,6 +6155,108 @@
                 }
             }
         },
+        "/Transaction/{id}/revert-to-draft": {
+            "put": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Reverts a non-draft transaction back to draft state.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the transaction to revert to draft.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionResultModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Transaction/drafts/billing-lines/distribute": {
             "post": {
                 "tags": [
@@ -6863,7 +7025,7 @@
                 "type": "object",
                 "properties": {
                     "draftTransactionResult": {
-                        "$ref": "#/components/schemas/DraftTransactionResultModel"
+                        "$ref": "#/components/schemas/TransactionResultModel"
                     },
                     "billingLineIds": {
                         "type": "array",
@@ -7278,6 +7440,24 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.BillingLineReference."
             },
+            "BillingLineResultModel": {
+                "type": "object",
+                "properties": {
+                    "billingLine": {
+                        "$ref": "#/components/schemas/BillingLineModel"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the result model of an operation performed on a Simplic.OxS.ERP.Server.BillingLineResultModel.BillingLine."
+            },
             "BillingLineState": {
                 "enum": [
                     0,
@@ -7307,41 +7487,6 @@
                 "additionalProperties": false,
                 "description": "Rerpesents a billing period request."
             },
-            "ConvertErrorInfoModel": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string",
-                        "description": "Gets or sets the message.",
-                        "nullable": true
-                    },
-                    "invalidPropertyName": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the invalid property causing the error.",
-                        "nullable": true
-                    },
-                    "itemId": {
-                        "type": "string",
-                        "description": "Gets or sets the item ID that was not found.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "bookedQuantity": {
-                        "type": "number",
-                        "description": "Gets or sets the booked quantity.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "remainingQuantity": {
-                        "type": "number",
-                        "description": "Gets or sets the remaining quantity.",
-                        "format": "double",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents the shared model for convert error infos."
-            },
             "ConvertResultModel": {
                 "type": "object",
                 "properties": {
@@ -7351,9 +7496,9 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/ConvertErrorInfoModel"
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
                         },
-                        "description": "Gets or sets a set of Simplic.OxS.ERP.ConvertErrorInfo objects.",
+                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.LocalizableErrorModel objects.",
                         "nullable": true
                     },
                     "convertStates": {
@@ -8631,7 +8776,7 @@
                         "items": {
                             "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionResultModel"
                         },
-                        "description": "Gets or sets one entry per draft transaction that received at least one billing line,\r\neach carrying the Simplic.OxS.ERP.Server.DraftTransactionResultModel and the IDs of the billing lines added.",
+                        "description": "Gets or sets one entry per draft transaction that received at least one billing line,\r\neach carrying the !:DraftTransactionResultModel and the IDs of the billing lines added.",
                         "nullable": true
                     },
                     "ambiguousAssignments": {
@@ -8654,31 +8799,13 @@
                 "additionalProperties": false,
                 "description": "Represents the result model for distributing a set of billing lines to existing draft transactions."
             },
-            "DraftTransactionResultModel": {
-                "type": "object",
-                "properties": {
-                    "draftTransaction": {
-                        "$ref": "#/components/schemas/TransactionModel"
-                    },
-                    "errors": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/LocalizableErrorModel"
-                        },
-                        "description": "Gets or sets the set of errors that occurred during the operation\r\nrepresented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents the result of an operation on a draft transaction."
-            },
             "DraftTransactionsResultModel": {
                 "type": "object",
                 "properties": {
                     "draftTransactionResults": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/DraftTransactionResultModel"
+                            "$ref": "#/components/schemas/TransactionResultModel"
                         },
                         "description": "Gets or sets the list of results for the draft transactions.",
                         "nullable": true
@@ -8840,18 +8967,6 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a terms of payment request."
-            },
-            "ErrorInfoModel": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string",
-                        "description": "Gets or sets the error information represented by a text.",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents the shared model for information concerning an error that occured while performing an operation."
             },
             "ExportCostQuantityType": {
                 "enum": [
@@ -9575,6 +9690,11 @@
                         "description": "Gets or sets the localization key.",
                         "nullable": true
                     },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets an optional machine-readable error code (e.g. \"109\").",
+                        "nullable": true
+                    },
                     "params": {
                         "type": "object",
                         "additionalProperties": {},
@@ -9585,14 +9705,24 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for an error that can be localized."
             },
-            "LockBillingLineResult": {
+            "LockBillingLineResultModel": {
                 "type": "object",
                 "properties": {
                     "locked": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the billing line is locked after the operation.\r\n\n`true` if the operation succeeded or the billing line was already locked;\r\n`false` if the billing line was in an illegal state for locking.\r\n"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation.",
+                        "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the result model of a lock operation on a Simplic.OxS.ERP.BillingLine."
             },
             "MetadataProcessingDataModel": {
                 "type": "object",
@@ -12544,9 +12674,9 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/ErrorInfoModel"
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
                         },
-                        "description": "Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.ErrorInfoModel objects.",
+                        "description": "Gets or sets the set of errors that occured during the operation represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.",
                         "nullable": true
                     }
                 },
@@ -13059,14 +13189,24 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for the result of validating a transaction for financial accounting."
             },
-            "UnlockBillingLineResult": {
+            "UnlockBillingLineResultModel": {
                 "type": "object",
                 "properties": {
                     "unlocked": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the billing line is unlocked after the operation.\r\n\n`true` if the billing line was unlocked or was already in a non-locked state;\r\n`false` if the required resource lock or state check failed.\r\n"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation.",
+                        "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the result model of an unlock operation on a Simplic.OxS.ERP.BillingLine."
             },
             "UpdateBillingLineRequest": {
                 "type": "object",
@@ -13124,6 +13264,12 @@
                     "isGross": {
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the billing line price is gross or net.",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate by ID.",
+                        "format": "uuid",
                         "nullable": true
                     },
                     "costCenters": {

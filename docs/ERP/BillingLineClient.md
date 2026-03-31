@@ -294,6 +294,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -399,7 +400,7 @@ catch (ApiException e)
 
 <a id="billinglineidlockput"></a>
 # **Lock**
-> LockBillingLineResult Lock (Guid id)
+> LockBillingLineResultModel Lock (Guid id)
 
 Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
 
@@ -433,7 +434,7 @@ namespace Example
             try
             {
                 // Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
-                LockBillingLineResult result = apiInstance.Lock(id);
+                LockBillingLineResultModel result = apiInstance.Lock(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -454,7 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
-    ApiResponse<LockBillingLineResult> response = apiInstance.LockWithHttpInfo(id);
+    ApiResponse<LockBillingLineResultModel> response = apiInstance.LockWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -475,7 +476,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**LockBillingLineResult**](LockBillingLineResult.md)
+[**LockBillingLineResultModel**](LockBillingLineResultModel.md)
 
 ### Authorization
 
@@ -491,6 +492,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -498,7 +500,7 @@ catch (ApiException e)
 
 <a id="billinglineidpatch"></a>
 # **Patch**
-> BillingLineModel Patch (Guid id, UpdateBillingLineRequest? updateBillingLineRequest = null)
+> BillingLineResultModel Patch (Guid id, UpdateBillingLineRequest? updateBillingLineRequest = null)
 
 Patches a billing line.
 
@@ -533,7 +535,7 @@ namespace Example
             try
             {
                 // Patches a billing line.
-                BillingLineModel result = apiInstance.Patch(id, updateBillingLineRequest);
+                BillingLineResultModel result = apiInstance.Patch(id, updateBillingLineRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -554,7 +556,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Patches a billing line.
-    ApiResponse<BillingLineModel> response = apiInstance.PatchWithHttpInfo(id, updateBillingLineRequest);
+    ApiResponse<BillingLineResultModel> response = apiInstance.PatchWithHttpInfo(id, updateBillingLineRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -576,7 +578,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**BillingLineModel**](BillingLineModel.md)
+[**BillingLineResultModel**](BillingLineResultModel.md)
 
 ### Authorization
 
@@ -600,7 +602,7 @@ catch (ApiException e)
 
 <a id="billinglineidunlockput"></a>
 # **Unlock**
-> UnlockBillingLineResult Unlock (Guid id)
+> UnlockBillingLineResultModel Unlock (Guid id)
 
 Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
 
@@ -634,7 +636,7 @@ namespace Example
             try
             {
                 // Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
-                UnlockBillingLineResult result = apiInstance.Unlock(id);
+                UnlockBillingLineResultModel result = apiInstance.Unlock(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -655,7 +657,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
-    ApiResponse<UnlockBillingLineResult> response = apiInstance.UnlockWithHttpInfo(id);
+    ApiResponse<UnlockBillingLineResultModel> response = apiInstance.UnlockWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -676,7 +678,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**UnlockBillingLineResult**](UnlockBillingLineResult.md)
+[**UnlockBillingLineResultModel**](UnlockBillingLineResultModel.md)
 
 ### Authorization
 
@@ -692,6 +694,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
@@ -699,7 +702,7 @@ catch (ApiException e)
 
 <a id="billinglinepost"></a>
 # **Post**
-> BillingLineModel Post (CreateBillingLineRequest? createBillingLineRequest = null)
+> BillingLineResultModel Post (CreateBillingLineRequest? createBillingLineRequest = null)
 
 Creates a new billing line.
 
@@ -733,7 +736,7 @@ namespace Example
             try
             {
                 // Creates a new billing line.
-                BillingLineModel result = apiInstance.Post(createBillingLineRequest);
+                BillingLineResultModel result = apiInstance.Post(createBillingLineRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -754,7 +757,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates a new billing line.
-    ApiResponse<BillingLineModel> response = apiInstance.PostWithHttpInfo(createBillingLineRequest);
+    ApiResponse<BillingLineResultModel> response = apiInstance.PostWithHttpInfo(createBillingLineRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -775,7 +778,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**BillingLineModel**](BillingLineModel.md)
+[**BillingLineResultModel**](BillingLineResultModel.md)
 
 ### Authorization
 

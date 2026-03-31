@@ -28,32 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the result of an operation on a draft transaction.
+    /// Represents the result model of an unlock operation on a Simplic.OxS.ERP.BillingLine.
     /// </summary>
-    [DataContract(Name = "DraftTransactionResultModel")]
-    public partial class DraftTransactionResultModel : IEquatable<DraftTransactionResultModel>, IValidatableObject
+    [DataContract(Name = "UnlockBillingLineResultModel")]
+    public partial class UnlockBillingLineResultModel : IEquatable<UnlockBillingLineResultModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DraftTransactionResultModel" /> class.
+        /// Initializes a new instance of the <see cref="UnlockBillingLineResultModel" /> class.
         /// </summary>
-        /// <param name="draftTransaction">draftTransaction.</param>
-        /// <param name="errors">Gets or sets the set of errors that occurred during the operation  represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects..</param>
-        public DraftTransactionResultModel(TransactionModel draftTransaction = default(TransactionModel), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
+        /// <param name="unlocked">Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  .</param>
+        /// <param name="errors">Gets or sets the set of errors that occurred during the operation..</param>
+        public UnlockBillingLineResultModel(bool unlocked = default(bool), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
-            this.DraftTransaction = draftTransaction;
+            this.Unlocked = unlocked;
             this.Errors = errors;
         }
 
         /// <summary>
-        /// Gets or Sets DraftTransaction
+        /// Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  
         /// </summary>
-        [DataMember(Name = "draftTransaction", EmitDefaultValue = false)]
-        public TransactionModel DraftTransaction { get; set; }
+        /// <value>Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  </value>
+        [DataMember(Name = "unlocked", EmitDefaultValue = true)]
+        public bool Unlocked { get; set; }
 
         /// <summary>
-        /// Gets or sets the set of errors that occurred during the operation  represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.
+        /// Gets or sets the set of errors that occurred during the operation.
         /// </summary>
-        /// <value>Gets or sets the set of errors that occurred during the operation  represented as Simplic.OxS.ERP.Server.LocalizableErrorModel objects.</value>
+        /// <value>Gets or sets the set of errors that occurred during the operation.</value>
         [DataMember(Name = "errors", EmitDefaultValue = true)]
         public List<LocalizableErrorModel> Errors { get; set; }
 
@@ -64,8 +65,8 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DraftTransactionResultModel {\n");
-            sb.Append("  DraftTransaction: ").Append(DraftTransaction).Append("\n");
+            sb.Append("class UnlockBillingLineResultModel {\n");
+            sb.Append("  Unlocked: ").Append(Unlocked).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -87,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DraftTransactionResultModel);
+            return this.Equals(input as UnlockBillingLineResultModel);
         }
 
         /// <summary>
-        /// Returns true if DraftTransactionResultModel instances are equal
+        /// Returns true if UnlockBillingLineResultModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of DraftTransactionResultModel to be compared</param>
+        /// <param name="input">Instance of UnlockBillingLineResultModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DraftTransactionResultModel input)
+        public bool Equals(UnlockBillingLineResultModel input)
         {
             if (input == null)
             {
@@ -103,9 +104,8 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.DraftTransaction == input.DraftTransaction ||
-                    (this.DraftTransaction != null &&
-                    this.DraftTransaction.Equals(input.DraftTransaction))
+                    this.Unlocked == input.Unlocked ||
+                    this.Unlocked.Equals(input.Unlocked)
                 ) && 
                 (
                     this.Errors == input.Errors ||
@@ -124,10 +124,7 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DraftTransaction != null)
-                {
-                    hashCode = (hashCode * 59) + this.DraftTransaction.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Unlocked.GetHashCode();
                 if (this.Errors != null)
                 {
                     hashCode = (hashCode * 59) + this.Errors.GetHashCode();

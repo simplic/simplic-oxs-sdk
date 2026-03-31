@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="DraftTransactionsResultModel" /> class.
         /// </summary>
         /// <param name="draftTransactionResults">Gets or sets the list of results for the draft transactions..</param>
-        public DraftTransactionsResultModel(List<DraftTransactionResultModel> draftTransactionResults = default(List<DraftTransactionResultModel>))
+        public DraftTransactionsResultModel(List<TransactionResultModel> draftTransactionResults = default(List<TransactionResultModel>))
         {
             this.DraftTransactionResults = draftTransactionResults;
         }
@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the list of results for the draft transactions.</value>
         [DataMember(Name = "draftTransactionResults", EmitDefaultValue = true)]
-        public List<DraftTransactionResultModel> DraftTransactionResults { get; set; }
+        public List<TransactionResultModel> DraftTransactionResults { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

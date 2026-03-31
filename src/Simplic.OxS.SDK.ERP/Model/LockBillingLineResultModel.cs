@@ -28,25 +28,35 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// LockBillingLineResult
+    /// Represents the result model of a lock operation on a Simplic.OxS.ERP.BillingLine.
     /// </summary>
-    [DataContract(Name = "LockBillingLineResult")]
-    public partial class LockBillingLineResult : IEquatable<LockBillingLineResult>, IValidatableObject
+    [DataContract(Name = "LockBillingLineResultModel")]
+    public partial class LockBillingLineResultModel : IEquatable<LockBillingLineResultModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LockBillingLineResult" /> class.
+        /// Initializes a new instance of the <see cref="LockBillingLineResultModel" /> class.
         /// </summary>
-        /// <param name="locked">locked.</param>
-        public LockBillingLineResult(bool locked = default(bool))
+        /// <param name="locked">Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  .</param>
+        /// <param name="errors">Gets or sets the set of errors that occurred during the operation..</param>
+        public LockBillingLineResultModel(bool locked = default(bool), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
             this.Locked = locked;
+            this.Errors = errors;
         }
 
         /// <summary>
-        /// Gets or Sets Locked
+        /// Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  
         /// </summary>
+        /// <value>Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  </value>
         [DataMember(Name = "locked", EmitDefaultValue = true)]
         public bool Locked { get; set; }
+
+        /// <summary>
+        /// Gets or sets the set of errors that occurred during the operation.
+        /// </summary>
+        /// <value>Gets or sets the set of errors that occurred during the operation.</value>
+        [DataMember(Name = "errors", EmitDefaultValue = true)]
+        public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,8 +65,9 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LockBillingLineResult {\n");
+            sb.Append("class LockBillingLineResultModel {\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
+            sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LockBillingLineResult);
+            return this.Equals(input as LockBillingLineResultModel);
         }
 
         /// <summary>
-        /// Returns true if LockBillingLineResult instances are equal
+        /// Returns true if LockBillingLineResultModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of LockBillingLineResult to be compared</param>
+        /// <param name="input">Instance of LockBillingLineResultModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LockBillingLineResult input)
+        public bool Equals(LockBillingLineResultModel input)
         {
             if (input == null)
             {
@@ -95,6 +106,12 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.Locked == input.Locked ||
                     this.Locked.Equals(input.Locked)
+                ) && 
+                (
+                    this.Errors == input.Errors ||
+                    this.Errors != null &&
+                    input.Errors != null &&
+                    this.Errors.SequenceEqual(input.Errors)
                 );
         }
 
@@ -108,6 +125,10 @@ namespace Simplic.OxS.SDK.ERP
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Locked.GetHashCode();
+                if (this.Errors != null)
+                {
+                    hashCode = (hashCode * 59) + this.Errors.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -180,16 +180,16 @@ public interface IBillingLineClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>LockBillingLineResult</returns>
-    LockBillingLineResult Lock(Guid id);
+    /// <returns>LockBillingLineResultModel</returns>
+    LockBillingLineResultModel Lock(Guid id);
 
     /// <summary>
     /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>ApiResponse of LockBillingLineResult</returns>
-    ApiResponse<LockBillingLineResult> LockWithHttpInfo(Guid id);
+    /// <returns>ApiResponse of LockBillingLineResultModel</returns>
+    ApiResponse<LockBillingLineResultModel> LockWithHttpInfo(Guid id);
         
     /// <summary>
     /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
@@ -197,8 +197,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of LockBillingLineResult</returns>
-    Task<LockBillingLineResult> LockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of LockBillingLineResultModel</returns>
+    Task<LockBillingLineResultModel> LockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
@@ -206,8 +206,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (LockBillingLineResult)</returns>
-    Task<ApiResponse<LockBillingLineResult>> LockWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (LockBillingLineResultModel)</returns>
+    Task<ApiResponse<LockBillingLineResultModel>> LockWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -216,8 +216,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="updateBillingLineRequest"> (optional)</param>
-    /// <returns>BillingLineModel</returns>
-    BillingLineModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?));
+    /// <returns>BillingLineResultModel</returns>
+    BillingLineResultModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?));
 
     /// <summary>
     /// Patches a billing line. 
@@ -225,8 +225,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="updateBillingLineRequest"> (optional)</param>
-    /// <returns>ApiResponse of BillingLineModel</returns>
-    ApiResponse<BillingLineModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?));
+    /// <returns>ApiResponse of BillingLineResultModel</returns>
+    ApiResponse<BillingLineResultModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?));
         
     /// <summary>
     /// Patches a billing line. 
@@ -235,8 +235,8 @@ public interface IBillingLineClient
     /// <param name="id"></param>
     /// <param name="updateBillingLineRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of BillingLineModel</returns>
-    Task<BillingLineModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of BillingLineResultModel</returns>
+    Task<BillingLineResultModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Patches a billing line. 
@@ -245,8 +245,8 @@ public interface IBillingLineClient
     /// <param name="id"></param>
     /// <param name="updateBillingLineRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-    Task<ApiResponse<BillingLineModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+    Task<ApiResponse<BillingLineResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -254,16 +254,16 @@ public interface IBillingLineClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>UnlockBillingLineResult</returns>
-    UnlockBillingLineResult Unlock(Guid id);
+    /// <returns>UnlockBillingLineResultModel</returns>
+    UnlockBillingLineResultModel Unlock(Guid id);
 
     /// <summary>
     /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <returns>ApiResponse of UnlockBillingLineResult</returns>
-    ApiResponse<UnlockBillingLineResult> UnlockWithHttpInfo(Guid id);
+    /// <returns>ApiResponse of UnlockBillingLineResultModel</returns>
+    ApiResponse<UnlockBillingLineResultModel> UnlockWithHttpInfo(Guid id);
         
     /// <summary>
     /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
@@ -271,8 +271,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of UnlockBillingLineResult</returns>
-    Task<UnlockBillingLineResult> UnlockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of UnlockBillingLineResultModel</returns>
+    Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
@@ -280,8 +280,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (UnlockBillingLineResult)</returns>
-    Task<ApiResponse<UnlockBillingLineResult>> UnlockWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (UnlockBillingLineResultModel)</returns>
+    Task<ApiResponse<UnlockBillingLineResultModel>> UnlockWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -289,16 +289,16 @@ public interface IBillingLineClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createBillingLineRequest"> (optional)</param>
-    /// <returns>BillingLineModel</returns>
-    BillingLineModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?));
+    /// <returns>BillingLineResultModel</returns>
+    BillingLineResultModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?));
 
     /// <summary>
     /// Creates a new billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createBillingLineRequest"> (optional)</param>
-    /// <returns>ApiResponse of BillingLineModel</returns>
-    ApiResponse<BillingLineModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?));
+    /// <returns>ApiResponse of BillingLineResultModel</returns>
+    ApiResponse<BillingLineResultModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?));
         
     /// <summary>
     /// Creates a new billing line. 
@@ -306,8 +306,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createBillingLineRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of BillingLineModel</returns>
-    Task<BillingLineModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of BillingLineResultModel</returns>
+    Task<BillingLineResultModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Creates a new billing line. 
@@ -315,8 +315,8 @@ public interface IBillingLineClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createBillingLineRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-    Task<ApiResponse<BillingLineModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+    Task<ApiResponse<BillingLineResultModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -686,8 +686,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>LockBillingLineResult</returns>
-        public LockBillingLineResult Lock(Guid id)
+        /// <returns>LockBillingLineResultModel</returns>
+        public LockBillingLineResultModel Lock(Guid id)
         {
             try
             {
@@ -704,8 +704,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of LockBillingLineResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<LockBillingLineResult> LockWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of LockBillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel> LockWithHttpInfo(Guid id)
         {
             try
             {
@@ -723,8 +723,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LockBillingLineResult</returns>
-        public System.Threading.Tasks.Task<LockBillingLineResult> LockAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LockBillingLineResultModel</returns>
+        public System.Threading.Tasks.Task<LockBillingLineResultModel> LockAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -742,8 +742,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LockBillingLineResult)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LockBillingLineResult>> LockWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LockBillingLineResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel>> LockWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -760,8 +760,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
-        /// <returns>BillingLineModel</returns>
-        public BillingLineModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?))
+        /// <returns>BillingLineResultModel</returns>
+        public BillingLineResultModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?))
         {
             try
             {
@@ -779,8 +779,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BillingLineModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?))
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?))
         {
             try
             {
@@ -799,8 +799,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        public System.Threading.Tasks.Task<BillingLineModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BillingLineResultModel</returns>
+        public System.Threading.Tasks.Task<BillingLineResultModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -819,8 +819,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -836,8 +836,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>UnlockBillingLineResult</returns>
-        public UnlockBillingLineResult Unlock(Guid id)
+        /// <returns>UnlockBillingLineResultModel</returns>
+        public UnlockBillingLineResultModel Unlock(Guid id)
         {
             try
             {
@@ -854,8 +854,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of UnlockBillingLineResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult> UnlockWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of UnlockBillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel> UnlockWithHttpInfo(Guid id)
         {
             try
             {
@@ -873,8 +873,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UnlockBillingLineResult</returns>
-        public System.Threading.Tasks.Task<UnlockBillingLineResult> UnlockAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of UnlockBillingLineResultModel</returns>
+        public System.Threading.Tasks.Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -892,8 +892,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UnlockBillingLineResult)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult>> UnlockWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (UnlockBillingLineResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel>> UnlockWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -909,8 +909,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
-        /// <returns>BillingLineModel</returns>
-        public BillingLineModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?))
+        /// <returns>BillingLineResultModel</returns>
+        public BillingLineResultModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?))
         {
             try
             {
@@ -927,8 +927,8 @@ public interface IBillingLineClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BillingLineModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?))
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?))
         {
             try
             {
@@ -946,8 +946,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        public System.Threading.Tasks.Task<BillingLineModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BillingLineResultModel</returns>
+        public System.Threading.Tasks.Task<BillingLineResultModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -965,8 +965,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineResultModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1074,8 +1074,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LockBillingLineResult</returns>
-        LockBillingLineResult Lock(Guid id, int operationIndex = 0);
+        /// <returns>LockBillingLineResultModel</returns>
+        LockBillingLineResultModel Lock(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
@@ -1086,8 +1086,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LockBillingLineResult</returns>
-        ApiResponse<LockBillingLineResult> LockWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of LockBillingLineResultModel</returns>
+        ApiResponse<LockBillingLineResultModel> LockWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Patches a billing line.
         /// </summary>
@@ -1095,8 +1095,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>BillingLineModel</returns>
-        BillingLineModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0);
+        /// <returns>BillingLineResultModel</returns>
+        BillingLineResultModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Patches a billing line.
@@ -1108,16 +1108,16 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        ApiResponse<BillingLineModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        ApiResponse<BillingLineResultModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0);
         /// <summary>
         /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UnlockBillingLineResult</returns>
-        UnlockBillingLineResult Unlock(Guid id, int operationIndex = 0);
+        /// <returns>UnlockBillingLineResultModel</returns>
+        UnlockBillingLineResultModel Unlock(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
@@ -1128,16 +1128,16 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UnlockBillingLineResult</returns>
-        ApiResponse<UnlockBillingLineResult> UnlockWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <returns>ApiResponse of UnlockBillingLineResultModel</returns>
+        ApiResponse<UnlockBillingLineResultModel> UnlockWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Creates a new billing line.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>BillingLineModel</returns>
-        BillingLineModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0);
+        /// <returns>BillingLineResultModel</returns>
+        BillingLineResultModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new billing line.
@@ -1148,8 +1148,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        ApiResponse<BillingLineModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        ApiResponse<BillingLineResultModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1267,8 +1267,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LockBillingLineResult</returns>
-        System.Threading.Tasks.Task<LockBillingLineResult> LockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of LockBillingLineResultModel</returns>
+        System.Threading.Tasks.Task<LockBillingLineResultModel> LockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
@@ -1280,8 +1280,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LockBillingLineResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockBillingLineResult>> LockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (LockBillingLineResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LockBillingLineResultModel>> LockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Patches a billing line.
         /// </summary>
@@ -1293,8 +1293,8 @@ public interface IBillingLineClient
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        System.Threading.Tasks.Task<BillingLineModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of BillingLineResultModel</returns>
+        System.Threading.Tasks.Task<BillingLineResultModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Patches a billing line.
@@ -1307,8 +1307,8 @@ public interface IBillingLineClient
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BillingLineModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BillingLineResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
         /// </summary>
@@ -1319,8 +1319,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UnlockBillingLineResult</returns>
-        System.Threading.Tasks.Task<UnlockBillingLineResult> UnlockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of UnlockBillingLineResultModel</returns>
+        System.Threading.Tasks.Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
@@ -1332,8 +1332,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UnlockBillingLineResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UnlockBillingLineResult>> UnlockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (UnlockBillingLineResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnlockBillingLineResultModel>> UnlockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new billing line.
         /// </summary>
@@ -1344,8 +1344,8 @@ public interface IBillingLineClient
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        System.Threading.Tasks.Task<BillingLineModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of BillingLineResultModel</returns>
+        System.Threading.Tasks.Task<BillingLineResultModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new billing line.
@@ -1357,8 +1357,8 @@ public interface IBillingLineClient
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BillingLineModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BillingLineResultModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2115,10 +2115,10 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>LockBillingLineResult</returns>
-        public LockBillingLineResult Lock(Guid id, int operationIndex = 0)
+        /// <returns>LockBillingLineResultModel</returns>
+        public LockBillingLineResultModel Lock(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<LockBillingLineResult> localVarResponse = LockWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel> localVarResponse = LockWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -2128,8 +2128,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of LockBillingLineResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<LockBillingLineResult> LockWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of LockBillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel> LockWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2172,7 +2172,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<LockBillingLineResult>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BillingLineIdLockPut", localVarResponse);
@@ -2192,10 +2192,10 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of LockBillingLineResult</returns>
-        public async System.Threading.Tasks.Task<LockBillingLineResult> LockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of LockBillingLineResultModel</returns>
+        public async System.Threading.Tasks.Task<LockBillingLineResultModel> LockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<LockBillingLineResult> localVarResponse = await LockWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel> localVarResponse = await LockWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2206,8 +2206,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (LockBillingLineResult)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LockBillingLineResult>> LockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (LockBillingLineResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<LockBillingLineResultModel>> LockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2251,7 +2251,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<LockBillingLineResult>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2272,10 +2272,10 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>BillingLineModel</returns>
-        public BillingLineModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0)
+        /// <returns>BillingLineResultModel</returns>
+        public BillingLineResultModel Patch(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<BillingLineModel> localVarResponse = PatchWithHttpInfo(id, updateBillingLineRequest);
+            Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> localVarResponse = PatchWithHttpInfo(id, updateBillingLineRequest);
             return localVarResponse.Data;
         }
 
@@ -2286,8 +2286,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BillingLineModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2334,7 +2334,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<BillingLineModel>("/BillingLine/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<BillingLineResultModel>("/BillingLine/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BillingLineIdPatch", localVarResponse);
@@ -2355,10 +2355,10 @@ public interface IBillingLineClient
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        public async System.Threading.Tasks.Task<BillingLineModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BillingLineResultModel</returns>
+        public async System.Threading.Tasks.Task<BillingLineResultModel> PatchAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<BillingLineModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateBillingLineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateBillingLineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2370,8 +2370,8 @@ public interface IBillingLineClient
         /// <param name="updateBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2419,7 +2419,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<BillingLineModel>("/BillingLine/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<BillingLineResultModel>("/BillingLine/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2439,10 +2439,10 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>UnlockBillingLineResult</returns>
-        public UnlockBillingLineResult Unlock(Guid id, int operationIndex = 0)
+        /// <returns>UnlockBillingLineResultModel</returns>
+        public UnlockBillingLineResultModel Unlock(Guid id, int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult> localVarResponse = UnlockWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel> localVarResponse = UnlockWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -2452,8 +2452,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of UnlockBillingLineResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult> UnlockWithHttpInfo(Guid id, int operationIndex = 0)
+        /// <returns>ApiResponse of UnlockBillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel> UnlockWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2496,7 +2496,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<UnlockBillingLineResult>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BillingLineIdUnlockPut", localVarResponse);
@@ -2516,10 +2516,10 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UnlockBillingLineResult</returns>
-        public async System.Threading.Tasks.Task<UnlockBillingLineResult> UnlockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of UnlockBillingLineResultModel</returns>
+        public async System.Threading.Tasks.Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult> localVarResponse = await UnlockWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel> localVarResponse = await UnlockWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2530,8 +2530,8 @@ public interface IBillingLineClient
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UnlockBillingLineResult)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResult>> UnlockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (UnlockBillingLineResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UnlockBillingLineResultModel>> UnlockWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2575,7 +2575,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<UnlockBillingLineResult>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2595,10 +2595,10 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>BillingLineModel</returns>
-        public BillingLineModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0)
+        /// <returns>BillingLineResultModel</returns>
+        public BillingLineResultModel Post(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<BillingLineModel> localVarResponse = PostWithHttpInfo(createBillingLineRequest);
+            Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> localVarResponse = PostWithHttpInfo(createBillingLineRequest);
             return localVarResponse.Data;
         }
 
@@ -2608,8 +2608,8 @@ public interface IBillingLineClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of BillingLineModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<BillingLineModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of BillingLineResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> PostWithHttpInfo(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -2655,7 +2655,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<BillingLineModel>("/BillingLine", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<BillingLineResultModel>("/BillingLine", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BillingLinePost", localVarResponse);
@@ -2675,10 +2675,10 @@ public interface IBillingLineClient
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of BillingLineModel</returns>
-        public async System.Threading.Tasks.Task<BillingLineModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of BillingLineResultModel</returns>
+        public async System.Threading.Tasks.Task<BillingLineResultModel> PostAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<BillingLineModel> localVarResponse = await PostWithHttpInfoAsync(createBillingLineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<BillingLineResultModel> localVarResponse = await PostWithHttpInfoAsync(createBillingLineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2689,8 +2689,8 @@ public interface IBillingLineClient
         /// <param name="createBillingLineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (BillingLineModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<BillingLineResultModel>> PostWithHttpInfoAsync(CreateBillingLineRequest? createBillingLineRequest = default(CreateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -2737,7 +2737,7 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<BillingLineModel>("/BillingLine", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BillingLineResultModel>("/BillingLine", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

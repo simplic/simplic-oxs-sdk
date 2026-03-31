@@ -46,13 +46,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="singlePrice">Gets or sets the price for a single unit of the item or service described   by this billing line..</param>
         /// <param name="totalPrice">Gets or sets the total price of the item or service described by this billing line..</param>
         /// <param name="isGross">Gets or sets a value indicating whether the billing line price is gross or net..</param>
+        /// <param name="taxRateId">Gets or sets the tax rate by ID..</param>
         /// <param name="costCenters">Gets or sets the cost center assignments associated with this billing line..</param>
         /// <param name="costObjects">Gets or sets the cost object assignments associated with this billing line..</param>
         /// <param name="generalLedgerAccountGroupId">Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.  .</param>
         /// <param name="reference">Gets or sets the main reference..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="addon">Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line..</param>
-        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), double? quantity = default(double?), Guid? quantityUnitId = default(Guid?), Guid? priceUnitId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), double? quantity = default(double?), Guid? quantityUnitId = default(Guid?), Guid? priceUnitId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.FinancialPartner = financialPartner;
             this.Date = date;
@@ -64,6 +65,7 @@ namespace Simplic.OxS.SDK.ERP
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
             this.IsGross = isGross;
+            this.TaxRateId = taxRateId;
             this.CostCenters = costCenters;
             this.CostObjects = costObjects;
             this.GeneralLedgerAccountGroupId = generalLedgerAccountGroupId;
@@ -142,6 +144,13 @@ namespace Simplic.OxS.SDK.ERP
         public bool? IsGross { get; set; }
 
         /// <summary>
+        /// Gets or sets the tax rate by ID.
+        /// </summary>
+        /// <value>Gets or sets the tax rate by ID.</value>
+        [DataMember(Name = "taxRateId", EmitDefaultValue = true)]
+        public Guid? TaxRateId { get; set; }
+
+        /// <summary>
         /// Gets or sets the cost center assignments associated with this billing line.
         /// </summary>
         /// <value>Gets or sets the cost center assignments associated with this billing line.</value>
@@ -201,6 +210,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
+            sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  GeneralLedgerAccountGroupId: ").Append(GeneralLedgerAccountGroupId).Append("\n");
@@ -293,6 +303,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.IsGross.Equals(input.IsGross))
                 ) && 
                 (
+                    this.TaxRateId == input.TaxRateId ||
+                    (this.TaxRateId != null &&
+                    this.TaxRateId.Equals(input.TaxRateId))
+                ) && 
+                (
                     this.CostCenters == input.CostCenters ||
                     this.CostCenters != null &&
                     input.CostCenters != null &&
@@ -375,6 +390,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.IsGross != null)
                 {
                     hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                }
+                if (this.TaxRateId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRateId.GetHashCode();
                 }
                 if (this.CostCenters != null)
                 {

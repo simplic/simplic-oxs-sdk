@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SinglePrice** | **double?** | Gets or sets the price for a single unit of the item or service described   by this billing line. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price of the item or service described by this billing line. | [optional] 
 **IsGross** | **bool?** | Gets or sets a value indicating whether the billing line price is gross or net. | [optional] 
+**TaxRateId** | **Guid?** | Gets or sets the tax rate by ID. | [optional] 
 **CostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the cost center assignments associated with this billing line. | [optional] 
 **CostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the cost object assignments associated with this billing line. | [optional] 
 **GeneralLedgerAccountGroupId** | **Guid?** | Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.   | [optional] 

@@ -37,10 +37,12 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="LocalizableErrorModel" /> class.
         /// </summary>
         /// <param name="key">Gets or sets the localization key..</param>
+        /// <param name="code">Gets or sets an optional machine-readable error code (e.g. \&quot;109\&quot;)..</param>
         /// <param name="varParams">Gets or sets a set of parameters for localization..</param>
-        public LocalizableErrorModel(string key = default(string), Dictionary<string, Object> varParams = default(Dictionary<string, Object>))
+        public LocalizableErrorModel(string key = default(string), string code = default(string), Dictionary<string, Object> varParams = default(Dictionary<string, Object>))
         {
             this.Key = key;
+            this.Code = code;
             this.VarParams = varParams;
         }
 
@@ -50,6 +52,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the localization key.</value>
         [DataMember(Name = "key", EmitDefaultValue = true)]
         public string Key { get; set; }
+
+        /// <summary>
+        /// Gets or sets an optional machine-readable error code (e.g. \&quot;109\&quot;).
+        /// </summary>
+        /// <value>Gets or sets an optional machine-readable error code (e.g. \&quot;109\&quot;).</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets a set of parameters for localization.
@@ -67,6 +76,7 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class LocalizableErrorModel {\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  VarParams: ").Append(VarParams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -109,6 +119,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Key.Equals(input.Key))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.VarParams == input.VarParams ||
                     this.VarParams != null &&
                     input.VarParams != null &&
@@ -128,6 +143,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Key != null)
                 {
                     hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 if (this.VarParams != null)
                 {

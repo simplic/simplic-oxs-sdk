@@ -37,9 +37,9 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="ConvertResultModel" /> class.
         /// </summary>
         /// <param name="transaction">transaction.</param>
-        /// <param name="errors">Gets or sets a set of Simplic.OxS.ERP.ConvertErrorInfo objects..</param>
+        /// <param name="errors">Gets or sets a set of Simplic.OxS.ERP.Server.LocalizableErrorModel objects..</param>
         /// <param name="convertStates">Gets or sets a set of convert states.  For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID.  &lt;para&gt;&lt;/para&gt;.</param>
-        public ConvertResultModel(TransactionModel transaction = default(TransactionModel), List<ConvertErrorInfoModel> errors = default(List<ConvertErrorInfoModel>), Dictionary<string, TransactionConvertState> convertStates = default(Dictionary<string, TransactionConvertState>))
+        public ConvertResultModel(TransactionModel transaction = default(TransactionModel), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>), Dictionary<string, TransactionConvertState> convertStates = default(Dictionary<string, TransactionConvertState>))
         {
             this.Transaction = transaction;
             this.Errors = errors;
@@ -53,11 +53,11 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionModel Transaction { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of Simplic.OxS.ERP.ConvertErrorInfo objects.
+        /// Gets or sets a set of Simplic.OxS.ERP.Server.LocalizableErrorModel objects.
         /// </summary>
-        /// <value>Gets or sets a set of Simplic.OxS.ERP.ConvertErrorInfo objects.</value>
+        /// <value>Gets or sets a set of Simplic.OxS.ERP.Server.LocalizableErrorModel objects.</value>
         [DataMember(Name = "errors", EmitDefaultValue = true)]
-        public List<ConvertErrorInfoModel> Errors { get; set; }
+        public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
         /// Gets or sets a set of convert states.  For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID.  &lt;para&gt;&lt;/para&gt;
