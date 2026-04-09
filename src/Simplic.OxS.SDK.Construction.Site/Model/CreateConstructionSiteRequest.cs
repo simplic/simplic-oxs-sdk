@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.Construction.Site
         /// <param name="typeId">typeId.</param>
         /// <param name="addressContactId">addressContactId.</param>
         /// <param name="contactPersonContactId">contactPersonContactId.</param>
-        public CreateConstructionSiteRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string additionalInformation = default(string), string constructionTime = default(string), Guid statusId = default(Guid), Guid typeId = default(Guid), Guid addressContactId = default(Guid), Guid? contactPersonContactId = default(Guid?))
+        public CreateConstructionSiteRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string additionalInformation = default(string), string constructionTime = default(string), Guid statusId = default(Guid), Guid typeId = default(Guid), Guid addressContactId = default(Guid), Guid? contactPersonContactId = default(Guid?))
         {
             this.Number = number;
             this.Name = name;
@@ -83,14 +83,14 @@ namespace Simplic.OxS.SDK.Construction.Site
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
-        public DateTime StartDate { get; set; }
+        [DataMember(Name = "startDate", EmitDefaultValue = true)]
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EndDate
         /// </summary>
-        [DataMember(Name = "endDate", EmitDefaultValue = false)]
-        public DateTime EndDate { get; set; }
+        [DataMember(Name = "endDate", EmitDefaultValue = true)]
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalInformation

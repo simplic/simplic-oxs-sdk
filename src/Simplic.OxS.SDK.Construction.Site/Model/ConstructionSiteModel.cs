@@ -56,7 +56,7 @@ namespace Simplic.OxS.SDK.Construction.Site
         /// <param name="updateDateTime">updateDateTime.</param>
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
-        public ConstructionSiteModel(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string additionalInformation = default(string), string constructionTime = default(string), ConstructionSiteStatusModel status = default(ConstructionSiteStatusModel), ConstructionSiteTypeModel type = default(ConstructionSiteTypeModel), AddressModel address = default(AddressModel), AddressModel contactPerson = default(AddressModel), Guid id = default(Guid), bool isDeleted = default(bool), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public ConstructionSiteModel(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string additionalInformation = default(string), string constructionTime = default(string), ConstructionSiteStatusModel status = default(ConstructionSiteStatusModel), ConstructionSiteTypeModel type = default(ConstructionSiteTypeModel), AddressModel address = default(AddressModel), AddressModel contactPerson = default(AddressModel), Guid id = default(Guid), bool isDeleted = default(bool), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Number = number;
             this.Name = name;
@@ -101,14 +101,14 @@ namespace Simplic.OxS.SDK.Construction.Site
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
-        public DateTime StartDate { get; set; }
+        [DataMember(Name = "startDate", EmitDefaultValue = true)]
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EndDate
         /// </summary>
-        [DataMember(Name = "endDate", EmitDefaultValue = false)]
-        public DateTime EndDate { get; set; }
+        [DataMember(Name = "endDate", EmitDefaultValue = true)]
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalInformation

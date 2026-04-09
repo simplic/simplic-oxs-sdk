@@ -2495,11 +2495,13 @@
                     },
                     "startDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "endDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "additionalInformation": {
                         "type": "string",
@@ -2691,11 +2693,13 @@
                     },
                     "startDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "endDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "additionalInformation": {
                         "type": "string",
@@ -3045,11 +3049,13 @@
                     },
                     "startDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "endDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "additionalInformation": {
                         "type": "string",
