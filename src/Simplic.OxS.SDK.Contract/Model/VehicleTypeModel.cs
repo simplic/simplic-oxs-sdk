@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// VehicleTypeModel
+    /// Represents a vehicle type.
     /// </summary>
     [DataContract(Name = "VehicleTypeModel")]
     public partial class VehicleTypeModel : IEquatable<VehicleTypeModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="VehicleTypeModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Gets or sets theid of the vehicle type..</param>
+        /// <param name="name">Gets or sets the name..</param>
         public VehicleTypeModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets theid of the vehicle type.
         /// </summary>
+        /// <value>Gets or sets theid of the vehicle type.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

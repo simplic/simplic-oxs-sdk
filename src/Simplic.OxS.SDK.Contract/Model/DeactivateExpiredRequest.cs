@@ -28,44 +28,25 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// Represents the model of an article group.
+    /// DeactivateExpiredRequest
     /// </summary>
-    [DataContract(Name = "ArticleGroupModel")]
-    public partial class ArticleGroupModel : IEquatable<ArticleGroupModel>, IValidatableObject
+    [DataContract(Name = "DeactivateExpiredRequest")]
+    public partial class DeactivateExpiredRequest : IEquatable<DeactivateExpiredRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArticleGroupModel" /> class.
+        /// Initializes a new instance of the <see cref="DeactivateExpiredRequest" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id..</param>
-        /// <param name="name">Gets or sets the name..</param>
-        /// <param name="number">Gets or sets the number..</param>
-        public ArticleGroupModel(Guid id = default(Guid), string name = default(string), string number = default(string))
+        /// <param name="date">date.</param>
+        public DeactivateExpiredRequest(DateTime date = default(DateTime))
         {
-            this.Id = id;
-            this.Name = name;
-            this.Number = number;
+            this.Date = date;
         }
 
         /// <summary>
-        /// Gets or sets the id.
+        /// Gets or Sets Date
         /// </summary>
-        /// <value>Gets or sets the id.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>Gets or sets the name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the number.
-        /// </summary>
-        /// <value>Gets or sets the number.</value>
-        [DataMember(Name = "number", EmitDefaultValue = true)]
-        public string Number { get; set; }
+        [DataMember(Name = "date", EmitDefaultValue = false)]
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,10 +55,8 @@ namespace Simplic.OxS.SDK.Contract
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ArticleGroupModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("class DeactivateExpiredRequest {\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +77,15 @@ namespace Simplic.OxS.SDK.Contract
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ArticleGroupModel);
+            return this.Equals(input as DeactivateExpiredRequest);
         }
 
         /// <summary>
-        /// Returns true if ArticleGroupModel instances are equal
+        /// Returns true if DeactivateExpiredRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ArticleGroupModel to be compared</param>
+        /// <param name="input">Instance of DeactivateExpiredRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ArticleGroupModel input)
+        public bool Equals(DeactivateExpiredRequest input)
         {
             if (input == null)
             {
@@ -114,19 +93,9 @@ namespace Simplic.OxS.SDK.Contract
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
                 );
         }
 
@@ -139,17 +108,9 @@ namespace Simplic.OxS.SDK.Contract
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Date != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Number != null)
-                {
-                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
                 }
                 return hashCode;
             }

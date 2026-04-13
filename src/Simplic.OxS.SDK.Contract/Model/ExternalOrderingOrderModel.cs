@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingOrderModel
+    /// Represents an external order response.
     /// </summary>
     [DataContract(Name = "ExternalOrderingOrderModel")]
     public partial class ExternalOrderingOrderModel : IEquatable<ExternalOrderingOrderModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingOrderModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="contractId">contractId.</param>
-        /// <param name="date">date.</param>
-        /// <param name="orderPersonName">orderPersonName.</param>
-        /// <param name="orderPersonSignature">orderPersonSignature.</param>
-        /// <param name="status">status.</param>
-        /// <param name="items">items.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        public ExternalOrderingOrderModel(Guid id = default(Guid), Guid contractId = default(Guid), DateTime date = default(DateTime), string orderPersonName = default(string), string orderPersonSignature = default(string), string status = default(string), List<ExternalOrderingOrderItemModel> items = default(List<ExternalOrderingOrderItemModel>), DateTime createDateTime = default(DateTime))
+        /// <param name="id">Gets or sets the order id..</param>
+        /// <param name="contractId">Gets or sets the contract id..</param>
+        /// <param name="date">Gets or sets the requested delivery/order date..</param>
+        /// <param name="orderPersonName">Gets or sets the name of the person who placed the order..</param>
+        /// <param name="orderPersonSignature">Gets or sets the signature of the person who placed the order..</param>
+        /// <param name="status">Gets or sets the order status..</param>
+        /// <param name="items">Gets or sets the ordered items..</param>
+        /// <param name="createDateTime">Gets or sets the create date time..</param>
+        /// <param name="notes">Gets or sets optional notes for the order..</param>
+        public ExternalOrderingOrderModel(Guid id = default(Guid), Guid contractId = default(Guid), DateTime date = default(DateTime), string orderPersonName = default(string), string orderPersonSignature = default(string), string status = default(string), List<ExternalOrderingOrderItemModel> items = default(List<ExternalOrderingOrderItemModel>), DateTime createDateTime = default(DateTime), string notes = default(string))
         {
             this.Id = id;
             this.ContractId = contractId;
@@ -54,55 +55,71 @@ namespace Simplic.OxS.SDK.Contract
             this.Status = status;
             this.Items = items;
             this.CreateDateTime = createDateTime;
+            this.Notes = notes;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the order id.
         /// </summary>
+        /// <value>Gets or sets the order id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContractId
+        /// Gets or sets the contract id.
         /// </summary>
+        /// <value>Gets or sets the contract id.</value>
         [DataMember(Name = "contractId", EmitDefaultValue = false)]
         public Guid ContractId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or sets the requested delivery/order date.
         /// </summary>
+        /// <value>Gets or sets the requested delivery/order date.</value>
         [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderPersonName
+        /// Gets or sets the name of the person who placed the order.
         /// </summary>
+        /// <value>Gets or sets the name of the person who placed the order.</value>
         [DataMember(Name = "orderPersonName", EmitDefaultValue = true)]
         public string OrderPersonName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderPersonSignature
+        /// Gets or sets the signature of the person who placed the order.
         /// </summary>
+        /// <value>Gets or sets the signature of the person who placed the order.</value>
         [DataMember(Name = "orderPersonSignature", EmitDefaultValue = true)]
         public string OrderPersonSignature { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or sets the order status.
         /// </summary>
+        /// <value>Gets or sets the order status.</value>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the ordered items.
         /// </summary>
+        /// <value>Gets or sets the ordered items.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<ExternalOrderingOrderItemModel> Items { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the create date time.
         /// </summary>
+        /// <value>Gets or sets the create date time.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets optional notes for the order.
+        /// </summary>
+        /// <value>Gets or sets optional notes for the order.</value>
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
+        public string Notes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -120,6 +137,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
+            sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +213,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
+                ) && 
+                (
+                    this.Notes == input.Notes ||
+                    (this.Notes != null &&
+                    this.Notes.Equals(input.Notes))
                 );
         }
 
@@ -238,6 +261,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.CreateDateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();
+                }
+                if (this.Notes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 return hashCode;
             }

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// BillableContactModel
+    /// Represents a billable contact with an address, a personal account id and an account number.
     /// </summary>
     [DataContract(Name = "BillableContactModel")]
     public partial class BillableContactModel : IEquatable<BillableContactModel>, IValidatableObject
@@ -37,11 +37,11 @@ namespace Simplic.OxS.SDK.Contract
         /// Initializes a new instance of the <see cref="BillableContactModel" /> class.
         /// </summary>
         /// <param name="address">address.</param>
-        /// <param name="accountNumber">accountNumber.</param>
-        /// <param name="personalAccountId">personalAccountId.</param>
-        /// <param name="insurance">insurance.</param>
-        /// <param name="creditworthiness">creditworthiness.</param>
-        /// <param name="creditLimit">creditLimit.</param>
+        /// <param name="accountNumber">Gets or sets the account number..</param>
+        /// <param name="personalAccountId">Gets or sets the personal account id.  Represents the id of a personal account..</param>
+        /// <param name="insurance">Gets or sets the insurance amount..</param>
+        /// <param name="creditworthiness">Gets or sets the creditworthiness of the customer..</param>
+        /// <param name="creditLimit">Gets or sets the credit limit..</param>
         public BillableContactModel(AddressModel address = default(AddressModel), string accountNumber = default(string), Guid? personalAccountId = default(Guid?), double insurance = default(double), string creditworthiness = default(string), string creditLimit = default(string))
         {
             this.Address = address;
@@ -59,32 +59,37 @@ namespace Simplic.OxS.SDK.Contract
         public AddressModel Address { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountNumber
+        /// Gets or sets the account number.
         /// </summary>
+        /// <value>Gets or sets the account number.</value>
         [DataMember(Name = "accountNumber", EmitDefaultValue = true)]
         public string AccountNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets PersonalAccountId
+        /// Gets or sets the personal account id.  Represents the id of a personal account.
         /// </summary>
+        /// <value>Gets or sets the personal account id.  Represents the id of a personal account.</value>
         [DataMember(Name = "personalAccountId", EmitDefaultValue = true)]
         public Guid? PersonalAccountId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Insurance
+        /// Gets or sets the insurance amount.
         /// </summary>
+        /// <value>Gets or sets the insurance amount.</value>
         [DataMember(Name = "insurance", EmitDefaultValue = false)]
         public double Insurance { get; set; }
 
         /// <summary>
-        /// Gets or Sets Creditworthiness
+        /// Gets or sets the creditworthiness of the customer.
         /// </summary>
+        /// <value>Gets or sets the creditworthiness of the customer.</value>
         [DataMember(Name = "creditworthiness", EmitDefaultValue = true)]
         public string Creditworthiness { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreditLimit
+        /// Gets or sets the credit limit.
         /// </summary>
+        /// <value>Gets or sets the credit limit.</value>
         [DataMember(Name = "creditLimit", EmitDefaultValue = true)]
         public string CreditLimit { get; set; }
 

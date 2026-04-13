@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// CreateShipmentItemRequest
+    /// Shared model of shipment item.
     /// </summary>
     [DataContract(Name = "CreateShipmentItemRequest")]
     public partial class CreateShipmentItemRequest : IEquatable<CreateShipmentItemRequest>, IValidatableObject
@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShipmentItemRequest" /> class.
         /// </summary>
-        /// <param name="text">text.</param>
-        /// <param name="loadingMeters">loadingMeters.</param>
-        /// <param name="reference">reference.</param>
+        /// <param name="text">Gets or sets the text.  The text is a field for the user to give more context to the shipment item and the billing..</param>
+        /// <param name="loadingMeters">Gets or sets the loading meters.  Loading meters define how many space a packed object will use on a trailer..</param>
+        /// <param name="reference">Gets or sets the external reference..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="weight">weight.</param>
-        /// <param name="articleId">articleId.</param>
-        /// <param name="loadingAidId">loadingAidId.</param>
-        /// <param name="orderNumber">orderNumber.</param>
+        /// <param name="articleId">Gets or sets the article.  This just contains a part of the actual article class..</param>
+        /// <param name="loadingAidId">Gets or sets the id of the loading aid..</param>
+        /// <param name="orderNumber">Gets or sets the order number of a shipment item..</param>
         public CreateShipmentItemRequest(string text = default(string), double? loadingMeters = default(double?), string reference = default(string), QuantityModel quantity = default(QuantityModel), QuantityModel weight = default(QuantityModel), Guid? articleId = default(Guid?), Guid? loadingAidId = default(Guid?), int orderNumber = default(int))
         {
             this.Text = text;
@@ -57,20 +57,23 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text.  The text is a field for the user to give more context to the shipment item and the billing.
         /// </summary>
+        /// <value>Gets or sets the text.  The text is a field for the user to give more context to the shipment item and the billing.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadingMeters
+        /// Gets or sets the loading meters.  Loading meters define how many space a packed object will use on a trailer.
         /// </summary>
+        /// <value>Gets or sets the loading meters.  Loading meters define how many space a packed object will use on a trailer.</value>
         [DataMember(Name = "loadingMeters", EmitDefaultValue = true)]
         public double? LoadingMeters { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the external reference.
         /// </summary>
+        /// <value>Gets or sets the external reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
@@ -87,20 +90,23 @@ namespace Simplic.OxS.SDK.Contract
         public QuantityModel Weight { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleId
+        /// Gets or sets the article.  This just contains a part of the actual article class.
         /// </summary>
+        /// <value>Gets or sets the article.  This just contains a part of the actual article class.</value>
         [DataMember(Name = "articleId", EmitDefaultValue = true)]
         public Guid? ArticleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadingAidId
+        /// Gets or sets the id of the loading aid.
         /// </summary>
+        /// <value>Gets or sets the id of the loading aid.</value>
         [DataMember(Name = "loadingAidId", EmitDefaultValue = true)]
         public Guid? LoadingAidId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderNumber
+        /// Gets or sets the order number of a shipment item.
         /// </summary>
+        /// <value>Gets or sets the order number of a shipment item.</value>
         [DataMember(Name = "orderNumber", EmitDefaultValue = false)]
         public int OrderNumber { get; set; }
 

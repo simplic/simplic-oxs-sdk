@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// Defines BillingTypeModel
+    /// Represents a billing type, which is either sell or buy.
     /// </summary>
+    /// <value>Represents a billing type, which is either sell or buy.</value>
     public enum BillingTypeModel
     {
         /// <summary>

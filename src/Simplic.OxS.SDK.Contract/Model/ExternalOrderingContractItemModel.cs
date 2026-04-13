@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingContractItemModel
+    /// Represents a subset of the contract item for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingContractItemModel")]
     public partial class ExternalOrderingContractItemModel : IEquatable<ExternalOrderingContractItemModel>, IValidatableObject
@@ -36,27 +36,31 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingContractItemModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="text">text.</param>
+        /// <param name="id">Gets or sets the id of the contract item..</param>
+        /// <param name="text">Gets or sets the item description text..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="remainingQuantity">remainingQuantity.</param>
-        public ExternalOrderingContractItemModel(Guid id = default(Guid), string text = default(string), ExternalOrderingQuantityModel quantity = default(ExternalOrderingQuantityModel), ExternalOrderingQuantityModel remainingQuantity = default(ExternalOrderingQuantityModel))
+        /// <param name="referenceNumber">Gets or sets the reference number for the supplier..</param>
+        public ExternalOrderingContractItemModel(Guid id = default(Guid), string text = default(string), ExternalOrderingQuantityModel quantity = default(ExternalOrderingQuantityModel), ExternalOrderingQuantityModel remainingQuantity = default(ExternalOrderingQuantityModel), string referenceNumber = default(string))
         {
             this.Id = id;
             this.Text = text;
             this.Quantity = quantity;
             this.RemainingQuantity = remainingQuantity;
+            this.ReferenceNumber = referenceNumber;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the contract item.
         /// </summary>
+        /// <value>Gets or sets the id of the contract item.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the item description text.
         /// </summary>
+        /// <value>Gets or sets the item description text.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -73,6 +77,13 @@ namespace Simplic.OxS.SDK.Contract
         public ExternalOrderingQuantityModel RemainingQuantity { get; set; }
 
         /// <summary>
+        /// Gets or sets the reference number for the supplier.
+        /// </summary>
+        /// <value>Gets or sets the reference number for the supplier.</value>
+        [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
+        public string ReferenceNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +95,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  RemainingQuantity: ").Append(RemainingQuantity).Append("\n");
+            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +150,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.RemainingQuantity == input.RemainingQuantity ||
                     (this.RemainingQuantity != null &&
                     this.RemainingQuantity.Equals(input.RemainingQuantity))
+                ) && 
+                (
+                    this.ReferenceNumber == input.ReferenceNumber ||
+                    (this.ReferenceNumber != null &&
+                    this.ReferenceNumber.Equals(input.ReferenceNumber))
                 );
         }
 
@@ -165,6 +182,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.RemainingQuantity != null)
                 {
                     hashCode = (hashCode * 59) + this.RemainingQuantity.GetHashCode();
+                }
+                if (this.ReferenceNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReferenceNumber.GetHashCode();
                 }
                 return hashCode;
             }

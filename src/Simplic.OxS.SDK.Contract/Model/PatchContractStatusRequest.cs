@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchContractStatusRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="roles">roles.</param>
-        /// <param name="hexCode">hexCode.</param>
+        /// <param name="name">Gets or sets the name of the status..</param>
+        /// <param name="number">Gets or sets the number of the status..</param>
+        /// <param name="roles">Gets or sets the roles of the status. These dictate the behaviour of the contract..</param>
+        /// <param name="hexCode">Gets or sets the hexcode of the display color of the status..</param>
         public PatchContractStatusRequest(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexCode = default(string))
         {
             this.Name = name;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the status.
         /// </summary>
+        /// <value>Gets or sets the name of the status.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number of the status.
         /// </summary>
+        /// <value>Gets or sets the number of the status.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or sets the roles of the status. These dictate the behaviour of the contract.
         /// </summary>
+        /// <value>Gets or sets the roles of the status. These dictate the behaviour of the contract.</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 
         /// <summary>
-        /// Gets or Sets HexCode
+        /// Gets or sets the hexcode of the display color of the status.
         /// </summary>
+        /// <value>Gets or sets the hexcode of the display color of the status.</value>
         [DataMember(Name = "hexCode", EmitDefaultValue = true)]
         public string HexCode { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ContractReportModel
+    /// Represents a contract reporting model
     /// </summary>
     [DataContract(Name = "ContractReportModel")]
     public partial class ContractReportModel : IEquatable<ContractReportModel>, IValidatableObject
@@ -42,33 +42,33 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractReportModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
+        /// <param name="id">Gets or sets the contract id..</param>
+        /// <param name="organizationId">Gets or sets the organization id..</param>
         /// <param name="status">status.</param>
         /// <param name="businessPartner">businessPartner.</param>
         /// <param name="customer">customer.</param>
         /// <param name="representativeUser">representativeUser.</param>
         /// <param name="contactPerson">contactPerson.</param>
-        /// <param name="items">items.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="createUserId">createUserId.</param>
-        /// <param name="createUserName">createUserName.</param>
-        /// <param name="updateDateTime">updateDateTime.</param>
-        /// <param name="updateUserId">updateUserId.</param>
-        /// <param name="updateUserName">updateUserName.</param>
-        /// <param name="number">number.</param>
-        /// <param name="name">name.</param>
-        /// <param name="referenceNumber">referenceNumber.</param>
-        /// <param name="orderDate">orderDate.</param>
-        /// <param name="startDate">startDate.</param>
-        /// <param name="endDate">endDate.</param>
+        /// <param name="items">Gets or sets the items of the contrat..</param>
+        /// <param name="createDateTime">Gets or sets the create date time..</param>
+        /// <param name="createUserId">Gets or sets the create user id..</param>
+        /// <param name="createUserName">Gets or sets the create user name..</param>
+        /// <param name="updateDateTime">Gets or sets the update date time..</param>
+        /// <param name="updateUserId">Gets or sets the update user id..</param>
+        /// <param name="updateUserName">Gets or sets the update user name..</param>
+        /// <param name="number">Gets or sets the number.  A human readable identifier..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number..</param>
+        /// <param name="orderDate">Gets or sets the order date.  Should only contain the date..</param>
+        /// <param name="startDate">Gets or sets the start date of the contract.  Should only contain the date..</param>
+        /// <param name="endDate">Gets or sets the end date of the contract.  Should only contain the date..</param>
         /// <param name="billingType">billingType.</param>
-        /// <param name="projectId">projectId.</param>
+        /// <param name="projectId">Gets or sets the project id.  References projects like e.g. construction sites..</param>
         /// <param name="termOfPayment">termOfPayment.</param>
-        /// <param name="submissionDate">submissionDate.</param>
-        /// <param name="insurance">insurance.</param>
-        /// <param name="creditworthiness">creditworthiness.</param>
-        /// <param name="creditLimit">creditLimit.</param>
+        /// <param name="submissionDate">Gets or sets the submission date..</param>
+        /// <param name="insurance">Gets the insurance amount..</param>
+        /// <param name="creditworthiness">Gets the creditworthiness of the customer..</param>
+        /// <param name="creditLimit">Gets the credit limit..</param>
         public ContractReportModel(Guid id = default(Guid), Guid organizationId = default(Guid), ContractStatusModel status = default(ContractStatusModel), BillableContactModel businessPartner = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), UserModel representativeUser = default(UserModel), AddressModel contactPerson = default(AddressModel), List<ContractItemModel> items = default(List<ContractItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string))
         {
             this.Id = id;
@@ -101,14 +101,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the contract id.
         /// </summary>
+        /// <value>Gets or sets the contract id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or sets the organization id.
         /// </summary>
+        /// <value>Gets or sets the organization id.</value>
         [DataMember(Name = "organizationId", EmitDefaultValue = false)]
         public Guid OrganizationId { get; set; }
 
@@ -143,86 +145,100 @@ namespace Simplic.OxS.SDK.Contract
         public AddressModel ContactPerson { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the items of the contrat.
         /// </summary>
+        /// <value>Gets or sets the items of the contrat.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<ContractItemModel> Items { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the create date time.
         /// </summary>
+        /// <value>Gets or sets the create date time.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserId
+        /// Gets or sets the create user id.
         /// </summary>
+        /// <value>Gets or sets the create user id.</value>
         [DataMember(Name = "createUserId", EmitDefaultValue = true)]
         public Guid? CreateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateUserName
+        /// Gets or sets the create user name.
         /// </summary>
+        /// <value>Gets or sets the create user name.</value>
         [DataMember(Name = "createUserName", EmitDefaultValue = true)]
         public string CreateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateDateTime
+        /// Gets or sets the update date time.
         /// </summary>
+        /// <value>Gets or sets the update date time.</value>
         [DataMember(Name = "updateDateTime", EmitDefaultValue = false)]
         public DateTime UpdateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserId
+        /// Gets or sets the update user id.
         /// </summary>
+        /// <value>Gets or sets the update user id.</value>
         [DataMember(Name = "updateUserId", EmitDefaultValue = true)]
         public Guid? UpdateUserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdateUserName
+        /// Gets or sets the update user name.
         /// </summary>
+        /// <value>Gets or sets the update user name.</value>
         [DataMember(Name = "updateUserName", EmitDefaultValue = true)]
         public string UpdateUserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.  A human readable identifier.
         /// </summary>
+        /// <value>Gets or sets the number.  A human readable identifier.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceNumber
+        /// Gets or sets the reference number.
         /// </summary>
+        /// <value>Gets or sets the reference number.</value>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderDate
+        /// Gets or sets the order date.  Should only contain the date.
         /// </summary>
+        /// <value>Gets or sets the order date.  Should only contain the date.</value>
         [DataMember(Name = "orderDate", EmitDefaultValue = true)]
         public DateTime? OrderDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDate
+        /// Gets or sets the start date of the contract.  Should only contain the date.
         /// </summary>
+        /// <value>Gets or sets the start date of the contract.  Should only contain the date.</value>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDate
+        /// Gets or sets the end date of the contract.  Should only contain the date.
         /// </summary>
+        /// <value>Gets or sets the end date of the contract.  Should only contain the date.</value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectId
+        /// Gets or sets the project id.  References projects like e.g. construction sites.
         /// </summary>
+        /// <value>Gets or sets the project id.  References projects like e.g. construction sites.</value>
         [DataMember(Name = "projectId", EmitDefaultValue = true)]
         public Guid? ProjectId { get; set; }
 
@@ -233,26 +249,30 @@ namespace Simplic.OxS.SDK.Contract
         public TermsOfPaymentModel TermOfPayment { get; set; }
 
         /// <summary>
-        /// Gets or Sets SubmissionDate
+        /// Gets or sets the submission date.
         /// </summary>
+        /// <value>Gets or sets the submission date.</value>
         [DataMember(Name = "submissionDate", EmitDefaultValue = true)]
         public string SubmissionDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Insurance
+        /// Gets the insurance amount.
         /// </summary>
+        /// <value>Gets the insurance amount.</value>
         [DataMember(Name = "insurance", EmitDefaultValue = true)]
         public double? Insurance { get; set; }
 
         /// <summary>
-        /// Gets or Sets Creditworthiness
+        /// Gets the creditworthiness of the customer.
         /// </summary>
+        /// <value>Gets the creditworthiness of the customer.</value>
         [DataMember(Name = "creditworthiness", EmitDefaultValue = true)]
         public string Creditworthiness { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreditLimit
+        /// Gets the credit limit.
         /// </summary>
+        /// <value>Gets the credit limit.</value>
         [DataMember(Name = "creditLimit", EmitDefaultValue = true)]
         public string CreditLimit { get; set; }
 

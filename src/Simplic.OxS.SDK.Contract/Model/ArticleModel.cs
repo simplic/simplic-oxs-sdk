@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ArticleModel
+    /// Represents the api model of an article.
     /// </summary>
     [DataContract(Name = "ArticleModel")]
     public partial class ArticleModel : IEquatable<ArticleModel>, IValidatableObject
@@ -36,12 +36,12 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ArticleModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="description">description.</param>
-        /// <param name="number">number.</param>
-        /// <param name="uniqueNumber">uniqueNumber.</param>
-        /// <param name="shortName">shortName.</param>
-        /// <param name="fullName">fullName.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="description">Gets or sets the description..</param>
+        /// <param name="number">Gets or sets the number..</param>
+        /// <param name="uniqueNumber">Gets or sets the unique number..</param>
+        /// <param name="shortName">Gets or sets the short name..</param>
+        /// <param name="fullName">Gets or sets the full name..</param>
         /// <param name="articleGroup">articleGroup.</param>
         public ArticleModel(Guid id = default(Guid), string description = default(string), string number = default(string), int uniqueNumber = default(int), string shortName = default(string), string fullName = default(string), ArticleGroupModel articleGroup = default(ArticleGroupModel))
         {
@@ -55,38 +55,44 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number.
         /// </summary>
+        /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets UniqueNumber
+        /// Gets or sets the unique number.
         /// </summary>
+        /// <value>Gets or sets the unique number.</value>
         [DataMember(Name = "uniqueNumber", EmitDefaultValue = false)]
         public int UniqueNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortName
+        /// Gets or sets the short name.
         /// </summary>
+        /// <value>Gets or sets the short name.</value>
         [DataMember(Name = "shortName", EmitDefaultValue = true)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or Sets FullName
+        /// Gets or sets the full name.
         /// </summary>
+        /// <value>Gets or sets the full name.</value>
         [DataMember(Name = "fullName", EmitDefaultValue = true)]
         public string FullName { get; set; }
 

@@ -1,11 +1,10 @@
-# Simplic.OxS.SDK.Contract.ExternalOrderingConstructionSiteModel
-Represents a construction site for external ordering.
+# Simplic.OxS.SDK.Contract.DeactivateExpiredRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Gets or sets the construction site name. | [optional] 
+**Date** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

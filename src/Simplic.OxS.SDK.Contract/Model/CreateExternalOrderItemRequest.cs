@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// CreateExternalOrderItemRequest
+    /// Request model for an item within an external order creation.
     /// </summary>
     [DataContract(Name = "CreateExternalOrderItemRequest")]
     public partial class CreateExternalOrderItemRequest : IEquatable<CreateExternalOrderItemRequest>, IValidatableObject
@@ -41,25 +41,36 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateExternalOrderItemRequest" /> class.
         /// </summary>
-        /// <param name="contractItemId">contractItemId (required).</param>
-        /// <param name="quantity">quantity (required).</param>
-        public CreateExternalOrderItemRequest(Guid contractItemId = default(Guid), double quantity = default(double))
+        /// <param name="contractItemId">Gets or sets the contract item id to order. (required).</param>
+        /// <param name="quantity">Gets or sets the quantity to order. (required).</param>
+        /// <param name="deliveryDate">Gets or sets the requested delivery date for this item..</param>
+        public CreateExternalOrderItemRequest(Guid contractItemId = default(Guid), double quantity = default(double), DateTime? deliveryDate = default(DateTime?))
         {
             this.ContractItemId = contractItemId;
             this.Quantity = quantity;
+            this.DeliveryDate = deliveryDate;
         }
 
         /// <summary>
-        /// Gets or Sets ContractItemId
+        /// Gets or sets the contract item id to order.
         /// </summary>
+        /// <value>Gets or sets the contract item id to order.</value>
         [DataMember(Name = "contractItemId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ContractItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the quantity to order.
         /// </summary>
+        /// <value>Gets or sets the quantity to order.</value>
         [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = true)]
         public double Quantity { get; set; }
+
+        /// <summary>
+        /// Gets or sets the requested delivery date for this item.
+        /// </summary>
+        /// <value>Gets or sets the requested delivery date for this item.</value>
+        [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
+        public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,6 +82,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("class CreateExternalOrderItemRequest {\n");
             sb.Append("  ContractItemId: ").Append(ContractItemId).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,6 +126,11 @@ namespace Simplic.OxS.SDK.Contract
                 (
                     this.Quantity == input.Quantity ||
                     this.Quantity.Equals(input.Quantity)
+                ) && 
+                (
+                    this.DeliveryDate == input.DeliveryDate ||
+                    (this.DeliveryDate != null &&
+                    this.DeliveryDate.Equals(input.DeliveryDate))
                 );
         }
 
@@ -131,6 +148,10 @@ namespace Simplic.OxS.SDK.Contract
                     hashCode = (hashCode * 59) + this.ContractItemId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                if (this.DeliveryDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryDate.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// CreateExternalOrderRequest
+    /// Request model for creating an external order.
     /// </summary>
     [DataContract(Name = "CreateExternalOrderRequest")]
     public partial class CreateExternalOrderRequest : IEquatable<CreateExternalOrderRequest>, IValidatableObject
@@ -41,11 +41,12 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateExternalOrderRequest" /> class.
         /// </summary>
-        /// <param name="date">date (required).</param>
-        /// <param name="orderPersonName">orderPersonName (required).</param>
-        /// <param name="orderPersonSignature">orderPersonSignature (required).</param>
-        /// <param name="items">items (required).</param>
-        public CreateExternalOrderRequest(DateTime date = default(DateTime), string orderPersonName = default(string), string orderPersonSignature = default(string), List<CreateExternalOrderItemRequest> items = default(List<CreateExternalOrderItemRequest>))
+        /// <param name="date">Gets or sets the requested delivery/order date. (required).</param>
+        /// <param name="orderPersonName">Gets or sets the name of the person placing the order. (required).</param>
+        /// <param name="orderPersonSignature">Gets or sets the signature of the person placing the order. (required).</param>
+        /// <param name="notes">Gets or sets optional notes for the order..</param>
+        /// <param name="items">Gets or sets the ordered items. (required).</param>
+        public CreateExternalOrderRequest(DateTime date = default(DateTime), string orderPersonName = default(string), string orderPersonSignature = default(string), string notes = default(string), List<CreateExternalOrderItemRequest> items = default(List<CreateExternalOrderItemRequest>))
         {
             this.Date = date;
             // to ensure "orderPersonName" is required (not null)
@@ -66,29 +67,41 @@ namespace Simplic.OxS.SDK.Contract
                 throw new ArgumentNullException("items is a required property for CreateExternalOrderRequest and cannot be null");
             }
             this.Items = items;
+            this.Notes = notes;
         }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or sets the requested delivery/order date.
         /// </summary>
+        /// <value>Gets or sets the requested delivery/order date.</value>
         [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderPersonName
+        /// Gets or sets the name of the person placing the order.
         /// </summary>
+        /// <value>Gets or sets the name of the person placing the order.</value>
         [DataMember(Name = "orderPersonName", IsRequired = true, EmitDefaultValue = true)]
         public string OrderPersonName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderPersonSignature
+        /// Gets or sets the signature of the person placing the order.
         /// </summary>
+        /// <value>Gets or sets the signature of the person placing the order.</value>
         [DataMember(Name = "orderPersonSignature", IsRequired = true, EmitDefaultValue = true)]
         public string OrderPersonSignature { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets optional notes for the order.
         /// </summary>
+        /// <value>Gets or sets optional notes for the order.</value>
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
+        public string Notes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ordered items.
+        /// </summary>
+        /// <value>Gets or sets the ordered items.</value>
         [DataMember(Name = "items", IsRequired = true, EmitDefaultValue = true)]
         public List<CreateExternalOrderItemRequest> Items { get; set; }
 
@@ -103,6 +116,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  OrderPersonName: ").Append(OrderPersonName).Append("\n");
             sb.Append("  OrderPersonSignature: ").Append(OrderPersonSignature).Append("\n");
+            sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -155,6 +169,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.OrderPersonSignature.Equals(input.OrderPersonSignature))
                 ) && 
                 (
+                    this.Notes == input.Notes ||
+                    (this.Notes != null &&
+                    this.Notes.Equals(input.Notes))
+                ) && 
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
@@ -182,6 +201,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.OrderPersonSignature != null)
                 {
                     hashCode = (hashCode * 59) + this.OrderPersonSignature.GetHashCode();
+                }
+                if (this.Notes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 if (this.Items != null)
                 {

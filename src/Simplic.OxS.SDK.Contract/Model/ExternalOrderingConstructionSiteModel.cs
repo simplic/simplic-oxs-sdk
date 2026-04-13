@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingConstructionSiteModel
+    /// Represents a construction site for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingConstructionSiteModel")]
     public partial class ExternalOrderingConstructionSiteModel : IEquatable<ExternalOrderingConstructionSiteModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingConstructionSiteModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the construction site name..</param>
         public ExternalOrderingConstructionSiteModel(string name = default(string))
         {
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the construction site name.
         /// </summary>
+        /// <value>Gets or sets the construction site name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

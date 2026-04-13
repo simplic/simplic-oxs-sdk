@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Contract.AlternativeTypeModel
+Represents which type of alternative the contract item is.
 
 ## Properties
 

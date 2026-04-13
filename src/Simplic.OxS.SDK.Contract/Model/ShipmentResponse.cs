@@ -62,40 +62,40 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="invoiceRecipientAddressId">invoiceRecipientAddressId.</param>
         /// <param name="supplierPersonalAccountId">supplierPersonalAccountId.</param>
         /// <param name="supplierAddressId">supplierAddressId.</param>
-        /// <param name="loadStart">loadStart.</param>
-        /// <param name="loadEnd">loadEnd.</param>
-        /// <param name="plannedLoadStart">plannedLoadStart.</param>
-        /// <param name="plannedLoadEnd">plannedLoadEnd.</param>
-        /// <param name="calculatedLoadStart">calculatedLoadStart.</param>
-        /// <param name="calculatedLoadEnd">calculatedLoadEnd.</param>
-        /// <param name="actualLoadStart">actualLoadStart.</param>
-        /// <param name="actualLoadEnd">actualLoadEnd.</param>
+        /// <param name="loadStart">Gets or sets the load time slot start with date and time  This will define the start of the time range the driver could start the loading process. This will usually be set by the user or an api based on the values he gets from customer..</param>
+        /// <param name="loadEnd">Gets or sets the load time slot end with date and time.  This will define the end of the time range the driver could end the loading process. This will usually be set by the user or an api based on the values he gets from the customer..</param>
+        /// <param name="plannedLoadStart">Gets or sets the planned laod start with date and time.  This will define the planned start of the loading process. This will usually be set by the user based on his dayplan for the resource..</param>
+        /// <param name="plannedLoadEnd">Gets or sets the planned load end with date and time.  This will define the planned end of the loading process. This will usually be set by the user based on his dayplan for the resource..</param>
+        /// <param name="calculatedLoadStart">Gets or sets the calculated load start with date and time.  This will define the calculated / theoretical start of the loading process. This will usually be set by an api based on data given by the telematics..</param>
+        /// <param name="calculatedLoadEnd">Gets or sets the calculated load end with date and time.  This will define the calculated / theoretical end of the laoding process. This will usually be set by an api based on data given by the telematics..</param>
+        /// <param name="actualLoadStart">Gets or sets the actual laod start with date and time.  This will define the actual start of the loading process. This will usually be set by an api based on the data given by the telematics..</param>
+        /// <param name="actualLoadEnd">Gets or sets the actual load end with date and time.  This will define the actual end of the loading process. This will usually be set by an api based on the data given by the telematics.</param>
         /// <param name="loadingTimeType">loadingTimeType.</param>
-        /// <param name="deliveryStart">deliveryStart.</param>
-        /// <param name="deliveryEnd">deliveryEnd.</param>
-        /// <param name="plannedDeliveryStart">plannedDeliveryStart.</param>
-        /// <param name="plannedDeliveryEnd">plannedDeliveryEnd.</param>
-        /// <param name="calculatedDeliveryStart">calculatedDeliveryStart.</param>
-        /// <param name="calculatedDeliveryEnd">calculatedDeliveryEnd.</param>
-        /// <param name="actualDeliveryStart">actualDeliveryStart.</param>
-        /// <param name="actualDeliveryEnd">actualDeliveryEnd.</param>
+        /// <param name="deliveryStart">Gets or sets the delivery time slot start with date and time.  This will define the start of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer..</param>
+        /// <param name="deliveryEnd">Gets or sets the delivery time slot end with date and time.  This will define the end of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer..</param>
+        /// <param name="plannedDeliveryStart">Gets or sets the planned delivery start with date and time.  This defines the planned start of the delivery / unloading process. This will usually be set by the user based on his dayplan of the resource..</param>
+        /// <param name="plannedDeliveryEnd">Gets or sets the planned delivery end with date and time.  This defines the planned end off the delivery / unlaoding process. This will usually be set by the user based on his dayplan of the resource..</param>
+        /// <param name="calculatedDeliveryStart">Gets or sets the calculated delivery start with date and time.  This defines the calculated start of the delivery / unlaoding process. This will usually be set by an api based on telematics data..</param>
+        /// <param name="calculatedDeliveryEnd">Gets or sets the calculated delivery end with date and time.  This defines the calculated end of the delivery / unlaoding process. This will usually be set by an api based on telematics data..</param>
+        /// <param name="actualDeliveryStart">Gets or sets the actual delivery start with date and time.  This defines the actual start of the delivery / unlaoding process. This will usually be set by an api based on telematics data..</param>
+        /// <param name="actualDeliveryEnd">Gets or sets the actual delivery end with date and time.  This defines the actual end of the delivery / unlaoding process. This will usually be set by an api based on telematics data..</param>
         /// <param name="deliveryTimeType">deliveryTimeType.</param>
-        /// <param name="orderDate">orderDate.</param>
-        /// <param name="shipmentNumber">shipmentNumber.</param>
-        /// <param name="referenceNumber">referenceNumber.</param>
-        /// <param name="loadNumber">loadNumber.</param>
-        /// <param name="deliveryNumber">deliveryNumber.</param>
-        /// <param name="isTemplate">isTemplate.</param>
-        /// <param name="templateName">templateName.</param>
-        /// <param name="tags">tags.</param>
-        /// <param name="notes">notes.</param>
-        /// <param name="loadWorkflowId">loadWorkflowId.</param>
-        /// <param name="deliveryWorkflowId">deliveryWorkflowId.</param>
-        /// <param name="constructionSiteId">constructionSiteId.</param>
-        /// <param name="departmentId">departmentId.</param>
-        /// <param name="addon">addon.</param>
-        /// <param name="items">items.</param>
-        /// <param name="billingLines">billingLines.</param>
+        /// <param name="orderDate">Gets or sets the order date.  This defines the date the shipment is ordered at. This is a relevant information for the billing process and needs to be set..</param>
+        /// <param name="shipmentNumber">Gets or sets the shipment number.  This defines a number to identify the shipment as the user..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number  This defines a number that references the same shipment in another programm or context..</param>
+        /// <param name="loadNumber">Gets or sets the load number.  This defines a number that the driver might need to load this shipment.</param>
+        /// <param name="deliveryNumber">Gets or sets the delivery number.  This defines a number that the driber might need to deliver / unload this shipment..</param>
+        /// <param name="isTemplate">Gets or sets werther the shipment is a template.  Template shipments are used to create shipments with certain values preset..</param>
+        /// <param name="templateName">Gets or sets the template name.  A name for the template to give the user the option to find it easier.</param>
+        /// <param name="tags">Gets or sets the tags.  Tags are short texts to add information to a shipment without the need to add new properties. These are e.g. used in the pricing module to add some additional conditions..</param>
+        /// <param name="notes">Gets or sets the notes.  This gives the user the possibillity to add some more sentences about this shipment..</param>
+        /// <param name="loadWorkflowId">Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system..</param>
+        /// <param name="deliveryWorkflowId">Gets or sets the delivery workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the delivery / unload process. Usually these workflows need to be enabled and added within their telematic system..</param>
+        /// <param name="constructionSiteId">Gets or sets a construction site id.  The id will be resolved by the construction site api..</param>
+        /// <param name="departmentId">Gets or sets the department id..</param>
+        /// <param name="addon">Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract..</param>
+        /// <param name="items">Gets or sets shipment items.  Represents a list of items of a shipment which will contain further information about the freight..</param>
+        /// <param name="billingLines">Gets or sets the list of billing lines..</param>
         public ShipmentResponse(Guid? loadAddressId = default(Guid?), Guid? deliveryAddressId = default(Guid?), Guid? recipientAddressId = default(Guid?), Guid? senderAddressId = default(Guid?), Guid? carrierPersonalAccountId = default(Guid?), Guid? carrierAddressId = default(Guid?), Guid? freightPayerPersonalAccountId = default(Guid?), Guid? freightPayerAddressId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? customerAddressId = default(Guid?), Guid? invoiceRecipientPersonalAccountId = default(Guid?), Guid? invoiceRecipientAddressId = default(Guid?), Guid? supplierPersonalAccountId = default(Guid?), Guid? supplierAddressId = default(Guid?), DateTime? loadStart = default(DateTime?), DateTime? loadEnd = default(DateTime?), DateTime? plannedLoadStart = default(DateTime?), DateTime? plannedLoadEnd = default(DateTime?), DateTime? calculatedLoadStart = default(DateTime?), DateTime? calculatedLoadEnd = default(DateTime?), DateTime? actualLoadStart = default(DateTime?), DateTime? actualLoadEnd = default(DateTime?), LoadingDateTimeType? loadingTimeType = default(LoadingDateTimeType?), DateTime? deliveryStart = default(DateTime?), DateTime? deliveryEnd = default(DateTime?), DateTime? plannedDeliveryStart = default(DateTime?), DateTime? plannedDeliveryEnd = default(DateTime?), DateTime? calculatedDeliveryStart = default(DateTime?), DateTime? calculatedDeliveryEnd = default(DateTime?), DateTime? actualDeliveryStart = default(DateTime?), DateTime? actualDeliveryEnd = default(DateTime?), LoadingDateTimeType? deliveryTimeType = default(LoadingDateTimeType?), DateTime? orderDate = default(DateTime?), string shipmentNumber = default(string), string referenceNumber = default(string), string loadNumber = default(string), string deliveryNumber = default(string), bool isTemplate = default(bool), string templateName = default(string), List<Guid> tags = default(List<Guid>), string notes = default(string), Guid? loadWorkflowId = default(Guid?), Guid? deliveryWorkflowId = default(Guid?), Guid? constructionSiteId = default(Guid?), Guid? departmentId = default(Guid?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), List<CreateShipmentItemRequest> items = default(List<CreateShipmentItemRequest>), List<CreateBillingLineRequest> billingLines = default(List<CreateBillingLineRequest>))
         {
             this.LoadAddressId = loadAddressId;
@@ -233,194 +233,226 @@ namespace Simplic.OxS.SDK.Contract
         public Guid? SupplierAddressId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadStart
+        /// Gets or sets the load time slot start with date and time  This will define the start of the time range the driver could start the loading process. This will usually be set by the user or an api based on the values he gets from customer.
         /// </summary>
+        /// <value>Gets or sets the load time slot start with date and time  This will define the start of the time range the driver could start the loading process. This will usually be set by the user or an api based on the values he gets from customer.</value>
         [DataMember(Name = "loadStart", EmitDefaultValue = true)]
         public DateTime? LoadStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadEnd
+        /// Gets or sets the load time slot end with date and time.  This will define the end of the time range the driver could end the loading process. This will usually be set by the user or an api based on the values he gets from the customer.
         /// </summary>
+        /// <value>Gets or sets the load time slot end with date and time.  This will define the end of the time range the driver could end the loading process. This will usually be set by the user or an api based on the values he gets from the customer.</value>
         [DataMember(Name = "loadEnd", EmitDefaultValue = true)]
         public DateTime? LoadEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets PlannedLoadStart
+        /// Gets or sets the planned laod start with date and time.  This will define the planned start of the loading process. This will usually be set by the user based on his dayplan for the resource.
         /// </summary>
+        /// <value>Gets or sets the planned laod start with date and time.  This will define the planned start of the loading process. This will usually be set by the user based on his dayplan for the resource.</value>
         [DataMember(Name = "plannedLoadStart", EmitDefaultValue = true)]
         public DateTime? PlannedLoadStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets PlannedLoadEnd
+        /// Gets or sets the planned load end with date and time.  This will define the planned end of the loading process. This will usually be set by the user based on his dayplan for the resource.
         /// </summary>
+        /// <value>Gets or sets the planned load end with date and time.  This will define the planned end of the loading process. This will usually be set by the user based on his dayplan for the resource.</value>
         [DataMember(Name = "plannedLoadEnd", EmitDefaultValue = true)]
         public DateTime? PlannedLoadEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets CalculatedLoadStart
+        /// Gets or sets the calculated load start with date and time.  This will define the calculated / theoretical start of the loading process. This will usually be set by an api based on data given by the telematics.
         /// </summary>
+        /// <value>Gets or sets the calculated load start with date and time.  This will define the calculated / theoretical start of the loading process. This will usually be set by an api based on data given by the telematics.</value>
         [DataMember(Name = "calculatedLoadStart", EmitDefaultValue = true)]
         public DateTime? CalculatedLoadStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets CalculatedLoadEnd
+        /// Gets or sets the calculated load end with date and time.  This will define the calculated / theoretical end of the laoding process. This will usually be set by an api based on data given by the telematics.
         /// </summary>
+        /// <value>Gets or sets the calculated load end with date and time.  This will define the calculated / theoretical end of the laoding process. This will usually be set by an api based on data given by the telematics.</value>
         [DataMember(Name = "calculatedLoadEnd", EmitDefaultValue = true)]
         public DateTime? CalculatedLoadEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActualLoadStart
+        /// Gets or sets the actual laod start with date and time.  This will define the actual start of the loading process. This will usually be set by an api based on the data given by the telematics.
         /// </summary>
+        /// <value>Gets or sets the actual laod start with date and time.  This will define the actual start of the loading process. This will usually be set by an api based on the data given by the telematics.</value>
         [DataMember(Name = "actualLoadStart", EmitDefaultValue = true)]
         public DateTime? ActualLoadStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActualLoadEnd
+        /// Gets or sets the actual load end with date and time.  This will define the actual end of the loading process. This will usually be set by an api based on the data given by the telematics
         /// </summary>
+        /// <value>Gets or sets the actual load end with date and time.  This will define the actual end of the loading process. This will usually be set by an api based on the data given by the telematics</value>
         [DataMember(Name = "actualLoadEnd", EmitDefaultValue = true)]
         public DateTime? ActualLoadEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryStart
+        /// Gets or sets the delivery time slot start with date and time.  This will define the start of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer.
         /// </summary>
+        /// <value>Gets or sets the delivery time slot start with date and time.  This will define the start of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer.</value>
         [DataMember(Name = "deliveryStart", EmitDefaultValue = true)]
         public DateTime? DeliveryStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryEnd
+        /// Gets or sets the delivery time slot end with date and time.  This will define the end of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer.
         /// </summary>
+        /// <value>Gets or sets the delivery time slot end with date and time.  This will define the end of the time range when the driver could deliver the shipment. This will usually be set by the user or an api based on the values he gets from the customer.</value>
         [DataMember(Name = "deliveryEnd", EmitDefaultValue = true)]
         public DateTime? DeliveryEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets PlannedDeliveryStart
+        /// Gets or sets the planned delivery start with date and time.  This defines the planned start of the delivery / unloading process. This will usually be set by the user based on his dayplan of the resource.
         /// </summary>
+        /// <value>Gets or sets the planned delivery start with date and time.  This defines the planned start of the delivery / unloading process. This will usually be set by the user based on his dayplan of the resource.</value>
         [DataMember(Name = "plannedDeliveryStart", EmitDefaultValue = true)]
         public DateTime? PlannedDeliveryStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets PlannedDeliveryEnd
+        /// Gets or sets the planned delivery end with date and time.  This defines the planned end off the delivery / unlaoding process. This will usually be set by the user based on his dayplan of the resource.
         /// </summary>
+        /// <value>Gets or sets the planned delivery end with date and time.  This defines the planned end off the delivery / unlaoding process. This will usually be set by the user based on his dayplan of the resource.</value>
         [DataMember(Name = "plannedDeliveryEnd", EmitDefaultValue = true)]
         public DateTime? PlannedDeliveryEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets CalculatedDeliveryStart
+        /// Gets or sets the calculated delivery start with date and time.  This defines the calculated start of the delivery / unlaoding process. This will usually be set by an api based on telematics data.
         /// </summary>
+        /// <value>Gets or sets the calculated delivery start with date and time.  This defines the calculated start of the delivery / unlaoding process. This will usually be set by an api based on telematics data.</value>
         [DataMember(Name = "calculatedDeliveryStart", EmitDefaultValue = true)]
         public DateTime? CalculatedDeliveryStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets CalculatedDeliveryEnd
+        /// Gets or sets the calculated delivery end with date and time.  This defines the calculated end of the delivery / unlaoding process. This will usually be set by an api based on telematics data.
         /// </summary>
+        /// <value>Gets or sets the calculated delivery end with date and time.  This defines the calculated end of the delivery / unlaoding process. This will usually be set by an api based on telematics data.</value>
         [DataMember(Name = "calculatedDeliveryEnd", EmitDefaultValue = true)]
         public DateTime? CalculatedDeliveryEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActualDeliveryStart
+        /// Gets or sets the actual delivery start with date and time.  This defines the actual start of the delivery / unlaoding process. This will usually be set by an api based on telematics data.
         /// </summary>
+        /// <value>Gets or sets the actual delivery start with date and time.  This defines the actual start of the delivery / unlaoding process. This will usually be set by an api based on telematics data.</value>
         [DataMember(Name = "actualDeliveryStart", EmitDefaultValue = true)]
         public DateTime? ActualDeliveryStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActualDeliveryEnd
+        /// Gets or sets the actual delivery end with date and time.  This defines the actual end of the delivery / unlaoding process. This will usually be set by an api based on telematics data.
         /// </summary>
+        /// <value>Gets or sets the actual delivery end with date and time.  This defines the actual end of the delivery / unlaoding process. This will usually be set by an api based on telematics data.</value>
         [DataMember(Name = "actualDeliveryEnd", EmitDefaultValue = true)]
         public DateTime? ActualDeliveryEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderDate
+        /// Gets or sets the order date.  This defines the date the shipment is ordered at. This is a relevant information for the billing process and needs to be set.
         /// </summary>
+        /// <value>Gets or sets the order date.  This defines the date the shipment is ordered at. This is a relevant information for the billing process and needs to be set.</value>
         [DataMember(Name = "orderDate", EmitDefaultValue = true)]
         public DateTime? OrderDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShipmentNumber
+        /// Gets or sets the shipment number.  This defines a number to identify the shipment as the user.
         /// </summary>
+        /// <value>Gets or sets the shipment number.  This defines a number to identify the shipment as the user.</value>
         [DataMember(Name = "shipmentNumber", EmitDefaultValue = true)]
         public string ShipmentNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceNumber
+        /// Gets or sets the reference number  This defines a number that references the same shipment in another programm or context.
         /// </summary>
+        /// <value>Gets or sets the reference number  This defines a number that references the same shipment in another programm or context.</value>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadNumber
+        /// Gets or sets the load number.  This defines a number that the driver might need to load this shipment
         /// </summary>
+        /// <value>Gets or sets the load number.  This defines a number that the driver might need to load this shipment</value>
         [DataMember(Name = "loadNumber", EmitDefaultValue = true)]
         public string LoadNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryNumber
+        /// Gets or sets the delivery number.  This defines a number that the driber might need to deliver / unload this shipment.
         /// </summary>
+        /// <value>Gets or sets the delivery number.  This defines a number that the driber might need to deliver / unload this shipment.</value>
         [DataMember(Name = "deliveryNumber", EmitDefaultValue = true)]
         public string DeliveryNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsTemplate
+        /// Gets or sets werther the shipment is a template.  Template shipments are used to create shipments with certain values preset.
         /// </summary>
+        /// <value>Gets or sets werther the shipment is a template.  Template shipments are used to create shipments with certain values preset.</value>
         [DataMember(Name = "isTemplate", EmitDefaultValue = true)]
         public bool IsTemplate { get; set; }
 
         /// <summary>
-        /// Gets or Sets TemplateName
+        /// Gets or sets the template name.  A name for the template to give the user the option to find it easier
         /// </summary>
+        /// <value>Gets or sets the template name.  A name for the template to give the user the option to find it easier</value>
         [DataMember(Name = "templateName", EmitDefaultValue = true)]
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Gets or sets the tags.  Tags are short texts to add information to a shipment without the need to add new properties. These are e.g. used in the pricing module to add some additional conditions.
         /// </summary>
+        /// <value>Gets or sets the tags.  Tags are short texts to add information to a shipment without the need to add new properties. These are e.g. used in the pricing module to add some additional conditions.</value>
         [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<Guid> Tags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Notes
+        /// Gets or sets the notes.  This gives the user the possibillity to add some more sentences about this shipment.
         /// </summary>
+        /// <value>Gets or sets the notes.  This gives the user the possibillity to add some more sentences about this shipment.</value>
         [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadWorkflowId
+        /// Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system.
         /// </summary>
+        /// <value>Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system.</value>
         [DataMember(Name = "loadWorkflowId", EmitDefaultValue = true)]
         public Guid? LoadWorkflowId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryWorkflowId
+        /// Gets or sets the delivery workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the delivery / unload process. Usually these workflows need to be enabled and added within their telematic system.
         /// </summary>
+        /// <value>Gets or sets the delivery workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the delivery / unload process. Usually these workflows need to be enabled and added within their telematic system.</value>
         [DataMember(Name = "deliveryWorkflowId", EmitDefaultValue = true)]
         public Guid? DeliveryWorkflowId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConstructionSiteId
+        /// Gets or sets a construction site id.  The id will be resolved by the construction site api.
         /// </summary>
+        /// <value>Gets or sets a construction site id.  The id will be resolved by the construction site api.</value>
         [DataMember(Name = "constructionSiteId", EmitDefaultValue = true)]
         public Guid? ConstructionSiteId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DepartmentId
+        /// Gets or sets the department id.
         /// </summary>
+        /// <value>Gets or sets the department id.</value>
         [DataMember(Name = "departmentId", EmitDefaultValue = true)]
         public Guid? DepartmentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Addon
+        /// Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract.
         /// </summary>
+        /// <value>Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract.</value>
         [DataMember(Name = "addon", EmitDefaultValue = true)]
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets shipment items.  Represents a list of items of a shipment which will contain further information about the freight.
         /// </summary>
+        /// <value>Gets or sets shipment items.  Represents a list of items of a shipment which will contain further information about the freight.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<CreateShipmentItemRequest> Items { get; set; }
 
         /// <summary>
-        /// Gets or Sets BillingLines
+        /// Gets or sets the list of billing lines.
         /// </summary>
+        /// <value>Gets or sets the list of billing lines.</value>
         [DataMember(Name = "billingLines", EmitDefaultValue = true)]
         public List<CreateBillingLineRequest> BillingLines { get; set; }
 

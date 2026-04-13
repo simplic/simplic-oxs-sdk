@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingOrderItemModel
+    /// Represents an item within an external order response.
     /// </summary>
     [DataContract(Name = "ExternalOrderingOrderItemModel")]
     public partial class ExternalOrderingOrderItemModel : IEquatable<ExternalOrderingOrderItemModel>, IValidatableObject
@@ -36,41 +36,54 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingOrderItemModel" /> class.
         /// </summary>
-        /// <param name="contractItemId">contractItemId.</param>
-        /// <param name="text">text.</param>
-        /// <param name="quantity">quantity.</param>
-        /// <param name="quantityUnitName">quantityUnitName.</param>
-        public ExternalOrderingOrderItemModel(Guid contractItemId = default(Guid), string text = default(string), double quantity = default(double), string quantityUnitName = default(string))
+        /// <param name="contractItemId">Gets or sets the referenced contract item id..</param>
+        /// <param name="text">Gets or sets the item text/description..</param>
+        /// <param name="quantity">Gets or sets the ordered quantity..</param>
+        /// <param name="quantityUnitName">Gets or sets the quantity unit name..</param>
+        /// <param name="deliveryDate">Gets or sets the requested delivery date for this item..</param>
+        public ExternalOrderingOrderItemModel(Guid contractItemId = default(Guid), string text = default(string), double quantity = default(double), string quantityUnitName = default(string), DateTime? deliveryDate = default(DateTime?))
         {
             this.ContractItemId = contractItemId;
             this.Text = text;
             this.Quantity = quantity;
             this.QuantityUnitName = quantityUnitName;
+            this.DeliveryDate = deliveryDate;
         }
 
         /// <summary>
-        /// Gets or Sets ContractItemId
+        /// Gets or sets the referenced contract item id.
         /// </summary>
+        /// <value>Gets or sets the referenced contract item id.</value>
         [DataMember(Name = "contractItemId", EmitDefaultValue = false)]
         public Guid ContractItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the item text/description.
         /// </summary>
+        /// <value>Gets or sets the item text/description.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the ordered quantity.
         /// </summary>
+        /// <value>Gets or sets the ordered quantity.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public double Quantity { get; set; }
 
         /// <summary>
-        /// Gets or Sets QuantityUnitName
+        /// Gets or sets the quantity unit name.
         /// </summary>
+        /// <value>Gets or sets the quantity unit name.</value>
         [DataMember(Name = "quantityUnitName", EmitDefaultValue = true)]
         public string QuantityUnitName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the requested delivery date for this item.
+        /// </summary>
+        /// <value>Gets or sets the requested delivery date for this item.</value>
+        [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
+        public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -84,6 +97,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  QuantityUnitName: ").Append(QuantityUnitName).Append("\n");
+            sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,6 +151,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.QuantityUnitName == input.QuantityUnitName ||
                     (this.QuantityUnitName != null &&
                     this.QuantityUnitName.Equals(input.QuantityUnitName))
+                ) && 
+                (
+                    this.DeliveryDate == input.DeliveryDate ||
+                    (this.DeliveryDate != null &&
+                    this.DeliveryDate.Equals(input.DeliveryDate))
                 );
         }
 
@@ -161,6 +180,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.QuantityUnitName != null)
                 {
                     hashCode = (hashCode * 59) + this.QuantityUnitName.GetHashCode();
+                }
+                if (this.DeliveryDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryDate.GetHashCode();
                 }
                 return hashCode;
             }

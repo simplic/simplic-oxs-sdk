@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingQuantityUnitModel
+    /// Represents a quantity unit for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingQuantityUnitModel")]
     public partial class ExternalOrderingQuantityUnitModel : IEquatable<ExternalOrderingQuantityUnitModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingQuantityUnitModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="shortName">shortName.</param>
+        /// <param name="name">Gets or sets the unit name..</param>
+        /// <param name="shortName">Gets or sets the unit short name..</param>
         public ExternalOrderingQuantityUnitModel(string name = default(string), string shortName = default(string))
         {
             this.Name = name;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the unit name.
         /// </summary>
+        /// <value>Gets or sets the unit name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortName
+        /// Gets or sets the unit short name.
         /// </summary>
+        /// <value>Gets or sets the unit short name.</value>
         [DataMember(Name = "shortName", EmitDefaultValue = true)]
         public string ShortName { get; set; }
 

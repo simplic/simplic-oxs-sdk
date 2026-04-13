@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContractStatusRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="roles">roles.</param>
-        /// <param name="hexCode">hexCode.</param>
+        /// <param name="id">Gets or sets the id of the status..</param>
+        /// <param name="name">Gets or sets the name of the status..</param>
+        /// <param name="number">Gets or sets the number of the status.  The number is a human readable identifier of the status..</param>
+        /// <param name="roles">Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;.</param>
+        /// <param name="hexCode">Gets or sets the color of the status as hexadicimal value..</param>
         public CreateContractStatusRequest(Guid id = default(Guid), string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexCode = default(string))
         {
             this.Id = id;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the status.
         /// </summary>
+        /// <value>Gets or sets the id of the status.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the status.
         /// </summary>
+        /// <value>Gets or sets the name of the status.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number of the status.  The number is a human readable identifier of the status.
         /// </summary>
+        /// <value>Gets or sets the number of the status.  The number is a human readable identifier of the status.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;
         /// </summary>
+        /// <value>Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 
         /// <summary>
-        /// Gets or Sets HexCode
+        /// Gets or sets the color of the status as hexadicimal value.
         /// </summary>
+        /// <value>Gets or sets the color of the status as hexadicimal value.</value>
         [DataMember(Name = "hexCode", EmitDefaultValue = true)]
         public string HexCode { get; set; }
 

@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// Defines BillingLineType
+    /// Determines of which type a billing line can be. Is used to determine which type of person is billed.
     /// </summary>
+    /// <value>Determines of which type a billing line can be. Is used to determine which type of person is billed.</value>
     public enum BillingLineType
     {
         /// <summary>

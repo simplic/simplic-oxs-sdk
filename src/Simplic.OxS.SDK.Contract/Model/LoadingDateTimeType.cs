@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// Defines LoadingDateTimeType
+    /// Represents a type of which the loading / unloading time is set.
     /// </summary>
+    /// <value>Represents a type of which the loading / unloading time is set.</value>
     public enum LoadingDateTimeType
     {
         /// <summary>

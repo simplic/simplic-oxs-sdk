@@ -600,6 +600,77 @@
                 }
             }
         },
+        "/Contract/deactivate-expired": {
+            "post": {
+                "tags": [
+                    "Contract"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeactivateExpiredRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeactivateExpiredRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeactivateExpiredRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/ContractStatus/{id}": {
             "get": {
                 "tags": [
@@ -1415,6 +1486,94 @@
                     },
                     "404": {
                         "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ExternalOrdering/{publicKey}/order/{orderId}/cancel": {
+            "post": {
+                "tags": [
+                    "ExternalOrdering"
+                ],
+                "parameters": [
+                    {
+                        "name": "publicKey",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalOrderingOrderModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalOrderingOrderModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalOrderingOrderModel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -2377,14 +2536,17 @@
                 "properties": {
                     "contractItemId": {
                         "type": "string",
+                        "description": "Gets or sets the contract item id.",
                         "format": "uuid"
                     },
                     "quantity": {
                         "type": "number",
+                        "description": "Gets or sets the updated quantity.",
                         "format": "double"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for an item quantity override when accepting an order."
             },
             "AcceptExternalOrderRequest": {
                 "type": "object",
@@ -2394,10 +2556,12 @@
                         "items": {
                             "$ref": "#/components/schemas/AcceptExternalOrderItemRequest"
                         },
+                        "description": "Gets or sets the optional item quantity overrides.\n\nIf provided, the quantities of the specified items will be updated.\nItems not listed keep their original quantities.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for accepting an external order."
             },
             "Address": {
                 "type": "object",
@@ -2474,70 +2638,87 @@
                 "properties": {
                     "contactId": {
                         "type": "string",
+                        "description": "Gets or set the contact id.",
                         "format": "uuid"
                     },
                     "firstName": {
                         "type": "string",
+                        "description": "Gets or sets the first name.",
                         "nullable": true
                     },
                     "lastName": {
                         "type": "string",
+                        "description": "Gets or sets the last name.",
                         "nullable": true
                     },
                     "companyName": {
                         "type": "string",
+                        "description": "Gets or sets the company name.",
                         "nullable": true
                     },
                     "additional01": {
                         "type": "string",
+                        "description": "Gets or sets the first additional data.",
                         "nullable": true
                     },
                     "additional02": {
                         "type": "string",
+                        "description": "Gets or sets the second additional data.",
                         "nullable": true
                     },
                     "street": {
                         "type": "string",
+                        "description": "Gets or sets the street.",
                         "nullable": true
                     },
                     "houseNumber": {
                         "type": "string",
+                        "description": "Gets or sets the house number.",
                         "nullable": true
                     },
                     "zipcode": {
                         "type": "string",
+                        "description": "Gets or sets the zipcode.",
                         "nullable": true
                     },
                     "city": {
                         "type": "string",
+                        "description": "Gets or sets the city.",
                         "nullable": true
                     },
                     "district": {
                         "type": "string",
+                        "description": "Gets or sets the district.",
                         "nullable": true
                     },
                     "federalState": {
                         "type": "string",
+                        "description": "Gets or sets the federal state of the address.",
                         "nullable": true
                     },
                     "countryIso": {
                         "type": "string",
+                        "description": "Gets or sets the country iso.",
                         "nullable": true
                     },
                     "country": {
                         "type": "string",
+                        "description": "Gets or sets the country.",
                         "nullable": true
                     },
                     "latitude": {
                         "type": "number",
+                        "description": "Gets or sets the latitude.",
                         "format": "double"
                     },
                     "longitude": {
                         "type": "number",
+                        "description": "Gets or sets the longitude.",
                         "format": "double"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the address of a contact."
             },
             "AlternativeTypeModel": {
                 "enum": [
@@ -2546,6 +2727,7 @@
                     2
                 ],
                 "type": "integer",
+                "description": "Represents which type of alternative the contract item is.",
                 "format": "int32"
             },
             "ArticleGroupModel": {
@@ -2553,51 +2735,62 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the model of an article group."
             },
             "ArticleModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.",
                         "nullable": true
                     },
                     "uniqueNumber": {
                         "type": "integer",
+                        "description": "Gets or sets the unique number.",
                         "format": "int32"
                     },
                     "shortName": {
                         "type": "string",
+                        "description": "Gets or sets the short name.",
                         "nullable": true
                     },
                     "fullName": {
                         "type": "string",
+                        "description": "Gets or sets the full name.",
                         "nullable": true
                     },
                     "articleGroup": {
                         "$ref": "#/components/schemas/ArticleGroupModel"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the api model of an article."
             },
             "BillableContactModel": {
                 "type": "object",
@@ -2607,27 +2800,33 @@
                     },
                     "accountNumber": {
                         "type": "string",
+                        "description": "Gets or sets the account number.",
                         "nullable": true
                     },
                     "personalAccountId": {
                         "type": "string",
+                        "description": "Gets or sets the personal account id.\n\nRepresents the id of a personal account.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "insurance": {
                         "type": "number",
+                        "description": "Gets or sets the insurance amount.",
                         "format": "double"
                     },
                     "creditworthiness": {
                         "type": "string",
+                        "description": "Gets or sets the creditworthiness of the customer.",
                         "nullable": true
                     },
                     "creditLimit": {
                         "type": "string",
+                        "description": "Gets or sets the credit limit.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a billable contact with an address, a personal account id and an account number."
             },
             "BillingLineType": {
                 "enum": [
@@ -2636,6 +2835,7 @@
                     2
                 ],
                 "type": "integer",
+                "description": "Determines of which type a billing line can be.\nIs used to determine which type of person is billed.",
                 "format": "int32"
             },
             "BillingType": {
@@ -2652,6 +2852,7 @@
                     1
                 ],
                 "type": "integer",
+                "description": "Represents a billing type, which is either sell or buy.",
                 "format": "int32"
             },
             "ContractItemModel": {
@@ -2659,26 +2860,32 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the contract item.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text of the item.",
                         "nullable": true
                     },
                     "index": {
                         "type": "integer",
+                        "description": "Gets or sets the index.\n\nWill set the index of the item in the list of items.",
                         "format": "int32"
                     },
                     "positionNumber": {
                         "type": "integer",
+                        "description": "Gets or sets the position number of the contract item.",
                         "format": "int32"
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "supplierReferenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number for the supplier.",
                         "nullable": true
                     },
                     "billingType": {
@@ -2695,55 +2902,67 @@
                         "items": {
                             "$ref": "#/components/schemas/CostObjectModel"
                         },
+                        "description": "Gets or sets the costs.",
                         "nullable": true
                     },
                     "distance": {
                         "type": "number",
+                        "description": "Gets or sets the distance for the calculation in kilometers.",
                         "format": "double"
                     },
                     "tollDistance": {
                         "type": "number",
+                        "description": "Gets or sets the tollable distance for the calculation in kilometers.",
                         "format": "double"
                     },
                     "vehicleType": {
                         "$ref": "#/components/schemas/VehicleTypeModel"
                     },
                     "cashDiscount": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the item is cash discountable."
                     },
                     "alternativeType": {
                         "$ref": "#/components/schemas/AlternativeTypeModel"
                     },
                     "parentItem": {
                         "type": "string",
+                        "description": "Gets or sets the id of the parent item in case of an alternative item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "printToReporting": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the item is added to the report."
                     },
                     "useInDisposition": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the item is used for the disposition conversion."
                     },
                     "type": {
                         "type": "string",
+                        "description": "Gets the type of the contract item.",
                         "nullable": true
                     },
                     "isDiscount": {
                         "type": "boolean",
+                        "description": "Gets or sets if the item is a discount.",
                         "nullable": true
                     },
                     "contractNumber": {
                         "type": "string",
+                        "description": "Gets or sets the contract number.",
                         "nullable": true
                     },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\n\nCan be used to set customer exclusive properties for a contract.",
                         "nullable": true
                     },
                     "allowExternalOrdering": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether external ordering is allowed for this item."
                     },
                     "supplier": {
                         "$ref": "#/components/schemas/Address"
@@ -2768,47 +2987,57 @@
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "certified": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the article is certified.",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the article item.",
                         "format": "date-time",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an contract item."
             },
             "ContractModel": {
                 "type": "object",
                 "properties": {
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.\n\nA human readable identifier.",
                         "nullable": true
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "orderDate": {
                         "type": "string",
+                        "description": "Gets or sets the order date.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -2817,6 +3046,7 @@
                     },
                     "projectId": {
                         "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -2825,35 +3055,43 @@
                     },
                     "submissionDate": {
                         "type": "string",
+                        "description": "Gets or sets the submission date.",
                         "nullable": true
                     },
                     "insurance": {
                         "type": "number",
+                        "description": "Gets the insurance amount.",
                         "format": "double",
                         "nullable": true
                     },
                     "creditworthiness": {
                         "type": "string",
+                        "description": "Gets the creditworthiness of the customer.",
                         "nullable": true
                     },
                     "creditLimit": {
                         "type": "string",
+                        "description": "Gets the credit limit.",
                         "nullable": true
                     },
                     "internalNote": {
                         "type": "string",
+                        "description": "Gets or sets the internal note.",
                         "nullable": true
                     },
                     "isDeleted": {
                         "type": "boolean",
+                        "description": "Get or sets the is deleted flag",
                         "nullable": true
                     },
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the contract id.",
                         "format": "uuid"
                     },
                     "organizationId": {
                         "type": "string",
+                        "description": "Gets or sets the organization id.",
                         "format": "uuid"
                     },
                     "status": {
@@ -2876,46 +3114,61 @@
                         "items": {
                             "$ref": "#/components/schemas/ContractItemModel"
                         },
+                        "description": "Gets or sets the items of the contrat.",
                         "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the create date time.",
                         "format": "date-time"
                     },
                     "createUserId": {
                         "type": "string",
+                        "description": "Gets or sets the create user id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "createUserName": {
                         "type": "string",
+                        "description": "Gets or sets the create user name.",
                         "nullable": true
                     },
                     "updateDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the update date time.",
                         "format": "date-time"
                     },
                     "updateUserId": {
                         "type": "string",
+                        "description": "Gets or sets the update user id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "updateUserName": {
                         "type": "string",
+                        "description": "Gets or sets the update user name.",
+                        "nullable": true
+                    },
+                    "externalOrderLink": {
+                        "type": "string",
+                        "description": "Gets or sets the link for external ordering.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the model of a contract."
             },
             "ContractReportModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the contract id.",
                         "format": "uuid"
                     },
                     "organizationId": {
                         "type": "string",
+                        "description": "Gets or sets the organization id.",
                         "format": "uuid"
                     },
                     "status": {
@@ -2938,58 +3191,71 @@
                         "items": {
                             "$ref": "#/components/schemas/ContractItemModel"
                         },
+                        "description": "Gets or sets the items of the contrat.",
                         "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the create date time.",
                         "format": "date-time"
                     },
                     "createUserId": {
                         "type": "string",
+                        "description": "Gets or sets the create user id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "createUserName": {
                         "type": "string",
+                        "description": "Gets or sets the create user name.",
                         "nullable": true
                     },
                     "updateDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the update date time.",
                         "format": "date-time"
                     },
                     "updateUserId": {
                         "type": "string",
+                        "description": "Gets or sets the update user id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "updateUserName": {
                         "type": "string",
+                        "description": "Gets or sets the update user name.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.\n\nA human readable identifier.",
                         "nullable": true
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "orderDate": {
                         "type": "string",
+                        "description": "Gets or sets the order date.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -2998,6 +3264,7 @@
                     },
                     "projectId": {
                         "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -3006,37 +3273,45 @@
                     },
                     "submissionDate": {
                         "type": "string",
+                        "description": "Gets or sets the submission date.",
                         "nullable": true
                     },
                     "insurance": {
                         "type": "number",
+                        "description": "Gets the insurance amount.",
                         "format": "double",
                         "nullable": true
                     },
                     "creditworthiness": {
                         "type": "string",
+                        "description": "Gets the creditworthiness of the customer.",
                         "nullable": true
                     },
                     "creditLimit": {
                         "type": "string",
+                        "description": "Gets the credit limit.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a contract reporting model"
             },
             "ContractStatusModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the status.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the status.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number of the status.\n\nThe number is a human readable identifier of the status.",
                         "nullable": true
                     },
                     "roles": {
@@ -3044,21 +3319,26 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles.\n\nThe roles will decide whether contracts with the status can be manipulated in certain ways.\nA list of available roles at the moment:\n<list type=\"bullet\"><item>disable_edit</item>\nWill diable editing of the cotracts.<item>disable_delete</item>\nThe user should be unable to delete the contract if a status with this role is set.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\nupdated when updated in a contact.</list>",
                         "nullable": true
                     },
                     "hexCode": {
                         "type": "string",
+                        "description": "Gets or sets the color of the status as hexadicimal value.",
                         "nullable": true
                     },
                     "organizationId": {
                         "type": "string",
+                        "description": "Gets or sets the organization id.",
                         "format": "uuid"
                     },
                     "isDeleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the status is deleted."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the status of a contract.\n\nThe status woll allow or forbin certian actions of a billing line."
             },
             "ConvertToShipmentRequest": {
                 "type": "object",
@@ -3086,53 +3366,66 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "isDefault": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the cost object is the default cost object."
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date for the cost object.",
                         "format": "date-time"
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date for the cost object.",
                         "format": "date-time"
                     },
                     "purchasePrice": {
                         "type": "number",
+                        "description": "Gets or sets the purchase price.",
                         "format": "double"
                     },
                     "freightPrice": {
                         "type": "number",
+                        "description": "Gets or sets the freight price.",
                         "format": "double"
                     },
                     "salePrice": {
                         "type": "number",
+                        "description": "Gets or set the sale price.",
                         "format": "double"
                     },
                     "tollPrice": {
                         "type": "number",
+                        "description": "Gets or sets the toll price per kilometer.",
                         "format": "double"
                     },
                     "pricePerKilometer": {
                         "type": "number",
+                        "description": "Gets or sets the price per kilometer.",
                         "format": "double"
                     },
                     "minimumDistance": {
                         "type": "number",
+                        "description": "Gets or sets the minimum distance before the price per kilometer is applied.",
                         "format": "double"
                     },
                     "additionalMaterialCost": {
                         "type": "number",
+                        "description": "Gets or sets additional material cost.",
                         "format": "double"
                     },
                     "additionalFreightCost": {
                         "type": "number",
+                        "description": "Gets or sets additional freight cost.",
                         "format": "double"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "References the cost of a supplier for an article item."
             },
             "CreateBillingLineRequest": {
                 "type": "object",
@@ -3142,60 +3435,72 @@
                     },
                     "statusId": {
                         "type": "string",
+                        "description": "Gets or sets the status id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "singlePrice": {
                         "type": "number",
+                        "description": "Gets or sets the single price.\n\nRepresents the price of a single item.",
                         "format": "double",
                         "nullable": true
                     },
                     "totalPrice": {
                         "type": "number",
+                        "description": "Gets or sets the total price.\n\nRepresents the price of all items.",
                         "format": "double",
                         "nullable": true
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets the external reference.",
                         "nullable": true
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the billing line text",
                         "nullable": true
                     },
                     "quantity": {
                         "$ref": "#/components/schemas/QuantityModel"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to create a billing line."
             },
             "CreateContractRequest": {
                 "type": "object",
                 "properties": {
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.\n\nA human readable identifier.",
                         "nullable": true
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "orderDate": {
                         "type": "string",
+                        "description": "Gets or sets the order date.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -3204,6 +3509,7 @@
                     },
                     "projectId": {
                         "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -3212,56 +3518,68 @@
                     },
                     "submissionDate": {
                         "type": "string",
+                        "description": "Gets or sets the submission date.",
                         "nullable": true
                     },
                     "insurance": {
                         "type": "number",
+                        "description": "Gets the insurance amount.",
                         "format": "double",
                         "nullable": true
                     },
                     "creditworthiness": {
                         "type": "string",
+                        "description": "Gets the creditworthiness of the customer.",
                         "nullable": true
                     },
                     "creditLimit": {
                         "type": "string",
+                        "description": "Gets the credit limit.",
                         "nullable": true
                     },
                     "internalNote": {
                         "type": "string",
+                        "description": "Gets or sets the internal note.",
                         "nullable": true
                     },
                     "isDeleted": {
                         "type": "boolean",
+                        "description": "Get or sets the is deleted flag",
                         "nullable": true
                     },
                     "businessPartnerContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the business partner.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "businessPartnerPersonalAccountId": {
                         "type": "string",
+                        "description": "Gets or sets the personal account id for the business partner.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "customerContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the customer.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "customerPersonalAccountId": {
                         "type": "string",
+                        "description": "Gets or sets the personal account id for the customer.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "representativeUserId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the representative user.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "contactPersonContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the contact person.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -3270,10 +3588,12 @@
                         "items": {
                             "$ref": "#/components/schemas/CreateItemModel"
                         },
+                        "description": "Gets or sets the items of the contrat.",
                         "nullable": true
                     },
                     "statusId": {
                         "type": "string",
+                        "description": "Gets or sets the contract status.",
                         "format": "uuid",
                         "nullable": true
                     }
@@ -3285,14 +3605,17 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the status.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the status.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number of the status.\n\nThe number is a human readable identifier of the status.",
                         "nullable": true
                     },
                     "roles": {
@@ -3300,10 +3623,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles.\n\nThe roles will decide whether contracts with the status can be manipulated in certain ways.\nA list of available roles at the moment:\n<list type=\"bullet\"><item>disable_edit</item>\nWill diable editing of the cotracts.<item>disable_delete</item>\nThe user should be unable to delete the contract if a status with this role is set.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\nupdated when updated in a contact.</list>",
                         "nullable": true
                     },
                     "hexCode": {
                         "type": "string",
+                        "description": "Gets or sets the color of the status as hexadicimal value.",
                         "nullable": true
                     }
                 },
@@ -3318,14 +3643,23 @@
                 "properties": {
                     "contractItemId": {
                         "type": "string",
+                        "description": "Gets or sets the contract item id to order.",
                         "format": "uuid"
                     },
                     "quantity": {
                         "type": "number",
+                        "description": "Gets or sets the quantity to order.",
                         "format": "double"
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the requested delivery date for this item.",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for an item within an external order creation."
             },
             "CreateExternalOrderRequest": {
                 "required": [
@@ -3338,24 +3672,34 @@
                 "properties": {
                     "date": {
                         "type": "string",
+                        "description": "Gets or sets the requested delivery/order date.",
                         "format": "date-time"
                     },
                     "orderPersonName": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the name of the person placing the order."
                     },
                     "orderPersonSignature": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the signature of the person placing the order."
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets optional notes for the order.",
+                        "nullable": true
                     },
                     "items": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/CreateExternalOrderItemRequest"
-                        }
+                        },
+                        "description": "Gets or sets the ordered items."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for creating an external order."
             },
             "CreateItemModel": {
                 "required": [
@@ -3365,26 +3709,32 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the item-id of the contract item.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text of the item.",
                         "nullable": true
                     },
                     "index": {
                         "type": "integer",
+                        "description": "Gets or sets the index.\n\nWill set the index of the item in the list of items.",
                         "format": "int32"
                     },
                     "positionNumber": {
                         "type": "integer",
+                        "description": "Gets or sets the position number of the contract item.",
                         "format": "int32"
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "supplierReferenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number for the supplier.",
                         "nullable": true
                     },
                     "billingType": {
@@ -3392,6 +3742,7 @@
                     },
                     "articleId": {
                         "type": "string",
+                        "description": "Gets or sets the article.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -3406,15 +3757,18 @@
                         "items": {
                             "$ref": "#/components/schemas/CostObjectModel"
                         },
+                        "description": "Gets or sets the costs.",
                         "nullable": true
                     },
                     "distance": {
                         "type": "number",
+                        "description": "Gets or sets the distance for the calculation in kilometers.",
                         "format": "double",
                         "nullable": true
                     },
                     "tollDistance": {
                         "type": "number",
+                        "description": "Gets or sets the tollable distance for the calculation in kilometers.",
                         "format": "double",
                         "nullable": true
                     },
@@ -3423,6 +3777,7 @@
                     },
                     "cashDiscount": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is cash discountable.",
                         "nullable": true
                     },
                     "alternativeType": {
@@ -3430,43 +3785,52 @@
                     },
                     "parentItem": {
                         "type": "string",
+                        "description": "Gets or sets the id of the parent item in case of an alternative item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "printToReporting": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is added to the report.",
                         "nullable": true
                     },
                     "useInDisposition": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is used for the disposition conversion.",
                         "nullable": true
                     },
                     "type": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets the type of the contract item."
                     },
                     "supplierContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id of the supplier of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "loadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the loading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "unloadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the unloading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "alternativeLoadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the alternative loading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "alternativeUnloadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the alternative unloading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -3476,47 +3840,57 @@
                     },
                     "departmentId": {
                         "type": "string",
+                        "description": "Gets or sets the department id",
                         "format": "uuid",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "certified": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the article is certified.",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the article item.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\n\nCan be used to set customer exclusive properties for a contract item.",
                         "nullable": true
                     },
                     "allowExternalOrdering": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether external ordering is allowed for this item."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the base model of a contract item."
             },
             "CreateShipmentItemRequest": {
                 "type": "object",
                 "properties": {
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text.\n\nThe text is a field for the user to give more context to the shipment item and the billing.",
                         "nullable": true
                     },
                     "loadingMeters": {
                         "type": "number",
+                        "description": "Gets or sets the loading meters.\n\nLoading meters define how many space a packed object will use on a trailer.",
                         "format": "double",
                         "nullable": true
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets the external reference.",
                         "nullable": true
                     },
                     "quantity": {
@@ -3527,20 +3901,24 @@
                     },
                     "articleId": {
                         "type": "string",
+                        "description": "Gets or sets the article.\n\nThis just contains a part of the actual article class.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "loadingAidId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the loading aid.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "orderNumber": {
                         "type": "integer",
+                        "description": "Gets or sets the order number of a shipment item.",
                         "format": "int32"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Shared model of shipment item."
             },
             "Dates": {
                 "type": "object",
@@ -3579,19 +3957,32 @@
                 },
                 "additionalProperties": false
             },
+            "DeactivateExpiredRequest": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "additionalProperties": false
+            },
             "DepartmentModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Get or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a department model."
             },
             "EndpointContract": {
                 "type": "object",
@@ -3641,42 +4032,51 @@
                 "properties": {
                     "street": {
                         "type": "string",
+                        "description": "Gets or sets the street.",
                         "nullable": true
                     },
                     "postalCode": {
                         "type": "string",
+                        "description": "Gets or sets the postal code.",
                         "nullable": true
                     },
                     "city": {
                         "type": "string",
+                        "description": "Gets or sets the city.",
                         "nullable": true
                     },
                     "countryIso": {
                         "type": "string",
+                        "description": "Gets or sets the country ISO code.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a simplified address for external ordering."
             },
             "ExternalOrderingConstructionSiteModel": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the construction site name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a construction site for external ordering."
             },
             "ExternalOrderingContractItemModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id of the contract item.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the item description text.",
                         "nullable": true
                     },
                     "quantity": {
@@ -3684,28 +4084,38 @@
                     },
                     "remainingQuantity": {
                         "$ref": "#/components/schemas/ExternalOrderingQuantityModel"
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number for the supplier.",
+                        "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a subset of the contract item for external ordering."
             },
             "ExternalOrderingContractModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the contract id.",
                         "format": "uuid"
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the contract number.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets the valid from date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets the valid to date.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -3720,71 +4130,92 @@
                         "items": {
                             "$ref": "#/components/schemas/ExternalOrderingContractItemModel"
                         },
+                        "description": "Gets or sets the contract items.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a subset of the contract for external ordering."
             },
             "ExternalOrderingCustomerModel": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the customer name.",
                         "nullable": true
                     },
                     "address": {
                         "$ref": "#/components/schemas/ExternalOrderingAddressModel"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a customer for external ordering."
             },
             "ExternalOrderingOrderItemModel": {
                 "type": "object",
                 "properties": {
                     "contractItemId": {
                         "type": "string",
+                        "description": "Gets or sets the referenced contract item id.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the item text/description.",
                         "nullable": true
                     },
                     "quantity": {
                         "type": "number",
+                        "description": "Gets or sets the ordered quantity.",
                         "format": "double"
                     },
                     "quantityUnitName": {
                         "type": "string",
+                        "description": "Gets or sets the quantity unit name.",
+                        "nullable": true
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the requested delivery date for this item.",
+                        "format": "date-time",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an item within an external order response."
             },
             "ExternalOrderingOrderModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the order id.",
                         "format": "uuid"
                     },
                     "contractId": {
                         "type": "string",
+                        "description": "Gets or sets the contract id.",
                         "format": "uuid"
                     },
                     "date": {
                         "type": "string",
+                        "description": "Gets or sets the requested delivery/order date.",
                         "format": "date-time"
                     },
                     "orderPersonName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the person who placed the order.",
                         "nullable": true
                     },
                     "orderPersonSignature": {
                         "type": "string",
+                        "description": "Gets or sets the signature of the person who placed the order.",
                         "nullable": true
                     },
                     "status": {
                         "type": "string",
+                        "description": "Gets or sets the order status.",
                         "nullable": true
                     },
                     "items": {
@@ -3792,41 +4223,54 @@
                         "items": {
                             "$ref": "#/components/schemas/ExternalOrderingOrderItemModel"
                         },
+                        "description": "Gets or sets the ordered items.",
                         "nullable": true
                     },
                     "createDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the create date time.",
                         "format": "date-time"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Gets or sets optional notes for the order.",
+                        "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an external order response."
             },
             "ExternalOrderingQuantityModel": {
                 "type": "object",
                 "properties": {
                     "value": {
                         "type": "number",
+                        "description": "Gets or sets the quantity value.",
                         "format": "double"
                     },
                     "quantityUnit": {
                         "$ref": "#/components/schemas/ExternalOrderingQuantityUnitModel"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a quantity for external ordering."
             },
             "ExternalOrderingQuantityUnitModel": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the unit name.",
                         "nullable": true
                     },
                     "shortName": {
                         "type": "string",
+                        "description": "Gets or sets the unit short name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a quantity unit for external ordering."
             },
             "GrpcDefinitions": {
                 "type": "object",
@@ -3854,6 +4298,7 @@
                     2
                 ],
                 "type": "integer",
+                "description": "Represents a type of which the loading / unloading time is set.",
                 "format": "int32"
             },
             "OrganizationSettingResult": {
@@ -3912,10 +4357,12 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the status.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number of the status.",
                         "nullable": true
                     },
                     "roles": {
@@ -3923,10 +4370,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles of the status. These dictate the behaviour of the contract.",
                         "nullable": true
                     },
                     "hexCode": {
                         "type": "string",
+                        "description": "Gets or sets the hexcode of the display color of the status.",
                         "nullable": true
                     }
                 },
@@ -3937,92 +4386,111 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "isDefault": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the cost object is the default cost object.",
                         "nullable": true
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date for the cost object.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date for the cost object.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "purchasePrice": {
                         "type": "number",
+                        "description": "Gets or sets the purchase price.",
                         "format": "double",
                         "nullable": true
                     },
                     "freightPrice": {
                         "type": "number",
+                        "description": "Gets or sets the freight price.",
                         "format": "double",
                         "nullable": true
                     },
                     "salePrice": {
                         "type": "number",
+                        "description": "Gets or set the sale price.",
                         "format": "double",
                         "nullable": true
                     },
                     "tollPrice": {
                         "type": "number",
+                        "description": "Gets or sets the toll price per kilometer.",
                         "format": "double",
                         "nullable": true
                     },
                     "pricePerKilometer": {
                         "type": "number",
+                        "description": "Gets or sets the price per kilometer.",
                         "format": "double",
                         "nullable": true
                     },
                     "minimumDistance": {
                         "type": "number",
+                        "description": "Gets or sets the minimum distance before the price per kilometer is applied.",
                         "format": "double",
                         "nullable": true
                     },
                     "additionalMaterialCost": {
                         "type": "number",
+                        "description": "Gets or sets additional material cost.",
                         "format": "double",
                         "nullable": true
                     },
                     "additionalFreightCost": {
                         "type": "number",
+                        "description": "Gets or sets additional freight cost.",
                         "format": "double",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "References the cost of a supplier for an article item."
             },
             "PatchItemModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "text": {
                         "type": "string",
+                        "description": "Gets or sets the text of the item.",
                         "nullable": true
                     },
                     "index": {
                         "type": "integer",
+                        "description": "Gets or sets the index.\n\nWill set the index of the item in the list of items.",
                         "format": "int32",
                         "nullable": true
                     },
                     "positionNumber": {
                         "type": "integer",
+                        "description": "Gets or sets the position number of the contract item.",
                         "format": "int32",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "supplierReferenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number for the supplier.",
                         "nullable": true
                     },
                     "billingType": {
@@ -4030,6 +4498,7 @@
                     },
                     "articleId": {
                         "type": "string",
+                        "description": "Gets or sets the article id.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -4044,15 +4513,18 @@
                         "items": {
                             "$ref": "#/components/schemas/PatchCostObject"
                         },
+                        "description": "Gets or sets the costs.",
                         "nullable": true
                     },
                     "distance": {
                         "type": "number",
+                        "description": "Gets or sets the distance for the calculation in kilometers.",
                         "format": "double",
                         "nullable": true
                     },
                     "tollDistance": {
                         "type": "number",
+                        "description": "Gets or sets the tollable distance for the calculation in kilometers.",
                         "format": "double",
                         "nullable": true
                     },
@@ -4061,6 +4533,7 @@
                     },
                     "cashDiscount": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is cash discountable.",
                         "nullable": true
                     },
                     "alternativeType": {
@@ -4068,43 +4541,52 @@
                     },
                     "parentItem": {
                         "type": "string",
+                        "description": "Gets or sets the id of the parent item in case of an alternative item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "printToReporting": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is added to the report.",
                         "nullable": true
                     },
                     "useInDisposition": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the item is used for the disposition conversion.",
                         "nullable": true
                     },
                     "type": {
                         "type": "string",
+                        "description": "Gets the type of the contract item.",
                         "nullable": true
                     },
                     "supplierContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id of the supplier of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "loadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the loading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "unloadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the unloading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "alternativeLoadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the alnternative loading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "alternativeUnloadingAddressId": {
                         "type": "string",
+                        "description": "Gets or sets the alnternative unloading address id of the customer of the contract item.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -4114,36 +4596,44 @@
                     },
                     "departmentId": {
                         "type": "string",
+                        "description": "Gets or sets the department id",
                         "format": "uuid",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "certified": {
                         "type": "boolean",
+                        "description": "Gets or sets whether the article is certified.",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the article item.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "_remove": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
                     },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\n\nCan be used to set customer exclusive properties for a contract.",
                         "nullable": true
                     },
                     "allowExternalOrdering": {
                         "type": "boolean",
+                        "description": "Gets or sets whether external ordering is allowed for this item.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the base model of a contract item."
             },
             "ProblemDetails": {
                 "type": "object",
@@ -4177,31 +4667,37 @@
                 "properties": {
                     "value": {
                         "type": "number",
+                        "description": "Gets or sets the value as double.",
                         "format": "double"
                     },
                     "quantityUnitId": {
                         "type": "string",
+                        "description": "Gets or sets the quantity unit.",
                         "format": "uuid",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a quantity object."
             },
             "QuantityRequest": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the quantity unit id",
                         "format": "uuid",
                         "nullable": true
                     },
                     "value": {
                         "type": "number",
+                        "description": "Gets or sets the value (quantity)",
                         "format": "double",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to specify a quantity and its associated unit."
             },
             "RequiredEndpointContractDefinition": {
                 "type": "object",
@@ -4402,41 +4898,49 @@
                     },
                     "loadStart": {
                         "type": "string",
+                        "description": "Gets or sets the load time slot start with date and time\n\nThis will define the start of the time range the driver could start the loading process.\nThis will usually be set by the user or an api based on the values he gets from customer.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "loadEnd": {
                         "type": "string",
+                        "description": "Gets or sets the load time slot end with date and time.\n\nThis will define the end of the time range the driver could end the loading process.\nThis will usually be set by the user or an api based on the values he gets from the customer.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "plannedLoadStart": {
                         "type": "string",
+                        "description": "Gets or sets the planned laod start with date and time.\n\nThis will define the planned start of the loading process.\nThis will usually be set by the user based on his dayplan for the resource.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "plannedLoadEnd": {
                         "type": "string",
+                        "description": "Gets or sets the planned load end with date and time.\n\nThis will define the planned end of the loading process.\nThis will usually be set by the user based on his dayplan for the resource.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "calculatedLoadStart": {
                         "type": "string",
+                        "description": "Gets or sets the calculated load start with date and time.\n\nThis will define the calculated / theoretical start of the loading process.\nThis will usually be set by an api based on data given by the telematics.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "calculatedLoadEnd": {
                         "type": "string",
+                        "description": "Gets or sets the calculated load end with date and time.\n\nThis will define the calculated / theoretical end of the laoding process.\nThis will usually be set by an api based on data given by the telematics.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "actualLoadStart": {
                         "type": "string",
+                        "description": "Gets or sets the actual laod start with date and time.\n\nThis will define the actual start of the loading process.\nThis will usually be set by an api based on the data given by the telematics.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "actualLoadEnd": {
                         "type": "string",
+                        "description": "Gets or sets the actual load end with date and time.\n\nThis will define the actual end of the loading process.\nThis will usually be set by an api based on the data given by the telematics",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -4445,41 +4949,49 @@
                     },
                     "deliveryStart": {
                         "type": "string",
+                        "description": "Gets or sets the delivery time slot start with date and time.\n\nThis will define the start of the time range when the driver could deliver the shipment.\nThis will usually be set by the user or an api based on the values he gets from the customer.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "deliveryEnd": {
                         "type": "string",
+                        "description": "Gets or sets the delivery time slot end with date and time.\n\nThis will define the end of the time range when the driver could deliver the shipment.\nThis will usually be set by the user or an api based on the values he gets from the customer.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "plannedDeliveryStart": {
                         "type": "string",
+                        "description": "Gets or sets the planned delivery start with date and time.\n\nThis defines the planned start of the delivery / unloading process.\nThis will usually be set by the user based on his dayplan of the resource.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "plannedDeliveryEnd": {
                         "type": "string",
+                        "description": "Gets or sets the planned delivery end with date and time.\n\nThis defines the planned end off the delivery / unlaoding process.\nThis will usually be set by the user based on his dayplan of the resource.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "calculatedDeliveryStart": {
                         "type": "string",
+                        "description": "Gets or sets the calculated delivery start with date and time.\n\nThis defines the calculated start of the delivery / unlaoding process.\nThis will usually be set by an api based on telematics data.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "calculatedDeliveryEnd": {
                         "type": "string",
+                        "description": "Gets or sets the calculated delivery end with date and time.\n\nThis defines the calculated end of the delivery / unlaoding process.\nThis will usually be set by an api based on telematics data.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "actualDeliveryStart": {
                         "type": "string",
+                        "description": "Gets or sets the actual delivery start with date and time.\n\nThis defines the actual start of the delivery / unlaoding process.\nThis will usually be set by an api based on telematics data.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "actualDeliveryEnd": {
                         "type": "string",
+                        "description": "Gets or sets the actual delivery end with date and time.\n\nThis defines the actual end of the delivery / unlaoding process.\nThis will usually be set by an api based on telematics data.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -4488,30 +5000,37 @@
                     },
                     "orderDate": {
                         "type": "string",
+                        "description": "Gets or sets the order date.\n\nThis defines the date the shipment is ordered at.\nThis is a relevant information for the billing process and needs to be set.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "shipmentNumber": {
                         "type": "string",
+                        "description": "Gets or sets the shipment number.\n\nThis defines a number to identify the shipment as the user.",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number\n\nThis defines a number that references the same shipment in another programm or context.",
                         "nullable": true
                     },
                     "loadNumber": {
                         "type": "string",
+                        "description": "Gets or sets the load number.\n\nThis defines a number that the driver might need to load this shipment",
                         "nullable": true
                     },
                     "deliveryNumber": {
                         "type": "string",
+                        "description": "Gets or sets the delivery number.\n\nThis defines a number that the driber might need to deliver / unload this shipment.",
                         "nullable": true
                     },
                     "isTemplate": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets werther the shipment is a template.\n\nTemplate shipments are used to create shipments with certain values preset."
                     },
                     "templateName": {
                         "type": "string",
+                        "description": "Gets or sets the template name.\n\nA name for the template to give the user the option to find it easier",
                         "nullable": true
                     },
                     "tags": {
@@ -4520,35 +5039,42 @@
                             "type": "string",
                             "format": "uuid"
                         },
+                        "description": "Gets or sets the tags.\n\nTags are short texts to add information to a shipment without the need to add new properties.\nThese are e.g. used in the pricing module to add some additional conditions.",
                         "nullable": true
                     },
                     "notes": {
                         "type": "string",
+                        "description": "Gets or sets the notes.\n\nThis gives the user the possibillity to add some more sentences about this shipment.",
                         "nullable": true
                     },
                     "loadWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the load workflow.\n\nRepresents a telematic workflow that can be set to give the driver \nadditional instructions during the loading process.\nUsually these workflows need to be enabled and added within their telematic system.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "deliveryWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the delivery workflow.\n\nRepresents a telematic workflow that can be set to give the driver \nadditional instructions during the delivery / unload process.\nUsually these workflows need to be enabled and added within their telematic system.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "constructionSiteId": {
                         "type": "string",
+                        "description": "Gets or sets a construction site id.\n\nThe id will be resolved by the construction site api.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "departmentId": {
                         "type": "string",
+                        "description": "Gets or sets the department id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties.\n\nCan be used to set customer exclusive properties for a contract.",
                         "nullable": true
                     },
                     "items": {
@@ -4556,6 +5082,7 @@
                         "items": {
                             "$ref": "#/components/schemas/CreateShipmentItemRequest"
                         },
+                        "description": "Gets or sets shipment items.\n\nRepresents a list of items of a shipment which will contain further information about the freight.",
                         "nullable": true
                     },
                     "billingLines": {
@@ -4563,6 +5090,7 @@
                         "items": {
                             "$ref": "#/components/schemas/CreateBillingLineRequest"
                         },
+                        "description": "Gets or sets the list of billing lines.",
                         "nullable": true
                     }
                 },
@@ -4573,18 +5101,22 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets the id of the terms of payment.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets the name.",
                         "nullable": true
                     },
                     "number": {
                         "type": "string",
+                        "description": "Gets the number.\n\nThe number is a human readable identifier.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a terms of payment object."
             },
             "UnwrapItemRequet": {
                 "type": "object",
@@ -4602,28 +5134,34 @@
                 "properties": {
                     "number": {
                         "type": "string",
+                        "description": "Gets or sets the number.\n\nA human readable identifier.",
                         "nullable": true
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "referenceNumber": {
                         "type": "string",
+                        "description": "Gets or sets the reference number.",
                         "nullable": true
                     },
                     "orderDate": {
                         "type": "string",
+                        "description": "Gets or sets the order date.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "startDate": {
                         "type": "string",
+                        "description": "Gets or sets the start date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDate": {
                         "type": "string",
+                        "description": "Gets or sets the end date of the contract.\n\nShould only contain the date.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -4632,6 +5170,7 @@
                     },
                     "projectId": {
                         "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -4640,56 +5179,68 @@
                     },
                     "submissionDate": {
                         "type": "string",
+                        "description": "Gets or sets the submission date.",
                         "nullable": true
                     },
                     "insurance": {
                         "type": "number",
+                        "description": "Gets the insurance amount.",
                         "format": "double",
                         "nullable": true
                     },
                     "creditworthiness": {
                         "type": "string",
+                        "description": "Gets the creditworthiness of the customer.",
                         "nullable": true
                     },
                     "creditLimit": {
                         "type": "string",
+                        "description": "Gets the credit limit.",
                         "nullable": true
                     },
                     "internalNote": {
                         "type": "string",
+                        "description": "Gets or sets the internal note.",
                         "nullable": true
                     },
                     "isDeleted": {
                         "type": "boolean",
+                        "description": "Get or sets the is deleted flag",
                         "nullable": true
                     },
                     "businessPartnerContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the business partner.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "businessPartnerPersonalAccountId": {
                         "type": "string",
+                        "description": "Gets or sets the personal account id for the business partner.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "customerContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the customer.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "customerPersonalAccountId": {
                         "type": "string",
+                        "description": "Gets or sets the personal account id for the customer.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "representativeUserId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the representative user.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "contactPersonContactId": {
                         "type": "string",
+                        "description": "Gets or sets the contact id for the contact person.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -4698,15 +5249,18 @@
                         "items": {
                             "$ref": "#/components/schemas/PatchItemModel"
                         },
+                        "description": "Gets or sets the items of the contrat.",
                         "nullable": true
                     },
                     "statusId": {
                         "type": "string",
+                        "description": "Gets or sets the contract status.",
                         "format": "uuid",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to update a contract."
             },
             "UpdateSettingRequest": {
                 "type": "object",
@@ -4722,28 +5276,34 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Class to represent a user."
             },
             "VehicleTypeModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets theid of the vehicle type.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a vehicle type."
             }
         },
         "securitySchemes": {

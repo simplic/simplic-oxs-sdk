@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// Defines AlternativeTypeModel
+    /// Represents which type of alternative the contract item is.
     /// </summary>
+    /// <value>Represents which type of alternative the contract item is.</value>
     public enum AlternativeTypeModel
     {
         /// <summary>

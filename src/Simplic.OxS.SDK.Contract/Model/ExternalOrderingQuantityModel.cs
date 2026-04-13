@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingQuantityModel
+    /// Represents a quantity for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingQuantityModel")]
     public partial class ExternalOrderingQuantityModel : IEquatable<ExternalOrderingQuantityModel>, IValidatableObject
@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingQuantityModel" /> class.
         /// </summary>
-        /// <param name="value">value.</param>
+        /// <param name="value">Gets or sets the quantity value..</param>
         /// <param name="quantityUnit">quantityUnit.</param>
         public ExternalOrderingQuantityModel(double value = default(double), ExternalOrderingQuantityUnitModel quantityUnit = default(ExternalOrderingQuantityUnitModel))
         {
@@ -45,8 +45,9 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the quantity value.
         /// </summary>
+        /// <value>Gets or sets the quantity value.</value>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public double Value { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// TermsOfPaymentModel
+    /// Represents a terms of payment object.
     /// </summary>
     [DataContract(Name = "TermsOfPaymentModel")]
     public partial class TermsOfPaymentModel : IEquatable<TermsOfPaymentModel>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="TermsOfPaymentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
+        /// <param name="id">Gets the id of the terms of payment..</param>
+        /// <param name="name">Gets the name..</param>
+        /// <param name="number">Gets the number.  The number is a human readable identifier..</param>
         public TermsOfPaymentModel(Guid id = default(Guid), string name = default(string), string number = default(string))
         {
             this.Id = id;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets the id of the terms of payment.
         /// </summary>
+        /// <value>Gets the id of the terms of payment.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets the name.
         /// </summary>
+        /// <value>Gets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets the number.  The number is a human readable identifier.
         /// </summary>
+        /// <value>Gets the number.  The number is a human readable identifier.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 

@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Contract.BillingTypeModel
+Represents a billing type, which is either sell or buy.
 
 ## Properties
 

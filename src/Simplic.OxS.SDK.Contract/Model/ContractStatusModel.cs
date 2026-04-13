@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ContractStatusModel
+    /// Represents the status of a contract.  The status woll allow or forbin certian actions of a billing line.
     /// </summary>
     [DataContract(Name = "ContractStatusModel")]
     public partial class ContractStatusModel : IEquatable<ContractStatusModel>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractStatusModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="number">number.</param>
-        /// <param name="roles">roles.</param>
-        /// <param name="hexCode">hexCode.</param>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Gets or sets the id of the status..</param>
+        /// <param name="name">Gets or sets the name of the status..</param>
+        /// <param name="number">Gets or sets the number of the status.  The number is a human readable identifier of the status..</param>
+        /// <param name="roles">Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;.</param>
+        /// <param name="hexCode">Gets or sets the color of the status as hexadicimal value..</param>
+        /// <param name="organizationId">Gets or sets the organization id..</param>
+        /// <param name="isDeleted">Gets or sets whether the status is deleted..</param>
         public ContractStatusModel(Guid id = default(Guid), string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexCode = default(string), Guid organizationId = default(Guid), bool isDeleted = default(bool))
         {
             this.Id = id;
@@ -55,44 +55,51 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the status.
         /// </summary>
+        /// <value>Gets or sets the id of the status.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the status.
         /// </summary>
+        /// <value>Gets or sets the name of the status.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the number of the status.  The number is a human readable identifier of the status.
         /// </summary>
+        /// <value>Gets or sets the number of the status.  The number is a human readable identifier of the status.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;
         /// </summary>
+        /// <value>Gets or sets the roles.  The roles will decide whether contracts with the status can be manipulated in certain ways. A list of available roles at the moment: &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the cotracts.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the contract if a status with this role is set.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically updated when updated in a contact.&lt;/list&gt;</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 
         /// <summary>
-        /// Gets or Sets HexCode
+        /// Gets or sets the color of the status as hexadicimal value.
         /// </summary>
+        /// <value>Gets or sets the color of the status as hexadicimal value.</value>
         [DataMember(Name = "hexCode", EmitDefaultValue = true)]
         public string HexCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or sets the organization id.
         /// </summary>
+        /// <value>Gets or sets the organization id.</value>
         [DataMember(Name = "organizationId", EmitDefaultValue = false)]
         public Guid OrganizationId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDeleted
+        /// Gets or sets whether the status is deleted.
         /// </summary>
+        /// <value>Gets or sets whether the status is deleted.</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 

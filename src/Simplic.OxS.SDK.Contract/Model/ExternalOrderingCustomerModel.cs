@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingCustomerModel
+    /// Represents a customer for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingCustomerModel")]
     public partial class ExternalOrderingCustomerModel : IEquatable<ExternalOrderingCustomerModel>, IValidatableObject
@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingCustomerModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the customer name..</param>
         /// <param name="address">address.</param>
         public ExternalOrderingCustomerModel(string name = default(string), ExternalOrderingAddressModel address = default(ExternalOrderingAddressModel))
         {
@@ -45,8 +45,9 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the customer name.
         /// </summary>
+        /// <value>Gets or sets the customer name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

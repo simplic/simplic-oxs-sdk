@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// CreateBillingLineRequest
+    /// Request to create a billing line.
     /// </summary>
     [DataContract(Name = "CreateBillingLineRequest")]
     public partial class CreateBillingLineRequest : IEquatable<CreateBillingLineRequest>, IValidatableObject
@@ -43,11 +43,11 @@ namespace Simplic.OxS.SDK.Contract
         /// Initializes a new instance of the <see cref="CreateBillingLineRequest" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="statusId">statusId.</param>
-        /// <param name="singlePrice">singlePrice.</param>
-        /// <param name="totalPrice">totalPrice.</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="text">text.</param>
+        /// <param name="statusId">Gets or sets the status id..</param>
+        /// <param name="singlePrice">Gets or sets the single price.  Represents the price of a single item..</param>
+        /// <param name="totalPrice">Gets or sets the total price.  Represents the price of all items..</param>
+        /// <param name="reference">Gets or sets the external reference..</param>
+        /// <param name="text">Gets or sets the billing line text.</param>
         /// <param name="quantity">quantity.</param>
         public CreateBillingLineRequest(BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), string reference = default(string), string text = default(string), QuantityModel quantity = default(QuantityModel))
         {
@@ -61,32 +61,37 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets StatusId
+        /// Gets or sets the status id.
         /// </summary>
+        /// <value>Gets or sets the status id.</value>
         [DataMember(Name = "statusId", EmitDefaultValue = true)]
         public Guid? StatusId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SinglePrice
+        /// Gets or sets the single price.  Represents the price of a single item.
         /// </summary>
+        /// <value>Gets or sets the single price.  Represents the price of a single item.</value>
         [DataMember(Name = "singlePrice", EmitDefaultValue = true)]
         public double? SinglePrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPrice
+        /// Gets or sets the total price.  Represents the price of all items.
         /// </summary>
+        /// <value>Gets or sets the total price.  Represents the price of all items.</value>
         [DataMember(Name = "totalPrice", EmitDefaultValue = true)]
         public double? TotalPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the external reference.
         /// </summary>
+        /// <value>Gets or sets the external reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the billing line text
         /// </summary>
+        /// <value>Gets or sets the billing line text</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 

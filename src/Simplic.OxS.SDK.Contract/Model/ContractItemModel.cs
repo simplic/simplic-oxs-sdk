@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ContractItemModel
+    /// Represents an contract item.
     /// </summary>
     [DataContract(Name = "ContractItemModel")]
     public partial class ContractItemModel : IEquatable<ContractItemModel>, IValidatableObject
@@ -48,29 +48,29 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractItemModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="text">text.</param>
-        /// <param name="index">index.</param>
-        /// <param name="positionNumber">positionNumber.</param>
-        /// <param name="referenceNumber">referenceNumber.</param>
-        /// <param name="supplierReferenceNumber">supplierReferenceNumber.</param>
+        /// <param name="id">Gets or sets the id of the contract item..</param>
+        /// <param name="text">Gets or sets the text of the item..</param>
+        /// <param name="index">Gets or sets the index.  Will set the index of the item in the list of items..</param>
+        /// <param name="positionNumber">Gets or sets the position number of the contract item..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number..</param>
+        /// <param name="supplierReferenceNumber">Gets or sets the reference number for the supplier..</param>
         /// <param name="billingType">billingType.</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="plannedQuantity">plannedQuantity.</param>
-        /// <param name="costs">costs.</param>
-        /// <param name="distance">distance.</param>
-        /// <param name="tollDistance">tollDistance.</param>
+        /// <param name="costs">Gets or sets the costs..</param>
+        /// <param name="distance">Gets or sets the distance for the calculation in kilometers..</param>
+        /// <param name="tollDistance">Gets or sets the tollable distance for the calculation in kilometers..</param>
         /// <param name="vehicleType">vehicleType.</param>
-        /// <param name="cashDiscount">cashDiscount.</param>
+        /// <param name="cashDiscount">Gets or sets whether the item is cash discountable..</param>
         /// <param name="alternativeType">alternativeType.</param>
-        /// <param name="parentItem">parentItem.</param>
-        /// <param name="printToReporting">printToReporting.</param>
-        /// <param name="useInDisposition">useInDisposition.</param>
-        /// <param name="type">type.</param>
-        /// <param name="isDiscount">isDiscount.</param>
-        /// <param name="contractNumber">contractNumber.</param>
-        /// <param name="addon">addon.</param>
-        /// <param name="allowExternalOrdering">allowExternalOrdering.</param>
+        /// <param name="parentItem">Gets or sets the id of the parent item in case of an alternative item..</param>
+        /// <param name="printToReporting">Gets or sets whether the item is added to the report..</param>
+        /// <param name="useInDisposition">Gets or sets whether the item is used for the disposition conversion..</param>
+        /// <param name="type">Gets the type of the contract item..</param>
+        /// <param name="isDiscount">Gets or sets if the item is a discount..</param>
+        /// <param name="contractNumber">Gets or sets the contract number..</param>
+        /// <param name="addon">Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract..</param>
+        /// <param name="allowExternalOrdering">Gets or sets whether external ordering is allowed for this item..</param>
         /// <param name="supplier">supplier.</param>
         /// <param name="article">article.</param>
         /// <param name="loadingAddress">loadingAddress.</param>
@@ -78,9 +78,9 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="alternativeLoadingAddress">alternativeLoadingAddress.</param>
         /// <param name="alternativeUnloadingAddress">alternativeUnloadingAddress.</param>
         /// <param name="department">department.</param>
-        /// <param name="description">description.</param>
-        /// <param name="certified">certified.</param>
-        /// <param name="endDate">endDate.</param>
+        /// <param name="description">Gets or sets the description..</param>
+        /// <param name="certified">Gets or sets whether the article is certified..</param>
+        /// <param name="endDate">Gets or sets the end date of the article item..</param>
         public ContractItemModel(Guid id = default(Guid), string text = default(string), int index = default(int), int positionNumber = default(int), string referenceNumber = default(string), string supplierReferenceNumber = default(string), BillingType? billingType = default(BillingType?), QuantityModel quantity = default(QuantityModel), QuantityModel plannedQuantity = default(QuantityModel), List<CostObjectModel> costs = default(List<CostObjectModel>), double distance = default(double), double tollDistance = default(double), VehicleTypeModel vehicleType = default(VehicleTypeModel), bool cashDiscount = default(bool), AlternativeTypeModel? alternativeType = default(AlternativeTypeModel?), Guid? parentItem = default(Guid?), bool printToReporting = default(bool), bool useInDisposition = default(bool), string type = default(string), bool? isDiscount = default(bool?), string contractNumber = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), bool allowExternalOrdering = default(bool), Address supplier = default(Address), ArticleModel article = default(ArticleModel), Address loadingAddress = default(Address), Address unloadingAddress = default(Address), Address alternativeLoadingAddress = default(Address), Address alternativeUnloadingAddress = default(Address), DepartmentModel department = default(DepartmentModel), string description = default(string), bool? certified = default(bool?), DateTime? endDate = default(DateTime?))
         {
             this.Id = id;
@@ -119,38 +119,44 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id of the contract item.
         /// </summary>
+        /// <value>Gets or sets the id of the contract item.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or sets the text of the item.
         /// </summary>
+        /// <value>Gets or sets the text of the item.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets Index
+        /// Gets or sets the index.  Will set the index of the item in the list of items.
         /// </summary>
+        /// <value>Gets or sets the index.  Will set the index of the item in the list of items.</value>
         [DataMember(Name = "index", EmitDefaultValue = false)]
         public int Index { get; set; }
 
         /// <summary>
-        /// Gets or Sets PositionNumber
+        /// Gets or sets the position number of the contract item.
         /// </summary>
+        /// <value>Gets or sets the position number of the contract item.</value>
         [DataMember(Name = "positionNumber", EmitDefaultValue = false)]
         public int PositionNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceNumber
+        /// Gets or sets the reference number.
         /// </summary>
+        /// <value>Gets or sets the reference number.</value>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
         public string ReferenceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets SupplierReferenceNumber
+        /// Gets or sets the reference number for the supplier.
         /// </summary>
+        /// <value>Gets or sets the reference number for the supplier.</value>
         [DataMember(Name = "supplierReferenceNumber", EmitDefaultValue = true)]
         public string SupplierReferenceNumber { get; set; }
 
@@ -167,20 +173,23 @@ namespace Simplic.OxS.SDK.Contract
         public QuantityModel PlannedQuantity { get; set; }
 
         /// <summary>
-        /// Gets or Sets Costs
+        /// Gets or sets the costs.
         /// </summary>
+        /// <value>Gets or sets the costs.</value>
         [DataMember(Name = "costs", EmitDefaultValue = true)]
         public List<CostObjectModel> Costs { get; set; }
 
         /// <summary>
-        /// Gets or Sets Distance
+        /// Gets or sets the distance for the calculation in kilometers.
         /// </summary>
+        /// <value>Gets or sets the distance for the calculation in kilometers.</value>
         [DataMember(Name = "distance", EmitDefaultValue = false)]
         public double Distance { get; set; }
 
         /// <summary>
-        /// Gets or Sets TollDistance
+        /// Gets or sets the tollable distance for the calculation in kilometers.
         /// </summary>
+        /// <value>Gets or sets the tollable distance for the calculation in kilometers.</value>
         [DataMember(Name = "tollDistance", EmitDefaultValue = false)]
         public double TollDistance { get; set; }
 
@@ -191,56 +200,65 @@ namespace Simplic.OxS.SDK.Contract
         public VehicleTypeModel VehicleType { get; set; }
 
         /// <summary>
-        /// Gets or Sets CashDiscount
+        /// Gets or sets whether the item is cash discountable.
         /// </summary>
+        /// <value>Gets or sets whether the item is cash discountable.</value>
         [DataMember(Name = "cashDiscount", EmitDefaultValue = true)]
         public bool CashDiscount { get; set; }
 
         /// <summary>
-        /// Gets or Sets ParentItem
+        /// Gets or sets the id of the parent item in case of an alternative item.
         /// </summary>
+        /// <value>Gets or sets the id of the parent item in case of an alternative item.</value>
         [DataMember(Name = "parentItem", EmitDefaultValue = true)]
         public Guid? ParentItem { get; set; }
 
         /// <summary>
-        /// Gets or Sets PrintToReporting
+        /// Gets or sets whether the item is added to the report.
         /// </summary>
+        /// <value>Gets or sets whether the item is added to the report.</value>
         [DataMember(Name = "printToReporting", EmitDefaultValue = true)]
         public bool PrintToReporting { get; set; }
 
         /// <summary>
-        /// Gets or Sets UseInDisposition
+        /// Gets or sets whether the item is used for the disposition conversion.
         /// </summary>
+        /// <value>Gets or sets whether the item is used for the disposition conversion.</value>
         [DataMember(Name = "useInDisposition", EmitDefaultValue = true)]
         public bool UseInDisposition { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets the type of the contract item.
         /// </summary>
+        /// <value>Gets the type of the contract item.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDiscount
+        /// Gets or sets if the item is a discount.
         /// </summary>
+        /// <value>Gets or sets if the item is a discount.</value>
         [DataMember(Name = "isDiscount", EmitDefaultValue = true)]
         public bool? IsDiscount { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContractNumber
+        /// Gets or sets the contract number.
         /// </summary>
+        /// <value>Gets or sets the contract number.</value>
         [DataMember(Name = "contractNumber", EmitDefaultValue = true)]
         public string ContractNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Addon
+        /// Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract.
         /// </summary>
+        /// <value>Gets or sets a dictionary of addon properties.  Can be used to set customer exclusive properties for a contract.</value>
         [DataMember(Name = "addon", EmitDefaultValue = true)]
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
-        /// Gets or Sets AllowExternalOrdering
+        /// Gets or sets whether external ordering is allowed for this item.
         /// </summary>
+        /// <value>Gets or sets whether external ordering is allowed for this item.</value>
         [DataMember(Name = "allowExternalOrdering", EmitDefaultValue = true)]
         public bool AllowExternalOrdering { get; set; }
 
@@ -287,20 +305,23 @@ namespace Simplic.OxS.SDK.Contract
         public DepartmentModel Department { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Certified
+        /// Gets or sets whether the article is certified.
         /// </summary>
+        /// <value>Gets or sets whether the article is certified.</value>
         [DataMember(Name = "certified", EmitDefaultValue = true)]
         public bool? Certified { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDate
+        /// Gets or sets the end date of the article item.
         /// </summary>
+        /// <value>Gets or sets the end date of the article item.</value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 

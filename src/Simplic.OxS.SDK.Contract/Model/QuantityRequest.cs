@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// QuantityRequest
+    /// Represents a request to specify a quantity and its associated unit.
     /// </summary>
     [DataContract(Name = "QuantityRequest")]
     public partial class QuantityRequest : IEquatable<QuantityRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="QuantityRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="value">value.</param>
+        /// <param name="id">Gets or sets the quantity unit id.</param>
+        /// <param name="value">Gets or sets the value (quantity).</param>
         public QuantityRequest(Guid? id = default(Guid?), double? value = default(double?))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the quantity unit id
         /// </summary>
+        /// <value>Gets or sets the quantity unit id</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the value (quantity)
         /// </summary>
+        /// <value>Gets or sets the value (quantity)</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public double? Value { get; set; }
 

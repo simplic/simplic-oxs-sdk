@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// PatchCostObject
+    /// References the cost of a supplier for an article item.
     /// </summary>
     [DataContract(Name = "PatchCostObject")]
     public partial class PatchCostObject : IEquatable<PatchCostObject>, IValidatableObject
@@ -36,18 +36,18 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchCostObject" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="isDefault">isDefault.</param>
-        /// <param name="startDate">startDate.</param>
-        /// <param name="endDate">endDate.</param>
-        /// <param name="purchasePrice">purchasePrice.</param>
-        /// <param name="freightPrice">freightPrice.</param>
-        /// <param name="salePrice">salePrice.</param>
-        /// <param name="tollPrice">tollPrice.</param>
-        /// <param name="pricePerKilometer">pricePerKilometer.</param>
-        /// <param name="minimumDistance">minimumDistance.</param>
-        /// <param name="additionalMaterialCost">additionalMaterialCost.</param>
-        /// <param name="additionalFreightCost">additionalFreightCost.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="isDefault">Gets or sets whether the cost object is the default cost object..</param>
+        /// <param name="startDate">Gets or sets the start date for the cost object..</param>
+        /// <param name="endDate">Gets or sets the end date for the cost object..</param>
+        /// <param name="purchasePrice">Gets or sets the purchase price..</param>
+        /// <param name="freightPrice">Gets or sets the freight price..</param>
+        /// <param name="salePrice">Gets or set the sale price..</param>
+        /// <param name="tollPrice">Gets or sets the toll price per kilometer..</param>
+        /// <param name="pricePerKilometer">Gets or sets the price per kilometer..</param>
+        /// <param name="minimumDistance">Gets or sets the minimum distance before the price per kilometer is applied..</param>
+        /// <param name="additionalMaterialCost">Gets or sets additional material cost..</param>
+        /// <param name="additionalFreightCost">Gets or sets additional freight cost..</param>
         public PatchCostObject(Guid id = default(Guid), bool? isDefault = default(bool?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), double? purchasePrice = default(double?), double? freightPrice = default(double?), double? salePrice = default(double?), double? tollPrice = default(double?), double? pricePerKilometer = default(double?), double? minimumDistance = default(double?), double? additionalMaterialCost = default(double?), double? additionalFreightCost = default(double?))
         {
             this.Id = id;
@@ -65,74 +65,86 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDefault
+        /// Gets or sets whether the cost object is the default cost object.
         /// </summary>
+        /// <value>Gets or sets whether the cost object is the default cost object.</value>
         [DataMember(Name = "isDefault", EmitDefaultValue = true)]
         public bool? IsDefault { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDate
+        /// Gets or sets the start date for the cost object.
         /// </summary>
+        /// <value>Gets or sets the start date for the cost object.</value>
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDate
+        /// Gets or sets the end date for the cost object.
         /// </summary>
+        /// <value>Gets or sets the end date for the cost object.</value>
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets PurchasePrice
+        /// Gets or sets the purchase price.
         /// </summary>
+        /// <value>Gets or sets the purchase price.</value>
         [DataMember(Name = "purchasePrice", EmitDefaultValue = true)]
         public double? PurchasePrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets FreightPrice
+        /// Gets or sets the freight price.
         /// </summary>
+        /// <value>Gets or sets the freight price.</value>
         [DataMember(Name = "freightPrice", EmitDefaultValue = true)]
         public double? FreightPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets SalePrice
+        /// Gets or set the sale price.
         /// </summary>
+        /// <value>Gets or set the sale price.</value>
         [DataMember(Name = "salePrice", EmitDefaultValue = true)]
         public double? SalePrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets TollPrice
+        /// Gets or sets the toll price per kilometer.
         /// </summary>
+        /// <value>Gets or sets the toll price per kilometer.</value>
         [DataMember(Name = "tollPrice", EmitDefaultValue = true)]
         public double? TollPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets PricePerKilometer
+        /// Gets or sets the price per kilometer.
         /// </summary>
+        /// <value>Gets or sets the price per kilometer.</value>
         [DataMember(Name = "pricePerKilometer", EmitDefaultValue = true)]
         public double? PricePerKilometer { get; set; }
 
         /// <summary>
-        /// Gets or Sets MinimumDistance
+        /// Gets or sets the minimum distance before the price per kilometer is applied.
         /// </summary>
+        /// <value>Gets or sets the minimum distance before the price per kilometer is applied.</value>
         [DataMember(Name = "minimumDistance", EmitDefaultValue = true)]
         public double? MinimumDistance { get; set; }
 
         /// <summary>
-        /// Gets or Sets AdditionalMaterialCost
+        /// Gets or sets additional material cost.
         /// </summary>
+        /// <value>Gets or sets additional material cost.</value>
         [DataMember(Name = "additionalMaterialCost", EmitDefaultValue = true)]
         public double? AdditionalMaterialCost { get; set; }
 
         /// <summary>
-        /// Gets or Sets AdditionalFreightCost
+        /// Gets or sets additional freight cost.
         /// </summary>
+        /// <value>Gets or sets additional freight cost.</value>
         [DataMember(Name = "additionalFreightCost", EmitDefaultValue = true)]
         public double? AdditionalFreightCost { get; set; }
 

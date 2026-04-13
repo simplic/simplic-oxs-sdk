@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingContractModel
+    /// Represents a subset of the contract for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingContractModel")]
     public partial class ExternalOrderingContractModel : IEquatable<ExternalOrderingContractModel>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingContractModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="number">number.</param>
-        /// <param name="validFrom">validFrom.</param>
-        /// <param name="validTo">validTo.</param>
+        /// <param name="id">Gets or sets the contract id..</param>
+        /// <param name="number">Gets or sets the contract number..</param>
+        /// <param name="validFrom">Gets or sets the valid from date..</param>
+        /// <param name="validTo">Gets or sets the valid to date..</param>
         /// <param name="customer">customer.</param>
         /// <param name="constructionSite">constructionSite.</param>
-        /// <param name="items">items.</param>
+        /// <param name="items">Gets or sets the contract items..</param>
         public ExternalOrderingContractModel(Guid id = default(Guid), string number = default(string), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), ExternalOrderingCustomerModel customer = default(ExternalOrderingCustomerModel), ExternalOrderingConstructionSiteModel constructionSite = default(ExternalOrderingConstructionSiteModel), List<ExternalOrderingContractItemModel> items = default(List<ExternalOrderingContractItemModel>))
         {
             this.Id = id;
@@ -55,26 +55,30 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the contract id.
         /// </summary>
+        /// <value>Gets or sets the contract id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Number
+        /// Gets or sets the contract number.
         /// </summary>
+        /// <value>Gets or sets the contract number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFrom
+        /// Gets or sets the valid from date.
         /// </summary>
+        /// <value>Gets or sets the valid from date.</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = true)]
         public DateTime? ValidFrom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidTo
+        /// Gets or sets the valid to date.
         /// </summary>
+        /// <value>Gets or sets the valid to date.</value>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
         public DateTime? ValidTo { get; set; }
 
@@ -91,8 +95,9 @@ namespace Simplic.OxS.SDK.Contract
         public ExternalOrderingConstructionSiteModel ConstructionSite { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the contract items.
         /// </summary>
+        /// <value>Gets or sets the contract items.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<ExternalOrderingContractItemModel> Items { get; set; }
 

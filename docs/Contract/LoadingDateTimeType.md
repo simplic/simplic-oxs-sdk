@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Contract.LoadingDateTimeType
+Represents a type of which the loading / unloading time is set.
 
 ## Properties
 

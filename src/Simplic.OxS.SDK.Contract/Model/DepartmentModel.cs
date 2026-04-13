@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// DepartmentModel
+    /// Represents a department model.
     /// </summary>
     [DataContract(Name = "DepartmentModel")]
     public partial class DepartmentModel : IEquatable<DepartmentModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="DepartmentModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Get or sets the id..</param>
+        /// <param name="name">Gets or sets the name..</param>
         public DepartmentModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Get or sets the id.
         /// </summary>
+        /// <value>Get or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

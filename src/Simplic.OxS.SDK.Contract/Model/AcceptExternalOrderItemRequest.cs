@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// AcceptExternalOrderItemRequest
+    /// Request model for an item quantity override when accepting an order.
     /// </summary>
     [DataContract(Name = "AcceptExternalOrderItemRequest")]
     public partial class AcceptExternalOrderItemRequest : IEquatable<AcceptExternalOrderItemRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="AcceptExternalOrderItemRequest" /> class.
         /// </summary>
-        /// <param name="contractItemId">contractItemId.</param>
-        /// <param name="quantity">quantity.</param>
+        /// <param name="contractItemId">Gets or sets the contract item id..</param>
+        /// <param name="quantity">Gets or sets the updated quantity..</param>
         public AcceptExternalOrderItemRequest(Guid contractItemId = default(Guid), double quantity = default(double))
         {
             this.ContractItemId = contractItemId;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets ContractItemId
+        /// Gets or sets the contract item id.
         /// </summary>
+        /// <value>Gets or sets the contract item id.</value>
         [DataMember(Name = "contractItemId", EmitDefaultValue = false)]
         public Guid ContractItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the updated quantity.
         /// </summary>
+        /// <value>Gets or sets the updated quantity.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
         public double Quantity { get; set; }
 

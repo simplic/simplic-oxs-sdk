@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// ExternalOrderingAddressModel
+    /// Represents a simplified address for external ordering.
     /// </summary>
     [DataContract(Name = "ExternalOrderingAddressModel")]
     public partial class ExternalOrderingAddressModel : IEquatable<ExternalOrderingAddressModel>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalOrderingAddressModel" /> class.
         /// </summary>
-        /// <param name="street">street.</param>
-        /// <param name="postalCode">postalCode.</param>
-        /// <param name="city">city.</param>
-        /// <param name="countryIso">countryIso.</param>
+        /// <param name="street">Gets or sets the street..</param>
+        /// <param name="postalCode">Gets or sets the postal code..</param>
+        /// <param name="city">Gets or sets the city..</param>
+        /// <param name="countryIso">Gets or sets the country ISO code..</param>
         public ExternalOrderingAddressModel(string street = default(string), string postalCode = default(string), string city = default(string), string countryIso = default(string))
         {
             this.Street = street;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Contract
         }
 
         /// <summary>
-        /// Gets or Sets Street
+        /// Gets or sets the street.
         /// </summary>
+        /// <value>Gets or sets the street.</value>
         [DataMember(Name = "street", EmitDefaultValue = true)]
         public string Street { get; set; }
 
         /// <summary>
-        /// Gets or Sets PostalCode
+        /// Gets or sets the postal code.
         /// </summary>
+        /// <value>Gets or sets the postal code.</value>
         [DataMember(Name = "postalCode", EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or sets the city.
         /// </summary>
+        /// <value>Gets or sets the city.</value>
         [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryIso
+        /// Gets or sets the country ISO code.
         /// </summary>
+        /// <value>Gets or sets the country ISO code.</value>
         [DataMember(Name = "countryIso", EmitDefaultValue = true)]
         public string CountryIso { get; set; }
 

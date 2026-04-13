@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Contract
 {
     /// <summary>
-    /// AcceptExternalOrderRequest
+    /// Request model for accepting an external order.
     /// </summary>
     [DataContract(Name = "AcceptExternalOrderRequest")]
     public partial class AcceptExternalOrderRequest : IEquatable<AcceptExternalOrderRequest>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="AcceptExternalOrderRequest" /> class.
         /// </summary>
-        /// <param name="items">items.</param>
+        /// <param name="items">Gets or sets the optional item quantity overrides.  If provided, the quantities of the specified items will be updated. Items not listed keep their original quantities..</param>
         public AcceptExternalOrderRequest(List<AcceptExternalOrderItemRequest> items = default(List<AcceptExternalOrderItemRequest>))
         {
             this.Items = items;
         }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// Gets or sets the optional item quantity overrides.  If provided, the quantities of the specified items will be updated. Items not listed keep their original quantities.
         /// </summary>
+        /// <value>Gets or sets the optional item quantity overrides.  If provided, the quantities of the specified items will be updated. Items not listed keep their original quantities.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<AcceptExternalOrderItemRequest> Items { get; set; }
 
