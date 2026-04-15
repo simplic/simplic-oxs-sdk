@@ -8,6 +8,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | [**State**](FlowClient.md#flowhandleidstatepost) | **POST** /Flow/{handleId}/state |  |
 | [**Delete**](FlowClient.md#flowiddelete) | **DELETE** /Flow/{id} |  |
 | [**Get**](FlowClient.md#flowidget) | **GET** /Flow/{id} |  |
+| [**LogsReprocess**](FlowClient.md#flowlogsreprocesspost) | **POST** /Flow/logs/reprocess |  |
 | [**ExecuteAsync**](FlowClient.md#flownameexecuteasyncpost) | **POST** /Flow/{name}/execute-async |  |
 | [**Execute**](FlowClient.md#flownameexecutepost) | **POST** /Flow/{name}/execute |  |
 | [**Post**](FlowClient.md#flowpost) | **POST** /Flow |  |
@@ -371,6 +372,101 @@ catch (ApiException e)
 ### Return type
 
 [**GetFlowResponse**](GetFlowResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="flowlogsreprocesspost"></a>
+# **LogsReprocess**
+> void LogsReprocess (string flowName, int? maxCount = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class LogsReprocessExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var flowName = "flowName_example";  // string | 
+            var maxCount = 200;  // int? |  (optional)  (default to 200)
+
+            try
+            {
+                apiInstance.LogsReprocess(flowName, maxCount);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.LogsReprocess: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the LogsReprocessWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.LogsReprocessWithHttpInfo(flowName, maxCount);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.LogsReprocessWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **flowName** | **string** |  |  |
+| **maxCount** | **int?** |  | [optional] [default to 200] |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
